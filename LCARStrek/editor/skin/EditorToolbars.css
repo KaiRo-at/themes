@@ -229,20 +229,26 @@ tab.edit-mode[selected="true"]:hover:active {
 	list-style-image:url("chrome://editor/skin/images/preview_dis.gif");
 }
 
-#printButton {
-	list-style-image:url("chrome://editor/skin/images/print.gif");
-}
+#printButton 
+  {
+    list-style-image      : url("chrome://global/skin/print.gif");
+  }
 
 #printButton:hover,
-#printButton > .menubutton-internal-box > button:hover {
-	list-style-image:url("chrome://editor/skin/images/print-hover.gif");
-}
+#printButton:hover:active,
+#printButton[buttonover="true"],
+#printButton[open="true"]
+  {
+    list-style-image      : url("chrome://global/skin/print-hover.gif");
+  }
 
 #printButton[disabled="true"],
 #printButton[disabled="true"]:hover,
-#printButton[disabled="true"] > .menubutton-internal-box > button:hover {
-	list-style-image:url("chrome://editor/skin/images/print_dis.gif");
-}
+#printButton[disabled="true"]:hover:active,
+#printButton[disabled="true"][buttonover="true"]
+  {
+    list-style-image      : url("chrome://global/skin/print_dis.gif");
+  }
 
 #findButton {
 	list-style-image:url("chrome://editor/skin/images/find.gif");
@@ -556,5 +562,6 @@ tab.edit-mode[selected="true"]:hover:active {
   /* TEMP: Set color here. TODO: Set color from page */
   background-color: #FFFF00;
 }
+
 
 

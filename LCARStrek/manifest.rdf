@@ -5,37 +5,39 @@
 
   <!-- List all the skins being supplied by this theme -->
   <RDF:Seq about="urn:mozilla:skin:root">
-    <RDF:li resource="urn:mozilla:skin:LCARStrek/0.3" />
+    <RDF:li resource="urn:mozilla:skin:LCARStrek/0.4" />
   </RDF:Seq>
 
   <!-- Information -->
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.3"
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.4"
         chrome:displayName="LCARStrek"
         chrome:email="KaiRo@KaiRo.at"
         chrome:website="http://www.kairo.at/download/"
         chrome:description="For all Trekkies: A theme based on LCARS computer design. Get more info at http://www.kairo.at/download/"
         chrome:author="Robert Kaiser"
-        chrome:name="LCARStrek/0.3"
+        chrome:name="LCARStrek/0.4"
         chrome:image="jar:resource:/chrome/LCARStrek.jar!/global/skin/preview.png">
     <chrome:packages>
-      <RDF:Seq about="urn:mozilla:skin:LCARStrek/0.3:packages">
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.3:communicator"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.3:editor"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.3:global"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.3:messenger"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.3:navigator"/>
+      <RDF:Seq about="urn:mozilla:skin:LCARStrek/0.4:packages">
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.4:communicator"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.4:editor"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.4:global"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.4:messenger"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.4:navigator"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
 
   <!-- Version Information.  State that we work only with major version 1 of this packages. -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:communicator" chrome:skinVersion="1"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:editor" chrome:skinVersion="1"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:global" chrome:skinVersion="1"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:messenger" chrome:skinVersion="1"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:navigator" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.4:communicator" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.4:editor" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.4:global" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.4:messenger" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.4:navigator" chrome:skinVersion="1"/>
 
 </RDF:RDF>
+
+
 
 
 
