@@ -110,7 +110,7 @@ treechildren::-moz-tree-cell-text(selected) {
 }
 
 tree[selstyle="primary"] > treechildren::-moz-tree-cell-text(primary) {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   padding: 0px 1px 1px 1px;
 }
 
