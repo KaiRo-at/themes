@@ -104,7 +104,7 @@ radio[disabled="true"] > .radio-spacer-box > .radio-check-box1 {
   list-style-image: none;
 }
 
-radio:hover:active > .radio-check-box1 {
+radio:hover:active > .radio-spacer-box > .radio-check-box1 {
   border: 2px inset #CCD0DD;
 }
 
