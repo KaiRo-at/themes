@@ -117,6 +117,8 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 #nav-bar-inner
   {
     padding-left          : 0px;
+    padding-top           : 11px;
+    padding-bottom        : 11px;
     vertical-align        : middle;
   }
 
@@ -188,4 +190,5 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
   {
     margin-right          : 5px;
   }
+
 

@@ -30,6 +30,12 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to HTML */
 @namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for XUL elements */
 
+#collapsedHeaderView,
+#expandedHeaderView
+  {
+    min-width             : 1px;
+  }
+
 mail-emailaddress 
   {
     -moz-binding          : url(chrome://messenger/content/mailWidgets.xml#mail-emailaddress);
@@ -66,12 +72,22 @@ mail-emailaddress
     margin                : 0px;
   }
 
-#attachmentButton 
-  {
-    list-style-image      : url("chrome://messenger/skin/attach.gif");
-    min-height            : 20px;
-    margin                : 0px;
-  }
+#expandedAttachmentBox {
+  width: 20em;
+  height: 0px;
+  list-style-image: url("chrome://messenger/skin/message-mail-attach.gif");
+}
+
+#attachmentText
+{
+  font-weight: bold;
+}
+
+#attachmentTree {
+  margin: 3px;
+  height: 0px;
+  width: 20em;
+}
 
 .emailDisplayImage
   {
@@ -196,6 +212,8 @@ text.collapsedHeaderDisplayName
 [hide] {
   visibility: hidden;
 }
+
+
 
 
 
