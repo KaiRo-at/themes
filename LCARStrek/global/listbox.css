@@ -40,6 +40,11 @@ listbox {
   color: #FF9F00;
 }
 
+listbox[disabled="true"] {
+  border: 1px solid #8050B0;
+  color: #8050B0;
+}
+
 /* ::::: listitem ::::: */
 
 listitem {
@@ -66,7 +71,7 @@ listbox:focus > listitem[selected="true"] {
 
 /* ::::: listheader ::::: */
 
-listheader { 
+listheader {
   -moz-box-align: center;
   border: 1px solid #FFCF00;
   background-color: #9C9CFF;
@@ -117,7 +122,7 @@ listheader[sortable="true"]:hover:active {
   color: #8050B0;
 }
 
-/* ::::: listcell checkbox ::::: */                                             
+/* ::::: listcell checkbox ::::: */
 
 .listcell-check {
   -moz-box-align: center;

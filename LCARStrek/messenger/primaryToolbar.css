@@ -195,8 +195,7 @@
 }
 
 #button-junk:hover,
-#button-junk[buttonover="true"],
-#button-junk[buttondown="true"],
+#button-junk:hover:active,
 #button-junk[open="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/junk-hover.gif");
 }

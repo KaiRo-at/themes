@@ -54,8 +54,7 @@
 }
 
 #back-button:hover,
-#back-button[buttonover="true"],
-#back-button[buttondown="true"],
+#back-button:hover:active,
 #back-button[open="true"] {
   list-style-image: url("chrome://navigator/skin/icons/back-hover.gif");
 }
@@ -69,8 +68,7 @@
 }
 
 #forward-button:hover,
-#forward-button[buttonover="true"],
-#forward-button[buttondown="true"],
+#forward-button:hover:active,
 #forward-button[open="true"] {
   list-style-image: url("chrome://navigator/skin/icons/forward-hover.gif");
 }
@@ -110,8 +108,7 @@
 }
 
 #print-button:hover,
-#print-button[buttonover="true"],
-#print-button[buttondown="true"],
+#print-button:hover:active,
 #print-button[open="true"] {
   list-style-image: url("chrome://global/skin/icons/print-hover.gif");
 }

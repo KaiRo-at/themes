@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
@@ -23,7 +23,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -64,26 +64,25 @@ toolbarbutton {
   margin: 0px !important;
   padding: 0px;
   text-align: center;
-}    
+}
 
-toolbarbutton:hover,
-toolbarbutton[buttonover="true"] {
+toolbarbutton:hover {
   background-color: #FFCF00;
   color: #000000;
-} 
+}
 
 toolbarbutton:hover:active,
 toolbarbutton[open="true"],
 toolbarbutton.toolbarbutton-menubutton-button[open="true"] {
   background-color: #FF9F00;
   color: #000000;
-} 
+}
 
 toolbarbutton:hover:active,
 toolbarbutton[open="true"] {
   padding: 2px 0px 0px 2px;
 }
-    
+
 toolbarbutton[disabled="true"] {
   padding: 1px !important;
   background-color: #000000 !important;
@@ -97,7 +96,7 @@ toolbarbutton[checked="true"] {
   background-color: #008484;
   color: #FFCF00;
 }
-    
+
 toolbarbutton[checked="true"]:hover {
   background-color: #FFCF00;
   color: #000000;
@@ -110,7 +109,6 @@ toolbarbutton[checked="true"]:hover {
 }
 
 .toolbarbutton-menu-dropmarker:hover,
-.toolbarbutton-menu-dropmarker[buttonover="true"],
 .toolbarbutton-menu-dropmarker[open="true"] {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
@@ -144,32 +142,29 @@ toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
 .toolbarbutton-menubutton-button,
 .toolbarbutton-menubutton-dropmarker {
   background-color: #000000;
-} 
+}
 
 .toolbarbutton-menubutton-button[disabled="true"],
 .toolbarbutton-menubutton-dropmarker[disabled="true"] {
   background-color: #000000 !important;
   color: #8050B0 !important;
-} 
+}
 
 toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-button,
-toolbarbutton[type="menu-button"][buttonover="true"] > .toolbarbutton-menubutton-button,
-toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[type="menu-button"][buttonover="true"] > .toolbarbutton-menubutton-dropmarker {
+toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker {
   background-color: #FFCF00;
   color: #000000;
 }
 
-toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-button,
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-button,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   background-color: #FF9F00;
   color: #000000;
 }
 
-toolbarbutton[type="menu-button"][buttondown="true"] > toolbarbutton.toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"]:hover:active > toolbarbutton.toolbarbutton-menubutton-button,
 toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-menubutton-button {
   padding: 2px 0px 0px 2px !important;
 }
@@ -184,15 +179,12 @@ toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-men
 }
 
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding: 4px 0px 0px 2px;
 }
 
 toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[type="menu-button"][buttonover="true"] > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }

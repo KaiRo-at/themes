@@ -65,3 +65,7 @@ textbox.header {
 .fixedsize {
   height: 8.5em;
 }
+
+textbox[disabled] {
+  font-style: italic;
+}

@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998-1999
  * the Initial Developer. All Rights Reserved.
@@ -48,8 +48,8 @@
   list-style-image: url("chrome://navigator/skin/icons/back-disabled.gif") !important;
 }
 
-#helpBackButton[buttonover="true"],
-#helpBackButton[buttondown="true"] {
+#helpBackButton:hover,
+#helpBackButton:hover:active {
   list-style-image: url("chrome://navigator/skin/icons/back-hover.gif");
 }
 
@@ -61,8 +61,8 @@
   list-style-image: url("chrome://navigator/skin/icons/forward-disabled.gif") !important;
 }
 
-#helpForwardButton[buttonover="true"],
-#helpForwardButton[buttondown="true"] {
+#helpForwardButton:hover,
+#helpForwardButton:hover:active {
   list-style-image: url("chrome://navigator/skin/icons/forward-hover.gif");
 }
 
