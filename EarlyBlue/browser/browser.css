@@ -22,6 +22,8 @@
  *   Joe Hewitt (hewitt@netscape.com)
  *   Jason Kersey (kerz@netscape.com)
  *   Pierre Chanial (chanial@noos.fr)
+ *   Dean Tessman (dean_tessman@hotmail.com)
+ *   Robert Kaiser (kairo@kairo.at)
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -267,6 +269,27 @@ toolbar[mode="text"] .toolbarbutton-text {
   list-style-image: url("chrome://browser/skin/icons/history-disabled.gif");
 }
 
+#cut-button {
+  list-style-image: url("chrome://browser/skin/icons/cut.gif");
+}
+#cut-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/cut-disabled.gif");
+}
+
+#copy-button {
+  list-style-image: url("chrome://browser/skin/icons/copy.gif");
+}
+#copy-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/copy-disabled.gif");
+}
+
+#paste-button {
+  list-style-image: url("chrome://browser/skin/icons/paste.gif");
+}
+#paste-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/paste-disabled.gif");
+}
+
 
 /* ::::: small primary toolbar buttons ::::: */
 
@@ -347,6 +370,59 @@ toolbar[iconsize="small"] #history-button[disabled="true"] {
   list-style-image: url("chrome://browser/skin/icons/history-small-disabled.gif");
 }
 
+toolbar[iconsize="small"] #cut-button {
+  list-style-image: url("chrome://browser/skin/icons/cut-small.gif");
+}
+toolbar[iconsize="small"] #cut-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/cut-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #copy-button {
+  list-style-image: url("chrome://browser/skin/icons/copy-small.gif");
+}
+toolbar[iconsize="small"] #copy-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/copy-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #paste-button {
+  list-style-image: url("chrome://browser/skin/icons/paste-small.gif");
+}
+toolbar[iconsize="small"] #paste-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/paste-small-disabled.gif");
+}
+
+
+/* Smaller padding on small toolbar buttons */
+
+toolbar[iconsize="small"] .toolbarbutton-1 {
+  padding: 2px;
+}
+
+toolbar[iconsize="small"] .toolbarbutton-1:hover:active,
+toolbar[iconsize="small"] .toolbarbutton-1[open="true"] {
+  padding: 3px 1px 1px 3px;
+}
+
+toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"],
+toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"]:hover,
+toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"]:hover:active,
+toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"][open="true"] {
+  padding: 2px;
+}
+
+toolbar[iconsize="small"] .toolbarbutton-1[checked="true"] {
+  padding: 3px 1px 1px 3px !important;
+}
+
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"],
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"]:hover,
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"]:hover:active,
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][open="true"],
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"],
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"]:hover,
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"]:hover:active {
+  padding: 0;
+}
 
 /* ::::: fullscreen window controls ::::: */
 
@@ -412,6 +488,10 @@ statusbarpanel#statusbar-display {
 
 #search-proxy-button {
   margin: 2px;
+  list-style-image: url("chrome://browser/skin/icons/search-bar.gif");
+}
+
+#miSearchModeFind {
   list-style-image: url("chrome://browser/skin/icons/search-bar.gif");
 }
 
@@ -497,6 +577,16 @@ statusbarpanel#statusbar-display {
   padding: 0px 3px 0px 3px;
 }
 
+#page-theme-button {
+  display: none;
+}
+
+#page-theme-button[themes] {
+  display: -moz-box;
+  list-style-image: url("chrome://browser/skin/icons/page-themes.gif");
+  padding: 0px 3px 0px 3px;
+}
+
 /* ::::: throbber ::::: */
 
 #navigator-throbber {
@@ -541,4 +631,16 @@ toolbarbutton.chevron {
 
 toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
   display: none;
+}
+
+toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
+  display: -moz-box;
+}
+
+toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-text {
+   display: none;
+}
+
+#sidebar-throbber[loading="true"] {
+  list-style-image: url(chrome://global/skin/icons/loading.gif);
 }
