@@ -181,3 +181,7 @@ outlinerbody:-moz-outliner-twisty(open) {
 outlinerbody:-moz-outliner-indentation {
   width: 8px;
 }
+
+.outlinercol-text {
+   margin: 0px;
+}

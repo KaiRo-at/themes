@@ -271,7 +271,7 @@ button[type="menu-button"] {
 caption
   {
     -moz-border-radius    : 7px;
-    margin                : 0px 40px 2px 6px;
+    margin                : 0px 6px 2px 6px;
     padding               : 0px 0px 0px 0px;
     background-color      : #9C9CFF;
     color                 : #000000;
@@ -281,5 +281,3 @@ caption
   {
     margin                : 0px;
   }
-
-

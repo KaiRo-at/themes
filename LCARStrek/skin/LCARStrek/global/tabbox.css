@@ -17,7 +17,7 @@ tabs + tabpanels {
 }
 
 /* bottom tabs */
-tabbox[orient="vertical"] > tabpanels {
+tabbox > tabpanels {
   -moz-border-radius: 5px;
   border: 1px solid #9C9CFF;
   padding: 5px;
@@ -50,11 +50,11 @@ tabpanels.light {
 /* tabs-spacer ========================== */
 
 /* top tabs */
-tabbox[orient="vertical"] > tabs > .tabs-spacer {
+tabbox > tabs > .tabs-spacer {
 }
 
 /* bottom tabs */
-tabbox[orient="vertical"] > tabpanels + tabs > .tabs-spacer {
+tabbox > tabpanels + tabs > .tabs-spacer {
 }
 
 /* left tabs */
@@ -168,4 +168,3 @@ tab:hover {
 tab:hover:active { 
   text-decoration: none;
 }
-

@@ -7,9 +7,11 @@
  **/
 tree 
   {
+    -moz-border-radius    : 5px;
     background-color      : #000000;
-    border                : none;
+    border                : 1px solid #9C9CFF;
     border-spacing        : 0px;
+/*    margin                : 1px 3px 2px 3px; */
   }
 
 .tree-container-treerows[dragover="true"][dragdroptree="true"]
@@ -24,13 +26,6 @@ tree
   {
   }  
   
-tree.inset
-  {
-    -moz-border-radius    : 5px;
-    border                : 1px solid #9C9CFF;
-    margin                : 1px 3px 2px 3px;
-  }
-
 treeitem[selected="true"] > treerow
   {
     background-color      : #008484;
@@ -92,6 +87,11 @@ tree:focus > treechildren treeitem[selected="true"][current="true"] > treerow
 .treecell-header-box
   {
     padding               : 0px 4px 0px 4px;
+  }
+
+.treecell-header-text
+  {
+    margin                : 0px;
   }
 
 .treecell-header-image-box 
@@ -246,7 +246,3 @@ treerow[mode="inline-edit"]
   {
     margin-left           : 0px;
   }
-
-
-
-

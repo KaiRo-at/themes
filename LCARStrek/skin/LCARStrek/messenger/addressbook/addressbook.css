@@ -218,11 +218,9 @@ html|p {
 
 #dirTree, #resultsTree { 
   border: none;
+  margin: 0px;
 }
 
 #resultsTree {
 /*  border-left: 1px solid ThreeDShadow; */
 }
-
-
-
