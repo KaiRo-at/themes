@@ -100,14 +100,12 @@ mail-emailaddress
 
 .showMoreAddressesButton 
   {
-    list-style-image      : url("chrome://global/skin/twisty-closed.gif");
-/*    list-style-image      : url("chrome://messenger/skin/more.gif"); */
+    list-style-image      : url("chrome://global/skin/twisty-closed-selected.gif");
   }
 
 .showFewerAddressesButton 
   {
-    list-style-image      : url("chrome://global/skin/twisty-open.gif");
-/*    list-style-image      : url("chrome://messenger/skin/less.gif"); */
+    list-style-image      : url("chrome://global/skin/twisty-open-selected.gif");
   }
 
 html.headerValue   
@@ -203,5 +201,6 @@ text.collapsedHeaderValue
 [hide] {
   visibility: hidden;
 }
+
 
 
