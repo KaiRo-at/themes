@@ -1,0 +1,119 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: NPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Netscape Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/NPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is "Classic" theme of mozilla.org code.
+ *
+ * The Initial Developer of the Original Code is
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Robert Kaiser <KaiRo@KaiRo.at>
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ==== button.css ==========================================================
+   == Styles for special buttons in the Communicator suite.
+   ========================================================================== */
+
+/* ::::: large toolbar buttons ::::: */
+
+.toolbarbutton-1,
+.toolbarbutton-1 > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button
+{
+  min-width           : 36px;
+  min-height          : 36px;
+/*  font-size           : smaller; */
+  -moz-box-orient     : vertical;
+}
+
+.toolbarbutton-1[type="menu-button"] {
+  -moz-box-orient     : horizontal;
+}
+
+.toolbarbutton-1 > .toolbarbutton-box,
+.toolbarbutton-1 > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box,
+.toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box,
+.toolbarbutton-1[disabled="true"]:hover:active > .toolbarbutton-box,
+.toolbarbutton-1[disabled="true"][buttondown="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box
+{
+  padding             : 1px;
+}
+
+.toolbarbutton-1:hover:active > .toolbarbutton-box,
+.toolbarbutton-1[open="true"] > .toolbarbutton-box,
+.toolbarbutton-1[buttondown="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box
+{
+  padding             : 2px 0px 0px 2px;
+}
+
+.toolbarbutton-1[type="menu"] > .toolbarbutton-box > .toolbarbutton-dropmarker {
+  display: none;
+}
+
+/* ::::: normal buttons on toolbars ::::: */
+
+.button-toolbar {
+  -moz-user-focus     : ignore;
+  min-width           : 0px;
+  max-width             : 10em;
+  background-color    : transparent;
+}  
+
+/*  
+.button-toolbar > .button-box > .button-box-2,
+.button-toolbar > .button-box > .button-box-2 > .button-box-text {
+  margin: none;
+  border: none !important;
+  padding: 0px 2px;
+}
+*/
+
+.button-toolbar > .button-box > .button-icon {
+  margin-right: 3px;
+}
+
+.button-toolbar > .button-box > .button-text {
+  margin-right: 1px;
+}  
+
+/* ::::: reorder buttons ::::: */
+
+.reorder-up {
+  min-width           : 0px;
+}    
+
+.reorder-down {
+  min-width           : 0px;
+}    
+
+.reorder-up > .button-internal-box > .button-icon,
+.reorder-down > .button-internal-box > .button-icon {
+  margin              : 0;
+  padding             : 0;
+}

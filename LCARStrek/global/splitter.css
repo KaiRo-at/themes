@@ -1,0 +1,184 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is "Classic" theme of mozilla.org code.
+ *
+ * The Initial Developer of the Original Code is
+ * the Mozilla Organization.
+ * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Robert Kaiser <KaiRo@KaiRo.at>
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/******* Splitters *******/
+
+/** 
+ * XXX - We want to deprecate all usages of 'box' in this file and replace with
+ *       vbox/hbox. This should happen after the chrome is converted to use
+ *       these XUL elements. 
+ */
+
+  splitter 
+    {
+      cursor                : e-resize;
+      background-color      : #9C9CFF;
+      -moz-box-align        : center;
+      -moz-box-pack         : center;
+      border                : none;
+      border-top            : 3px solid black;
+      border-bottom         : 3px solid black;
+      min-width             : 6px;
+      min-height            : 6px;  
+      margin                : 0px 3px 0px 3px; 
+    }
+
+  /* This takes margin away from outliner header splitters, else they look ugly! */  
+  splitter.tree-splitter {
+      margin                : 0px;
+  }
+
+  grippy, grippy[collapse="before"]
+    {
+      border                : none;
+      border-top            : 3px solid black;
+      border-bottom         : 3px solid black;
+      list-style-image      : url("chrome://global/skin/grippy-vertical-before.gif");
+      -moz-box-align        : center;
+      -moz-box-pack         : center;
+      cursor                : pointer;
+      min-width             : 6px;
+      min-height            : 6px;
+      padding               : 1px;
+    }
+  
+  grippy:hover
+    {
+      background-color      : #FFCF00;
+    }
+  
+  grippy:hover:active
+    {
+      border                : none;
+    }
+  
+  splitter[state="collapsed"] > grippy
+    {
+      list-style-image      : url("chrome://global/skin/grippy-vertical-after.gif");
+    }  
+    
+  .grippy-box
+    {
+    }  
+    
+  .grippy-image
+    {
+      list-style-image      : inherit;
+    }  
+    
+  splitter[state="dragging"],
+  splitter:hover:active
+    {
+      background-color      : #FFCF00;
+    }
+  
+  rows > splitter
+    {
+      cursor              : n-resize;
+    }
+    
+  splitter[orient="vertical"]
+    {
+      cursor              : n-resize;
+      border              : none;
+      border-left         : 3px solid black;
+      border-right        : 3px solid black;
+      margin              : 3px 0px 3px 0px;
+    }
+    
+/* Grippy alignment */
+
+/* Vertical splitter (between two boxes, horizontally stacked), collapse to left */
+  splitter > grippy
+    {
+      list-style-image    : url("chrome://global/skin/grippy-vertical-before.gif");
+    }  
+    
+  splitter > grippy > .grippy-box
+    {
+      border-left         : none;
+      border-right        : none;
+    }  
+
+  splitter[state="collapsed"] > grippy
+    {
+      list-style-image    : url("chrome://global/skin/grippy-vertical-after.gif");
+    }
+
+/* Vertical splitter (between two boxes, horizontally stacked), collapse to right */
+  splitter[collapse="after"] > grippy
+    {
+      list-style-image    : url("chrome://global/skin/grippy-vertical-after.gif");
+    }  
+    
+  splitter[collapse="after"][state="collapsed"] > grippy
+    {
+      list-style-image    : url("chrome://global/skin/grippy-vertical-before.gif");
+    }
+
+/* Horizontal splitter (between two boxes, vertically stacked), collapse to left */
+  splitter[orient="vertical"] > grippy
+    {
+      list-style-image    : url("chrome://global/skin/grippy-horizontal-before.gif");
+      -moz-box-align      : center;
+      -moz-box-pack       : center;
+      border              : none;
+      border-left         : 3px solid black;
+      border-right        : 3px solid black;
+    }  
+    
+  splitter[orient="vertical"] > grippy > .grippy-box
+    {
+    }  
+
+  splitter[state="collapsed"][orient="vertical"] > grippy
+    {
+      list-style-image    : url("chrome://global/skin/grippy-horizontal-after.gif");
+    }
+    
+/* Horizontal splitter (between two boxes, vertically stacked), collapse to right */
+  splitter[collapse="after"][orient="vertical"] > grippy
+    {
+      list-style-image    : url("chrome://global/skin/grippy-horizontal-after.gif");
+    }  
+    
+  splitter[collapse="after"][state="collapsed"][orient="vertical"] > grippy
+    {
+      list-style-image    : url("chrome://global/skin/grippy-horizontal-before.gif");
+    }

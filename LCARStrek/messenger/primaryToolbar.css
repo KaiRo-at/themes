@@ -1,0 +1,249 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: NPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Netscape Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/NPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is mozilla.org code.
+ *
+ * The Initial Developer of the Original Code is 
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Robert Kaiser <KaiRo@KaiRo.at>
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the NPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the NPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/* ===== primaryToolbar.css =============================================
+  == Images for the Mail primary toolbar.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: primary toolbar buttons ::::: */
+
+#button-getmsg 
+  {
+	  list-style-image      : url("chrome://messenger/skin/getmsg.gif");
+  } 
+
+#button-getmsg[disabled="true"],
+#button-getmsg[disabled="true"]:hover,
+#button-getmsg[disabled="true"][buttonover="true"],
+#button-getmsg[disabled="true"][buttondown="true"]
+  {
+    list-style-image      : url("chrome://messenger/skin/getmsg-disabled.gif");
+  } 
+
+#button-getmsg:hover,
+#button-getmsg[buttonover="true"],
+#button-getmsg[buttondown="true"],
+#button-getmsg[open="true"]
+  {
+    list-style-image      : url("chrome://messenger/skin/getmsg-hover.gif");
+  } 
+
+#button-newmsg 
+  {
+	  list-style-image      : url("chrome://messenger/skin/newmsg.gif");
+  } 
+
+#button-newmsg[disabled="true"],
+#button-newmsg[disabled="true"]:hover,
+#button-newmsg[disabled="true"]:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/newmsg-disabled.gif");
+  } 
+
+#button-newmsg:hover,
+#button-newmsg:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/newmsg-hover.gif");
+  } 
+#button-reply 
+  {
+	  list-style-image      : url("chrome://messenger/skin/reply.gif");
+  } 
+
+#button-reply[disabled="true"],
+#button-reply[disabled="true"]:hover,
+#button-reply[disabled="true"]:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/reply-disabled.gif");
+  } 
+
+#button-reply:hover,
+#button-reply:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/reply-hover.gif");
+  } 
+
+#button-replyall 
+  {
+	  list-style-image      : url("chrome://messenger/skin/replyall.gif");
+  } 
+
+#button-replyall[disabled="true"],
+#button-replyall[disabled="true"]:hover,
+#button-replyall[disabled="true"]:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/replyall-disabled.gif");
+  } 
+
+#button-replyall:hover,
+#button-replyall:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/replyall-hover.gif");
+  } 
+
+#button-forward 
+  {
+	  list-style-image      : url("chrome://messenger/skin/forward.gif");
+  } 
+
+#button-forward[disabled="true"],
+#button-forward[disabled="true"]:hover,
+#button-forward[disabled="true"]:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/forward-disabled.gif");
+  } 
+
+#button-forward:hover,
+#button-forward:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/forward-hover.gif");
+  } 
+
+#button-file 
+  {
+	  list-style-image      : url("chrome://messenger/skin/file.gif");
+  } 
+
+#button-file[disabled="true"],
+#button-file[disabled="true"]:hover,
+#button-file[disabled="true"]:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/file-disabled.gif");
+  } 
+
+#button-file:hover,
+#button-file[open="true"]
+  {
+    list-style-image      : url("chrome://messenger/skin/file-hover.gif");
+  } 
+
+#button-next 
+  {
+	  list-style-image      : url("chrome://messenger/skin/next.gif");
+  } 
+
+#button-next[disabled="true"],
+#button-next[disabled="true"]:hover,
+#button-next[disabled="true"]:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/next-disabled.gif");
+  } 
+
+#button-next:hover,
+#button-next:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/next-hover.gif");
+  } 
+
+#button-delete 
+  {
+	  list-style-image      : url("chrome://messenger/skin/trash.gif");
+  } 
+
+#button-delete[disabled="true"],
+#button-delete[disabled="true"]:hover,
+#button-delete[disabled="true"]:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/trash-disabled.gif");
+  } 
+
+#button-delete:hover,
+#button-delete:hover:active
+  {
+    list-style-image      : url("chrome://messenger/skin/trash-hover.gif");
+  } 
+
+#button-mark {
+	list-style-image	: url("chrome://messenger/skin/mark.gif");
+}
+
+#button-mark[disabled="true"],
+#button-mark[disabled="true"]:hover,
+#button-mark[disabled="true"][buttonover="true"],
+#button-mark[disabled="true"][buttondown="true"]
+  {
+    list-style-image      : url("chrome://messenger/skin/mark-disabled.gif");
+  } 
+
+#button-mark:hover,
+#button-mark[buttonover="true"],
+#button-mark[buttondown="true"],
+#button-mark[open="true"]
+  {
+    list-style-image      : url("chrome://messenger/skin/mark-hover.gif");
+  } 
+
+#button-print 
+  {
+    list-style-image      : url("chrome://global/skin/print.gif");
+  }
+
+#button-print[disabled="true"],
+#button-print[disabled="true"]:hover,
+#button-print[disabled="true"][buttonover="true"],
+#button-print[disabled="true"][buttondown="true"]
+  {
+    list-style-image      : url("chrome://global/skin/print-disabled.gif");
+  }
+
+#button-print:hover,
+#button-print[buttonover="true"],
+#button-print[buttondown="true"],
+#button-print[open="true"]
+  {
+    list-style-image      : url("chrome://global/skin/print-hover.gif");
+  }
+
+#button-stop 
+  {
+	  list-style-image      : url("chrome://global/skin/stop.gif");
+  } 
+
+#button-stop[disabled="true"],
+#button-stop[disabled="true"]:hover,
+#button-stop[disabled="true"]:hover:active
+  {
+    list-style-image      : url("chrome://global/skin/stop-disabled.gif");
+  } 
+
+#button-stop:hover,
+#button-stop:hover:active
+  {
+    list-style-image      : url("chrome://global/skin/stop-hover.gif");
+  }
