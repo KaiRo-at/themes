@@ -247,7 +247,7 @@ outlinerchildren:-moz-outliner-image(subjectCol, news, new, offline) {
   list-style-image: url("chrome://messenger/skin/icons/message-news-new-offline.gif");
 }
 
-outlinerchildren:-moz-outliner-image(subjectCol, news, offl) {
+outlinerchildren:-moz-outliner-image(subjectCol, news, offline) {
   padding-right: 2px;
   list-style-image: url("chrome://messenger/skin/icons/message-news-offline.gif");
 }

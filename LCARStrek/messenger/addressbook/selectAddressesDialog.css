@@ -46,46 +46,44 @@
 
 /* ::::: Select Addresses dialog ::::: */
 
-#dirTreeBox {
-  width: 180px;
+#topBox {
+  padding: 0.5em 0 1.0em 0;
+}
+
+#resultsTree, #dirTree
+#resultsTree > .tree-container-treerows,
+#dirTree > .tree-container-treerows {
+  border: none;
 }
 
 #resultsTree {
-/*  border-left: 1px solid ThreeDShadow; */
+  min-width: 10px;
 }
- 
-#vertical-splitter {
-  min-width: 4px;
+
+#resultsBox {
+  border: 1px solid #9C9CFF;
 }
 
 #addToBucketButtonBox {
-  padding: 0.3em; 
   min-width: 10px;
-}
-
-#bucketBox {
-  height: 170px;
+  padding: 0.3em; 
 }
 
 #addressBucket {
-  height: 100px; 
   min-width: 10px;
 }
 
-#rightColumnButtonBox { /* Column with "New", "Edit" and "Remove" buttons */
-  padding: .5em; 
+#newEditButtonBox {
+  padding-top: 0.5em; 
   padding-right: 0px;
+  margin-left: 0px;
 }
 
-.third-column-spacer {  /* Vertical Spacers between 3rd column buttons */
-  height: 10px;
-}
-
-.middle-button-spacer { /* Spacers between To, CC, and BCC buttons */
+.middle-button-spacer {
   width: 10px;
 }
 
-#bucket-splitter {
-  border: none;
-  min-height: 4px;
+.above-remove-spacer {
+  width: 10px;
+  height: 15px;
 }
