@@ -79,6 +79,14 @@
   list-style-image: url("chrome://messenger/skin/addressbook/icons/newmsg-disabled.gif") !important;
 } 
 
+#button-newim {
+  list-style-image:url("chrome://messenger/skin/addressbook/icons/newmsg.gif");
+}
+
+#button-newim[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/newmsg-disabled.gif") !important;
+} 
+
 #button-delete {
   list-style-image:url("chrome://global/skin/icons/icons/trash.gif");
 }
@@ -141,6 +149,11 @@ sidebarheader {
   color: #FFFFFF;
   font-weight: bold;
   min-width: 30px;
+}
+
+#cvBuddyIcon {
+  padding-left: 20px;
+  padding-top: 2px;
 }
 
 .CardViewText,

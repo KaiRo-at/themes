@@ -29,12 +29,12 @@
   </RDF:Description>
 
   <!-- Version Information.  State that we work only with a certain version of this package. -->
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:global" chrome:skinVersion="1.0"/>
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:communicator" chrome:skinVersion="1.0"/>
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:navigator" chrome:skinVersion="1.0"/>
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:messenger" chrome:skinVersion="1.0"/>
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:editor" chrome:skinVersion="1.0"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:global" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:communicator" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:navigator" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:messenger" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:editor" chrome:skinVersion="1.2"/>
 <!-- chatzilla hasn't set skinVersion currently
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:chatzilla" chrome:skinVersion="1.0"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:chatzilla" chrome:skinVersion="1.2"/>
 -->
 </RDF:RDF>
