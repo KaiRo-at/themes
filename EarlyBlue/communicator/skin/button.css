@@ -269,7 +269,7 @@
   
 menubutton.button-toolbar-4
   {
-    -moz-binding          : url("chrome://global/content/menulistBindings.xml#menubutton-single-right");
+    -moz-binding        : url("chrome://global/content/bindings/menubutton.xml#menubutton-single-right");
   }
 
 .button-toolbar-4 > .menubutton-internal-box > .menubutton-single-icon
@@ -287,3 +287,4 @@ menubutton.button-toolbar-4
     padding               : 0px;
     padding-left          : 2px;
   }
+

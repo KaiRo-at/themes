@@ -11,6 +11,8 @@
 /* all localizable skin settings shall live here */
 @import url(chrome://global/locale/intl.css);
 
+/* this seems to be excluded now! let's see what happens...
+
 @import url(chrome://global/skin/box.css);
 @import url(chrome://global/skin/button.css);
 @import url(chrome://global/skin/checkbox.css);
@@ -27,9 +29,109 @@
 @import url(chrome://global/skin/tabcontrol.css);
 @import url(chrome://global/skin/toolbar.css);
 @import url(chrome://global/skin/colorpicker.css);
+*/
+
+
+@import url("chrome://global/skin/formatting.css");
+/*
+@import url("chrome://global/content/bindings/outliner.css");
+@import url("chrome://global/content/bindings/popup.css");
+@import url("chrome://global/content/bindings/scrollbar.css");
+@import url("chrome://global/content/bindings/tree.css");
+
+@import url("chrome://global/skin/button.css");
+@import url("chrome://global/skin/checkbox.css");
+@import url("chrome://global/skin/colorpicker.css");
+@import url("chrome://global/skin/menu.css");
+@import url("chrome://global/skin/menubutton.css");
+@import url("chrome://global/skin/menulist.css");
+@import url("chrome://global/skin/outliner.css");
+@import url("chrome://global/skin/popup.css");
+@import url("chrome://global/skin/progressmeter.css");
+@import url("chrome://global/skin/radio.css");
+@import url("chrome://global/skin/scrollbox.css");
+@import url("chrome://global/skin/splitter.css");
+@import url("chrome://global/skin/tabcontrol.css");
+@import url("chrome://global/skin/textbox.css");
+@import url("chrome://global/skin/toolbar.css");
+@import url("chrome://global/skin/tree.css");
+*/
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); 
-@namespace html url("http://www.w3.org/1999/xhtml"); 
+
+
+/**  
+ * bindings
+ **/
+
+/*
+
+  button, button.left
+    {
+      -moz-binding        : url("chrome://global/skin/buttonBindings.xml#buttonleft");
+    }
+ 
+  checkbox 
+    {
+      -moz-binding        : url("chrome://global/skin/classicBindings.xml#checkbox");
+    }
+ 
+  menulist 
+    {
+      -moz-binding        : url("chrome://global/skin/menulistBindings.xml#menulist");
+    }
+        
+  menulist[editable="true"] 
+    {
+      -moz-binding          : url("chrome://global/skin/menulistBindings.xml#menulist-editable") !important;
+    }
+  
+  menulist > menupopup,
+  .menulist-menupopup
+    {
+      -moz-binding        : url("chrome://global/skin/menulistBindings.xml#menulistpopup");
+    }
+
+  .menulist-compact
+    {
+      -moz-binding        : url("chrome://global/skin/menulistBindings.xml#menulist-compact");
+    }
+    
+  radio 
+    {
+      -moz-binding        : url("chrome://global/skin/classicBindings.xml#radio");
+    }
+
+  grippy, grippy[collapse="before"]
+    {
+      -moz-binding          : url("chrome://global/skin/classicBindings.xml#grippy");
+    }
+    
+  window[orient="vertical"] > splitter,
+  box[orient="vertical"] > splitter,
+  window[align="vertical"] > splitter,
+  box[align="vertical"] > splitter,
+  vbox > splitter
+    {
+      -moz-binding        : url("chrome://global/skin/classicBindings.xml#splitter-hack");
+    }
+
+  tabs 
+    {
+      -moz-binding: url("chrome://global/skin/tabBindings.xml#tabs");
+    }
+
+  toolbargrippy
+    {
+      -moz-binding          : url("chrome://global/skin/classicBindings.xml#toolbargrippy");
+    }
+
+  toolbargrippy[tbgrippy-collapsed="true"] 
+    {
+      -moz-binding          : url("chrome://global/skin/classicBindings.xml#toolbargrippy-collapsed");
+    }
+*/
+
 
 /**
  * XXX-DEBUG: HTML namespace/titledbutton striping. 
@@ -157,9 +259,9 @@
 
 
 /**
- * html|iframe default sizing 
+ * iframe default sizing 
  **/
-  html|iframe 
+  iframe 
     {
       min-width           : 10px;
       min-height          : 10px;
@@ -168,73 +270,12 @@
       border              : none;
     }
 
-/** 
- * XUL <progressmeter> 
- **/
-  progressmeter[mode="undetermined"] > .progressmeter-internal-box
-    {
-      background-image    : url(chrome://global/skin/progressmeter-busy.gif);
-    }
- 
-  progressmeter[mode="undetermined"] > .progressmeter-internal-box > .progressmeter-stack > .progressmeter-progressbar {
-      visibility: collapse;
+
+.tooltip-label
+  {
+    margin                : 0px;
   }
-
-  .progress-text 
-    {
-      font-weight         : normal !important;
-    }
   
-  progressmeter 
-    {
-      min-width           : 100px;
-      margin              : 0px 4px 0px 4px;
-      border              : 1px inset #CCD0DD;
-    }
-
-  progressmeter > .progressmeter-internal-box 
-    {
-      border              : 1px solid #000000;
-    }
-
-/* progress indicators */
-  .progress-bar 
-    {
-	    background-color    : #6699cc;
-      border-right        : 1px outset #6699cc;
-    }
   
-  .progress-remainder 
-    {
-	    background-color    : #999999;
-    }
 
-  .progressmeter-statusbar 
-    {
-      border              : 1px solid #9999CC;
-      margin              : 1px 4px 1px 4px;
-    }
-
-  .progressmeter-statusbar > .progressmeter-internal-box
-    {
-      border              : none;
-      padding             : 1px;
-    }
-    
-  .progressmeter-progressbar[statusbar="true"] > .progress-bar
-    {
-      background-color    : #9999CC;
-      border-right        : none;
-    }
-   
-  .progressmeter-progressbar[statusbar="true"] > .progress-remainder
-    {
-      background-color    : #CCD0DD;
-    }
-    
-/** XUL <scrollbar> element **/
-  scrollbar 
-    { 
-      user-focus          : ignore; 
-    } 
 

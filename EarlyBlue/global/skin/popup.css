@@ -1,0 +1,44 @@
+menupopup, popup
+  {
+    /* DON'T DELETE.  Removes disappearance of scrollbars
+     * in content pane when window is made smaller.
+     * Talk to evaughan@netscape.com for details.
+     */
+    min-width             : 1px;
+    background-color      : #CCD0DD;
+    border                : 1px outset #CCD0DD;
+  }
+
+.popup-internal-box
+  {
+    padding               : 1px;
+  }  
+  
+/** Tooltips (tooltip <popup> element)
+ *  class="tooltip"
+ **/
+.tooltip
+  {
+    background-color      : #FFFFCC;
+    border                : 1px outset #FFFFCC;
+    color                 : #000000;
+    font                  : smaller;
+    padding               : 3px;
+  }
+
+.tooltip > .popup-internal-box
+  {
+    padding               : 0px;
+    margin                : 0px;
+  }
+
+/* rules for popups associated with menulists */
+
+  menulist > menupopup,
+  .menulist-menupopup
+    {
+      border              : 1px solid #666699;
+      min-width           : 0px;
+      background-color    : white;
+    }
+

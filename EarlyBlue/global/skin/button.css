@@ -68,13 +68,8 @@
 /* outer frame */  
   button[default] 
     {
-      /* XXX this is a HACK until 'orient' is supported in CSS! XXX */
-      /* strictly speaking not necessary because default for buttonright is 
-       * to lay image out horizontally, but leaving here as a reminder to
-       * implement this feature */
-      -moz-binding        : url(chrome://global/content/xulBindings.xml#buttonright);
       font-weight         : bold;
-	    list-style-image    : url("chrome://global/skin/return.gif");
+      list-style-image    : url("chrome://global/skin/return.gif");
     }
   
   button[default][disabled="true"]
@@ -158,3 +153,4 @@
     
     
     
+

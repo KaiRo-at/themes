@@ -1,16 +1,3 @@
- 
-menubar 
-  {
-    background-color      : #CCD0DD;
-    border-bottom         : 1px solid #9999CC;
-    border-right          : 1px solid #9999CC;
-  }
-
-menubar > toolbargrippy 
-  {
-/*    display               : none; */
-  }
-
 menu, menuitem  
   {
     color                 : #000000;
@@ -27,24 +14,6 @@ menu[menuactive="true"][disabled="true"],
 menuitem[menuactive="true"][disabled="true"]
   {
 	  color                 : #999999;
-  }
-
-/* XXX menupopups have to have a color explicitly specified. this is a bug */
-menupopup, popup 
-  {
-    background-color      : #CCD0DD;
-    border                : 1px outset #CCD0DD;
-  }
-
-menupopup > menu, popup > menu,
-menupopup > menuitem, popup > menuitem
-  {
-    max-width             : 250px;
-    min-width             : 125px;
-    margin-left           : 0px;
-    margin-right          : 0px;
-    margin-top            : 0px;
-    margin-bottom         : 0px;
   }
 
 menuseparator 
@@ -64,6 +33,7 @@ menupopup > menu, menupopup > menuitem,
 popup > menu, popup > menuitem
   {
     padding               : 2px;
+    max-width             : 42em; /* should move to content */
   }
 
 menubar > menu[menuactive="true"] 
@@ -171,44 +141,47 @@ menuitem[checked="true"][menuactive="true"]
     list-style-image      : url("chrome://global/skin/menu-arrow-hover.gif");
   }
 
-/** Tooltips (tooltip <popup> element)
- *  class="tooltip"
- **/
-.tooltip
-  {
-    background-color      : #FFFFCC;
-    border                : 1px outset #FFFFCC;
-    color                 : #000000;
-    font                  : smaller;
-    padding               : 3px;
-  }
+/* ::::: menu/menuitems in a menulist popup ::::: */
 
-/* .tooltip html */
-html#TOOLTIP-tooltipText
-  {
-    padding               : 0px;
-    margin                : 0px;
-  }
+  menulist > menupopup > menuitem
+  	{
+  	  min-width: 0px;
+  	  max-width: none;
+  	  padding: 0px 4px !important;
+  	}
 
-/*
- * Autorepeatbutton
- */
-.autorepeatbutton-up {
-    list-style-image: url("chrome://global/skin/scroll-up.gif")
-}
+  menulist > menupopup > menuitem > .menu-iconic-accel,
+  menulist > menupopup > menuitem > .menu-accel,
+  menulist > menupopup > menuitem > .menu-text,
+  menulist > menupopup > menuitem > .menu-iconic-text,
+  menulist > menupopup > menu > .menu-text,
+  menulist > menupopup > menu > .menu-accel,
+  menulist > menupopup > menu > .menu-iconic-text,
+  menulist > menupopup > menu > .menu-iconic-accel
+    {
+      margin-top          : 0px;
+      margin-bottom       : 0px;
+    }
 
-.autorepeatbutton-down {
-    list-style-image: url("chrome://global/skin/scroll-down.gif")
-}
 
-autorepeatbutton {
-  text-align: center;
-  vertical-align: middle;
-}
+  menulist > menupopup > menuitem > .menu-iconic-left,
+  menulist > menupopup > menuitem > .menu-iconic-left[menuactive="true"]
+    {
+      list-style-image    : inherit;
+      width               : 0px;
+      border              : none;
+    }
 
-autorepeatbutton:hover {
-  background-color: #336699;
-}
-
+  menulist > menupopup > menuitem[menuactive="true"][selected="true"]
+    {
+      list-style-image    : url(chrome://global/skin/menulist-select-dot-active.gif);
+      margin-right		  : 3px;
+    }
+  
+  menulist > menupopup > menuitem[selected="true"]
+    {
+      list-style-image    : url(chrome://global/skin/menulist-select-dot.gif);
+      margin-right		  : 3px;
+    }
 
 
