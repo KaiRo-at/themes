@@ -192,32 +192,32 @@ toolbar[mode="text"] .toolbarbutton-text {
 
 #back-button {
 /*  -moz-binding: url("chrome://browser/skin/browser.xml#toolbar-menu-button"); */
-  list-style-image: url("chrome://browser/skin/back.gif");
+  list-style-image: url("chrome://browser/skin/icons/back.gif");
 }
 #back-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/back-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/back-disabled.gif");
 }
 
 #forward-button {
 /*  -moz-binding: url("chrome://browser/skin/browser.xml#toolbar-menu-button"); */
-  list-style-image: url("chrome://browser/skin/forward.gif");
+  list-style-image: url("chrome://browser/skin/icons/forward.gif");
 }
 #forward-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/forward-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/forward-disabled.gif");
 }
 
 #reload-button {
-  list-style-image: url("chrome://browser/skin/reload.gif");
+  list-style-image: url("chrome://browser/skin/icons/reload.gif");
 }
 #reload-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/reload-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/reload-disabled.gif");
 }
 
 #stop-button {
-  list-style-image: url("chrome://browser/skin/stop.gif");
+  list-style-image: url("chrome://browser/skin/icons/stop.gif");
 }
 #stop-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/stop-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/stop-disabled.gif");
 }
 
 #home-button {
@@ -228,10 +228,10 @@ toolbar[mode="text"] .toolbarbutton-text {
 }
 
 #print-button {
-  list-style-image: url("chrome://browser/skin/print.gif");
+  list-style-image: url("chrome://browser/skin/icons/print.gif");
 }
 #print-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/print-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/print-disabled.gif");
 }
 
 #new-tab-button {
@@ -257,14 +257,10 @@ toolbar[mode="text"] .toolbarbutton-text {
 }
 
 #downloads-button {
-  -moz-image-region: rect(0px 192px 32px 160px);
-}
-#downloads-button:hover,
-#downloads-button[checked="true"] {
-  -moz-image-region: rect(32px 192px 64px 160px);
+  list-style-image: url("chrome://browser/skin/icons/downloads.gif");
 }
 #downloads-button[disabled="true"] {
-  -moz-image-region: rect(64px 192px 96px 160px);
+  list-style-image: url("chrome://browser/skin/icons/downloads-disabled.gif");
 }
 
 #bookmarks-button {
@@ -275,14 +271,10 @@ toolbar[mode="text"] .toolbarbutton-text {
 }
 
 #history-button {
-  -moz-image-region: rect(0px 224px 32px 192px);
-}
-#history-button:hover,
-#history-button[checked="true"] {
-  -moz-image-region: rect(32px 224px 64px 192px);
+  list-style-image: url("chrome://browser/skin/icons/history.gif");
 }
 #history-button[disabled="true"] {
-  -moz-image-region: rect(64px 224px 96px 192px);
+  list-style-image: url("chrome://browser/skin/icons/history-disabled.gif");
 }
 
 
@@ -293,31 +285,31 @@ toolbar[iconsize="small"] .toolbarbutton-1 {
 }
 
 toolbar[iconsize="small"] #back-button {
-  list-style-image: url("chrome://browser/skin/back.gif");
+  list-style-image: url("chrome://browser/skin/icons/back-small.gif");
 }
 toolbar[iconsize="small"] #back-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/back-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/back-small-disabled.gif");
 }
 
 toolbar[iconsize="small"] #forward-button {
-  list-style-image: url("chrome://browser/skin/forward.gif");
+  list-style-image: url("chrome://browser/skin/icons/forward-small.gif");
 }
 toolbar[iconsize="small"] #forward-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/forward-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/forward-small-disabled.gif");
 }
 
 toolbar[iconsize="small"] #reload-button {
-  list-style-image: url("chrome://browser/skin/reload.gif");
+  list-style-image: url("chrome://browser/skin/icons/reload-small.gif");
 }
 toolbar[iconsize="small"] #reload-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/reload-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/reload-small-disabled.gif");
 }
 
 toolbar[iconsize="small"] #stop-button {
-  list-style-image: url("chrome://browser/skin/stop.gif");
+  list-style-image: url("chrome://browser/skin/icons/stop-small.gif");
 }
 toolbar[iconsize="small"] #stop-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/stop-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/stop-small-disabled.gif");
 }
 
 toolbar[iconsize="small"] #home-button {
@@ -328,21 +320,17 @@ toolbar[iconsize="small"] #home-button[disabled="true"] {
 }
 
 toolbar[iconsize="small"] #print-button {
-  list-style-image: url("chrome://browser/skin/print.gif");
+  list-style-image: url("chrome://browser/skin/icons/print-small.gif");
 }
 toolbar[iconsize="small"] #print-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/print-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/print-small-disabled.gif");
 }
 
 toolbar[iconsize="small"] #downloads-button {
-  -moz-image-region: rect(0px 120px 20px 100px);
-}
-toolbar[iconsize="small"] #downloads-button:hover,
-toolbar[iconsize="small"] #downloads-button[checked="true"] {
-  -moz-image-region: rect(20px 120px 40px 100px);
+  list-style-image: url("chrome://browser/skin/icons/downloads-small.gif");
 }
 toolbar[iconsize="small"] #downloads-button[disabled="true"] {
-  -moz-image-region: rect(40px 120px 60px 100px) !important;
+  list-style-image: url("chrome://browser/skin/icons/downloads-small-disabled.gif");
 }
 
 toolbar[iconsize="small"] #new-tab-button {
@@ -375,14 +363,10 @@ toolbar[iconsize="small"] #bookmarks-button[disabled="true"] {
 }
 
 toolbar[iconsize="small"] #history-button {
-  -moz-image-region: rect(0px 140px 20px 120px);
-}
-toolbar[iconsize="small"] #history-button:hover,
-toolbar[iconsize="small"] #history-button[checked="true"] {
-  -moz-image-region: rect(20px 140px 40px 120px);
+  list-style-image: url("chrome://browser/skin/icons/history-small.gif");
 }
 toolbar[iconsize="small"] #history-button[disabled="true"] {
-  -moz-image-region: rect(40px 140px 60px 120px) !important;
+  list-style-image: url("chrome://browser/skin/icons/history-small-disabled.gif");
 }
 
 
