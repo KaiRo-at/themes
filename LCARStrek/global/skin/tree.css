@@ -21,10 +21,20 @@ tree.inset {
   margin: 1px 5px 2px 5px;
 }
 
+/*
 treeitem[selected="true"] > treerow { 
-/*	color: #000000; */
+/	color: #000000; /
 	background-color: #008484;
 }
+*/
+
+tree:focus > treechildren treeitem[selected="true"] > treerow,
+treeitem[dd-dropon="true"] > treerow
+  {
+  	background-color    : #008484;
+/*	  color               : #000000; */
+  }
+
 
 treecell { 
   white-space: nowrap;

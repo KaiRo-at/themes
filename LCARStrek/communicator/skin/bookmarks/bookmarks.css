@@ -36,7 +36,7 @@
   {
     list-style-image      : url("chrome://communicator/skin/bookmarks/bookmark-item-sel.gif");
   }
-  
+
 .bookmarkfolder
   {
     list-style-image      : url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
@@ -156,4 +156,5 @@ treeitem[type="http://home.netscape.com/NC-rdf#FileSystemObject"] > treerow > .t
 treeitem > treerow > .treecell-bookmark {
  list-style-image:url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
 }
+
 
