@@ -10,7 +10,7 @@ scrollbar {
 /********* XP Scrollbar *********/
 
 thumb {
-  -moz-binding: url(chrome://global/content/xulBindings.xml#thumb);
+  -moz-binding: url(chrome://global/skin/workaround.xml#thumbh);
   background-color: #9C9CFF;
   padding: 1px;
   list-style-image: url("chrome://global/skin/scroll-thumb-horiz.gif");
@@ -29,6 +29,14 @@ scrollbar[align="vertical"] > slider > thumb {
 
 scrollbar[align="vertical"] > slider > thumb[disabled="true"] {
    list-style-image: url("chrome://global/skin/scroll-thumb-vert-disabled.gif")
+}
+
+thumb:active {
+   background-color: #008484;
+}
+
+thumb:hover {
+   background-color: #FFCF00;
 }
 
 scrollbarbutton {
@@ -96,17 +104,10 @@ scrollbar[align="vertical"] > scrollbarbutton[type="increment"][disabled="true"]
    list-style-image: url("chrome://global/skin/scroll-down-disabled.gif"); 
 }
 
-thumb:active {
-   background-color: #008484;
-}
-
-thumb:hover {
-   background-color: #FFCF00;
-}
-
 slider {
    background-color: #000000;
 }
+
 
 
 

@@ -15,6 +15,13 @@
     </content>
   </binding>
 
+  <binding id="thumbh" extends="xul:box">
+    <content>
+      <xul:image inherits="src"/>
+    </content>
+  </binding>
+
 </bindings>
+
 
 

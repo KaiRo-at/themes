@@ -9,7 +9,7 @@ scrollbar {
 /********* XP Scrollbar *********/
 
 thumb {
-  -moz-binding: url(chrome://global/content/xulBindings.xml#thumb);
+  -moz-binding: url(chrome://global/skin/workaround.xml#thumbh);
   background-color: #CCCCCC;
   border: 1px outset #CCCCCC;
   list-style-image: url("chrome://global/skin/scroll-thumb-horiz.gif");
@@ -31,7 +31,7 @@ scrollbar[align="vertical"] > slider > thumb[disabled="true"] {
 }
 
 
-scrollbar[align="vertical"] > slider > thumb:active {
+thumb:active {
    background-color: #DDDDDD;
 /*   background-color: #99CCFF; */
 }
@@ -94,4 +94,5 @@ scrollbar[align="vertical"] > scrollbarbutton[type="increment"][disabled="true"]
 slider {
    background-color: #999999;
 }
+
 

@@ -52,7 +52,7 @@
   window 
     { 
       background-color    : #CCD0DD;
-      font                : 3mm tahoma,arial,helvetica,sans-serif;
+      font                : 3mm helvetica,arial,tahoma,sans-serif;
       padding             : 0px;
     }
   
@@ -248,4 +248,5 @@
   {
     border                : 1px solid #000000;
   }
+
 
