@@ -13,7 +13,7 @@
  * 
  * The Initial Developer of the Original Code is Håkan Waara
  * Portions created by Håkan Waara are Copyright (C) 
- * Håkan Waara.  All Rights Reserved.
+ * Hakan Waara.  All Rights Reserved.
  * 
  * Contributor(s): Håkan Waara (Original Author) 
  */
@@ -33,3 +33,4 @@
 .down:hover:active {
   list-style-image: url("chrome://global/skin/spinbtn-dn-act.gif")
 }
+

@@ -34,26 +34,6 @@
 
 /* ::::: outliner focus-ring border adjustments ::::: */
 
-/*
-#threadpane-splitter
-  {
-    border-top            : none;
-  }
-*/
-
-/*
-#folderTree
-  {
-    border-right          : 1px solid ThreeDHighlight;
-    border-bottom         : 1px solid ThreeDHighlight;
-  }
-*/
-
-#folderTree > treechildren
-  {
-    border                : none;
-  }
-  
 #threadOutliner
   {
 /*    border-bottom         : 1px solid ThreeDHighlight;
@@ -61,70 +41,9 @@
     min-width             : 1px;
   }
 
-/*
-#threadOutliner > .outliner-columns 
+#searchBox
   {
-    border-left           : 1px solid ThreeDDarkShadow;
+/*    border-left         : 1px solid ThreeDShadow; */
   }
 
-#threadOutliner > outlinerrows  > .outliner-bodybox
-  {
-    border-top            : 1px solid transparent;
-    border-right          : 1px solid transparent;
-    border-bottom         : 1px solid ThreeDLightShadow;
-    border-left           : 1px solid ThreeDDarkShadow;
-  }
-*/
-
-#folderTree:focus > treechildren,
-#threadOutliner:focus > outlinerrows > .outliner-bodybox
-  {
-/*    border-color          : #000000; */
-  }
-
-/*
-#messagepane 
-  {
-    border-left           : 1px solid ThreeDDarkShadow;
-    border-top            : 1px solid ThreeDDarkShadow;
-  }
-
-#messagepanebox[focusring="true"] 
-  {
-    border                : 1px solid #000000;
-  }
-
-#messagepanebox
-  {
-    border-top          : 1px solid ThreeDShadow;
-    border-left         : 1px solid ThreeDShadow;
-    border-right        : 1px solid ThreeDFace;
-    border-bottom       : 1px solid ThreeDFace;
-  }
-
-#msgHeaderView 
-  {
-    border-top           : none;
-  }
-
-#msgHeaderView > toolbar > toolbargrippy
-  {
-    border-left          : none;
-  }
-
-#accountCentralBox
-  {
-    background-color:#FFFFFF;
-  }
-
-#status-bar 
-{
-  border-left          : 1px solid ThreeDShadow;
-}
-
-.mailwindow-statusbar
-  {
-    border-left         : none;
-  }
-*/
 

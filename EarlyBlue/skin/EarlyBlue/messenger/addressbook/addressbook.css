@@ -49,18 +49,6 @@
     list-style-image      : url("chrome://messenger/skin/addressbook/newcard-disabled.gif");
   } 
 
-/*
-#button-newcard:hover
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newcard-hover.gif");
-  } 
-
-#button-newcard:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newcard-hover-active.gif");
-  } 
-*/
-
 #button-newlist {
 	list-style-image: url("chrome://messenger/skin/addressbook/newlist.gif");
 }
@@ -71,18 +59,6 @@
   {
     list-style-image      : url("chrome://messenger/skin/addressbook/newlist-disabled.gif");
   } 
-
-/*
-#button-newlist:hover
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newlist-hover.gif");
-  } 
-
-#button-newlist:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newlist-hover-active.gif");
-  } 
-*/
 
 #button-editcard {
 	list-style-image:url("chrome://messenger/skin/addressbook/person.gif");
@@ -95,18 +71,6 @@
     list-style-image      : url("chrome://messenger/skin/addressbook/person-disabled.gif");
   } 
 
-/*
-#button-editcard:hover
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/person-hover.gif");
-  } 
-
-#button-editcard:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/person-hover-active.gif");
-  } 
-*/
-
 #button-newmessage {
 	list-style-image:url("chrome://messenger/skin/addressbook/newmsg.gif");
 }
@@ -118,18 +82,6 @@
     list-style-image      : url("chrome://messenger/skin/addressbook/newmsg-disabled.gif");
   } 
 
-/*
-#button-newmessage:hover
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newmsg-hover.gif");
-  } 
-
-#button-newmessage:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newmsg-hover-active.gif");
-  }
-*/
-
 #button-delete {
 	list-style-image:url("chrome://messenger/skin/addressbook/trash.gif");
 }
@@ -140,18 +92,6 @@
   {
     list-style-image      : url("chrome://messenger/skin/addressbook/trash-disabled.gif");
   } 
-
-/*
-#button-delete:hover
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/trash-hover.gif");
-  } 
-
-#button-delete:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/trash-hover-active.gif");
-  } 
-*/
 
 /* ::::: sidebar header ::::: */
 
@@ -209,11 +149,18 @@ sidebarheader {
 	min-width: 30px;
 }
 
-.CardViewText {
+.CardViewText,
+.CardViewLink {
 	padding-left: 20px;
 	padding-right: 2px;
 	min-width: 30px;
 	margin: 0px;
+}
+
+.CardViewLink {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 html|a {
@@ -242,3 +189,4 @@ html|p {
 #resultsTree {
 /*  border-left: 1px solid ThreeDShadow; */
 }
+
