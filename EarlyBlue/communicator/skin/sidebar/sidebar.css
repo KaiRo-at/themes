@@ -19,6 +19,8 @@
  * Contributor(s): Stephen Lamm <slamm@netscape.com>
  */
  
+@import url(chrome://global/skin/splitter.css);
+
 /*
 #sidebar-splitter {
     margin-right: 0px;
@@ -29,7 +31,7 @@
     border-left: 1px solid #9999CC;
     border-right: 1px solid #9999CC;
     background-color: #CCD0DD;
-    -moz-binding: url("chrome://communicator/skin/sidebar/sidebarSplitterBindings.xml#sidebar-splitter");
+/*    -moz-binding: url("chrome://communicator/skin/sidebar/sidebarSplitterBindings.xml#sidebar-splitter");  */
 }
 */
 
@@ -163,3 +165,4 @@
       font-weight         : bold;
     }
     
+
