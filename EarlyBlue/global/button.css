@@ -74,13 +74,14 @@ button:focus > .button-box {
 
 /* .......... default state .......... */
 
-button[default="true"] {
+button[default="true"] > .button-box {
   font-weight: bold;
   list-style-image: url("chrome://global/skin/icons/return.gif");
   -moz-box-direction: reverse;
+  padding-right: 6px;
 }
 
-button[default="true"][disabled="true"] {
+button[default="true"][disabled="true"] > .button-box {
   font-weight: bold;
   list-style-image: url("chrome://global/skin/icons/return-disabled.gif");
 }

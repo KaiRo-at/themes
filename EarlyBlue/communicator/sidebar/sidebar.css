@@ -37,38 +37,28 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#sidebar-box 
-  {
-    margin-top            : 0px;
-    border                : none;
-    background-color      : #CCD0DD;
-  }
+#sidebar-box {
+  margin-top: 0px;
+  border: none;
+  background-color: #CCD0DD;
+}
 
 /* ::::: sidebar header ::::: */
 
-.sidebarheader-main 
-  {
-    border: none;
-    color: #CCD0DD;
-    background-color: #666699;
-    padding-left: 4px;
-  }
+.sidebarheader-main {
+  border: none;
+  color: #CCD0DD;
+  background-color: #666699;
+  padding-left: 4px;
+}
 
 #sidebar-panel-picker {
-  -moz-box-direction: reverse;
   color: inherit;
 }
   
-#sidebar-panel-picker > .toolbarbutton-dropmarker
-  {
-    padding-left: 4px;
-    list-style-image: url("chrome://global/skin/menu-arrow-hover.gif");
-  }
-
-.sidebar-header-text  
-  {
-    font-weight: bold;
-  }
+.sidebar-header-text {
+  font-weight: bold;
+}
 
 /* ..... close button ..... */
 
@@ -135,7 +125,7 @@
 
 .sbtab-twisty {
   margin: 2px 3px 0px 3px;
-  list-style-image: url("chrome://global/skin/twisty-closed.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
 }
 
 /*
@@ -167,5 +157,5 @@
 }
 
 .sbtab-twisty[selected="true"] {
-  list-style-image: url("chrome://global/skin/twisty-open.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
 }
