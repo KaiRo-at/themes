@@ -44,18 +44,28 @@
 /* ::::: radio ::::: */
 
 radio {
-  -moz-box-align: center;
   margin: 1px 2px;
-  padding: 1px;
+  border-left: 1px transparent;
+  border-right: 1px transparent;
+}
+
+.radio-spacer-box {
+  -moz-box-align: center;
+  border-right: 4px solid transparent;
+  border-top: 1px;
+  border-bottom: 1px;
+}
+
+.radio-label-center-box {
+  -moz-box-align: center;
 }
 
 .radio-label-box {
   border: 1px solid transparent;
-  padding: 0px 0px 1px 1px;
   -moz-box-align: center;
 }
 
-.radio-icon {
+.radio-icon[src] {
   margin-right: 2px;
 }
 
@@ -65,13 +75,13 @@ radio {
 
 /* ..... focused state ..... */
 
-radio[focused="true"] > .radio-label-box {
+radio[focused="true"] > .radio-label-center-box > .radio-label-box {
   border: 1px dotted #008484;
 }
 
 /* ..... disabled state ..... */
 
-radio[disabled="true"] {
+radio[disabled="true"] > .radio-spacer-box > .radio-check-box1 {
   color: #8050B0;
 }
 
@@ -80,7 +90,6 @@ radio[disabled="true"] {
 .radio-check-box1 {
 /*  -moz-box-align: center;
   -moz-box-pack: center; */
-  margin: 1px 0px;
   border: 1px solid #FF9F00;
   -moz-border-radius: 50%;
   width: 10px;
@@ -94,28 +103,28 @@ radio[disabled="true"] {
   width: 8px;
   height: 8px;
   list-style-image: none;
-}  
+}
 
-radio:hover > .radio-check-box1,
-radio:hover:active > .radio-check-box1 {
+radio:hover > .radio-spacer-box > .radio-check-box1,
+radio:hover:active > .radio-spacer-box > .radio-check-box1 {
   border: 1px solid #FFCF00;
 }
 
-radio:hover > .radio-label-box,
-radio:hover:active > .radio-label-box {
+radio:hover > .radio-label-center-box > .radio-label-box,
+radio:hover:active > .radio-label-center-box > .radio-label-box {
   color: #FFCF00;
 }
 
-radio[disabled="true"] > .radio-check-box1 {
+radio[disabled="true"] > .radio-spacer-box > .radio-check-box1 {
   border: 1px solid #8050B0 !important;
 }
 
 /* ..... selected state ..... */
 
-radio[selected="true"] > .radio-check-box1 > .radio-check-box2 {
+radio[selected="true"] > .radio-spacer-box > .radio-check-box1 > .radio-check-box2 {
   list-style-image: url("chrome://global/skin/radio/radio-check.gif");
 }
-  
-radio[selected="true"][disabled="true"] > .radio-check-box2 {
+
+radio[selected="true"][disabled="true"] > .radio-spacer-box > .radio-check-box1 > .radio-check-box2 {
   list-style-image: url("chrome://global/skin/radio/radio-check-disabled.gif") !important
 }

@@ -44,7 +44,7 @@
 /* ::::: Themes ::::: */
 #skinsTree {
   height: 80px;
-}  
+}
 
 *|*.themesLink {
   margin-left: 5px;
@@ -60,16 +60,16 @@
 
 #themesLink:active {
   color: #FFCF00;
-}  
+}
 
 #previewImageContainer {
   padding: 1px;
-  height: 92px; 
+  height: 92px;
 /*  background-color: #000000; */
 }
 
 #previewImage {
-  max-width: 355px; 
+  max-width: 355px;
   min-width: 355px;
   max-height: 85px;
   min-height: 85px;
@@ -90,10 +90,4 @@
 
 #mouseWheelMode {
   width: 9em;
-}
-
-/* ::::: Smart Browsing ::::: */
-
-#disabledDomains {
-  max-height: 13em;
 }

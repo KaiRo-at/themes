@@ -56,7 +56,7 @@ tooltip {
   background-color: #9C9CFF;
   border: 1px solid #FFCF00;
   color: #000000;
-  font: smaller;
+  font-size: smaller;
   padding: 2px;
   max-width: 40em;
 }

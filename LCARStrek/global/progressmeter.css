@@ -67,7 +67,9 @@ progressmeter[mode="undetermined"] {
 }
 
 /* ::::: statusbar progressmeter ::::: */
+
 .progressmeter-statusbar {
   margin: 0px 2px 0px 2px;
   min-width: 100px;
+  height: 16px;
 }

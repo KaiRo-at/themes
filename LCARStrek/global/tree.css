@@ -20,7 +20,7 @@
  *
  * Contributor(s):
  *   Robert Kaiser <KaiRo@KaiRo.at>
- *   Joe Hewitt (hewitt@netscape.com)                                           
+ *   Joe Hewitt (hewitt@netscape.com)
  *   Dean Tessman (dean_tessman@hotmail.com)
  *
  * Alternatively, the contents of this file may be used under the terms of
@@ -47,7 +47,7 @@
 
 tree {
   -moz-border-radius: 5px;
-  border-spacing: 0px;     
+  border-spacing: 0px;
   border: 1px solid #9C9CFF;
   background-color: #000000;
   color: #FF9F00;
@@ -159,7 +159,9 @@ treechildren::-moz-tree-line(selected) {
 /* ::::: tree separator ::::: */
 
 treechildren::-moz-tree-separator {
+  margin-top: 1px;
   border: 1px solid #9C9CFF;
+  height: 2px;
 }
 
 /* ::::: drop feedback ::::: */
@@ -179,6 +181,16 @@ treechildren::-moz-tree-drop-feedback {
 
 treechildren::-moz-tree-drop-feedback(selected) {
   background-color: #FFCF00;
+}
+
+/* ::::: tree checkbox ::::: */
+
+treechildren::-moz-tree-checkbox {
+  list-style-image: url("chrome://global/skin/tree/checkbox.gif");
+}
+
+treechildren::-moz-tree-checkbox(checked) {
+  list-style-image: url("chrome://global/skin/tree/checkbox-checked.gif");
 }
 
 /* ::::: tree progress meter ::::: */
@@ -201,7 +213,7 @@ treechildren::-moz-tree-cell-text(progressmeter) {
 
 /* ::::: tree columns ::::: */
 
-treecol { 
+treecol {
   -moz-box-align: center;
   -moz-box-pack: center;
   border: 1px solid #FF9F00;
@@ -210,13 +222,13 @@ treecol {
   padding: 1px 4px;
 }
 
-treecolpicker { 
+treecolpicker {
   -moz-box-align: center;
   -moz-box-pack: center;
   border: 1px solid transparent;
   background-color: #000000;
   padding: 1px 0px;
-}  
+}
 
 .treecol-image {
   padding: 1px;
@@ -238,7 +250,7 @@ treecol:hover:active {
   border: 1px solid #FFCF00;
   padding: 2px 3px 0px 5px;
 }
-  
+
 treecolpicker:hover {
   background-color: #FFCF00;
 }
@@ -280,6 +292,7 @@ treechildren::-moz-tree-column(insertafter) {
 
 .treecol-sortdirection {
   list-style-image: none;
+  width: 8px;  /* The image's width is 7 pixels */
 }
 
 .sortDirectionIndicator[sortDirection="ascending"] .treecol-sortdirection {
@@ -309,7 +322,7 @@ treechildren::-moz-tree-twisty {
   width: 11px; /* The image's width is 11 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
 }
-  
+
 treechildren::-moz-tree-twisty(open) {
   width: 11px; /* The image's width is 11 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
@@ -328,4 +341,18 @@ treechildren.gridlines::-moz-tree-cell {
 
 treechildren.gridlines::-moz-tree-row {
   border: none;
+}
+
+/* ::::: alternating background ::::: */
+
+treechildren[alternatingbackground="true"]::-moz-tree-row(odd) {
+  background-color: #6000CF;
+}
+
+treechildren[alternatingbackground="true"]::-moz-tree-row(odd, selected) {
+  background-color: #E7ADE7;
+}
+
+treechildren[alternatingbackground="true"]::-moz-tree-row(odd, selected, focus) {
+  background-color: #E7ADE7;
 }

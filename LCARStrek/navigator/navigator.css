@@ -35,7 +35,7 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/** Contains style definitions for the navigator application 
+/** Contains style definitions for the navigator application
  **/
 
 @import url("chrome://navigator/content/navigator.css");
@@ -99,11 +99,11 @@
 #stop-button:hover,
 #stop-button:hover:active {
   list-style-image: url("chrome://global/skin/icons/stop-hover.gif");
-} 
+}
 
 #stop-button[disabled="true"] {
   list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
-} 
+}
 
 #print-button {
   list-style-image: url("chrome://global/skin/icons/print.gif");
@@ -141,7 +141,7 @@
 }
 
 #fullscreen-exit-button > .toolbarbutton-text {
-  display: normal;
+/*   display: normal; */
 }
 
 /* ::::: small primary toolbar buttons ::::: */
@@ -205,7 +205,7 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 #nav-bar-inner {
   padding-left: 0px;
   min-width: 0px;
-  margin: 6px 4px 7px 4px; 
+  margin: 6px 4px 7px 4px;
 }
 
 #urlbar {
@@ -218,7 +218,7 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 }
 
 /* ::::: page proxy icon ::::: */
- 
+
 #page-proxy-deck,
 #page-proxy-favicon,
 #page-proxy-button {
@@ -229,17 +229,17 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 #page-proxy-deck {
   cursor: -moz-grab;
   margin: 1px 1px 1px 2px;
-}                                                                               
+}
 
 #page-proxy-button {
-  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
   padding-top: 2px;
   padding-bottom: 2px;
-} 
- 
+}
+
 #page-proxy-favicon {
   list-style-image: none;
-} 
+}
 
 /* ::::: autocomplete ::::: */
 
@@ -256,7 +256,7 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   border-top: 1px solid #FF9F00;
   background-color: #9C9CFF;
   color: #000000;
-}  
+}
 
 .autocomplete-result-popup[nomatch] > .autocomplete-search-box {
   border-top: 1px solid #9C9CFF;
@@ -264,12 +264,12 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 .autocomplete-search-engine {
   padding: 2px;
-}  
+}
 
 .autocomplete-search-engine[menuactive="true"] {
   background-color: #008484;
   color: #FFCF00;
-}  
+}
 
 .autocomplete-search-engine-img {
   margin-right: 4px;
@@ -277,7 +277,7 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 /* ::::: go and searchbuttons ::::: */
 
-#search-button, 
+#search-button,
 #go-button {
   margin: 1px 3px 1px 0px;
 /*  min-height: 25px; */
@@ -285,7 +285,7 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   background-color: #000000;
 }
 
-#search-button:hover, 
+#search-button:hover,
 #go-button:hover {
   background-color: #FFCF00;
 }
@@ -312,6 +312,10 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 #security-button[level="broken"] {
   list-style-image:url("chrome://communicator/skin/icons/lock-broken.gif");
+}
+
+#privacy-button {
+  list-style-image: url("chrome://communicator/skin/cookie/taskbar-cookie.gif");
 }
 
 #popupIcon {
