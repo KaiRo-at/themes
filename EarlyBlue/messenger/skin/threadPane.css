@@ -1,23 +1,35 @@
-/* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
+/*
  * The contents of this file are subject to the Netscape Public
  * License Version 1.1 (the "License"); you may not use this file
  * except in compliance with the License. You may obtain a copy of
  * the License at http://www.mozilla.org/NPL/
- * 
+ *
  * Software distributed under the License is distributed on an "AS
  * IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
  * implied. See the License for the specific language governing
  * rights and limitations under the License.
- * 
+ *
  * The Original Code is Mozilla Communicator client code, released
  * March 31, 1998.
- * 
+ *
  * The Initial Developer of the Original Code is Netscape
  * Communications Corporation. Portions created by Netscape are
- * Copyright (C) 1998-1999 Netscape Communications Corporation. All
+ * Copyright (C) 1998-2001 Netscape Communications Corporation. All
  * Rights Reserved.
+ *
+ * Contributor(s):
+ *   Scott MacGregor (mscott@netscape.com)
+ *   Joe Hewitt (hewitt@netscape.com)
+ *   Robert Kaiser (KaiRo@KaiRo.at)
  */
 
+/* ===== threadPane.css ==============================================
+  == Styles for the thread pane in the Messenger 3-pane window.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: outliner rows ::::: */
 
 outliner:focus > outliner-bodybox
 {
@@ -28,6 +40,47 @@ outliner > outliner-bodybox
 {
   border: 1px solid transparent;
 }
+
+outlinerbody:-moz-outliner-cell-text(unread)
+{
+  font-weight: bold;
+}
+
+outlinerbody:-moz-outliner-cell-text(offline)
+{
+  font-style: italic;
+}
+
+/* ::::: priority colors ::::: */
+
+outlinerbody:-moz-outliner-cell-text(priority-highest)
+{
+  color:red;
+}
+
+outlinerbody:-moz-outliner-cell-text(priority-high)
+{
+  color: rgb(128, 0, 0);
+}
+
+outlinerbody:-moz-outliner-cell-text(priority-lowest)
+{
+  color: rgb(170, 170, 170);
+}
+
+outlinerbody:-moz-outliner-cell-text(priority-low)
+{
+  color: rgb(85, 85, 85);
+}
+
+/* ::::: message icons ::::: */
+
+/* ::::: message column icons ::::: */
+
+/* ..... thread column ..... */
+
+
+
 
 outlinercol.threadColumnHeader {
   list-style-image: url("chrome://messenger/skin/unthreadcol.gif");
@@ -53,189 +106,61 @@ outlinerbody:-moz-outliner-image(threadCol, container, hasUnread) {
   list-style-image: url("chrome://messenger/skin/thread-new-closed.gif");
 }
 
-outlinerbody:-moz-outliner-image(threadCol, container, open, hasUnread) {
+outlinerbody:-moz-outliner-image(threadCol, container, hasUnread, open) {
   list-style-image: url("chrome://messenger/skin/thread-new-open.gif");
 }
+
+/* ..... read column ..... */
 
 outlinercol.readColumnHeader {
   list-style-image: url("chrome://messenger/skin/unreadmail.gif");
 }
 
 outlinerbody:-moz-outliner-image(unreadButtonColHeader) {
-list-style-image: url("chrome://messenger/skin/readcol-read.gif");
+  list-style-image: url("chrome://messenger/skin/readmail.gif");
 }
 
 outlinerbody:-moz-outliner-image(unreadButtonColHeader, unread) {
-list-style-image: url("chrome://messenger/skin/readcol-unread.gif");
+  list-style-image: url("chrome://messenger/skin/unreadmail.gif");
 }
+
+/* ..... flag column ..... */
 
 outlinercol.flagColumnHeader {
   list-style-image: url("chrome://messenger/skin/flaggedmail.gif");
 }
 
 outlinerbody:-moz-outliner-image(flaggedCol) {
-list-style-image: url("chrome://messenger/skin/readcol-read.gif");
+  list-style-image: url("chrome://messenger/skin/readmail.gif");
 }
 
 outlinerbody:-moz-outliner-image(flaggedCol, flagged) {
-list-style-image: url("chrome://messenger/skin/flagcol-flagged.gif");
-}
-
-outlinerbody:-moz-outliner-cell-text(unread)
-{
-  font-weight: bold;
-}
-
-outlinerbody:-moz-outliner-cell-text(offline)
-{
-  font-style: italic;
-}
-
-outlinerbody:-moz-outliner-cell-text(priority-highest)
-{
-  color:red;
-}
-
-outlinerbody:-moz-outliner-cell-text(priority-high)
-{
-  color: rgb(128, 0, 0);
-}
-
-outlinerbody:-moz-outliner-cell-text(priority-lowest)
-{
-  color: rgb(170, 170, 170);
-}
-
-outlinerbody:-moz-outliner-cell-text(priority-low)
-{
-  color: rgb(85, 85, 85);
-}
-
-
-
-
-
-
-
-.tree-thread-row.unread-true {
-	font-weight: bold;
-}
-
-.prioritycol-highest
-{
-	color:red;
-}
-
-.prioritycol-high
-{
-	color: rgb(128, 0, 0);
-}
-
-.prioritycol-lowest
-{
-	color: rgb(170, 170, 170);
-}
-
-.prioritycol-low
-{
-	color: rgb(85, 85, 85);
-}
-
-.tree-cell-threadpane-icon {
-  list-style-image: url("chrome://messenger/skin/message-mail.gif");
-  min-height: 14px;
-}
-
-.tree-cell-threadpane-icon.status-new {
-  list-style-image: url("chrome://messenger/skin/message-mail-new.gif");
-}
-
-.tree-cell-threadpane-icon.message-type-news {
-  list-style-image: url("chrome://messenger/skin/message-news.gif");
-}
-
-.tree-cell-threadpane-icon.message-type-news.status-new {
-  list-style-image: url("chrome://messenger/skin/message-news-new.gif");
-}
-
-.tree-cell-threadpane-icon.message-type-mail.has-attachment-true {
-  list-style-image: url("chrome://messenger/skin/message-mail-attach.gif");
-}
-
-.tree-cell-threadpane-icon.is-imap-deleted-true {
-  list-style-image: url("chrome://messenger/skin/message-mail-imapdelete.gif");
-}
-
-.unreadcol-false {
-  list-style-image: url("chrome://messenger/skin/readmail.gif");
-  min-height: 14px;
-}
-
-.unreadcol-true {
-  list-style-image: url("chrome://messenger/skin/unreadmail.gif");
-}
-
-.flagcol-unflagged {
-  list-style-image: url("chrome://messenger/skin/readmail.gif");
-  min-height: 14px;
-}
-
-.flagcol-flagged {
   list-style-image: url("chrome://messenger/skin/flaggedmail.gif");
 }
 
-treeitem > treerow > .threadcol-thread {
-  list-style-image: url("chrome://messenger/skin/thread-closed.gif");
+/* ..... subject column ..... */
+
+outlinerbody:-moz-outliner-image(subjectCol) {
+  list-style-image: url("chrome://messenger/skin/message-mail.gif");
 }
 
-treeitem[open="true"] > treerow > .threadcol-thread {
-  list-style-image: url("chrome://messenger/skin/thread-open.gif");
+outlinerbody:-moz-outliner-image(subjectCol, unread) {
+  list-style-image: url("chrome://messenger/skin/message-mail-new.gif");
 }
 
-treeitem > treerow > .threadcol-threadWithUnread {
-  list-style-image: url("chrome://messenger/skin/thread-new-closed.gif");
+outlinerbody:-moz-outliner-image(subjectCol, attach) {
+  list-style-image: url("chrome://messenger/skin/message-mail-attach.gif");
 }
 
-treeitem[open="true"] > treerow > .threadcol-threadWithUnread {
-  list-style-image: url("chrome://messenger/skin/thread-new-open.gif");
+outlinerbody:-moz-outliner-image(subjectCol, imapdeleted) {
+  list-style-image: url("chrome://messenger/skin/message-mail-imapdelete.gif");
 }
 
-.threadColumnHeader[currentView="threaded"]
-  {
-    list-style-image: url("chrome://messenger/skin/threadcol.gif");
-  text-align: left;
-  }
+outlinerbody:-moz-outliner-image(subjectCol, news) {
+  list-style-image: url("chrome://messenger/skin/message-news.gif");
+}
 
-.threadColumnHeader[currentView="unthreaded"]
-  {
-    list-style-image: url("chrome://messenger/skin/unthreadcol.gif");
-  text-align: center;
-  }
-
-.readColumnHeader
-  {
-    list-style-image: url("chrome://messenger/skin/unreadmail.gif");
-  text-align: center;
-  }
-
-.flagColumnHeader
-  {
-    list-style-image: url("chrome://messenger/skin/flaggedmail.gif");
-  text-align: center;
-  }
-
-treeitem[empty="true"] > treerow > .tree-cell-threadpane-icon > .tree-cell-twisty 
-  {
-    visibility            : hidden;
-  }    
-
-#threadTree  
-  {
-    border-top            : none;
-  }
-
-
-
-
-
+outlinerbody:-moz-outliner-image(subjectCol, news, unread) {
+  list-style-image: url("chrome://messenger/skin/message-news-new.gif");
+}
 
