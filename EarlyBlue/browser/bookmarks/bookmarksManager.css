@@ -1,0 +1,56 @@
+#bookmark-window toolbarbutton {
+  -moz-box-orient: vertical;
+}
+
+toolbarbutton#newbookmark {
+  list-style-image: url("chrome://browser/skin/bookmarks/new-bookmark.gif");
+}
+toolbarbutton#newbookmark[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/bookmarks/new-bookmark-disabled.gif");
+}
+
+toolbarbutton#newfolder {
+  list-style-image: url("chrome://browser/skin/bookmarks/new-folder.gif");
+}
+toolbarbutton#newfolder[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/bookmarks/new-folder-disabled.gif");
+}
+
+toolbarbutton#newseparator {
+  list-style-image: url("chrome://browser/skin/bookmarks/new-seperator.gif");
+}
+toolbarbutton#newseparator[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/bookmarks/new-seperator-disabled.gif");
+}
+
+toolbarbutton#moveBookmark {
+  list-style-image: url("chrome://browser/skin/bookmarks/move.gif");
+}
+toolbarbutton#moveBookmark[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/bookmarks/move-disabled.gif");
+}
+
+toolbarbutton#properties {
+  list-style-image: url("chrome://browser/skin/bookmarks/properties.gif");
+}
+toolbarbutton#properties[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/bookmarks/properties-disabled.gif");
+}
+
+toolbarbutton#rename {
+  list-style-image: url("chrome://browser/skin/bookmarks/rename.gif");
+}
+toolbarbutton#rename[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/bookmarks/rename-disabled.gif");
+}
+
+toolbarbutton#delete {
+  list-style-image: url("chrome://browser/skin/bookmarks/trash.gif");
+}
+toolbarbutton#delete[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/bookmarks/trash-disabled.gif");
+}
+
+bookmarks-tree tree {
+  border: 0px !important;
+}

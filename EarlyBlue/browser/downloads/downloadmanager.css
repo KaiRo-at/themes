@@ -4,7 +4,9 @@
 
 #downloadView {
   background-color: #FFFFFF;
-  padding: 10px 0px 10px 10px;
+  border: 1px inset #CCD0DD;
+  margin: 0px 2px;
+  padding: 0px;
 }
 
 download {
@@ -45,8 +47,7 @@ listcell {
 
 #download-splitter {
   border: none;
-  border-bottom: 1px solid ThreeDLightShadow;
-  -moz-appearance: toolbox;
+  border-bottom: 1px solid #9999CC;
 }
 
 #close-button {

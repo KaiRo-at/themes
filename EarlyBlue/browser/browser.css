@@ -52,11 +52,17 @@ toolbarbutton.bookmark-item {
   min-width: 0;
   max-width: 13em;
   min-height: 20px;
+  padding: 1px;
+}
+
+toolbarbutton.bookmark-item:hover:active,
+toolbarbutton.bookmark-item[open="true"] {
+  padding: 2px 0px 0px 2px;
 }
 
 .bookmark-item > .toolbarbutton-icon {
   width: 16px;
-  height: 16px; 
+  height: 16px;
 }
 
 /* Prevent [mode="icons"] from hiding the label */
@@ -137,17 +143,10 @@ menuitem.bookmark-item {
   list-style-image: url("chrome://browser/skin/icons/bookmark-folder-open.gif");
 }
 
-.groupmark-item {
-  width: 16px;
-  height: 16px;
-  margin: 0px 2px;
-  padding: 1px 3px 1px 2px;
-  list-style-image: url("chrome://browser/skin/icons/bookmark-group.gif");
-}
-
 /* ::::: primary toolbar buttons ::::: */
 
-.toolbarbutton-1 {
+.toolbarbutton-1,
+.toolbarbutton-1 > .toolbarbutton-menubutton-button {
   -moz-box-orient: vertical;
   min-width: 0px;
 }
@@ -156,7 +155,7 @@ toolbarbutton:not([disabled="true"]):hover,
 menubutton:not([disabled="true"]):hover,
 toolbarbutton:not([disabled="true"]):hover:active,
 menubutton:not([disabled="true"]):hover:active {
-  color: ButtonText !important;
+  color: #000000 !important;
 }
 
 /*
@@ -354,18 +353,17 @@ toolbar[iconsize="small"] #history-button[disabled="true"] {
 #window-controls {
   -moz-box-align: center;
   padding: 0 2px 0 4px;
-  border-left: 2px solid;
-  -moz-border-left-colors: ThreeDHighlight ThreeDShadow;
+  border-left: 2px groove #CCD0DD;
 }
 
 #minimize-button {
-  list-style-image: url("chrome://navigator/skin/icons/minimize.gif");
+  list-style-image: url("chrome://navigator/skin/icons/win-minimize.gif");
 }
 #restore-button {
-  list-style-image: url("chrome://navigator/skin/icons/restore.gif");
+  list-style-image: url("chrome://navigator/skin/icons/win-restore.gif");
 }
 #close-button {
-  list-style-image: url("chrome://navigator/skin/icons/close.gif");
+  list-style-image: url("chrome://navigator/skin/icons/win-close.gif");
 }
 
 /* ::::: nav-bar-inner ::::: */
@@ -397,11 +395,12 @@ toolbar[iconsize="small"] #history-button[disabled="true"] {
 }
 
 #page-proxy-button {
-  list-style-image: url("chrome://browser/skin/icons/bookmark-item.png") !important;
+  list-style-image: url("chrome://browser/skin/icons/bookmark-item.gif") !important;
+}
 
 #page-proxy-button[pageproxystate="invalid"] {
   cursor: default;
-  list-style-image: none !important;
+  list-style-image: url("chrome://browser/skin/icons/bookmark-item.gif") !important;
 }
 
 
@@ -419,15 +418,15 @@ statusbarpanel#statusbar-display {
 /* ::::: autocomplete ::::: */
 
 .autocomplete-treebody:-moz-tree-cell-text(treecolAutoCompleteComment) {
-  color: #555566;
+  color: #336699;
 }
 
 /* ::::: go button ::::: */
 
 #go-button,
 #go-container {
-  -moz-appearance: none;
   background-color: transparent;
+  border: none;
   margin: 0;
   padding: 0;
   min-width: 0;
@@ -435,30 +434,20 @@ statusbarpanel#statusbar-display {
 }
 
 #go-button {
-  border-width: 1px !important;
-  -moz-border-top-colors: transparent;
-  -moz-border-right-colors: transparent;
-  -moz-border-bottom-colors: transparent;
-  -moz-border-left-colors: transparent;
+  border: 1px solid transparent;
 }
 
 #go-button:hover {
-  -moz-border-top-colors: ThreeDHighlight;
-  -moz-border-right-colors: ThreeDShadow;
-  -moz-border-bottom-colors: ThreeDShadow;
-  -moz-border-left-colors: ThreeDHighlight;
+  border: 1px outset #CCD0DD;
 }
 
 #go-button:hover:active {
-  -moz-border-top-colors: ThreeDShadow;
-  -moz-border-right-colors: ThreeDHighlight;
-  -moz-border-bottom-colors: ThreeDHighlight;
-  -moz-border-left-colors: ThreeDShadow;
+  border: 1px inset #CCD0DD;
 }
 
 #go-button[disabled="true"] {
   list-style-image: url("chrome://browser/skin/icons/go-disabled.gif");
-  border-color: transparent;
+  border: 1px solid transparent;
 }
 
 #go-button > .button-box > .button-text {
@@ -470,7 +459,7 @@ statusbarpanel#statusbar-display {
 }
 
 #sidebar {
-  background-color: Window;
+  background-color: #CCD0DD;
 }
 
 /* ::::: content area ::::: */
@@ -495,7 +484,7 @@ statusbarpanel#statusbar-display {
 
 #security-button[level="broken"] {
   list-style-image: url("chrome://browser/skin/icons/security-broken.gif");
-  display: -moz-box;
+ display: -moz-box;
 }
 
 #page-report-button {
@@ -511,7 +500,6 @@ statusbarpanel#statusbar-display {
 /* ::::: throbber ::::: */
 
 #navigator-throbber {
-  -moz-appearance: none;
   -moz-user-focus: ignore;
   margin: 0 !important;
   border: none !important;
@@ -539,13 +527,13 @@ toolbar[mode="text"] #navigator-throbber[busy="true"] {
 /*
 #content .tabs-closebutton {
   list-style-image: url("chrome://browser/skin/Close-tab.png");
-  -moz-image-region: rect(0px, 20px, 16px, 0px);
+  -moz-image-region: rect(0px, 18px, 14px, 0px);
 }
 
 #content .tabs-closebutton:hover {
-  -moz-image-region: rect(0px, 40px, 16px, 20px);
-} */
-
+  -moz-image-region: rect(0px, 36px, 14px, 18px);
+}
+*/
 toolbarbutton.chevron {
   list-style-image: url("chrome://global/skin/toolbar/chevron.gif") !important;
 }
