@@ -45,19 +45,19 @@
 
 /* ::::: directory pane icons ::::: */
 
-treechildren:-moz-tree-image(DirCol) {
+treechildren::-moz-tree-image(DirCol) {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/addrbook.gif");
 }
 
-treechildren:-moz-tree-image(DirCol, IsMailList-true) {
+treechildren::-moz-tree-image(DirCol, IsMailList-true) {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/ablist.gif");
 }
 
-treechildren:-moz-tree-image(DirCol, IsRemote-true) {
+treechildren::-moz-tree-image(DirCol, IsRemote-true) {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook.gif");
 }
 
-treechildren:-moz-tree-image(DirCol, IsRemote-true, IsSecure-true) {
+treechildren::-moz-tree-image(DirCol, IsRemote-true, IsSecure-true) {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/secure-remote-addrbook.gif");
 }
 

@@ -243,11 +243,11 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 /* ::::: autocomplete ::::: */
 
-.autocomplete-treebody:-moz-tree-cell-text(value) {
+.autocomplete-treebody::-moz-tree-cell-text(value) {
   padding-left: 13px;
 }
 
-.autocomplete-treebody:-moz-tree-cell-text(comment) {
+.autocomplete-treebody::-moz-tree-cell-text(comment) {
   color: #E7ADE7;
 /*  font-style: italic; */
 }

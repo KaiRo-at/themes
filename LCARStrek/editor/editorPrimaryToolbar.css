@@ -229,12 +229,22 @@
   list-style-image: url("chrome://editor/skin/icons/cut.gif");
 }
 
+#cutButton:hover,
+#cutButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/cut-hover.gif");
+}
+
 #cutButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/cut-disabled.gif") !important;
 }
 
 #copyButton {
   list-style-image: url("chrome://editor/skin/icons/copy.gif");
+}
+
+#copyButton:hover,
+#copyButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/copy-hover.gif");
 }
 
 #copyButton[disabled="true"] {
@@ -245,14 +255,37 @@
   list-style-image: url("chrome://editor/skin/icons/paste.gif");
 }
 
+#pasteButton:hover,
+#pasteButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/paste-hover.gif");
+}
+
 #pasteButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/paste-disabled.gif") !important;
 }
 
 #findButton {
-  list-style-image: url("chrome://editor/skin/icons/cut.gif");
+  list-style-image: url("chrome://editor/skin/icons/find.gif");
+}
+
+#findButton:hover,
+#findButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/find-hover.gif");
 }
 
 #findButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/cut-disabled.gif") !important;
+  list-style-image: url("chrome://editor/skin/icons/find-disabled.gif") !important;
+}
+
+#formButton {
+  list-style-image: url("chrome://editor/skin/icons/form.gif");
+}
+
+#formButton[buttonover="true"],
+#formButton[buttondown="true"] {
+  list-style-image: url("chrome://editor/skin/icons/form-hover.gif");
+}
+
+#formButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/form-disabled.gif") !important;
 }
