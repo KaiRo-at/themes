@@ -43,7 +43,8 @@
 }
 
 #imgURLBarIcon {
-  list-style-image: url("chrome://communicator/skin/bookmarks/location.gif");
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
+  margin: 2px;
 }
 
 #bxSearch {
@@ -52,6 +53,8 @@
 
 #splPanels {
   width: 5px;
+  border-top: 0px;
+  border-bottom: 0px;
 }
 
 /* ::::: toolbar buttons ::::: */
@@ -83,3 +86,8 @@
   list-style-image: url("chrome://inspector/skin/btnFind-dis.gif");
 }
 
+/* HACK: this button has no id !!! */
+#bxURLBarContainer + toolbarbutton {
+  margin: 2px 0px 4px 0px;
+  font-weight: bold;
+}

@@ -54,3 +54,7 @@
   width: 5em;
 }
 
+#splTrees {
+  border-left: 0px;
+  border-right: 0px;
+}

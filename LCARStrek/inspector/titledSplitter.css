@@ -37,10 +37,8 @@
  * ***** END LICENSE BLOCK ***** */
 
 .titled-splitter {
-  border-top: 1px outset InactiveCaption;
-  border-bottom: 1px outset InactiveCaption;
-  background-color: InactiveCaption;
-  color: InactiveCaptionText;
+  border-left: 0px;
+  border-right: 0px;
   cursor: default;
 }
 
@@ -67,21 +65,18 @@ box[orient="vertical"] > .titled-splitter {
 }
 
 .titledsplitter-closebutton {
-  -moz-binding: none;
-  margin: 1px;
-  border: 1px outset ThreeDFace;
   padding: 2px;
   min-width: 0px;
-  background-color: ThreeDFace;
 }
 
 .titledsplitter-closeimage {
   list-style-image: url("chrome://inspector/skin/titledsplitter-close.gif");
 }
 
-.titledsplitter-closebutton:hover:active {
-  border-style: inset;
-  padding: 3px 1px 1px 3px;
+.titledsplitter-closebutton:hover > .titledsplitter-closeimage {
+  list-style-image: url("chrome://inspector/skin/titledsplitter-close-act.gif");
 }
 
-
+.titledsplitter-closebutton:hover:active {
+  padding: 3px 1px 1px 3px;
+}
