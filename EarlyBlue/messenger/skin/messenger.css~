@@ -116,7 +116,7 @@ iframe {
 
 #button-file[open="true"] > .button-internal-box {
 	border: 1px inset #CCCCDD;
-        padding               : 1px 0px 0px 2px;
+        padding               : 2px 0px 0px 2px;
 }
 
 #button-file > .button-internal-box 
@@ -145,6 +145,10 @@ iframe {
 
 #button-mark[disabled="true"] {
 	list-style-image:url("chrome://messenger/skin/mark_dis.gif");
+}
+
+#button-mark menuitem {
+	list-style-image:url("chrome://messenger/skin/mark.gif");
 }
 
 #button-delete {
@@ -347,5 +351,6 @@ searchvalue {
 searchterm {
  -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchterm);
 }
+
 
 

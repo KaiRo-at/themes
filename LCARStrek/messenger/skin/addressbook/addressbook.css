@@ -137,12 +137,20 @@ tree[class="abResults"] treeitem > treerow > treecell.cardicon {
 	list-style-image:url("chrome://messenger/skin/addressbook/newcard.gif");
 }
 
+#button-newcard:hover {
+	list-style-image:url("chrome://messenger/skin/addressbook/newcard-hover.gif");
+}
+
 #button-newcard[disabled="true"] {
 	list-style-image:url("chrome://messenger/skin/addressbook/newcard_dis.gif");
 }
 
 #button-newlist {
 	list-style-image:url("chrome://messenger/skin/addressbook/newlist.gif");
+}
+
+#button-newlist:hover {
+	list-style-image:url("chrome://messenger/skin/addressbook/newlist-hover.gif");
 }
 
 #button-newlist[disabled="true"] {
@@ -153,6 +161,10 @@ tree[class="abResults"] treeitem > treerow > treecell.cardicon {
 	list-style-image:url("chrome://messenger/skin/addressbook/edit.gif");
 }
 
+#button-editcard:hover {
+	list-style-image:url("chrome://messenger/skin/addressbook/edit-hover.gif");
+}
+
 #button-editcard[disabled="true"] {
 	list-style-image:url("chrome://messenger/skin/addressbook/edit_dis.gif");
 }
@@ -161,20 +173,46 @@ tree[class="abResults"] treeitem > treerow > treecell.cardicon {
 	list-style-image:url("chrome://messenger/skin/addressbook/newmsgab.gif");
 }
 
+#button-newmessage:hover {
+	list-style-image:url("chrome://messenger/skin/addressbook/newmsgab-hover.gif");
+}
+
 #button-newmessage[disabled="true"] {
 	list-style-image:url("chrome://messenger/skin/addressbook/newmsgab_dis.gif");
 }
 
 #button-delete {
+	list-style-image:url("chrome://messenger/skin/addressbook/trash.gif");
+}
+
+#button-delete:hover {
+	list-style-image:url("chrome://messenger/skin/addressbook/trash-hover.gif");
+}
+
+#button-delete[disabled="true"] {
+	list-style-image:url("chrome://messenger/skin/addressbook/trash_dis.gif");
+}
+
+/*
+#button-delete {
 	list-style-image:url("chrome://messenger/skin/addressbook/trash.gif") !important;
+}
+
+#button-delete:hover {
+	list-style-image:url("chrome://messenger/skin/addressbook/trash-hover.gif") !important;
 }
 
 #button-delete[disabled="true"] {
 	list-style-image:url("chrome://messenger/skin/addressbook/trash_dis.gif") !important;
 }
+*/
 
 #button-stop {
 	list-style-image:url("chrome://global/skin/stop.gif");
+}
+
+#button-stop:hover {
+	list-style-image:url("chrome://global/skin/stop-hover.gif");
 }
 
 #button-stop[disabled="true"] {
@@ -183,6 +221,10 @@ tree[class="abResults"] treeitem > treerow > treecell.cardicon {
 
 #button-search {
 	list-style-image:url("chrome://global/skin/search.gif");
+}
+
+#button-search:hover {
+	list-style-image:url("chrome://global/skin/search-hover.gif");
 }
 
 #button-search[disabled="true"] {
@@ -208,3 +250,4 @@ treeitem[empty="true"] > treerow > treecell > .tree-cell-twisty {
   list-style-image: none !important;                                             
                                                                                                                                                
 }    
+

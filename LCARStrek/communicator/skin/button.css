@@ -246,7 +246,7 @@
   {
     font                  : inherit;
     border                : none;
-    padding               : 1px;
+    padding               : 0px;
     margin                : 0px;
   }
 
@@ -258,7 +258,8 @@
 .button-toolbar-4:hover:active 
   {
     text-decoration       : none;
-    padding               : 2px 0px 0px 2px;
+/*    padding               : 2px 0px 0px 2px; */
+    padding               : 0px;
   }
   
 menubutton.button-toolbar-4
@@ -280,12 +281,18 @@ menubutton.button-toolbar-4
   }
 
 .button-toolbar-4 > .button-internal-box,
-.button-toolbar-4:hover:active > .button-internal-box,
 .button-toolbar-4 > .menubutton-internal-box
   {
     border                : none;
-    padding               : 0px;
-    padding-left          : 2px;
+    padding               : 1px;
+    padding-left          : 3px;
   }
+
+.button-toolbar-4:hover:active > .button-internal-box,
+.button-toolbar-4:hover:active > .menubutton-internal-box
+  {
+    padding               : 2px 0px 0px 4px;
+  }
+
 
 

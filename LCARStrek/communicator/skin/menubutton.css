@@ -90,6 +90,12 @@
       padding               : 2px 1px 0px 3px;
     }
 
+ .button-toolbar-4:hover:active,
+ .button-toolbar-4[open="true"]
+    {
+      padding               : 0px;
+    }
+
 /** 
  * Navigation bar style menubuttons 
  **/
@@ -226,3 +232,4 @@ menubutton > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menub
 /*    padding-bottom           : 17px;  */
     padding-bottom           : 24px;  
   }
+

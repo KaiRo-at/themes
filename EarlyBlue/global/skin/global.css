@@ -114,6 +114,7 @@
   statusbarpanel
     {
       padding             : 0px 1px 0px 1px;
+      vertical-align      : middle;
     }
 
   .statusbar-panel-icon
@@ -247,3 +248,4 @@
   {
     border                : 1px solid #000000;
   }
+
