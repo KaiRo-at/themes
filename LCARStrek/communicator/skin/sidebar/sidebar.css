@@ -26,12 +26,11 @@
 }
 
 #sidebar-splitter {
-    -moz-border-radius: 0px 5px 5px 0px;
-    margin: 0px 3px 3px 0px;
+    border-top: none;
 }
 
 #sidebar-box {
-    margin: 0px 3px 3px 0px;
+    margin-bottom: 3px;
     border: none;
 }
 
@@ -87,7 +86,7 @@
  * texttab folder lookalike e.g. for sidebar panel headers
  */
   .box-texttab
-    {
+   {
       -moz-binding        : url("chrome://communicator/content/sidebar/sidebarBindings.xml#texttab");
       -moz-border-radius  : 5px;
       border-top          : 3px solid black;
@@ -174,3 +173,5 @@
       font-weight         : bold;
     }
     
+
+
