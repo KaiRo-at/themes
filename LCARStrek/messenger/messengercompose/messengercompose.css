@@ -179,6 +179,11 @@ outlinerbody:-moz-outliner-image(remote-err) {
   -moz-binding: url("chrome://messenger/content/messengercompose/mailComposeBindings.xml#fromMenuitem");
 }
 
+.composemenu-text-2 {
+  font-style: italic;
+  color: #8050B0;
+}
+
 /* ::::: LCARStrek layout corrections ::::: */
 
 #msgheaderstoolbar-box {
@@ -189,6 +194,11 @@ outlinerbody:-moz-outliner-image(remote-err) {
 #addresses-box,
 #attachments-box {
   padding: 1px 5px;
+}
+
+#addresses-box > hbox > label,
+#attachments-box > label {
+  margin-left: 0px;
 }
 
 #msgIdentity,

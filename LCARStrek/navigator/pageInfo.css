@@ -62,3 +62,7 @@ textbox.header {
   margin: 1em;
   border: 2px solid #9C9CFF;
 }
+
+.fixedsize {
+  height: 14.5em;
+}

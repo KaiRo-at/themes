@@ -44,16 +44,32 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-end.gif");
 }
 
+.home-arrow:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-end-hover.gif");
+}
+
 .end-arrow {
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-end.gif");
+}
+
+.end-arrow:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-end-hover.gif");
 }
 
 .last-arrow {
   list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp.gif");
 }
 
+.last-arrow:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-hover.gif");
+}
+
 .next-arrow {
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp.gif");
+}
+
+.next-arrow:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-hover.gif");
 }
 
 /* ...... scale in/decrement ..... */
@@ -62,8 +78,16 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp.gif");
 }
 
+.up-arrow:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp-hover.gif");
+}
+
 .down-arrow {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp.gif");
+}
+
+.down-arrow:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp-hover.gif");
 }
 
 /* ..... orientation ..... */

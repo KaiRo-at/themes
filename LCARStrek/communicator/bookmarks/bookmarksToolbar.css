@@ -67,6 +67,10 @@ toolbarbutton.bookmark-item > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 
+.bookmark-group {
+  list-style-image: url(chrome://communicator/skin/bookmarks/bookmark-group.gif) !important;
+}
+
 toolbarbutton.bookmark-item[disabled="true"],
 toolbarbutton.bookmark-item[disabled="true"]:hover,
 toolbarbutton.bookmark-item[disabled="true"]:hover:active {
@@ -98,6 +102,11 @@ toolbarbutton.bookmark-item[dragover-left="true"] {
     
 toolbarbutton.bookmark-item[dragover-right="true"] {
   border-right: 2px solid #008484;
+}
+
+toolbarbutton.bookmark-item[dragover-top="true"] {
+  background-color: #008484;
+  color: #FFCF00;
 }
 
 /* ::::: bookmark menus ::::: */

@@ -35,13 +35,13 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://global/skin/);
+@import url("chrome://global/skin/");
 @import url("chrome://communicator/content/communicator.css");
-@import url(chrome://communicator/skin/brand.css);
-@import url(chrome://communicator/skin/button.css);
-@import url(chrome://communicator/skin/formatting.css);
+@import url("chrome://communicator/skin/brand.css");
+@import url("chrome://communicator/skin/button.css");
+@import url("chrome://communicator/skin/formatting.css");
 /* the line below is only LCARStrek */
-@import url(chrome://communicator/skin/toolbar.css);
+@import url("chrome://communicator/skin/toolbar.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
 
