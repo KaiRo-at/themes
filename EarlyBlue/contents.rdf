@@ -19,6 +19,10 @@
     <chrome:packages>
       <RDF:Seq about="urn:mozilla:skin:EarlyBlue/0.7:packages">
         <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:global"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:communicator"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:navigator"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:messenger"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:editor"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
@@ -26,6 +30,12 @@
   <!-- Version Information.  State that we work only with a certain version of this package. -->
   <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:global"
     chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:communicator"
+    chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:navigator"
+    chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:messenger"
+    chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:editor"
+    chrome:skinVersion="0.9.4"/>
 </RDF:RDF>
-
-
