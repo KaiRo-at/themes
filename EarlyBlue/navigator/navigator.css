@@ -261,7 +261,7 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 }
 
 #popupIcon {
-  list-style-image:url("chrome://communicator/skin/icons/popup-blocked.gif");
+  list-style-image:url("chrome://navigator/skin/icons/popup-blocked.gif");
 }
 
 /* ::::: personal toolbar ::::: */
