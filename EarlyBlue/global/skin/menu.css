@@ -1,0 +1,204 @@
+ 
+menubar 
+  {
+    background-color      : #CCD0DD;
+    border-bottom         : 1px solid #9999CC;
+    border-right          : 1px solid #9999CC;
+  }
+
+menubar > toolbargrippy 
+  {
+/*    display               : none; */
+  }
+
+menu, menuitem  
+  {
+    color                 : #000000;
+    vertical-align        : middle;
+  }
+
+menuitem[default="true"]
+  {
+    font-weight           : bold;
+  }  
+  
+menu[disabled="true"], menuitem[disabled="true"],
+menu[menuactive="true"][disabled="true"],
+menuitem[menuactive="true"][disabled="true"]
+  {
+	  color                 : #999999;
+  }
+
+/* XXX menupopups have to have a color explicitly specified. this is a bug */
+menupopup, popup 
+  {
+    background-color      : #CCD0DD;
+    border                : 1px outset #CCD0DD;
+  }
+
+menupopup > menu, popup > menu,
+menupopup > menuitem, popup > menuitem
+  {
+    max-width             : 250px;
+    min-width             : 125px;
+    margin-left           : 0px;
+    margin-right          : 0px;
+    margin-top            : 0px;
+    margin-bottom         : 0px;
+  }
+
+menuseparator 
+  {
+    border                : 1px inset #CCD0DD; 
+    margin                : 2px 2px 2px 2px;
+  }
+
+menubar > menu 
+  {
+    border                : 1px solid #CCD0DD;
+    padding               : 2px 0px 2px 3px;
+    margin                : 0px 2px 1px 0px;
+  }
+
+menupopup > menu, menupopup > menuitem,
+popup > menu, popup > menuitem
+  {
+    padding               : 2px;
+  }
+
+menubar > menu[menuactive="true"] 
+  {
+    border                : 1px outset #CCD0DD;
+  }
+
+menubar > menu[menuactive="true"][open="true"] 
+  {
+    border                : 1px inset #CCD0DD;
+  }
+
+menupopup > menu[menuactive="true"],
+menupopup > menuitem[menuactive="true"],
+popup > menu[menuactive="true"],
+popup > menuitem[menuactive="true"]
+  {
+    background-color      : #336699;
+    color                 : #FFFFFF;
+  }
+
+
+/** 
+ * Atomic sub-parts of standard menus
+ **/
+.menu-right 
+  {
+    margin                : 0px 0px 0px 6px;
+    width                 : 8px;
+    text-align            : center;
+    list-style-image      : url("chrome://global/skin/menu-arrow.gif");
+  }
+
+.menu-iconic-left 
+  {
+    color                 : inherit;
+    margin                : 0px 2px 0px 0px;
+    width                 : 13px;
+    text-align            : center;
+    list-style-image      : inherit;
+  }
+
+.menubar-left 
+  {
+    color                 : inherit;
+    margin                : 0px 2px 0px 0px;
+  }
+
+.menu-iconic-text, .menu-iconic-accel, .menu-text, .menu-accel 
+  {
+    color                 : inherit;
+    margin                : 0px 2px 0px 0px;
+  }
+
+.menu-text 
+  {
+    padding-left          : 15px;
+    font-weight           : inherit;
+  }
+
+.menu-accel 
+  {
+    margin-left           : 4px;
+    padding-right         : 14px;
+  }
+
+.menu-iconic-accel 
+  {
+    margin-left           : 4px;
+  }
+
+.menubar-text 
+  {
+    color                 : inherit;
+    margin-right          : 2px;
+  }
+
+menuitem[checked="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-check.gif");
+  }
+
+menuitem[checked="true"][disabled="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-check-disabled.gif");
+  }
+
+menuitem[checked="true"][menuactive="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-check-hover.gif");
+  }
+
+.menu-right[disabled="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-arrow-disabled.gif");
+  }
+
+.menu-right[menuactive="true"][disabled="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-arrow-disabled.gif");
+  }
+
+.menu-right[menuactive="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-arrow-hover.gif");
+  }
+
+/** Tooltips (tooltip <popup> element)
+ *  class="tooltip"
+ **/
+.tooltip
+  {
+    background-color      : #FFFFCC;
+    border                : 1px outset #FFFFCC;
+    color                 : #000000;
+    font                  : smaller;
+    padding               : 3px;
+  }
+
+/*
+ * Autorepeatbutton
+ */
+.autorepeatbutton-up {
+    list-style-image: url("chrome://global/skin/scroll-up.gif")
+}
+
+.autorepeatbutton-down {
+    list-style-image: url("chrome://global/skin/scroll-down.gif")
+}
+
+autorepeatbutton {
+  text-align: center;
+  vertical-align: middle;
+}
+
+autorepeatbutton:hover {
+  background-color: #336699;
+}

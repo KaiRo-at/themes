@@ -1,0 +1,191 @@
+
+/* NEW WIDGET LANDING: <menulist> popup */
+
+/* outer frame */
+  menulist 
+    {
+      -moz-border-radius  : 3px;
+      padding             : 0px;
+      border              : none;
+      background-color    : #000000;
+      color               : #E7ADE7;
+      margin              : 1px 5px 2px 5px;
+    }
+
+  menulist[menuactive="true"],
+  menulist:hover 
+    {
+      background-color    : #FFCF00;
+      color               : #000000;
+      border              : none;
+    }
+
+  menulist[open="true"] 
+    {
+      background-color    : #FF9F00;
+      color               : #000000;
+      border              : none;
+    }
+  
+  menulist[disabled="true"]
+    {
+      border              : none;
+      color               : #8050B0;
+    }
+    
+/* icon display frame */
+  menulist > .menu-icon 
+    {
+      -moz-border-radius  : 3px 0px 0px 3px;
+      border-left         : 1px solid #9C9CFF;
+      border-top          : 1px solid #9C9CFF;
+      border-bottom       : 1px solid #9C9CFF;
+      padding             : 2px 0px 2px 0px;
+    }  
+
+  menulist[open="true"] > .menu-icon 
+    {
+      border-left         : 1px solid #FFCF00;
+      border-top          : 1px solid #FFCF00;
+      border-bottom       : 1px solid #FFCF00;
+      padding             : 2px 0px 2px 0px;
+    }
+  
+  menulist[disabled="true"] > .menu-icon 
+    {
+      border-left         : 1px solid #8050B0;
+      border-top          : 1px solid #8050B0;
+      border-bottom       : 1px solid #8050B0;
+    }
+  
+/* text display frame */
+  menulist > .menu-text 
+    {
+      padding             : 2px 4px 2px 4px;
+      border-top          : 1px solid #9C9CFF;
+      border-bottom       : 1px solid #9C9CFF;
+      border-right        : 1px solid #9C9CFF;
+      margin-right        : 0px;
+    }
+    
+  menulist[open="true"] > .menu-text 
+    {
+      border-top          : 1px solid #FFCF00;
+      border-bottom       : 1px solid #FFCF00;
+      border-right        : 1px solid #FFCF00;
+      padding             : 2px 4px 2px 4px;
+    }
+
+  menulist[disabled="true"] > .menu-text 
+    {
+      border-top          : 1px solid #8050B0;
+      border-bottom       : 1px solid #8050B0;
+      border-right        : 1px solid #8050B0;
+      padding             : 2px 4px 2px 4px;
+    }
+
+/* drop marker display frame */
+  menulist > .menu-dropmarker 
+    {
+      -moz-border-radius  : 0px 3px 3px 0px;
+      border              : 1px solid #9C9CFF;
+      border-left         : none;
+      list-style-image    : url("chrome://global/skin/scroll-down.gif");
+      padding             : 2px;
+    }
+  
+  menulist:hover > .menu-dropmarker, 
+  menulist[open="true"] > .menu-dropmarker 
+    {
+      list-style-image    : url("chrome://global/skin/scroll-down-hover.gif");
+    }
+  
+  menulist[disabled="true"] > .menu-dropmarker
+    {
+      border              : 1px solid #8050B0;
+      list-style-image    : url("chrome://global/skin/scroll-down-disabled.gif");
+    }
+
+  menulist[open="true"] > .menu-dropmarker 
+    {
+      border              : 1px solid #FFCF00;
+      padding             : 3px 2px 1px 2px;
+    }
+
+/** rules for EDITABLE menulists (aka 'comboboxes'). 
+ **/
+
+/* outer frame */
+  menulist[editable="true"] 
+    {
+      padding             : 0px;
+    }
+
+/* icon display frame */
+  menulist[editable="true"] > .menu-icon 
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+      background-color    : white;
+      padding             : 1px;
+      border-left         : 1px solid #9C9CFF;
+      border-top          : 1px solid #9C9CFF;
+      border-right        : none;
+      border-bottom       : 1px solid #9C9CFF;
+    }
+
+/* text display frame */    
+  menulist[editable="true"] > .menu-text 
+    {
+      border-left         : none;
+      border-top          : 1px solid #9C9CFF;
+      border-right        : 1px solid #9C9CFF;
+      border-bottom       : 1px solid #9C9CFF;
+      margin              : 0px 2px 0px 0px;
+    }
+
+/* drop marker display frame */
+  menulist[editable="true"] > .menu-dropmarker 
+    {
+      border              : 1px solid #9C9CFF;
+    }
+
+  menulist[editable="true"][open="true"] > .menu-dropmarker 
+    {
+      border              : 1px solid #FFCF00;
+    }
+
+/* rules for popups and separators associated with menulists */
+/*
+  menulist > menupopup 
+    {
+      border              : 1px solid #FF9F00;
+      min-width           : 0px;
+      padding             : 0px;
+    }
+    
+  menulist > menupopup > menuseparator 
+    {
+     border-bottom       : 1px solid #FF9F00;
+    }
+*/
+  menulist > menupopup > menuitem 
+    {
+      padding             : 0px;
+      min-width: 0px;
+      max-width: auto;
+    }
+
+  menulist > menupopup > menuitem > .menu-left 
+    {
+      width               : 13px;
+    }
+
+  menulist > menupopup > menuitem[selected="true"] > .menu-left
+    {
+      list-style-image    : url(chrome://global/skin/menu-check.gif);
+    }
+  
+  menulist > menupopup > menuitem[menuactive="true"][selected="true"] > .menu-left
+    {
+      list-style-image    : url(chrome://global/skin/menu-check-hover.gif);
+    }

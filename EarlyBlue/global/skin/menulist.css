@@ -1,0 +1,160 @@
+
+/* NEW WIDGET LANDING: <menulist> popup */
+
+/* outer frame */
+  menulist 
+    {
+      padding             : 0px;
+      border              : none;
+      background-color    : #CCCCCC;
+      margin              : 1px 5px 2px 5px;
+    }
+
+  menulist[menuactive="true"],
+  menulist:hover 
+    {
+      border              : none;
+    }
+
+  menulist[open="true"] 
+    {
+      border              : none;
+    }
+  
+  menulist[disabled="true"]
+    {
+      border              : none;
+      color               : #9999CC;
+    }
+    
+/* icon display frame */
+  menulist > .menu-icon 
+    {
+      border-left         : 1px inset #CCD0DD;
+      border-top          : 1px inset #CCD0DD;
+      border-bottom       : 1px inset #CCD0DD;
+      padding             : 2px 0px 2px 0px;
+    }  
+
+  menulist[open="true"] > .menu-icon 
+    {
+      border-left         : 1px inset #CCD0DD;
+      border-top          : 1px inset #CCD0DD;
+      border-bottom       : 1px inset #CCD0DD;
+      padding             : 2px 0px 2px 0px;
+    }
+  
+/* text display frame */
+  menulist > .menu-text 
+    {
+      padding             : 2px 4px 2px 4px;
+      border-top          : 1px inset #CCD0DD;
+      border-bottom       : 1px inset #CCD0DD;
+      border-right        : 1px inset #CCD0DD;
+      margin-right        : 0px;
+    }
+    
+  menulist[open="true"] > .menu-text 
+    {
+      border-top          : 1px inset #CCD0DD;
+      border-bottom       : 1px inset #CCD0DD;
+      border-right        : 1px inset #CCD0DD;
+      padding             : 2px 4px 2px 4px;
+    }
+
+/* drop marker display frame */
+  menulist > .menu-dropmarker 
+    {
+      border              : 1px outset #CCD0DD;
+      border-left         : none;
+      list-style-image    : url("chrome://global/skin/scroll-down.gif");
+      padding             : 2px;
+    }
+  
+  menulist[disabled="true"] > .menu-dropmarker
+    {
+      list-style-image    : url("chrome://global/skin/scroll-down-disabled.gif");
+    }
+
+  menulist[open="true"] > .menu-dropmarker 
+    {
+      border              : 1px inset #CCD0DD;
+      padding             : 3px 2px 1px 2px;
+    }
+
+/** rules for EDITABLE menulists (aka 'comboboxes'). 
+ **/
+
+/* outer frame */
+  menulist[editable="true"] 
+    {
+      padding             : 0px;
+    }
+
+/* icon display frame */
+  menulist[editable="true"] > .menu-icon 
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+      background-color    : white;
+      padding             : 1px;
+      border-left         : 1px inset #CCD0DD;
+      border-top          : 1px inset #CCD0DD;
+      border-right        : none;
+      border-bottom       : 1px inset #CCD0DD;
+    }
+
+/* text display frame */    
+  menulist[editable="true"] > .menu-text 
+    {
+      border-left         : none;
+      border-top          : 1px inset #CCD0DD;
+      border-right        : 1px inset #CCD0DD;
+      border-bottom       : 1px inset #CCD0DD;
+      margin              : 0px 2px 0px 0px;
+    }
+
+/* drop marker display frame */
+  menulist[editable="true"] > .menu-dropmarker 
+    {
+      border              : 1px outset #CCD0DD;
+    }
+
+  menulist[editable="true"][open="true"] > .menu-dropmarker 
+    {
+      border              : 1px inset #CCD0DD;
+    }
+
+/* rules for popups and separators associated with menulists */
+  menulist > menupopup 
+    {
+      border              : 1px outset #CCD0DDk;
+      min-width           : 0px;
+      padding             : 0px;
+    }
+    
+  menulist > menupopup > menuseparator 
+    {
+     border-bottom       : 1px inset #CCD0DD; 
+    }
+
+  menulist > menupopup > menuitem 
+    {
+      padding             : 0px;
+      min-width: 0px;
+      max-width: auto;
+    }
+
+  menulist > menupopup > menuitem > .menu-left 
+    {
+      width               : 13px;
+    }
+
+  menulist > menupopup > menuitem[selected="true"] > .menu-left
+    {
+      list-style-image    : url(chrome://global/skin/menu-check.gif);
+    }
+  
+  menulist > menupopup > menuitem[menuactive="true"][selected="true"] > .menu-left
+    {
+      list-style-image    : url(chrome://global/skin/menu-check-hover.gif);
+    }

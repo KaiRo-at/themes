@@ -1,0 +1,32 @@
+
+#navigator-throbber
+  {
+    list-style-image      : url("chrome://global/skin/animthrob_single.gif");
+    min-width             : 36px;
+    min-height            : 36px;
+    vertical-align        : middle;
+    padding               : 1px;
+    margin                : 2px 4px 2px 1px;
+    border                : none;
+    cursor                : pointer;
+  }  
+
+#navigator-throbber[busy="true"]
+  {
+    list-style-image      : url("chrome://global/skin/animthrob.gif");
+  }
+  
+#navigator-throbber:hover:active
+  {
+    padding               : 2px 0px 0px 2px;
+  }
+
+#navigator-throbber > .button-internal-box
+  {
+    padding               : 0px;
+  }
+
+#navigator-throbber > .button-internal-box > .button-text-container
+  {
+    display               : none;
+  }  

@@ -1,0 +1,180 @@
+@import url(chrome://messenger/skin/messenger.css);
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to HTML */
+@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
+
+#MsgHeadersToolbar > .toolbar-holder {
+        background-image: none;
+        background-color: #FF9F00;
+        -moz-border-radius: 0px 8px 8px 0px;
+        padding-right: 12px;
+}
+
+#msgheaderstoolbar-box {
+        background-color: #9C9CFF;
+        border-right: 3px solid black;
+        color: black;
+}
+
+spring.spacer {
+	width: 5px;
+	height: 5px;
+}
+
+box.cleanborder {
+	margin: 10px;
+	padding: 10px;
+/*	border: 2px groove white; */
+	width: 100%;
+}
+
+box.padded {
+	margin: 10px;
+	width: 100%;
+}
+
+
+/* addressing widget */
+
+tree[class="addressingWidget"] treeitem > treerow  > treecell > box > image {
+	vertical-align: middle;
+	padding:2px;
+	border:none;
+	list-style-image: url("chrome://messenger/skin/addressbook/person.gif");
+	-moz-user-focus: ignore;
+}
+
+textfield.addressingWidget[autocomplete="true"] {
+    border              : 2px solid #FFFFFF;
+    margin              : 1px;
+}
+
+textfield.addressingWidget[autocomplete="true"][focused="true"]
+{
+    border              : 2px solid #6699cc;
+    margin              : 1px;
+}
+
+textfield.addressingWidget[autocomplete="true"] > box
+{
+    border              : none;
+}
+
+#button-send {
+	list-style-image:url("chrome://messenger/skin/messengercompose/send.gif");
+}
+
+#button-send:hover {
+	list-style-image:url("chrome://messenger/skin/messengercompose/send-hover.gif");
+}
+
+#button-send[disabled="true"] {
+	list-style-image:url("chrome://messenger/skin/messengercompose/send_dis.gif");
+}
+
+#button-address {
+	list-style-image:url("chrome://messenger/skin/messengercompose/address.gif");
+}
+
+#button-address:hover {
+	list-style-image:url("chrome://messenger/skin/messengercompose/address-hover.gif");
+}
+
+#button-address[disabled="true"] {
+	list-style-image:url("chrome://messenger/skin/messengercompose/address_dis.gif");
+}
+
+#button-attach {
+	list-style-image:url("chrome://messenger/skin/messengercompose/attach.gif");
+}
+
+#button-attach:hover {
+	list-style-image:url("chrome://messenger/skin/messengercompose/attach-hover.gif");
+}
+
+#button-attach[disabled="true"] {
+	list-style-image:url("chrome://messenger/skin/messengercompose/attach_dis.gif");
+}
+
+#button-quote {
+	list-style-image:url("chrome://messenger/skin/messengercompose/quote.gif");
+}
+
+#button-quote:hover {
+	list-style-image:url("chrome://messenger/skin/messengercompose/quote-hover.gif");
+}
+
+#button-quote[disabled="true"] {
+	list-style-image:url("chrome://messenger/skin/messengercompose/quote_dis.gif");
+}
+
+#button-spelling {
+	list-style-image:url("chrome://messenger/skin/messengercompose/spelling.gif");
+}
+
+#button-spelling:hover {
+	list-style-image:url("chrome://messenger/skin/messengercompose/spelling-hover.gif");
+}
+
+#button-spelling[disabled="true"] {
+	list-style-image:url("chrome://messenger/skin/messengercompose/spelling_dis.gif");
+}
+
+#button-save {
+	list-style-image:url("chrome://messenger/skin/messengercompose/save.gif");
+}
+
+#button-save:hover {
+	list-style-image:url("chrome://messenger/skin/messengercompose/save-hover.gif");
+}
+
+#button-save[disabled="true"] {
+	list-style-image:url("chrome://messenger/skin/messengercompose/save_dis.gif");
+}
+
+#button-stop {
+	list-style-image:url("chrome://global/skin/stop.gif");
+}
+
+#button-stop:hover {
+	list-style-image:url("chrome://global/skin/stop-hover.gif");
+}
+
+#button-stop[disabled="true"] {
+	list-style-image:url("chrome://global/skin/stop_dis.gif");
+}
+
+/* hack because of bad skinnability and hardcoded borders */
+toolbar#MsgHeadersToolbar > box > box > box {
+  border: 0px !important;
+}
+
+/* hack because of bad skinnability and hardcoded borders */
+tree#addressingWidgetTree {
+/*  border: 1px inset #CCCCDD !important; */
+}
+
+box#addressingWidget {
+  -moz-user-focus: normal;
+}
+
+tree#attachmentBucket {
+  -moz-user-focus: normal;
+/*  border: 1px inset #CCCCDD; */
+}
+
+tree#attachmentBucket > treechildren > treeitem {
+  color: #FF9F00;
+}
+
+#msgSubject {
+  -moz-user-focus: normal;
+}
+
+#msgIdentity {
+  -moz-user-focus: normal;
+}
+
+button#statusText > .button-internal-box {
+  border: 0px;
+}

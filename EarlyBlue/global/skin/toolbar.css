@@ -1,0 +1,28 @@
+
+toolbox
+  {
+    background-color      : #CCD0DD;
+  }
+  
+toolbar
+  {
+    background-color      : #CCD0DD;
+    border                : 1px outset #CCD0DD;
+  }
+
+toolbargrippy
+  {
+    background-color      : #666699;
+    border                : 1px solid #999999;
+  }
+  
+toolbar[collapsed="true"] > toolbargrippy
+  {
+    width                 : 30px;
+  }
+  
+toolbarseparator 
+  { 
+    width                 : 2em; 
+  }
+  

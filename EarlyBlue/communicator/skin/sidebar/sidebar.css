@@ -1,0 +1,164 @@
+/* 
+ * The contents of this file are subject to the Mozilla Public
+ * License Version 1.1 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of
+ * the License at http://www.mozilla.org/MPL/
+ * 
+ * Software distributed under the License is distributed on an "AS
+ * IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+ * implied. See the License for the specific language governing
+ * rights and limitations under the License.
+ * 
+ * The Original Code is Mozilla Communicator.
+ * 
+ * The Initial Developer of the Original Code is Netscape
+ * Communications Corp. Portions created by Netscape Communications
+ * Corp. are Copyright (C) 1999 Netscape Communications Corp. All
+ * Rights Reserved.
+ * 
+ * Contributor(s): Stephen Lamm <slamm@netscape.com>
+ */
+ 
+/*
+#sidebar-splitter {
+    margin-right: 0px;
+    margin-top: 0px;
+    padding: 0px;
+    border: none;
+    min-width: 10px;
+    border-left: 1px solid #9999CC;
+    border-right: 1px solid #9999CC;
+    background-color: #CCD0DD;
+    -moz-binding: url("chrome://communicator/skin/sidebar/sidebarSplitterBindings.xml#sidebar-splitter");
+}
+*/
+
+/*
+#sidebar-status-grippy {
+    padding: 2px 2px 2px 0px;
+    background-color: #CCD0DD;
+    background-image:
+       url("chrome://communicator/skin/sidebar/sidebar-open.gif"); 
+}
+#sidebar-status-grippy:hover {
+    background-image:
+       url("chrome://communicator/skin/sidebar/sidebar-open-hover.gif"); 
+}
+#sidebar-status-grippy[open="true"] {
+    background-image:
+       url("chrome://communicator/skin/sidebar/sidebar-close.gif"); 
+}
+#sidebar-status-grippy[open="true"]:hover {
+    background-image:
+       url("chrome://communicator/skin/sidebar/sidebar-close-hover.gif"); 
+}
+*/
+
+/**/
+
+#sidebar-box {
+    margin-top: 0px;
+    border: none;
+    border-bottom: 0px solid #CCD0DD;
+}
+
+.text-panel-loading {
+    margin: 5px 0px;
+}
+.image-panel-loading {
+    margin: 5px;
+    list-style-image: url("chrome://global/skin/loading.gif"); 
+}
+
+/*
+ *    Sidebar and Panel title buttons
+ */
+.sidebarheader-main {
+    color: #CCD0DD;
+    background-color: #666699;
+    border: 0px !important;
+    padding-left: 4px;
+}
+.sidebarheader-main > .sidebar-header-text {
+    font-weight: bold;
+    margin: 2px;
+}
+
+#sidebar-panel-picker > .menubutton-internal-box > .menubutton-single-icon
+  {
+      list-style-image	  : url(chrome://global/skin/mb-single-arrow-right.gif);
+  }
+
+/**
+ * texttab folder lookalike e.g. for sidebar panel headers
+ */
+  .box-texttab
+    {
+      -moz-binding        : url("chrome://communicator/content/sidebar/sidebarBindings.xml#texttab");
+      background-color    : #CCD0DD;
+      padding-top         : 2px;
+    }
+
+  .box-texttab[selected="true"] 
+    {
+      border-bottom       : 1px solid #FFFFFF;
+    }    
+    
+  .box-texttab[top-panel="true"]
+    {
+      background-color    : #666699;
+    }
+  
+  .box-texttab[first-panel-after-selected="true"] 
+    {
+      background-color    : #FFFFFF;
+    }
+
+  .box-texttab-right-space 
+    {
+      width               : 30px;
+      border-bottom       : 1px solid #000000;
+    }
+
+  .box-texttab[last-panel="true"] > .box-texttab-right-space 
+    {
+      border-bottom       : none;
+    }
+
+  .box-texttab[last-panel="true"][selected="true"] > .box-texttab-right-space 
+    {
+      border-bottom       : 1px solid #000000;
+    } 
+
+  .box-texttab-left
+    {
+      list-style-image    : url("chrome://global/skin/tab-leftedge.gif");
+    }
+
+  .box-texttab-right
+    {
+      list-style-image    : url("chrome://global/skin/tab-rightedge.gif");
+    }
+
+  .box-texttab[selected="true"] > .box-texttab-left
+    {
+      list-style-image    : url("chrome://global/skin/seltab-leftedge.gif");
+    }
+
+  .box-texttab[selected="true"] > .box-texttab-right
+    {
+      list-style-image    : url("chrome://global/skin/seltab-rightedge.gif");
+    }
+
+  .box-texttab-text-container
+    {
+      border-top          : 1px solid #000000;
+      background-color    : #CCD0DD;
+    }
+
+  .box-texttab[selected="true"] > .box-texttab-text-container
+    {
+      background-color    : #FFFFFF;
+      font-weight         : bold;
+    }
+    

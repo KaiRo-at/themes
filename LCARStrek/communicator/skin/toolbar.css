@@ -1,0 +1,124 @@
+ 
+/******* ToolBox & ToolBar *******/
+
+toolbar
+  {
+    background-color      : #000000;
+    border-bottom         : 3px solid #000000;
+    min-width             : 1px;      // DON'T DELETE.  Removes disappearance of scrollbars in content pane when window is made smaller.
+                                      // Talk to evaughan@netscape.com for details.
+  }
+
+toolbar > .toolbar-holder
+  {
+    padding-right         : 18px;
+    background-color      : #9C9CFF;
+    background-image      : url("chrome://global/skin/toolbar-endcap.gif");
+    background-repeat     : no-repeat;
+    background-position   : right;
+
+/* THE FOLLOWING LINES ARE NOT WORKING THOUGH THEY SHOULD!  BUG 24998 !!!  */
+/*    -moz-border-radius    : 0px 10px 10px 0px;
+    background-image      : url("chrome://global/skin/toolbar-bg.gif");
+    background-repeat     : repeat-y;
+    background-position   : right;
+*/
+  }
+
+toolbargrippy 
+  { 
+    -moz-border-radius    : 8px 0px 0px 8px;
+    background-color      : #FF9F00; 
+/*    background-image      : url("chrome://global/skin/taskbar-tab.gif");  */
+    background-repeat     : no-repeat;
+    border                : none;
+    border-right          : 3px solid black;
+    width                 : 15px;
+    min-height            : 16px;
+  } 
+
+toolbar[collapsed="true"]
+  {
+    min-height            : 0px;
+  }
+
+/* toolbox > box > box > toolbargrippy */
+
+toolbox > .collapsed-tray-holder > .collapsed-tray > toolbargrippy
+  {
+    width                 : 30px;
+    -moz-border-radius    : 5px 0px 0px 5px;
+    margin-bottom         : 3px;
+    min-height            : 10px;
+    max-height            : 10px;
+  }
+
+/* Does NOT work!!! (see above lines) */
+
+menubar[collapsed="true"] > toolbargrippy,
+toolbar[collapsed="true"] > toolbargrippy 
+  {
+    width                 : 30px;
+    -moz-border-radius    : 5px;
+    min-height            : 10px;
+  }
+
+toolbargrippy:hover 
+  {
+    background-color      : #FFCF00 !important; 
+/*    background-image      : url("chrome://global/skin/taskbar-tab-hover.gif") !important; */
+  } 
+
+  
+.toolbar-primary 
+  {
+    -moz-border-radius    : 0px 10px 10px 0px;
+    padding               : 0px;
+    min-height            : 40px;
+/*    border                : none; */
+    border-bottom         : 3px solid #000000;
+  }
+  
+.toolbar-primary > .toolbar-holder
+  {
+    padding-right         : 18px;
+    background-color      : #FF9F00;
+    background-image      : url("chrome://global/skin/navbar-endcap.gif");
+    background-repeat     : no-repeat;
+    background-position   : right;
+
+/* THE FOLLOWING LINES ARE NOT WORKING THOUGH THEY SHOULD!  BUG???  #???  */
+/*    -moz-border-radius    : 0px 10px 10px 0px;
+    background-image      : url("chrome://global/skin/navbar-bg.gif");
+    background-repeat     : repeat-y;
+    background-position   : right;
+*/
+  }
+  
+.toolbar-primary > toolbargrippy
+  {
+    background-color      : #9C9CFF; 
+/*    background-image      : url("chrome://global/skin/taskbar-tab.gif");
+    background-repeat     : no-repeat; */
+  }
+  
+.toolbar-standard
+  {
+    -moz-border-radius    : 8px;
+    color                 : #000000;
+    background-color      : #8050B0;
+    padding               : 0px;
+    margin                : 0px;
+    border                : none;
+    min-height            : 40px;
+  }
+
+toolbarseparator {
+    background-color      : #000000;
+    margin-left           : 1px;
+    margin-right          : 1px;
+    margin-top            : 4px;
+    margin-bottom         : 4px;
+    width                 : 1px;
+}
+

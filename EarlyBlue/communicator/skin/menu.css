@@ -1,0 +1,9 @@
+box#taskbarMenuBox > menubutton
+  {
+    list-style-image      : url("chrome://global/skin/statusbar-arrow-up.gif");
+  }
+
+box#taskbarGotoMenuBox > menubutton
+  {
+    list-style-image      : url("chrome://global/skin/statusbar-arrow-up.gif");
+  }

@@ -1,0 +1,125 @@
+/******* Splitters *******/
+
+splitter {
+   border: none;
+   cursor: e-resize;
+   min-width: 8px;
+   min-height: 8px;
+   margin: 0px 3px 0px 3px;
+}
+
+splitter[state="dragging"]
+{
+   background-color: gray;
+}
+
+grippy {
+	margin: 0px;
+	padding: 0px;
+        background-image: url("chrome://global/skin/grippy-vertical-before.gif"); 
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+	cursor: pointer;
+}
+
+splitter[state="collapsed"] > grippy
+  {
+    background-image      : url("chrome://global/skin/grippy-vertical-after.gif");
+  }
+
+box[orient="vertical"] > splitter > grippy,
+window[orient="vertical"] > splitter > grippy {
+	/* a horizontal splitter */
+        background-image: url("chrome://global/skin/grippy-horizontal-after.gif"); 
+        border: none;
+        border-right: 3px solid black;
+        border-left: 3px solid black;
+	width: 120px;
+	height:8px;
+ }
+
+box[orient="vertical"] > splitter[state="collapsed"] > grippy,
+window[orient="vertical"] > splitter[state="collapsed"] > grippy {
+        background-image: url("chrome://global/skin/grippy-horizontal-before.gif"); 
+ }
+
+window > splitter > grippy,
+box > splitter > grippy {
+	/* a vertical splitter */
+	width: 8px;
+	height: 120px;
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
+}
+
+box[orient="vertical"] > splitter,
+window[orient="vertical"] > splitter,
+rows > splitter {
+	/* a horizontal splitter */
+        cursor: n-resize;
+        border: none;
+        margin: 3px 0px 3px 0px;
+}
+
+/* for backwards compatibility */
+box[align="vertical"]>splitter > grippy,
+window[align="vertical"]>splitter > grippy {
+	/* a horizontal splitter */
+        background-image: url("chrome://global/skin/grippy-horizontal-after.gif"); 
+        border: none;
+        border-right: 3px solid black;
+        border-left: 3px solid black;
+	width: 120px;
+	height: 8px;
+}
+
+box[align="vertical"]>splitter[state="collapsed"] > grippy,
+window[align="vertical"]>splitter[state="collapsed"] > grippy {
+        background-image: url("chrome://global/skin/grippy-horizontal-before.gif"); 
+}
+
+box[align="vertical"]>splitter,
+window[align="vertical"]>splitter {
+	/* a horizontal splitter */
+        cursor: n-resize;
+        border: none;
+        margin: 3px 0px 3px 0px;
+}
+
+/**
+ * gray horizontal splitter for pane views
+ */
+splitter.gray-horizontal-splitter { 
+	min-height: 8px;
+	border: none;
+        margin: 3px 0px 3px 0px;
+	padding: 0px;
+}
+
+splitter.gray-horizontal-splitter > grippy { 
+	margin: 0px;
+        border: none;
+        border-right: 3px solid black;
+        border-left: 3px solid black;
+	padding: 0px;
+        background-image: url("chrome://global/skin/grippy-horizontal-after.gif"); 
+}
+
+splitter.gray-horizontal-splitter[state="collapsed"] > grippy { 
+        background-image: url("chrome://global/skin/grippy-horizontal-before.gif"); 
+}
+
+/*
+splitter.gray-horizontal-splitter > #begincap { 
+	min-width: 8px;
+	width: 8px;
+	background-image: url("chrome://global/skin/gray-bottomleft.gif");
+	background-repeat: no-repeat;
+	background-position: 0% 100%;
+}
+
+splitter.gray-horizontal-splitter > #endcap { 
+	min-width: 8px;
+	width: 8px;
+}
+*/

@@ -1,0 +1,9 @@
+/* Default Icon */
+
+titledbutton[loading="true"] {
+	list-style-image: url("chrome://communicator/skin/bookmarks/loading.gif") ! important ;
+}
+
+titledbutton.iconic {
+	list-style-image: url("chrome://communicator/skin/bookmarks/document.gif");
+}

@@ -1,0 +1,12 @@
+
+
+.box-toolbar-group > box
+  {
+    -moz-border-radius    : 5px 0px 0px 5px;
+    border                : 1px solid #9C9CFF;
+    background-color      : #000000;
+    padding               : 1px;
+    margin                : 0px 0px 0px 3px;
+  }
+  
+  

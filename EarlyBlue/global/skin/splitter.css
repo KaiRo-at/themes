@@ -1,0 +1,70 @@
+/******* Splitters *******/
+
+splitter 
+  {
+    cursor                : e-resize;
+    background-color      : #CCD0DD;
+    vertical-align        : middle;
+    text-align            : center;
+    padding               : 0px;
+  }
+
+splitter[state="dragging"]
+  {
+    background-color      : #999999;
+  }
+
+grippy
+  {
+    margin                : 0px;
+    border                : 1px outset #CCD0DD;
+    padding               : 0px;
+    list-style-image      : url("chrome://global/skin/grippy-vertical-before.gif");
+    cursor                : pointer;
+  }
+
+splitter[state="collapsed"] > grippy
+  {
+    list-style-image      : url("chrome://global/skin/grippy-vertical-after.gif");
+  }
+
+grippy:hover
+  {
+    background-color      : #99CCFF;
+  }
+
+grippy:hover:active
+  {
+    border                : 1px inset #CCD0DD;
+  }
+
+/* vertical splitters */
+  window > splitter, box > splitter 
+    {
+      width               : 8px;
+      border-left         : 1px solid #9999CC;
+      border-right        : 1px solid #9999CC;
+    }
+  
+/* horizontal splitters */  
+  /* XXX we should comment out the 'align' support to force people to migrate 
+         to 'orient' */
+  rows > splitter,
+  window[orient="vertical"] > splitter,
+  box[orient="vertical"] > splitter,
+  window[align="vertical"] > splitter,
+  box[align="vertical"] > splitter
+    {
+      cursor              : n-resize;
+      border-top          : 1px solid #9999CC;
+      border-right        : 1px solid #9999CC;
+    }
+
+  rows > splitter > grippy,
+  window[orient="vertical"] > splitter grippy,
+  box[orient="vertical"] > splitter grippy,
+  window[align="vertical"] > splitter grippy,
+  box[align="vertical"] > splitter grippy
+    {
+      list-style-image      : url("chrome://global/skin/grippy-vertical-before.gif");
+    }
