@@ -50,7 +50,7 @@
    ========================================================================== */
 
 .toolbar-primary {
-  -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-primary");
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-primary");
 }
 
 #offline-status[offline="true"] {

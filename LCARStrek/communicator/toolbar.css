@@ -51,10 +51,7 @@
   background-color: #9C9CFF;
 }
 
-.toolbar-primary > toolbargrippy {
+.toolbar-primary > .toolbar-begcap {
   background-color: #9C9CFF; 
 }
 
-.toolbar-primary > toolbargrippy:hover {
-  background-color: #FFCF00; 
-}
