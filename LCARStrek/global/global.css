@@ -148,7 +148,7 @@ statusbar {
 .statusbar-center {
   background-color: #8050B0;
   padding-left: 2px;
-  color: black;
+  color: #000000;
   -moz-box-align: center;
 }
 
