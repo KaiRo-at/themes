@@ -16,10 +16,7 @@ tree {
  *  inset borders, and default dialog spacing.
  **/
 tree.inset {
-  border-top: 1px solid #666699;
-  border-bottom: 1px solid white;
-  border-left: 1px solid #666699;
-  border-right: 1px solid white;
+  border: 1px inset #CCCCDD;
   margin: 1px 3px 2px 3px;
 }
 
@@ -36,29 +33,43 @@ treecell {
   padding: 1px 0px 1px 2px;
 } 
 
-.treecell-header { 
-  background-color: #CCD0DD; 
-  color: black;
-  border-right: 1px solid white;
-  vertical-align: middle;
-  padding: 0px 0px 0px 5px;
-} 
+.treecell-header-image 
+  {
+    list-style-image      : inherit;
+  }
 
+.treecell-header,
+.treecell-header-image,
 .treecell-inset-header {
-  background-color: #CCD0DD; 
-  border-top: 1px solid white;
-  border-bottom: 1px solid #666699;
-  border-left: 1px solid white;
-  border-right: 1px solid #666699;
+  background-color: #CCCCDD; 
+  color: black;
+  border: 1px outset #CCCCDD;
+  vertical-align: middle;
+  padding: 0px;
 }
 
-tree.inset > treehead > treerow > treecell.sortable:active {
-  border-top: 1px solid #666699;
-  border-bottom: 1px solid white;
-  border-left: 1px solid #666699;
-  border-right: 1px solid white;
+.treecell-header-box,
+.treecell-header-image-box {
+  padding: 1px;
+}  
+
+.treecell-header:hover:active > .treecell-header-box,
+.treecell-inset-header:hover:active > .treecell-header-box,
+.treecell-header-image:hover:active > .treecell-header-image-box {
+  padding: 2px 0px 0px 2px;
 }
 
+.treecell-header:hover:active,
+.treecell-inset-header:hover:active,
+.treecell-header-image:hover:active {
+  border: 1px inset #CCCCDD;
+}
+
+.treecell-image 
+  {
+    padding               : 0px;
+  }
+  
 /** class="propertylist" ******************************************
  *  class for cells in grid-formatted property lists.
  **/
@@ -92,6 +103,10 @@ treeitem[container="true"] > treerow > .treecell-indent > .tree-cell-primary-ico
  padding-right: 2px;
 }
 
+treeitem[container="true"] > treerow > .treecell-indent > .tree-cell-primary-icon {
+ padding-left: 0px;
+}
+
 treeitem[selected="true"] > treerow > treecell > .tree-cell-twisty {
   list-style-image: url("chrome://global/skin/closedtwisty-selected.gif");
 }
@@ -118,14 +133,16 @@ treeitem[selected="true"][container="true"][open="true"] > treerow > treecell > 
 
 
 /* tree header with sort direction indicators */
-.sortDirectionIndicator[sortDirection="ascending"]  > .tree-header-sortdirection {
-  list-style-image: url("chrome://global/skin/sortAscending.gif");
-  margin-right: 3px;
+.tree-header-sortdirection {
+  list-style-image      : none;
 }
 
-.sortDirectionIndicator[sortDirection="descending"] > .tree-header-sortdirection {
+.sortDirectionIndicator[sortDirection="ascending"] > .treecell-header-box > .tree-header-sortdirection {
+  list-style-image: url("chrome://global/skin/sortAscending.gif");
+}
+
+.sortDirectionIndicator[sortDirection="descending"] > .treecell-header-box > .tree-header-sortdirection {
   list-style-image: url("chrome://global/skin/sortDescending.gif");
-  margin-right: 3px;
 }
 
 treecol[sortDirection="true"],
@@ -138,6 +155,38 @@ treecol[sortActive="true"]
   {
     list-style-image       : url("chrome://global/skin/columnselect.gif");
   }
+
+.inline-edit-cell-box
+  {
+    margin-left           : 2px;
+  }
+
+/* Inline Editable Treecells */
+.textfield-inline-edit 
+  {
+    border                : 1px solid #666699 !important;
+    margin                : 0px !important;
+  }
+
+.textfield-inline-edit > .textfield-internal-box > .textfield-input 
+  {
+    border                : 0px !important;
+    padding               : 1px !important;
+    margin                : 0px !important;
+  }
+
+.textfield-inline-edit > .textfield-internal-box 
+  {
+    border                : 0px !important;
+    padding               : 0px !important;
+    margin                : 0px !important;
+  }
+
+treerow[mode="inline-edit"] 
+  {
+    background            : transparent;
+  }
+
 
 
 

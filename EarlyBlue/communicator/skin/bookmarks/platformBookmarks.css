@@ -1,0 +1,32 @@
+/**
+ * Bookmarks tree 
+ **/ 
+   
+/*
+  .bookmarks-window-tree
+    {
+      border-top          : 1px solid ThreeDDarkShadow !important;
+      border-bottom       : 1px solid ThreeDFace;
+      border-left         : 1px solid ThreeDShadow;
+      border-right        : 1px solid ThreeDHighlight;
+    }
+*/
+
+  .bookmarks-window-tree > .tree-container-treerows
+    {
+      border-left         : 1px solid #666699;
+      border-right        : 1px solid #666699;
+    }  
+    
+  .bookmarks-panel-tree, .bookmarks-panel-tree > .tree-container-treerows
+    {
+      border              : none;
+    }
+    
+  #panel-bar
+    {
+      border-top          : 1px solid #666699;
+      border-bottom       : 1px solid #666699;
+    }    
+
+

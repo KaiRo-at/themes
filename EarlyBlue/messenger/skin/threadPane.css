@@ -85,40 +85,44 @@
   list-style-image: url("chrome://messenger/skin/flaggedmail.gif");
 }
 
-treeitem > treerow > .threadcol-thread{
+treeitem > treerow > .threadcol-thread {
   list-style-image: url("chrome://messenger/skin/thread-closed.gif");
 }
 
-treeitem[open="true"] > treerow > .threadcol-thread{
+treeitem[open="true"] > treerow > .threadcol-thread {
   list-style-image: url("chrome://messenger/skin/thread-open.gif");
 }
 
-treeitem > treerow > .threadcol-threadWithUnread{
+treeitem > treerow > .threadcol-threadWithUnread {
   list-style-image: url("chrome://messenger/skin/thread-new-closed.gif");
 }
 
-treeitem[open="true"] > treerow > .threadcol-threadWithUnread{
+treeitem[open="true"] > treerow > .threadcol-threadWithUnread {
   list-style-image: url("chrome://messenger/skin/thread-new-open.gif");
 }
 
-.threadColumnHeader[currentView="threaded"] > .tree-header-image
+.threadColumnHeader[currentView="threaded"]
   {
     list-style-image: url("chrome://messenger/skin/threadcol.gif");
+  text-align: left;
   }
 
-.threadColumnHeader[currentView="unthreaded"] > .tree-header-image
+.threadColumnHeader[currentView="unthreaded"]
   {
     list-style-image: url("chrome://messenger/skin/unthreadcol.gif");
+  text-align: center;
   }
 
-.readColumnHeader > .tree-header-image
+.readColumnHeader
   {
     list-style-image: url("chrome://messenger/skin/unreadmail.gif");
+  text-align: center;
   }
 
-.flagColumnHeader > .tree-header-image
+.flagColumnHeader
   {
     list-style-image: url("chrome://messenger/skin/flaggedmail.gif");
+  text-align: center;
   }
 
 treeitem[empty="true"] > treerow > .tree-cell-threadpane-icon > .tree-cell-twisty 
@@ -130,3 +134,5 @@ treeitem[empty="true"] > treerow > .tree-cell-threadpane-icon > .tree-cell-twist
   {
     border-top            : none;
   }
+
+

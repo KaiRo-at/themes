@@ -57,7 +57,7 @@ grippy:hover:active
     {
       cursor              : n-resize;
       border-top          : 1px solid #9999CC;
-      border-right        : 1px solid #9999CC;
+      border-bottom       : 1px solid #9999CC;
     }
 
   rows > splitter > grippy,
