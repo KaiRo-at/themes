@@ -63,7 +63,7 @@ checkbox {
 /* ..... focused state ..... */
 
 checkbox:focus > .checkbox-label-box {
-  border: 1px dotted #FF9F00;
+  border: 1px dotted #008484;
 }
 
 /* ..... disabled state ..... */
@@ -90,6 +90,11 @@ checkbox[disabled="true"] {
 checkbox:hover > .checkbox-check,
 checkbox:hover:active > .checkbox-check {
   border: 1px solid #FFCF00;
+}
+
+checkbox:hover > .checkbox-label-box,
+checkbox:hover:active > .checkbox-label-box {
+  color: #FFCF00;
 }
 
 /* ..... checked state ..... */

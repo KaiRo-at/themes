@@ -109,37 +109,35 @@ treechildren::-moz-tree-cell-text {
 }
 
 tree[selstyle="primary"] > treechildren::-moz-tree-cell-text(primary) {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   padding: 0px 1px 1px 1px;
 }
 
-/*
 treechildren::-moz-tree-cell-text(selected) {
-  color: #FFFFFF;
+  color: #FFCF00;
 }
 
 tree[selstyle="primary"] > treechildren::-moz-tree-cell-text(primary, selected) {
-  background-color: #808080;
-  color: #FFFFFF;
+  background-color: #008484;
+  color: #FFCF00;
 }
 
 treechildren::-moz-tree-cell-text(selected, focus) {
-  color: #FFFFFF;
+  color: #FFCF00;
 }
 
 tree[selstyle="primary"] > treechildren::-moz-tree-cell-text(primary, selected, focus) {
-  background-color: #336699;
-  color: #FFFFFF;
+  background-color: #008484;
+  color: #FFCF00;
 }
 
 tree[selstyle="primary"] > treechildren::-moz-tree-cell-text(primary, current, focus) {
-  border: 1px dotted #9999CC;
+  border: 1px dotted #FF9F00;
 }
 
 tree[selstyle="primary"] > treechildren::-moz-tree-cell-text(primary, selected, current, focus) {
-  border: 1px dotted #666699;
+  border: 1px dotted #FF9F00;
 }
-*/
 
 /* ::::: lines connecting cells ::::: */
 

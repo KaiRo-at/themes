@@ -94,10 +94,10 @@ textbox[disabled="true"] {
 /* ..... focused state ..... */
 
 textbox[focused="true"] {
-  -moz-border-top-colors: #FFCF00 #FFCF00;
-  -moz-border-right-colors: #FFCF00 #FFCF00;
-  -moz-border-bottom-colors: #FFCF00 #FFCF00;
-  -moz-border-left-colors: #FFCF00 #FFCF00;
+  -moz-border-top-colors: #008484 #008484;
+  -moz-border-right-colors: #008484 #008484;
+  -moz-border-bottom-colors: #008484 #008484;
+  -moz-border-left-colors: #008484 #008484;
   margin: 1px 3px;
 }
 

@@ -65,8 +65,8 @@ radio {
 
 /* ..... focused state ..... */
 
-radio[focused="true"] > .radio-label-box { 
-  border: 1px dotted #FF9F00;
+radio[focused="true"] > .radio-label-box {
+  border: 1px dotted #008484;
 }
 
 /* ..... disabled state ..... */
@@ -99,6 +99,11 @@ radio[disabled="true"] {
 radio:hover > .radio-check-box1,
 radio:hover:active > .radio-check-box1 {
   border: 1px solid #FFCF00;
+}
+
+radio:hover > .radio-label-box,
+radio:hover:active > .radio-label-box {
+  color: #FFCF00;
 }
 
 radio[disabled="true"] > .radio-check-box1 {
