@@ -173,14 +173,15 @@
   display: none;
 }
 
+/*all the urlbar stuff*/
+
 #page-proxy-deck {
     cursor                : grab;
-    margin                : 2px 4px 2px 2px;
+    margin                : 1px 1px 1px 2px;
     width                 : 16px;
     height                : 16px;
 }                                                                               
 
-/*all the urlbar stuff*/
 #page-proxy-button
   {
     list-style-image      : url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
@@ -352,3 +353,4 @@
   {
     margin-right          : 4px;
   }
+
