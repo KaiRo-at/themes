@@ -71,8 +71,8 @@ popup > menuitem[menuactive="true"]
 .menu-iconic-left 
   {
     color                 : inherit;
-    margin                : 0px 2px 0px 0px;
-    width                 : 13px;
+    margin                : 0px 4px 0px 3px;
+    width                 : 16px;
     text-align            : center;
     list-style-image      : inherit;
   }
@@ -83,7 +83,7 @@ popup > menuitem[menuactive="true"]
     margin                : 0px 2px 0px 0px;
   }
 
-.menu-iconic-text, .menu-iconic-accel, .menu-text, .menu-accel 
+.menu-iconic-text, .menu-iconic-accel, .menu-text, .menu-accel
   {
     color                 : inherit;
   }
@@ -202,5 +202,6 @@ menuitem[checked="true"][type="radio"][menuactive="true"]
       width               : 0px;
       border              : none;
     }
+
 
 
