@@ -89,13 +89,13 @@ outlinercol
 { 
   border: #666699;
   padding: 0px;
-  background-color: #CCCCDD;
+  background-color: #CCD0DD;
   color: black;
 }
 
 .outlinercol-box,
 .outlinercol-image-box {
-  border: 1px outset #CCCCDD;
+  border: 1px outset #CCD0DD;
 }  
 
 .outlinercol-box {
@@ -144,4 +144,5 @@ outlinercol:hover:active > .outlinercol-image-box
 {
   list-style-image: url("chrome://global/skin/columnselect.gif");
 }
+
 

@@ -4,7 +4,7 @@
   width                 : 20px;
   height                : 20px;
   margin                : 1px;
-  border                : 1px inset #CCCCDD;
+  border                : 1px inset #CCD0DD;
 }
 
 .colorpickertile[hover="true"] {
@@ -20,7 +20,7 @@
 colorpicker[type="button"] {
   width: 35px;
   height: 20px;
-  border: 1px outset #CCCCDD;
+  border: 1px outset #CCD0DD;
 }
 
 .colorpicker-button-internal-box {
@@ -38,9 +38,10 @@ colorpicker[type="button"]:focus > .colorpicker-button-internal-box {
 }
 
 colorpicker[type="button"][open="true"] {
-  border: 1px inset #CCCCDD;
+  border: 1px inset #CCD0DD;
 }
 
 colorpicker[type="button"][open="true"] > .colorpicker-button-internal-box {
 }
+
 

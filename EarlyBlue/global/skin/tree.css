@@ -16,7 +16,7 @@ tree {
  *  inset borders, and default dialog spacing.
  **/
 tree.inset {
-  border: 1px inset #CCCCDD;
+  border: 1px inset #CCD0DD;
   margin: 1px 3px 2px 3px;
 }
 
@@ -41,9 +41,9 @@ treecell {
 .treecell-header,
 .treecell-header-image,
 .treecell-inset-header {
-  background-color: #CCCCDD; 
+  background-color: #CCD0DD; 
   color: black;
-  border: 1px outset #CCCCDD;
+  border: 1px outset #CCD0DD;
   vertical-align: middle;
   padding: 0px;
 }
@@ -62,7 +62,7 @@ treecell {
 .treecell-header:hover:active,
 .treecell-inset-header:hover:active,
 .treecell-header-image:hover:active {
-  border: 1px inset #CCCCDD;
+  border: 1px inset #CCD0DD;
 }
 
 .treecell-image 
@@ -186,6 +186,7 @@ treerow[mode="inline-edit"]
   {
     background            : transparent;
   }
+
 
 
 

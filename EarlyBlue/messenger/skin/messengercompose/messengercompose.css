@@ -19,7 +19,7 @@
 #listcol-addressingWidget 
   {
     width                 : 9em;
-    border-right          : 1px solid #CCCCDD;
+    border-right          : 1px solid #CCD0DD;
   }
   
 #addressingWidgetTree > treechildren > treeitem > treerow,
@@ -32,7 +32,7 @@
 .treecell-addressingWidget
   {
   	vertical-align        : middle;
-    border-bottom         : 1px solid #CCCCDD;
+    border-bottom         : 1px solid #CCD0DD;
     padding               : 0px !important;
   }
   
@@ -43,7 +43,7 @@
 
 .dummy-row-cell:first-child
   {
-    border-bottom         : 1px solid #CCCCDD;
+    border-bottom         : 1px solid #CCD0DD;
   }
 
 .person-icon 
@@ -118,7 +118,7 @@
 
 #content-frame
   {
-    border                : 1px inset #CCCCDD;
+    border                : 1px inset #CCD0DD;
   }
 
 #msgIdentity, #addressingWidgetTree, #msgSubject
@@ -163,4 +163,5 @@
 #convertNo {
 	list-style-image:url("chrome://global/skin/alert-icon.gif");
 }
+
 
