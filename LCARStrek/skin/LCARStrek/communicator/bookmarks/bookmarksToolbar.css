@@ -9,7 +9,14 @@ toolbarbutton.bookmark-item {
 }
 
 toolbarbutton.bookmark-item[container="true"] {
+  color               : #E7ADE7;
   cursor              : default;
+}
+
+toolbarbutton.bookmark-item[container="true"]:hover,
+toolbarbutton.bookmark-item[container="true"]:hover:active,
+toolbarbutton.bookmark-item[container="true"][open="true"] {
+  color               : #000000;
 }
 
 toolbarbutton.bookmark-item > .toolbarbutton-box > .toolbarbutton-dropmarker {
@@ -92,4 +99,3 @@ menuitem[dragover-bottom="true"].bookmark-item {
 menu[dragover-bottom="true"].bookmark-item {
   border-bottom       : 1px solid #008484; !important;
 }
-
