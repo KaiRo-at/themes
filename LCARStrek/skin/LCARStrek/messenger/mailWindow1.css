@@ -43,5 +43,9 @@
 #threadOutliner
   {
     min-width             : 1px;
+    border                : none;
   }
 
+#folderOutliner {
+    border                : none;
+}

@@ -12,8 +12,9 @@
       border              : 1px solid #FF9F00;
       -moz-border-radius  : 50%;
       margin              : 0px 2px 0px 0px;
-      width               : 11px;
-      height              : 11px;
+      padding             : 1px;
+      width               : 10px;
+      height              : 10px;
     }
 
   .radio-checkmark-box-1[disabled="true"]
@@ -24,9 +25,11 @@
   .radio-checkmark-box-2
     {
       -moz-border-radius  : 50%;
-      padding             : 2px;
-      width               : 10px;
-      height              : 10px;
+      padding             : 1px;
+      width               : 8px;
+      height              : 8px;
+      min-width           : 8px;
+      min-height          : 8px;
     }  
 
   /* ensure that no list-style-image is inherited in from the Outside */
@@ -90,8 +93,4 @@
   .radio-internal-box
     {
       -moz-user-focus     : ignore;
-    }    
-
-
-
-
+    }

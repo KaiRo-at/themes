@@ -19,7 +19,7 @@
  *
  * Contributor(s):
  *   Joe Hewitt (hewitt@netscape.com)
- *   Håkan Waara (hwaara@chello.se)
+ *   Hakan Waara (hwaara@chello.se)
  *   Jan Varga (varga@utcru.sk)
  */
 
@@ -190,3 +190,4 @@ outlinerbody:-moz-outliner-image(syncCol, synchronize-true) {
 outlinerbody:-moz-outliner-image(syncCol, isServer-true) {
   list-style-image: none;
 }
+

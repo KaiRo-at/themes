@@ -138,7 +138,12 @@ button[type="menu-button"] {
       color               : #FF9F00;
       padding             : 3px;
     }
-  
+
+  page
+    { 
+      padding             : 0px;
+    }
+
   [wait-cursor] 
     { 
       cursor              : wait !important; 
@@ -276,4 +281,5 @@ caption
   {
     margin                : 0px;
   }
+
 

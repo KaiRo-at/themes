@@ -15,7 +15,7 @@
  * Portions created by Håkan Waara are Copyright (C) 
  * Håkan Waara.  All Rights Reserved.
  * 
- * Contributor(s): Håkan Waara (Original Author) 
+ * Contributor(s): Hakan Waara (Original Author) 
  */
 
 .up {
@@ -33,3 +33,4 @@
 .down:hover:active {
   list-style-image: url("chrome://global/skin/spinbtn-dn-act.gif")
 }
+

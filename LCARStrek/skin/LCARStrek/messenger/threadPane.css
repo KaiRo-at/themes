@@ -37,7 +37,7 @@
 
 outlinerbody:-moz-outliner-line
 {
-  visibility: collapse;
+  visibility: hidden;
 }
 
 /* ::::: thread decoration ::::: */
@@ -177,3 +177,4 @@ outlinerbody:-moz-outliner-image(subjectCol, news, attach) {
   padding-right: 2px;
   list-style-image: url("chrome://messenger/skin/message-news-attach.gif");
 }
+
