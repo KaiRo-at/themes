@@ -49,11 +49,16 @@
 textbox {
   -moz-border-radius: 3px;
   cursor: text;
-  margin: 2px 4px;
-  border: 1px solid #9C9CFF;
+  margin: 1px 3px;
+  border: 2px solid;
+  -moz-border-top-colors: transparent #9C9CFF;
+  -moz-border-right-colors: transparent #9C9CFF;
+  -moz-border-bottom-colors: transparent #9C9CFF;
+  -moz-border-left-colors: transparent #9C9CFF;
   padding: 1px 0px 1px 2px;
   background-color: #000000;
   color: #E7ADE7;
+  min-height: 19px;
 }
 
 html|*.textbox-input, 
@@ -85,13 +90,18 @@ textbox[disabled="true"] {
 /* ..... focused state ..... */
 
 textbox[focused="true"] {
-  border: 2px solid #FFCF00;
+  -moz-border-top-colors: #FFCF00 #FFCF00;
+  -moz-border-right-colors: #FFCF00 #FFCF00;
+  -moz-border-bottom-colors: #FFCF00 #FFCF00;
+  -moz-border-left-colors: #FFCF00 #FFCF00;
   margin: 1px 3px;
 }
 
 textbox[focused="true"][readonly="true"] {
-  border: 1px solid #8050B0;
-  margin: 2px 4px;
+  -moz-border-top-colors: transparent #8050B0;
+  -moz-border-right-colors: transparent #8050B0;
+  -moz-border-bottom-colors: transparent #8050B0;
+  -moz-border-left-colors: transparent #8050B0;
 }
 
 /* ::::: plain textbox ::::: */
@@ -100,4 +110,5 @@ textbox.plain {
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
+  min-height: 0px;
 }

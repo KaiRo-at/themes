@@ -120,6 +120,10 @@
   list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
 }
 
+#clear-button {
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+}
+
 /* Hides text below the above buttons */
 .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-text,
 .toolbarbutton-1 > .toolbarbutton-text {
@@ -215,7 +219,11 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 #urlbar {
   -moz-border-radius: 5px;
-  border: 1px solid #9C9CFF;
+  border: 1px solid;
+  -moz-border-top-colors: #9C9CFF;
+  -moz-border-right-colors: #9C9CFF;
+  -moz-border-bottom-colors: #9C9CFF;
+  -moz-border-left-colors: #9C9CFF;
   background-color: #000000;
   margin: 0px 7px 0px 0px;
 }
