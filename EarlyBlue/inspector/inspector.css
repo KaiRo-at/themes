@@ -39,3 +39,10 @@
 @import url("chrome://communicator/skin");
 @import url("chrome://inspector/content/inspector.css");
 
+page {
+  padding: 0px;
+}
+
+page > tree {
+  border: none;
+}
