@@ -46,7 +46,7 @@
 /* outer frame */
 
 button {
-  margin: 1px 5px 2px 5px;
+  margin: 2px 3px;
   min-width: 6.3em;
   border: 1px outset #CCD0DD;
   background-color: #CCD0DD;
@@ -143,3 +143,4 @@ button.plain {
   margin: 0px !important;
   padding: 0px !important;
 }
+

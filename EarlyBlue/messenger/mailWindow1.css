@@ -59,9 +59,11 @@
 /* ..... outliner adjustments ..... */
  
 #folderOutliner {
+  border: none;
   min-width: 1px;
 }
 
 #threadOutliner {
+  border: none;
   min-width: 1px;
 }

@@ -45,12 +45,11 @@
 
 radio {
   -moz-box-align: center;
-  margin: 2px 4px;
-  padding: 1px 2px 1px 4px;
+  margin: 1px 2px;
+  padding: 1px;
 }
 
 .radio-label-box {
-  margin-left: 2px;
   border: 1px solid transparent;
   padding: 0px 0px 1px 1px;
 }
@@ -112,3 +111,4 @@ radio[selected="true"] > .radio-check-box1 > .radio-check-box2 {
 radio[selected="true"][disabled="true"] > .radio-check-box2 {
   list-style-image: url("chrome://global/skin/radio/radio-check-disabled.gif") !important
 }
+

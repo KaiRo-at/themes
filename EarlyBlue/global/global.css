@@ -71,6 +71,10 @@ wizard {
   color: #000000;
   font: 11px helvetica,arial,tahoma,sans-serif;
 }
+
+page {
+  padding: 3px;
+}
   
 /* deprecated */
 window.dialog { 

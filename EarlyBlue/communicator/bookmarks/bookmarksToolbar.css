@@ -60,10 +60,13 @@ toolbarbutton.bookmark-item > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 
+.bookmark-group {
+  list-style-image: url(chrome://communicator/skin/bookmarks/bookmark-group.gif) !important;
+}
+
 toolbarbutton.bookmark-item[disabled="true"],
 toolbarbutton.bookmark-item[disabled="true"]:hover,
-toolbarbutton.bookmark-item[disabled="true"]:hover:active
-{
+toolbarbutton.bookmark-item[disabled="true"]:hover:active {
   color: #999999;
   text-decoration: none;
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item-disabled.gif");
@@ -72,18 +75,15 @@ toolbarbutton.bookmark-item[disabled="true"]:hover:active
 
 toolbarbutton.bookmark-item[disabled="true"][container="true"],
 toolbarbutton.bookmark-item[disabled="true"][container="true"]:hover,
-toolbarbutton.bookmark-item[disabled="true"][container="true"]:hover:active
-{
+toolbarbutton.bookmark-item[disabled="true"][container="true"]:hover:active {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-disabled.gif");
 }
 
-.menuitem-iconic.bookmark-item[disabled="true"]
-{
+.menuitem-iconic.bookmark-item[disabled="true"] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item-disabled.gif");
 }
 
-.menu-iconic.bookmark-item[disabled="true"][container="true"]
-{
+.menu-iconic.bookmark-item[disabled="true"][container="true"] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-disabled.gif");
 }
 
@@ -95,6 +95,10 @@ toolbarbutton.bookmark-item[dragover-left="true"] {
 
 toolbarbutton.bookmark-item[dragover-right="true"] {
   border-right-color: #336699;
+}
+
+toolbarbutton.bookmark-item[dragover-top="true"] {
+  border-color: #336699;
 }
 
 /* ::::: bookmark menus ::::: */

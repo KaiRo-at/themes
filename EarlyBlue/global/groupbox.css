@@ -44,9 +44,9 @@
 /* ::::: groupbox ::::: */
 
 groupbox {
-  margin: 5px;
+  margin: 3px 2px;
   border: 2px groove #CCD0DD;
-  padding: 5px;
+  padding: 3px 3px 5px 5px;
 }
 
 .groupbox-body {

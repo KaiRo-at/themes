@@ -45,7 +45,7 @@
 
 outliner {
   border-spacing: 0px;     
-  border: none;
+  border: 1px inset #CCD0DD;
   background-color: #FFFFFF;
   color: #000000;   
 }

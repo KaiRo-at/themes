@@ -180,11 +180,20 @@ html|p {
   border-left: 1px solid ThreeDShadow; */
 }
 
-#dirTree, #resultsTree { 
+#dirTree, #abResultsOutliner { 
   border: none;
   margin: 0px;
 }
 
 #resultsTree {
 /*  border-left: 1px solid ThreeDShadow; */
+}
+
+/* ::::: Search Bar  ::::: */
+
+#searchBox {
+/*
+  border-top: 1px solid ThreeDHighlight;
+  border-bottom: 1px solid ThreeDShadow;
+*/
 }
