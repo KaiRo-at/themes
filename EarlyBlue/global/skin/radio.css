@@ -54,7 +54,7 @@
     }
 
 /* text/icon frames */
-  radio[value] > .internal-box > html,
+  radio[label] > .internal-box > html,
   radio.iconic > .internal-box > .icon 
     {
       margin: 0px 0px 0px 4px;
@@ -66,7 +66,7 @@
       margin-left: 4px;
     }
     
-  radio[disabled="true"][value] > .internal-box > html 
+  radio[disabled="true"][label] > .internal-box > html 
     {
       color: #999999;
     }

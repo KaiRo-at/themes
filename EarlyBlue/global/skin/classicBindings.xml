@@ -7,8 +7,8 @@
   <binding id="textdisabled" extends="xul:text">
     <content excludes="observes,template">
       <xul:stack>
-        <xul:text class="text-bottom" inherits="value,accesskey,crop"/>
-        <xul:text class="text-top" inherits="value,accesskey,crop"/>
+        <xul:text class="text-bottom" inherits="value=label,accesskey,crop"/>
+        <xul:text class="text-top" inherits="value=label,accesskey,crop"/>
       </xul:stack>
     </content>
   </binding>
@@ -31,7 +31,7 @@
           </xul:box>
         </xul:box>
         <xul:image class="radio-icon" inherits="src,disabled"/>
-        <xul:html class="radio-text" inherits="value,accesskey,crop,disabled" flex="1">
+        <xul:html class="radio-text" inherits="value=label,accesskey,crop,disabled" flex="1">
           <children/>
         </xul:html>
       </xul:box>
@@ -47,7 +47,7 @@
           </xul:box>
         </xul:box>
         <xul:image class="checkbox-icon" inherits="src,disabled"/>
-        <xul:html class="checkbox-text" inherits="value,accesskey,crop,disabled" flex="1">
+        <xul:html class="checkbox-text" inherits="value=label,accesskey,crop,disabled" flex="1">
           <children/>
         </xul:html>
       </xul:box>

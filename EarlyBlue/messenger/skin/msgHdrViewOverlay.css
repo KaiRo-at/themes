@@ -72,9 +72,7 @@ box.header-part3           { background-color: #CCCCCC; border: none; }
     color                 : blue;
     text-decoration       : underline;
     cursor                : pointer;
-    max-height            : 15px;
-    /* I can't find out where that strange bug is hitting me */
-    /* see http://www.hirsch.sth.ac.at/bugzilla/show_bug.cgi?id=50 */
+/*    max-height            : 15px; */
   }
 
 .showMoreAddressesButton 
@@ -120,3 +118,4 @@ text.headerValue
     border-left           : none;
     border-right          : none;
   }
+

@@ -41,12 +41,44 @@ outlinercol.threadColumnHeader[sortDirection="descending"] {
   list-style-image: url("chrome://messenger/skin/threadcol.gif");
 }
 
+outlinerbody:-moz-outliner-image(threadCol, container) {
+  list-style-image: url("chrome://messenger/skin/thread-closed.gif");
+}
+
+outlinerbody:-moz-outliner-image(threadCol, container, open) {
+  list-style-image: url("chrome://messenger/skin/thread-open.gif");
+}
+
+outlinerbody:-moz-outliner-image(threadCol, container, hasUnread) {
+  list-style-image: url("chrome://messenger/skin/thread-new-closed.gif");
+}
+
+outlinerbody:-moz-outliner-image(threadCol, container, open, hasUnread) {
+  list-style-image: url("chrome://messenger/skin/thread-new-open.gif");
+}
+
 outlinercol.readColumnHeader {
   list-style-image: url("chrome://messenger/skin/unreadmail.gif");
 }
 
+outlinerbody:-moz-outliner-image(unreadButtonColHeader) {
+list-style-image: url("chrome://messenger/skin/readcol-read.gif");
+}
+
+outlinerbody:-moz-outliner-image(unreadButtonColHeader, unread) {
+list-style-image: url("chrome://messenger/skin/readcol-unread.gif");
+}
+
 outlinercol.flagColumnHeader {
   list-style-image: url("chrome://messenger/skin/flaggedmail.gif");
+}
+
+outlinerbody:-moz-outliner-image(flaggedCol) {
+list-style-image: url("chrome://messenger/skin/readcol-read.gif");
+}
+
+outlinerbody:-moz-outliner-image(flaggedCol, flagged) {
+list-style-image: url("chrome://messenger/skin/flagcol-flagged.gif");
 }
 
 outlinerbody:-moz-outliner-cell-text(unread)
@@ -81,7 +113,7 @@ outlinerbody:-moz-outliner-cell-text(priority-low)
 
 
 
-/*
+
 
 
 
@@ -203,4 +235,7 @@ treeitem[empty="true"] > treerow > .tree-cell-threadpane-icon > .tree-cell-twist
   }
 
 
-*/
+
+
+
+

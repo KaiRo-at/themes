@@ -138,4 +138,13 @@
   .spaced
     {
       margin              : 3px 5px 4px 5px;
-    }    
+    } 
+
+  .link
+    {
+      color               : #0000FF;
+      cursor              : pointer;
+      -moz-user-select    : text;
+      text-decoration     : underline;
+    }
+

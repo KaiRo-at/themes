@@ -161,7 +161,6 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
     padding-bottom        : 10px;
   }
 
-  
 #search-button
   {
     margin                : 0px 3px 0px 0px;
@@ -192,4 +191,5 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
   {
     padding               : 0px;
   }
+
 

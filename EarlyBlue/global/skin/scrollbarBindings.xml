@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE window [
+<!ENTITY % textcontextDTD SYSTEM "chrome://global/locale/textcontext.dtd" >
+%textcontextDTD;
+]>
+
+<bindings id="scrollbarBindings"
+   xmlns="http://www.mozilla.org/xbl"
+   xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <binding id="thumbv" extends="xul:box">
+    <content align="vertical">
+      <xul:image inherits="src"/>
+    </content>
+  </binding>
+
+  <binding id="thumbh" extends="xul:box">
+    <content>
+      <xul:image inherits="src"/>
+    </content>
+  </binding>
+
+  <binding id="scrollbar" extends="xul:scrollbar">
+    <content>
+      <xul:scrollbarbutton type="decrement" inherits="sborient=align"/>
+      <xul:slider flex="1" inherits="curpos,maxpos,pageincrement,increment">
+        <xul:thumb inherits="align,src" flex="1"/>
+      </xul:slider>
+      <xul:scrollbarbutton type="increment" inherits="sborient=align"/>
+    </content>
+  </binding>
+
+  <binding id="scrollbarbutton">
+    <content>
+      <xul:box class="scrollbarbutton-box" flex="1">
+        <xul:image class="scrollbarbutton-icon" inherits="src"/>
+      </xul:box>
+    </content>
+  </binding>
+
+
+</bindings>
+
+
+
+

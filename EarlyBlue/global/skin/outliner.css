@@ -64,7 +64,7 @@ outlinerbody:-moz-outliner-cell(selected)
 outlinerbody:-moz-outliner-cell-text
 {
   color: inherit;
-  padding-left: 2px;
+  padding-left: 1px;
   padding-right: 2px;
 }
 
@@ -145,4 +145,16 @@ outlinercol:hover:active > .outlinercol-image-box
   list-style-image: url("chrome://global/skin/columnselect.gif");
 }
 
+/* twisty rules */
+
+outlinerbody:-moz-outliner-twisty {
+  padding-right: 2px;
+  width: 12px; /* The image's width is 12 pixels */
+  list-style-image: url("chrome://global/skin/twisty-closed.gif");
+}
+
+outlinerbody:-moz-outliner-twisty(open) {
+  width: 12px; /* The image's width is 12 pixels */
+  list-style-image: url("chrome://global/skin/twisty-open.gif");
+}
 

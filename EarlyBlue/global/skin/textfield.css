@@ -5,7 +5,7 @@
  **/
  
 /* outer frame */
-  textfield
+  textbox
     {
       border              : 1px inset #CCD0DD;
       font                : inherit;
@@ -16,25 +16,25 @@
       cursor              : text;
     }
     
-  textfield[readonly="true"]
+  textbox[readonly="true"]
     {
       background-color    : #CCCCCC;
     }
   
-  textfield[focused="true"]
+  textbox[focused="true"]
     {
       border              : 2px solid #6699cc;
       margin              : 0px 2px 1px 3px;
     }
     
-  textfield[focused="true"][readonly="true"]
+  textbox[focused="true"][readonly="true"]
     {
       border              : 1px inset #CCCCCC;
       margin              : 1px 3px 2px 4px;
     }
 
 /* internal frame */
-  .textfield-internal-box 
+  .textbox-internal-box 
     {
       margin              : 0px;
       padding             : 1px 2px 1px 2px;
@@ -44,7 +44,7 @@
       color               : inherit;
     }
   
-  textfield[disabled="true"] > .textfield-internal-box
+  textbox[disabled="true"] > .textbox-internal-box
     {
       border              : none;
     }
@@ -55,7 +55,7 @@
     }
   
 /* internal text widget */
-  .textfield-input, .textfield-textarea
+  .textbox-input, .textbox-textarea
     {
       border              : none !important;
       margin              : 0px;
@@ -63,15 +63,15 @@
       background-color    : inherit;
     }
 
-  textfield[disabled="true"] 
+  textbox[disabled="true"] 
     {
       cursor              : default ! important;
     } 
     
 /** plain atomic textfields, class="plain" **/
-  textfield.plain, 
-  textfield.plain > .textfield-internal-box, 
-  textfield.plain > .textarea-internal-box
+  textbox.plain, 
+  textbox.plain > .textbox-internal-box, 
+  textbox.plain > .textarea-internal-box
     {
       padding             : 0px !important;
       margin              : 0px !important;
@@ -87,7 +87,7 @@
       background          : inherit;
     }    
     
-  .scrollfield > .textfield-internal-box
+  .scrollfield > .textbox-internal-box
     {
       border              : none !important;
       margin              : 0px !important;

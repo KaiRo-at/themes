@@ -48,13 +48,13 @@
     }
     
 /* checkmark label/icon frame */
-  checkbox[value] > .internal-box > html
+  checkbox[label] > .internal-box > html
     {
       margin: 0px 0px 0px 4px;
       padding: 1px;
     }
 
-  checkbox[disabled="true"][value] > .internal-box > html 
+  checkbox[disabled="true"][label] > .internal-box > html 
     {
       color: #999999;
     }
@@ -64,3 +64,4 @@
       border              : 1px dotted black;
       padding             : 0px;
     }
+

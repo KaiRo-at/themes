@@ -5,8 +5,7 @@ titledbox
     padding               : 7px !important;
     margin                : 5px;
   }
-
-title
+label
   {
     margin                : 0px 40px 2px 6px;
     padding               : 0px 3px 0px 3px;
@@ -49,4 +48,5 @@ title
       vertical-align      : middle;
     }
   
+
 

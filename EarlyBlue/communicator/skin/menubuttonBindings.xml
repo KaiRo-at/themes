@@ -9,7 +9,7 @@
     <content excludes="observes,template,menupopup">
       <xul:stack>
         <xul:button class="menubutton-dual-button button-toolbar-1 top" allowevents="true" 
-                    inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value,crop,accesskey,disabled"/>
+                    inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value=label,crop,accesskey,disabled"/>
         <xul:box class="menubutton-dual-dropmarker-box" autostretch="never" valign="top" flex="1">
           <xul:image class="menubutton-dual-dropmarker" inherits="disabled"/>
         </xul:box>
@@ -20,7 +20,7 @@
   <binding id="menubutton-dual-blue">
     <content excludes="observes,template,menupopup">
         <xul:button class="menubutton-dual-button button-toolbar-1 top" allowevents="true" 
-                    inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value,crop,accesskey,disabled"/>
+                    inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value=label,crop,accesskey,disabled"/>
         <xul:box class="menubutton-dual-dropmarker-box" autostretch="never" valign="top" flex="1">
           <xul:image class="menubutton-dual-dropmarker" inherits="disabled"/>
         </xul:box>
@@ -30,7 +30,7 @@
   <binding id="menubutton-dual-standard">
     <content excludes="observes,template,menupopup">
         <xul:button class="menubutton-dual-button button-toolbar-2 top" allowevents="true" 
-                    inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value,crop,accesskey,disabled"/>
+                    inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value=label,crop,accesskey,disabled"/>
         <xul:box class="menubutton-dual-dropmarker-box" autostretch="never" valign="top" flex="1">
           <xul:image class="menubutton-dual-dropmarker" inherits="disabled"/>
         </xul:box>

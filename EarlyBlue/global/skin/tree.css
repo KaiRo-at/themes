@@ -162,20 +162,20 @@ treecol[sortActive="true"]
   }
 
 /* Inline Editable Treecells */
-.textfield-inline-edit 
+.textbox-inline-edit 
   {
     border                : 1px solid #666699 !important;
     margin                : 0px !important;
   }
 
-.textfield-inline-edit > .textfield-internal-box > .textfield-input 
+.textbox-inline-edit > .textbox-internal-box > .textbox-input 
   {
     border                : 0px !important;
     padding               : 1px !important;
     margin                : 0px !important;
   }
 
-.textfield-inline-edit > .textfield-internal-box 
+.textbox-inline-edit > .textbox-internal-box 
   {
     border                : 0px !important;
     padding               : 0px !important;
@@ -186,6 +186,7 @@ treerow[mode="inline-edit"]
   {
     background            : transparent;
   }
+
 
 
 
