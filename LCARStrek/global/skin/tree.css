@@ -21,14 +21,7 @@ tree.inset {
   margin: 1px 3px 2px 3px;
 }
 
-/*
-treeitem[selected="true"] > treerow { 
-/	color: #000000; /
-	background-color: #008484;
-}
-*/
-
-tree:focus > treechildren treeitem[selected="true"] > treerow,
+treeitem[selected="true"] > treerow,
 treeitem[dd-dropon="true"] > treerow
   {
   	background-color    : #008484;
@@ -146,5 +139,7 @@ treecol[sortActive="true"]
   {
     list-style-image       : url("chrome://global/skin/columnselect.gif");
   }
+
+
 
 

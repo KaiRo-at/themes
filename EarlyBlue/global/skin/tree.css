@@ -23,10 +23,12 @@ tree.inset {
   margin: 1px 3px 2px 3px;
 }
 
-treeitem[selected="true"] > treerow { 
+treeitem[selected="true"] > treerow,
+treeitem[dd-dropon="true"] > treerow
+  {
 	color: white;
 	background-color: #336699;
-}
+  }
 
 treecell { 
   white-space: nowrap;
@@ -136,4 +138,6 @@ treecol[sortActive="true"]
   {
     list-style-image       : url("chrome://global/skin/columnselect.gif");
   }
+
+
 
