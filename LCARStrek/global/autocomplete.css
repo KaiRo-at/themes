@@ -47,13 +47,13 @@
 textbox {
   cursor: default;
   padding: 0px;
-  -moz-border-radius: 5px;
+  -moz-border-radius: 3px;
 }
 
 .textbox-input-box {
   margin: 0 3px;
   -moz-box-align: center;
-  -moz-border-radius: 5px;
+  -moz-border-radius: 3px;
 }
 
 /* ::::: history button ::::: */
@@ -68,7 +68,7 @@ textbox {
   background-color: #000000;
   padding: 1px;
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
-  -moz-border-radius: 0px 5px 5px 0px;
+  -moz-border-radius: 0px 3px 3px 0px;
 }
 
 .autocomplete-history-dropmarker:hover,

@@ -218,7 +218,7 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 }
 
 #urlbar {
-  -moz-border-radius: 5px;
+  -moz-border-radius: 3px;
   border: 1px solid;
   -moz-border-top-colors: #9C9CFF;
   -moz-border-right-colors: #9C9CFF;
