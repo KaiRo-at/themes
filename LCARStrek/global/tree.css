@@ -67,7 +67,6 @@ tree {
 
 /* ::::: tree rows ::::: */
 
-tree[selstyle="primary"] > treechildren::-moz-tree-row,
 treechildren::-moz-tree-row {
   border: 1px solid transparent;
   background-color: transparent;
@@ -93,6 +92,11 @@ treechildren::-moz-tree-row(selected, current, focus) {
   border: 1px dotted #FF9F00;
 }
 
+tree[selstyle="primary"] > treechildren::-moz-tree-row {
+  border: none;
+  background-color: transparent;
+}
+
 /* ::::: tree cells ::::: */
 
 treechildren::-moz-tree-cell {
@@ -102,7 +106,11 @@ treechildren::-moz-tree-cell {
 tree[selstyle="primary"] > treechildren::-moz-tree-cell-text,
 treechildren::-moz-tree-cell-text {
   color: inherit;
+}
+
+tree[selstyle="primary"] > treechildren::-moz-tree-cell-text(primary) {
   border: 2px solid transparent;
+  padding: 0px 1px 1px 1px;
 }
 
 /*

@@ -45,10 +45,6 @@ window.dialog {
   padding: 0;
 }
 
-.dimmed-highcontrast {
-  color: #99cccc ! important;
-} 
-
 #profiles > listitem {
   list-style-image: url("chrome://communicator/skin/profile/profileicon-large.gif");
 }
@@ -81,4 +77,8 @@ box#wizardButtons {
 
 box.selection {
   margin-top: 4px;
+}
+
+description.error {
+  color: #FF0000;
 }
