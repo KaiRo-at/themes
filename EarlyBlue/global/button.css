@@ -74,6 +74,7 @@ button:focus > .button-box {
 
 /* .......... default state .......... */
 
+button[default] > .button-box,
 button[default="true"] > .button-box {
   font-weight: bold;
   list-style-image: url("chrome://global/skin/icons/return.gif");
