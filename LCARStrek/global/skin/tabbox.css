@@ -1,5 +1,9 @@
-tabbox {
-  margin: 1px 5px 2px 5px;
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul); 
+
+/*============ tabpanels widget =============*/
+
+tabpanels {
+  padding: 5px;
 }
 
 /********** Tab widget *********/
@@ -8,6 +12,7 @@ tab {
   border: 1px solid #9C9CFF;
   color: #FF9F00; 
   padding: 3px 5px 3px 5px;
+  -moz-user-focus: normal;
 }
 
 /* when a tab is selected this is how it should look */
@@ -26,31 +31,32 @@ tab:hover:active {
   text-decoration: none;
 }
 
-tabs {
-  padding: 0px 2px 0px 2px;
+tabs, tabs[orient="horizontal"] {
+  padding: 0px 4px 0px 4px;
+}
+
+tabs[orient="vertical"] {
+  padding: 4px 0px 4px 0px;
 }
 
     /* top tabs */
-tabbox[align="vertical"] tabs[align="horizontal"] tab { 
+tabbox[orient="vertical"] > tabs[orient="horizontal"] tab  { 
   border-bottom: none;
   -moz-border-radius: 8px 8px 0px 0px;
   padding-bottom: 1px;
-  margin: 1px 2px 1px 2px;
+/*  margin: 1px 2px 1px 2px; */
 }
 
 	/* bottom tabs */
-tabbox[align="vertical"] tabpanels + tabs[align="horizontal"] tab { 
+tabbox[orient="vertical"] > tabpanels + tabs[orient="horizontal"] > tab { 
   border-top: none;
-  border-bottom: 1px solid #9C9CFF;
-  border-left: 1px solid #9C9CFF;
-  border-right: 1px solid #9C9CFF;
   -moz-border-radius: 0px 0px 8px 8px;
   padding: 1px 5px 3px 5px;
   margin: 1px 2px 1px 2px;
 }
 
 	/* left tabs */
-tabbox[align="horizontal"] tabs[align="vertical"] tab { 
+tabbox[orient="horizontal"] > tabs[orient="vertical"] tab  { 
   border-right: none;
   -moz-border-radius: 8px 0px 0px 8px;
   padding-right: 1px;
@@ -58,11 +64,8 @@ tabbox[align="horizontal"] tabs[align="vertical"] tab {
 }
 
 	/* right tabs */
-tabbox[align="horizontal"] tabpanels + tabs[align="vertical"] tab { 
-  border-top: 1px solid #9C9CFF;
-  border-bottom: 1px solid #9C9CFF;
+tabbox[orient="horizontal"] > tabpanels + tabs[orient="vertical"] > tab { 
   border-left: none;
-  border-right: 1px solid #9C9CFF;
   -moz-border-radius: 0px 8px 8px 0px;
   padding: 3px 5px 1px 5px;
   margin: 2px 1px 2px 1px;
@@ -84,6 +87,8 @@ tabpanels {
   border: 1px solid #9C9CFF;
   padding: 5px;
 }
+
+
 
 
 
