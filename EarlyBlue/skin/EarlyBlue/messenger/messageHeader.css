@@ -109,9 +109,7 @@ mail-emailheaderfield > .headerBox > mail-emailaddress
 .emailDisplayButton 
   {
     color                 : #336699;
-/*    text-decoration       : underline; */
     cursor                : pointer;
-/*    min-height: 16px; */
     margin                : 0px;
     padding               : 0px; 
     padding-left          : 1px; 

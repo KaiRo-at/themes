@@ -114,9 +114,7 @@ mail-emailheaderfield > .headerBox > mail-emailaddress
 .emailDisplayButton 
   {
     color                 : #008484;
-/*    text-decoration       : underline; */
     cursor                : pointer;
-/*    min-height: 16px; */
     -moz-border-radius:   : 3px;
     margin                : 0px;
     padding               : 0px; 
