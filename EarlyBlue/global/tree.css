@@ -20,7 +20,7 @@
  *
  * Contributor(s):
  *   Robert Kaiser <KaiRo@KaiRo.at>
- *   Joe Hewitt (hewitt@netscape.com)                                           
+ *   Joe Hewitt (hewitt@netscape.com)
  *   Dean Tessman (dean_tessman@hotmail.com)
  *
  * Alternatively, the contents of this file may be used under the terms of
@@ -46,10 +46,10 @@
 /* ::::: tree ::::: */
 
 tree {
-  border-spacing: 0px;     
+  border-spacing: 0px;
   border: 1px inset #CCD0DD;
   background-color: #FFFFFF;
-  color: #000000;   
+  color: #000000;
 }
 
 /* ::::: tree focusring ::::: */
@@ -156,7 +156,9 @@ treechildren::-moz-tree-line(selected, focus) {
 /* ::::: tree separator ::::: */
 
 treechildren::-moz-tree-separator {
+  margin-top: 1px;
   border: 1px outset #CCD0DD;
+  height: 2px;
 }
 
 /* ::::: drop feedback ::::: */
@@ -176,6 +178,16 @@ treechildren::-moz-tree-drop-feedback {
 
 treechildren::-moz-tree-drop-feedback(selected) {
   background-color: #FFFFFF;
+}
+
+/* ::::: tree checkbox ::::: */
+
+treechildren::-moz-tree-checkbox {
+  list-style-image: url("chrome://global/skin/tree/checkbox.gif");
+}
+
+treechildren::-moz-tree-checkbox(checked) {
+  list-style-image: url("chrome://global/skin/tree/checkbox-checked.gif");
 }
 
 /* ::::: tree progress meter ::::: */
@@ -198,7 +210,7 @@ treechildren::-moz-tree-cell-text(progressmeter) {
 
 /* ::::: tree columns ::::: */
 
-treecol { 
+treecol {
   -moz-box-align: center;
   -moz-box-pack: center;
   border: 1px outset #CCD0DD;
@@ -207,7 +219,7 @@ treecol {
   padding: 1px 4px;
 }
 
-treecolpicker { 
+treecolpicker {
   -moz-box-align: center;
   -moz-box-pack: center;
   border: 1px solid transparent;
@@ -218,7 +230,7 @@ treecolpicker {
 .treecol-image {
   padding: 1px;
 }
-  
+
 .treecol-text {
   margin: 0px !important;
   padding: 0px !important;
@@ -272,6 +284,7 @@ treechildren::-moz-tree-column(insertafter) {
 
 .treecol-sortdirection {
   list-style-image: none;
+  width: 8px;  /* The image's width is 7 pixels */
 }
 
 .sortDirectionIndicator[sortDirection="ascending"] .treecol-sortdirection {
@@ -296,7 +309,7 @@ treechildren::-moz-tree-twisty {
   width: 11px; /* The image's width is 11 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
 }
-  
+
 treechildren::-moz-tree-twisty(open) {
   width: 11px; /* The image's width is 11 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
@@ -315,4 +328,18 @@ treechildren.gridlines::-moz-tree-cell {
 
 treechildren.gridlines::-moz-tree-row {
   border: none;
+}
+
+/* ::::: alternating background ::::: */
+
+treechildren[alternatingbackground="true"]::-moz-tree-row(odd) {
+  background-color: #F5F7FF;
+}
+
+treechildren[alternatingbackground="true"]::-moz-tree-row(odd, selected) {
+  background-color: #A0A0A0;
+}
+
+treechildren[alternatingbackground="true"]::-moz-tree-row(odd, selected, focus) {
+  background-color: #6699CC;
 }

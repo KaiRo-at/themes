@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998-1999
  * the Initial Developer. All Rights Reserved.
@@ -22,7 +22,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -48,8 +48,12 @@
 
 /* ::::: XBL bindings ::::: */
 
+checkbox {
+  -moz-binding: url("chrome://global/content/bindings/checkbox.xml#checkbox-with-spacing");
+}
+
 radio {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#radio");
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#radio-with-spacing");
 }
 
 menulist > menupopup,
@@ -66,7 +70,7 @@ menulist > menupopup,
 window,
 page,
 dialog,
-wizard { 
+wizard {
   background-color: #CCD0DD;
   color: #000000;
   font: 11px helvetica,arial,tahoma,sans-serif;
@@ -75,14 +79,14 @@ wizard {
 page {
   padding: 3px;
 }
-  
+
 /* deprecated */
-window.dialog { 
+window.dialog {
   padding: 8px 10px 10px 8px;
 }
 
-[wait-cursor] { 
-  cursor: wait !important; 
+[wait-cursor] {
+  cursor: wait !important;
 }
 
 /* ::::: alert icons :::::*/
@@ -145,7 +149,7 @@ statusbarpanel {
 
 .statusbarpanel-iconic {
   padding: 0px;
-}    
+}
 
 resizer[dir="bottomright"] {
   cursor: se-resize;

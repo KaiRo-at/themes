@@ -43,7 +43,7 @@
 
 /* ::::: menu/menuitem ::::: */
 
-menu, 
+menu,
 menuitem {
   -moz-box-align: center;
   color: #000000;
@@ -52,7 +52,7 @@ menuitem {
 
 menuitem[default="true"] {
   font-weight: bold;
-}  
+}
 
 menu[disabled="true"],
 menuitem[disabled="true"],
@@ -63,7 +63,7 @@ menuitem[_moz-menuactive="true"][disabled="true"] {
 
 /* ..... internal content .... */
 
-.menu-text, 
+.menu-text,
 .menu-iconic-left,
 .menu-iconic-text {
   margin: 0px 2px 0px 0px !important;
@@ -73,6 +73,12 @@ menuitem[_moz-menuactive="true"][disabled="true"] {
 .menu-text {
   margin-left: 18px !important;
   font-weight: inherit;
+}
+
+.menu-description {
+  font-style: italic;
+  color: #808080;
+  margin-left: 1ex !important;
 }
 
 .menu-accel,
@@ -210,13 +216,13 @@ menuitem[checked="true"][type="radio"][_moz-menuactive="true"] {
 /* ::::: menuseparator ::::: */
 
 menuseparator {
-  border: 1px inset #CCD0DD; 
+  border: 1px inset #CCD0DD;
   margin: 2px 0px 2px 0px;
 }
 
 menulist > menupopup > menuseparator,
 .menulist-menupopup > menuseparator {
-  border: 1px inset #CCD0DD; 
+  border: 1px inset #CCD0DD;
   margin: 2px 0px 2px 0px;
 }
 

@@ -44,18 +44,28 @@
 /* ::::: radio ::::: */
 
 radio {
-  -moz-box-align: center;
   margin: 1px 2px;
-  padding: 1px;
+  border-left: 1px transparent;
+  border-right: 1px transparent;
+}
+
+.radio-spacer-box {
+  -moz-box-align: center;
+  border-right: 4px solid transparent;
+  border-top: 1px;
+  border-bottom: 1px;
+}
+
+.radio-label-center-box {
+  -moz-box-align: center;
 }
 
 .radio-label-box {
   border: 1px solid transparent;
-  padding: 0px 0px 1px 1px;
   -moz-box-align: center;
 }
 
-.radio-icon {
+.radio-icon[src] {
   margin-right: 2px;
 }
 
@@ -65,21 +75,20 @@ radio {
 
 /* ..... focused state ..... */
 
-radio[focused="true"] > .radio-label-box { 
+radio[focused="true"] > .radio-label-center-box > .radio-label-box {
   border: 1px dotted #9999CC;
 }
 
 /* ..... disabled state ..... */
 
 
-radio[disabled="true"] {
+radio[disabled="true"] > .radio-spacer-box > .radio-check-box1 {
   color: #999999;
 }
-  
+
 /* ::::: checkmark image ::::: */
 
 .radio-check-box1 {
-  margin: 1px 0px;
   border: 2px outset #CCD0DD;
   -moz-border-radius: 50%;
   width: 12px;
@@ -93,22 +102,22 @@ radio[disabled="true"] {
   width: 4px;
   height: 4px;
   list-style-image: none;
-}  
+}
 
 radio:hover:active > .radio-check-box1 {
   border: 2px inset #CCD0DD;
 }
 
-radio[disabled="true"]:hover:active .radio-check-box1 {
+radio[disabled="true"]:hover:active > .radio-spacer-box > .radio-check-box1 {
   border: 2px outset #CCD0DD;
 }
 
 /* ..... selected state ..... */
 
-radio[selected="true"] > .radio-check-box1 > .radio-check-box2 {
+radio[selected="true"] > .radio-spacer-box > .radio-check-box1 > .radio-check-box2 {
   list-style-image: url("chrome://global/skin/radio/radio-check.gif");
 }
-  
-radio[selected="true"][disabled="true"] > .radio-check-box2 {
+
+radio[selected="true"][disabled="true"] > .radio-spacer-box > .radio-check-box1 > .radio-check-box2 {
   list-style-image: url("chrome://global/skin/radio/radio-check-disabled.gif") !important
 }

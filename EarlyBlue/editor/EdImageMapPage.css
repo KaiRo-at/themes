@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
@@ -24,7 +24,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -39,8 +39,8 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.rect {position:absolute; top:1px; left:1px; height:1px; width:1px; border: 1 solid #0000ff;}
-.cir {position:absolute; top:1px; left:1px; height:1px; width:1px; border: 1 solid #00ff00; -moz-border-radius: 50%;}
+.rect {position:absolute; top:1px; left:1px; height:1px; width:1px; border: 1px solid #0000ff;}
+.cir {position:absolute; top:1px; left:1px; height:1px; width:1px; border: 1px solid #00ff00; -moz-border-radius: 50%;}
 .poly {position:absolute; top:0px; left:0px; height:100%; width:100%;}
 .point {position:absolute; top:1px; left:1px; height:3px; width:3px; background-color:#ff0000;}
 .pointStart {position:absolute; top:1px; left:1px; height:3px; width:3px; background-color:#8000ff;}

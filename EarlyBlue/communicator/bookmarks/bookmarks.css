@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
@@ -21,10 +21,11 @@
  * Contributor(s):
  *   Ben Goodger <ben@netscape.com>
  *   Josh Soref  <timeless@mac.com>
+ *   Dan Cannon  <dc2@myrealbox.com>
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -39,23 +40,26 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/** 
- * Style rules for generic bookmarks items. 
- */    
- 
+/**
+ * Style rules for generic bookmarks items.
+ */
+
 treechildren::-moz-tree-image(Name) {
     padding-right: 2px;
 }
- 
-.bookmark-item, treechildren::-moz-tree-image(Name) {
+
+.bookmark-item,
+treechildren::-moz-tree-image(Name) {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
 }
 
-.bookmark-item[container="true"], treechildren::-moz-tree-image(Name, container) {
+.bookmark-item[container="true"],
+treechildren::-moz-tree-image(Name, container) {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
 }
 
-.bookmark-item[container="true"][open="true"], treechildren::-moz-tree-image(Name, open) {
+.bookmark-item[open="true"],
+treechildren::-moz-tree-image(Name, open) {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
 }
 
@@ -63,7 +67,8 @@ treechildren::-moz-tree-image(Name) {
   list-style-image: url("chrome://global/skin/icons/loading.gif") !important;
 }
 
-.bookmark-item[status="new"] {
+.bookmark-item[status="new"],
+treechildren::-moz-tree-image(Name, new) {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item-updated.gif") !important;
 }
 
@@ -71,20 +76,14 @@ treechildren::-moz-tree-image(Name) {
   height: 16px;
 }
 
-.bookmark-item > .menu-iconic-left > .menu-iconic-icon {
-  max-width: 16px;
-  max-height: 16px;
-}
-
 toolbarbutton.bookmark-item > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 
-.tree-cell-icon, .tree-cell-primary-icon {
+.bookmark-item > .toolbarbutton-box > .toolbarbutton-icon {
   list-style-image: inherit;
   height: 16px;
-  max-width: 16px;
-  max-height: 16px;
+  width: 16px;
 }
 
 treechildren::-moz-tree-twisty(group, hidetwisty) {

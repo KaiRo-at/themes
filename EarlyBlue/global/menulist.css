@@ -68,6 +68,12 @@ menulist[open="true"]:focus > .menulist-label-box {
   margin: 1px 3px !important;
 }
 
+.menulist-description {
+  font-style: italic;
+  color: #808080;
+  margin-left: 1ex !important;
+}
+
 /* ..... dropmarker ..... */
 
 .menulist-dropmarker {
@@ -112,7 +118,7 @@ menulist[disabled="true"] {
 
 .menulist-editable-box {
   background-color: #FFFFFF;
-  padding: 2px; 
+  padding: 2px;
 }
 
 html|*.menulist-editable-input {
@@ -138,7 +144,7 @@ html|*.menulist-editable-input {
 .menulist-compact > .menulist-label {
   margin: 0 3px !important;
   text-align: right;
-}  
+}
 
 .menulist-compact > .menulist-dropmarker {
   margin-left: 2px;

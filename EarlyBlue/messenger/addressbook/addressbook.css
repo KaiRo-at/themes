@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
@@ -23,7 +23,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -43,6 +43,7 @@
 @import url("chrome://messenger/skin/");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
 
 /* ::::: primary toolbar buttons ::::: */
 
@@ -52,7 +53,7 @@
 
 #button-newcard[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/newcard-disabled.gif") !important;
-} 
+}
 
 #button-newlist {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/newlist.gif");
@@ -60,7 +61,7 @@
 
 #button-newlist[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/newlist-disabled.gif") !important;
-} 
+}
 
 #button-editcard {
   list-style-image:url("chrome://messenger/skin/addressbook/icons/person.gif");
@@ -68,7 +69,7 @@
 
 #button-editcard[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/person-disabled.gif") !important;
-} 
+}
 
 #button-newmessage {
   list-style-image:url("chrome://messenger/skin/addressbook/icons/newmsg.gif");
@@ -76,7 +77,7 @@
 
 #button-newmessage[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/newmsg-disabled.gif") !important;
-} 
+}
 
 #button-newim {
   list-style-image:url("chrome://messenger/skin/addressbook/icons/im.gif");
@@ -84,7 +85,7 @@
 
 #button-newim[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/addressbook/icons/im-disabled.gif") !important;
-} 
+}
 
 #button-delete {
   list-style-image:url("chrome://global/skin/icons/icons/trash.gif");
@@ -92,7 +93,7 @@
 
 #button-delete[disabled="true"] {
   list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
-} 
+}
 
 /* CardView styles - used in the Card View Pane */
 
@@ -123,7 +124,7 @@
   min-width: 120px;
   margin: 0px;
 }
- 
+
 .cardViewGroup {
   margin-top: 8px;
   padding-bottom: 5px;
@@ -175,7 +176,7 @@ html|p {
 
 /* ::::: border adjustments ::::: */
 
-#dirTree, #abResultsTree { 
+#dirTree, #abResultsTree {
   border: none;
   margin: 0px;
 }
