@@ -45,6 +45,19 @@ mail-emailaddress
     display               : -moz-inline-box;
   }
 
+mail-headerfield,
+mail-toggle-headerfield
+  { 
+    padding               : 0px; 
+    padding-left          : 1px; 
+    padding-right         : 1px; 
+  }
+
+mail-emailheaderfield > .headerBox > mail-emailaddress
+  { 
+    padding-left          : 0.5em; 
+  }
+
 .buttonTopSpacer     
   { 
     height                : 0.3em; 
@@ -103,8 +116,12 @@ mail-emailaddress
     color                 : #008484;
 /*    text-decoration       : underline; */
     cursor                : pointer;
-    min-height: 16px;
+/*    min-height: 16px; */
     -moz-border-radius:   : 3px;
+    margin                : 0px;
+    padding               : 0px; 
+    padding-left          : 1px; 
+    padding-right         : 1px; 
   }
 
 .emailDisplayButton:hover
@@ -212,8 +229,3 @@ text.collapsedHeaderDisplayName
 [hide] {
   visibility: hidden;
 }
-
-
-
-
-
