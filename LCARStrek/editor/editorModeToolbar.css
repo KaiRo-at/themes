@@ -39,33 +39,29 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#EditModeToolbar 
-  {
-    padding               : 0px;
-    -moz-box-align        : start;
-/*    border-bottom         : 1px solid ThreeDShadow; */
-    margin-bottom         : 0px;
-    min-width             : 1px;
-/*    color                 : white;
-    background-color      : ThreeDFace; */
-  }
+#EditModeToolbar {
+  -moz-box-align: start;
+  padding: 0px;
+  margin-bottom: 0px;
+  min-width: 1px;
+}
 
-#NormalModeButton 
-  {
-    list-style-image      : url(chrome://editor/skin/images/editmode-normal.gif); 
-  }
+.tab-bottom[selected="true"] {
+/*  color: -moz-FieldText; */
+}
 
-#TagModeButton 
-  {
-    list-style-image      : url(chrome://editor/skin/images/editmode-tags.gif); 
-  }
+#NormalModeButton {
+  list-style-image: url("chrome://editor/skin/icons/editmode-normal.gif"); 
+}
 
-#SourceModeButton 
-  {
-    list-style-image      : url(chrome://editor/skin/images/editmode-html.gif); 
-  }
+#TagModeButton {
+  list-style-image: url("chrome://editor/skin/icons/editmode-tags.gif"); 
+}
 
-#PreviewModeButton 
-  {
-    list-style-image      : url(chrome://editor/skin/images/editmode-preview.gif); 
-  }
+#SourceModeButton {
+  list-style-image: url("chrome://editor/skin/icons/editmode-html.gif"); 
+}
+
+#PreviewModeButton {
+  list-style-image: url("chrome://editor/skin/icons/editmode-preview.gif"); 
+}

@@ -37,15 +37,27 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-groupbox
-  {
-    -moz-border-radius    : 5px;
-    border                : 2px solid #9C9CFF;
-    padding               : 7px !important;
-    margin                : 5px;
-  }
+/* ===== groupbox.css ==================================================
+  == Styles used by the XUL groupbox and related elements.
+  ======================================================================= */
 
-.groupbox-body
-  {
-    padding               : inherit;
-  }
+/* ::::: groupbox ::::: */
+
+groupbox {
+  -moz-border-radius: 5px;
+  margin: 5px;
+  border: 2px solid #9C9CFF;
+  padding: 5px;
+}
+
+.groupbox-body {
+  padding: inherit;
+}
+
+caption {
+  -moz-border-radius: 7px;
+  margin: 0px 6px 2px 6px;
+  padding: 0px 3px;
+  background-color: #9C9CFF; 
+  color: #000000;
+}

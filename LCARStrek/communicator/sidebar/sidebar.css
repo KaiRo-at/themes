@@ -37,150 +37,152 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+#sidebar-box {
+  border: none;
+}
+
+/* ::::: sidebar splitter ::::: */
+
 #sidebar-panels-splitter[state="collapsed"] {
-    margin-bottom         : 0px;
+  margin-bottom: 0px;
+  border-left: none;
+  border-right: none;
 }
 
 #sidebar-splitter {
-    border-top            : none;
-    border-bottom         : none;
+  border-top: none;
+  border-bottom: none;
 }
 
 #sidebar-splitter[state="collapsed"] {
-    margin-left           : 0px;
+  margin-left: 0px;
 }
 
-#sidebar-box 
-  {
-    border                : none;
-  }
+/* ::::: sidebar header ::::: */
 
-.text-panel-loading 
-  {
-    margin                : 5px 0px;
-  }
+.sidebarheader-main {
+  border: none;
+  color: #FF9F00;
+  background-color: #6000CF;
+  padding: 0px 2px 0px 4px;
+}
 
-.image-panel-loading 
-  {
-    margin                : 5px;
-    list-style-image      : url("chrome://global/skin/loading.gif"); 
-  }
+.sidebar-header-text {
+  font-weight: bold;
+}
 
-.sidebarheader-main 
-  {
-    border                : none;
-    color                 : #FF9F00;
-    background-color      : #6000CF;
-    padding-left          : 4px;
-  }
+/* ..... close button ..... */
+
+#sidebar-close-button {
+  -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton-image");
+  padding: 3px;
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+}
+
+#sidebar-close-button:hover,
+#sidebar-close-button:hover:active {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+}
+
+/* ..... panel picker button ..... */
 
 #sidebar-panel-picker {
-  -moz-box-direction: reverse; 
-/*  color: inherit; */
+  padding: 3px 1px 3px 1px;
 }
-  
-#sidebar-panel-picker > .toolbarbutton-box > .toolbarbutton-dropmarker
-  {
-    padding-left            : 4px;
-    list-style-image        : url("chrome://global/skin/menu-arrow.gif");
-  }
 
-#sidebar-panel-picker:hover > .toolbarbutton-box > .toolbarbutton-dropmarker,
-#sidebar-panel-picker[open="true"] > .toolbarbutton-box > .toolbarbutton-dropmarker
-  {
-    list-style-image        : url("chrome://global/skin/menu-arrow-hover.gif");
-  }
+/* ::::: sidebar panel ::::: */
 
-.sidebar-header-text  
-  {
-    font-weight           : bold;
-  }
+.sidebar-iframe-no-panels,
+.loadarea {
+  background-color: #000000;
+  color: #FF9F00;
+}
 
-/**
- * texttab folder lookalike e.g. for sidebar panel headers
- */
-  .box-texttab
-    {
-      -moz-binding        : url("chrome://communicator/skin/sidebar/sidebarBindings.xml#panelheader");
-      -moz-border-radius  : 5px;
-      border-top          : 3px solid black;
-      cursor              : pointer;
-    }
+.iframe-panel {
+}  
 
-  .box-texttab > .panelheader-box-1
-    {
-      -moz-border-radius  : 5px;
-      background-color    : #FF9F00;
-      color               : #000000;
-      padding             : 2px 0px 2px 0px;
-    }
+/* ::::: loading info ::::: */
 
-  .box-texttab:hover > .panelheader-box-1,
-  .box-texttab:hover:active > .panelheader-box-1
-    {
-      background-color    : #FFCF00;
-    }
+.text-panel-loading {
+  margin: 5px 0px;
+}
 
-  .box-texttab[selected="true"],
-  .box-texttab[selected="true"]:hover ,
-  .box-texttab[selected="true"]:hover:active
-    {
-      border-bottom       : 3px solid black;
-    }
+.text-panel-loading[loading="false"] {
+  margin-left: 11px;
+}
 
-  .box-texttab[selected="true"] > .panelheader-box-1,
-  .box-texttab[selected="true"]:hover > .panelheader-box-1,
-  .box-texttab[selected="true"]:hover:active > .panelheader-box-1
-    {
-      background-color    : #008484;
-      color               : #FFCF00;
-    }
+.image-panel-loading {
+  margin: 5px;
+  list-style-image: url("chrome://global/skin/icons/loading.gif");
+}
 
-  .box-texttab[last-panel="true"], 
-  .box-texttab[last-panel="true"]:hover,
-  .box-texttab[last-panel="true"]:hover:active,
-  .box-texttab[last-panel="true"][selected="true"],
-  .box-texttab[last-panel="true"][selected="true"]:hover,
-  .box-texttab[last-panel="true"][selected="true"]:hover:active
-    {
-      border-bottom       : none;
-    }
+/* ::::: sidebar tabs ::::: */
 
-  .panelheader-grippy-icon
-    {
-      margin              : 2px 3px 0px 3px;
-      list-style-image    : url("chrome://global/skin/twisty-closed-selected.gif");
-    }
+.box-texttab {
+  -moz-binding: url("chrome://communicator/skin/sidebar/sidebarBindings.xml#sbtab");
+  cursor: pointer;
+  border-top: 3px solid black;
+}
 
-  .box-texttab[selected="true"],
-  .box-texttab[selected="true"]:hover
-    {
-      font-weight           : bold;
-      cursor                : default;
-    }
+.box-texttab > hbox {
+  -moz-border-radius: 5px;
+  -moz-box-align: stretch;
+  padding: 2px 0px 2px 0px;
+  background-color: #FF9F00;
+  color: #000000;
+}
 
-  .box-texttab[last-panel="true"], 
-  .box-texttab[selected="true"]
-    {
-      margin-bottom       : 0px;
-    }
+.box-texttab[selected="true"] > hbox,
+.box-texttab[selected="true"]:hover > hbox,
+.box-texttab[selected="true"]:hover:active > hbox {
+  background-color: #008484;
+  color: #FFCF00;
+  font-weight: bold;
+}
 
-  .panelheader-grippy-icon[selected="true"]
-    {
-      margin              : 2px 3px 0px 3px;
-      list-style-image    : url("chrome://global/skin/twisty-open-active.gif");
-    }
+.box-texttab[selected="true"],
+.box-texttab[selected="true"]:hover,
+.box-texttab[selected="true"]:hover:active {
+  border-bottom: 3px solid black;
+}
 
-  .sidebar-iframe-no-panels, .loadarea
-    {
-      background-color      : #000000;
-    }
-    
-  .iframe-panel
-    {
-    } 
+.box-texttab[last-panel="true"], 
+.box-texttab[last-panel="true"]:hover,
+.box-texttab[last-panel="true"]:hover:active,
+.box-texttab[last-panel="true"][selected="true"],
+.box-texttab[last-panel="true"][selected="true"]:hover,
+.box-texttab[last-panel="true"][selected="true"]:hover:active {
+  border-bottom: none;
+}
 
-  .panelheader-text
-    {
-      margin              : 0px;
-    }
+.sbtab-label {
+  margin: 0px 0px 0px 0px !important;
+}
+
+.sbtab-twisty {
+  margin: 2px 3px 0px 3px;
+  list-style-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
+}
+
+/*
+.sbtab-texture {
+  margin: 2px 0px;
+  background: url("chrome://global/skin/toolbar/tbgrip-texture.gif") repeat-y;
+  width: 12px;
+  height: 12px;
+}
+*/
+
+.box-texttab:hover > hbox,
+.box-texttab:hover:active > hbox {
+  background-color: #FFCF00;
+}
+
+.box-texttab[last-panel="true"], 
+.box-texttab[selected="true"] {
+  margin-bottom: 0px;
+}
+
+.sbtab-twisty[selected="true"] {
+  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+}

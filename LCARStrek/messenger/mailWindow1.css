@@ -46,20 +46,24 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ::::: outliner focus-ring border adjustments ::::: */
+/* :::::
+   :: Make sure the min height is small so we can
+   :: resize the pane vertically -EDV
+   ::::: */
 
-#threadpane-splitter
-  {
-    border-right          : none;
-    border-left           : none;
-  }
+#messagepanebox {
+  min-height: 10px;
+  height: 0px;
+}
 
-#threadOutliner
-  {
-    min-width             : 1px;
-    border                : none;
-  }
-
+/* ..... outliner adjustments ..... */
+ 
 #folderOutliner {
-    border                : none;
+  min-width: 1px;
+  border: none;
+}
+
+#threadOutliner {
+  min-width: 1px;
+  border:n none;
 }

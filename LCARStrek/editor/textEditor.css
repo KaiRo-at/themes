@@ -37,6 +37,6 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.separator_small {
+.separator-small {
   width: 1em;
 }

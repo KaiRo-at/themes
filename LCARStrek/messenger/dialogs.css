@@ -54,18 +54,40 @@ menu.push {
 }
 
 menu.push:hover:active,
-menu.push[open],
-menu.push[toggled="1"] {
+menu.push[open] {
   border-color: #FFCF00;
   padding: 3px 1px 1px 3px;
-}
-
-menu.push[toggled="2"] {
-   background-color: #008484;
 }
 
 menu.push[disabled="true"],
 menu.push[disabled="true"]:hover,
 menu.push[disabled="true"]:hover:active {
   color: #8050B0;
+}
+
+/* ::::: askSendFormat.xul ::::: */
+
+askSendFormat {
+  width: 40em;
+}
+
+#askImageBox {
+ -moz-box-align: start;
+}
+
+#convertYes {
+  list-style-image:url("chrome://global/skin/icons/alert-question.gif");
+}
+
+#convertAltering {
+  list-style-image:url("chrome://global/skin/icons/alert-question.gif");
+}
+
+#convertNo {
+  list-style-image:url("chrome://global/skin/icons/alert-exclam.gif");
+}
+
+/* Workaround for bug 50217. Please remove this rule, when this bug is fixed. */
+#convertDefault {
+  list-style-image:url("chrome://global/skin/icons/alert-question.gif");
 }

@@ -36,40 +36,47 @@
  * ***** END LICENSE BLOCK ***** */
 
 @import url(chrome://global/skin/);
-
-@import url(chrome://communicator/skin/box.css);
-@import url(chrome://communicator/skin/button.css);
 @import url(chrome://communicator/skin/brand.css);
+@import url(chrome://communicator/skin/button.css);
 @import url(chrome://communicator/skin/formatting.css);
+/* the line below is only LCARStrek */
 @import url(chrome://communicator/skin/toolbar.css);
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
-@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
 
-#offline-status[offline="true"]
-  {
-    list-style-image      : url("chrome://communicator/skin/offline.gif");
-  }
+/* ==== communicator.css ====================================================
+   == Styles shared everywhere throughout the Communicator suite.
+   ========================================================================== */
 
-#offline-status
-  {
-    list-style-image      : url("chrome://communicator/skin/online.gif");
-  }
+#offline-status[offline="true"] {
+  list-style-image: url("chrome://communicator/skin/icons/offline.gif");
+}
+
+#offline-status {
+  list-style-image: url("chrome://communicator/skin/icons/online.gif");
+}
   
+/* ::::: directional button icons ::::: */
+
 .up {
-  list-style-image:url("chrome://global/skin/scroll-up.gif");
+  list-style-image:url("chrome://global/skin/arrow/arrow-up.gif");
   min-width: 0px;
 }
 
 .up[disabled="true"] {
-  list-style-image:url("chrome://global/skin/scroll-up-disabled.gif");
+  list-style-image:url("chrome://global/skin/arrow/arrow-up-disabled.gif");
 }
 
 .down {
   min-width: 0px;
-  list-style-image:url("chrome://global/skin/scroll-down.gif");
+  list-style-image:url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
 .down[disabled="true"] {
-  list-style-image:url("chrome://global/skin/scroll-down-disabled.gif");
+  list-style-image:url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+}
+
+.sidebarTree {
+  border: none;
+  margin: 0px !important;
 }

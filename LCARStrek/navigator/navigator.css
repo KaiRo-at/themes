@@ -38,323 +38,256 @@
 /** Contains style definitions for the navigator application 
  **/
 
-@import url(chrome://navigator/content/navigator.css);
-@import url(chrome://communicator/skin/);
-@import url(chrome://navigator/skin/personalToolbar.css);
-@import url(chrome://communicator/skin/sidebar/sidebar.css);
+@import url("chrome://navigator/content/navigator.css");
+@import url("chrome://communicator/skin/");
+@import url("chrome://communicator/skin/sidebar/sidebar.css");
+@import url("chrome://communicator/skin/bookmarks/bookmarksToolbar.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /********** resource bundle binding **********/
 
-#resource_bundle_navigator
-  {
-    -moz-binding            : url('chrome://navigator/skin/resources.xml#resource_bundle_navigator')      
-  } 
+/* ::::: primary toolbar buttons ::::: */
 
-/*
-#content
-  {
-    border-left           : 1px solid ThreeDDarkShadow;
-    border-top            : 1px solid ThreeDDarkShadow;
-    border-bottom         : 1px solid ThreeDFace;
-  }
-
-#browser
-  {
-    border-left           : 1px solid ThreeDShadow;
-  }  
-*/
-
-#bookmarks-button
-  {
-    list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
-  }
-  
-#bookmarks-button[open="true"]
-  {
-    list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
-  }
-  
-/*
- * Images for the main buttons
- */
-#back-button 
-  {
-    list-style-image      : url("chrome://navigator/skin/back.gif");
-  }
-
-#back-button[disabled="true"]
-  {
-    list-style-image      : url("chrome://navigator/skin/back-disabled.gif") !important;
-  }
+#back-button {
+  list-style-image: url("chrome://navigator/skin/icons/back.gif");
+}
 
 #back-button:hover,
 #back-button[buttonover="true"],
 #back-button[buttondown="true"],
-#back-button[open="true"]
-  {
-    list-style-image      : url("chrome://navigator/skin/back-hover.gif");
-  }
-#forward-button 
-  {
-    list-style-image      : url("chrome://navigator/skin/forward.gif");
-  }
+#back-button[open="true"] {
+  list-style-image: url("chrome://navigator/skin/icons/back-hover.gif");
+}
 
-#forward-button[disabled="true"]
-  {
-    list-style-image      : url("chrome://navigator/skin/forward-disabled.gif") !important;
-  }
+#back-button[disabled="true"] {
+  list-style-image: url("chrome://navigator/skin/icons/back-disabled.gif") !important;
+}
+
+#forward-button {
+  list-style-image: url("chrome://navigator/skin/icons/forward.gif");
+}
 
 #forward-button:hover,
 #forward-button[buttonover="true"],
 #forward-button[buttondown="true"],
-#forward-button[open="true"]
-  {
-    list-style-image      : url("chrome://navigator/skin/forward-hover.gif");
-  }
+#forward-button[open="true"] {
+  list-style-image: url("chrome://navigator/skin/icons/forward-hover.gif");
+}
 
-#reload-button 
-  {
-  list-style-image        : url("chrome://navigator/skin/reload.gif");
-  }
+#forward-button[disabled="true"] {
+  list-style-image: url("chrome://navigator/skin/icons/forward-disabled.gif") !important;
+}
+
+#reload-button {
+  list-style-image: url("chrome://navigator/skin/icons/reload.gif");
+}
 
 #reload-button:hover,
-#reload-button:hover:active
-  {
-  list-style-image        : url("chrome://navigator/skin/reload-hover.gif");
-  }
+#reload-button:hover:active {
+  list-style-image: url("chrome://navigator/skin/icons/reload-hover.gif");
+}
 
-  {
-  list-style-image        : url("chrome://navigator/skin/reload-hover-active.gif");
-  }
+#reload-button[disabled="true"] {
+  list-style-image: url("chrome://navigator/skin/icons/reload-disabled.gif") !important;
+}
 
-#reload-button[disabled="true"]
-  {
-	  list-style-image      : url("chrome://navigator/skin/reload-disabled.gif") !important;
-  }
-
-#stop-button 
-  {
-	  list-style-image      : url("chrome://navigator/skin/stop.gif");
-  } 
-
-#stop-button[disabled="true"]
-  {
-    list-style-image      : url("chrome://navigator/skin/stop-disabled.gif") !important;
-  } 
+#stop-button {
+  list-style-image: url("chrome://global/skin/icons/stop.gif");
+}
 
 #stop-button:hover,
-#stop-button:hover:active
-  {
-    list-style-image      : url("chrome://navigator/skin/stop-hover.gif");
-  } 
-  
-#print-button 
-  {
-    list-style-image      : url("chrome://global/skin/print.gif");
-  }
+#stop-button:hover:active {
+  list-style-image: url("chrome://global/skin/icons/stop-hover.gif");
+} 
 
-#print-button[disabled="true"] {
-    list-style-image      : url("chrome://global/skin/print-disabled.gif") !important;
-  }
+#stop-button[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
+} 
+
+#print-button {
+  list-style-image: url("chrome://global/skin/icons/print.gif");
+}
 
 #print-button:hover,
 #print-button[buttonover="true"],
 #print-button[buttondown="true"],
-#print-button[open="true"]
-  {
-    list-style-image      : url("chrome://global/skin/print-hover.gif");
-  }
+#print-button[open="true"] {
+  list-style-image: url("chrome://global/skin/icons/print-hover.gif");
+}
+
+#print-button[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
+}
 
 /* Hides text below the above buttons */
-.toolbarbutton-1 > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box > .toolbarbutton-text,
-.toolbarbutton-1 > .toolbarbutton-box > .toolbarbutton-text {
+.toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-text,
+.toolbarbutton-1 > .toolbarbutton-text {
   display: none;
 }
 
-/*all the urlbar stuff*/
+#fullscreen-exit-button {
+  list-style-image: none;
+}
+
+#fullscreen-exit-button > .toolbarbutton-text {
+  display: normal;
+}
+
+/* ::::: nav-bar-inner ::::: */
+
+#nav-bar-inner {
+  padding-left: 0px;
+  min-width: 0px;
+  margin: 7px 4px 8px 4px; 
+}
+
+#urlbar {
+  -moz-border-radius: 5px;
+  border: 1px solid #9C9CFF;
+  background-color: #000000;
+  margin: 0px 7px 0px 0px;
+}
+
+/* ::::: page proxy icon ::::: */
+ 
+#page-proxy-deck,
+#page-proxy-favicon,
+#page-proxy-button {
+  width: 16px;
+  height: 16px;
+}
 
 #page-proxy-deck {
-    cursor                : grab;
-    margin                : 1px 1px 1px 1px;
-    width                 : 16px;
-    height                : 16px;
+  cursor: grab;
+  margin: 1px 1px 1px 2px;
 }                                                                               
 
-#page-proxy-button
-  {
-    list-style-image      : url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
-    padding-top           : 2px;
-    padding-bottom        : 2px;
-    width                 : 16px;
-    height                : 16px;
-  } 
+#page-proxy-button {
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
+  padding-top: 2px;
+  padding-bottom: 2px;
+} 
+ 
+#page-proxy-favicon {
+  list-style-image: none;
+} 
 
 /*
-#page-proxy-button[pageproxystate="valid"]:hover
-  {
-    list-style-image      : url("chrome://communicator/skin/bookmarks/location-hover.gif");
-  }
-  
-#page-proxy-button[pageproxystate="valid"]:hover:active
-  {
-    list-style-image      : url("chrome://communicator/skin/bookmarks/location-clicked.gif");
-  }
-
-#page-proxy-button[pageproxystate="invalid"] 
-  {
-    cursor                  : default;
-    list-style-image        : url("chrome://communicator/skin/bookmarks/location-disabled.gif");
-  }
-*/
-
-#page-proxy-favicon
-{
-    list-style-image      : none;
-    padding               : 0px;
-    width                 : 16px;
-    height                : 16px;
+#page-proxy-button[pageproxystate="valid"]:hover  {
+  list-style-image: url("chrome://communicator/skin/bookmarks/location-hover.gif");
 }
 
-#content-frame 
-  {
-    min-width             : 0px;
-    min-height            : 0px;
-  }
-  
-#nav-bar-inner {
-  padding-left            : 0px;
-  min-width               : 0px;
-  margin                  : 9px 4px; 
+#page-proxy-button[pageproxystate="valid"]:hover:active {
+  list-style-image: url("chrome://communicator/skin/bookmarks/location-act.gif");
 }
 
-/*  
-#urlbar  .autocomplete-icon-box {
-  border                  : 1px inset #CCD0DD;
-  border-right            : none;
-}  
-
-#urlbar .autocomplete-textbox-container {
-  border                  : 1px inset #CCD0DD;
-  border-left             : none;
+#page-proxy-button[pageproxystate="invalid"] {
+  cursor: default;
+  list-style-image: url("chrome://communicator/skin/bookmarks/location-dis.gif");
 }
 */
 
-#urlbar-group {
-  border                  : none;
-  margin                  : 0px 5px 0px 0px;
+/* ::::: autocomplete ::::: */
+
+/*
+.autocomplete-history-dropmarker {
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  -moz-border-right-colors: ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDShadow;
+}
+
+.autocomplete-history-button:hover {
+  background-color: #FFCF00;
+}
+*/
+
+.autocomplete-outlinerbody:-moz-outliner-cell-text(value) {
+  padding-left: 13px;
+}
+
+.autocomplete-outlinerbody:-moz-outliner-cell-text(comment) {
+  color: #E7ADE7;
+/*  font-style: italic; */
+}
+
+.autocomplete-search-box {
+  border-top: 1px solid #FF9F00;
+  background-color: #9C9CFF;
+  color: #000000;
 }  
 
-#urlbar-container {
-  -moz-border-radius      : 5px;
-  border                  : 1px solid #9C9CFF;
-  background-color        : #000000;
-  padding                 : 0px;
+.autocomplete-result-popup[nomatch] > .autocomplete-search-box {
+  border-top: 1px solid #9C9CFF;
+}
+
+.autocomplete-search-engine {
+  padding: 2px;
 }  
+
+.autocomplete-search-engine[menuactive="true"] {
+  background-color: #008484;
+  color: #FFCF00;
+}  
+
+.autocomplete-search-engine-img {
+  margin-right: 4px;
+}
+
+/* ::::: go and searchbuttons ::::: */
 
 #search-button, 
 #go-button {
-  font-weight             : bold;
-  margin                  : 0px 3px 0px 0px;
-  background-color        : #000000;
+  margin: 0px 3px 0px 0px;
+/*  min-height: 25px; */
+  font-weight: bold;
+  background-color: #000000;
 }
 
 #search-button:hover, 
 #go-button:hover {
-  font-weight             : bold;
-  margin                  : 0px 3px 0px 0px;
-  background-color        : #FFCF00;
+  background-color: #FFCF00;
 }
 
-#search-button
-  {
-/*    list-style-image      : url("chrome://communicator/skin/search.gif"); */
-  }
+#search-button {
+/*  list-style-image: url("chrome://communicator/skin/icons/search.gif"); */
+  font-weight: bold;
+}
+
+/* ::::: personal toolbar ::::: */
+
+#bookmarks-button {
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
+}
+
+#bookmarks-button[open="true"] {
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
+}
+
+#home-button {
+  list-style-image: url("chrome://communicator/skin/bookmarks/home.gif");
+}
+
+/* ::::: sidebar splitter ::::: */
 
 /*
-#search-button:hover
-  {
-    list-style-image      : url("chrome://communicator/skin/search-hover.gif");
-  }
-  
-#search-button:hover:active
-  {
-    list-style-image      : url("chrome://communicator/skin/search-active.gif");
-  }
+#sidebar-splitter {
+  border-left: none;
+  border-right: none;
+  min-width: 5px; 
+}
 */
-
-.menuitem-iconic
-  {
-    padding               : 1px;
-  }
-
-/* ::::: urlbar autocomplete widget ::::: */
-
-.autocomplete-outlinerbody:-moz-outliner-cell-text(value) 
-  {
-    padding-left        : 13px;
-  }
-
-.autocomplete-outlinerbody:-moz-outliner-cell-text(comment) 
-  {
-/*    font-style          : italic; */
-  }
-
-.autocomplete-history-button:hover
-  {
-      background-color    : #FFCF00;
-  }
-
-.autocomplete-history-button-internal-box:hover
-  {
-      background-color    : #FFCF00;
-  }
 
 /*
-.autocomplete-history-button 
-  {
-    border              : 1px outset -moz-Dialog;
-  }
+#content {
+  border-top: 1px solid ThreeDDarkShadow;
+  border-bottom: 1px solid ThreeDLightShadow;
+  border-left: 2px solid;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
+}
 
-.autocomplete-history-button[open="true"] 
-  {
-    border              : 1px solid ThreeDShadow;
-  }
-
-.autocomplete-history-button-internal-box,
-.autocomplete-history-button[open="true"] > .autocomplete-history-button-internal-box 
-  {
-    border              : none;
-  }
+#status-bar {
+  border-top: none;
+}
 */
-
-.autocomplete-search-box 
-  {
-    border-top            : 1px solid #FF9F00;
-    background-color      : #9C9CFF;
-    color                 : #000000;
-  }
-
-.autocomplete-result-popup[nomatch="true"] > .autocomplete-search-box 
-  {
-    border-top            : 1px solid #9C9CFF;
-  }
-
-.autocomplete-search-engine 
-  {
-    padding               : 2px;
-  }
-
-.autocomplete-search-engine[menuactive="true"] 
-  {
-    background-color      : #008484;
-    color                 : #FFCF00;
-  }
-
-.autocomplete-search-engine-img 
-  {
-    margin-right          : 4px;
-  }
-
-

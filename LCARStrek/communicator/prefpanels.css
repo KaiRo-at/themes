@@ -37,32 +37,64 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/******* SmartBrowsing **********/
+/* ==== prefpanels.css ==================================================
+   == Styles used by all preference panels in the Communicator suite.
+   ====================================================================== */
 
-#disabledDomains {
-	max-height: 15em;
+/* ::::: Themes ::::: */
+#skinsTree {
+  height: 80px;
+}  
+
+#themesLink {
+  margin-left: 5px;
+  text-decoration: normal;
+  color: #FF9F00;
+  cursor: pointer;
 }
 
-/******* Themes ****************/
-#skinsTree {
-  height                  : 80px;
+#themesLink:hover {
+  text-decoration: underline;
+  color: #9C9CFF;
+}
+
+#themesLink:active {
+  color: #FFCF00;
 }  
 
 #previewImageContainer {
-  overflow: hidden; 
+  padding: 1px;
   height: 92px; 
-  background-color: #000000; 
-  padding: 2px;
+/*  background-color: #000000; */
 }
 
 #previewImage {
-  max-width: 387px; 
+  max-width: 355px; 
+  min-width: 355px;
+  max-height: 85px;
+  min-height: 85px;
+}
+
+/* ::::: Fonts ::::: */
+
+#sizeVar,
+#sizeMono {
+  width: 4em;
+}
+
+#mouseWheelMode {
+  width: 9em;
+}
+
+/* ::::: Smart Browsing ::::: */
+
+#disabledDomains {
+  max-height: 13em;
 }
 
 /**
  * File icon (32x32)
  **/
-.file-icon-large
-  {
-    list-style-image      : url("chrome://communicator/skin/content-large.gif");
-  }
+.file-icon-large {
+  list-style-image: url("chrome://communicator/skin/icons/content-large.gif");
+}

@@ -37,55 +37,46 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-menupopup, popup
-  {
-    /* DON'T DELETE.  Removes disappearance of scrollbars
-     * in content pane when window is made smaller.
-     * Talk to evaughan@netscape.com for details.
-     */
-    min-width             : 1px;
-    background-color      : #000000;
-    color                 : #FF9F00;
-  }
+/* ===== popup.css ======================================================
+  == Styles used by XUL popups.
+  ======================================================================= */
 
-/* XXX menupopups have to have a color explicitly specified. this is a bug */
-menupopup, popup 
-  {
-    border                : 1px solid #FF9F00;
-  }
+/* ::::: menupopup ::::: */
 
-.popup-internal-box
-  {
-    padding               : 0px;
-  }  
-  
-/** Tooltips (tooltip <popup> element is deprecated! Use <tooltip> instead!)
- *  class="tooltip"
- **/
-.tooltip, tooltip
-  {
-    -moz-border-radius    : 3px;
-    background-color      : #9C9CFF;
-    border                : 1px solid #FFCF00;
-    color                 : #000000;
-    font                  : smaller;
-    padding               : 3px;
-    max-width             : 40em;
-  }
+menupopup,
+popup {
+  border: 1px solid #FF9F00;
+  padding: 1px;
+  min-width: 1px;
+  background-color: #000000;
+}
 
-.tooltip > .popup-internal-box,
-tooltip > .popup-internal-box
-  {
-  	border                : 0px;
-  	padding               : 0px;
-  }
+tooltip {
+  -moz-border-radius: 3px;
+  background-color: #9C9CFF;
+  border: 1px solid #FFCF00;
+  color: #000000;
+  font: smaller;
+  padding: 2px;
+  max-width: 40em;
+}
+
+.tooltip-label {
+  border: 0px;
+  padding: 0px;
+}
+
+tooltip[titletip="true"] {
+  margin: -2px 0px 0px -3px;
+  max-width: none;
+}
 
 /* rules for popups associated with menulists */
 
-  menulist > menupopup,
-  .menulist-menupopup
-    {
-      border              : 1px solid #FF9F00;
-      min-width           : 0px;
-      background-color    : #000000;
-    }
+menulist > menupopup,
+.menulist-menupopup {
+  border: 1px solid #FF9F00;
+  min-width: 0px;
+  padding: 0px;
+  background-color: #000000;
+}

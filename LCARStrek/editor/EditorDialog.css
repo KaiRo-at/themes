@@ -58,6 +58,10 @@ groupbox {
   min-width: 10em;
 }
 
+.MinWidth15em {
+  min-width: 15em;
+}
+
 .MinWidth20em {
   min-width: 20em;
 }
@@ -78,7 +82,6 @@ groupbox {
   font-size: 120%;
 }
 
-
 .narrow {
   width: 3em;
 }
@@ -88,15 +91,15 @@ groupbox {
 }
 
 .menuitem-highlight-1 {
-  font-weight : bold;
+  font-weight: bold;
 }
 
 /* Use this with groove-thin in dialogs 
    to add margins to top and bottom
 */
 .tb-margin {
-  margin-top    : 6px;
-  margin-bottom : 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .color-well {
@@ -125,14 +128,14 @@ groupbox {
 }
 
 #ColorPickerSwatch {
-  border : 2px outset #9C9CFF;
+  border: 2px outset #9C9CFF;
   width: 25px;
   height: 20px;
   margin: 0px 3px 0px 0px;
 }
 
 #ColorPickerSwatch[default="true"] {
-  border : 2px solid transparent;
+  border: 2px solid transparent;
   background-color: inherit;
 }
 
@@ -143,17 +146,11 @@ groupbox {
   margin: 1px 2px 2px 4px;
 }
 
-.popup-trigger {
-  list-style-image: url(chrome://global/skin/scroll-down.gif);
-}
-
 /* temporary -- we need a simple box-based list defined in XBL */
 tree.list {
   border: 1px inset #9C9CFF;
   /* same as in menulist.css */
   margin: 1px 5px 2px 5px;
-  width: 10em;
-  height: 3em;
   /* use rows="#" in XUL to define height */
 }
 
@@ -166,38 +163,37 @@ tree.list {
   min-height:     50px;
 }
 
-#alignTypeSelect,label#alignLabel {
+#alignTypeSelect,
+label#alignLabel {
   margin-left: 5px;
-}
-
-#MoreFewerButton[more="0"] {
-  list-style-image: url(chrome://global/skin/scroll-down.gif);
-  /* bug 9459 - changing button text doesn't resize width.
-     This covers that problem, but we want this size anyway */
-  min-width: 12em;
 }
 
 /* ::::: table properties dialog ::::: */
 
+#MoreFewerButton[more="0"] {
+  list-style-image: url(chrome://global/skin/arrow/arrow-down.gif);
+  min-width: 12em;
+}
+
 #MoreFewerButton[more="1"] {
-  list-style-image: url(chrome://global/skin/scroll-up.gif);
+  list-style-image: url(chrome://global/skin/arrow/arrow-up.gif);
   min-width: 12em;
 }
 
 #PreviousButton {
-  list-style-image: url(chrome://global/skin/arrow-left.gif);
+  list-style-image: url(chrome://global/skin/arrow/arrow-left.gif);
 }
 
 #NextButton {
-  list-style-image: url(chrome://global/skin/arrow-right.gif);
+  list-style-image: url(chrome://global/skin/arrow/arrow-right.gif);
 }
 
 #PreviousButton[type="row"] {
-  list-style-image: url(chrome://global/skin/arrow-up.gif);
+  list-style-image: url(chrome://global/skin/arrow/arrow-up.gif);
 }
 
 #NextButton[type="row"] {
-  list-style-image: url(chrome://global/skin/arrow-down.gif);
+  list-style-image: url(chrome://global/skin/arrow/arrow-down.gif);
 }
 
 /* ::::: spelling dialog ::::: */
@@ -226,7 +222,6 @@ tree.list {
   margin-bottom: 2px;
 }
 
-
 .colorpicker:active {
   border: 1px inset #9C9CFF;
 }
@@ -252,24 +247,28 @@ tree.list {
   min-height: 10px;
 }
 
+#alignTypeSelect {
+  height: 34px;
+}
+
 .align-menu[value="top"] {
-	list-style-image:url("chrome://editor/skin/images/img-align-top.gif");
+  list-style-image:url("chrome://editor/skin/icons/img-align-top.gif");
 }
 
 .align-menu[value="center"] {
-	list-style-image:url("chrome://editor/skin/images/img-align-middle.gif");
+  list-style-image:url("chrome://editor/skin/icons/img-align-middle.gif");
 }
 
 .align-menu[value="bottom"] {
-	list-style-image:url("chrome://editor/skin/images/img-align-bottom.gif");
+  list-style-image:url("chrome://editor/skin/icons/img-align-bottom.gif");
 }
 
 .align-menu[value="right"] {
-	list-style-image:url("chrome://editor/skin/images/img-align-right.gif");
+  list-style-image:url("chrome://editor/skin/icons/img-align-right.gif");
 }
 
 .align-menu[value="left"] {
-	list-style-image:url("chrome://editor/skin/images/img-align-left.gif");
+  list-style-image:url("chrome://editor/skin/icons/img-align-left.gif");
 }
 
 /* Don't change width/height of these without changing values in 
@@ -277,19 +276,19 @@ tree.list {
 */    
 #preview-image-box {
   border: 1px inset #9C9CFF;
-  width      : 82px;
-  max-width  : 82px;
-  min-width  : 82px;
-  height     : 52px;
-  max-height : 52px;
-  min-height : 52px;
-  margin     : 6px 5px 6px 5px;
-  overflow   : hidden;
+  width: 82px;
+  max-width: 82px;
+  min-width: 82px;
+  height: 52px;
+  max-height: 52px;
+  min-height: 52px;
+  margin: 6px 5px 6px 5px;
+  overflow: hidden;
 }
 
 #preview-image-holder {
-  padding : 0px;
-  margin  : 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* Rest are from Ben Goodger for Advanced Edit dialog 
@@ -299,13 +298,12 @@ tree.list {
    this "property list" style treecell formatting is used by cookie/signon 
    viewers. */
 
-
 #tagLabel {
   font-weight: bold;
 }
 
 /* styles for an attribute tree-table */
 tree.AttributesTree {
-  min-width : 200px;
+  min-width: 200px;
   min-height: 200px;
 }

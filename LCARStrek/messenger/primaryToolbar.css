@@ -43,207 +43,151 @@
 
 /* ::::: primary toolbar buttons ::::: */
 
-#button-getmsg 
-  {
-	  list-style-image      : url("chrome://messenger/skin/getmsg.gif");
-  } 
-
-#button-getmsg[disabled="true"],
-#button-getmsg[disabled="true"]:hover,
-#button-getmsg[disabled="true"][buttonover="true"],
-#button-getmsg[disabled="true"][buttondown="true"]
-  {
-    list-style-image      : url("chrome://messenger/skin/getmsg-disabled.gif");
-  } 
+#button-getmsg {
+  list-style-image: url("chrome://messenger/skin/toolbar/getmsg.gif");
+}
 
 #button-getmsg:hover,
 #button-getmsg[buttonover="true"],
 #button-getmsg[buttondown="true"],
-#button-getmsg[open="true"]
-  {
-    list-style-image      : url("chrome://messenger/skin/getmsg-hover.gif");
-  } 
+#button-getmsg[open="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/getmsg-hover.gif");
+} 
 
-#button-newmsg 
-  {
-	  list-style-image      : url("chrome://messenger/skin/newmsg.gif");
-  } 
-
-#button-newmsg[disabled="true"],
-#button-newmsg[disabled="true"]:hover,
-#button-newmsg[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/newmsg-disabled.gif");
-  } 
-
-#button-newmsg:hover,
-#button-newmsg:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/newmsg-hover.gif");
-  } 
-#button-reply 
-  {
-	  list-style-image      : url("chrome://messenger/skin/reply.gif");
-  } 
-
-#button-reply[disabled="true"],
-#button-reply[disabled="true"]:hover,
-#button-reply[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/reply-disabled.gif");
-  } 
-
-#button-reply:hover,
-#button-reply:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/reply-hover.gif");
-  } 
-
-#button-replyall 
-  {
-	  list-style-image      : url("chrome://messenger/skin/replyall.gif");
-  } 
-
-#button-replyall[disabled="true"],
-#button-replyall[disabled="true"]:hover,
-#button-replyall[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/replyall-disabled.gif");
-  } 
-
-#button-replyall:hover,
-#button-replyall:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/replyall-hover.gif");
-  } 
-
-#button-forward 
-  {
-	  list-style-image      : url("chrome://messenger/skin/forward.gif");
-  } 
-
-#button-forward[disabled="true"],
-#button-forward[disabled="true"]:hover,
-#button-forward[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/forward-disabled.gif");
-  } 
-
-#button-forward:hover,
-#button-forward:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/forward-hover.gif");
-  } 
-
-#button-file 
-  {
-	  list-style-image      : url("chrome://messenger/skin/file.gif");
-  } 
-
-#button-file[disabled="true"],
-#button-file[disabled="true"]:hover,
-#button-file[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/file-disabled.gif");
-  } 
-
-#button-file:hover,
-#button-file[open="true"]
-  {
-    list-style-image      : url("chrome://messenger/skin/file-hover.gif");
-  } 
-
-#button-next 
-  {
-	  list-style-image      : url("chrome://messenger/skin/next.gif");
-  } 
-
-#button-next[disabled="true"],
-#button-next[disabled="true"]:hover,
-#button-next[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/next-disabled.gif");
-  } 
-
-#button-next:hover,
-#button-next:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/next-hover.gif");
-  } 
-
-#button-delete 
-  {
-	  list-style-image      : url("chrome://messenger/skin/trash.gif");
-  } 
-
-#button-delete[disabled="true"],
-#button-delete[disabled="true"]:hover,
-#button-delete[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/trash-disabled.gif");
-  } 
-
-#button-delete:hover,
-#button-delete:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/trash-hover.gif");
-  } 
-
-#button-mark {
-	list-style-image	: url("chrome://messenger/skin/mark.gif");
+#button-getmsg[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/getmsg-disabled.gif") !important;
 }
 
-#button-mark[disabled="true"],
-#button-mark[disabled="true"]:hover,
-#button-mark[disabled="true"][buttonover="true"],
-#button-mark[disabled="true"][buttondown="true"]
-  {
-    list-style-image      : url("chrome://messenger/skin/mark-disabled.gif");
-  } 
+#button-newmsg {
+  list-style-image: url("chrome://messenger/skin/toolbar/newmsg.gif");
+}
+
+#button-newmsg:hover,
+#button-newmsg:hover:active {
+  list-style-image: url("chrome://messenger/skin/toolbar/newmsg-hover.gif");
+} 
+
+#button-newmsg[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/newmsg-disabled.gif") !important;
+}
+
+#button-reply {
+  list-style-image: url("chrome://messenger/skin/toolbar/reply.gif");
+}
+
+#button-reply:hover,
+#button-reply:hover:active {
+  list-style-image: url("chrome://messenger/skin/toolbar/reply-hover.gif");
+} 
+
+#button-reply[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/reply-disabled.gif") !important;
+}
+
+#button-replyall {
+  list-style-image: url("chrome://messenger/skin/toolbar/replyall.gif");
+}
+
+#button-replyall:hover,
+#button-replyall:hover:active {
+  list-style-image: url("chrome://messenger/skin/toolbar/replyall-hover.gif");
+} 
+
+#button-replyall[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/replyall-disabled.gif") !important;
+}
+
+#button-forward {
+  list-style-image: url("chrome://messenger/skin/toolbar/forward.gif");
+}
+
+#button-forward:hover,
+#button-forward:hover:active {
+  list-style-image: url("chrome://messenger/skin/toolbar/forward-hover.gif");
+} 
+
+#button-forward[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/forward-disabled.gif") !important;
+}
+
+#button-file {
+  list-style-image: url("chrome://messenger/skin/toolbar/file.gif");
+}
+
+#button-file:hover,
+#button-file[open="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/file-hover.gif");
+} 
+
+#button-file[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/file-disabled.gif") !important;
+}
+
+#button-next {
+  list-style-image: url("chrome://messenger/skin/toolbar/next.gif");
+}
+
+#button-next:hover,
+#button-next:hover:active {
+  list-style-image: url("chrome://messenger/skin/toolbar/next-hover.gif");
+} 
+
+#button-next[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/next-disabled.gif") !important;
+}
+
+#button-delete {
+  list-style-image: url("chrome://global/skin/icons/trash.gif");
+}
+
+#button-delete:hover,
+#button-delete:hover:active {
+  list-style-image: url("chrome://global/skin/icons/trash-hover.gif");
+} 
+
+#button-delete[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
+}
+
+#button-mark {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark.gif");
+}
 
 #button-mark:hover,
 #button-mark[buttonover="true"],
 #button-mark[buttondown="true"],
-#button-mark[open="true"]
-  {
-    list-style-image      : url("chrome://messenger/skin/mark-hover.gif");
-  } 
+#button-mark[open="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark-hover.gif");
+} 
 
-#button-print 
-  {
-    list-style-image      : url("chrome://global/skin/print.gif");
-  }
+#button-mark[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark-disabled.gif") !important;
+}
 
-#button-print[disabled="true"],
-#button-print[disabled="true"]:hover,
-#button-print[disabled="true"][buttonover="true"],
-#button-print[disabled="true"][buttondown="true"]
-  {
-    list-style-image      : url("chrome://global/skin/print-disabled.gif");
-  }
+#button-print {
+  list-style-image: url("chrome://global/skin/icons/print.gif");
+}
 
 #button-print:hover,
 #button-print[buttonover="true"],
 #button-print[buttondown="true"],
-#button-print[open="true"]
-  {
-    list-style-image      : url("chrome://global/skin/print-hover.gif");
-  }
+#button-print[open="true"] {
+  list-style-image: url("chrome://global/skin/icons/print-hover.gif");
+}
 
-#button-stop 
-  {
-	  list-style-image      : url("chrome://global/skin/stop.gif");
-  } 
+#button-print[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
+}
 
-#button-stop[disabled="true"],
-#button-stop[disabled="true"]:hover,
-#button-stop[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://global/skin/stop-disabled.gif");
-  } 
+#button-stop {
+  list-style-image: url("chrome://global/skin/icons/stop.gif");
+}
 
 #button-stop:hover,
-#button-stop:hover:active
-  {
-    list-style-image      : url("chrome://global/skin/stop-hover.gif");
-  }
+#button-stop:hover:active {
+  list-style-image: url("chrome://global/skin/icons/stop-hover.gif");
+}
+
+#button-stop[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
+}

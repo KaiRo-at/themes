@@ -36,200 +36,139 @@
  * ***** END LICENSE BLOCK ***** */
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
 
-/* outer frame */
-  menulist 
-    {
-      -moz-border-radius  : 3px;
-      padding             : 0px;
-      border              : none;
-      background-color    : #000000;
-      color               : #E7ADE7;
-      margin              : 1px 5px 2px 5px;
-    }
-    
-  menulist[menuactive="true"],
-  menulist:hover 
-    {
-      background-color    : #FFCF00;
-      color               : #000000;
-      border              : none;
-    }
+/* ===== menulist.css ===================================================
+  == Styles used by the XUL menulist element.
+  ======================================================================= */
 
-  menulist[open="true"] 
-    {
-      background-color    : #FF9F00;
-      color               : #000000;
-      border              : none;
-    }
-  
-  menulist[disabled="true"]
-    {
-      border              : none;
-      color               : #8050B0;
-    }
+/* :::::::::: menulist :::::::::: */
 
-/*
-  menulist[disabled="true"] > .menulist-internal-box > .menulist-display-box
-    {
-      color               : #8050B0;
-    }
-*/    
+menulist {
+  -moz-border-radius: 3px;
+  margin: 2px 4px;
+  border: 1px solid #9C9CFF;
+  background-color: #000000;
+  color: #E7ADE7;
+}
 
-  .menulist-internal-box
-    {
-      -moz-user-focus     : ignore;
-    }  
+menulist[menuactive="true"],
+menulist:hover {
+  background-color: #FFCF00;
+  color: #000000;
+  border: 1px solid #9C9CFF;
+}
 
-  .menulist-display-box
-    {
-      border              : 1px solid #9C9CFF;
-      margin              : 0px;
-    }     
+menulist[open="true"] {
+  background-color: #FF9F00;
+  color: #000000;
+  border: 1px solid #FFCF00;
+}
 
-  menulist[open="true"] > .menulist-internal-box > .menulist-display-box
-    {
-      border              : 1px solid #FFCF00;
-    }     
+.menulist-label-box {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+/*  margin: 1px; */
+}
 
-  menulist[disabled="true"] > .menulist-internal-box > .menulist-display-box
-    {
-      border              : 1px solid #8050B0;
-    }     
+.menulist-label-box,
+menulist[open="true"]:focus > .menulist-label-box {
+  -moz-border-radius: 3px 0px 0px 3px;
+/*  border: 1px solid transparent; */
+  background-color: transparent;
+  color: inherit;
+}
 
-/* text display frame */
-  .menulist-text 
-    {
-      padding             : 0px 2px 0px 2px;
-      margin              : 0px;
-    }
-    
-/* drop marker display frame */
-  .menulist-dropmarker-box-1
-    {
-      -moz-border-radius  : 0px 3px 3px 0px;
-      border              : 1px solid #9C9CFF;
-      border-left         : none;
-    }
-  
-  .menulist-dropmarker-box-2
-    {
-      border              : none;
-      padding             : 2px 1px 2px 1px;
-    }
+.menulist-label {
+  margin: 1px 3px !important;
+}
 
-  .menulist-dropmarker
-    {
-      list-style-image    : url("chrome://global/skin/scroll-down.gif");
-    }
+/* ..... dropmarker ..... */
 
-  menulist:hover > .menulist-internal-box > .menulist-dropmarker-box-1 > .menulist-dropmarker-box-2 > .menulist-dropmarker,
-  .menulist-dropmarker-box-1[open="true"] > .menulist-dropmarker-box-2 > .menulist-dropmarker
-    {
-      list-style-image    : url("chrome://global/skin/scroll-down-hover.gif");
-    }
+.menulist-dropmarker {
+  -moz-border-radius: 0px 3px 3px 0px;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  min-width: 15px;
+  border-left: 1px solid #9C9CFF;
+  background-color: #000000;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+}
 
-  .menulist-dropmarker[disabled="true"],
-  menulist[disabled="true"] > .menulist-internal-box > .menulist-dropmarker-box-1 > .menulist-dropmarker-box-2 > .menulist-dropmarker,
-    {
-      border              : 1px solid #8050B0;
-      border-left         : none;
-      list-style-image    : url("chrome://global/skin/scroll-down-disabled.gif");
-    }
+.menulist-dropmarker,
+menulist[disabled="true"]:hover:active > .menulist-dropmarker {
+  padding: 1px;
+}
 
-  menulist:hover:active > .menulist-internal-box > .menulist-dropmarker-box-1[open="true"],
-  .menulist-dropmarker-box-1[open="true"]
-    { 
-      border              : 1px solid #FFCF00;
-      border-left         : none;
-    }
-    
-  menulist:hover:active > .menulist-internal-box > .menulist-dropmarker-box-1 > .menulist-dropmarker-box-2[open="true"]
-    {
-      border              : none;
-      padding             : 3px 0px 1px 2px;
-    }
+menulist[disabled="true"] > .menulist-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif") !important;
+  border-left: 1px solid #8050B0 !important;
+  background-color: #000000 !important;
+}
 
-/**
- * <menulist>s for things like mailnews addressing widget
- **/
- 
-  .menulist-compact
-    {
-      margin              : 0px;
-      border              : 1px solid #9C9CFF;
-/*      background-color    : -moz-Dialog; */
-      -moz-user-focus     : normal;  
-    }    
-    
-  .menulist-compact-internal-box
-    {
-      border              : none;
-    }
-    
-  .menulist-compact-dropmarker
-    {
-      list-style-image    : url("chrome://global/skin/scroll-down.gif");
-      margin-left         : 2px;
-    }
-    
-  .menulist-compact:hover > .menulist-compact-internal-box > .menulist-compact-dropmarker,
-  .menulist-compact[open="true"] > .menulist-compact-internal-box > .menulist-compact-dropmarker
-    {
-      list-style-image    : url("chrome://global/skin/scroll-down-hover.gif");
-    }
+menulist[menuactive="true"] > .menulist-dropmarker,
+menulist[open="true"] > .menulist-dropmarker,
+menulist:hover > .menulist-dropmarker,
+menulist:hover:active > .menulist-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+}
 
-  .menulist-compact-dropmarker[disabled="true"],
-  .menulist-compact[disabled="true"] > .menulist-compact-internal-box > .menulist-compact-dropmarker
-    {
-      border              : 1px solid #8050B0;
-      border-left         : none;
-      list-style-image    : url("chrome://global/skin/scroll-down-disabled.gif");
-    }
+menulist[menuactive="true"] > .menulist-dropmarker,
+menulist:hover > .menulist-dropmarker {
+  background-color: #FFCF00;
+}
 
-  .menulist-compact-text
-    {
-      margin-right        : 3px;
-    }  
+menulist[open="true"] > .menulist-dropmarker,
+menulist:hover:active > .menulist-dropmarker {
+  padding: 2px 0px 0px 2px;
+  border-left: 1px solid #FFCF00;
+  background-color: #FF9F00;
+}
 
-  .menulist-compact:hover
-    {
-      border              : 1px solid #FFCF00;
-    }
+/* ..... focused state ..... */
 
-  .menulist-compact:hover:active,
-  .menulist-compact[open="true"]
-    {
-      border              : 1px solid #FF9F00;
-    }
+menulist:focus > .menulist-label-box {
+/*  border: 1px dotted #FF9F00; */
+}
 
-  .menulist-compact:hover:active > .menulist-compact-internal-box,
-  .menulist-compact[open="true"] > .menulist-compact-internal-box 
-    {
-      border              : none;
-    }
-    
-/**
- * Editable menulists (comboboxes) 
- */
-  
-html|*.menulist-editable-text 
-  {
-    border              : none !important;
-    margin              : 0px;
-    padding             : 0px;
-    font                : inherit;
-    background-color    : inherit;
-    color               : inherit;
-  }
+/* ..... disabled state ..... */
 
-menulist[editable="true"] > .menulist-internal-box > .menulist-display-box
-  {
-    margin                : 0px;
-    padding               : 1px 2px 1px 2px;
-  }
+menulist[disabled="true"] {
+  background-color: #000000;
+  color: #8050B0;
+  border: 1px solid #8050B0;
+}
 
-menulist[editable="true"]:focus > .menulist-internal-box > .menulist-display-box
-  {
-    border                : none !important;
-  }
+/* ::::: editable menulists ::::: */
+
+.menulist-editable-box {
+  background-color: #000000;
+  padding: 2px; 
+}
+
+html|*.menulist-editable-input {
+  margin: 0px !important;
+  border: none !important;
+  padding: 0px !important;
+  background-color: #000000;
+  color: #FFCF00;
+  font: inherit;
+}
+
+/* ::::: compact menulists ::::: */
+
+.menulist-compact {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0px;
+  border: 1px solid #9C9CFF;
+}
+
+.menulist-compact > .menulist-label {
+  margin: 0 3px !important;
+  text-align: right;
+}  
+
+.menulist-compact[open="true"] {
+  border: 1px solid #FFCF00;
+}

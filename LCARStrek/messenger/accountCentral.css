@@ -35,17 +35,27 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/* ===== accountCentral.css ==========================================
-  == Styles for the Messenger Account Central panel.
-  ======================================================================= */
-
 @import url("chrome://messenger/skin/");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* ===== accountCentral.css ==========================================
+  == Styles for the Messenger Account Central panel.
+  ======================================================================= */
+
 #acctCentralGrid {
   background-color: #000000;
 }
+
+separator {
+  height: 5px;
+}
+
+separator.thin {
+  height: 15px;
+}
+
+/* ::::: rows ::::: */
 
 #acctCentralHeaderRow {
   margin: 5px 5px 5px 5px;
@@ -78,6 +88,8 @@
 .acctCentralText {
   font-size: 15px;
 }
+
+/* ::::: links ::::: */
 
 .acctCentralLinkText {
   cursor: pointer;

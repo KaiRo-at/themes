@@ -38,80 +38,67 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /*
-
   Style rules specific to the related links panel
-
 */
 
-#Tree, .tree-container-treerows
-{
+#Tree, .tree-container-treerows {
   border: none;
 }
 
-treeitem > treerow.relatedresult > treecell
-{
+treeitem > treerow.relatedresult > treecell {
   color: #FF9F00;
   text-decoration: none;
 }
-treeitem > treerow.relatedresult > treecell:hover
-{
+
+treeitem > treerow.relatedresult > treecell:hover {
   background-color: #FFCF00;
   color: #000000;
-  cursor              : pointer;
+  cursor: pointer;
 }
-treeitem > treerow.relatedresult > treecell > titledbutton:active
-{
+
+treeitem > treerow.relatedresult > treecell > titledbutton:active {
   background-color: #008484;
   color: #FFCF00;
 }
 
-treeitem[container="true"][open="true"][loading="true"] > treerow > .treecell-indent
-{
-  list-style-image: url("chrome://global/skin/loading.gif") ! important ;
+treeitem[container="true"][open="true"][loading="true"] > treerow > .treecell-indent {
+  list-style-image: url("chrome://global/skin/icons/loading.gif") ! important ;
 }
 
-treeitem[container="true"][open="true"] > treerow > .treecell-indent 
-{
+treeitem[container="true"][open="true"] > treerow > .treecell-indent {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
 }
 
 /* Uncomment if double-click model is needed
-treeitem[container="true"][open="true"][selected="true"] > treerow > .treecell-indent 
-{
+treeitem[container="true"][open="true"][selected="true"] > treerow > .treecell-indent {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open-sel.gif");
 }
 */
 
-treeitem[container="true"] > treerow > .treecell-indent 
-{
+treeitem[container="true"] > treerow > .treecell-indent {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
 }
 
 /* Uncomment if double-click model is needed
-treeitem[container="true"][selected="true"] > treerow > .treecell-indent 
-{
+treeitem[container="true"][selected="true"] > treerow > .treecell-indent {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-closed-sel.gif");
 }
 */
 
-treeitem[container="true"][id="NC:SiteMapRoot"] > treerow > .treecell-indent 
-{
+treeitem[container="true"][id="NC:SiteMapRoot"] > treerow > .treecell-indent {
   list-style-image: url("chrome://communicator/skin/related/sitemap.gif");
 }
 
-treeitem[container="true"][open="true"][id="NC:SiteMapRoot"] > treerow > .treecell-indent 
-{
+treeitem[container="true"][open="true"][id="NC:SiteMapRoot"] > treerow > .treecell-indent {
   list-style-image: url("chrome://communicator/skin/related/sitemap.gif");
 }
 
 /* Single click model, so undo regular search tree selection look. */
 treeitem[selected="true"] > treerow.relatedseparator, 
-treeitem[selected="true"] > treerow.relatedresult
-{ 
+treeitem[selected="true"] > treerow.relatedresult { 
   background-color: transparent;
 }
 
-.treecell-indent 
-{
+.treecell-indent {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
 }

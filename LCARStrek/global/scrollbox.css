@@ -37,32 +37,27 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/*
- * Autorepeatbutton
- */
-.autorepeatbutton-up 
-  {
-    list-style-image      : url("chrome://global/skin/scroll-up.gif")
-  }
+/* ::::: Autorepeatbutton ::::: */
 
-.autorepeatbutton-down 
-  {
-    list-style-image      : url("chrome://global/skin/scroll-down.gif")
-  }
+.autorepeatbutton-up {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif")
+}
 
-autorepeatbutton 
-  {
-    -moz-box-align        : center;
-    -moz-box-pack         : center;
-    margin                : 1px 2px 2px 1px;
-    padding               : 1px;
-    height                : 1em;  
-  }
+.autorepeatbutton-down {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif")
+}
 
-autorepeatbutton:hover 
-  {
-    background-color      : #FFCF00;
-    color                 : #000000;
-    margin                : 1px;
-    padding               : 2px 1px 1px 2px;
-  }
+autorepeatbutton {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 1px 2px 2px 1px;
+  border: 1px solid transparent;
+  padding: 1px;
+}
+
+autorepeatbutton:hover {
+  background-color: #FFCF00;
+  margin: 1px;
+  border: 1px inset #000000;
+  padding: 2px 1px 1px 2px;
+}

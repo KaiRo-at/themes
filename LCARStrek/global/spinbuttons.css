@@ -39,17 +39,17 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 .up {
-  list-style-image: url("chrome://global/skin/spinbtn-up.gif")
+  list-style-image: url("chrome://global/skin/spinbutton/spinbtn-up.gif")
 }
 
 .up:hover:active {
-  list-style-image: url("chrome://global/skin/spinbtn-up-act.gif")
+  list-style-image: url("chrome://global/skin/spinbutton/spinbtn-up-act.gif")
 }
 
 .down {
-  list-style-image: url("chrome://global/skin/spinbtn-dn.gif")
+  list-style-image: url("chrome://global/skin/spinbutton/spinbtn-dn.gif")
 }
 
 .down:hover:active {
-  list-style-image: url("chrome://global/skin/spinbtn-dn-act.gif")
+  list-style-image: url("chrome://global/skin/spinbutton/spinbtn-dn-act.gif")
 }

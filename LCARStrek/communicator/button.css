@@ -44,76 +44,38 @@
 /* ::::: large toolbar buttons ::::: */
 
 .toolbarbutton-1,
-.toolbarbutton-1 > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button
-{
-  min-width           : 36px;
-  min-height          : 36px;
-/*  font-size           : smaller; */
-  -moz-box-orient     : vertical;
+.toolbarbutton-1 > .toolbarbutton-menubutton-button {
+  min-width: 36px;
+  min-height: 36px;
+  -moz-box-orient: vertical;
 }
 
 .toolbarbutton-1[type="menu-button"] {
-  -moz-box-orient     : horizontal;
+  -moz-box-orient: horizontal;
 }
 
-.toolbarbutton-1 > .toolbarbutton-box,
-.toolbarbutton-1 > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box,
-.toolbarbutton-1[open="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box,
-.toolbarbutton-1[disabled="true"]:hover:active > .toolbarbutton-box,
-.toolbarbutton-1[disabled="true"][buttondown="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box
-{
-  padding             : 1px;
+.toolbarbutton-1,
+.toolbarbutton-1 > .toolbarbutton-menubutton-button,
+.toolbarbutton-1[disabled="true"]:hover:active,
+.toolbarbutton-1[disabled="true"][buttondown="true"] {
+  padding: 1px;
 }
 
-.toolbarbutton-1:hover:active > .toolbarbutton-box,
-.toolbarbutton-1[open="true"] > .toolbarbutton-box,
-.toolbarbutton-1[buttondown="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box
-{
-  padding             : 2px 0px 0px 2px;
+.toolbarbutton-1:hover:active,
+.toolbarbutton-1[open="true"],
+.toolbarbutton-1[buttondown="true"] > .toolbarbutton-menubutton-button {
+  padding: 2px 0px 0px 2px;
 }
 
-.toolbarbutton-1[type="menu"] > .toolbarbutton-box > .toolbarbutton-dropmarker {
+.toolbarbutton-1[type="menu"] > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 
-/* ::::: normal buttons on toolbars ::::: */
+/* ::::: standard toolbar buttons ::::: */
 
 .button-toolbar {
-  -moz-user-focus     : ignore;
-  min-width           : 0px;
-  max-width             : 10em;
-  background-color    : transparent;
-}  
-
-/*  
-.button-toolbar > .button-box > .button-box-2,
-.button-toolbar > .button-box > .button-box-2 > .button-box-text {
-  margin: none;
-  border: none !important;
-  padding: 0px 2px;
-}
-*/
-
-.button-toolbar > .button-box > .button-icon {
-  margin-right: 3px;
-}
-
-.button-toolbar > .button-box > .button-text {
-  margin-right: 1px;
-}  
-
-/* ::::: reorder buttons ::::: */
-
-.reorder-up {
-  min-width           : 0px;
-}    
-
-.reorder-down {
-  min-width           : 0px;
-}    
-
-.reorder-up > .button-internal-box > .button-icon,
-.reorder-down > .button-internal-box > .button-icon {
-  margin              : 0;
-  padding             : 0;
+  -moz-user-focus: ignore;
+  min-width: 0px;
+  max-width: 10em;
+  background-color: transparent;
 }

@@ -47,7 +47,7 @@
 /* ::::: Select Addresses dialog ::::: */
 
 #dirTreeBox {
-	width: 180px;
+  width: 180px;
 }
 
 #resultsTree {
@@ -55,34 +55,34 @@
 }
  
 #vertical-splitter {
-  min-width     : 4px;
+  min-width: 4px;
 }
 
 #addToBucketButtonBox {
-	padding			: 0.3em; 
-	min-width		: 10px;
+  padding: 0.3em; 
+  min-width: 10px;
 }
 
 #bucketBox {
-	height			: 170px;
+  height: 170px;
 }
 
 #addressBucket {
-	height			: 100px; 
-	min-width		: 10px;
+  height: 100px; 
+  min-width: 10px;
 }
 
 #rightColumnButtonBox { /* Column with "New", "Edit" and "Remove" buttons */
-	padding			: .5em; 
-	padding-right	: 0px;
+  padding: .5em; 
+  padding-right: 0px;
 }
 
 .third-column-spacer {  /* Vertical Spacers between 3rd column buttons */
-	height			: 10px;
+  height: 10px;
 }
 
 .middle-button-spacer { /* Spacers between To, CC, and BCC buttons */
-	width			: 10px;
+  width: 10px;
 }
 
 #bucket-splitter {

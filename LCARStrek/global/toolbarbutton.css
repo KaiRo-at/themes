@@ -42,20 +42,18 @@
   == Styles used by the XUL button element.
   ======================================================================= */
 
-toolbarbutton {
-  -moz-border-radius  : 3px;
-  margin              : 0px;
-  margin-left         : 2px;
-  background-color    : #000000;
-  color               : #FFCF00;
-}
+/* ::::: toolbarbutton ::::: */
 
-.toolbarbutton-box {
-  -moz-border-radius  : 3px;
-  -moz-box-align      : center;
-  -moz-box-pack       : center;
-  border              : none;
-  padding             : 2px;
+toolbarbutton {
+  -moz-border-radius: 3px;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0px;
+  margin-left: 2px;
+  border: none;
+  padding: 1px;
+  background-color: #000000;
+  color: #FFCF00;
 }
 
 .toolbarbutton-icon {
@@ -64,144 +62,143 @@ toolbarbutton {
 
 .toolbarbutton-text {
   margin: 0px !important;
-}
-
-toolbarbutton[value] > .toolbarbutton-box > .toolbarbutton-text {
-  padding-left        : 4px;
+  padding: 0px;
+  text-align: center;
 }    
 
 toolbarbutton:hover,
-toolbarbutton[buttonover="true"],
-toolbarbutton:hover > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button,
-toolbarbutton[buttonover="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button {
-  background-color    : #FFCF00;
-  color               : #000000;
+toolbarbutton[buttonover="true"] {
+  background-color: #FFCF00;
+  color: #000000;
 } 
-
-toolbarbutton:hover > .toolbarbutton-box {
-  border              : none;
-}
 
 toolbarbutton:hover:active,
 toolbarbutton[open="true"],
-toolbarbutton:hover:active > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button,
-toolbarbutton[open="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button {
-  background-color    : #FF9F00;
-  color               : #000000;
+toolbarbutton.toolbarbutton-menubutton-button[open="true"] {
+  background-color: #FF9F00;
+  color: #000000;
 } 
 
-toolbarbutton:hover:active > .toolbarbutton-box,
-toolbarbutton[open="true"] > .toolbarbutton-box {
-  padding             : 3px 1px 1px 3px;
-  border              : none;
+toolbarbutton:hover:active,
+toolbarbutton[open="true"] {
+  padding: 2px 0px 0px 2px;
 }
     
-toolbarbutton[disabled="true"],
-toolbarbutton[disabled="true"]:hover,
-toolbarbutton[disabled="true"]:hover:active,
-toolbarbutton[disabled="true"]:hover > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button,
-toolbarbutton[disabled="true"][buttonover="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button,
-toolbarbutton[disabled="true"]:hover:active > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button,
-toolbarbutton[disabled="true"][open="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button {
-  background-color    : #000000;
-  color               : #8050B0;
-}
-
-toolbarbutton[disabled="true"] > .toolbarbutton-box,
-toolbarbutton[disabled="true"]:hover > .toolbarbutton-box,
-toolbarbutton[disabled="true"]:hover:active > .toolbarbutton-box,
-toolbarbutton[disabled="true"][buttonover="true"] > .toolbarbutton-box,
-toolbarbutton[disabled="true"][buttondown="true"] > .toolbarbutton-box {
-  border              : none;
-  padding             : 2px;
+toolbarbutton[disabled="true"] {
+  padding: 1px !important;
+  background-color: #000000 !important;
+  color: #8050B0 !important;
 }
 
 /* ..... checked state ..... */
 
 toolbarbutton[checked="true"] {
-  background-color    : #008484;
-  color               : #FFCF00;
+  padding: 2px !important;
+  background-color: #008484;
+  color: #FFCF00;
 }
     
 toolbarbutton[checked="true"]:hover {
-  background-color    : #FFCF00;
-  color               : #000000;
+  background-color: #FFCF00;
+  color: #000000;
 }
 
 /* ::::: toolbarbutton menu ::::: */
 
-.toolbarbutton-dropmarker {
-  list-style-image      : url("chrome://global/skin/scroll-down.gif");
+.toolbarbutton-menu-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
-toolbarbutton:hover > .toolbarbutton-box > .toolbarbutton-dropmarker,
-toolbarbutton[buttonover="true"] > .toolbarbutton-box > .toolbarbutton-dropmarker,
-toolbarbutton[buttondown="true"] > .toolbarbutton-box > .toolbarbutton-dropmarker,
-toolbarbutton[open="true"] > .toolbarbutton-box > .toolbarbutton-dropmarker {
-  list-style-image      : url("chrome://global/skin/scroll-down-hover.gif");
+.toolbarbutton-menu-dropmarker:hover,
+.toolbarbutton-menu-dropmarker[buttonover="true"],
+.toolbarbutton-menu-dropmarker[open="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
 
-.toolbarbutton-dropmarker[disabled="true"],
-toolbarbutton[disabled="true"]:hover > .toolbarbutton-box > .toolbarbutton-dropmarker,
-toolbarbutton[disabled="true"][buttonover="true"] > .toolbarbutton-box > .toolbarbutton-dropmarker,
-toolbarbutton[disabled="true"][buttondown="true"] > .toolbarbutton-box > .toolbarbutton-dropmarker,
-toolbarbutton[disabled="true"][open="true"] > .toolbarbutton-box > .toolbarbutton-dropmarker {
-  list-style-image      : url("chrome://global/skin/scroll-down-disabled.gif");
+.toolbarbutton-menu-dropmarker[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
 }
 
 /* ::::: toolbarbutton menu-button ::::: */
 
-.toolbarbutton-menubutton-dropmarker-box {
-  -moz-box-align: start;
-  -moz-box-pack: center;
+toolbarbutton[type="menu-button"] {
+  -moz-box-align: stretch;
 }
 
-toolbarbutton[type="menu-button"]:hover:active {
+toolbarbutton[type="menu-button"],
+toolbarbutton[type="menu-button"]:hover,
+toolbarbutton[type="menu-button"]:hover:active,
+toolbarbutton[type="menu-button"][open="true"],
+toolbarbutton[type="menu-button"][disabled="true"],
+toolbarbutton[type="menu-button"][disabled="true"]:hover,
+toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
+  padding: 0px !important;
 }
 
 .toolbarbutton-menubutton-button {
-  border: none !important;
-  color: inherit;
+  margin: 0px;
+  -moz-box-align: center;
+  -moz-box-pack: center;
 }
+
+.toolbarbutton-menubutton-button,
+.toolbarbutton-menubutton-dropmarker {
+  background-color: #000000;
+} 
+
+.toolbarbutton-menubutton-button[disabled="true"],
+.toolbarbutton-menubutton-dropmarker[disabled="true"] {
+  background-color: #000000 !important;
+  color: #8050B0 !important;
+} 
+
+toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"][buttonover="true"] > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][buttonover="true"] > .toolbarbutton-menubutton-dropmarker {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
+toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+  background-color: #FF9F00;
+  color: #000000;
+}
+
+toolbarbutton[type="menu-button"][buttondown="true"] > toolbarbutton.toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-menubutton-button {
+  padding: 2px 0px 0px 2px !important;
+}
+
+/* .......... dropmarker .......... */
 
 .toolbarbutton-menubutton-dropmarker {
-  list-style-image: url("chrome://global/skin/scroll-down.gif");
-} 
-
-toolbarbutton:hover > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[buttonover="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[buttondown="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[open="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box > .toolbarbutton-menubutton-dropmarker
-{
-  list-style-image      : url("chrome://global/skin/scroll-down-hover.gif");
+  -moz-border-radius: 3px;
+  -moz-box-align: center;
+  padding: 0px 1px 15px 1px;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
-.toolbarbutton-menubutton-dropmarker[disabled="true"],
-toolbarbutton[disabled="true"]:hover > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[disabled="true"][buttonover="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[disabled="true"][buttondown="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[disabled="true"][open="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box > .toolbarbutton-menubutton-dropmarker {
-  list-style-image: url("chrome://global/skin/scroll-down-disabled.gif");
-} 
-
-.toolbarbutton-menubutton-dropmarker-box {
-  border                : 1px solid transparent;
-  padding               : 1px 0px 1px 0px;
+toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 1px 0px 14px 2px;
 }
 
-toolbarbutton[disabled="true"]:hover > .toolbarbutton-menubutton-box  > .toolbarbutton-menubutton-button  > .toolbarbutton-box
-{
-/*  border                : 1px solid transparent; */
+toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][buttonover="true"] > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 1px 0px 14px 2px;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
 
-toolbarbutton[buttondown="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box,
-toolbarbutton[open="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-dropmarker-box,
-toolbarbutton[open="true"] > .toolbarbutton-menubutton-box > .toolbarbutton-menubutton-button > .toolbarbutton-box
-{
-  padding               : 2px 0px 0px 0px;
-}
-
-.toolbarbutton-menubutton-dropmarker-box[disabled="true"] {
-/*  border: 1px solid transparent !important; */
-  padding: 0px !important;
+.toolbarbutton-menubutton-dropmarker[disabled="true"] {
+  padding: 0px 1px 15px 1px !important;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif") !important;
 }

@@ -4,19 +4,16 @@
           xmlns="http://www.mozilla.org/xbl"
           xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   
-  <binding id="panelheader" extends="xul:button">
+  <binding id="sbtab" extends="xul:button">
     <content>
-      <xul:hbox class="panelheader-box-1" inherits="selected" flex="1">
-        <xul:hbox class="panelheader-box-2" align="center" flex="1">
-          <xul:image class="panelheader-grippy-icon" inherits="selected"/>
-          <xul:image class="panelheader-image" inherits="src"/>
-          <xul:vbox flex="1">
-            <xul:label class="panelheader-icon" inherits="value=label" crop="right"/>
-          </xul:vbox>
-          <xul:spacer flex="1"/>
-        </xul:hbox>
-        <xul:hbox class="panelheader-texture"/>
+      <xul:hbox flex="1">
+        <xul:image class="sbtab-twisty" inherits="selected"/>
+        <xul:label class="sbtab-label" inherits="value=label" crop="right"/>
+        <xul:spacer flex="1"/>
+        <xul:image class="sbtab-texture"/>
       </xul:hbox>
     </content>
   </binding>
-</bindings>          
+
+</bindings>
+

@@ -37,377 +37,376 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* ::::: formatting buttons ::::: */
+
 #FormatToolbar > toolbarbutton {
   min-width: 18px;
 }
  
-#FormatToolbar > toolbarbutton > .toolbarbutton-box > .toolbarbutton-text {
+#FormatToolbar > toolbarbutton > .toolbarbutton-text {
   display: none;
 }
 
-#boldButton 
-  {
-    list-style-image      : url(chrome://editor/skin/images/bold.gif); 
-  }
-
-#boldButton[disabled="true"],
-#boldButton[disabled="true"]:hover,
-#boldButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/bold-disabled.gif");
-  } 
-
-#boldButton:hover,
-#boldButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/bold-hover.gif");
-  } 
-
-#smileButtonMenu {
-  list-style-image:url("chrome://editor/skin/images/smile.gif"); 
-}
-
-#smileButtonMenu[disabled="true"],
-#smileButtonMenu[disabled="true"]:hover,
-#smileButtonMenu[disabled="true"]:hover:active  {
-	list-style-image:url("chrome://editor/skin/images/smile-disabled.gif");
-}
-
-.insert-smile > .menu-iconic-left {
-  list-style-image:url(chrome://global/skin/smiley/smile_n.gif); 
-}
-
-.insert-tongue > .menu-iconic-left {
-  list-style-image:url(chrome://global/skin/smiley/tongue_n.gif); 
-}
-
-.insert-frown > .menu-iconic-left {
-  list-style-image:url(chrome://global/skin/smiley/frown_n.gif); 
- }
-
-.insert-wink > .menu-iconic-left {
-  list-style-image:url(chrome://global/skin/smiley/wink_n.gif); 
- }
-
-.insert-laughing > .menu-iconic-left {
-  list-style-image:url(chrome://global/skin/smiley/laughing_n.gif); 
- }
-
-.insert-embarrassed > .menu-iconic-left {
-  list-style-image:url(chrome://global/skin/smiley/embarrassed_n.gif); 
- }
-
-
-.insert-undecided > .menu-iconic-left {
-  list-style-image:url(chrome://global/skin/smiley/undecided_n.gif); 
-}
-
-.smiley > .menu-iconic-left {
-
-    margin-right: 15px;
-}
-
-
-
-#italicButton
-  {
-    list-style-image      : url("chrome://editor/skin/images/italic.gif");
-  } 
-
-#italicButton[disabled="true"],
-#italicButton[disabled="true"]:hover,
-#italicButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/italic-disabled.gif");
-  } 
-
-#italicButton:hover,
-#italicButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/italic-hover.gif");
-  } 
-
-#underlineButton
-  {
-	  list-style-image      : url("chrome://editor/skin/images/underline.gif");
-  } 
-
-#underlineButton[disabled="true"],
-#underlineButton[disabled="true"]:hover,
-#underlineButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/underline-disabled.gif");
-  } 
-
-#underlineButton:hover,
-#underlineButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/underline-hover.gif");
-  } 
-
-#DecreaseFontSizeButton 
-  {
-	  list-style-image      : url("chrome://editor/skin/images/dec-font-size.gif");
-  } 
-
-#DecreaseFontSizeButton[disabled="true"],
-#DecreaseFontSizeButton[disabled="true"]:hover,
-#DecreaseFontSizeButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/dec-font-size-disabled.gif");
-  } 
+#DecreaseFontSizeButton {
+  list-style-image: url("chrome://editor/skin/icons/dec-font-size.gif");
+} 
 
 #DecreaseFontSizeButton:hover,
-#DecreaseFontSizeButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/dec-font-size-hover.gif");
-  } 
-  
-#IncreaseFontSizeButton 
-  {
-	  list-style-image      : url("chrome://editor/skin/images/inc-font-size.gif");
-  } 
+#DecreaseFontSizeButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/dec-font-size-hover.gif");
+} 
 
-#IncreaseFontSizeButton[disabled="true"],
-#IncreaseFontSizeButton[disabled="true"]:hover,
-#IncreaseFontSizeButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/inc-font-size-disabled.gif");
-  } 
+#DecreaseFontSizeButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/dec-font-size-disabled.gif") !important;
+} 
+
+#IncreaseFontSizeButton {
+  list-style-image: url("chrome://editor/skin/icons/inc-font-size.gif");
+} 
 
 #IncreaseFontSizeButton:hover,
-#IncreaseFontSizeButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/inc-font-size-hover.gif");
-  } 
-  
-#ulButton 
-  {
-	  list-style-image      :url("chrome://editor/skin/images/bullets.gif");
-  }
+#IncreaseFontSizeButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/inc-font-size-hover.gif");
+} 
 
-#ulButton[disabled="true"],
-#ulButton[disabled="true"]:hover,
-#ulButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/bullets-disabled.gif");
-  } 
+#IncreaseFontSizeButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/inc-font-size-disabled.gif") !important;
+} 
 
-#ulButton:hover,
-#ulButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/bullets-hover.gif");
-  } 
-
-#olButton 
-  {
-	  list-style-image      : url("chrome://editor/skin/images/numbers.gif");
-  }
-
-#olButton[disabled="true"],
-#olButton[disabled="true"]:hover,
-#olButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/numbers-disabled.gif");
-  } 
-
-#olButton:hover,
-#olButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/numbers-hover.gif");
-  } 
-
-#outdentButton 
-  {
-	  list-style-image      : url("chrome://editor/skin/images/outdent.gif");
-  } 
-
-#outdentButton[disabled="true"],
-#outdentButton[disabled="true"]:hover,
-#outdentButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/outdent-disabled.gif");
-  } 
-
-#outdentButton:hover,
-#outdentButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/outdent-hover.gif");
-  } 
-
-#indentButton 
-  {
-	  list-style-image      : url("chrome://editor/skin/images/indent.gif");
-  } 
-
-#indentButton[disabled="true"],
-#indentButton[disabled="true"]:hover,
-#indentButton[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/indent-disabled.gif");
-  } 
-
-#indentButton:hover,
-#indentButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/indent-hover.gif");
-  } 
-
-#AlignPopupButton {
-	list-style-image        : url("chrome://editor/skin/images/align.gif");
+#boldButton {
+  list-style-image: url(chrome://editor/skin/icons/bold.gif); 
 }
 
-#AlignPopupButton[disabled="true"],
-#AlignPopupButton[disabled="true"]:hover,
-#AlignPopupButton[disabled="true"]:hover:active {
-	list-style-image        : url("chrome://editor/skin/images/align-disabled.gif");
+#boldButton:hover,
+#boldButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/bold-hover.gif");
+} 
+
+#boldButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/bold-disabled.gif") !important;
+} 
+
+#italicButton {
+  list-style-image: url("chrome://editor/skin/icons/italic.gif");
+} 
+
+#italicButton:hover,
+#italicButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/italic-hover.gif");
+} 
+
+#italicButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/italic-disabled.gif") !important;
+} 
+
+#underlineButton {
+  list-style-image: url("chrome://editor/skin/icons/underline.gif");
+} 
+
+#underlineButton:hover,
+#underlineButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/underline-hover.gif");
+} 
+
+#underlineButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/underline-disabled.gif") !important;
+} 
+
+#ulButton {
+  list-style-image:url("chrome://editor/skin/icons/bullets.gif");
+}
+
+#ulButton:hover,
+#ulButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/bullets-hover.gif");
+} 
+
+#ulButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/bullets-disabled.gif") !important;
+} 
+
+#olButton {
+  list-style-image: url("chrome://editor/skin/icons/numbers.gif");
+}
+
+#olButton:hover,
+#olButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/numbers-hover.gif");
+} 
+
+#olButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/numbers-disabled.gif") !important;
+} 
+
+#outdentButton {
+  list-style-image: url("chrome://editor/skin/icons/outdent.gif");
+} 
+
+#outdentButton:hover,
+#outdentButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/outdent-hover.gif");
+} 
+
+#outdentButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/outdent-disabled.gif") !important;
+} 
+
+#indentButton {
+  list-style-image: url("chrome://editor/skin/icons/indent.gif");
+} 
+
+#indentButton:hover,
+#indentButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/indent-hover.gif");
+} 
+
+#indentButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/indent-disabled.gif") !important;
+} 
+
+#align-left-button {
+  list-style-image: url("chrome://editor/skin/icons/left.gif");
+} 
+
+#align-left-button:hover,
+#align-left-button:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/left-hover.gif");
+} 
+
+#align-left-button[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/left-disabled.gif") !important;
+} 
+
+#align-center-button {
+  list-style-image: url("chrome://editor/skin/icons/center.gif");
+} 
+
+#align-center-button:hover,
+#align-center-button:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/center-hover.gif");
+} 
+
+#align-center-button[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/center-disabled.gif") !important;
+} 
+
+#align-right-button {
+  list-style-image: url("chrome://editor/skin/icons/right.gif");
+} 
+
+#align-right-button:hover,
+#align-right-button:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/right-hover.gif");
+} 
+
+#align-right-button[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/right-disabled.gif") !important;
+} 
+
+#align-justify-button {
+  list-style-image: url("chrome://editor/skin/icons/justify.gif");
+}
+
+#align-justify-button:hover,
+#align-justify-button:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/justify-hover.gif");
+}
+
+#align-justify-button[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/justify-disabled.gif") !important;
+} 
+
+#AlignPopupButton {
+  list-style-image: url("chrome://editor/skin/icons/align.gif");
 }
 
 #AlignPopupButton:hover,
 #AlignPopupButton:hover:active,
 #AlignPopupButton[open="true"] {
-	list-style-image        : url("chrome://editor/skin/images/align-hover.gif");
+  list-style-image: url("chrome://editor/skin/icons/align-hover.gif");
+}
+
+#AlignPopupButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/align-disabled.gif") !important;
 }
 
 #InsertPopupButton {
-	list-style-image        : url("chrome://editor/skin/images/insert.gif");
-}
-
-#InsertPopupButton[disabled="true"],
-#InsertPopupButton[disabled="true"]:hover,
-#InsertPopupButton[disabled="true"]:hover:active {
-	list-style-image        : url("chrome://editor/skin/images/insert-disabled.gif");
+  list-style-image: url("chrome://editor/skin/icons/insert.gif");
 }
 
 #InsertPopupButton:hover,
 #InsertPopupButton:hover:active,
 #InsertPopupButton[open="true"] {
-	list-style-image        : url("chrome://editor/skin/images/insert-hover.gif");
+  list-style-image: url("chrome://editor/skin/icons/insert-hover.gif");
 }
 
-#text-align-left,
-#align-left-button
-  {
-	  list-style-image      : url("chrome://editor/skin/images/left.gif");
-  } 
+#InsertPopupButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/insert-disabled.gif") !important;
+}
 
-#text-align-left[disabled="true"],
-#text-align-left[disabled="true"]:hover,
-#text-align-left[disabled="true"]:hover:active,
-#align-left-button[disabled="true"],
-#align-left-button[disabled="true"]:hover,
-#align-left-button[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/left-disabled.gif");
-  } 
+#smileButtonMenu {
+  list-style-image: url("chrome://editor/skin/icons/smile.gif"); 
+}
 
-#text-align-left:hover,
-#align-left-button:hover,
-#text-align-left:hover:active,
-#align-left-button:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/left-hover.gif");
-  } 
+#smileButtonMenu[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/smile-disabled.gif") !important;
+}
 
+/* ::::: menuitem icons ::::: */
 
-#text-align-center,
-#align-center-button
-  {
-	  list-style-image      : url("chrome://editor/skin/images/center.gif");
-  } 
+/* ..... align menu ..... */
 
-#text-align-center[disabled="true"],
-#text-align-center[disabled="true"]:hover,
-#text-align-center[disabled="true"]:hover:active,
-#align-center-button[disabled="true"],
-#align-center-button[disabled="true"]:hover,
-#align-center-button[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/center-disabled.gif");
-  } 
+#AlignLeftItem {
+  list-style-image: url("chrome://editor/skin/icons/left.gif");
+} 
 
-#text-align-center:hover,
-#align-center-button:hover,
-#text-align-center:hover:active,
-#align-center-button:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/center-hover.gif");
-  } 
+#AlignLeftItem:hover,
+#AlignLeftItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/left-hover.gif");
+} 
 
-#text-align-right,
-#align-right-button
-  {
-	  list-style-image      : url("chrome://editor/skin/images/right.gif");
-  } 
+#AlignCenterItem {
+  list-style-image: url("chrome://editor/skin/icons/center.gif");
+} 
 
-#text-align-right[disabled="true"],
-#text-align-right[disabled="true"]:hover,
-#text-align-right[disabled="true"]:hover:active
-#align-right-button[disabled="true"],
-#align-right-button[disabled="true"]:hover,
-#align-right-button[disabled="true"]:hover:active 
- {
-    list-style-image      : url("chrome://editor/skin/images/right-disabled.gif");
-  } 
+#AlignCenterItem:hover,
+#AlignCenterItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/center-hover.gif");
+} 
 
-#text-align-right:hover,
-#align-right-button:hover,
-#text-align-right:hover:active,
-#align-right-button:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/right-hover.gif");
-  } 
+#AlignRightItem {
+  list-style-image: url("chrome://editor/skin/icons/right.gif");
+} 
 
-#text-align-justify, #align-justify-button
-  {
-	  list-style-image      : url("chrome://editor/skin/images/justify.gif");
-  }
+#AlignRightItem:hover,
+#AlignRightItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/right-hover.gif");
+} 
 
-#text-align-justify[disabled="true"],
-#text-align-justify[disabled="true"]:hover,
-#text-align-justify[disabled="true"]:hover:active
-#align-justify-button[disabled="true"],
-#align-justify-button[disabled="true"]:hover,
-#align-justify-button[disabled="true"]:hover:active 
- {
-    list-style-image      : url("chrome://editor/skin/images/justify-disabled.gif");
-  } 
+#AlignJustifyItem {
+  list-style-image: url("chrome://editor/skin/icons/justify.gif");
+}
 
-#text-align-justify:hover,
-#align-justify-button:hover,
-#text-align-justify:hover:active,
-#align-justify-button:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/justify-hover.gif");
-  } 
+#AlignJustifyItem:hover,
+#AlignJustifyItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/justify-hover.gif");
+}
 
-.ColorPickerLabel 
-  {
-    border                : 1px inset white;
-    margin                : 0px;
-    padding               : 2px;
-  }
+/* ..... insert menu ..... */
 
-.color-button
-  {
-    border                : 1px inset #9C9CFF;
-    padding               : 0px;
-    width                 : 14px;
-    height                : 12px;
-    margin                : 2px;
-  }
+#InsertLinkItem {
+  list-style-image: url("chrome://editor/skin/icons/link.gif");
+}
 
-.color-button:hover 
-  {
-    border                : 1px solid #FFCF00;
-  }
+#InsertLinkItem:hover,
+#InsertLinkItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/link-hover.gif");
+}
 
-#TextColorButton 
-  {
-    margin                : 2px 7px 7px 2px;
-  }
+#InsertAnchorItem {
+  list-style-image: url("chrome://editor/skin/icons/anchor.gif");
+}
 
-#BackgroundColorButton 
-  {
-    margin                : 7px 2px 2px 7px;
-  }
+#InsertAnchorItem:hover,
+#InsertAnchorItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/anchor-hover.gif");
+}
+
+#InsertImageItem {
+  list-style-image: url("chrome://editor/skin/icons/image.gif");
+}
+
+#InsertImageItem:hover,
+#InsertImageItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/image-hover.gif");
+}
+
+#InsertHRuleItem {
+  list-style-image: url("chrome://editor/skin/icons/hline.gif");
+}
+
+#InsertHRuleItem:hover,
+#InsertHRuleItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/hline-hover.gif");
+}
+
+#InsertTableItem {
+  list-style-image: url("chrome://editor/skin/icons/table.gif");
+}
+
+#InsertTableItem:hover,
+#InsertTableItem:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/table-hover.gif");
+}
+
+/* ..... smiley menu ..... */
+
+.insert-smile > .menu-iconic-left {
+  list-style-image: url("chrome://editor/content/images/smile_n.gif");
+}
+
+.insert-tongue > .menu-iconic-left {
+  list-style-image: url("chrome://editor/content/images/tongue_n.gif");
+}
+
+.insert-frown > .menu-iconic-left {
+  list-style-image: url("chrome://editor/content/images/frown_n.gif"); 
+}
+
+.insert-wink > .menu-iconic-left {
+  list-style-image: url("chrome://editor/content/images/wink_n.gif");
+}
+
+.insert-laughing > .menu-iconic-left {
+  list-style-image: url("chrome://editor/content/images/laughing_n.gif"); 
+}
+
+.insert-embarrassed > .menu-iconic-left {
+  list-style-image: url("chrome://editor/content/images/embarrassed_n.gif");
+}
+
+.insert-undecided > .menu-iconic-left {
+  list-style-image: url("chrome://editor/content/images/undecided_n.gif"); 
+}
+
+/* ::::: fg/bg color picker ::::: */
+
+.ColorPickerLabel {
+  border: 1px inset #FF9F00;
+  margin: 0px;
+  padding: 2px;
+}
+
+.color-button {
+  border: 1px inset #9C9CFF;
+  padding: 0px;
+  width: 14px;
+  height: 12px;
+  margin: 2px;
+}
+
+.color-button:hover {
+  border: 1px solid #FFCF00;
+}
+
+#TextColorButton {
+  margin: 2px 9px 9px 2px;
+}
+
+#BackgroundColorButton {
+  margin: 9px 2px 2px 9px;
+}
+
+#HighlightColorButton {
+  list-style-image: url("chrome://editor/skin/icons/highlight.gif");
+  background-color: transparent;
+}
+
+#HighlightColorButton:hover,
+#HighlightColorButton:hover:active {
+  list-style-image: url("chrome://editor/skin/icons/highlight-hover.gif");
+}
+
+#HighlightColorButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/highlight-disabled.gif") !important;
+}

@@ -37,148 +37,109 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/******* Splitters *******/
+/* ===== splitter.css ===================================================
+  == Styles used by the XUL splitter element.
+  ======================================================================= */
 
-/** 
- * XXX - We want to deprecate all usages of 'box' in this file and replace with
- *       vbox/hbox. This should happen after the chrome is converted to use
- *       these XUL elements. 
- */
+/* ::::: splitter (vertical) ::::: */
 
-  splitter 
-    {
-      cursor                : e-resize;
-      background-color      : #9C9CFF;
-      -moz-box-align        : center;
-      -moz-box-pack         : center;
-      border                : none;
-      border-top            : 3px solid black;
-      border-bottom         : 3px solid black;
-      min-width             : 6px;
-      min-height            : 6px;  
-      margin                : 0px 3px 0px 3px; 
-    }
+splitter {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  cursor: e-resize;
+  border: none;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  min-width: 6px;
+  background-color: #9C9CFF;
+  margin: 0px 3px 0px 3px; 
+}
 
-  /* This takes margin away from outliner header splitters, else they look ugly! */  
-  splitter.tree-splitter {
-      margin                : 0px;
-  }
+splitter[state="dragging"],
+splitter:hover:active {
+  background-color: #FFCF00;
+}
 
-  grippy, grippy[collapse="before"]
-    {
-      border                : none;
-      border-top            : 3px solid black;
-      border-bottom         : 3px solid black;
-      list-style-image      : url("chrome://global/skin/grippy-vertical-before.gif");
-      -moz-box-align        : center;
-      -moz-box-pack         : center;
-      cursor                : pointer;
-      min-width             : 6px;
-      min-height            : 6px;
-      padding               : 1px;
-    }
-  
-  grippy:hover
-    {
-      background-color      : #FFCF00;
-    }
-  
-  grippy:hover:active
-    {
-      border                : none;
-    }
-  
-  splitter[state="collapsed"] > grippy
-    {
-      list-style-image      : url("chrome://global/skin/grippy-vertical-after.gif");
-    }  
-    
-  .grippy-box
-    {
-    }  
-    
-  .grippy-image
-    {
-      list-style-image      : inherit;
-    }  
-    
-  splitter[state="dragging"],
-  splitter:hover:active
-    {
-      background-color      : #FFCF00;
-    }
-  
-  rows > splitter
-    {
-      cursor              : n-resize;
-    }
-    
-  splitter[orient="vertical"]
-    {
-      cursor              : n-resize;
-      border              : none;
-      border-left         : 3px solid black;
-      border-right        : 3px solid black;
-      margin              : 3px 0px 3px 0px;
-    }
-    
-/* Grippy alignment */
+/* This takes margin away from outliner header splitters, else they look ugly! */  
+splitter.tree-splitter {
+  margin: 0px;
+}
 
-/* Vertical splitter (between two boxes, horizontally stacked), collapse to left */
-  splitter > grippy
-    {
-      list-style-image    : url("chrome://global/skin/grippy-vertical-before.gif");
-    }  
-    
-  splitter > grippy > .grippy-box
-    {
-      border-left         : none;
-      border-right        : none;
-    }  
+/* ::::: splitter (horizontal) ::::: */
 
-  splitter[state="collapsed"] > grippy
-    {
-      list-style-image    : url("chrome://global/skin/grippy-vertical-after.gif");
-    }
+splitter[orient="vertical"] {
+  cursor: n-resize;
+  border: none;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  min-height: 6px;
+  margin: 3px 0px 3px 0px;
+}
 
-/* Vertical splitter (between two boxes, horizontally stacked), collapse to right */
-  splitter[collapse="after"] > grippy
-    {
-      list-style-image    : url("chrome://global/skin/grippy-vertical-after.gif");
-    }  
-    
-  splitter[collapse="after"][state="collapsed"] > grippy
-    {
-      list-style-image    : url("chrome://global/skin/grippy-vertical-before.gif");
-    }
+/* ::::: splitter grippy ::::: */
 
-/* Horizontal splitter (between two boxes, vertically stacked), collapse to left */
-  splitter[orient="vertical"] > grippy
-    {
-      list-style-image    : url("chrome://global/skin/grippy-horizontal-before.gif");
-      -moz-box-align      : center;
-      -moz-box-pack       : center;
-      border              : none;
-      border-left         : 3px solid black;
-      border-right        : 3px solid black;
-    }  
-    
-  splitter[orient="vertical"] > grippy > .grippy-box
-    {
-    }  
+grippy {
+  cursor: pointer;
+  border: none;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  min-width: 6px;
+  min-height: 121px;
+  background: #9C9CFF 50% 50% no-repeat;
+}
 
-  splitter[state="collapsed"][orient="vertical"] > grippy
-    {
-      list-style-image    : url("chrome://global/skin/grippy-horizontal-after.gif");
-    }
-    
-/* Horizontal splitter (between two boxes, vertically stacked), collapse to right */
-  splitter[collapse="after"][orient="vertical"] > grippy
-    {
-      list-style-image    : url("chrome://global/skin/grippy-horizontal-after.gif");
-    }  
-    
-  splitter[collapse="after"][state="collapsed"][orient="vertical"] > grippy
-    {
-      list-style-image    : url("chrome://global/skin/grippy-horizontal-before.gif");
-    }
+grippy:hover {
+  background-color: #FFCF00;
+}
+
+grippy:hover:active {
+  border: none;
+}
+
+splitter[orient="vertical"] > grippy {
+  border: none;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  min-width: 121px;
+  min-height: 6px;
+}
+
+/* ..... normal state ..... */
+
+/* vertical grippies */
+splitter[collapse="before"] > grippy {
+  background-image: url("chrome://global/skin/splitter/grip-vert-before.gif");
+}
+
+splitter[collapse="after"] > grippy {
+  background-image: url("chrome://global/skin/splitter/grip-vert-after.gif");
+}
+
+/* horizontal grippies */
+splitter[collapse="before"][orient="vertical"] > grippy {
+  background-image: url("chrome://global/skin/splitter/grip-horiz-before.gif");
+}
+
+splitter[collapse="after"][orient="vertical"] > grippy {
+  background-image: url("chrome://global/skin/splitter/grip-horiz-after.gif");
+}
+
+/* ..... collapsed state ..... */
+
+/* vertical grippies */
+splitter[collapse="before"][state="collapsed"] > grippy {
+  background-image: url("chrome://global/skin/splitter/grip-vert-after.gif");
+}
+
+splitter[collapse="after"][state="collapsed"] > grippy {
+  background-image: url("chrome://global/skin/splitter/grip-vert-before.gif");
+}
+
+/* horizontal grippies */
+splitter[collapse="before"][state="collapsed"][orient="vertical"] > grippy {
+  background-image: url("chrome://global/skin/splitter/grip-horiz-after.gif");
+}
+
+splitter[collapse="after"][state="collapsed"][orient="vertical"] > grippy {
+  background-image: url("chrome://global/skin/splitter/grip-horiz-before.gif");
+}

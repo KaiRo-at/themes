@@ -41,26 +41,45 @@
   == Styles for the body of a mail message.
   ======================================================================= */
 
-/* 
- * These are the style attributes for the XUL display.
- */
-window						          { overflow: auto; }
-mailheader					        { display: block; }
-mailattachcount				      { display: none; }
+window {
+  overflow: auto;
+}
 
-headerdisplayname			      { font-weight: bold;  white-space: pre; }
-header						          { text-align: left; }
+mailattachcount {
+  display: none;
+}
 
-/* 
- * For printing/HTML display...
- */
-table[name=header-part1]    { background-color: #EFEFEF; border: 0px solid #EFEFEF; border-left-width: 4px; }
-table[name=header-part2]    { background-color: #DEDEDE; border: 0px solid #DEDEDE; border-left-width: 4px; }
-table[name=header-part3]    { background-color: #DEDEDE; border: 0px solid #DEDEDE; border-left-width: 4px; }
-div.headerdisplayname       { font-weight: bold;  white-space: pre; display: inline; }
+/* :::: message header ::::: */
 
-html {
+header {
+  text-align: left;
+}
+
+html|html {
+  /* XXX Doesn't seem to work. (Same with "html|body".) */
   background-color: white;
+}
+
+headerdisplayname {
+  font-weight: bold;
+  white-space: pre;
+}
+
+.header-part1 {
+  border-left: 4px solid #EFEFEF;
+  background-color: #EFEFEF;
+}
+
+.header-part2,
+.header-part3 {
+  border: 4px solid #DEDEDE;
+  background-color: #DEDEDE;
+}
+
+div.headerdisplayname {
+  display: inline;
+  font-weight: bold;
+  white-space: pre;
 }
 
 /* ::::: message text, incl. quotes ::::: */
@@ -75,27 +94,37 @@ html {
   margin: inherit;
   font-family: inherit;
 }
+
 .moz-text-plain[wrap="true"] {
   white-space: -moz-pre-wrap;
 }
+
 .moz-text-plain[wrap="false"] {
   white-space: pre;
 }
+
 .moz-text-plain[wrap="flow"] .moz-txt-sig {
   white-space: -moz-pre-wrap;
 }
+
 .moz-text-plain[graphical-quote="false"] blockquote {
   margin: inherit;
   border-left: inherit;
   padding-left: inherit;
 }
+
 .moz-text-plain[graphical-quote="true"] blockquote {
   margin: inherit;
   border-width: medium;
   border-color: gray;
 }
+
 .moz-text-plain[graphical-quote="true"] .moz-txt-citetags {
   display: none;
+}
+
+span.moz-txt-underscore {
+  text-decoration: underline;
 }
 
 /* ::::: signature ::::: */
@@ -104,9 +133,10 @@ html {
 .moz-signature {
   color: gray;
 }
+
 .moz-txt-sig > a,
 .moz-signature > a {
-  color: #7777FF /* light blue */;
+  color: #7777FF; /* light blue */
 }
 
 /* ::::: smilies ::::: */
@@ -117,28 +147,35 @@ span[-moz-smiley] {
   background-repeat: no-repeat; 
   background-position: center center;
 }
+
 span[-moz-smiley] > span {
     display: none;
 }
 
 span[-moz-smiley="s1"] {
-  background-image: url(chrome://global/skin/smiley/smile_n.gif);
+  background-image: url(chrome://editor/content/images/smile_n.gif);
 }
+
 span[-moz-smiley="s2"] {
-  background-image: url(chrome://global/skin/smiley/frown_n.gif);
+  background-image: url(chrome://editor/content/images/frown_n.gif);
 }
+
 span[-moz-smiley="s3"] {
-  background-image: url(chrome://global/skin/smiley/wink_n.gif);
+  background-image: url(chrome://editor/content/images/wink_n.gif);
 }
+
 span[-moz-smiley="s4"] { 
-  background-image: url(chrome://global/skin/smiley/tongue_n.gif);
+  background-image: url(chrome://editor/content/images/tongue_n.gif);
 }
+
 span[-moz-smiley="s5"] {
-  background-image: url(chrome://global/skin/smiley/laughing_n.gif);
+  background-image: url(chrome://editor/content/images/laughing_n.gif);
 }
+
 span[-moz-smiley="s6"] {
-  background-image: url(chrome://global/skin/smiley/embarrassed_n.gif);
+  background-image: url(chrome://editor/content/images/embarrassed_n.gif);
 }
+
 span[-moz-smiley="s7"] {
-  background-image: url(chrome://global/skin/smiley/undecided_n.gif);
+  background-image: url(chrome://editor/content/images/undecided_n.gif);
 }

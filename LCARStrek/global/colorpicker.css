@@ -37,38 +37,17 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* colorpicker tiles */
+/* ===== colorpicker.css ================================================
+  == Styles used by the XUL colorpicker element.
+  ======================================================================= */
 
-.colorpickertile {
-  width                 : 20px;
-  height                : 20px;
-  margin                : 1px;
-  -moz-border-radius    : 3px;
-  border                : 1px solid #9C9CFF;
-}
-
-.colorpickertile[selected="true"] {
-  border                : 1px solid #008484;
-}
-
-.colorpickertile[hover="true"] {
-  border                : 1px solid #FFCF00;
-}
-
-.cp-light[hover="true"] {
-  border                : 2px dotted #FF9F00;
-}
-
-/* colorpicker button */
+/* ::::: colorpicker button ::::: */
 
 colorpicker[type="button"] {
-  width: 35px;
+  width: 34px;
   height: 20px;
   -moz-border-radius: 3px;
   border: 1px solid #9C9CFF;
-}
-
-.colorpicker-button-internal-box {
   padding: 3px;
 }
 
@@ -77,9 +56,6 @@ colorpicker[type="button"] {
 }
 
 colorpicker[type="button"]:focus {
-
-
-colorpicker[type="button"]:focus > .colorpicker-button-internal-box {
 }
 
 colorpicker[type="button"][open="true"] {
@@ -87,4 +63,26 @@ colorpicker[type="button"][open="true"] {
 }
 
 colorpicker[type="button"][open="true"] > .colorpicker-button-internal-box {
+}
+
+/* ::::: colorpicker tiles ::::: */
+
+.colorpickertile {
+  width: 20px;
+  height: 20px;
+  margin: 1px;
+  -moz-border-radius: 3px;
+  border : 1px solid #9C9CFF;
+}
+
+.colorpickertile[selected="true"] {
+  border: 1px solid #008484;
+}
+
+.colorpickertile[hover="true"] {
+  border: 1px solid #FFCF00;
+}
+
+.cp-light[hover="true"] {
+  border: 2px dotted #FF9F00;
 }

@@ -37,48 +37,49 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#mini-nav 
-  {
-	  list-style-image      : url("chrome://global/skin/taskbar-navigator.gif");
-  }
+/* ==== tasksOverlay.css ================================================
+   == Styles used by the the overlay which contains tasks related
+   == content, such as the taskbar and product launcher icons.
+   ====================================================================== */
 
-#mini-mail 
-  {
-	  list-style-image      : url("chrome://global/skin/taskbar-mail.gif");
-  }
+/* ::::: communicator product icons ::::: */
 
-#mini-mail[BiffState="NewMail"]
-  {
-    list-style-image      : url("chrome://global/skin/taskbar-gotmail.gif");
-  }
-
-#mini-addr 
-  {
-	  list-style-image      : url("chrome://global/skin/taskbar-addressbook.gif");
-  }
-
-#mini-comp 
-  {
-	  list-style-image      : url("chrome://global/skin/taskbar-composer.gif");
-  }
-
-.taskbutton > .toolbarbutton-box,
-.taskbutton > .toolbarbutton-box:hover:active {
-  padding: 1px;
+.taskbutton,
+.taskbutton:hover:active {
+  padding: 1px 3px;
   border: none;
 }
 
-.taskbutton > .toolbarbutton-box:hover,
-.taskbutton:hover > .toolbarbutton-box {
-  background-color      : #FFCF00;
+.taskbutton:hover {
+  background-color: #FFCF00;
 }
 
-.taskbutton > .toolbarbutton-box:hover:active,
-.taskbutton:hover:active > .toolbarbutton-box {
-  background-color      : #FFCF00;
+.taskbutton:hover:active {
+  background-color: #FFCF00;
 }
 
-.taskbutton > .toolbarbutton-box > .toolbarbutton-text
-  {
-    display               : none;
-  }
+#mini-nav {
+  list-style-image: url("chrome://communicator/skin/taskbar/navigator.gif");
+}
+
+#mini-mail {
+  list-style-image: url("chrome://communicator/skin/taskbar/mail.gif");
+}
+
+#mini-mail[BiffState="NewMail"] {
+  list-style-image: url("chrome://communicator/skin/taskbar/mailnew.gif");
+}
+
+#mini-addr {
+  list-style-image: url("chrome://communicator/skin/taskbar/addressbook.gif");
+}
+
+#mini-comp {
+  list-style-image: url("chrome://communicator/skin/taskbar/composer.gif");
+}
+
+/* ::::: component bar ::::: */
+
+#component-bar {
+  -moz-box-align: stretch;
+}

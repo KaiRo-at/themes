@@ -52,52 +52,52 @@
 /* ::::: subscribed icons  :::::: */
 
 .subscribedcol {
-  list-style-image: url("chrome://messenger/skin/dot.gif");
+  list-style-image: url("chrome://messenger/skin/icons/dot.gif");
 }
 
 .subscribedcol[Subscribed="true"] {
-  list-style-image: url("chrome://messenger/skin/check.gif");
+  list-style-image: url("chrome://messenger/skin/icons/check.gif");
 }
 
 /* ::::: folder icons :::::: */
 
 .tree-cell-subscribe-icon {
-  list-style-image: url("chrome://messenger/skin/folder-closed.gif");
+  list-style-image: url("chrome://messenger/skin/icons/folder-closed.gif");
 }
 
 .tree-cell-subscribe-icon[ServerType="nntp"] {
-  list-style-image: url("chrome://messenger/skin/folder-newsgroup.gif");
+  list-style-image: url("chrome://messenger/skin/icons/folder-newsgroup.gif");
 }
 
 /* ::::: server icons :::::: */
 
 .subscribeMenuItem {
-  list-style-image: url("chrome://messenger/skin/server-mail.gif");
+  list-style-image: url("chrome://messenger/skin/icons/server-mail.gif");
 }
 
 .subscribeMenuItem[ServerType="imap"][IsSecure="true"] {
-  list-style-image: url("chrome://messenger/skin/server-remote-lock.gif");
+  list-style-image: url("chrome://messenger/skin/icons/server-remote-lock.gif");
 }
 
 .subscribeMenuItem[ServerType="nntp"] {
-  list-style-image: url("chrome://messenger/skin/server-news.gif");
+  list-style-image: url("chrome://messenger/skin/icons/server-news.gif");
 }
 
 .subscribeMenuItem[ServerType="nntp"][IsSecure="true"] {
-  list-style-image: url("chrome://messenger/skin/server-news-lock.gif");
+  list-style-image: url("chrome://messenger/skin/icons/server-news-lock.gif");
 }
 
 /* ::::: for search in subscribe ::::: */
 
-outlinerbody:-moz-outliner-image(nameCol, nntp) {
+outlinerchildren:-moz-outliner-image(nameCol, nntp) {
   padding-right: 2px;
-  list-style-image: url("chrome://messenger/skin/folder-newsgroup.gif");
+  list-style-image: url("chrome://messenger/skin/icons/folder-newsgroup.gif");
 }
 
-outlinerbody:-moz-outliner-image(subscribedCol) {
-  list-style-image: url("chrome://messenger/skin/dot.gif");
+outlinerchildren:-moz-outliner-image(subscribedCol) {
+  list-style-image: url("chrome://messenger/skin/icons/dot.gif");
 }
 
-outlinerbody:-moz-outliner-image(subscribedCol, subscribed) {
-  list-style-image: url("chrome://messenger/skin/check.gif");
+outlinerchildren:-moz-outliner-image(subscribedCol, subscribed) {
+  list-style-image: url("chrome://messenger/skin/icons/check.gif");
 }
