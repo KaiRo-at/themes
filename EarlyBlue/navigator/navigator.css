@@ -87,6 +87,10 @@
   list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
 }
 
+#clear-button {
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+}
+
 /* Hides text below the above buttons */
 .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-text,
 .toolbarbutton-1 > .toolbarbutton-text {
@@ -165,11 +169,15 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 #nav-bar-inner {
   padding-left: 0px;
   min-width: 0px;
-  margin: 7px 4px 8px 4px; 
+  margin: 7px 4px 8px 4px;
 }
   
 #urlbar {
-  border: 1px inset #CCD0DD;
+  border: 1px solid;
+  -moz-border-top-colors: #71737A;
+  -moz-border-right-colors: #EFF0F4;
+  -moz-border-bottom-colors: #EFF0F4;
+  -moz-border-left-colors: #71737A;
   margin: 0px 7px 0px 0px;
 }  
 

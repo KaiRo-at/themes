@@ -64,10 +64,12 @@ toolbarbutton {
   text-align: center;
 }
 
+/*
 toolbarbutton:hover,
 toolbarbutton[buttonover="true"],
 toolbarbutton.toolbarbutton-menubutton-button[open="true"] {
 } 
+*/
 
 toolbarbutton:hover {
   border: 1px outset #CCD0DD;

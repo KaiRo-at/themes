@@ -55,7 +55,8 @@ tree {
 
 treechildren:-moz-tree-row {
   border: 1px solid transparent;
-  height: 18px;
+  min-height: 18px;
+  height: 1.3em;
 }
 
 treechildren:-moz-tree-row(selected) {
@@ -127,6 +128,24 @@ treechildren:-moz-tree-drop-feedback {
 
 treechildren:-moz-tree-drop-feedback(selected) {
   background-color: #FFFFFF;
+}
+
+/* ::::: tree progress meter ::::: */
+
+treechildren:-moz-tree-progressmeter {
+  margin: 0px 0px;
+  border: 1px inset #CCD0DD;
+  background-color: #999999;
+  color: #6699CC;
+}
+
+treechildren:-moz-tree-progressmeter(progressUndetermined) {
+  list-style-image: url("chrome://global/skin/progressmeter/progressmeter-busy.gif");
+  background-color: #CCD0DD;
+}
+
+treechildren:-moz-tree-cell-text(progressmeter) {
+  margin: 2px 4px;
 }
 
 /* ::::: tree columns ::::: */
@@ -225,17 +244,18 @@ treechildren:-moz-tree-column(insertafter) {
 
 treechildren:-moz-tree-twisty {
   padding-right: 2px;
-  width: 12px; /* The image's width is 12 pixels */
+  padding-top: 1px;
+  width: 11px; /* The image's width is 11 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
 }
   
 treechildren:-moz-tree-twisty(open) {
-  width: 12px; /* The image's width is 12 pixels */
+  width: 11px; /* The image's width is 11 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
 }
 
 treechildren:-moz-tree-indentation {
-  width: 10px;
+  width: 11px;
 }
 
 /* ::::: gridline style ::::: */

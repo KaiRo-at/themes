@@ -80,6 +80,11 @@ tab {
 
 tab[selected="true"]  {
   font-weight: bold;
+  background-color: #EDF1FF;
+}
+
+tab:hover {
+  color: #336699;
 }
 
 /*
