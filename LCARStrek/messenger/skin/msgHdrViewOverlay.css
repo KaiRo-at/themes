@@ -88,6 +88,7 @@ mail-emailaddress
   margin: 3px;
   height: 0px;
   width: 20em;
+  color: #FF9F00;
 }
 
 .emailDisplayImage
@@ -97,7 +98,7 @@ mail-emailaddress
 
 .emailDisplayButton 
    {
-    color                 : black;
+    color                 : 008484;
     cursor                : pointer;
     min-height            : 16px;
     -moz-border-radius:   : 3px;

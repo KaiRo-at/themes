@@ -155,6 +155,7 @@
     {
       background-color    : #8050B0;
       padding-left        : 2px;
+      color               : black;
     }
 
   .statusbar-left
@@ -206,5 +207,6 @@
   {
     margin                : 0px;
   }
+
 
 

@@ -169,12 +169,14 @@
 #attachmentbucket-sizer
   {
     width                 : 5px;
+    background-color      : black;
   }
 
 #attachmentBucket
   {
     margin-left           : 3px;
     -moz-user-focus: normal !important;
+    color                 : #FF9F00;
   }
 
 #attachmentBucketText
@@ -204,4 +206,6 @@
 #convertNo {
 	list-style-image:url("chrome://global/skin/alert-icon.gif");
 }
+
+
 

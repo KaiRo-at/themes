@@ -138,7 +138,7 @@ treeitem[selected="true"][container="true"][open="true"] > treerow > treecell > 
 
 .sortDirectionIndicator[sortDirection="ascending"] > .treecell-header-box > .tree-header-sortdirection {
   list-style-image: url("chrome://global/skin/sortAscending.gif");
-  margin-right: 3px;
+/*  margin-right: 3px; */
 }
 
 .sortDirectionIndicator[sortDirection="descending"] > .treecell-header-box > .tree-header-sortdirection {
@@ -160,3 +160,4 @@ treecol[sortActive="true"]
   {
     margin-left           : 2px;
   }
+

@@ -87,6 +87,7 @@ textbox[type="autocomplete"]
 .autocomplete-outliner 
   {
     background-color       : transparent !important;
+    border                 : none !important;
   }
 
 .autocomplete-outlinercol 
@@ -105,6 +106,7 @@ textbox[type="autocomplete"]
   {
     color                  : HighlightText !important;
   }
+
 
 
 
