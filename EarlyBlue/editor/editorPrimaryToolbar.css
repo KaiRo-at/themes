@@ -178,9 +178,17 @@
 }
 
 #findButton {
-  list-style-image: url("chrome://editor/skin/icons/cut.gif");
+  list-style-image: url("chrome://editor/skin/icons/find.gif");
 }
 
 #findButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/cut-disabled.gif") !important;
+  list-style-image: url("chrome://editor/skin/icons/find-disabled.gif") !important;
+}
+
+#formButton {
+  list-style-image: url("chrome://editor/skin/icons/form.gif");
+}
+
+#formButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/form-disabled.gif") !important;
 }
