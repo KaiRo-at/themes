@@ -18,6 +18,73 @@
  * Rights Reserved.
  */
 
+
+outliner:focus > outliner-bodybox
+{
+  border: 1px solid black;
+}
+
+outliner > outliner-bodybox
+{
+  border: 1px solid transparent;
+}
+
+outlinercol.threadColumnHeader {
+  list-style-image: url("chrome://messenger/skin/unthreadcol.gif");
+}
+
+outlinercol.threadColumnHeader[sortDirection="ascending"]  {
+  list-style-image: url("chrome://messenger/skin/threadcol.gif");
+}
+
+outlinercol.threadColumnHeader[sortDirection="descending"] {
+  list-style-image: url("chrome://messenger/skin/threadcol.gif");
+}
+
+outlinercol.readColumnHeader {
+  list-style-image: url("chrome://messenger/skin/unreadmail.gif");
+}
+
+outlinercol.flagColumnHeader {
+  list-style-image: url("chrome://messenger/skin/flaggedmail.gif");
+}
+
+outlinerbody:-moz-outliner-cell-text(unread)
+{
+  font-weight: bold;
+}
+
+outlinerbody:-moz-outliner-cell-text(offline)
+{
+  font-style: italic;
+}
+
+outlinerbody:-moz-outliner-cell-text(priority-highest)
+{
+  color:red;
+}
+
+outlinerbody:-moz-outliner-cell-text(priority-high)
+{
+  color: rgb(128, 0, 0);
+}
+
+outlinerbody:-moz-outliner-cell-text(priority-lowest)
+{
+  color: rgb(170, 170, 170);
+}
+
+outlinerbody:-moz-outliner-cell-text(priority-low)
+{
+  color: rgb(85, 85, 85);
+}
+
+
+
+/*
+
+
+
 .tree-thread-row.unread-true {
 	font-weight: bold;
 }
@@ -136,3 +203,4 @@ treeitem[empty="true"] > treerow > .tree-cell-threadpane-icon > .tree-cell-twist
   }
 
 
+*/

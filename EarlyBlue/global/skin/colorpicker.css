@@ -1,0 +1,46 @@
+/* colorpicker tiles */
+
+.colorpickertile {
+  width                 : 20px;
+  height                : 20px;
+  margin                : 1px;
+  border                : 1px inset #CCCCDD;
+}
+
+.colorpickertile[hover="true"] {
+  border                : 1px solid #FFFFFF;
+}
+
+.colorpickertile[selected="true"] {
+  border                : 1px solid #000000;
+}
+
+/* colorpicker button */
+
+colorpicker[type="button"] {
+  width: 35px;
+  height: 20px;
+  border: 1px outset #CCCCDD;
+}
+
+.colorpicker-button-internal-box {
+  padding: 3px;
+}
+
+.colorpicker-button-colorbox {
+  border: 1px solid #000000;
+}
+
+colorpicker[type="button"]:focus {
+}
+
+colorpicker[type="button"]:focus > .colorpicker-button-internal-box {
+}
+
+colorpicker[type="button"][open="true"] {
+  border: 1px inset #CCCCDD;
+}
+
+colorpicker[type="button"][open="true"] > .colorpicker-button-internal-box {
+}
+

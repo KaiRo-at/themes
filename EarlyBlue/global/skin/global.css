@@ -16,6 +16,7 @@
 @import url(chrome://global/skin/checkbox.css);
 @import url(chrome://global/skin/radio.css);
 @import url(chrome://global/skin/tree.css);
+@import url(chrome://global/skin/outliner.css);
 @import url(chrome://global/skin/splitter.css);
 @import url(chrome://global/skin/radio.css);
 @import url(chrome://global/skin/menubutton.css);
@@ -24,6 +25,8 @@
 @import url(chrome://global/skin/formatting.css);
 @import url(chrome://global/skin/textfield.css);
 @import url(chrome://global/skin/tabcontrol.css);
+@import url(chrome://global/skin/toolbar.css);
+@import url(chrome://global/skin/colorpicker.css);
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); 
 @namespace html url("http://www.w3.org/1999/xhtml"); 
@@ -31,6 +34,8 @@
 /**
  * XXX-DEBUG: HTML namespace/titledbutton striping. 
  **/ 
+
+/*
   html|* 
     {
       border              : 1px solid green !important;
@@ -45,6 +50,7 @@
     {
       border              : 1px solid purple !important;
     }
+*/
 
 /**  
  * XUL <window> element
@@ -52,8 +58,10 @@
   window 
     { 
       background-color    : #CCD0DD;
+      color               : black;
       font                : 3mm helvetica,arial,tahoma,sans-serif;
       padding             : 0px;
+      -moz-user-focus     : ignore;
     }
   
   window[wait-cursor] 
@@ -111,17 +119,6 @@
       list-style-image    : url("chrome://global/skin/question-icon.gif");
     }
 
-  statusbarpanel
-    {
-      padding             : 0px 1px 0px 1px;
-      vertical-align      : middle;
-    }
-
-  .statusbar-panel-icon
-    {
-      margin              : 0px 2px 0px 0px;
-    }
-
 /**
  * status-bar
  */
@@ -146,6 +143,18 @@
       list-style-image    : url("chrome://global/skin/gray-bottomright.gif");
       background-position : bottom right;
     }
+
+  statusbarpanel
+    {
+      padding             : 0px 1px 0px 1px;
+      vertical-align      : middle;
+    }
+
+  .statusbar-panel-icon
+    {
+      margin              : 0px 2px 0px 0px;
+    }
+
 
 /**
  * html|iframe default sizing 
@@ -228,25 +237,4 @@
     { 
       user-focus          : ignore; 
     } 
-
-
-/* XUL <colorpicker> pieces */
-.colorpickertile 
-  {
-    width                 : 20px;
-    height                : 20px;
-    margin                : 1px;
-    border                : 1px inset #CCD0DD;
-  }
-
-.colorpickertile:hover 
-  {
-    border                : 1px solid #FFFFFF;
-  }
-
-.colorpickertile[selected="true"] 
-  {
-    border                : 1px solid #000000;
-  }
-
 
