@@ -193,16 +193,16 @@
 }
 
 #button-junk {
-  list-style-image: url("chrome://messenger/skin/toolbar/mark.gif");
+  list-style-image: url("chrome://messenger/skin/toolbar/junk.gif");
 }
 
 #button-junk:hover,
 #button-junk[buttonover="true"],
 #button-junk[buttondown="true"],
 #button-junk[open="true"] {
-  list-style-image: url("chrome://messenger/skin/toolbar/mark-hover.gif");
+  list-style-image: url("chrome://messenger/skin/toolbar/junk-hover.gif");
 } 
 
 #button-junk[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/toolbar/mark-disabled.gif") !important;
+  list-style-image: url("chrome://messenger/skin/toolbar/junk-disabled.gif") !important;
 }

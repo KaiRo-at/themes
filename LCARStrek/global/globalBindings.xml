@@ -32,7 +32,8 @@
 
   <binding id="toolbar" extends="chrome://global/content/bindings/toolbar.xml#toolbar">
     <content>
-      <xul:hbox class="toolbar-begcap"/>
+      <xul:toolbargrippy xbl:inherits="tooltiptext=grippytooltiptext,tooltip=grippytooltip,last-toolbar,hidden=grippyhidden"
+                         tbattr="toolbar-grippy" class="toolbar-grippy"/>
       <xul:hbox flex="1" class="toolbar-holder" align="center"
                xbl:inherits="collapsed,last-toolbar,orient=tborient,align=tbalign,pack=tbpack">
         <children/>
@@ -43,7 +44,8 @@
 
   <binding id="toolbar-primary" extends="chrome://global/content/bindings/toolbar.xml#toolbar-primary">
     <content>
-      <xul:hbox class="toolbar-begcap"/>
+      <xul:toolbargrippy xbl:inherits="tooltiptext=grippytooltiptext,tooltip=grippytooltip,last-toolbar,hidden=grippyhidden"
+                         tbattr="toolbar-grippy" class="toolbar-grippy"/>
       <xul:hbox flex="1" class="toolbar-holder" align="center"
                xbl:inherits="collapsed,last-toolbar,orient=tborient,align=tbalign,pack=tbpack">
         <children/>
@@ -58,7 +60,8 @@
     </resources>
 
     <content>
-      <xul:hbox class="menubar-begcap"/>
+      <xul:toolbargrippy xbl:inherits="tooltiptext=grippytooltiptext,tooltip=grippytooltip,last-toolbar,hidden=grippyhidden"
+                         tbattr="toolbar-grippy" class="toolbar-grippy"/>
       <xul:hbox flex="1" class="toolbar-holder" xbl:inherits="collapsed,last-toolbar" align="center">
         <children/>
       </xul:hbox>

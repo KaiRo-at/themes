@@ -66,10 +66,12 @@ menubar > .toolbar-holder {
   background-color: #6000CF;
 }
 
-/* ::::: begcap (LCARStrek specific) ::::: */
+/* ::::: toolbargrippy ::::: */
 
-toolbar > .toolbar-begcap {
+toolbargrippy {
   -moz-border-radius: 8px 0px 0px 8px;
+  -moz-box-orient: vertical;
+  -moz-box-align: center;
   background-color: #FF9F00;
   border: none;
   border-right: 3px solid black;
@@ -77,13 +79,8 @@ toolbar > .toolbar-begcap {
   min-height: 16px;
 }
 
-menubar > .menubar-begcap {
-  -moz-border-radius: 8px 0px 0px 8px;
-  background-color: #FF9F00;
-  border: none;
-  border-right: 3px solid black;
-  width: 15px;
-  min-height: 16px;
+toolbargrippy:hover {
+  background-color: #FFCF00;
 }
 
 /* ::::: endcap (LCARStrek specific) ::::: */
@@ -106,6 +103,20 @@ menubar > .menubar-endcap {
   min-height: 16px;
 }
 
+/* ::::: collapsed tray and grippies ::::: */
+
+toolbargrippy[tbgrippy-collapsed="true"] {
+  -moz-box-orient: horizontal;
+  -moz-border-radius: 5px 0px 0px 5px;
+  margin-bottom: 3px;
+  width: 30px;
+  height: 10px;
+}
+
+.collapsed-tray-spacer {
+  border-bottom: none;
+}
+
 /* ::::: toolbarseparator ::::: */
 
 toolbarseparator {
@@ -113,4 +124,3 @@ toolbarseparator {
   border-right: 1px solid #000000; 
   width: 1px;
 }
-
