@@ -52,6 +52,7 @@ radio {
 .radio-label-box {
   border: 1px solid transparent;
   padding: 0px 0px 1px 1px;
+  -moz-box-align: center;
 }
 
 .radio-icon {
@@ -111,4 +112,3 @@ radio[selected="true"] > .radio-check-box1 > .radio-check-box2 {
 radio[selected="true"][disabled="true"] > .radio-check-box2 {
   list-style-image: url("chrome://global/skin/radio/radio-check-disabled.gif") !important
 }
-
