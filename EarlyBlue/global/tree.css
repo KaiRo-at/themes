@@ -287,12 +287,12 @@ treechildren::-moz-tree-column(insertafter) {
   width: 8px;  /* The image's width is 7 pixels */
 }
 
-.sortDirectionIndicator[sortDirection="ascending"] .treecol-sortdirection {
+.treecol-sortdirection[sortDirection="ascending"] {
   list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
 }
 
-.sortDirectionIndicator[sortDirection="descending"] .treecol-sortdirection {
-  list-style-image: url("chrome://global/skin/tree/sort-desc.gif");
+.treecol-sortdirection[sortDirection="descending"] {
+  list-style-image: url("chrome://global/skin/tree/sort-dsc.gif");
 }
 
 /* ::::: column picker :::::  */

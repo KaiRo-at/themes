@@ -47,17 +47,9 @@
   list-style-image: url("chrome://messenger/skin/smime/icons/lock.gif");
 }
 
-/*
-#button-security[buttonover] {
-} 
-
-#button-security[buttondown] {
-} 
-*/
-
 #button-security[disabled] {
   list-style-image: url("chrome://messenger/skin/smime/icons/lock-disabled.gif");
-} 
+}
 
 
 #msgcomposeWindow #signing-status {
