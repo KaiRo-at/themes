@@ -1,6 +1,7 @@
 
+/* hmm, could this box (hbox) be in any other component than navigator? */
 
-.box-toolbar-group > box
+#urlbar-container
   {
     border                : 1px inset #CCD0DD;
     background-color      : #FFFFFF;
