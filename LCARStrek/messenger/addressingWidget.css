@@ -35,49 +35,47 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://global/skin/);
-@import url("chrome://communicator/content/communicator.css");
-@import url(chrome://communicator/skin/brand.css);
-@import url(chrome://communicator/skin/button.css);
-@import url(chrome://communicator/skin/formatting.css);
-/* the line below is only LCARStrek */
-@import url(chrome://communicator/skin/toolbar.css);
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
-
-/* ==== communicator.css ====================================================
-   == Styles shared everywhere throughout the Communicator suite.
-   ========================================================================== */
-
-#offline-status[offline="true"] {
-  list-style-image: url("chrome://communicator/skin/icons/offline.gif");
-}
-
-#offline-status {
-  list-style-image: url("chrome://communicator/skin/icons/online.gif");
+/* ::::: addressing widget ::::: */
+  
+#addressingWidgetTree {
+  height: 80px;
+  width: 0px;
+  -moz-user-focus: none;
+/*  background-color: #FFFFFF; */
+}  
+  
+#listcol-addressingWidget {
+  width: 9em;
+  border-right: 1px solid #9C9CFF;
 }
   
-/* ::::: directional button icons ::::: */
-
-.up {
-  list-style-image:url("chrome://global/skin/arrow/arrow-up.gif");
-  min-width: 0px;
-}
-
-.up[disabled="true"] {
-  list-style-image:url("chrome://global/skin/arrow/arrow-up-disabled.gif");
-}
-
-.down {
-  min-width: 0px;
-  list-style-image:url("chrome://global/skin/arrow/arrow-down.gif");
-}
-
-.down[disabled="true"] {
-  list-style-image:url("chrome://global/skin/arrow/arrow-down-disabled.gif");
-}
-
-.sidebarTree {
+#addressingWidgetTree > treechildren > treeitem > treerow,
+#addressingWidgetTree > treechildren > treeitem[selected="true"] > treerow {
   border: none;
-  margin: 0px !important;
+  background-color: inherit;
+  color: inherit;
+}
+
+.treecell-addressingWidget {
+  border-bottom: 1px solid #9C9CFF;
+  padding: 0px !important;
+}
+  
+.treecell-addressingWidget:first-child {
+  border-bottom: none;
+}
+
+.textbox-addressingWidget {
+  -moz-box-align: center;
+}
+
+.dummy-row-cell:first-child {
+  border-bottom: 1px solid #9C9CFF;
+}
+
+.person-icon {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/abcard.gif");
+  margin: 0px 3px 0px 3px;
 }

@@ -35,49 +35,35 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://global/skin/);
-@import url("chrome://communicator/content/communicator.css");
-@import url(chrome://communicator/skin/brand.css);
-@import url(chrome://communicator/skin/button.css);
-@import url(chrome://communicator/skin/formatting.css);
-/* the line below is only LCARStrek */
-@import url(chrome://communicator/skin/toolbar.css);
+/* ===== msgReadSecurityInfo.css ========================================
+  == Styles for the security info window when displaying received mail.
+  ======================================================================= */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+@import url("chrome://messenger/skin/");
 
-/* ==== communicator.css ====================================================
-   == Styles shared everywhere throughout the Communicator suite.
-   ========================================================================== */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#offline-status[offline="true"] {
-  list-style-image: url("chrome://communicator/skin/icons/offline.gif");
+#msgReadSecurityInfo {
+  width: 40em;
+  max-width: 50em;
 }
 
-#offline-status {
-  list-style-image: url("chrome://communicator/skin/icons/online.gif");
-}
-  
-/* ::::: directional button icons ::::: */
-
-.up {
-  list-style-image:url("chrome://global/skin/arrow/arrow-up.gif");
-  min-width: 0px;
+#outer_vbox {
+  margin: 5px;
 }
 
-.up[disabled="true"] {
-  list-style-image:url("chrome://global/skin/arrow/arrow-up-disabled.gif");
+#signatureLabel {
+  font-weight: bold;
 }
 
-.down {
-  min-width: 0px;
-  list-style-image:url("chrome://global/skin/arrow/arrow-down.gif");
+#signatureCert {
+  margin: 5px;
 }
 
-.down[disabled="true"] {
-  list-style-image:url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+#encryptionLabel {
+  font-weight: bold;
 }
 
-.sidebarTree {
-  border: none;
-  margin: 0px !important;
+#encryptionCert {
+  margin: 5px;
 }

@@ -89,7 +89,6 @@
   list-style-image: url("chrome://editor/skin/icons/savefile-disabled.gif") !important;
 }
 
-/*
 #publishButton {
   list-style-image: url("chrome://editor/skin/icons/publish.gif");
 }
@@ -102,7 +101,6 @@
 #publishButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/publish-disabled.gif") !important;
 }
-*/
 
 #previewButton {
   list-style-image: url("chrome://editor/skin/icons/preview.gif");

@@ -164,15 +164,6 @@
   list-style-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
 }
 
-/*
-.sbtab-texture {
-  margin: 2px 0px;
-  background: url("chrome://global/skin/toolbar/tbgrip-texture.gif") repeat-y;
-  width: 12px;
-  height: 12px;
-}
-*/
-
 .box-texttab:hover > hbox,
 .box-texttab:hover:active > hbox {
   background-color: #FFCF00;
@@ -185,4 +176,19 @@
 
 .sbtab-twisty[selected="true"] {
   list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+}
+
+/* ::::: sidebar navigation buttons ::::: */
+
+.sidebar-nav-button {
+  -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton-image");
+  padding: 5px 0px 5px 0px;
+}
+
+.tab-fwd {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
+}
+
+.tab-back {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
 }
