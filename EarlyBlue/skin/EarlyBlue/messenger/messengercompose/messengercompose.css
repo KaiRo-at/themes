@@ -154,6 +154,7 @@
   {
     height                : 80px;
     width                 : 0px;
+    margin                : 0px;
     -moz-user-focus       : none;
     background-color      : #FFFFFF;
   }  
@@ -223,8 +224,14 @@ outlinerbody:-moz-outliner-image(remote-err)
 #msgheaderstoolbar-box
   {
 /*    padding-top           : 2px; */
-  }  
+  }
   
+/* this applies to two boxes to left and right of attachmentbucket-sizer */
+#msgheaderstoolbar-box > vbox
+  {
+    padding               : 3px;
+  }
+
 #compose-toolbar-sizer
   {
     height                : 5px;
@@ -239,9 +246,9 @@ outlinerbody:-moz-outliner-image(remote-err)
 
 #appcontent
   {
-    border-left           : 1px solid ThreeDShadow;
+/*    border-left           : 1px solid ThreeDShadow;
     border-right          : 1px solid ThreeDHighlight;
-    border-top            : 1px solid ThreeDShadow;
+    border-top            : 1px solid ThreeDShadow; */
   }  
 
 #attachmentbucket-sizer
@@ -249,20 +256,25 @@ outlinerbody:-moz-outliner-image(remote-err)
     width                 : 5px;
   }
   
-#msgIdentity, #addressingWidgetTree, #msgSubject
+#msgIdentity, #msgSubject
   {
-    margin-right          : 3px;
+    margin-right          : 0px;
   }  
+
+#msgSubject
+  {
+    margin-top            : 2px;
+  }
 
 #attachmentBucket
   {
-    margin-left           : 3px;
+    margin                : 0px;
     -moz-user-focus       : normal !important;
   }
 
 #attachmentBucketText
   {
-    margin-left           : 3px;
+    margin-bottom         : 2px;
     -moz-user-focus       : none;
   }
 
@@ -292,4 +304,3 @@ outlinerbody:-moz-outliner-image(remote-err)
 #convertDefault {
 	list-style-image:url("chrome://global/skin/question-icon.gif");
 } /* Workaround for bug 50217. Please remove this rule, when this bug is fixed. */
-

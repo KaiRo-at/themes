@@ -270,11 +270,16 @@ outlinerbody:-moz-outliner-image(remote-err)
 
 #msgheaderstoolbar-box
   {
-/*    padding-top           : 2px; */
     background-color      : #E7ADE7;
     color                 : #000000;
   }  
-  
+
+/* this applies to two boxes to left and right of attachmentbucket-sizer */
+#msgheaderstoolbar-box > vbox
+  {
+    padding               : 3px;
+  }
+
 #compose-toolbar-sizer
   {
     height                : 3px;
@@ -297,24 +302,29 @@ outlinerbody:-moz-outliner-image(remote-err)
 #attachmentbucket-sizer
   {
     width                 : 5px;
+    margin                : 0px;
     background-color      : #000000;
   }
   
-#msgIdentity, #addressingWidgetTree, #msgSubject
+#msgIdentity, #msgSubject
   {
-    margin-right          : 3px;
-  }  
+    margin-right          : 0px;
+  }
+
+#msgSubject
+  {
+    margin-top            : 2px;
+  }
 
 #attachmentBucket
   {
-    margin-left           : 3px;
     -moz-user-focus       : normal !important;
     color                 : #FF9F00;
   }
 
 #attachmentBucketText
   {
-    margin-left           : 3px;
+    margin-bottom         : 2px;
     -moz-user-focus       : none;
   }
 
