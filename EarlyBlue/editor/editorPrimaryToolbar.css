@@ -19,6 +19,8 @@
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ *   Joe Hewitt (hewitt@netscape.com)
+ *   Patrick Thompson (sailfish@unforgettable.com)
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
@@ -145,8 +147,40 @@
 
 #spellingButton {
   list-style-image: url("chrome://editor/skin/icons/spell.gif");
-} 
+}
 
 #spellingButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/spell-disabled.gif") !important;
+}
+
+#cutButton {
+  list-style-image: url("chrome://editor/skin/icons/cut.gif");
+}
+
+#cutButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/cut-disabled.gif") !important;
+}
+
+#copyButton {
+  list-style-image: url("chrome://editor/skin/icons/copy.gif");
+}
+
+#copyButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/copy-disabled.gif") !important;
+}
+
+#pasteButton {
+  list-style-image: url("chrome://editor/skin/icons/paste.gif");
+}
+
+#pasteButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/paste-disabled.gif") !important;
+}
+
+#findButton {
+  list-style-image: url("chrome://editor/skin/icons/cut.gif");
+}
+
+#findButton[disabled="true"] {
+  list-style-image: url("chrome://editor/skin/icons/cut-disabled.gif") !important;
 }

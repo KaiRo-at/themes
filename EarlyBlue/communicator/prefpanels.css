@@ -77,6 +77,12 @@
   width: 4em;
 }
 
+.prefpanel-font-list {
+  -moz-box-flex: 1;
+}
+
+/* ::::: Mouse Wheel ::::: */
+
 #mouseWheelMode {
   width: 9em;
 }
