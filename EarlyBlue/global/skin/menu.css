@@ -180,7 +180,13 @@ menuitem[checked="true"][menuactive="true"]
     border                : 1px outset #FFFFCC;
     color                 : #000000;
     font                  : smaller;
+    padding               : 3px;
+  }
+
+.tooltip html
+  {
     padding               : 0px;
+    margin                : 0px;
   }
 
 /*
@@ -202,3 +208,4 @@ autorepeatbutton {
 autorepeatbutton:hover {
   background-color: #336699;
 }
+
