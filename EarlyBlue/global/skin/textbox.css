@@ -8,7 +8,6 @@
   textbox
     {
       border              : 1px inset #CCD0DD;
-      font                : inherit;
       color               : #000000;
       padding             : 0px;
       margin              : 1px 3px 2px 4px;
@@ -34,24 +33,11 @@
     }
 
 /* internal frame */
-  .textbox-internal-box 
+  .textbox-internal-box, .textarea-internal-box
     {
       margin              : 0px;
       padding             : 1px 2px 1px 2px;
-      cursor              : text;
       border              : none;
-      background-color    : inherit;
-      color               : inherit;
-    }
-  
-  textbox[disabled="true"] > .textbox-internal-box
-    {
-      border              : none;
-    }
-  
-  .textarea-internal-box
-    {
-      padding             : 0px 0px 0px 2px;
     }
   
 /* internal text widget */
@@ -59,16 +45,20 @@
     {
       border              : none !important;
       margin              : 0px;
+      padding             : 0px;
       font                : inherit;
       background-color    : inherit;
+      color               : inherit;
     }
 
   textbox[disabled="true"] 
     {
-      cursor              : default ! important;
+      cursor              : default !important;
+      background-color    : white;
+      color               : #CCCCCC;
     } 
     
-/** plain atomic textfields, class="plain" **/
+/** plain atomic textboxs, class="plain" **/
   textbox.plain, 
   textbox.plain > .textbox-internal-box, 
   textbox.plain > .textarea-internal-box
@@ -78,21 +68,27 @@
       border              : none !important;
     }
 
-  .scrollfield
-    {
-      border              : none !important;
-      margin              : 0px;
-      margin-top          : 1px;      
-      padding             : 0px !important;
-      background          : inherit;
-    }    
-    
-  .scrollfield > .textbox-internal-box
-    {
-      border              : none !important;
-      margin              : 0px !important;
-      padding             : 0px !important;
-    }
-    
-    
-    
+/** inline edit textbox **/
+
+.textbox-inline-edit 
+  {
+    border                : 1px solid #6699FF !important;
+    margin                : 0px !important;
+  }
+
+.textbox-inline-edit > .textbox-internal-box > .textbox-input 
+  {
+    border                : none !important;
+    padding               : 0px !important;
+    margin                : 0px !important;
+  }
+
+.textbox-inline-edit > .textbox-internal-box 
+  {
+    border                : none !important;
+    padding               : 1px !important;
+    margin                : 0px !important;
+  }
+
+  
+

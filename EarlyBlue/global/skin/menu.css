@@ -16,6 +16,15 @@ menuitem[menuactive="true"][disabled="true"]
 	  color                 : #999999;
   }
 
+menupopup > menu,
+menupopup > menuitem,
+popup > menu,
+popup > menuitem
+  {
+    max-width             : 42em; /* should move to content */
+    margin                : 0px;
+  }
+
 menuseparator 
   {
     border                : 1px inset #CCD0DD; 
@@ -27,13 +36,6 @@ menubar > menu
     border                : 1px solid #CCD0DD;
     padding               : 2px 0px 2px 3px;
     margin                : 0px 2px 1px 0px;
-  }
-
-menupopup > menu, menupopup > menuitem,
-popup > menu, popup > menuitem
-  {
-    padding               : 2px;
-    max-width             : 42em; /* should move to content */
   }
 
 menubar > menu[menuactive="true"] 
@@ -54,7 +56,6 @@ popup > menuitem[menuactive="true"]
     background-color      : #336699;
     color                 : #FFFFFF;
   }
-
 
 /** 
  * Atomic sub-parts of standard menus
@@ -85,24 +86,26 @@ popup > menuitem[menuactive="true"]
 .menu-iconic-text, .menu-iconic-accel, .menu-text, .menu-accel 
   {
     color                 : inherit;
-    margin                : 0px 2px 0px 0px;
+  }
+
+.menu-iconic-text
+  {
+    margin                : 2px 2px 2px 0px;
   }
 
 .menu-text 
   {
-    padding-left          : 15px;
-    font-weight           : inherit;
+    margin                : 2px 2px 2px 23px;
   }
 
 .menu-accel 
   {
-    margin-left           : 4px;
-    padding-right         : 14px;
+    margin                : 2px 14px 2px 6px;
   }
 
 .menu-iconic-accel 
   {
-    margin-left           : 4px;
+    margin                : 2px 14px 2px 4px;
   }
 
 .menubar-text 
@@ -116,14 +119,29 @@ menuitem[checked="true"]
     list-style-image      : url("chrome://global/skin/menu-check.gif");
   }
 
+menuitem[checked="true"][menuactive="true"]
+  {
+  	list-style-image	  : url("chrome://global/skin/menu-check-hover.gif");
+  }
+
 menuitem[checked="true"][disabled="true"] 
   {
     list-style-image      : url("chrome://global/skin/menu-check-disabled.gif");
   }
 
-menuitem[checked="true"][menuactive="true"] 
+menuitem[checked="true"][type="radio"] 
   {
-    list-style-image      : url("chrome://global/skin/menu-check-hover.gif");
+    list-style-image      : url("chrome://global/skin/menu-radio.gif");
+  }
+
+menuitem[checked="true"][type="radio"][disabled="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-radio-disabled.gif");
+  }
+
+menuitem[checked="true"][type="radio"][menuactive="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-radio-hover.gif");
   }
 
 .menu-right[disabled="true"] 
@@ -141,14 +159,23 @@ menuitem[checked="true"][menuactive="true"]
     list-style-image      : url("chrome://global/skin/menu-arrow-hover.gif");
   }
 
+/* ::::: autocomplete menuitems ::::: */
+
+.autocomplete-history-popup > menuitem
+  {
+    max-width              : none !important;
+    font-size              : smaller;
+  }
+
 /* ::::: menu/menuitems in a menulist popup ::::: */
 
-  menulist > menupopup > menuitem
-  	{
-  	  min-width: 0px;
-  	  max-width: none;
-  	  padding: 0px 4px !important;
-  	}
+  menulist > menupopup > menuitem,
+  menulist > menupopup > menu
+    {
+      padding             : 0px 4px !important;
+      min-width           : 0px;  /* should be in content*/
+      max-width           : none; /* should be in content*/
+    }
 
   menulist > menupopup > menuitem > .menu-iconic-accel,
   menulist > menupopup > menuitem > .menu-accel,
@@ -163,6 +190,10 @@ menuitem[checked="true"][menuactive="true"]
       margin-bottom       : 0px;
     }
 
+  menulist > menupopup > menuitem[selected="true"]
+    {
+      border              : 1px dotted #F5DB95;
+    }
 
   menulist > menupopup > menuitem > .menu-iconic-left,
   menulist > menupopup > menuitem > .menu-iconic-left[menuactive="true"]
@@ -170,18 +201,6 @@ menuitem[checked="true"][menuactive="true"]
       list-style-image    : inherit;
       width               : 0px;
       border              : none;
-    }
-
-  menulist > menupopup > menuitem[menuactive="true"][selected="true"]
-    {
-      list-style-image    : url(chrome://global/skin/menulist-select-dot-active.gif);
-      margin-right		  : 3px;
-    }
-  
-  menulist > menupopup > menuitem[selected="true"]
-    {
-      list-style-image    : url(chrome://global/skin/menulist-select-dot.gif);
-      margin-right		  : 3px;
     }
 
 

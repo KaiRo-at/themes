@@ -92,48 +92,6 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 	  list-style-image      : url("chrome://navigator/skin/reload.gif");
   }
 
-/*all the urlbar stuff*/
-#page-proxy-button 
-  {
-	  list-style-image      : url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
-	  cursor                : grab;
-          margin-right          : 3px;
-          margin-left           : 2px;
-  } 
-
-#ubhist-keyword-popup 
-  {
-	  margin                : 0px 1px 0px 0px;
-	  width                 : 10px; 
-	  list-style-image      : url("chrome://global/skin/scroll-down.gif"); 
-  } 
-
-#ubhist
-  {
-    background-color      : #9999CC;
-    list-style-image      : url("chrome://global/skin/scroll-down.gif"); 
-    padding               : 0px 0px 0px 0px;
-    margin                : 0px 3px 0px 0px;
-  }
-
-#ubhist > .menubutton-icon-internal-box
-  {
-    border                : 1px outset #CCD0DD;
-  }  
-
-#ubhist:hover:active > .menubutton-icon-internal-box,
-#ubhist[open="true"] > .menubutton-icon-internal-box
-  {
-    border                : 1px inset #CCD0DD;
-  }  
-
-
-#action-popup 
-  {
-    list-style-image      : url("chrome://global/skin/scroll-down.gif"); 
-	  margin                : 0px; 
-/*	  -moz-border-radius    : 4px; */
-  }
 
 #content-frame 
   {
@@ -159,8 +117,7 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 #nav-bar-inner
   {
     padding-left          : 0px;
-    padding-top           : 10px;
-    padding-bottom        : 10px;
+    vertical-align        : middle;
   }
 
 #search-button
@@ -185,7 +142,7 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 
 #print-button 
   {
-	list-style-image      : url("chrome://global/skin/print.gif");
+    list-style-image      : url("chrome://global/skin/print.gif");
     margin                : 0px 3px 0px 0px;
   }
 
@@ -195,4 +152,40 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
   }
 
 
+/*all the urlbar stuff*/
+#page-proxy-button 
+  {
+    border                : 1px inset #CCD0DD;
+    border-right          : none;
+    list-style-image      : url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
+    cursor                : grab;
+    padding               : 2px 2px 3px 3px;
+  } 
+
+#action-popup 
+  {
+    list-style-image      : url("chrome://global/skin/scroll-down.gif"); 
+	  margin                : 0px; 
+/*	  -moz-border-radius    : 4px; */
+  }
+
+
+.autocomplete-textbox-container
+  {
+    border                : 1px inset #CCD0DD;
+    border-left           : none;
+    background-color      : #FFFFFF; 
+  }
+
+#urlbar-container
+  {
+    border                : none;
+    background-color      : inherit;
+    padding               : 0px;
+  }
+
+#urlbar-group
+  {
+    margin-right          : 5px;
+  }
 

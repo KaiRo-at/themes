@@ -11,27 +11,6 @@
 /* all localizable skin settings shall live here */
 @import url(chrome://global/locale/intl.css);
 
-/* this seems to be excluded now! let's see what happens...
-
-@import url(chrome://global/skin/box.css);
-@import url(chrome://global/skin/button.css);
-@import url(chrome://global/skin/checkbox.css);
-@import url(chrome://global/skin/radio.css);
-@import url(chrome://global/skin/tree.css);
-@import url(chrome://global/skin/outliner.css);
-@import url(chrome://global/skin/splitter.css);
-@import url(chrome://global/skin/radio.css);
-@import url(chrome://global/skin/menubutton.css);
-@import url(chrome://global/skin/menulist.css);
-@import url(chrome://global/skin/menu.css);
-@import url(chrome://global/skin/formatting.css);
-@import url(chrome://global/skin/textfield.css);
-@import url(chrome://global/skin/tabcontrol.css);
-@import url(chrome://global/skin/toolbar.css);
-@import url(chrome://global/skin/colorpicker.css);
-*/
-
-
 @import url("chrome://global/skin/formatting.css");
 /*
 @import url("chrome://global/content/bindings/outliner.css");
@@ -64,73 +43,7 @@
  * bindings
  **/
 
-/*
-
-  button, button.left
-    {
-      -moz-binding        : url("chrome://global/skin/buttonBindings.xml#buttonleft");
-    }
- 
-  checkbox 
-    {
-      -moz-binding        : url("chrome://global/skin/classicBindings.xml#checkbox");
-    }
- 
-  menulist 
-    {
-      -moz-binding        : url("chrome://global/skin/menulistBindings.xml#menulist");
-    }
-        
-  menulist[editable="true"] 
-    {
-      -moz-binding          : url("chrome://global/skin/menulistBindings.xml#menulist-editable") !important;
-    }
-  
-  menulist > menupopup,
-  .menulist-menupopup
-    {
-      -moz-binding        : url("chrome://global/skin/menulistBindings.xml#menulistpopup");
-    }
-
-  .menulist-compact
-    {
-      -moz-binding        : url("chrome://global/skin/menulistBindings.xml#menulist-compact");
-    }
-    
-  radio 
-    {
-      -moz-binding        : url("chrome://global/skin/classicBindings.xml#radio");
-    }
-
-  grippy, grippy[collapse="before"]
-    {
-      -moz-binding          : url("chrome://global/skin/classicBindings.xml#grippy");
-    }
-    
-  window[orient="vertical"] > splitter,
-  box[orient="vertical"] > splitter,
-  window[align="vertical"] > splitter,
-  box[align="vertical"] > splitter,
-  vbox > splitter
-    {
-      -moz-binding        : url("chrome://global/skin/classicBindings.xml#splitter-hack");
-    }
-
-  tabs 
-    {
-      -moz-binding: url("chrome://global/skin/tabBindings.xml#tabs");
-    }
-
-  toolbargrippy
-    {
-      -moz-binding          : url("chrome://global/skin/classicBindings.xml#toolbargrippy");
-    }
-
-  toolbargrippy[tbgrippy-collapsed="true"] 
-    {
-      -moz-binding          : url("chrome://global/skin/classicBindings.xml#toolbargrippy-collapsed");
-    }
-*/
+/* EarlyBlue does currently not need any bindings here, if we once do, see sample in Classic */
 
 
 /**
@@ -277,5 +190,6 @@
   }
   
   
+
 
 

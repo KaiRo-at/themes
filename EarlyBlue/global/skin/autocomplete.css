@@ -19,39 +19,33 @@ textbox[type="autocomplete"]
 
 .autocomplete-textbox-container
   {
-    padding             : 1px 2px 1px 2px;
+    padding             : 1px 2px 1px 2px; 
   }
+
 
 /* ::::: history button ::::: */
 
 .autocomplete-history-button
   {
     -moz-binding        : url("chrome://global/skin/classicBindings.xml#autocomplete-history-button");
-    border-top          : 1px solid -moz-Dialog;
-    border-right        : 1px solid ThreeDDarkShadow;
-    border-bottom       : 1px solid ThreeDDarkShadow;
-    border-left         : 1px solid ThreeDFace;
-    background-color    : ThreeDFace;
+    width               : 15px; 
+    min-height          : 19px; 
+    border              : none;
+    background-color    : #9999CC;
     list-style-image    : url("chrome://global/skin/scroll-down.gif");
+    padding             : 0px;
+    margin              : 0px;
   }
 
 .autocomplete-history-button > .autocomplete-history-button-internal-box 
   {
-    border-top          : 1px solid ThreeDHighlight;
-    border-right        : 1px solid ThreeDShadow;
-    border-bottom       : 1px solid ThreeDShadow;
-    border-left         : 1px solid ThreeDHighlight;
+    border              : 1px outset #CCD0DD;
     padding             : 1px;
-  }
-
-.autocomplete-history-button[open="true"]
-  {
-    border              : 1px solid ThreeDDarkShadow;
   }
 
 .autocomplete-history-button[open="true"] > .autocomplete-history-button-internal-box
   {
-    border              : 1px solid ThreeDFace;
+    border              : 1px inset #CCD0DD;
     padding             : 2px 0px 0px 2px;
   }
 
@@ -60,8 +54,8 @@ textbox[type="autocomplete"]
 .autocomplete-result-popup,
 .autocomplete-history-popup
   {
-    border                 : 1px solid ThreeDDarkShadow !important;
-    background-color       : -moz-Field !important;
+    border                 : 1px solid #9999CC !important;
+    background-color       : white !important;
   }
 
 .autocomplete-history-popup
@@ -92,3 +86,6 @@ textbox[type="autocomplete"]
   {
     color                  : HighlightText !important;
   }
+
+
+

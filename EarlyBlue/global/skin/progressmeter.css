@@ -24,6 +24,7 @@
       border              : 1px solid #9999CC;
       margin              : 1px 4px 1px 4px;
       background-color    : #CCD0DD;
+      padding             : 1px;
     }
     
   .progress-text 
@@ -33,8 +34,8 @@
 
   .progressmeter-internal-box
     {
-      border              : 1px solid #CCD0DD;
-      padding             : 1px;
+/*      border              : 1px solid #CCD0DD;
+      padding             : 1px; */
     }
   
   .progressmeter-inset  
@@ -72,4 +73,6 @@
       background-color    : #CCD0DD;
     }
 */
+
+
 

@@ -177,7 +177,7 @@
 
   .button-toolbar-3 
     {
-      margin                : 0px 0px 0px 0px;
+      margin                : 0px;
       font-weight           : bold;
       background-color      : #9999CC;
       border                : none
@@ -287,4 +287,5 @@ menubutton.button-toolbar-4
     padding               : 0px;
     padding-left          : 2px;
   }
+
 
