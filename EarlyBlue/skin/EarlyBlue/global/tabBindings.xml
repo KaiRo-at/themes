@@ -6,10 +6,13 @@
 
   <binding id="tabs" extends="chrome://global/content/bindings/tabbox.xml#tabs">
     <content>
-      <xul:hbox class="tabcontainer">
-        <children/>
-      </xul:hbox>
-      <xul:spacer class="tabs-spacer" flex="1"/>
+      <children/>
+      <xul:stack flex="1">
+        <xul:spacer class="tabs-spacer"/>
+        <xul:hbox class="tabs-misc-dec" align="center">
+          <xul:spacer flex="1"/>
+        </xul:hbox>
+      </xul:stack>
     </content>
   </binding>
 
@@ -22,4 +25,3 @@
   </binding>
 
 </bindings>
-

@@ -50,12 +50,6 @@
     min-width             : 1px;
   }
 
-mail-emailaddress 
-  {
-    -moz-binding          : url(chrome://messenger/content/mailWidgets.xml#mail-emailaddress);
-    display               : -moz-inline-box;
-  }
-
 mail-headerfield,
 mail-toggle-headerfield
   { 
@@ -116,7 +110,7 @@ mail-toggle-headerfield
     -moz-box-pack: end;
   }
 
-label.emailDisplayButton 
+.emailDisplayButton 
   {
     color                 : #336699;
     cursor                : pointer;
@@ -126,7 +120,7 @@ label.emailDisplayButton
     padding-right         : 1px; 
   }
 
-label.emailDisplayButton:hover
+.emailDisplayButton:hover
   {
     color                 : black;
     background-color      : #336699;
@@ -142,12 +136,18 @@ label.emailDisplayButton:hover
   list-style-image      : url("chrome://global/skin/twisty-open.gif");
 }
 
-label.subjectvalue
+.headerValue 
+  { 
+    white-space           : normal; 
+    min-width             : 50px; 
+  }
+
+.subjectvalue
  {
   font-weight             : bold;
  }
 
-label.headerdisplayname 
+.headerdisplayname 
   { 
     font-weight           : bold; 
     margin-right          : 0.5em; 
@@ -155,12 +155,6 @@ label.headerdisplayname
     min-height: 16px;
   }
 
-label.headerValue 
-  { 
-    white-space           : normal; 
-    min-width             : 50px; 
-  }
-  
 #msgHeaderView
   {
     border-left           : none;
@@ -202,7 +196,7 @@ label.headerValue
   width: 12em;
 }
 
-label.collapsedHeaderDisplayName 
+.collapsedHeaderDisplayName 
 { 
   font-weight: bold; 
   margin-left: .7em;
@@ -219,5 +213,3 @@ label.collapsedHeaderDisplayName
 [hide] {
   visibility: hidden;
 }
-
-
