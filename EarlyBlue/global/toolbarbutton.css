@@ -161,18 +161,17 @@ toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-men
 
 .toolbarbutton-menubutton-dropmarker {
   -moz-box-align: start;
-  -moz-box-align: center;
-  padding: 0px 1px 15px 1px;
+  padding: 3px 1px 1px 1px;
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
-  padding: 1px 0px 14px 2px;
+  padding: 4px 0px 0px 2px;
 }
 
 .toolbarbutton-menubutton-dropmarker[disabled="true"] {
-  padding: 0px 1px 15px 1px !important;
+  padding: 3px 1px 1px 1px !important;
   list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif") !important;
 }

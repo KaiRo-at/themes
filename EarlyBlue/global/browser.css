@@ -76,7 +76,7 @@ tabbrowser > tabbox > tabpanels {
 /* ::::: close & new tab buttons ::::: */
 
 .tabs-closebutton {
-  margin-bottom: 3px;
+  margin-bottom: 2px;
   margin-right: 2px;
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
@@ -87,6 +87,7 @@ tabbrowser > tabbox > tabpanels {
 
 .tabs-newbutton {
   margin: 0px;
+  margin-top: 2px;
   padding: 0px;
   list-style-image: url("chrome://global/skin/icons/tab-new.gif");
 }
