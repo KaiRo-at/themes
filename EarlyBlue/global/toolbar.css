@@ -37,111 +37,64 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-toolbox
-  {
-    background-color      : #CCD0DD;
-  }
+/* ===== toolbar.css ====================================================
+  == Styles used by XUL toolbar-related elements.
+  ======================================================================= */
 
-toolbar
-  {
-    background-color      : #CCD0DD;
-    border-bottom         : 1px solid #9999CC;
-    /*
-     * DON'T DELETE.  Removes disappearance of scrollbars in content
-     * pane when window is made smaller.
-     * Talk to evaughan@netscape.com for details.
-     */
-    min-width             : 1px;      
-  }
-  
+/* ::::: toolbox ::::: */
+
+toolbox {
+  background-color: #CCD0DD;
+}
+
+/* ::::: toolbar & menubar ::::: */
+
+toolbar,
+menubar {
+  border-bottom: 1px solid #9999CC;
+  background-color: #CCD0DD;
+  min-width: 1px; /* DON'T DELETE!
+    Prevents hiding of scrollbars in browser when window is made smaller.*/
+}
+
 .toolbar-holder
   {
   }  
 
-menubar
-  {
-    /* DON'T DELETE.  Removes disappearance of scrollbars
-     * in content pane when window is made smaller.
-     * Talk to evaughan@netscape.com for details.
-     */
-    min-width             : 1px;
-    background-color      : #CCD0DD;
-    border-bottom         : 1px solid #9999CC;
-   }
+/* ::::: toolbargrippy ::::: */
 
-toolbargrippy
-  {
-    -moz-box-orient       : vertical;
-    background-color      : #666699;
-    border                : 1px solid #999999;
-    width                 : 10px;
-    padding-bottom        : 1px;
-  }
+toolbargrippy {
+  -moz-box-orient: vertical;
+  -moz-box-align: center;
+  border: 1px solid #999999;
+  background-color: #666699;
+  width: 9px;
+  padding: 2px 0px;
+  list-style-image: url("chrome://global/skin/toolbar/tbgrip-arrow.gif");
+}
 
-.toolbargrippy-twisty
-  {
-    list-style-image      : url("chrome://global/skin/toolbargrippy-twisty.gif");
-    margin-top            : 2px;
-  }
+toolbargrippy:hover {
+  background-color: #6699FF;
+}
 
-/*
-.toolbargrippy-texture
-  {
-    margin                : 5px 3px 1px 2px;
-    background-image      : url("chrome://global/skin/toolbargrippy-texture.gif");
-    background-position   : 50% 0%;
-    background-repeat     : repeat-y;
-  } 
-*/
+/* ::::: collapsed tray and grippies ::::: */
 
-toolbargrippy[tbgrippy-collapsed="true"] 
-  {
-    -moz-box-orient       : horizontal;
-    height                : 10px;
-    padding-right         : 1px;
-  }
+toolbargrippy[tbgrippy-collapsed="true"] {
+  -moz-box-orient: horizontal;
+  width: 40px;
+  height: 9px;
+  padding: 0px 2px;
+  list-style-image: url("chrome://global/skin/toolbar/tbgrip-arrow-collapsed.gif");
+}
 
-.toolbargrippy-twisty-collapsed
-  {
-    list-style-image      : url("chrome://global/skin/tbg-twisty-collapsed.gif");
-    margin-left           : 2px;
-  }
+.collapsed-tray-spacer {
+  border-bottom: 1px solid #9999CC;
+}  
 
-/*
-.toolbargrippy-texture-collapsed
-  {
-    margin                : 2px 1px 1px 5px;
-    background-image      : url("chrome://global/skin/tbg-texture-collapsed.gif");
-    background-position   : 0% 50%;
-    background-repeat     : repeat-x;
-  } 
-*/
+/* ::::: toolbarseparator ::::: */
 
-.collapsed-tray-spacer
-  {
-    border-bottom         : none;
-  }  
-  
-toolbargrippy:hover
-  {
-    background-color      : #6699FF;
-  }
-  
-toolbar[collapsed="true"] > toolbargrippy
-  {
-    width                 : 30px;
-  }
-  
-toolbarseparator 
-  {
-    width                 : 1px;
-    border-right          : 1px solid #666699;
-    margin                : 2px 0.2em 2px 0.2em;
-  }
-  
-.toolbar-focustarget
-  {
-    -moz-user-focus       : ignore !important;
-  } 
-
-
+toolbarseparator {
+  margin: 2px 0.2em 2px 0.2em;
+  border-right: 1px solid #666699; 
+  width: 1px;
+}

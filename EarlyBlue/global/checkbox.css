@@ -41,90 +41,62 @@
 
 /* default checkbox for dialogs */
 /* outer frame */
-  checkbox 
-    {
-      margin              : 3px 5px 3px 5px;
-    }
+checkbox {
+  -moz-box-align: center;
+  margin: 2px 4px;
+  padding: 1px;
+}
 
-  .checkbox-checkmark-box-1
-    {
-      border              : 1px inset #CCD0DD;
-      background-color    : transparent;
-      margin              : 0px 0px 0px 0px;
-      width               : 10px;
-      height              : 10px;
-      -moz-user-focus     : ignore;
-    }
+.checkbox-label-box {
+  margin-left: 2px;
+  border: 1px solid transparent;
+  padding: 0px 1px;
+}
 
-  .checkbox-checkmark-box-1[disabled="true"]
-    {
-      background-color    : transparent;
-    }
+.checkbox-icon {
+  margin-right: 2px;
+}
 
-  .checkbox-checkmark-box-2
-    {
-      border              : none;
-      padding             : 1px;
-      width               : 9px;
-      height              : 9px;
-    }  
+.checkbox-label {
+  margin: 0 !important;
+}
 
-  /* ensure that no list-style-image is inherited in from the Outside */
-  .checkbox-check
-    {
-      list-style-image    : none;
-      min-width           : 8px;
-      min-height          : 8px;
-      width               : 8px;
-      height              : 8px;
-    }
+/* ..... focused state ..... */
 
-  .checkbox-check[checked="true"]
-    {
-      list-style-image    : url(chrome://global/skin/check-check.gif);
-    }
+checkbox:focus > .checkbox-label-box {
+  border: 1px dotted #9999CC;
+}
+
+/* ..... disabled state ..... */
+
+checkbox[disabled="true"] > .checkbox-check {
+  background-color: -moz-Dialog;
+}
+
+checkbox[disabled="true"] {
+  color: #999999 !important;
+}
+
+/* ::::: checkmark image ::::: */
+
+.checkbox-check {
+  -moz-box-align: center;
+  border: 1px inset #CCD0DD;
+  width: 12px;
+  height: 12px;
+  background: transparent 50% 50% no-repeat;
+}
   
-  .checkbox-check[checked="true"][disabled="true"]
-    {
-      list-style-image    : url(chrome://global/skin/check-check-disabled.gif);
-    }
+checkbox:hover:active > .checkbox-check {
+  background-color: transparent;
+}
 
-  checkbox:hover:active > .checkbox-internal-box > .checkbox-checkmark-box-1
-    {
-      background-color    : transparent;
-    }
+/* ..... checked state ..... */
 
-/* text/icon frames */
-  .checkbox-text
-    {
-      margin              : 0px 0px 0px 2px;
-      padding             : 1px;
-    }
+checkbox[checked="true"] > .checkbox-check {
+  background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}
 
-  .checkbox-icon 
-    {
-      list-style-image    : inherit;
-    }    
-
-  .checkbox-text
-    {
-      margin              : 0px !important;
-    }
-    
-  .checkbox-text[disabled="true"]
-    {
-      color               : #999999;
-    }
-  
-  checkbox:focus > .checkbox-internal-box > .checkbox-text
-    { 
-      border              : 1px dotted #9999CC;
-      padding             : 0px;
-    }
-    
-  .checkbox-internal-box
-    {
-      -moz-user-focus     : none;
-      padding             : 0px;
-    }
-
+checkbox[checked="true"][disabled="true"] > .checkbox-check {
+  background-image: url("chrome://global/skin/checkbox/cbox-check-disabled.gif") !important
+}

@@ -5,37 +5,34 @@
 
   <!-- List all the skins being supplied by this theme -->
   <RDF:Seq about="urn:mozilla:skin:root">
-    <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7" />
+    <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.8" />
   </RDF:Seq>
 
   <!-- classic Information -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7"
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.8"
         chrome:displayName="EarlyBlue"
         chrome:accessKey="E"
         chrome:author="Robert Kaiser - KaiRo.at"
         chrome:description="This theme re-introduces a UI design idea based on early Mozilla milestones. Get more info at http://www.kairo.at/download/"
-        chrome:name="EarlyBlue/0.7"
-        chrome:image="jar:resource:///chrome/EarlyBlue.jar!/skin/EarlyBlue/global/preview.png">
+        chrome:name="EarlyBlue/0.8"
+        chrome:image="jar:resource:///chrome/EarlyBlue.jar!/global/preview.png">
     <chrome:packages>
-      <RDF:Seq about="urn:mozilla:skin:EarlyBlue/0.7:packages">
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:global"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:communicator"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:navigator"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:messenger"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:editor"/>
+      <RDF:Seq about="urn:mozilla:skin:EarlyBlue/0.8:packages">
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.8:global"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.8:communicator"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.8:navigator"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.8:messenger"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.8:editor"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.8:forms"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
 
   <!-- Version Information.  State that we work only with a certain version of this package. -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:global"
-    chrome:skinVersion="0.9.4"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:communicator"
-    chrome:skinVersion="0.9.4"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:navigator"
-    chrome:skinVersion="0.9.4"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:messenger"
-    chrome:skinVersion="0.9.4"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:editor"
-    chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.8:global" chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.8:communicator" chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.8:navigator" chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.8:messenger" chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.8:editor" chrome:skinVersion="0.9.4"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.8:forms" chrome:skinVersion="0.9.4"/>
 </RDF:RDF>

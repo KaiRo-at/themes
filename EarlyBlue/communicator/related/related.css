@@ -67,7 +67,7 @@ treeitem > treerow.relatedresult > treecell > titledbutton:active
 
 treeitem[container="true"][open="true"][loading="true"] > treerow > .treecell-indent
 {
-  list-style-image: url("chrome://global/skin/loading.gif") ! important ;
+  list-style-image: url("chrome://global/skin/icons/loading.gif") ! important ;
 }
 
 treeitem[container="true"][open="true"] > treerow > .treecell-indent 

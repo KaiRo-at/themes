@@ -35,13 +35,13 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+@import url("chrome://messenger/skin/");
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ===== filterDialog.css ===============================================
   == Styles for the Mail Filters dialog.
   ======================================================================= */
-
-@import url("chrome://messenger/skin/");
 
 /* ::::: columns :::::: */
 

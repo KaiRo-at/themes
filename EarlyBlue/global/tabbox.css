@@ -37,147 +37,72 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/*============ tabpanels widget =============*/
+/* ===== tabbox.css =================================================
+  == Styles used by XUL tab-related elements.
+  ======================================================================= */
+
+/* ::::: tabs ::::: */
+
+.tabs-left,
+.tabs-right {
+/*
+  border-bottom: 2px solid;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+*/
+}
+
+/* ::::: tabpanels ::::: */
+
+/* tabpanel is the box in which contents show up */
 
 tabpanels {
+  border: 1px outset #CCD0DD;
   padding: 5px;
+  background-color: #CCD0DD;
+  color: #000000;
+  -moz-user-focus: normal;
 }
 
-/* we give all tabpanel types a full border
-   tabpanel is the box in which contents show up */
+/* ::::: tab ::::: */
 
-/* top tabs */
-tabs + tabpanels {
-  border: 1px outset #CCD0DD;
-}
-
-/* bottom tabs */
-tabbox > tabpanels {
-  border: 1px outset #CCD0DD;
-}
-
-/* left tabs */
-tabbox[orient="horizontal"] > tabs + tabpanels {
-  border: 1px outset #CCD0DD;
-}
-
-/* right tabs */
-tabbox[orient="horizontal"] > tabpanels {
-  border: 1px outset #CCD0DD;
-}
-
-/* border on bottom only, no padding (used in search) */
-tabpanels.light {
-  border: none;
-  border-bottom: 1px outset #CCD0DD;
-  padding: 0px;
-}
-
-.tabpanels-inner-box {
-}
-
-/* tabs-spacer ========================== */
-
-/* top tabs */
-tabbox > tabs > .tabs-spacer {
-}
-
-/* bottom tabs */
-tabbox > tabpanels + tabs > .tabs-spacer {
-}
-
-/* left tabs */
-tabbox[orient="horizontal"] > tabs > .tabs-spacer {
-}
-
-/* right tabs */
-tabbox[orient="horizontal"] > tabpanels + tabs > .tabs-spacer {
-}
-
-/*============ tab widget ============*/
-/* NOTE: there should be code in here for indenting the first tab
-   by two pixels, however, this needs to be done with a spacer to
-   fill in the border, but current attempts to use said spacer 
-   result in said spacer not rendering.  Will revisit.  - JRH */
-
-/* tabs is the strip showing the tabs, while tab is the tab (switcher) itself */
-   
 tab {
+  margin-top: 2px;
   border: 1px outset #CCD0DD;
-  color: black; 
+  padding: 1px 4px 2px 4px;
+  background-color: #CCD0DD;
+  color: #000000;
 }
 
-tab > .tab-box > .tab-text {
-  border: 1px solid transparent;
-  padding: 0px 1px 0px 1px;
+.tab-text {
+  margin: 0 !important;
 }
-
-tab:focus > .tab-box > .tab-text {
-  border: 1px dotted #9999CC;
-}
-
-.tab-box {
-  margin: 0px;
-  padding: 1px 3px 1px 3px !important;
-}
-
-/* top tabs */
-tabs tab[first-tab="true"]  { 
-  margin-left: 2px;
-}
-
-tabs tab  { 
-  margin-top: 2px;
-  border-bottom: none;
-/*  -moz-border-radius: 4px 4px 0px 0px; */
-}
-
-tabs tab > .tab-box { 
-/*  -moz-border-radius: 4px 4px 0px 0px; */
-}
-
-/* bottom tabs */
-tabpanels + tabs > tab { 
-  margin-top: 0px;
-  margin-bottom: 2px;
-  border-top: none;
-/*  -moz-border-radius: 0px 0px 4px 4px; */
-  padding: 1px 5px 3px 5px;
-}
-
-tabpanels + tabs > tab > .tab-box { 
-/*  -moz-border-radius: 0px 0px 4px 4px; */
-}
-
-/* left tabs */
-tabbox[orient="horizontal"] > tabs[orient="vertical"] tab[first-tab="true"]  { 
-  margin-top: 2px;
-}
-
-tabbox[orient="horizontal"] > tabs[orient="vertical"] tab  { 
-  margin-left: 2px;
-  border-right: none;
-/*  -moz-border-radius: 4px 0px 0px 4px; */
-}
-
-tabbox[orient="horizontal"] > tabs[orient="vertical"] tab > .tab-box  { 
-/*  -moz-border-radius: 4px 0px 0px 4px; */
-}
-
-/* right tabs */
-tabbox[orient="horizontal"] > tabpanels + tabs[orient="vertical"] > tab { 
-  margin-right: 2px;
-  margin-left: 0px;
-  border-left: none;
-/*  -moz-border-radius: 0px 4px 4px 0px !important; */
-}
-
-tabbox[orient="horizontal"] > tabpanels + tabs[orient="vertical"] > tab > .tab-box { 
-/*  -moz-border-radius: 0px 4px 4px 0px !important; */
-}
-
-/* selected tabs ============================= */
 
 tab[selected="true"]  {
   font-weight: bold;
+}
+
+/*
+tab[first-tab="true"][selected="true"] {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+*/
+
+/* ::::: tab-bottom ::::::::::
+   :: Tabs that are attached to the bottom of a panel, but not necessarily
+   :: a tabpanels.
+   ::::: */
+
+.tab-bottom {
+  margin-top: 0;
+  margin-bottom: 2px;
+  padding: 2px 4px 1px 4px;
+}
+
+/* ::::: tabs-bottom ::::: */
+
+.tabs-bottom > .tabs-left,
+.tabs-bottom > .tabs-right {
+  border-top: 1px solid #666699;
+  border-bottom: none;
 }

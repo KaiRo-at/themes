@@ -38,29 +38,8 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /*
-
    Style rules specific to the Customize dialog.
-
 */
-
-/* These rules apply appropriate images to the 'reorder' buttons */
-.up {
-  list-style-image:url("chrome://global/skin/scroll-up.gif");
-  min-width: 0px;
-}
-
-.up[disabled="true"] {
-  list-style-image:url("chrome://global/skin/scroll-up-disabled.gif");
-}
-
-.down {
-  min-width: 0px;
-  list-style-image:url("chrome://global/skin/scroll-down.gif");
-}
-
-.down[disabled="true"] {
-  list-style-image:url("chrome://global/skin/scroll-down-disabled.gif");
-}
 
 .treecell-panel
 {
@@ -90,12 +69,6 @@ treeitem[selected="true"][container="true"][open="true"] > treerow > .treecell-p
 #header {
   list-style-image: url("chrome://communicator/skin/sidebar/sidebar-icon.gif");
 }
-
-/*
-.tree-cell-twisty {
- display: none !important;
-}
-*/
 
 box#reorder {
   -moz-box-pack: center;

@@ -51,10 +51,43 @@ dialog {
 
 /* ::::: dialog buttons ::::: */
 
-.dialog-button-box {
-  padding-top: 1.5em;
-}
-
 .dialog-button {
 /*  font: menu; */
+}
+
+/* ::::: dialog header ::::: */
+
+dialogheader {
+  margin: 0px 5px 5px 5px;
+  border: 1px inset #666699;
+  padding: 3px 4px;
+  background-color: #666699;
+  color: #CCD0DD;
+}
+
+.dialogheader-title {
+  margin: 0px !important;
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* ::::: large dialog header ::::: */
+
+.header-large {
+  -moz-box-orient: vertical;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding: 12px 5px 12px 25px;
+  background-color: #CCD0DD;
+  color: #000000;
+}
+
+.header-large > .dialogheader-title {
+  font: inherit;
+  font-weight: bold;
+}
+
+.header-large > .dialogheader-description {
+  margin-left: 12px !important;
 }

@@ -43,134 +43,90 @@
 
 /* ::::: primary toolbar buttons ::::: */
 
-#button-getmsg 
-  {
-	  list-style-image      : url("chrome://messenger/skin/getmsg.gif");
-  } 
-
-#button-getmsg[disabled="true"],
-#button-getmsg[disabled="true"][buttonover="true"],
-#button-getmsg[disabled="true"][buttondown="true"]
-  {
-    list-style-image      : url("chrome://messenger/skin/getmsg-disabled.gif");
-  } 
-
-#button-newmsg 
-  {
-	  list-style-image      : url("chrome://messenger/skin/newmsg.gif");
-  } 
-
-#button-newmsg[disabled="true"],
-#button-newmsg[disabled="true"]:hover,
-#button-newmsg[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/newmsg-disabled.gif");
-  } 
-
-#button-reply 
-  {
-	  list-style-image      : url("chrome://messenger/skin/reply.gif");
-  } 
-
-#button-reply[disabled="true"],
-#button-reply[disabled="true"]:hover,
-#button-reply[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/reply-disabled.gif");
-  } 
-
-#button-replyall 
-  {
-	  list-style-image      : url("chrome://messenger/skin/replyall.gif");
-  } 
-
-#button-replyall[disabled="true"],
-#button-replyall[disabled="true"]:hover,
-#button-replyall[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/replyall-disabled.gif");
-  } 
-
-#button-forward 
-  {
-	  list-style-image      : url("chrome://messenger/skin/forward.gif");
-  } 
-
-#button-forward[disabled="true"],
-#button-forward[disabled="true"]:hover,
-#button-forward[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/forward-disabled.gif");
-  } 
-
-#button-file 
-  {
-	  list-style-image      : url("chrome://messenger/skin/file.gif");
-  } 
-
-#button-file[disabled="true"],
-#button-file[disabled="true"]:hover,
-#button-file[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/file-disabled.gif");
-  } 
-
-#button-next 
-  {
-	  list-style-image      : url("chrome://messenger/skin/next.gif");
-  } 
-
-#button-next[disabled="true"],
-#button-next[disabled="true"]:hover,
-#button-next[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/next-disabled.gif");
-  } 
-
-#button-delete 
-  {
-	  list-style-image      : url("chrome://messenger/skin/trash.gif");
-  } 
-
-#button-delete[disabled="true"],
-#button-delete[disabled="true"]:hover,
-#button-delete[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/trash-disabled.gif");
-  } 
-
-#button-mark {
-	list-style-image	: url("chrome://messenger/skin/mark.gif");
+#button-getmsg {
+  list-style-image: url("chrome://messenger/skin/toolbar/getmsg.gif");
 }
 
-#button-mark[disabled="true"],
-#button-mark[disabled="true"][buttonover="true"],
-#button-mark[disabled="true"][buttondown="true"]
-  {
-    list-style-image      : url("chrome://messenger/skin/mark-disabled.gif");
-  } 
+#button-getmsg[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/getmsg-disabled.gif") !important;
+}
 
-#button-print 
-  {
-    list-style-image      : url("chrome://global/skin/print.gif");
-  }
+#button-newmsg {
+  list-style-image: url("chrome://messenger/skin/toolbar/newmsg.gif");
+}
 
-#button-print[disabled="true"],
-#button-print[disabled="true"][buttonover="true"],
-#button-print[disabled="true"][buttondown="true"]
-  {
-    list-style-image      : url("chrome://global/skin/print-disabled.gif");
-  }
+#button-newmsg[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/newmsg-disabled.gif") !important;
+}
 
-#button-stop 
-  {
-	  list-style-image      : url("chrome://global/skin/stop.gif");
-  } 
+#button-reply {
+  list-style-image: url("chrome://messenger/skin/toolbar/reply.gif");
+}
 
-#button-stop[disabled="true"],
-#button-stop[disabled="true"]:hover,
-#button-stop[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://global/skin/stop-disabled.gif");
-  } 
+#button-reply[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/reply-disabled.gif") !important;
+}
 
+#button-replyall {
+  list-style-image: url("chrome://messenger/skin/toolbar/replyall.gif");
+}
+
+#button-replyall[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/replyall-disabled.gif") !important;
+}
+
+#button-forward {
+  list-style-image: url("chrome://messenger/skin/toolbar/forward.gif");
+}
+
+#button-forward[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/forward-disabled.gif") !important;
+}
+
+#button-file {
+  list-style-image: url("chrome://messenger/skin/toolbar/file.gif");
+}
+
+#button-file[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/file-disabled.gif") !important;
+}
+
+#button-next {
+  list-style-image: url("chrome://messenger/skin/toolbar/next.gif");
+}
+
+#button-next[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/next-disabled.gif") !important;
+}
+
+#button-delete {
+  list-style-image: url("chrome://global/skin/icons/trash.gif");
+}
+
+#button-delete[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
+}
+
+#button-mark {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark.gif");
+}
+
+#button-mark[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark-disabled.gif") !important;
+}
+
+#button-print {
+  list-style-image: url("chrome://global/skin/icons/print.gif");
+}
+
+#button-print[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
+}
+
+#button-stop {
+  list-style-image: url("chrome://global/skin/icons/stop.gif");
+}
+
+#button-stop[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
+}

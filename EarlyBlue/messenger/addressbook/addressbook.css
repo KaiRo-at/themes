@@ -45,68 +45,47 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* :::::  addressbook image precaching ::::: */
-
-#resource_bundle_addressbook {
-  -moz-binding: url("chrome://messenger/skin/addressbook/resources.xml#resource_bundle_addressbook");
-}
-
 /* ::::: primary toolbar buttons ::::: */
 
 #button-newcard {
-	list-style-image:url("chrome://messenger/skin/addressbook/newcard.gif");
+  list-style-image:url("chrome://messenger/skin/addressbook/icons/newcard.gif");
 }
 
-#button-newcard[disabled="true"],
-#button-newcard[disabled="true"]:hover,
-#button-newcard[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newcard-disabled.gif");
-  } 
+#button-newcard[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/newcard-disabled.gif") !important;
+} 
 
 #button-newlist {
-	list-style-image: url("chrome://messenger/skin/addressbook/newlist.gif");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/newlist.gif");
 }
 
-#button-newlist[disabled="true"],
-#button-newlist[disabled="true"]:hover,
-#button-newlist[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newlist-disabled.gif");
-  } 
+#button-newlist[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/newlist-disabled.gif") !important;
+} 
 
 #button-editcard {
-	list-style-image:url("chrome://messenger/skin/addressbook/person.gif");
+  list-style-image:url("chrome://messenger/skin/addressbook/icons/person.gif");
 }
 
-#button-editcard[disabled="true"],
-#button-editcard[disabled="true"]:hover,
-#button-editcard[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/person-disabled.gif");
-  } 
+#button-editcard[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/person-disabled.gif") !important;
+} 
 
 #button-newmessage {
-	list-style-image:url("chrome://messenger/skin/addressbook/newmsg.gif");
+  list-style-image:url("chrome://messenger/skin/addressbook/icons/newmsg.gif");
 }
 
-#button-newmessage[disabled="true"],
-#button-newmessage[disabled="true"]:hover,
-#button-newmessage[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/newmsg-disabled.gif");
-  } 
+#button-newmessage[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/newmsg-disabled.gif") !important;
+} 
 
 #button-delete {
-	list-style-image:url("chrome://messenger/skin/addressbook/trash.gif");
+  list-style-image:url("chrome://global/skin/icons/icons/trash.gif");
 }
 
-#button-delete[disabled="true"],
-#button-delete[disabled="true"]:hover,
-#button-delete[disabled="true"]:hover:active
-  {
-    list-style-image      : url("chrome://messenger/skin/addressbook/trash-disabled.gif");
-  } 
+#button-delete[disabled="true"] {
+  list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
+} 
 
 /* ::::: sidebar header ::::: */
 
@@ -127,61 +106,61 @@ sidebarheader {
 }
 
 #CardViewBox {
-	-moz-user-focus: ignore;
-	overflow: auto;
-	min-width: 150px;
-	background-color: #CCD0DD;
+  -moz-user-focus: ignore;
+  overflow: auto;
+  min-width: 150px;
+  background-color: #CCD0DD;
 }
 
 #CardViewInnerBox {
-	margin-top: 2px;
-	margin-bottom: 2px;
-	padding-left: 8px;
-	padding-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #CardTitle {
-	font-size: 150%;
-	font-weight: bold;
-	border-bottom: 2px solid black;
-	min-width: 120px;
-	margin: 0px;
+  font-size: 150%;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  min-width: 120px;
+  margin: 0px;
 }
  
 .cardViewGroup {
-	margin-top: 8px;
-	padding-bottom: 5px;
-	min-width: 50px;
+  margin-top: 8px;
+  padding-bottom: 5px;
+  min-width: 50px;
 }
 
 .CardViewHeading {
-	padding: 1px;
-	padding-left: 5px;
-	margin: 0px 0px 1px 0px;
-	background-color: #9999CC;
-	color: #FFFFFF;
-	font-weight: bold;
-	min-width: 30px;
+  padding: 1px;
+  padding-left: 5px;
+  margin: 0px 0px 1px 0px;
+  background-color: #9999CC;
+  color: #FFFFFF;
+  font-weight: bold;
+  min-width: 30px;
 }
 
 .CardViewText,
 .CardViewLink {
-	padding-left: 20px;
-	padding-right: 2px;
-	min-width: 30px;
-	margin: 0px;
+  padding-left: 20px;
+  padding-right: 2px;
+  min-width: 30px;
+  margin: 0px;
 }
 
 .CardViewLink {
-	color: blue;
-	text-decoration: underline;
-	cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 html|a {
-	padding-left: 0px;
-	padding-right: 2px;
-	border: none !important;
+  padding-left: 0px;
+  padding-right: 2px;
+  border: none !important;
 }
 
 html|p {
@@ -205,4 +184,3 @@ html|p {
 #resultsTree {
 /*  border-left: 1px solid ThreeDShadow; */
 }
-

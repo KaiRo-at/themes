@@ -46,25 +46,19 @@
 /* ::::: directory pane icons ::::: */
 
 .ab-directory-icon {
-  list-style-image: url("chrome://messenger/skin/addressbook/myaddrbk.gif");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addrbook.gif");
   margin-right: 1px;
   margin-left: 1px;
 }
 
 .ab-directory-icon[IsMailList="true"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/list.gif");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/ablist.gif");
   margin-right: 1px;
   margin-left: 1px;
 }
 
-/* ::::: result pane icons ::::: */
-
-.ab-results-icon {
-  list-style-image: url("chrome://messenger/skin/abcard.gif");
+.ab-directory-icon[IsRemote="true"] {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook.gif");
   margin-right: 1px;
-}
-
-.ab-results-icon[IsMailList="true"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/list.gif");
-  margin-right: 1px;
+  margin-left: 1px;
 }

@@ -37,14 +37,6 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/*
-#sidebar-splitter 
-  {
-    border-top            : 1px solid ThreeDHighlight;
-    border-bottom         : 1px solid ThreeDShadow;
-  }
-*/
-
 #sidebar-box 
   {
     margin-top            : 0px;
@@ -52,23 +44,14 @@
     background-color      : #CCD0DD;
   }
 
-.text-panel-loading 
-  {
-    margin                : 5px 0px;
-  }
-
-.image-panel-loading 
-  {
-    margin                : 5px;
-    list-style-image      : url("chrome://global/skin/loading.gif"); 
-  }
+/* ::::: sidebar header ::::: */
 
 .sidebarheader-main 
   {
-    border                : none;
-    color                 : #CCD0DD;
-    background-color      : #666699;
-    padding-left          : 4px;
+    border: none;
+    color: #CCD0DD;
+    background-color: #666699;
+    padding-left: 4px;
   }
 
 #sidebar-panel-picker {
@@ -76,134 +59,113 @@
   color: inherit;
 }
   
-#sidebar-panel-picker > .toolbarbutton-box > .toolbarbutton-dropmarker
+#sidebar-panel-picker > .toolbarbutton-dropmarker
   {
-    padding-left            : 4px;
-    list-style-image        : url("chrome://global/skin/menu-arrow-hover.gif");
+    padding-left: 4px;
+    list-style-image: url("chrome://global/skin/menu-arrow-hover.gif");
   }
 
 .sidebar-header-text  
   {
-    font-weight           : bold;
+    font-weight: bold;
   }
+
+/* ..... close button ..... */
+
+#sidebar-close-button {
+  -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton-image");
+  padding: 1px 3px 1px 4px;
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+}
+
+/* ::::: sidebar panel ::::: */
+
+.sidebar-iframe-no-panels,
+.loadarea {
+  background-color: #FFFFFF;
+  color: #666699;
+}
+
+.iframe-panel {
+}  
+
+/* ::::: loading info ::::: */
+
+.text-panel-loading {
+  margin: 5px 0px;
+}
+
+.image-panel-loading {
+  margin: 5px;
+  list-style-image: url("chrome://global/skin/icons/loading.gif");
+}
+
+/* ::::: sidebar tabs ::::: */
+
+.box-texttab {
+  -moz-binding: url("chrome://communicator/skin/sidebar/sidebarBindings.xml#sbtab");
+  padding: 2px 0px 2px 0px;
+  background-color: #CCD0DD;
+  color: #000000;
+  cursor: pointer;
+  border-top: 1px outset #CCD0DD;
+  border-bottom: 1px outset #CCD0DD;
+}
+
+.box-texttab[selected="true"],
+.box-texttab[selected="true"]:hover,
+.box-texttab[selected="true"]:hover:active {
+  background-color: #336699;
+  border-top: 1px solid #336699;
+  padding: 1px 1px 1px 0px;
+}
+    
+.box-texttab[last-panel="true"], 
+.box-texttab[last-panel="true"]:hover,
+.box-texttab[last-panel="true"]:hover:active,
+.box-texttab[last-panel="true"][selected="true"],
+.box-texttab[last-panel="true"][selected="true"]:hover,
+.box-texttab[last-panel="true"][selected="true"]:hover:active {
+  border-bottom: none;
+}
+
+.sbtab-label {
+  margin: 0px 0px 0px 0px !important;
+}
+
+.sbtab-twisty {
+  margin: 2px 3px 0px 3px;
+  list-style-image: url("chrome://global/skin/twisty-closed.gif");
+}
 
 /*
-.sidebar-header-grippy
-  { 
-    list-style-image	    : url("chrome://global/skin/grippy-short-vert-after.gif");
-  	background-color	    : -moz-Dialog;
-  	max-width			        : 32px;
-  	height				        : 4px;
-  }
-
-#sidebar-title-box[state="collapsed"] > .sidebar-header-grippy 
-  {
-    list-style-image	    : url("chrome://global/skin/grippy-short-vert-before.gif"); 
-  }
-*/
-  
-/**
- * texttab folder lookalike e.g. for sidebar panel headers
- */
-  .box-texttab
-    {
-      -moz-binding        : url("chrome://communicator/skin/sidebar/sidebarBindings.xml#panelheader");
-      padding             : 2px 0px 2px 0px;
-      background-color    : #CCD0DD;
-      color               : #000000;
-      cursor              : pointer;
-      border-top          : 1px outset #CCD0DD;
-      border-bottom       : 1px outset #CCD0DD;
-    }
-
-  .box-texttab[selected="true"],
-  .box-texttab[selected="true"]:hover,
-  .box-texttab[selected="true"]:hover:active
-    {
-      background-color    : #336699;
-      border-top          : 1px solid #336699;
-    }
-    
-  .panelheader-box-1,
-  .box-texttab[selected="true"]:hover > .panelheader-box-1
-    {
-      padding             : 1px 1px 1px 0px;
-    }
-    
-  .box-texttab[last-panel="true"], 
-  .box-texttab[last-panel="true"]:hover,
-  .box-texttab[last-panel="true"]:hover:active,
-  .box-texttab[last-panel="true"][selected="true"],
-  .box-texttab[last-panel="true"][selected="true"]:hover,
-  .box-texttab[last-panel="true"][selected="true"]:hover:active
-    {
-      border-bottom       : none;
-    }
-
-  .panelheader-grippy-icon
-    {
-      margin              : 2px 3px 0px 3px;
-      list-style-image    : url("chrome://global/skin/twisty-closed.gif");
-    }
-
-/*
-  .panelheader-texture
-    {
-      margin              : 1px 0px 1px 0px;
-      background-image    : url("chrome://global/skin/toolbargrippy-texture.gif");
-      background-position : 50% 0%;
-      background-repeat   : repeat-y; 
-      width               : 12px;
-    }
+.sbtab-texture {
+  margin: 2px 0px;
+  background: url("chrome://global/skin/toolbar/tbgrip-texture.gif") repeat-y;
+  width: 12px;
+  height: 12px;
+}
 */
 
-  .box-texttab:hover
-    {
-      background-color      : #DDDDDD;
-    }
+.box-texttab:hover {
+  background-color      : #DDDDDD;
+}
     
-  .box-texttab:hover > .panelheader-box-1
-    {
-    }
-
-  .box-texttab:hover:active
-    {
-      background-color      : #6699FF;
-    }
+.box-texttab:hover:active {
+  background-color      : #6699FF;
+}
     
-  .box-texttab:hover:active > .panelheader-box-1
-    {
-    }
+.box-texttab[selected="true"],
+.box-texttab[selected="true"]:hover {
+  font-weight           : bold;
+  cursor                : default;
+}
 
-  .box-texttab[selected="true"],
-  .box-texttab[selected="true"]:hover
-    {
-      font-weight           : bold;
-      cursor                : default;
-    }
+.box-texttab[last-panel="true"], 
+.box-texttab[selected="true"] {
+  margin-bottom       : 0px;
+}
 
-  .box-texttab[last-panel="true"], 
-  .box-texttab[selected="true"]
-    {
-      margin-bottom       : 0px;
-    }
-
-  .panelheader-grippy-icon[selected="true"]
-    {
-      margin              : 2px 3px 0px 3px;
-      list-style-image    : url("chrome://global/skin/twisty-open.gif");
-    }
-
-  .sidebar-iframe-no-panels, .loadarea
-    {
-      background-color      : #FFFFFF;
-    }
-    
-  .iframe-panel
-    {
-    } 
-
-  .panelheader-text
-    {
-      margin              : 0px;
-    }
+.sbtab-twisty[selected="true"] {
+  list-style-image: url("chrome://global/skin/twisty-open.gif");
+}

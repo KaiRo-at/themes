@@ -70,14 +70,6 @@
     border                : 1px outset #CCD0DD;
   }  
 
-/*  
-.outset-top-bottom
-  {
-    border-top            : 1px solid ThreeDHighlight;
-    border-bottom         : 1px solid ThreeDShadow;
-  }    
-*/
-
 /** separator rules **/
 /* standard separators */
   separator, separator[orient="horizontal"] 
@@ -139,9 +131,14 @@
     
   label[disabled="true"] 
     {
-      color                 : #9999CC;
+      color               : #9999CC;
     }    
-    
+
+  description, label
+    {
+      cursor              : default;
+    }
+   
   description
     {
 /*      margin              : 1px 5px 4px 5px; */
@@ -177,11 +174,6 @@
       margin-left         : 23px;
     }
 
-  .icon-dropmarker
-    {
-      list-style-image    : url("chrome://global/skin/dropmarker-down-on.gif");
-    }
-    
   .box-padded
     {
       padding             : 5px;
@@ -197,43 +189,8 @@
       padding             : 20px 44px 10px 44px;
     }    
 
-/* Double Border Boxes */
-
-  /* top only */
-/*
-  .double-box-top
-    {
-      -moz-binding        : url("chrome://global/skin/classicBindings.xml#double-box");
-      border-top          : 1px solid ThreeDShadow;
-      background-color    : #FFFFFF;
-      margin              : 0px;
-    }
-  
-  .double-box-top > .db-internal-box
-    {
-      border-top          : 1px solid ThreeDDarkShadow;
-    }          
-*/    
-  /* all round */    
-/*
-  .double-box
-    {
-      -moz-binding          : url("chrome://global/skin/classicBindings.xml#double-box");
-      border-left           : 1px solid ThreeDShadow;
-      border-top            : 1px solid ThreeDShadow;
-      border-bottom         : 1px solid ThreeDHighlight;
-      border-right          : 1px solid ThreeDHighlight;
-      background-color      : #FFFFFF;
-      margin                : 0px;
-    }
-  
-  .double-box > .db-internal-box
-    {
-      border                : 1px solid ThreeDDarkShadow;
-    }   
-*/
-
   .caption-text
     {
       margin: 0px 2px 0px 1px !important;
     }
+

@@ -37,96 +37,78 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* stylesheet for XUL <radio> element */
+/* ===== radio.css ===================================================
+  == Styles used by the XUL radio element.
+  ======================================================================= */
 
-/* default radio for dialogs */
-/* outer frame */
-  radio 
-    {
-      margin              : 3px 5px 3px 5px;
-    }
+/* ::::: radio ::::: */
 
-  .radio-checkmark-box-1
-    {
-      border: 2px outset #CCD0DD;
-      -moz-border-radius  : 50%;
-      margin              : 0px 2px 0px 0px;
-      width               : 12px;
-      height              : 12px;
-    }
+radio {
+  -moz-box-align: center;
+  margin: 2px 4px;
+  padding: 1px 2px 1px 4px;
+}
 
-  .radio-checkmark-box-1[disabled="true"]
-    {
-      background-color    : -moz-Dialog;
-    }
+.radio-label-box {
+  margin-left: 2px;
+  border: 1px solid transparent;
+  padding: 0px 0px 1px 1px;
+}
 
-  .radio-checkmark-box-2
-    {
-      -moz-border-radius  : 50%;
-      padding             : 1px;
-      width               : 11px;
-      height              : 11px;
-    }  
+.radio-icon {
+  margin-right: 2px;
+}
 
-  /* ensure that no list-style-image is inherited in from the Outside */
-  .radio-check
-    {
-      list-style-image    : none;
-    }
+.radio-label {
+  margin: 0px !important;
+}
 
-  .radio-check[selected="true"]
-    {
-      list-style-image    : url(chrome://global/skin/check-radio.gif);
-    }
+/* ..... focused state ..... */
+
+radio[focused="true"] > .radio-label-box { 
+  border: 1px dotted #9999CC;
+}
+
+/* ..... disabled state ..... */
+
+
+radio[disabled="true"] {
+  color: #999999;
+}
   
-  .radio-check[selected="true"][disabled="true"]
-    {
-      list-style-image    : url(chrome://global/skin/check-radio-disabled.gif);
-    }
+/* ::::: checkmark image ::::: */
 
-  radio:hover:active > .radio-internal-box > .radio-checkmark-box-1
-    {
-      border: 2px inset #CCD0DD;
-    }
+.radio-check-box1 {
+  margin: 1px 0px;
+  border: 2px outset #CCD0DD;
+  -moz-border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+}
 
-  radio[disabled="true"] > .radio-internal-box > .radio-checkmark-box-1,
-  radio[disabled="true"]:active > .radio-internal-box > .radio-checkmark-box-1 
-    {
-      border: 2px outset #CCD0DD;
-    }
+.radio-check-box2 {
+  -moz-border-radius: 50%;
+  padding: 1px;
+  width: 4px;
+  height: 4px;
+  list-style-image: none;
+}  
 
-/* text/icon frames */
-  .radio-text
-    {
-      margin              : 0px 0px 0px 2px;
-    }
+radio:hover:active > .radio-check-box1 {
+  border: 2px inset #CCD0DD;
+}
 
-  .radio-icon 
-    {
-      list-style-image    : inherit;
-    }    
+radio[disabled="true"]:hover:active .radio-check-box1 {
+  border: 2px outset #CCD0DD;
+}
 
-  .radio-text
-    {
-      margin              : 0px !important;
-    }
-    
-  .radio-text[disabled="true"]
-    {
-      color               : #999999;
-    }
+/* ..... selected state ..... */
+
+radio[selected="true"] > .radio-check-box1 > .radio-check-box2 {
+  list-style-image: url("chrome://global/skin/radio/radio-check.gif");
+}
   
-  radio[focused="true"] > .radio-internal-box > .radio-text-container
-    { 
-      border              : 1px dotted #9999CC;
-    }
-  
-  .radio-text-container
-    {
-      border              : 1px solid transparent;
-    }
-  
-  .radio-internal-box
-    {
-      -moz-user-focus     : ignore;
-    }
+radio[selected="true"][disabled="true"] > .radio-check-box1 {
+  list-style-image: url("chrome://global/skin/radio/radio-check-disabled.gif") !important
+}

@@ -35,27 +35,29 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://global/skin/);
+/* ==== communicator.css ====================================================
+   == Styles shared everywhere throughout the Communicator suite.
+   ========================================================================== */
 
-@import url(chrome://communicator/skin/box.css);
-@import url(chrome://communicator/skin/button.css);
+@import url(chrome://global/skin/);
 @import url(chrome://communicator/skin/brand.css);
+@import url(chrome://communicator/skin/button.css);
 @import url(chrome://communicator/skin/formatting.css);
-@import url(chrome://communicator/skin/toolbar.css);
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml");
 
 #offline-status[offline="true"]
   {
-    list-style-image      : url("chrome://communicator/skin/offline.gif");
+    list-style-image      : url("chrome://communicator/skin/icons/offline.gif");
   }
 
 #offline-status
   {
-    list-style-image      : url("chrome://communicator/skin/online.gif");
+    list-style-image      : url("chrome://communicator/skin/icons/online.gif");
   }
   
+/* ::::: directional button icons ::::: */
+
 .up {
   list-style-image:url("chrome://global/skin/scroll-up.gif");
   min-width: 0px;
@@ -72,4 +74,9 @@
 
 .down[disabled="true"] {
   list-style-image:url("chrome://global/skin/scroll-down-disabled.gif");
+}
+
+.sidebarTree {
+  border: none;
+  margin: 0px !important;
 }

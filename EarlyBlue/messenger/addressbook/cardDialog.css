@@ -47,20 +47,19 @@
 /* ::::: Card Edit dialog ::::: */
 
 .CardEditWidth {
-	width: 25em;
+  width: 25em;
 }
 
 .CardEditLabel {
-	padding: 0px;
-	margin-top: 3px;
+  padding: 0px;
+  margin-top: 3px;
 }
 
 .alignBoxWithFieldset {
-	margin-left: 6px;
-	margin-right: 5px;
+  margin-left: 6px;
+  margin-right: 5px;
 }
 
 .stateZipSpacer {
   width: 3em;
 }
-

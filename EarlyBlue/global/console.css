@@ -35,113 +35,102 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://global/skin);
-
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.console-box 
-  {
-    background-color    : #CCD0DD;
-    color               : #000000;
-  }
+/* ===== console.css ====================================================
+  == Styles used by the JavaScript Console window.
+  ======================================================================= */
+
+.console-box {
+  background-color: #CCD0DD;
+  color: #000000;
+}
  
-/* :::::::::: console rows :::::::::: */
+/* ::::: console rows ::::: */
 
-.console-row 
-  {
-    padding             : 0px;
-    border-bottom       : 2px solid #000000;
-  }
+.console-row {
+  padding: 0px;
+  border-bottom: 2px solid #000000;
+}
 
-.console-row-icon 
-  {
-    border-right        : 1px outset #999999;
-    padding             : 5px;
-    background-color    : #CCCCCC;
-    -moz-box-align      : start;
-  }
+.console-row-icon {
+  border-right: 1px outset #999999;
+  padding: 5px;
+  background-color: #CCCCCC;
+  -moz-box-align: start;
+}
 
-.console-icon 
-  {
-    list-style-image    : inherit !important;
-  }
+.console-icon {
+  list-style-image    : inherit !important;
+}
 
-/* error rows */
+/* ..... error rows ..... */
 
-.console-row-code 
-  {
-    padding             : 3px 0px 3px 3px;
-    font-size           : larger;
-    color               : #0000BB;
-  }
+.console-row-code {
+  padding: 3px 0px 3px 3px;
+  font-size: larger;
+  color: #0000BB;
+}
 
-.console-dots, .console-caret 
-  {
-    height              : 9px;
-  }
+.console-dots,
+.console-caret {
+  height: 9px;
+}
 
-.console-dots 
-  {
-    background          : url("chrome://global/skin/console-error-dash.gif") repeat-x top;
-  }
+.console-dots {
+  background: url("chrome://global/skin/console/console-error-dash.gif") repeat-x top;
+}
 
-.console-caret 
-  {
-    width               : 7px;
-    background          : url("chrome://global/skin/console-error-caret.gif") no-repeat top;
-  }
+.console-caret {
+  width: 7px;
+  background: url("chrome://global/skin/console/console-error-caret.gif") no-repeat top;
+}
 
-/* message rows */
+/* ..... message rows ..... */
 
-.console-row[type="message"] 
-  {
-    font-family         : monospace;
-  } 
+.console-row[type="message"] {
+  font-family: monospace;
+} 
 
-/* selected state */
+/* ..... selected state ..... */
 
-.console-row[selected="true"] 
-  {
-    background-color    : #336699;
-    color               : #000000;
-  }
+.console-row[selected="true"] {
+  background-color: #336699;
+  color: #000000;
+}
 
 .console-row-code[selected="true"],
-.console-row-content[selected="true"] > .console-row-file > .console-error-source > .text-link 
-  {
-    color               : inherit !important;  
-  }
+.console-row-content[selected="true"] > .console-row-file > .console-error-source > .text-link {
+  color: inherit !important;  
+}
 
 /* ::::: icons ::::: */
 
 .console-row[type="error"],
 .console-row[type="exception"] 
   {
-    list-style-image    : url("chrome://global/skin/error-icon.gif");
+    list-style-image    : url("chrome://global/skin/icons/alert-error.gif");
   }
 
 .console-row[type="warning"] 
   {
-    list-style-image    : url("chrome://global/skin/alert-icon.gif");
+    list-style-image    : url("chrome://global/skin/icons/alert-exclam.gif");
   }
 
 .console-row[type="message"] {
-  list-style-image      : url("chrome://global/skin/message-icon.gif");
+  list-style-image      : url("chrome://global/skin/icons/alert-message.gif");
 }
 
 /* ::::: toolbars ::::: */
 
-#TextboxEval
-  {
-    margin            : 1px 2px 1px 2px ;
-  }
+#TextboxEval {
+  margin: 1px 2px 1px 2px ;
+}
 
-#ButtonEval 
-  {
-    margin            : 1px 2px 1px 0px;
-  }
+#ButtonEval {
+  margin: 1px 2px 1px 0px;
+}
 
-toolbarseparator 
-  {
-    min-height        : 1em;
-  }
+toolbarseparator {
+  min-height: 1em;
+}

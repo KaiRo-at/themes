@@ -35,94 +35,65 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+@import url("chrome://global/content/autocomplete.css");
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
+@namespace html url("http://www.w3.org/1999/xhtml");
 
-/** generic text fields (in dialogs)
- **/
- 
-/* outer frame */
-  textbox
-    {
-      border              : 1px inset #CCD0DD;
-      color               : #000000;
-      padding             : 0px;
-      margin              : 1px 3px 2px 4px;
-      background-color    : #FFFFFF;
-      cursor              : text;
-    }
-    
-  textbox[readonly="true"]
-    {
-      background-color    : #CCCCCC;
-    }
-  
-  textbox[focused="true"]
-    {
-      border              : 2px solid #6699cc;
-      margin              : 0px 2px 1px 3px;
-    }
-    
-  textbox[focused="true"][readonly="true"]
-    {
-      border              : 1px inset #CCCCCC;
-      margin              : 1px 3px 2px 4px;
-    }
+/* ===== textbox.css ==================================================
+  == Styles used by the XUL textbox element.
+  ======================================================================= */
 
-/* internal frame */
-  .textbox-internal-box, .textarea-internal-box
-    {
-      margin              : 0px;
-      padding             : 1px 2px 1px 2px;
-      border              : none;
-    }
-  
-/* internal text widget */
-  html|*.textbox-input, html|*.textbox-textarea
-    {
-      border              : none !important;
-      margin              : 0px;
-      padding             : 0px;
-      font                : inherit;
-      background-color    : inherit;
-      color               : inherit;
-    }
+/* ::::: textbox ::::: */
 
-  textbox[disabled="true"] 
-    {
-      cursor              : default !important;
-      background-color    : white;
-      color               : #CCCCCC;
-    } 
-    
-/** plain atomic textboxs, class="plain" **/
-  textbox.plain, 
-  textbox.plain > .textbox-internal-box, 
-  textbox.plain > .textarea-internal-box
-    {
-      padding             : 0px !important;
-      margin              : 0px !important;
-      border              : none !important;
-    }
+textbox {
+  cursor: text;
+  margin: 2px 4px;
+  border: 1px inset #CCD0DD;
+  padding: 1px 0px 1px 2px;
+  background-color: #FFFFFF;
+  color: #000000;
+}
 
-/** inline edit textbox **/
+html|*.textbox-input, 
+html|*.textbox-textarea {
+  margin: 0px !important;
+  border: none !important;
+  padding: 0px !important;
+  background-color: inherit;
+  color: inherit;
+  font: inherit;
+}
 
-.textbox-inline-edit 
-  {
-    border                : 1px solid #6699FF !important;
-    margin                : 0px !important;
-  }
+/* ..... readonly state ..... */
 
-.textbox-inline-edit > .textbox-internal-box > html|*.textbox-input 
-  {
-    border                : none !important;
-    padding               : 0px !important;
-    margin                : 0px !important;
-  }
+textbox[readonly="true"] {
+  background-color: #CCCCCC;
+  color: #000000;
+}
 
-.textbox-inline-edit > .textbox-internal-box 
-  {
-    border                : none !important;
-    padding               : 1px !important;
-    margin                : 0px !important;
-  }
+/* ..... disabled state ..... */
+
+textbox[disabled="true"] {
+  cursor: default;
+  background-color: #FFFFFF;
+  color: #CCCCCC;
+} 
+
+textbox[focused="true"] {
+  border: 2px solid #6699cc;
+  margin: 1px 3px;
+}
+
+textbox[focused="true"][readonly="true"] {
+  border: 1px inset #CCCCCC;
+  margin: 2px 4px;
+}
+
+/* ::::: plain textbox ::::: */
+
+textbox.plain {
+  padding: 0px !important;
+  margin: 0px !important;
+  border: none !important;
+}

@@ -38,142 +38,110 @@
  * ***** END LICENSE BLOCK ***** */
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for XUL elements */
 
 /* ===== messageHeader.css ==============================================
   == Styles for the header toolbars of a mail message.
   ======================================================================= */
 
+/* ::::: msg header toolbars ::::: */
+
 #collapsedHeaderView,
-#expandedHeaderView
-  {
-    min-width             : 1px;
-  }
+#expandedHeaderView {
+  min-width: 1px;
+}
 
-mail-headerfield,
-mail-toggle-headerfield
-  { 
-    padding               : 0px; 
-    padding-left          : 1px; 
-    padding-right         : 1px; 
-  }
-
-.buttonTopSpacer     
-  { 
-    height                : 0.3em; 
-  }
-
-.buttonSpacer        
-  { 
-    width                 : 0.5em; 
-  }
-
-.headerValueBox 
-  { 
-    width                 : 7.7em;
-    -moz-box-pack         : end;
-  }
-
-.headerBox              
-  { 
-    overflow              : hidden; 
-    min-width             : 50px;
-  }
-
-#addToAddressBookButton 
-  {
-	  list-style-image      : url("chrome://messenger/skin/addtoab.gif");
-    min-height            : 20px;
-    margin                : 0px;
-  }
+/* ::::: msg header buttons ::::: */
 
 #expandedAttachmentBox {
   width: 20em;
   height: 0px;
-  list-style-image: url("chrome://messenger/skin/attach.gif");
-}
-
-#attachmentText
-{
-  font-weight: bold;
+  list-style-image: url("chrome://messenger/skin/icons/attach.gif");
 }
 
 #attachmentTree {
-  margin: 3px;
-  marginleft: 0px;
+  margin: 3px 3px 3px 0px;
   height: 0px;
   width: 20em;
 }
 
-.emailDisplayImage
-  {
-    -moz-box-pack: end;
-  }
-
-.emailDisplayButton 
-  {
-    color                 : #336699;
-    cursor                : pointer;
-    margin                : 0px;
-    padding               : 0px; 
-    padding-left          : 1px; 
-    padding-right         : 1px; 
-  }
-
-.emailDisplayButton:hover
-  {
-    color                 : black;
-    background-color      : #336699;
-  }
-
-.showMoreAddressesButton 
-{
-  list-style-image      : url("chrome://global/skin/twisty-closed.gif");
+#attachmentText {
+  font-weight: bold;
 }
 
-.showFewerAddressesButton 
-{
-  list-style-image      : url("chrome://global/skin/twisty-open.gif");
+/* ::::: msg header captions ::::: */
+
+#msgHeaderView {
+  border-left: none;
+  border-right: none;
 }
 
-.headerValue 
-  { 
-    white-space           : normal; 
-    min-width             : 50px; 
-  }
+#collapsedHeaderView,
+#expandedHeaderView {
+  border-bottom: 1px solid #9999CC;
+  min-width: 1px;
+}
 
-.subjectvalue
- {
-  font-weight             : bold;
- }
+.headerNameBox {
+  width: 7.7em;
+}
 
-.headerdisplayname 
-  { 
-    font-weight           : bold; 
-    margin-right          : 0.5em; 
-    margin-left           : 0.5em; 
-    min-height: 16px;
-  }
+.headerName {
+  margin: 0em .25em 0em 0em;
+  min-height: 16px;
+  font-weight: bold;
+  text-align: right;
+}
 
-#msgHeaderView
-  {
-    border-left           : none;
-    border-right          : none;
-    border-bottom         : 1px solid #9999CC;
-  }
-       
+.headerValue {
+  margin: 0em 0em .25em 0em;
+  min-width: 50px;
+  white-space: normal;
+}
+
+.subjectvalue {
+  font-weight: bold;
+}
+
+/* ::::: msg header email addresses ::::: */
+
+.emailDisplayButton {
+  color: #336699;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px 1px; 
+}
+
+.emailDisplayButton:hover {
+  color: black;
+  background-color: #336699;
+}
+
+/* ::::: email address twisty ::::: */
+
+.addresstwisty {
+  margin: 1px;
+  list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
+}
+
+.addresstwisty[open] {
+  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+}
+
+/* ::::: view expand and collapse twisties  ::::: */
+
+.expandHeaderViewButton,
+.collapsedHeaderViewButton  {
+  margin: 2px .5em 0 .5em;
+  padding: 0px;
+}
+
 .expandHeaderViewButton {
-  list-style-image: url("chrome://global/skin/twisty-open.gif");
-  margin-left: .5em;
-  margin-right: .5em;
+  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
 }
 
-.collapsedHeaderViewButton 
-{
-  list-style-image: url("chrome://global/skin/twisty-closed.gif");
-  margin-left: .5em;
+.collapsedHeaderViewButton  {
+  list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
 }
-
 
 /* ::::: collapsed view styles ::::: */
 
@@ -181,35 +149,30 @@ mail-toggle-headerfield
   -moz-box-pack: center;
 }
 
-#collapseddateValue
-{
-  margin-left: .7em;
+#collapseddateValue {
+  margin: 0 .5em;
+  text-align: right;
 }
 
-#collapsedfromBox
-{
+#collapsedfromBox {
   width: 18em;
 }
 
-#collapseddateBox
-{
+#collapseddateBox {
   width: 12em;
 }
 
-.collapsedHeaderDisplayName 
-{ 
-  font-weight: bold; 
-  margin-left: .7em;
+.collapsedHeaderDisplayName { 
+  margin: 0 .5em 0 .7em;
   min-height: 16px;
+  font-weight: bold;
 }
 
-.collapsedAttachmentButton
-{
-  list-style-image: url("chrome://messenger/skin/message-mail-attach.gif");
+.collapsedHeaderValue {
+  margin: 0;
+}
+
+.collapsedAttachmentButton {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-attach.gif");
   margin-right: .5em;
-  margin-left: 1em;
-}
-
-[hide] {
-  visibility: hidden;
 }

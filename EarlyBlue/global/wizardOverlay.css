@@ -38,16 +38,16 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 #wiz-back-button {
-  list-style-image            : url("chrome://global/skin/scroll-left.gif");
+  list-style-image            : url("chrome://global/skin/arrow/arrow-left.gif");
 }
 #wiz-back-button[disabled] {
-  list-style-image            : url("chrome://global/skin/scroll-left-disabled.gif");
+  list-style-image            : url("chrome://global/skin/arrow/arrow-left-disabled.gif");
 }
 #wiz-next-button {
-  list-style-image            : url("chrome://global/skin/scroll-right.gif");
+  list-style-image            : url("chrome://global/skin/arrow/arrow-right.gif");
 }
 #wiz-next-button[disabled] {
-  list-style-image            : url("chrome://global/skin/scroll-right-disabled.gif");
+  list-style-image            : url("chrome://global/skin/arrow/arrow-right-disabled.gif");
 }
 
 #wizardButtons 
@@ -61,3 +61,4 @@
     margin-right              : 44px;
     width                     : 30em;
   } 
+

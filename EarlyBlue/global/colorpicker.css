@@ -37,7 +37,34 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* colorpicker tiles */
+/* ===== colorpicker.css ================================================
+  == Styles used by the XUL colorpicker element.
+  ======================================================================= */
+
+/* ::::: colorpicker button ::::: */
+
+/* colorpicker button */
+
+colorpicker[type="button"] {
+  width: 34px;
+  height: 20px;
+  border: 1px outset #CCD0DD;
+  background-color: #CCD0DD;
+  padding: 3px;
+}
+
+.colorpicker-button-colorbox {
+  border: 1px solid #000000;
+}
+
+colorpicker[type="button"]:focus {
+}
+ 
+colorpicker[type="button"][open="true"] {
+  border: 1px inset #CCD0DD;
+}
+
+/* ::::: colorpicker tiles ::::: */
 
 .colorpickertile {
   width                 : 20px;
@@ -56,33 +83,4 @@
 
 .cp-light[hover="true"] {
   border                : 2px dotted #9999CC;
-}
-
-/* colorpicker button */
-
-colorpicker[type="button"] {
-  width: 35px;
-  height: 20px;
-  border: 1px outset #CCD0DD;
-}
-
-.colorpicker-button-internal-box {
-  padding: 3px;
-}
-
-.colorpicker-button-colorbox {
-  border: 1px solid #000000;
-}
-
-colorpicker[type="button"]:focus {
-
-
-colorpicker[type="button"]:focus > .colorpicker-button-internal-box {
-}
-
-colorpicker[type="button"][open="true"] {
-  border: 1px inset #CCD0DD;
-}
-
-colorpicker[type="button"][open="true"] > .colorpicker-button-internal-box {
 }

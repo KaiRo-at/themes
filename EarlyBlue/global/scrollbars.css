@@ -37,112 +37,104 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/********* XP Scrollbar *********/
+/* ===== scrollbars.css =================================================
+  == Styles used by XUL scrollbar-related elements.
+  ======================================================================= */
 
-scrollbar 
-  {
-    -moz-binding          : url("chrome://global/skin/scrollbarBindings.xml#scrollbar"); 
-    cursor                : default;
-  }
-  
-/********* XP Scrollbar *********/
+/* ::::: scrollbar ::::: */
 
-thumb 
-  {
-    -moz-binding          : url("chrome://global/skin/scrollbarBindings.xml#thumbh");
-    background-color      : #CCCCCC;
-    border                : 1px outset #CCCCCC;
-    list-style-image      : url("chrome://global/skin/scroll-thumb-horiz.gif");
-    -moz-box-pack         : center;
-    -moz-box-align        : center;
-  }
-
-thumb[disabled="true"] {
-    list-style-image      : url("chrome://global/skin/scroll-thumb-horiz-disabled.gif");
+scrollbar {
+  -moz-binding: url("chrome://global/content/bindings/scrollbar.xml#scrollbar");
+  cursor: default;
+  background-color: #999999;
 }
 
-scrollbar[orient="vertical"] > slider > thumb {
-    -moz-binding          : url("chrome://global/skin/scrollbarBindings.xml#thumbv"); 
-    list-style-image      : url("chrome://global/skin/scroll-thumb-vert.gif")
+/* ::::: slider ::::: */
+
+slider {
+  height: 13px;
 }
 
-scrollbar[orient="vertical"] > slider > thumb[disabled="true"] {
-    list-style-image      : url("chrome://global/skin/scroll-thumb-vert-disabled.gif")
+slider[orient="vertical"] {
+  width: 13px;
+}
+
+/* ::::: borders for thumb and buttons ::::: */
+
+thumb,
+scrollbarbutton {
+  border: 1px outset #CCCCCC;
+  background: #CCCCCC 50% 50% no-repeat;
+  padding: 1px;
+  min-width: 13px;
+  min-height: 13px;
 }
 
 thumb:active {
-   background-color: #DDDDDD;
+  background-color: #DDDDDD;
 }
 
-  
-/**
- * Scrollbar button
- **/  
-scrollbarbutton 
-  {
-    -moz-binding          : url("chrome://global/skin/scrollbarBindings.xml#scrollbarbutton"); 
-    border                : 1px outset white;
-    background-color      : #CCCCCC;
-  }
+/* ::::: thumb (horizontal) ::::: */
 
-.scrollbarbutton-box
-  {
-    padding               : 1px;
-  }   
+thumb {
+  background-image: url("chrome://global/skin/scrollbar/thumb-vert-grip.gif");
+}
 
-scrollbarbutton:hover:active 
-  {
-    border-style          : inset;
-  }
-  
-scrollbarbutton:hover:active > .scrollbarbutton-box
-  {
-    padding               : 2px 0px 0px 2px;
-  }   
+thumb[orient="horizontal"] {
+  background-image: url("chrome://global/skin/scrollbar/thumb-horiz-grip.gif");
+}
 
-scrollbarbutton[type="decrement"] 
-  {
-    list-style-image      : url("chrome://global/skin/scroll-left.gif")
-  }
+thumb[disabled="true"] {
+  background-image: url("chrome://global/skin/scrollbar/thumb-vert-grip-disabled.gif");
+}
 
-scrollbarbutton[type="decrement"][disabled="true"] 
-  {
-    list-style-image      : url("chrome://global/skin/scroll-left-disabled.gif") 
-  }
+thumb[orient="horizontal"][disabled="true"] {
+  background-image: url("chrome://global/skin/scrollbar/thumb-horiz-grip-disabled.gif");
+}
 
-scrollbarbutton[type="increment"] 
-  {
-    list-style-image      : url("chrome://global/skin/scroll-right.gif")
-  }
+/* ::::: scrollbar button ::::: */
+
+scrollbarbutton {
+}
+
+scrollbarbutton:hover:active {
+  border-style: inset;
+  padding: 2px 0px 0px 2px;
+}   
+
+/* ..... increment .... */
+
+scrollbarbutton[type="increment"] {
+  background-image: url("chrome://global/skin/scrollbar/button-right.gif")
+}
 
 
-scrollbarbutton[type="increment"][disabled="true"] 
-  {
-    list-style-image      : url("chrome://global/skin/scroll-right-disabled.gif") 
-  }
+scrollbarbutton[type="increment"][disabled="true"] {
+  background-image: url("chrome://global/skin/scrollbar/button-right-disabled.gif") 
+}
 
+scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
+  background-image: url("chrome://global/skin/scrollbar/button-down.gif")
+}
 
-scrollbarbutton[type="decrement"][sborient="vertical"]
-  {
-    list-style-image      : url("chrome://global/skin/scroll-up.gif")
-  }
+scrollbar[orient="vertical"] > scrollbarbutton[type="increment"][disabled="true"] {
+  background-image: url("chrome://global/skin/scrollbar/button-down-disabled.gif")
+}
 
-scrollbarbutton[type="decrement"][disabled="true"][sborient="vertical"]
-  {
-    list-style-image      : url("chrome://global/skin/scroll-up-disabled.gif") 
-  }
+/* ..... decrement .... */
 
-scrollbarbutton[type="increment"][sborient="vertical"]
-  {
-    list-style-image      : url("chrome://global/skin/scroll-down.gif")
-  }
+scrollbarbutton[type="decrement"] {
+  background-image: url("chrome://global/skin/scrollbar/button-left.gif")
+}
 
-scrollbarbutton[type="increment"][disabled="true"][sborient="vertical"]
-  {
-    list-style-image      : url("chrome://global/skin/scroll-down-disabled.gif") 
-  }
+scrollbarbutton[type="decrement"][disabled="true"] {
+  background-image: url("chrome://global/skin/scrollbar/button-left-disabled.gif") 
+}
 
-slider 
-  {
-    background-color      : #999999;
-  }
+scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
+   background-image: url("chrome://global/skin/scrollbar/button-up.gif")
+}
+
+scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"][disabled="true"] {
+   background-image: url("chrome://global/skin/scrollbar/button-up-disabled.gif")
+}

@@ -43,26 +43,46 @@
  * Style rules for generic bookmarks items. 
  */    
  
-outlinerbody:-moz-outliner-image(Name) {
+outlinerchildren:-moz-outliner-image(Name) {
     padding-right: 2px;
 }
  
-.bookmark-item, outlinerbody:-moz-outliner-image(Name) {
+.bookmark-item, outlinerchildren:-moz-outliner-image(Name) {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
 }
 
-.bookmark-item[container="true"], outlinerbody:-moz-outliner-image(Name, container) {
+.bookmark-item[container="true"], outlinerchildren:-moz-outliner-image(Name, container) {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
 }
 
-.bookmark-item[container="true"][open="true"], outlinerbody:-moz-outliner-image(Name, open) {
+.bookmark-item[container="true"][open="true"], outlinerchildren:-moz-outliner-image(Name, open) {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
 }
 
 .bookmark-item[container="true"][open="true"][loading="true"] {
-  list-style-image: url("chrome://global/skin/loading.gif") !important;
+  list-style-image: url("chrome://global/skin/icons/loading.gif") !important;
 }
 
 .bookmark-item[status="new"] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item-updated.gif") !important;
+}
+
+.bookmark-item > .menu-iconic-left {
+  height: 16px;
+}
+
+.bookmark-item > .menu-iconic-left > .menu-iconic-icon {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+toolbarbutton.bookmark-item > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+.tree-cell-icon, .tree-cell-primary-icon {
+  list-style-image: inherit;
+  height: 16px;
+  max-width: 16px;
+  max-height: 16px;
 }

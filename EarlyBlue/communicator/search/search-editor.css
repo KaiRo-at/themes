@@ -37,28 +37,6 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.up
-{
-	list-style-image:url("chrome://global/skin/scroll-up.gif");
-	min-width: 0px;
-}
-
-.up[disabled="true"]
-{
-	list-style-image:url("chrome://global/skin/scroll-up-disabled.gif");
-}
-
-.down
-{
-	min-width: 0px;
-	list-style-image:url("chrome://global/skin/scroll-down.gif");
-}
-
-.down[disabled="true"]
-{
-	list-style-image:url("chrome://global/skin/scroll-down-disabled.gif");
-}
-
 #add-button
   {
     list-style-image      : url("chrome://global/skin/scroll-right.gif");
@@ -68,4 +46,3 @@
   {
     list-style-image      : url("chrome://global/skin/scroll-left.gif");
   }
-
