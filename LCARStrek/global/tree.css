@@ -161,6 +161,11 @@ treecolpicker {
   padding: 0px !important;
 }
 
+treecol[hideheader="true"] {
+  border: none;
+  padding: 0;
+}
+
 /* ..... internal box ..... */
 
 treecol:hover:active {

@@ -63,10 +63,6 @@
   min-width: 10px;
 }
 
-#addressCol {
-  visibility: hidden;
-}
-
 #newEditButtonBox {
   padding-top: 0.5em; 
   padding-right: 0px;
