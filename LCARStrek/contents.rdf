@@ -5,38 +5,38 @@
 
   <!-- List all the skins being supplied by this theme -->
   <RDF:Seq about="urn:mozilla:skin:root">
-    <RDF:li resource="urn:mozilla:skin:LCARStrek/1.1" />
+    <RDF:li resource="urn:mozilla:skin:LCARStrek/1.2" />
   </RDF:Seq>
 
   <!-- classic Information -->
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1"
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.2"
         chrome:displayName="LCARStrek"
         chrome:accessKey="L"
         chrome:author="Robert Kaiser - KaiRo.at"
         chrome:description="For all Trekkies: A theme based on LCARS computer design. Get more info at http://www.kairo.at/download/"
-        chrome:name="LCARStrek/1.1"
+        chrome:name="LCARStrek/1.2"
         chrome:image="global/preview.png">
     <chrome:packages>
-      <RDF:Seq about="urn:mozilla:skin:LCARStrek/1.1:packages">
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.1:global"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.1:communicator"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.1:navigator"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.1:messenger"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.1:editor"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.1:chatzilla"/>
-        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.1:inspector"/>
+      <RDF:Seq about="urn:mozilla:skin:LCARStrek/1.2:packages">
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.2:global"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.2:communicator"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.2:navigator"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.2:messenger"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.2:editor"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.2:chatzilla"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.2:inspector"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
 
   <!-- Version Information.  State that we work only with a certain version of this package. -->
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:global" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:communicator" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:navigator" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:messenger" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:editor" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.2:global" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.2:communicator" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.2:navigator" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.2:messenger" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.2:editor" chrome:skinVersion="1.2"/>
 <!-- chatzilla hasn't set skinVersion currently
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:chatzilla" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.2:chatzilla" chrome:skinVersion="1.2"/>
 -->
-  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.1:inspector" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.2:inspector" chrome:skinVersion="1.2"/>
 </RDF:RDF>
