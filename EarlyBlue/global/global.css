@@ -146,6 +146,10 @@ statusbarpanel {
   padding: 0px;
 }    
 
+resizer[dir="bottomright"] {
+  cursor: se-resize;
+}
+
 /* ::::: miscellaneous ::::: */
 
 .toolbar-focustarget {
