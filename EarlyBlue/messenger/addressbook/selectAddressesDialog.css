@@ -50,18 +50,8 @@
   padding: 0.5em 0 1.0em 0;
 }
 
-#resultsTree, #dirTree
-#resultsTree > .tree-container-treerows,
-#dirTree > .tree-container-treerows {
-  border: none;
-}
-
 #resultsTree {
   min-width: 10px;
-}
-
-#resultsBox {
-  border: 1px solid #000000;
 }
 
 #addToBucketButtonBox {
@@ -71,6 +61,10 @@
 
 #addressBucket {
   min-width: 10px;
+}
+
+#addressCol {
+  visibility: hidden;
 }
 
 #newEditButtonBox {

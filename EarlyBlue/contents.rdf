@@ -23,6 +23,7 @@
         <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.9:navigator"/>
         <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.9:messenger"/>
         <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.9:editor"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.9:chatzilla"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
@@ -33,4 +34,7 @@
   <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.9:navigator" chrome:skinVersion="1.0"/>
   <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.9:messenger" chrome:skinVersion="1.0"/>
   <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.9:editor" chrome:skinVersion="1.0"/>
+<!-- chatzilla hasn't set skinVersion currently
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.9:chatzilla" chrome:skinVersion="1.0"/>
+-->
 </RDF:RDF>
