@@ -52,7 +52,7 @@ tabbox[orient="vertical"] > tabpanels + tabs[orient="horizontal"] > tab {
   border-top: none;
   -moz-border-radius: 0px 0px 8px 8px;
   padding: 1px 5px 3px 5px;
-  margin: 1px 2px 1px 2px;
+/*  margin: 1px 2px 1px 2px; */
 }
 
 	/* left tabs */
@@ -60,7 +60,7 @@ tabbox[orient="horizontal"] > tabs[orient="vertical"] tab  {
   border-right: none;
   -moz-border-radius: 8px 0px 0px 8px;
   padding-right: 1px;
-  margin: 2px 1px 2px 1px;
+/*  margin: 2px 1px 2px 1px; */
 }
 
 	/* right tabs */
@@ -68,7 +68,7 @@ tabbox[orient="horizontal"] > tabpanels + tabs[orient="vertical"] > tab {
   border-left: none;
   -moz-border-radius: 0px 8px 8px 0px;
   padding: 3px 5px 1px 5px;
-  margin: 2px 1px 2px 1px;
+/*  margin: 2px 1px 2px 1px; */
 }
 
 tabbox { 
@@ -87,8 +87,3 @@ tabpanels {
   border: 1px solid #9C9CFF;
   padding: 5px;
 }
-
-
-
-
-
