@@ -15,14 +15,15 @@
  *
  * The Initial Developer of the Original Code is 
  * Netscape Communications Corporation.
- * Portions created by the Initial Developer are Copyright (C) 1998
+ * Portions created by the Initial Developer are Copyright (C) 2001
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ *   Joe Hewitt <hewitt@netscape.com> (original author)
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -35,59 +36,49 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://communicator/skin/);
-@import url(chrome://communicator/skin/sidebar/sidebar.css);
+@import url("chrome://inspector/skin");
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* :::::::: node type color coding :::::::: */
 
-#content-frame { 
-  min-width: 10px; 
-  min-height: 10px;
-  height: 400px;
-} 
-
-.source-editor,
-.source-editor:focus {
-  margin: 0px 5px 5px 0px;
-  border: 0px;
-  /* Scroll bars are in content, 
-     so we can't use right and bottom padding! */
-  padding: 5px 0px 0px 5px;
+treechildren:-moz-tree-cell-text(ELEMENT_NODE) {
+  color: #000000;
 }
 
-/* Multiline textarea for HTML source editing */
-#content-source,
-#doctype-text {
-  font-family: -moz-fixed;
-  font-size: -moz-initial;
+treechildren:-moz-tree-cell-text(ATTRIBUTE_NODE) {
+  color: #556b2f;
 }
 
-#appcontent {
+treechildren:-moz-tree-cell-text(CDATA_SECTION_NODE),
+treechildren:-moz-tree-cell-text(TEXT_NODE) {
+  color: #0000AA;
 }
 
-#ContentWindowDeck {
-}
-/* ::::: struct toolbar ::::: */
-
-#structToolbar {
-  min-width: 1px;
-  overflow: hidden;
+treechildren:-moz-tree-cell-text(COMMENT_NODE) {
+  color: #228b22;
 }
 
-#structSpacer {
-  margin: 2px 0px;
+treechildren:-moz-tree-cell-text(DOCUMENT_NODE) {
+  color: #800080;
 }
 
-.struct-button {
-  padding: 2px;
+treechildren:-moz-tree-cell-text(PROCESSING_INSTRUCTION_NODE) {
+  color: #808080;
 }
 
-.struct-button[checked="true"] {
-  font-weight: bold;
+treechildren:-moz-tree-cell-text(anonymous) {
+  color: #ff0000;
 }
 
-.struct-textbox {
-  padding: 0px !important;
-  margin: 0px !important;
-  border: none !important;
+treechildren:-moz-tree-cell-text(selected, focus) {
+  color: #FFFFFF;
+}
+
+/* :::::::: drag and drop insertion indicators :::::::: */
+
+treechildren:-moz-tree-column(dnd-insert-before) {
+  border-left: 2px solid #000000;
+}
+
+treechildren:-moz-tree-column(dnd-insert-after) {
+  border-right: 2px solid #000000;
 }

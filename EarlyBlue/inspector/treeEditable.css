@@ -15,14 +15,15 @@
  *
  * The Initial Developer of the Original Code is 
  * Netscape Communications Corporation.
- * Portions created by the Initial Developer are Copyright (C) 1998
+ * Portions created by the Initial Developer are Copyright (C) 2001
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ *   Joe Hewitt <hewitt@netscape.com> (original author)
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -35,59 +36,16 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://communicator/skin/);
-@import url(chrome://communicator/skin/sidebar/sidebar.css);
-
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-#content-frame { 
-  min-width: 10px; 
-  min-height: 10px;
-  height: 400px;
-} 
-
-.source-editor,
-.source-editor:focus {
-  margin: 0px 5px 5px 0px;
-  border: 0px;
-  /* Scroll bars are in content, 
-     so we can't use right and bottom padding! */
-  padding: 5px 0px 0px 5px;
-}
-
-/* Multiline textarea for HTML source editing */
-#content-source,
-#doctype-text {
-  font-family: -moz-fixed;
-  font-size: -moz-initial;
-}
-
-#appcontent {
-}
-
-#ContentWindowDeck {
-}
-/* ::::: struct toolbar ::::: */
-
-#structToolbar {
-  min-width: 1px;
-  overflow: hidden;
-}
-
-#structSpacer {
-  margin: 2px 0px;
-}
-
-.struct-button {
-  padding: 2px;
-}
-
-.struct-button[checked="true"] {
-  font-weight: bold;
-}
-
-.struct-textbox {
-  padding: 0px !important;
+.treecell-editor,
+.treecell-editor > box {
   margin: 0px !important;
-  border: none !important;
+  padding: 0px !important;
+}
+
+.treecell-editor {
+  border: 0px !important;
+}
+
+.treecell-editor {
+  border: 1px solid black;
 }

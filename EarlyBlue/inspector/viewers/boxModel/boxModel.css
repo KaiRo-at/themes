@@ -15,14 +15,15 @@
  *
  * The Initial Developer of the Original Code is 
  * Netscape Communications Corporation.
- * Portions created by the Initial Developer are Copyright (C) 1998
+ * Portions created by the Initial Developer are Copyright (C) 2001
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ *   Joe Hewitt <hewitt@netscape.com> (original author)
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -35,59 +36,75 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://communicator/skin/);
-@import url(chrome://communicator/skin/sidebar/sidebar.css);
+@import url("chrome://inspector/skin");
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* ::::: statistics ::::: */
 
-#content-frame { 
-  min-width: 10px; 
-  min-height: 10px;
-  height: 400px;
-} 
-
-.source-editor,
-.source-editor:focus {
-  margin: 0px 5px 5px 0px;
-  border: 0px;
-  /* Scroll bars are in content, 
-     so we can't use right and bottom padding! */
-  padding: 5px 0px 0px 5px;
+.value-column {
+  margin-right: 30px;
 }
 
-/* Multiline textarea for HTML source editing */
-#content-source,
-#doctype-text {
-  font-family: -moz-fixed;
-  font-size: -moz-initial;
+/* ::::: image capture area ::::: */
+
+#bxZoom {
+  overflow: auto;
+  margin: 5px;
+  border: 2px groove ThreeDFace;
+  padding: 10px;
+  background-color: #b9b9b9;
 }
 
-#appcontent {
+/* ::::: box model outlines ::::: */
+
+#imgZoom {
+  border: 1px solid transparent;
 }
 
-#ContentWindowDeck {
-}
-/* ::::: struct toolbar ::::: */
-
-#structToolbar {
-  min-width: 1px;
-  overflow: hidden;
+#imgZoom[hidden="true"] {
+  visibility: collapse;
 }
 
-#structSpacer {
-  margin: 2px 0px;
+#bxMargin[outline="true"] {
+  border: 1px solid black;
 }
 
-.struct-button {
-  padding: 2px;
+#bxBorder[outline="true"] {
+  border: 1px solid red;
 }
 
-.struct-button[checked="true"] {
-  font-weight: bold;
+#bxPadding[outline="true"] {
+  border: 1px solid yellow;
 }
 
-.struct-textbox {
-  padding: 0px !important;
-  margin: 0px !important;
-  border: none !important;
+#bxContent[outline="true"] {
+  border: 1px solid blue;
 }
+
+#bxMargin[fill="true"] {
+  border: none;
+  background-color: black;
+}
+
+#bxBorder[fill="true"] {
+  border: none;
+  background-color: red;
+}
+
+#bxPadding[fill="true"] {
+  border: none;
+  background-color: yellow;
+}
+
+#bxContent[fill="true"] {
+  border: none;
+  background-color: blue;
+}
+
+/* ::::: color picker dialog ::::: */
+
+#bxColorSwatch {
+  margin: 2px 4px;
+  border: 1px solid #000000;
+  width: 40px;
+}
+
