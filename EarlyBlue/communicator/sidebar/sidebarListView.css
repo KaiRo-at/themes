@@ -44,7 +44,7 @@ outlinerchildren {
 
 outlinerchildren:-moz-outliner-row(selected),
 outlinerchildren:-moz-outliner-row(selected, focus) {
-  background-color: -moz-Field !important;
+  background-color: #FFFFFF !important;
   border: 1px solid transparent !important;
 }
 
