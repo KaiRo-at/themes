@@ -1,4 +1,3 @@
-/* -*- Mode: C; c-basic-offset: 2 -*- */
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: NPL 1.1/GPL 2.0/LGPL 2.1
  *
@@ -22,6 +21,7 @@
  * Contributor(s):
  *   Ben Goodger <ben@netscape.com>
  *   Josh Soref  <timeless@mac.com>
+ *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or 
@@ -59,4 +59,3 @@
       list-style-image    : url("chrome://communicator/skin/bookmarks/home-active.gif");
     }
 */
-

@@ -1,5 +1,3 @@
-/* -*- Mode: C; c-basic-offset: 2 -*- */
-
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: NPL 1.1/GPL 2.0/LGPL 2.1
  *
@@ -25,6 +23,7 @@
  *   Josh Soref <timeless@mac.com>
  *   Tim Taylor <tim@tool-man.org>
  *   Eric Hodel <drbrain@segment7.net>
+ *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -39,6 +38,8 @@
  * the terms of any one of the NPL, the GPL or the LGPL.
  *
  * ***** END LICENSE BLOCK ***** */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /**
  * Link toolbar items

@@ -1,4 +1,3 @@
-/*  */
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: NPL 1.1/GPL 2.0/LGPL 2.1
  *
@@ -21,7 +20,7 @@
  *
  * Contributor(s):
  *   Joe Hewitt (hewitt@netscape.com)
- *
+ *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -103,5 +102,3 @@
 {
   border: 1px solid #9C9CFF !important;
 }
-
-
