@@ -70,13 +70,23 @@ iframe {
 	list-style-image:url("chrome://messenger/skin/getmsg.gif");
 }
 
-#button-getmsg:hover {
+#button-getmsg:hover,
+#button-getmsg:hover:active,
+#button-getmsg > .menubutton-internal-box > .menubutton-dual-button:hover,
+#button-getmsg > .menubutton-internal-box > .menubutton-dual-button:hover:active,
+#button-getmsg[open="true"] > .menubutton-internal-box > .menubutton-dual-button
+  {
 	list-style-image:url("chrome://messenger/skin/getmsg-hover.gif");
-}
+  }
 
-#button-getmsg[disabled="true"] {
+#button-getmsg[disabled="true"],
+#button-getmsg[disabled="true"]:hover,
+#button-getmsg[disabled="true"]:hover:active,
+#button-getmsg[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover,
+#button-getmsg[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active
+  {
 	list-style-image:url("chrome://messenger/skin/getmsg_dis.gif");
-}
+  }
 
 #button-newmsg {
 	list-style-image:url("chrome://messenger/skin/newmsg.gif");
@@ -422,6 +432,7 @@ searchvalue {
 searchterm {
  -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchterm);
 }
+
 
 
 
