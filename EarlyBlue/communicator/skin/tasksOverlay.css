@@ -23,27 +23,15 @@
 	  list-style-image      : url("chrome://global/skin/taskbar-composer.gif");
   }
 
-#taskbar
+.taskbutton
   {
-    margin-top            : 0px;
-    min-height            : 18px;
-    user-focus            : ignore;
-  }
-
-.taskbutton 
-  {
-	  margin-right          : 1em !important;
-  }
-
-.taskbarspacer 
-  {
-    min-width             : 0.3em;
-    width                 : 1em;
+    margin-right          : 5px;
   }
 
 /*
-#taskbar > toolbargrippy
+.taskbarspacer
   {
-    display               : none;
+    min-width             : 0.3em;
+    width                 : 1em;
   }
 */

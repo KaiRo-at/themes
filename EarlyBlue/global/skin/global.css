@@ -137,39 +137,31 @@
 /**
  * status-bar
  */
-  #status-bar 
+  statusbar 
     {
       border-top          : 1px solid #9999CC;
-      background-color    : #CCD0DD;
+      background-color    : #666699;
+      color               : #CCD0DD;
       user-focus          : ignore;
       overflow            : hidden
     }
 
-  .statusbar-left
-    {
-      width               : 8px;
-      list-style-image    : url("chrome://global/skin/gray-bottomleft.gif");
-      background-position : bottom left;
-    }
-
-  .statusbar-right
-    {
-      width               : 8px;
-      list-style-image    : url("chrome://global/skin/gray-bottomright.gif");
-      background-position : bottom right;
-    }
-
-  statusbarpanel
+  statusbarpanel, .statusbar-panel
     {
       padding             : 0px 1px 0px 1px;
       vertical-align      : middle;
     }
 
+  .statusbarpanel-icononly
+    {
+      padding             : 0px;
+    }    
+    
   .statusbar-panel-icon
     {
+      list-style-image    : inherit;
       margin              : 0px 2px 0px 0px;
-    }
-
+    }      
 
 /**
  * iframe default sizing 
@@ -190,6 +182,9 @@
   }
   
   
+
+
+
 
 
 

@@ -6,6 +6,11 @@
       background-image    : url(chrome://global/skin/progressmeter-busy.gif);
     }
  
+  .progressmeter-statusbar[mode="undetermined"] > .progressmeter-internal-box
+    {
+      background-color    : #CCD0DD;
+    }
+ 
   progressmeter[mode="undetermined"] > .progressmeter-internal-box > .progressmeter-stack > .progressmeter-progressbar 
     {
       visibility          : collapse;
@@ -21,9 +26,9 @@
 
   .progressmeter-statusbar 
     {
-      border              : 1px solid #9999CC;
+      border              : 1px solid #CCD0DD;
       margin              : 1px 4px 1px 4px;
-      background-color    : #CCD0DD;
+      background-color    : #666699;
       padding             : 1px;
     }
     
@@ -41,11 +46,11 @@
   .progressmeter-inset  
     {
       margin              : 1px 5px 2px 5px;
+      border              : 1px inset #CCD0DD;
     }
   
   .progressmeter-inset > .progressmeter-internal-box 
     {
-      border              : 1px inset #CCD0DD;
     }
 
 /* progress indicators */
@@ -63,8 +68,8 @@
 
   .progressmeter-progressbar[statusbar="true"] > .progress-bar
     {
-      background-color    : #9999CC;
-      border-right        : none;
+/*      background-color    : #6699CC; */
+      background-color    : #CCD0DD;
     }
 
 /*   
@@ -73,6 +78,9 @@
       background-color    : #CCD0DD;
     }
 */
+
+
+
 
 
 
