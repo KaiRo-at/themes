@@ -124,6 +124,10 @@
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
+#clear-button:hover {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+}
+
 /* Hides text below the above buttons */
 .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-text,
 .toolbarbutton-1 > .toolbarbutton-text {
@@ -214,16 +218,14 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 #nav-bar-inner {
   padding-left: 0px;
   min-width: 0px;
-  margin: 7px 4px 8px 4px; 
+  margin: 6px 4px 7px 4px; 
 }
 
 #urlbar {
-  -moz-border-radius: 3px;
-  border: 1px solid;
-  -moz-border-top-colors: #9C9CFF;
-  -moz-border-right-colors: #9C9CFF;
-  -moz-border-bottom-colors: #9C9CFF;
-  -moz-border-left-colors: #9C9CFF;
+  -moz-border-top-colors: transparent #9C9CFF;
+  -moz-border-right-colors: transparent #9C9CFF;
+  -moz-border-bottom-colors: transparent #9C9CFF;
+  -moz-border-left-colors: transparent #9C9CFF;
   background-color: #000000;
   margin: 0px 7px 0px 0px;
 }
@@ -290,7 +292,7 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 #search-button, 
 #go-button {
-  margin: 0px 3px 0px 0px;
+  margin: 1px 3px 1px 0px;
 /*  min-height: 25px; */
   font-weight: bold;
   background-color: #000000;

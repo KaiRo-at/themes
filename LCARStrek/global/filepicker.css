@@ -77,10 +77,18 @@ treechildren:-moz-tree-image(FilenameColumn, file) {
 
 .up-button {
   list-style-image: url("chrome://global/skin/filepicker/folder-up.gif");
-  max-width: 36px;
+  max-width: 26px;
+}
+
+.up-button:hover {
+  list-style-image: url("chrome://global/skin/filepicker/folder-up-hover.gif");
 }
 
 .home-button {
   list-style-image: url("chrome://global/skin/filepicker/folder-home.gif");
-  max-width: 36px;
+  max-width: 26px;
+}
+
+.home-button:hover {
+  list-style-image: url("chrome://global/skin/filepicker/folder-home-hover.gif");
 }

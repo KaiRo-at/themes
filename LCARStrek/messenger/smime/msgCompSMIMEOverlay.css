@@ -47,12 +47,14 @@
   list-style-image: url("chrome://messenger/skin/smime/icons/lock.gif");
 }
 
-#button-security[buttonover],
-#button-security[buttondown] {
+#button-security:hover,
+#button-security[buttonover="true"],
+#button-security[buttondown="true"],
+#button-security[open="true"] {
   list-style-image: url("chrome://messenger/skin/smime/icons/lock-hover.gif");
 } 
 
-#button-security[disabled] {
+#button-security[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/smime/icons/lock-disabled.gif");
 } 
 
