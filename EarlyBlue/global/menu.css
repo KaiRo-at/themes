@@ -233,5 +233,5 @@ menulist > menupopup > menuseparator,
 
 .treecell-popupcell-menu {
   margin-left: -2px;
-  list-style-image: url("chrome://global/skin/columnselect.gif");
+  list-style-image: url("chrome://global/skin/tree/columnpicker.gif");
 }

@@ -37,12 +37,10 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#add-button
-  {
-    list-style-image      : url("chrome://global/skin/scroll-right.gif");
-  }
+#add-button {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right.gif");
+}
   
-#remove-button
-  {
-    list-style-image      : url("chrome://global/skin/scroll-left.gif");
-  }
+#remove-button {
+ list-style-image: url("chrome://global/skin/arrow/arrow-left.gif");
+}

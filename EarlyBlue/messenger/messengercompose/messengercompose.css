@@ -87,11 +87,11 @@
 } 
 
 #spellingButton {
-  list-style-image: url("chrome://editor/skin/images/spell.gif");
+  list-style-image: url("chrome://editor/skin/icons/spell.gif");
 }
 
 #spellingButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/images/spell-disabled.gif") !important;
+  list-style-image: url("chrome://editor/skin/icons/spell-disabled.gif") !important;
 }
 
 #button-save {
