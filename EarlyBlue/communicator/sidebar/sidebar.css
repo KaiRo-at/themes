@@ -142,24 +142,39 @@
 */
 
 .box-texttab:hover {
-  background-color      : #DDDDDD;
+  background-color: #DDDDDD;
 }
     
 .box-texttab:hover:active {
-  background-color      : #6699FF;
+  background-color: #6699FF;
 }
     
 .box-texttab[selected="true"],
 .box-texttab[selected="true"]:hover {
-  font-weight           : bold;
-  cursor                : default;
+  font-weight: bold;
+  cursor: default;
 }
 
 .box-texttab[last-panel="true"], 
 .box-texttab[selected="true"] {
-  margin-bottom       : 0px;
+  margin-bottom: 0px;
 }
 
 .sbtab-twisty[selected="true"] {
   list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+}
+
+/* ::::: sidebar navigation buttons ::::: */
+
+.sidebar-nav-button {
+  -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton-image");
+  padding: 5px 0px 5px 0px;
+}
+
+.tab-fwd {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
+}
+
+.tab-back {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
 }

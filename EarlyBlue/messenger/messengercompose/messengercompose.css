@@ -110,50 +110,6 @@
   list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
 } 
 
-/* addressing widget */
-  
-#addressingWidgetTree {
-  height: 80px;
-  width: 0px;
-  margin: 0px;
-  -moz-user-focus: none;
-  background-color: #FFFFFF;
-}  
-  
-#listcol-addressingWidget {
-  width: 9em;
-  border-right: 1px solid #CCD0DD;
-}
-  
-#addressingWidgetTree > treechildren > treeitem > treerow,
-#addressingWidgetTree > treechildren > treeitem[selected="true"] > treerow {
-  border: none;
-  background-color: inherit;
-  color: inherit;
-}
-
-.treecell-addressingWidget {
-  border-bottom: 1px solid #CCD0DD;
-  padding: 0px !important;
-}
-  
-.treecell-addressingWidget:first-child {
-  border-bottom: none;
-}
-
-.textbox-addressingWidget {
-  -moz-box-align: center;
-}
-
-.dummy-row-cell:first-child {
-  border-bottom: 1px solid #CCD0DD;
-}
-
-.person-icon {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/abcard.gif");
-  margin: 0px 3px 0px 3px;
-}
-
 /* ::::: autocomplete icons ::::: */
 
 outlinerbody:-moz-outliner-cell-text(default-match) {

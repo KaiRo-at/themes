@@ -35,37 +35,35 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+/* ===== msgReadSecurityInfo.css ========================================
+  == Styles for the security info window when displaying received mail.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#navigator-throbber {
-  -moz-binding: url("chrome://global/content/bindings/button.xml#button-image");
-  -moz-user-focus: ignore;
-  -moz-box-align: center;
-  -moz-box-pack: center;
-  margin: 1px 3px 1px 1px;
-  border: 1px solid transparent;
-  padding: 0px;
-  min-width: 0;
-  list-style-image: url("chrome://communicator/skin/brand/throbber-single.gif");
+#msgReadSecurityInfo {
+  width: 40em;
+  max-width: 50em;
 }
 
-#navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://communicator/skin/brand/throbber-anim.gif");
+#outer_vbox {
+  margin: 5px;
 }
 
-#navigator-throbber:hover {
-  border: 1px outset #CCD0DD;
+#signatureLabel {
+  font-weight: bold;
 }
 
-#navigator-throbber:hover:active {
-  border: 1px inset #CCD0DD;
+#signatureCert {
+  margin: 5px;
 }
 
-#navigator-throbber[toolbarmode="small"] {
-  margin: 0 5px 0 0;
-  list-style-image: url("chrome://communicator/skin/brand/throbber16-single.gif");
+#encryptionLabel {
+  font-weight: bold;
 }
 
-#navigator-throbber[toolbarmode="small"][busy="true"] {
-  list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.gif");
+#encryptionCert {
+  margin: 5px;
 }

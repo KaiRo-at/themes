@@ -37,35 +37,46 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-#navigator-throbber {
-  -moz-binding: url("chrome://global/content/bindings/button.xml#button-image");
-  -moz-user-focus: ignore;
+/* ::::: addressing widget ::::: */
+  
+#addressingWidgetTree {
+  height: 80px;
+  width: 0px;
+  margin: 0px;
+  -moz-user-focus: none;
+  background-color: #FFFFFF;
+}  
+  
+#listcol-addressingWidget {
+  width: 9em;
+  border-right: 1px solid #CCD0DD;
+}
+  
+#addressingWidgetTree > treechildren > treeitem > treerow,
+#addressingWidgetTree > treechildren > treeitem[selected="true"] > treerow {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}
+
+.treecell-addressingWidget {
+  border-bottom: 1px solid #CCD0DD;
+  padding: 0px !important;
+}
+  
+.treecell-addressingWidget:first-child {
+  border-bottom: none;
+}
+
+.textbox-addressingWidget {
   -moz-box-align: center;
-  -moz-box-pack: center;
-  margin: 1px 3px 1px 1px;
-  border: 1px solid transparent;
-  padding: 0px;
-  min-width: 0;
-  list-style-image: url("chrome://communicator/skin/brand/throbber-single.gif");
 }
 
-#navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://communicator/skin/brand/throbber-anim.gif");
+.dummy-row-cell:first-child {
+  border-bottom: 1px solid #CCD0DD;
 }
 
-#navigator-throbber:hover {
-  border: 1px outset #CCD0DD;
-}
-
-#navigator-throbber:hover:active {
-  border: 1px inset #CCD0DD;
-}
-
-#navigator-throbber[toolbarmode="small"] {
-  margin: 0 5px 0 0;
-  list-style-image: url("chrome://communicator/skin/brand/throbber16-single.gif");
-}
-
-#navigator-throbber[toolbarmode="small"][busy="true"] {
-  list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.gif");
+.person-icon {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/abcard.gif");
+  margin: 0px 3px 0px 3px;
 }
