@@ -78,13 +78,18 @@ tab {
   margin: 0 !important;
 }
 
-tab[selected="true"]  {
+tab[selected="true"] {
+  -moz-user-focus: normal;
   font-weight: bold;
   background-color: #EDF1FF;
 }
 
 tab:hover {
   color: #336699;
+}
+
+tab:focus > .tab-middle {
+  -moz-outline: 1px dotted invert;
 }
 
 /*

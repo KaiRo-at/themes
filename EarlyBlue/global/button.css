@@ -57,7 +57,7 @@ button {
   border: 1px solid transparent;
   padding: 0px 3px 1px 2px;
 }
-  
+
 .button-text {
   margin: 0px !important;
   text-align: center;
@@ -97,12 +97,13 @@ button[checked="true"] {
 button:hover:active > .button-box,
 button[open="true"] > .button-box,
 button[checked="true"] > .button-box {
-  padding: 1px 2px 0px 3px; 
+  padding: 1px 2px 0px 3px;
 }
 
 /* .......... disabled state .......... */
 
-button[disabled="true"] {
+button[disabled="true"],
+button[disabled="true"]:hover:active {
   border: 1px outset #CCD0DD;
   color: #999999;
 }
