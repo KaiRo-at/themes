@@ -32,18 +32,6 @@
     list-style-image      : url("chrome://editor/skin/images/newfile-disabled.gif");
   } 
 
-/*
-#newButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/newfile-hover.gif");
-  } 
-
-#newButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/newfile-hover-active.gif");
-  } 
-*/
-
 #openButton 
   {
 	  list-style-image      : url("chrome://editor/skin/images/openfile.gif");
@@ -55,18 +43,6 @@
   {
     list-style-image      : url("chrome://editor/skin/images/openfile-disabled.gif");
   } 
-
-/*
-#openButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/openfile-hover.gif");
-  } 
-
-#openButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/openfile-hover-active.gif");
-  } 
-*/
 
 #saveButton 
   {
@@ -80,18 +56,6 @@
     list-style-image      : url("chrome://editor/skin/images/savefile-disabled.gif");
   } 
 
-/*
-#saveButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/savefile-hover.gif");
-  } 
-
-#saveButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/savefile-hover-active.gif");
-  } 
-*/
-
 #saveButton[dirty="true"] 
   {
 	  list-style-image      : url("chrome://editor/skin/images/savefile-dirty.gif");
@@ -103,18 +67,6 @@
   {
     list-style-image      : url("chrome://editor/skin/images/savefile-disabled.gif");
   } 
-
-/*
-#saveButton[dirty="true"]:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/savefile-hover.gif");
-  } 
-
-#saveButton[dirty="true"]:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/savefile-hover-active.gif");
-  } 
-*/
 
 #publishButton 
   {
@@ -128,18 +80,6 @@
     list-style-image      : url("chrome://editor/skin/images/publish-disabled.gif");
   } 
 
-/*
-#publishButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/publish-hover.gif");
-  } 
-
-#publishButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/publish-hover-active.gif");
-  }
-*/
-
 #previewButton 
   {
 	  list-style-image      : url("chrome://editor/skin/images/preview.gif");
@@ -152,18 +92,6 @@
     list-style-image      : url("chrome://editor/skin/images/preview-disabled.gif");
   } 
 
-/*
-#previewButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/preview-hover.gif");
-  } 
-
-#previewButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/preview-hover-active.gif");
-  }
-*/
-
 #printButton 
   {
 	  list-style-image      : url("chrome://global/skin/print.gif");
@@ -173,18 +101,6 @@
   {
     list-style-image      : url("chrome://global/skin/print-disabled.gif");
   } 
-
-/*
-#printButton[buttonover="true"]
-  {
-    list-style-image      : url("chrome://global/skin/print-hover.gif");
-  } 
-
-#printButton[buttondown="true"]
-  {
-    list-style-image      : url("chrome://global/skin/print-hover-active.gif");
-  }
-*/
 
 #findButton 
   {
@@ -198,18 +114,6 @@
     list-style-image      : url("chrome://editor/skin/images/find-disabled.gif");
   } 
 
-/*
-#findButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/find-hover.gif");
-  } 
-
-#findButton:hover:active
-  {
-    list-style-image	  : url("chrome://editor/skin/images/find-hover-active.gif"); 
-  }
-*/
-
 #linkButton 
   {
 	  list-style-image      : url("chrome://editor/skin/images/link.gif");
@@ -221,18 +125,6 @@
   {
     list-style-image      : url("chrome://editor/skin/images/link-disabled.gif");
   } 
-
-/*
-#linkButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/link-hover.gif");
-  } 
-
-#linkButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/link-hover-active.gif"); 
-  }
-*/
 
 #imageButton 
   {
@@ -246,18 +138,6 @@
     list-style-image      : url("chrome://editor/skin/images/image-disabled.gif");
   } 
 
-/*
-#imageButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/image-hover.gif");
-  } 
-
-#imageButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/image-hover-active.gif"); 
-  }
-*/
-
 #namedAnchorButton 
   {
 	  list-style-image      : url("chrome://editor/skin/images/anchor.gif");
@@ -269,18 +149,6 @@
   {
     list-style-image      : url("chrome://editor/skin/images/anchor-disabled.gif");
   } 
-
-/*
-#namedAnchorButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/anchor-hover.gif");
-  } 
-
-#namedAnchorButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/anchor-hover-active.gif"); 
-  }
-*/
 
 #hlineButton 
   {
@@ -294,18 +162,6 @@
     list-style-image      : url("chrome://editor/skin/images/hline-disabled.gif");
   } 
 
-/*
-#hlineButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/hline-hover.gif");
-  } 
-
-#hlineButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/hline-hover-active.gif"); 
-  }
-*/
-
 #tableButton 
   {
 	  list-style-image      : url("chrome://editor/skin/images/table.gif");
@@ -318,18 +174,6 @@
     list-style-image      : url("chrome://editor/skin/images/table-disabled.gif");
   } 
 
-/*
-#tableButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/table-hover.gif");
-  } 
-
-#tableButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/table-hover-active.gif"); 
-  }
-*/
-
 #spellingButton 
   {
 	  list-style-image      : url("chrome://editor/skin/images/spell.gif");
@@ -341,16 +185,3 @@
   {
     list-style-image      : url("chrome://editor/skin/images/spell-disabled.gif");
   } 
-
-/*
-#spellingButton:hover
-  {
-    list-style-image      : url("chrome://editor/skin/images/spell-hover.gif");
-  } 
-
-#spellingButton:hover:active
-  {
-    list-style-image      : url("chrome://editor/skin/images/spell-hover-active.gif"); 
-  }
-*/
-

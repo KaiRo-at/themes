@@ -15,7 +15,7 @@
         chrome:author="Robert Kaiser - KaiRo.at"
         chrome:description="This theme re-introduces a UI design idea based on early Mozilla milestones. Get more info at http://www.kairo.at/download/"
         chrome:name="EarlyBlue/0.7"
-        chrome:image="jar:resource:///chrome/EarlyBlue.jar!/global/skin/preview.png">
+        chrome:image="jar:resource:///chrome/EarlyBlue.jar!/skin/EarlyBlue/global/preview.png">
     <chrome:packages>
       <RDF:Seq about="urn:mozilla:skin:EarlyBlue/0.7:packages">
         <RDF:li resource="urn:mozilla:skin:EarlyBlue/0.7:global"/>
@@ -27,4 +27,5 @@
   <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.7:global"
     chrome:skinVersion="0.9.4"/>
 </RDF:RDF>
+
 

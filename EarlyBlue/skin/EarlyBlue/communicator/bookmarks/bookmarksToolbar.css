@@ -16,33 +16,6 @@ toolbarbutton.bookmark-item > .toolbarbutton-box > .toolbarbutton-dropmarker {
   display             : none;
 }
 
-/*    
-toolbarbutton.bookmark-item:hover {
-  color               : #0000FF;
-  text-decoration     : underline;
-}
-
-toolbarbutton.bookmark-item[container="true"]:hover {
-  text-decoration     : none;
-}
-*/
-
-/*
-toolbarbutton.bookmark-item:not([container="true"]):hover,
-toolbarbutton.bookmark-item:not([container="true"]):hover:active,
-toolbarbutton.bookmark-item:not([container="true"]):hover > .toolbarbutton-box,
-toolbarbutton.bookmark-item:not([container="true"]):hover:active > .toolbarbutton-box {
-  border: 1px solid transparent;
-  background: transparent !important;
-}
-
-
-toolbarbutton.bookmark-item:not([container="true"]):hover:active,
-toolbarbutton.bookmark-item:not([container="true"]):hover:active > .toolbarbutton-box {
-   color: #FF0000;
-}
-*/
-
 toolbarbutton.bookmark-item[disabled="true"],
 toolbarbutton.bookmark-item[disabled="true"]:hover,
 toolbarbutton.bookmark-item[disabled="true"]:hover:active
@@ -96,18 +69,6 @@ menu[dragover-top="true"].bookmark-item {
   border-top          : 1px solid #336699 !important;
 } 
 
-/*
-menuitem.bookmark-item {
-  border-top          : 1px solid transparent !important;
-  border-bottom       : 1px solid transparent !important;
-}
-  
-menu.bookmark-item {
-  border-top          : 1px solid transparent !important;
-  border-bottom       : 1px solid transparent !important;
-}
-*/
-
 menu[dragover="true"].bookmark-item {
   background-color      : #336699 !important;
   color                 : #FFFFFF !important;
@@ -120,3 +81,4 @@ menuitem[dragover-bottom="true"].bookmark-item {
 menu[dragover-bottom="true"].bookmark-item {
   border-bottom       : 1px solid #336699 !important;
 }
+

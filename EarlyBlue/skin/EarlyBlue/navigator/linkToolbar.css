@@ -56,12 +56,6 @@
   list-style-image    : url("chrome://navigator/skin/top-disabled.gif");
 }
 
-#link-top:hover,
-#link-top:hover:active
-{
-/*  list-style-image    : url("chrome://navigator/skin/top-hover.gif"); */
-}
-
 #link-up
 {
   list-style-image    : url("chrome://navigator/skin/up.gif");
@@ -72,12 +66,6 @@
 #link-up[disabled="true"]:hover:active
 {
   list-style-image    : url("chrome://navigator/skin/up-disabled.gif");
-}
-
-#link-up:hover,
-#link-up:hover:active
-{
-/*  list-style-image    : url("chrome://navigator/skin/up-hover.gif"); */
 }
 
 #link-first
@@ -92,12 +80,6 @@
   list-style-image    : url("chrome://navigator/skin/first-disabled.gif");
 }
 
-#link-first:hover,
-#link-first:hover:active
-{
-/*  list-style-image    : url("chrome://navigator/skin/first-hover.gif"); */
-}
-
 #link-prev
 {
   list-style-image    : url("chrome://navigator/skin/previous.gif");
@@ -108,12 +90,6 @@
 #link-prev[disabled="true"]:hover:active
 {
   list-style-image    : url("chrome://navigator/skin/previous-disabled.gif");
-}
-
-#link-prev:hover,
-#link-prev:hover:active
-{
-/*  list-style-image    : url("chrome://navigator/skin/previous-hover.gif"); */
 }
 
 #link-next
@@ -128,12 +104,6 @@
   list-style-image    : url("chrome://navigator/skin/next-disabled.gif");
 }
 
-#link-next:hover,
-#link-next:hover:active
-{
-/*  list-style-image    : url("chrome://navigator/skin/next-hover.gif"); */
-}
-
 #link-last
 {
   list-style-image    : url("chrome://navigator/skin/last.gif");
@@ -145,10 +115,3 @@
 {
   list-style-image    : url("chrome://navigator/skin/last-disabled.gif");
 }
-
-#link-last:hover,
-#link-last:hover:active
-{
-/*  list-style-image    : url("chrome://navigator/skin/last-hover.gif"); */
-}
-

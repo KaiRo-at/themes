@@ -96,7 +96,7 @@ toolbar[collapsed="true"] > toolbargrippy
 toolbarseparator 
   {
     width                 : 1px;
-    border                : 1px solid #CCD0DD;
+    border-right          : 1px solid #666699;
     margin                : 2px 0.2em 2px 0.2em;
   }
   
@@ -104,3 +104,4 @@ toolbarseparator
   {
     -moz-user-focus       : ignore !important;
   } 
+
