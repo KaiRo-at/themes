@@ -93,7 +93,7 @@ toolbarbutton[disabled="true"] {
 /* ..... checked state ..... */
 
 toolbarbutton[checked="true"] {
-  padding: 2px !important;
+  padding: 1px !important;
   background-color: #008484;
   color: #FFCF00;
 }
