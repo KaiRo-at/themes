@@ -55,6 +55,10 @@
   height: 0px;
 }
 
+#gray_vertical_splitter {
+  border: none;
+}
+
 #threadpane-splitter {
   border: none;
 }

@@ -206,3 +206,23 @@
 #button-junk[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/junk-disabled.gif") !important;
 }
+
+#junkBarImage {
+  list-style-image: url("chrome://messenger/skin/toolbar/junk-hover.gif");
+}
+
+#junkBarMessage {
+  font-weight: bold;
+}
+
+#junkBar {
+  -moz-border-radius: 7px;
+  padding: 3px;
+  margin-bottom: 3px;
+  background-color: #FF9F00;
+  color: #000000;
+}
+
+#junkIcon {
+  list-style-image: url("chrome://messenger/skin/icons/folder-junk.gif");
+}

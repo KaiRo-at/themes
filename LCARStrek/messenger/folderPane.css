@@ -208,3 +208,11 @@ treechildren:-moz-tree-image(syncCol, isServer-true) {
 #folderSizeCol {
   text-align: right;
 }
+
+#folderNameCol [sortDirection="ascending"] {
+  list-style-image: none;
+}
+
+#folderNameCol [sortDirection="descending"] {
+  list-style-image: none;
+}

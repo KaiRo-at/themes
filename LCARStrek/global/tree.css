@@ -53,10 +53,24 @@ tree {
   color: #FF9F00;
 }
 
+/* ::::: tree focusring ::::: */
+
+/* deactivated, looks too bad for me in LCARStrek
+.focusring > .tree-rows > .tree-bodybox {
+  border: 1px solid transparent;
+}
+
+.focusring:focus > .tree-rows > .tree-bodybox {
+  border-color: #FFCF00;
+}
+*/
+
 /* ::::: tree rows ::::: */
 
+tree[selstyle="primary"] > treechildren:-moz-tree-row,
 treechildren:-moz-tree-row {
   border: 1px solid transparent;
+  background-color: transparent;
   min-height: 18px;
   height: 1.3em;
 }
@@ -85,6 +99,7 @@ treechildren:-moz-tree-cell {
   padding: 0px 0px 1px 2px;
 }
 
+tree[selstyle="primary"] > treechildren:-moz-tree-cell-text,
 treechildren:-moz-tree-cell-text {
   color: inherit;
   border: 2px solid transparent;
@@ -95,13 +110,32 @@ treechildren:-moz-tree-cell-text(selected) {
   color: #FFFFFF;
 }
 
+tree[selstyle="primary"] > treechildren:-moz-tree-cell-text(primary, selected) {
+  background-color: #808080;
+  color: #FFFFFF;
+}
+
 treechildren:-moz-tree-cell-text(selected, focus) {
   color: #FFFFFF;
+}
+
+tree[selstyle="primary"] > treechildren:-moz-tree-cell-text(primary, selected, focus) {
+  background-color: #336699;
+  color: #FFFFFF;
+}
+
+tree[selstyle="primary"] > treechildren:-moz-tree-cell-text(primary, current, focus) {
+  border: 1px dotted #9999CC;
+}
+
+tree[selstyle="primary"] > treechildren:-moz-tree-cell-text(primary, selected, current, focus) {
+  border: 1px dotted #666699;
 }
 */
 
 /* ::::: lines connecting cells ::::: */
 
+tree[selstyle="primary"] > treechildren:-moz-tree-line,
 treechildren:-moz-tree-line {
   visibility: hidden;
 }
@@ -124,6 +158,7 @@ treechildren:-moz-tree-separator {
 
 /* ::::: drop feedback ::::: */
 
+tree[selstyle="primary"] > treechildren:-moz-tree-cell-text(primary, dropOn),
 treechildren:-moz-tree-cell-text(dropOn) {
   background-color: #008484;
   color: #FFCF00;

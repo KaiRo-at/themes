@@ -89,8 +89,8 @@
   list-style-image: url("chrome://messenger/skin/messengercompose/attach.gif");
 }
 
-#button-attach:hover,
-#button-attach:hover:active {
+#button-attach[buttonover="true"],
+#button-attach[buttondown="true"] {
   list-style-image: url("chrome://messenger/skin/messengercompose/attach-hover.gif");
 } 
 
@@ -128,8 +128,8 @@
   list-style-image: url("chrome://messenger/skin/messengercompose/savemsg.gif");
 }
 
-#button-save:hover,
-#button-save:hover:active {
+#button-save[buttonover="true"],
+#button-save[buttondown="true"] {
   list-style-image: url("chrome://messenger/skin/messengercompose/savemsg-hover.gif");
 } 
 

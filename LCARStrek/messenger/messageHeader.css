@@ -164,9 +164,14 @@
   -moz-box-pack: center;
 }
 
+#collapsedsubjectValue {
+  background-color: transparent;
+}
+
 #collapseddateValue {
-  margin-left: 0 .5em;
+  margin-left: .5em;
   text-align: right;
+  background-color: transparent;
 }
 
 #collapsedfromBox {
@@ -178,17 +183,18 @@
 }
 
 .collapsedHeaderDisplayName { 
-  margin: 0 .5em 0 .7em;
-  min-height: 16px;
+  margin: 2px .5em 2px .7em;
+  min-height: 12px;
   font-weight: bold; 
 }
 
-.collapsedHeaderValue {
-  margin: 0;
+.collapsedHeaderValue,
+#collapsedfromValue {
+  margin: 2px 0px !important;
 }
 
-.collapsedAttachmentButton
-{
+.collapsedAttachmentButton {
   list-style-image: url("chrome://messenger/skin/icons/message-mail-attach.gif");
   margin-right: .5em;
+  margin-top: 1px;
 }
