@@ -47,8 +47,7 @@
       max-width           : 10em;
     }
     
-  .button-toolbar.bookmark-item > .menubutton-toolbar-single-internal-box
-      > .menubutton-toolbar-single-text 
+  .button-toolbar.bookmark-item > .menubutton-toolbar-single-internal-box > .menubutton-toolbar-single-text 
     {
       max-width           : 8em !important;
     }
@@ -86,5 +85,6 @@
       background-color    : #008484;
       color               : #FFCF00;
     }
+
 
 

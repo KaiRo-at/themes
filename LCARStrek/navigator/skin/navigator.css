@@ -166,11 +166,6 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
     list-style-image      : url("chrome://communicator/skin/bookmarks/home.gif");
   }
 
-.menuitem-iconic
-  {
-    padding               : 2px;
-  }
-
 #print-button 
   {
     list-style-image      : url("chrome://global/skin/print.gif");
@@ -234,6 +229,7 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
     margin-left           : 3px;
     margin-right          : 5px;
   }
+
 
 
 

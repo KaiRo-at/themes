@@ -4,6 +4,7 @@
   progressmeter[mode="undetermined"] > .progressmeter-internal-box
     {
       background-image    : url(chrome://global/skin/progressmeter-busy.gif);
+      background-color    : #008484;
     }
  
   progressmeter[mode="undetermined"] > .progressmeter-internal-box > .progressmeter-stack > .progressmeter-progressbar 
@@ -22,7 +23,7 @@
   .progressmeter-statusbar 
     {
 /*      border              : 1px solid #FF9F00; */
-      margin              : 1px 4px 1px 4px;
+      margin              : 0px 4px 0px 4px;
       padding             : 1px;
     }
     
@@ -50,7 +51,7 @@
 /* progress indicators */
   .progress-bar 
     {
-      background-color    : #FFCF00;
+      background-color    : #008484;
     }
 
 /*  
@@ -62,7 +63,7 @@
 
   .progressmeter-progressbar[statusbar="true"] > .progress-bar
     {
-      background-color    : #FFCF00;
+      background-color    : #008484;
       border-right        : none;
     }
 
@@ -72,6 +73,10 @@
       background-color    : black;
     }
 */
+
+
+
+
 
 
 

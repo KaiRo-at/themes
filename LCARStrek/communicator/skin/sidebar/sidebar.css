@@ -27,7 +27,13 @@
 
 #sidebar-splitter {
     border-top: none;
+    border-bottom: none;
 }
+
+#sidebar-splitter[state="collapsed"] {
+    margin-left: 0px;
+}
+
 
 #sidebar-box {
     margin-bottom: 3px;
@@ -172,4 +178,5 @@
       color               : #FFCF00;
       font-weight         : bold;
     }
+
 

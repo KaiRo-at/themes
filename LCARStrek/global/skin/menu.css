@@ -168,26 +168,6 @@ menuitem[checked="true"][type="radio"][menuactive="true"]
     list-style-image      : url("chrome://global/skin/menu-radio-hover.gif");
   }
 
-/** Tooltips (tooltip <popup> element)
- *  class="tooltip"
- **/
-.tooltip
-  {
-    -moz-border-radius    : 3px;
-    background-color      : #9C9CFF;
-    border                : 1px solid #FFCF00;
-    color                 : #000000;
-    font                  : smaller;
-    padding               : 3px;
-  }
-
-/* .tooltip html */
-html#TOOLTIP-tooltipText
-  {
-    padding               : 0px;
-    margin                : 0px;
-  }
-
 /* ::::: autocomplete menuitems ::::: */
 
 .autocomplete-history-popup > menuitem
@@ -201,7 +181,7 @@ html#TOOLTIP-tooltipText
   menulist > menupopup > menuitem,
   menulist > menupopup > menu
     {
-      padding             : 0px 4px !important;
+      padding             : 0px 4px !important; 
       min-width           : 0px;  /* should be in content*/
       max-width           : none; /* should be in content*/
     }
@@ -231,3 +211,4 @@ html#TOOLTIP-tooltipText
       width               : 0px;
       border              : none;
     }
+

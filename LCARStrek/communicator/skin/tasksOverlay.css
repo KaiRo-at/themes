@@ -1,50 +1,37 @@
 #mini-nav 
   {
-	  list-style-image      : url("chrome://global/skin/taskbar-navigator.gif");
+    list-style-image      : url("chrome://global/skin/taskbar-navigator.gif");
   }
 
 #mini-mail 
   {
-	  list-style-image      : url("chrome://global/skin/taskbar-mail.gif");
+    list-style-image      : url("chrome://global/skin/taskbar-mail.gif");
   }
 
 #mini-mail[BiffState="NewMail"]
   {
-	  list-style-image      : url("chrome://global/skin/taskbar-mailnew.gif");
+    list-style-image      : url("chrome://global/skin/taskbar-mailnew.gif");
   }
 
 #mini-addr 
   {
-	  list-style-image      : url("chrome://global/skin/taskbar-addressbook.gif");
+    list-style-image      : url("chrome://global/skin/taskbar-addressbook.gif");
   }
 
 #mini-comp 
   {
-	  list-style-image      : url("chrome://global/skin/taskbar-composer.gif");
-  }
-
-#taskbar
-  {
-    margin-top            : 0px;
-    padding-left          : 10px;
-    min-height            : 18px;
-    -moz-user-focus            : ignore;
+    list-style-image      : url("chrome://global/skin/taskbar-composer.gif");
   }
 
 .taskbutton 
   {
-	  margin-right          : 1em !important;
+    margin-right          : 5px;
   }
 
+/*
 .taskbarspacer 
   {
     min-width             : 0.3em;
     width                 : 1em;
-  }
-
-/*
-#taskbar > toolbargrippy
-  {
-    display               : none;
   }
 */

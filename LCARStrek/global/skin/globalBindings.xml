@@ -6,16 +6,16 @@
           xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 
-  <binding id="status-bar" extends="xul:box">
+  <binding id="statusbar" extends="xul:statusbar">
     <content>
-      <xul:box>
-        <xul:image class="statusbar-left"/>
-        <xul:box autostretch="never" flex="1">
-          <children/>
-        </xul:box>
-        <xul:image class="statusbar-right"/>
+      <xul:box class="statusbar-left"/>
+      <xul:box class="statusbar-center" autostretch="never" flex="1">
+        <children/>
       </xul:box>
+      <xul:box class="statusbar-right"/>
     </content>
   </binding>
 
 </bindings>
+
+
