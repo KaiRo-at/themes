@@ -23,7 +23,7 @@
  *   Robert Kaiser (KaiRo@KaiRo.at)
  */
 
-/* ===== msgHdrViewOverlay.css ==========================================
+/* ===== messageHeader.css ==============================================
   == Styles for the header toolbars of a mail message.
   ======================================================================= */
 
@@ -110,13 +110,11 @@ mail-emailaddress
 .showMoreAddressesButton 
   {
     list-style-image      : url("chrome://global/skin/twisty-closed.gif");
-/*    list-style-image      : url("chrome://messenger/skin/more.gif"); */
   }
 
 .showFewerAddressesButton 
   {
     list-style-image      : url("chrome://global/skin/twisty-open.gif");
-/*    list-style-image      : url("chrome://messenger/skin/less.gif"); */
   }
 
 html.headerValue   
@@ -212,3 +210,4 @@ text.collapsedHeaderDisplayName
 [hide] {
   visibility: hidden;
 }
+
