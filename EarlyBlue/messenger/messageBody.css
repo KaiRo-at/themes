@@ -65,13 +65,13 @@ headerdisplayname {
   white-space: pre;
 }
 
-table[name="header-part1"] {
+.header-part1 {
   border-left: 4px solid #EFEFEF;
   background-color: #EFEFEF;
 }
 
-table[name="header-part2"],
-table[name="header-part3"] {
+.header-part2,
+.header-part3 {
   border: 4px solid #DEDEDE;
   background-color: #DEDEDE;
 }
@@ -121,6 +121,10 @@ div.headerdisplayname {
 
 .moz-text-plain[graphical-quote="true"] .moz-txt-citetags {
   display: none;
+}
+
+span.moz-txt-underscore {
+  text-decoration: underline;
 }
 
 /* ::::: signature ::::: */
