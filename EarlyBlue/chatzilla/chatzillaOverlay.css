@@ -11,15 +11,13 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is ChatZilla.
  *
- * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
- * the Initial Developer. All Rights Reserved.
+ * The Initial Developer of the Original Code is Andreas Premstaller.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *  Robert Ginda <rginda@ndcico.com>
+ *  Andreas Premstaller <andreas.premstaller@uibk.ac.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,58 +33,10 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-.tabbrowser-strip {
-  padding-bottom: 1px;
-  border-bottom: 1px solid #666699;
+#mini-irc {                                                           
+  list-style-image: url("chrome://chatzilla/skin/images/taskbar-irc.gif");
 }
 
-tabpanels {
-  -moz-appearance: none;
-}
-
-.tabbrowser-tabs {
-  padding-top: 1px;
-}
-
-.tabs-left,
-.tabs-right {
-  width: 0px;
-}
-
-.tab-icon {
-  margin-top: 1px;
-  margin-right: 3px;
-  width: 16px;
-  height: 16px;
-  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item16.gif"); 
-}
-
-tab[busy] > .tab-icon {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
-}
-
-tabbrowser > tabbox > tabpanels {
-  border: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-/* ::::: close & new tab buttons ::::: */
-
-.tabs-closebutton {
-  margin-bottom: 3px;
-  margin-right: 2px;
-  list-style-image: url("chrome://global/skin/icons/close-button.gif");
-}
-
-.tabs-closebutton > .toolbarbutton-icon {
-  margin: 0;
-}
-
-.tabs-newbutton {
-  margin: 0px;
-  padding: 0px;
-  list-style-image: url("chrome://global/skin/icons/tab-new.gif");
+#tasksMenuIRC {
+  list-style-image: url("chrome://chatzilla/skin/images/chatzilla-16.gif");
 }

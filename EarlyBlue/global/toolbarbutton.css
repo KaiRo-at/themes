@@ -160,6 +160,7 @@ toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-men
 /* .......... dropmarker .......... */
 
 .toolbarbutton-menubutton-dropmarker {
+  -moz-box-align: start;
   -moz-box-align: center;
   padding: 0px 1px 15px 1px;
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
