@@ -19,6 +19,7 @@
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
+ *  Joe Hewitt <hewitt@netscape.com>                                            
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
@@ -37,27 +38,18 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.engine[loading="true"]  {
-  list-style-image: url("chrome://global/skin/icons/loading.gif") ! important ;
+/* ===== search.css =====================================================
+  == Styles specific to the Search sidebar panel.
+  ======================================================================= */
+
+#stopButton {
+  list-style-image: url("chrome://communicator/skin/icons/loading.gif");
 }
 
-.iconic {
-  list-style-image: url("resource:/res/rdf/document.gif") ! important ;
-}
+/* :::: undo regular search listbox selection look :::: */
 
-.searchresult-item[selected="true"] > .searchresult {
-  background-color: transparent;
-  color: #FFCF00;
-}
- 
-.groove-bottom {
-  border-bottom: 1px solid #9C9CFF;
-}   
-  
-#results-splitter {
-  border: 1px solid #9C9CFF;
-}
-
-#searchButton[stop="true"] {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
+.searchresult-item[selected="true"] {
+  border: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
 }

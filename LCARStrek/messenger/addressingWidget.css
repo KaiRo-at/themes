@@ -39,43 +39,41 @@
 
 /* ::::: addressing widget ::::: */
   
-#addressingWidgetTree {
-  height: 80px;
-  width: 0px;
+#addressingWidget {
+/*  height: 80px; */
+  margin-left: 0px;
+  margin-right: 0px;
   -moz-user-focus: none;
-/*  background-color: #FFFFFF; */
+  width: 0px;
 }  
   
-#listcol-addressingWidget {
+#typecol-addressingWidget {
   width: 9em;
   border-right: 1px solid #9C9CFF;
 }
   
-#addressingWidgetTree > treechildren > treeitem > treerow,
-#addressingWidgetTree > treechildren > treeitem[selected="true"] > treerow {
+#addressingWidget > listitem,
+.addressingWidgetItem,
+.dummyrow {
   border: none;
   background-color: inherit;
   color: inherit;
 }
 
-.treecell-addressingWidget {
+.addressingWidgetCell {
   border-bottom: 1px solid #9C9CFF;
-  padding: 0px !important;
+  padding: 0px;
 }
   
-.treecell-addressingWidget:first-child {
-  border-bottom: none;
-}
-
-.textbox-addressingWidget {
-  -moz-box-align: center;
+.addressingWidgetCell:first-child {
+  border-top: none;
 }
 
 .dummy-row-cell:first-child {
-  border-bottom: 1px solid #9C9CFF;
+  border-top: none;
 }
 
 .person-icon {
+  margin: 0px 3px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/abcard.gif");
-  margin: 0px 3px 0px 3px;
 }

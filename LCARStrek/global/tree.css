@@ -37,250 +37,223 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/******** Tree widget **********/ 
+/* ===== tree.css =======================================================
+  == Styles used by the XUL tree element.
+  ======================================================================= */
 
-/** basic tree ****************************************************
- *  basic tree widget for use in main windows where no decoration
- *  is required.
- **/
-tree 
-  {
-    -moz-border-radius    : 5px;
-    background-color      : #000000;
-    border                : 1px solid #9C9CFF;
-    border-spacing        : 0px;
-/*    margin                : 1px 3px 2px 3px; */
-  }
+/* ::::: tree ::::: */
 
-.tree-container-treerows[dragover="true"][dragdroptree="true"]
-  {
-  }  
+tree {
+  -moz-border-radius: 5px;
+  border-spacing: 0px;     
+  border: 1px solid #9C9CFF;
+  background-color: #000000;
+  color: #FF9F00;
+}
+
+/* ::::: tree rows ::::: */
+
+treechildren:-moz-tree-row {
+  border: 1px solid transparent;
+  height: 18px;
+}
+
+treechildren:-moz-tree-row(selected) {
+  background-color: #008484;
+  color: #FFCF00;
+}
+
+treechildren:-moz-tree-row(selected, focus) {
+  background-color: #008484;
+  color: #FFCF00;
+}
+
+treechildren:-moz-tree-row(current, focus) {
+  border: 1px dotted #008484;
+}
+
+/* ::::: tree cells ::::: */
+
+treechildren:-moz-tree-cell {
+  padding: 0px 0px 1px 2px;
+}
+
+treechildren:-moz-tree-cell-text {
+  color: inherit;
+  border: 2px solid transparent;
+}
+
+/*
+treechildren:-moz-tree-cell-text(selected) {
+  color: #FFFFFF;
+}
+
+treechildren:-moz-tree-cell-text(selected, focus) {
+  color: #FFFFFF;
+}
+*/
+
+/* ::::: lines connecting cells ::::: */
+
+treechildren:-moz-tree-line {
+  visibility: hidden;
+}
+
+/*
+treechildren:-moz-tree-line {
+  border: 1px dotted grey;
+}
+
+treechildren:-moz-tree-line(selected) {
+  border: 1px dotted black;
+}
+*/
+
+/* ::::: tree separator ::::: */
+
+treechildren:-moz-tree-separator {
+  border: 1px solid #9C9CFF;
+}
+
+/* ::::: drop feedback ::::: */
+
+treechildren:-moz-tree-cell-text(dropOn) {
+  background-color: #008484;
+  color: #FFCF00;
+}
+
+treechildren:-moz-tree-drop-feedback {
+  background-color: #008484;
+  width: 50px;
+  height: 2px;
+  margin-left: 5px;
+}
+
+treechildren:-moz-tree-drop-feedback(selected) {
+  background-color: #FFCF00;
+}
+
+/* ::::: tree columns ::::: */
+
+treecol { 
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  border: 1px solid #FF9F00;
+  background-color: #9C9CFF;
+  color: #000000;
+  padding: 1px 4px;
+}
+
+treecolpicker { 
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  border: 1px solid transparent;
+  background-color: #000000;
+  padding: 1px 0px;
+}  
+
+.treecol-image {
+  padding: 1px;
+}
+
+.treecol-text {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+/* ..... internal box ..... */
+
+treecol:hover:active {
+  border: 1px solid #FFCF00;
+  padding: 2px 3px 0px 5px;
+}
   
-.tree-container-treerows
-  {
-  }  
+treecolpicker:hover {
+  background-color: #FFCF00;
+}
 
-.tree-container-treerows[dragdroptree="true"]
-  {
-  }  
+treecolpicker:hover:active {
+  border: 1px solid #FFCF00;
+  background-color: #FF9F00;
+}
+
+.treecol-image:hover:active {
+  padding: 2px 0px 0px 2px;
+}
+
+/* ::::: column drag and drop styles ::::: */
+
+treecol[dragging="true"] {
+  border: 1px solid transparent;
+  background-color: #008484;
+  color: #000000;
+}
+
+treecol[insertafter="true"] {
+  border-right: 1px solid #FFCF00;
+}
+
+treecol[insertbefore="true"] {
+  border-left: 1px solid #FFCF00;
+}
+
+treechildren:-moz-tree-column(insertbefore) {
+  border-left: 1px solid #FFCF00;
+}
+
+treechildren:-moz-tree-column(insertafter) {
+  border-right: 1px solid #FFCF00;
+}
+
+/* ::::: sort direction indicator :::::  */
+
+.treecol-sortdirection {
+  list-style-image: none;
+}
+
+.sortDirectionIndicator[sortDirection="ascending"] .treecol-sortdirection {
+  list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
+}
+
+.sortDirectionIndicator[sortDirection="descending"] .treecol-sortdirection {
+  list-style-image: url("chrome://global/skin/tree/sort-desc.gif");
+}
+
+/* ::::: column picker :::::  */
+
+.outliner-columnpicker-icon {
+  list-style-image: url("chrome://global/skin/tree/columnpicker.gif");
+}
+
+treecolpicker:hover > .outliner-columnpicker-icon,
+treecolpicker:hover:active > .outliner-columnpicker-icon {
+  list-style-image: url("chrome://global/skin/tree/columnpicker-hover.gif");
+}
+
+/* ::::: twisty :::::  */
+
+treechildren:-moz-tree-twisty {
+  padding-right: 2px;
+  width: 12px; /* The image's width is 12 pixels */
+  list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
+}
   
-treeitem[selected="true"] > treerow
-  {
-    background-color      : #008484;
-  }
+treechildren:-moz-tree-twisty(open) {
+  width: 12px; /* The image's width is 12 pixels */
+  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+}
 
-treeitem 
-  {
-    list-style-image      : none;
-  }
-  
-treerow 
-  {
-    border                : 1px solid transparent;
-  }
-  
-treehead > treeitem > treerow,
-treehead > treerow 
-  {
-    border                : none;
-  }
-  
-treecell 
-  { 
-    padding               : 0px 0px 1px 2px;
-    white-space           : nowrap;
-  } 
+treechildren:-moz-tree-indentation {
+  width: 10px;
+}
 
-tree:focus > treechildren treeitem[selected="true"] > treerow,
-treeitem[dd-dropon="true"] > treerow
-  {
-    background-color      : #008484;
-  }
+/* ::::: gridline style ::::: */
 
-tree:focus > treechildren treeitem[selected="true"][current="true"] > treerow
-  {
-    border                : 1px dotted #008484;
-  }
+treechildren.gridlines:-moz-tree-cell {
+  border-right: 1px solid green;
+  border-bottom: 1px solid green;
+}
 
-.treecell-header-image 
-  {
-    list-style-image      : inherit;
-  }
-  
-.treecell-header,
-.treecell-inset-header,
-.treecell-header-image
-  { 
-    border                : 1px solid #000000;
-    padding               : 0px;
-    background-color      : #9C9CFF; 
-    color                 : #000000;
-  }
-
-.treecell-header-box,
-.treecell-header-image-box 
-  {
-  }  
-
-.treecell-header-box
-  {
-    padding               : 0px 4px 0px 4px;
-  }
-
-.treecell-header-text
-  {
-    margin                : 0px;
-  }
-
-.treecell-header-image-box 
-  {
-    padding               : 0px 1px 0px 1px;
-  }
-  
-.treecell-header:hover:active,
-.treecell-header-image:hover:active,
-.treecell-inset-header:hover:active 
-  {
-    border                : 1px solid #FFCF00;
-  }
-
-.treecell-header:hover:active > .treecell-header-box,
-.treecell-inset-header:hover:active > .treecell-header-box,
-.treecell-header-image:hover:active > .treecell-header-image-box
-  {
-    border-top            : 1px solid transparent;
-    border-right          : none;
-    border-bottom         : none;
-    border-left           : 1px solid transparent;
-  }
-  
-.treecell-header:hover:active > .treecell-header-box,
-.treecell-inset-header:hover:active > .treecell-header-box
-  {
-    padding               : 1px 4px 0px 5px;
-  }
-  
-.treecell-header-image:hover:active > .treecell-header-image-box
-  {
-    padding               : 1px 1px 0px 2px;
-  }
-
-.treecell-image 
-  {
-    padding               : 0px;
-  }
-    
-/* slimline sidebar treeheaders */  
-.treecell-header.treecell-header-sidebarpanel,
-.treecell-inset-header.treecell-header-sidebarpanel
-  {
-    padding               : 0px 1px 1px 3px;
-  }
-
-.treecell-header-sidebarpanel > .treecell-header-box
-  {
-  }
- 
-/** class="propertylist" ******************************************
- *  class for cells in grid-formatted property lists.
- **/
- 
-treecell.propertylist 
-  {
-    border-right          : 1px solid #9C9CFF;
-    border-bottom         : 1px solid #9C9CFF;
-    padding-left          : 5px;
-  }
-
-.tree-cell-primary-icon,
-.tree-cell-primary-icon-inline-edit-folder
-  {
-    list-style-image      : inherit;
-    padding-right         : 2px;
-  }
-
-.tree-cell-icon 
-  {
-    list-style-image      : inherit;
-    padding-right         : 2px;
-  }
-
-.tree-cell-twisty 
-  {
-    list-style-image      : url("chrome://global/skin/tree/twisty-closed.gif");
-    -moz-user-focus       : ignore;
-    padding-right         : 2px;
-  }
-
-.treecell-indent > .tree-cell-primary-icon 
-  {
-    padding-left          : 11px;
-  }
-
-treeitem[container="true"] > treerow > .treecell-indent > .tree-cell-primary-icon 
-  {
-    padding-left          : 0px;
-  }
-
-.tree-cell-twisty[disabled="true"] 
-  {
-    list-style-image      : none;
-  }
-
-treeitem[container="true"][open="true"] > treerow > treecell > .tree-cell-twisty 
-  {
-    list-style-image      : url("chrome://global/skin/tree/twisty-open.gif");
-  }
-
-treeitem[empty="true"] > treerow > treecell > .tree-cell-twisty {               
-    visibility            : hidden;
-}   
-
-/* tree header with sort direction indicators */
-
-.tree-header-sortdirection 
-  {
-    list-style-image      : none;
-  }
-
-.sortDirectionIndicator[sortDirection="ascending"]  > .treecell-header-box > .tree-header-sortdirection 
-  {
-    list-style-image      : url("chrome://global/skin/tree/sort-asc.gif");
-  }
-
-.sortDirectionIndicator[sortDirection="descending"] > .treecell-header-box > .tree-header-sortdirection 
-  {
-    list-style-image      : url("chrome://global/skin/tree/sort-desc.gif");
-  }
-
-treecol[sortDirection="true"],
-treecol[sortActive="true"]
-  {
-    background-color       : #008484;
-  }
-
-/* column selection popup menu icon */
-
-.treecell-popup-icon
-  {
-    list-style-image      : url("chrome://global/skin/tree/columnpicker.gif");
-  }
-
-/* Inline Editable Treecells */
-
-treerow[mode="inline-edit"] 
-  {
-    border-top            : none !important;
-    border-bottom         : none !important;
-    background-color      : transparent !important;
-  }
-
-.inline-edit-cell-box
-  {
-    margin-left           : 2px;
-  }
-
-.inline-edit-cell-box[mode="edit"] 
-  {
-    margin-left           : 0px;
-  }
+treechildren.gridlines:-moz-tree-row {
+  border: none;
+}

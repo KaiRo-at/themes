@@ -43,6 +43,14 @@
   margin: 0px 5px 5px 5px; */
 }
   
+.box-inset {
+  -moz-border-radius: 3px;
+  margin: 2px 4px;
+  border: 1px solid #9C9CFF;
+  background-color: #000000;
+  color: #FF9F00;
+}
+
 /* formatting */
 .groove-top {
   border-top: 2px groove #FF9F00;  

@@ -244,41 +244,13 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   list-style-image: none;
 } 
 
-/*
-#page-proxy-button[pageproxystate="valid"]:hover  {
-  list-style-image: url("chrome://communicator/skin/bookmarks/location-hover.gif");
-}
-
-#page-proxy-button[pageproxystate="valid"]:hover:active {
-  list-style-image: url("chrome://communicator/skin/bookmarks/location-act.gif");
-}
-
-#page-proxy-button[pageproxystate="invalid"] {
-  cursor: default;
-  list-style-image: url("chrome://communicator/skin/bookmarks/location-dis.gif");
-}
-*/
-
 /* ::::: autocomplete ::::: */
 
-/*
-.autocomplete-history-dropmarker {
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  -moz-border-right-colors: ThreeDShadow;
-  -moz-border-bottom-colors: ThreeDShadow;
-}
-
-.autocomplete-history-button:hover {
-  background-color: #FFCF00;
-}
-*/
-
-.autocomplete-outlinerbody:-moz-outliner-cell-text(value) {
+.autocomplete-treebody:-moz-tree-cell-text(value) {
   padding-left: 13px;
 }
 
-.autocomplete-outlinerbody:-moz-outliner-cell-text(comment) {
+.autocomplete-treebody:-moz-tree-cell-text(comment) {
   color: #E7ADE7;
 /*  font-style: italic; */
 }
