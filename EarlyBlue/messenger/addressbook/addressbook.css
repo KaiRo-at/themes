@@ -180,7 +180,7 @@ html|p {
   border-left: 1px solid ThreeDShadow; */
 }
 
-#dirTree, #abResultsOutliner { 
+#dirTree, #abResultsTree { 
   border: none;
   margin: 0px;
 }

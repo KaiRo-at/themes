@@ -31,13 +31,11 @@
 /* ::::: listbox ::::: */
 
 listbox {
-  margin: 2px 4px;
+  margin: 1px 2px;
+  padding: 0px;
   border: 1px inset #CCD0DD;
   background-color: #FFFFFF;
   color: #000000;
-}
-
-listrows {
 }
 
 /* ::::: listitem ::::: */
@@ -89,11 +87,11 @@ listheader[sortable="true"]:hover:active {
   list-style-image: none;
 }
 
-.listheader-sortdirection[sortdirection="ascending"] {
+.listheader-sortdirection[sortDirection="ascending"] {
   list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
 }
 
-.listheader-sortdirection[sortdirection="descending"] {
+.listheader-sortdirection[sortDirection="descending"] {
   list-style-image: url("chrome://global/skin/tree/sort-desc.gif");
 }
 
@@ -109,16 +107,32 @@ listheader[sortable="true"]:hover:active {
   margin-right: 2px;
 }
 
+.listcell-label[disabled="true"] {
+  color: #808080;
+}
+
 /* ::::: listcell checkbox ::::: */                                             
 
 .listcell-check {
+  -moz-box-align: center;
   margin: 0px 2px;
   border: 1px solid #CCD0DD;
   padding: 2px;
-  width: 7px;
+  min-width: 12px;
+  min-height: 12px;
+  background: #FFFFFF no-repeat 50% 50%;
 }
 
 .listcell-check[checked="true"] {
-  width: 0px;
-  list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+  background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
 }
+
+.listcell-check[disabled="true"] {
+  border-color: #808080;
+  background-image: url("chrome://global/skin/checkbox/cbox-disabled.gif");
+}
+
+.listcell-check[disabled="true"][checked="true"] {
+  background-image: url("chrome://global/skin/checkbox/cbox-check-disabled.gif");
+}
+

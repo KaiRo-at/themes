@@ -56,14 +56,14 @@
   height: 0px;
 }
 
-/* ..... outliner adjustments ..... */
+/* ..... tree adjustments ..... */
  
-#folderOutliner {
+#folderTree {
   border: none;
   min-width: 1px;
 }
 
-#threadOutliner {
+#threadTree {
   border: none;
   min-width: 1px;
 }

@@ -42,7 +42,14 @@
   border: 1px inset #CCD0DD;
   margin: 0px 5px 5px 5px;
 }
-  
+
+.box-inset {
+  margin: 2px 4px;
+  border: 1px inset #CCD0DD;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
 /* formatting */
 .groove-top {
   border-top: 2px groove #CCD0DD;  
