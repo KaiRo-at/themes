@@ -69,7 +69,7 @@ window {
 }
 
 .view-button {
-  color: #000000;
+  /* do NOT set color, at least not without background. :) */
 }
 
 .view-button[state="current"] {
@@ -101,6 +101,10 @@ window {
   padding-right: 10px;
 }
 
+#user-list {
+  margin: 0px;
+}
+
 #server-nick {
   padding-top: 5px;
 }
@@ -128,20 +132,66 @@ window {
   border: 1px inset #CCD0DD;
 }
 
-/* op image column */
-treechildren::-moz-tree-image(usercol-op, state-true) {
-  list-style-image: url(chrome://chatzilla/skin/images/is-op.gif)
+treecol {
+  border: none;
 }
 
-treechildren::-moz-tree-image(usercol-op, state-false) {
-  list-style-image: url(chrome://chatzilla/skin/images/isnt-op.gif)
+treechildren::-moz-tree-cell-text {
+  padding-top: 1px;
 }
 
-/* voice image column */
-treechildren::-moz-tree-image(usercol-voice, state-true) {
-  list-style-image: url(chrome://chatzilla/skin/images/is-voice.gif)
+/* The userlist can be in one of two state.  In "symbol", the user's
+ * channel mode is shown as a @ or + image, while in "graphic" mode, the
+ * image is one of the LED images.
+ */
+
+/* no mode */
+treechildren::-moz-tree-image {
+  list-style-image: url(chrome://chatzilla/skin/images/no-symbol.gif);
+  margin-right: 3px;
 }
 
-treechildren::-moz-tree-image(usercol-voice, state-false) {
-  list-style-image: url(chrome://chatzilla/skin/images/isnt-voice.gif)
+#user-list[mode="graphic"] treechildren::-moz-tree-image {
+  list-style-image: url(chrome://chatzilla/skin/images/no-graphic.gif);
+}
+
+/* voice */
+treechildren::-moz-tree-image(voice-true) {
+  list-style-image: url(chrome://chatzilla/skin/images/voice-symbol.gif);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(voice-true) {
+  list-style-image: url(chrome://chatzilla/skin/images/voice-graphic.gif);
+}
+
+/* half-chanop */
+treechildren::-moz-tree-image(halfop-true) {
+  list-style-image: url(chrome://chatzilla/skin/images/halfop-symbol.gif);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(halfop-true) {
+  list-style-image: url(chrome://chatzilla/skin/images/halfop-graphic.gif);
+}
+
+/* chanop */
+treechildren::-moz-tree-image(op-true) {
+  list-style-image: url(chrome://chatzilla/skin/images/op-symbol.gif);
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(op-true) {
+  list-style-image: url(chrome://chatzilla/skin/images/op-graphic.gif);
+}
+
+.colorGrid {
+    width: 24px;
+    height: 16px;
+    border: 1px solid black;
+    -moz-box-align: center;
+    -moz-box-pack: center;
+}
+
+#colorTooltip {
+    padding: 0px;
+    -moz-box-align: center;
+    -moz-box-pack: center;
 }

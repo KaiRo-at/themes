@@ -41,28 +41,8 @@ a.chatzilla-link:visited {
     color: #666699;
 }
 
-.chatzilla-highlight[name="Bold"] {
-    font-weight: bold;
-}
-
-.chatzilla-highlight[name="Italic"] {
-    font-style: italic;
-}
-
-.chatzilla-highlight[name="Large"] {
-    font-size: 12pt;
-}
-
-.chatzilla-highlight[name="Small"] {
-    font-size: 8pt;
-}
-
-.chatzilla-highlight[name="SmallCap"] {
-    font-variant: small-caps;
-}
-
-.msg-data[msg-type="ACTION"] {
-    font-style: italic;
+.header-outer {
+    background-color: white;
 }
 
 .msg-type[msg-type="JOIN"],
