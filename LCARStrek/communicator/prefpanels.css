@@ -46,14 +46,14 @@
   height: 80px;
 }  
 
-.themesLink {
+*|*.themesLink {
   margin-left: 5px;
   text-decoration: normal;
   color: #FF9F00;
   cursor: pointer;
 }
 
-.themesLink:hover {
+*|*.themesLink:hover {
   text-decoration: underline;
   color: #9C9CFF;
 }

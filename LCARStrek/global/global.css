@@ -138,6 +138,7 @@ iframe {
 
 statusbar {
   margin-top: 3px;
+  min-width: 1px;
 }
 
 .statusbar-center {
