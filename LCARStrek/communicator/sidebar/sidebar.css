@@ -90,6 +90,8 @@
 
 #sidebar-panel-picker {
   padding: 3px 1px 3px 1px;
+  /** bugzilla 89144 - must be able to access tabs dropdown **/
+  -moz-user-focus:normal !important;
 }
 
 /* ::::: sidebar panel ::::: */

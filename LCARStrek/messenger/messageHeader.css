@@ -124,6 +124,11 @@
   background-color: #FFCF00;
 }
 
+.emailDisplayImage {
+  padding-left: 2px;
+  -moz-box-pack: end;
+}
+
 /* ::::: email address twisty ::::: */
 
 .addresstwisty {

@@ -82,7 +82,11 @@ textbox[readonly="true"] {
 /* ..... disabled state ..... */
 
 textbox[disabled="true"] {
-  border: 1px solid #8050B0;
+  border: 2px solid;
+  -moz-border-top-colors: transparent #8050B0;
+  -moz-border-right-colors: transparent #8050B0;
+  -moz-border-bottom-colors: transparent #8050B0;
+  -moz-border-left-colors: transparent #8050B0;
   cursor: default;
   color: #8050B0;
 } 

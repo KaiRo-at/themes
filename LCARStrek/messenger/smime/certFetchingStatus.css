@@ -11,11 +11,11 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is Mozilla Communicator.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 2002
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
@@ -35,60 +35,6 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+@import url("chrome://messenger/skin/");
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-.tabbrowser-strip {
-  padding-bottom: 1px;
-  border-bottom: 1px solid #FF9F00;
-}
-
-.tabbrowser-tabs {
-  padding-top: 1px;
-}
-
-.tabs-left,
-.tabs-right {
-  width: 0px;
-}
-
-.tab-icon {
-  margin-top: 1px;
-  margin-right: 3px;
-  width: 16px;
-  height: 16px;
-  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item16.gif"); 
-}
-
-tab[busy] > .tab-icon {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
-}
-
-tabbrowser > tabbox > tabpanels {
-  border: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-/* ::::: close & new tab buttons ::::: */
-
-.tabs-closebutton {
-  margin-bottom: 2px;
-  margin-right: 2px;
-  list-style-image: url("chrome://global/skin/icons/close-button.gif");
-}
-
-.tabs-closebutton:hover {
-  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
-}
-
-.tabs-closebutton > .toolbarbutton-icon {
-  margin: 0;
-}
-
-.tabs-newbutton {
-  margin: 0px;
-  margin-top: 2px;
-  margin-right: 1px;
-  padding: 0px;
-  list-style-image: url("chrome://global/skin/icons/tab-new.gif");
-}

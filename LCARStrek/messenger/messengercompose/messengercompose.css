@@ -198,9 +198,12 @@ treechildren:-moz-tree-image(remote-err) {
   margin-left: 0px;
 }
 
-#msgIdentity,
-#msgSubject {
+#msgIdentity {
   margin-right: 0px;
+}
+
+#msgSubject {
+  margin-right: -1px;
 }
 
 #attachmentBucket {
