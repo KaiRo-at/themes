@@ -49,6 +49,10 @@
    == Styles shared everywhere throughout the Communicator suite.
    ========================================================================== */
 
+.toolbar-primary {
+  -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-primary");
+}
+
 #offline-status[offline="true"] {
   list-style-image: url("chrome://communicator/skin/icons/offline.gif");
 }

@@ -71,6 +71,60 @@
   display: none;
 }
 
+/* ::::: small primary toolbar buttons ::::: */
+
+.toolbarbutton-1[buttonstyle="text"],
+.toolbarbutton-1[buttonstyle="pictures"],
+.toolbarbutton-1[toolbarmode="small"],
+.toolbarbutton-1 > .toolbarbutton-menubutton-button[buttonstyle="text"],
+.toolbarbutton-1 > .toolbarbutton-menubutton-button[buttonstyle="pictures"],
+.toolbarbutton-1 > .toolbarbutton-menubutton-button[toolbarmode="small"] {
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.toolbarbutton-1[buttonstyle="text"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 4px 1px 8px 1px;
+}
+
+.toolbarbutton-1[buttonstyle="pictures"] > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 0px 1px 13px 1px;
+}
+
+.toolbarbutton-1[buttonstyle="text"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[buttonstyle="text"][type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[buttonstyle="text"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 5px 0px 7px 2px;
+}
+
+.toolbarbutton-1[buttonstyle="pictures"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[buttonstyle="pictures"][type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[buttonstyle="pictures"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[toolbarmode="small"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[toolbarmode="small"][type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[toolbarmode="small"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 1px 0px 12px 2px;
+}
+
+.toolbarbutton-1[buttonstyle="text"] > .toolbarbutton-menubutton-dropmarker[disabled="true"] {
+  padding: 4px 1px 8px 1px !important;
+}
+
+.toolbarbutton-1[buttonstyle="pictures"] > .toolbarbutton-menubutton-dropmarker[disabled="true"],
+.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-dropmarker[disabled="true"] {
+  padding: 0px 1px 13px 1px !important;
+}
+
+.toolbarbutton-text[buttonstyle="pictures"],
+.toolbarbutton-icon[buttonstyle="text"] {
+  display: none;
+}   
+                                                                            
+.toolbarbutton-text[buttonstyle="text"] {
+  padding: 4px 0;
+}
+
 /* ::::: standard toolbar buttons ::::: */
 
 .button-toolbar {

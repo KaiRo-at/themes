@@ -103,6 +103,8 @@
   margin: 0em 0em .25em 0em;
   min-width: 50px;
   white-space: normal;
+  color: inherit;
+  background-color: transparent;
 }
 
 .subjectvalue {
