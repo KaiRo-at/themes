@@ -126,15 +126,15 @@ menuitem.bookmark-item {
 /* ::::: bookmark items ::::: */
 
 .bookmark-item  {
-  list-style-image: url("chrome://browser/skin/bookmark-item.gif");
+  list-style-image: url("chrome://browser/skin/icons/bookmark-item.gif");
 }
 
 .bookmark-item[container="true"] {
-  list-style-image: url("chrome://browser/skin/bookmark-folder-closed.gif");
+  list-style-image: url("chrome://browser/skin/icons/bookmark-folder-closed.gif");
 }
 .bookmark-item[open="true"],
 .bookmark-item[container="true"][open="true"] {
-  list-style-image: url("chrome://browser/skin/bookmark-folder-open.gif");
+  list-style-image: url("chrome://browser/skin/icons/bookmark-folder-open.gif");
 }
 
 .groupmark-item {
@@ -142,7 +142,7 @@ menuitem.bookmark-item {
   height: 16px;
   margin: 0px 2px;
   padding: 1px 3px 1px 2px;
-  list-style-image: url("chrome://browser/skin/bookmark-group.gif");
+  list-style-image: url("chrome://browser/skin/icons/bookmark-group.gif");
 }
 
 /* ::::: primary toolbar buttons ::::: */
@@ -221,10 +221,10 @@ toolbar[mode="text"] .toolbarbutton-text {
 }
 
 #home-button {
-  list-style-image: url("chrome://browser/skin/home.gif");
+  list-style-image: url("chrome://browser/skin/icons/home.gif");
 }
 #home-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/home-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/home-disabled.gif");
 }
 
 #print-button {
@@ -268,10 +268,10 @@ toolbar[mode="text"] .toolbarbutton-text {
 }
 
 #bookmarks-button {
-  list-style-image: url("chrome://browser/skin/bookmarks.gif");
+  list-style-image: url("chrome://browser/skin/icons/bookmarks.gif");
 }
 #bookmarks-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/bookmarks-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/bookmarks-disabled.gif");
 }
 
 #history-button {
@@ -321,10 +321,10 @@ toolbar[iconsize="small"] #stop-button[disabled="true"] {
 }
 
 toolbar[iconsize="small"] #home-button {
-  list-style-image: url("chrome://browser/skin/home-small.gif");
+  list-style-image: url("chrome://browser/skin/icons/home-small.gif");
 }
 toolbar[iconsize="small"] #home-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/home-small-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/home-small-disabled.gif");
 }
 
 toolbar[iconsize="small"] #print-button {
@@ -368,10 +368,10 @@ toolbar[iconsize="small"] #new-window-button[disabled="true"] {
 }
 
 toolbar[iconsize="small"] #bookmarks-button {
-  list-style-image: url("chrome://browser/skin/bookmarks-small.gif");
+  list-style-image: url("chrome://browser/skin/icons/bookmarks-small.gif");
 }
 toolbar[iconsize="small"] #bookmarks-button[disabled="true"] {
-  list-style-image: url("chrome://browser/skin/bookmarks-small-disabled.gif");
+  list-style-image: url("chrome://browser/skin/icons/bookmarks-small-disabled.gif");
 }
 
 toolbar[iconsize="small"] #history-button {
@@ -560,19 +560,19 @@ statusbarpanel#statusbar-display {
   padding: 0px !important;
   min-width: 0;
   background-color: transparent;
-  list-style-image: url("chrome://browser/skin/throbber-stopped.gif");
+  list-style-image: url("chrome://browser/skin/icons/throbber-stopped.gif");
 }
 #navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://browser/skin/throbber.gif");
+  list-style-image: url("chrome://browser/skin/icons/throbber.gif");
 }
 
 toolbar[iconsize="small"] #navigator-throbber,
 toolbar[mode="text"] #navigator-throbber {
-  list-style-image: url("chrome://browser/skin/throbber-small-stopped.gif");
+  list-style-image: url("chrome://browser/skin/icons/throbber-small-stopped.gif");
 }
 toolbar[iconsize="small"] #navigator-throbber[busy="true"],
 toolbar[mode="text"] #navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://browser/skin/throbber-small.gif");
+  list-style-image: url("chrome://browser/skin/icons/throbber-small.gif");
 }
 
 .tabs-closebutton {
