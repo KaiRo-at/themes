@@ -178,3 +178,6 @@ outlinerbody:-moz-outliner-indentation {
   width: 16px;
 }
 
+.outlinercol-text {
+   margin: 0px;
+}

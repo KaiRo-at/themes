@@ -7,7 +7,8 @@
  **/
 tree 
   {
-    border                : none;
+    border                : 1px inset #CCD0DD;
+    margin                : 1px 3px 2px 3px;
     background-color      : white;
     color                 : #000000;
   }
@@ -24,12 +25,6 @@ tree
   {
   }  
   
-tree.inset
-  {
-    border                : 1px inset #CCD0DD;
-    margin                : 1px 3px 2px 3px;
-  }
-
 treeitem[selected="true"] > treerow
   {
     color                 : white;
@@ -93,6 +88,11 @@ tree:focus > treechildren treeitem[selected="true"][current="true"] > treerow
 .treecell-header-box
   {
     padding               : 0px 4px 0px 4px;
+  }
+
+.treecell-header-text
+  {
+    margin                : 0px;
   }
 
 .treecell-header-image-box 
@@ -242,5 +242,7 @@ treerow[mode="inline-edit"]
     margin-left           : 0px;
   }
 
-
-
+.inline-edit-cell-box[mode="edit"] 
+  {
+    margin                : 0px;
+  }

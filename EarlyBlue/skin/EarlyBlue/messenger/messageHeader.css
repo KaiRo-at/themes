@@ -49,11 +49,6 @@ mail-toggle-headerfield
     padding-right         : 1px; 
   }
 
-mail-emailheaderfield > .headerBox > mail-emailaddress
-  { 
-    padding-left          : 0.5em; 
-  }
-
 .buttonTopSpacer     
   { 
     height                : 0.3em; 
@@ -106,7 +101,7 @@ mail-emailheaderfield > .headerBox > mail-emailaddress
     -moz-box-pack: end;
   }
 
-.emailDisplayButton 
+label.emailDisplayButton 
   {
     color                 : #336699;
     cursor                : pointer;
@@ -116,7 +111,7 @@ mail-emailheaderfield > .headerBox > mail-emailaddress
     padding-right         : 1px; 
   }
 
-.emailDisplayButton:hover
+label.emailDisplayButton:hover
   {
     color                 : black;
     background-color      : #336699;
@@ -132,24 +127,12 @@ mail-emailheaderfield > .headerBox > mail-emailaddress
   list-style-image      : url("chrome://global/skin/twisty-open.gif");
 }
 
-html.headerValue   
-  { 
-    white-space           : normal;
-    min-width             : 50px; 
-    margin                : 0px;
-  }
-
-html.subjectvalue  
-  { 
-    font-weight           : bold; 
-  }
-
-text.subjectvalue
+label.subjectvalue
  {
   font-weight             : bold;
  }
 
-text.headerdisplayname 
+label.headerdisplayname 
   { 
     font-weight           : bold; 
     margin-right          : 0.5em; 
@@ -157,7 +140,7 @@ text.headerdisplayname
     min-height: 16px;
   }
 
-text.headerValue 
+label.headerValue 
   { 
     white-space           : normal; 
     min-width             : 50px; 
@@ -204,7 +187,7 @@ text.headerValue
   width: 12em;
 }
 
-text.collapsedHeaderDisplayName 
+label.collapsedHeaderDisplayName 
 { 
   font-weight: bold; 
   margin-left: .7em;
@@ -221,3 +204,4 @@ text.collapsedHeaderDisplayName
 [hide] {
   visibility: hidden;
 }
+

@@ -35,12 +35,12 @@
       list-style-image    : none;
     }
 
-  .radio-check[checked="true"]
+  .radio-check[selected="true"]
     {
       list-style-image    : url(chrome://global/skin/check-radio.gif);
     }
   
-  .radio-check[checked="true"][disabled="true"]
+  .radio-check[selected="true"][disabled="true"]
     {
       list-style-image    : url(chrome://global/skin/check-radio-disabled.gif);
     }
@@ -90,6 +90,4 @@
   .radio-internal-box
     {
       -moz-user-focus     : ignore;
-    }    
-
-
+    }
