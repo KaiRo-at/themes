@@ -56,14 +56,13 @@
 
 .toolbarbutton-1,
 .toolbarbutton-1 > .toolbarbutton-menubutton-button,
-.toolbarbutton-1[disabled="true"]:hover:active,
-.toolbarbutton-1[disabled="true"][buttondown="true"] {
+.toolbarbutton-1[disabled="true"]:hover:active {
   padding: 1px;
 }
 
 .toolbarbutton-1:hover:active,
 .toolbarbutton-1[open="true"],
-.toolbarbutton-1[buttondown="true"] > .toolbarbutton-menubutton-button {
+.toolbarbutton-1:hover:active > .toolbarbutton-menubutton-button {
   padding: 2px 0px 0px 2px;
 }
 
@@ -93,16 +92,13 @@
 }
 
 .toolbarbutton-1[buttonstyle="text"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-.toolbarbutton-1[buttonstyle="text"][type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 .toolbarbutton-1[buttonstyle="text"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding: 5px 0px 7px 2px;
 }
 
 .toolbarbutton-1[buttonstyle="pictures"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-.toolbarbutton-1[buttonstyle="pictures"][type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 .toolbarbutton-1[buttonstyle="pictures"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker,
 .toolbarbutton-1[toolbarmode="small"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-.toolbarbutton-1[toolbarmode="small"][type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 .toolbarbutton-1[toolbarmode="small"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding: 1px 0px 12px 2px;
 }
@@ -119,8 +115,8 @@
 .toolbarbutton-text[buttonstyle="pictures"],
 .toolbarbutton-icon[buttonstyle="text"] {
   display: none;
-}   
-                                                                            
+}
+
 .toolbarbutton-text[buttonstyle="text"] {
   padding: 4px 0;
 }

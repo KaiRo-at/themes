@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998-1999
  * the Initial Developer. All Rights Reserved.
@@ -23,7 +23,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -66,9 +66,8 @@ toolbarbutton {
 
 /*
 toolbarbutton:hover,
-toolbarbutton[buttonover="true"],
 toolbarbutton.toolbarbutton-menubutton-button[open="true"] {
-} 
+}
 */
 
 toolbarbutton:hover {
@@ -80,7 +79,7 @@ toolbarbutton[open="true"] {
   padding: 2px 0px 0px 2px;
   border: 1px inset #CCD0DD;
 }
-    
+
 toolbarbutton[disabled="true"] {
   border: 1px solid transparent !important;
   padding: 1px !important;
@@ -94,7 +93,7 @@ toolbarbutton[checked="true"] {
   border: 1px inset #CCD0DD !important;
   background-color: #DDDDDD !important;
 }
-    
+
 /* ::::: toolbarbutton menu ::::: */
 
 .toolbarbutton-menu-dropmarker {
@@ -130,29 +129,26 @@ toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
 .toolbarbutton-menubutton-button,
 .toolbarbutton-menubutton-dropmarker {
   border: 1px solid transparent;
-} 
- 
+}
+
 .toolbarbutton-menubutton-button[disabled="true"],
 .toolbarbutton-menubutton-dropmarker[disabled="true"] {
   border: 1px solid transparent !important;
-} 
+}
 
 toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-button,
-toolbarbutton[type="menu-button"][buttonover="true"] > .toolbarbutton-menubutton-button,
-toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[type="menu-button"][buttonover="true"] > .toolbarbutton-menubutton-dropmarker {
+toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker {
   border: 1px outset #CCD0DD;
 }
 
-toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-button,
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-button,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   border: 1px inset #CCD0DD;
 }
 
-toolbarbutton[type="menu-button"][buttondown="true"] > toolbarbutton.toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"]:hover:active > toolbarbutton.toolbarbutton-menubutton-button,
 toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-menubutton-button {
   padding: 2px 0px 0px 2px !important;
 }
@@ -166,7 +162,6 @@ toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-men
 }
 
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-toolbarbutton[type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding: 4px 0px 0px 2px;
 }

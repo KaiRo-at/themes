@@ -39,6 +39,10 @@ listbox {
   color: #000000;
 }
 
+listbox[disabled="true"] {
+  color: #CCCCCC;
+}
+
 /* ::::: listitem ::::: */
 
 listitem {
@@ -65,7 +69,7 @@ listbox:focus > listitem[selected="true"] {
 
 /* ::::: listheader ::::: */
 
-listheader { 
+listheader {
   -moz-box-align: center;
   border: 1px outset #CCD0DD;
   background-color: #CCD0DD;
@@ -116,7 +120,7 @@ listheader[sortable="true"]:hover:active {
   color: #808080;
 }
 
-/* ::::: listcell checkbox ::::: */                                             
+/* ::::: listcell checkbox ::::: */
 
 .listcell-check {
   -moz-box-align: center;
