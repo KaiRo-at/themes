@@ -18,7 +18,7 @@ tree {
 tree.inset {
   -moz-border-radius: 5px;
   border: 1px solid #9C9CFF;
-  margin: 1px 5px 2px 5px;
+  margin: 1px 3px 2px 3px;
 }
 
 /*
@@ -146,4 +146,5 @@ treecol[sortActive="true"]
   {
     list-style-image       : url("chrome://global/skin/columnselect.gif");
   }
+
 

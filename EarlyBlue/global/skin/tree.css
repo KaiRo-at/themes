@@ -20,7 +20,7 @@ tree.inset {
   border-bottom: 1px solid white;
   border-left: 1px solid #666699;
   border-right: 1px solid white;
-  margin: 1px 5px 2px 5px;
+  margin: 1px 3px 2px 3px;
 }
 
 treeitem[selected="true"] > treerow { 
@@ -136,3 +136,4 @@ treecol[sortActive="true"]
   {
     list-style-image       : url("chrome://global/skin/columnselect.gif");
   }
+

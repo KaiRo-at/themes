@@ -34,10 +34,11 @@ toolbar > .toolbar-holder {
   padding-right: 12px;
 }
 
-mail-emailaddress {
-  -moz-binding: url(chrome://messenger/content/mailWidgets.xml#mail-emailaddress);
-  display: inline;
-}
+mail-emailaddress 
+  {
+    -moz-binding          : url(chrome://messenger/content/mailWidgets.xml#mail-emailaddress);
+    display               : inline;
+  }
 
 [hide] {
   visibility: collapse;
@@ -62,36 +63,76 @@ box.header-part3           { background-color: #E7ADE7; color: #000000; border: 
   margin: 0px;
 }
 
-image.emailDisplayImage
-{
-  align: right;
-  display: inline;
-}
+.emailDisplayImage
+  {
+    align                 : right;
+  }
 
-text.emailSeparator {
-  display: inline;
-}
+.emailSeparator 
+  {
+    display               : inline;
+  }
 
-text.emailDisplayButton {
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-  max-height: 15px;
-  display: inline;
-}
+.emailDisplayButton 
+  {
+    color                 : #FFCF00;
+    text-decoration       : underline;
+    cursor                : pointer;
+    max-height            : 15px;
+    /* This is a hack because I can't find out where that strange bug is hitting me */
+    /* see http://www.hirsch.sth.ac.at/bugzilla/show_bug.cgi?id=50 */
+    -moz-border-radius:   : 3px;
+    background-color      : black;
+  }
 
-image.showMoreAddressesButton {
-  list-style-image:url("chrome://messenger/skin/more.gif");
-  display: inline;
-}
+.emailDisplayButton:hover
+  {
+    /* This is a hack because I can't find out where that strange bug is hitting me */
+    color                 : black;
+    background-color      : #FFCF00;
+  }
 
-image.showFewerAddressesButton {
-  list-style-image:url("chrome://messenger/skin/less.gif");
-  display: inline;
-}
+.showMoreAddressesButton 
+  {
+    list-style-image      : url("chrome://messenger/skin/more.gif");
+    display               : inline;
+  }
 
-html.headerValue   { white-space: normal; min-width: 50px; margin:0px; }
-html.subjectvalue      {font-weight: bold;}
+.showFewerAddressesButton 
+  {
+    list-style-image      : url("chrome://messenger/skin/less.gif");
+    display               : inline;
+  }
 
-text.headerdisplayname { font-weight: bold; margin-right: .5em; margin-left: .5em; }
-text.headerValue { white-space: normal; min-width: 50px; }
+html.headerValue   
+  { 
+    white-space           : normal;
+    min-width             : 50px; 
+    margin                : 0px;
+  }
+
+html.subjectvalue  
+  { 
+    font-weight           : bold; 
+  }
+
+text.headerdisplayname 
+  { 
+    font-weight           : bold; 
+    margin-right          : 0.5em; 
+    margin-left           : 0.5em; 
+    min-height            : 18px 
+  }
+
+text.headerValue 
+  { 
+    white-space           : normal; 
+    min-width             : 50px; 
+  }
+  
+#msgHeaderView
+  {
+    border-left           : none;
+    border-right          : none;
+  }
+

@@ -27,10 +27,12 @@ Rights Reserved.
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to HTML */
 @namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for XUL elements */
 
-mail-emailaddress {
-  -moz-binding: url(chrome://messenger/content/mailWidgets.xml#mail-emailaddress);
-  display: inline;
-}
+mail-emailaddress 
+  {
+    -moz-binding          : url(chrome://messenger/content/mailWidgets.xml#mail-emailaddress);
+    display               : inline;
+  }
+
 
 [hide] {
   visibility: collapse;
@@ -55,36 +57,66 @@ box.header-part3           { background-color: #CCCCCC; border: none; }
   margin: 0px;
 }
 
-image.emailDisplayImage
-{
-  align: right;
-  display: inline;
-}
+.emailDisplayImage
+  {
+    align                 : right;
+  }
 
-text.emailSeparator {
-  display: inline;
-}
+.emailSeparator 
+  {
+    display               : inline;
+  }
 
-text.emailDisplayButton {
-  color: blue;
-  text-decoration: underline;
-  cursor: pointer;
-  max-height: 15px;
-  display: inline;
-}
+.emailDisplayButton 
+  {
+    color                 : blue;
+    text-decoration       : underline;
+    cursor                : pointer;
+    max-height            : 15px;
+    /* I can't find out where that strange bug is hitting me */
+    /* see http://www.hirsch.sth.ac.at/bugzilla/show_bug.cgi?id=50 */
+  }
 
-image.showMoreAddressesButton {
-  list-style-image:url("chrome://messenger/skin/more.gif");
-  display: inline;
-}
+.showMoreAddressesButton 
+  {
+    list-style-image      : url("chrome://messenger/skin/more.gif");
+    display               : inline;
+  }
 
-image.showFewerAddressesButton {
-  list-style-image:url("chrome://messenger/skin/less.gif");
-  display: inline;
-}
+.showFewerAddressesButton 
+  {
+    list-style-image      : url("chrome://messenger/skin/less.gif");
+    display               : inline;
+  }
 
-html.headerValue   { white-space: normal; min-width: 50px; }
-html.subjectvalue      {font-weight: bold;}
+html.headerValue   
+  { 
+    white-space           : normal;
+    min-width             : 50px; 
+    margin                : 0px;
+  }
 
-text.headerdisplayname { font-weight: bold; margin-right: .5em; margin-left: .5em; min-height: 18px }
-text.headerValue { white-space: normal; min-width: 50px; }
+html.subjectvalue  
+  { 
+    font-weight           : bold; 
+  }
+
+text.headerdisplayname 
+  { 
+    font-weight           : bold; 
+    margin-right          : 0.5em; 
+    margin-left           : 0.5em; 
+    min-height            : 18px 
+  }
+
+text.headerValue 
+  { 
+    white-space           : normal; 
+    min-width             : 50px; 
+  }
+  
+#msgHeaderView
+  {
+    border-left           : none;
+    border-right          : none;
+  }
