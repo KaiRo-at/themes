@@ -264,6 +264,11 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   list-style-image:url("chrome://navigator/skin/icons/popup-blocked.gif");
 }
 
+#popupImage {
+  list-style-image: url("chrome://navigator/skin/icons/about-popups.gif");
+  margin: 6px 0px;
+}
+
 /* ::::: personal toolbar ::::: */
 
 #bookmarks-button {
@@ -276,4 +281,12 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 #home-button {
   list-style-image: url("chrome://communicator/skin/bookmarks/home.gif");
+}
+
+toolbarbutton.chevron {
+  list-style-image: url("chrome://global/skin/toolbar/chevron.gif") !important;
+}
+
+toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
+  display: none;
 }

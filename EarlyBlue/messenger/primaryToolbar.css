@@ -138,3 +138,20 @@
 #button-junk[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/junk-disabled.gif") !important;
 }
+
+#junkBarImage {
+  list-style-image: url("chrome://messenger/skin/toolbar/junk.gif");
+}
+
+#junkBarMessage {
+  font-weight: bold;
+}
+
+#junkBar {
+  border-bottom: 1px solid #669999;
+  background-color: #9999CC;
+}
+
+#junkIcon {
+  list-style-image: url("chrome://messenger/skin/icons/folder-junk.gif");
+}
