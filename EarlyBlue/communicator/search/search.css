@@ -37,47 +37,27 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.engine[loading="true"] 
-  {
-    list-style-image      : url("resource:/res/rdf/loading.gif") ! important ;
-  }
+.engine[loading="true"]  {
+  list-style-image: url("chrome://global/skin/icons/loading.gif") ! important ;
+}
 
-.iconic 
-  {
-    list-style-image      : url("resource:/res/rdf/document.gif") ! important ;
-  }
+.iconic {
+  list-style-image: url("resource:/res/rdf/document.gif") ! important ;
+}
 
-.searchresult-cell:hover
-  {
-    color                 : blue;
-    text-decoration       : underline;
-    cursor                : pointer;
-  }
-
-.searchresult-cell:hover:active
-  {
-    color                 : red;
-    text-decoration       : underline;
-  }
-
-.searchresult-item[selected="true"] > .searchresult
-  {
-    background-color      : transparent;
-    color                 : windowtext;
-  }
+.searchresult-item[selected="true"] > .searchresult {
+  background-color: transparent;
+  color: windowtext;
+}
  
-.groove-bottom
-  {
-    border-bottom         : 1px solid ThreeDShadow;
-  }   
+.groove-bottom {
+  border-bottom: 1px solid #666699;
+}   
   
-#results-splitter
-  {
-    border-right          : 1px solid ThreeDShadow;
-    border-left           : 1px solid ThreeDHighlight;
-  }
+#results-splitter {
+  border: 1px outset #CCD0DD;
+}
 
-#searchButton[stop="true"]
-  {
-    list-style-image      : url("resource:/res/rdf/loading.gif");
-  }
+#searchButton[stop="true"] {
+  list-style-image: url("chrome://global/skin/icons/loading.gif");
+}

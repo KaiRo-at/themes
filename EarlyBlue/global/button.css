@@ -123,12 +123,14 @@ button[type="menu-button"] {
 .button-menu-dropmarker,
 .button-menubutton-dropmarker {
   margin: 1px;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+  background-image: url("chrome://global/skin/arrow/arrow-down.gif");
+  min-width: 11px;
+  min-height: 11px;
 }
 
 .button-menu-dropmarker[disabled="true"],
 .button-menubutton-dropmarker[disabled="true"] {
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+  background-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
 }
 
 .button-menubutton-dropmarker[open="true"] {
@@ -143,4 +145,3 @@ button.plain {
   margin: 0px !important;
   padding: 0px !important;
 }
-

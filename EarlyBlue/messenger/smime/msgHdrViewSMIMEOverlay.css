@@ -11,11 +11,11 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is Mozilla Communicator.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 2002
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
@@ -34,23 +34,36 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
  * ***** END LICENSE BLOCK ***** */
+@import url("chrome://messenger/skin/");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* class for text with a 'link' appearance */
-.text-link {
-  color: blue;
-  text-decoration: underline;
+#signedHdrIcon {
+  list-style-image: none;
+  visibility: visible;
 }
 
-.text-link:hover {
-  cursor: pointer;
+#signedHdrIcon[signed="ok"] {
+  list-style-image: url("chrome://messenger/skin/smime/icons/hdrSignOk.gif");
+  visibility: visible;
 }
 
-.text-link:hover:active {
-  color: red;
+#signedHdrIcon[signed="notok"] {
+  list-style-image: url("chrome://messenger/skin/smime/icons/hdrSignNotOk.gif");
+  visibility: visible;
 }
 
-.text-link[visited="true"] {
-  color: purple;
+#encryptedHdrIcon {
+  list-style-image: none;
+  visibility: visible;
+}
+
+#encryptedHdrIcon[encrypted="ok"] {
+  list-style-image: url("chrome://messenger/skin/smime/icons/hdrCryptoOk.gif");
+  visibility: visible;
+}
+
+#encryptedHdrIcon[encrypted="notok"] {
+  list-style-image: url("chrome://messenger/skin/smime/icons/hdrCryptoNotOk.gif");
+  visibility: visible;
 }
