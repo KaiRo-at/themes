@@ -11,11 +11,11 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is Mozilla Communicator.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 2002
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
@@ -35,22 +35,55 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+/* ===== msgCompSMIMEOverlay.css ========================================
+  == Styles for the S/Mime in composer window.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* class for text with a 'link' appearance */
-.text-link {
-  color: blue;
-  text-decoration: underline;
+#button-security {
+  list-style-image: url("chrome://messenger/skin/smime/icons/lock.gif");
 }
 
-.text-link:hover {
-  cursor: pointer;
+#button-security[buttonover],
+#button-security[buttondown] {
+  list-style-image: url("chrome://messenger/skin/smime/icons/lock-hover.gif");
 } 
 
-.text-link:hover:active {
-  color: red;
+#button-security[disabled] {
+  list-style-image: url("chrome://messenger/skin/smime/icons/lock-disabled.gif");
+} 
+
+
+#msgcomposeWindow #signing-status {
+  list-style-image: none;
+  visibility: collapsed;
 }
 
-.text-link[visited="true"] {
-  color: purple;
+#msgcomposeWindow[signing="ok"] #signing-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbSignOk.gif");
+  visibility: visible;
+}
+
+#msgcomposeWindow[signing="notok"] #signing-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbSignNotOk.gif");
+  visibility: visible;
+}
+
+
+#msgcomposeWindow #encryption-status {
+  list-style-image: none;
+  visibility: collapsed;
+}
+
+#msgcomposeWindow[crypto="ok"] #encryption-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbCryptoOk.gif");
+  visibility: visible;
+}
+
+#msgcomposeWindow[crypto="notok"] #encryption-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbCryptoNotOk.gif");
+  visibility: visible;
 }

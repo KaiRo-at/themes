@@ -60,7 +60,7 @@ outlinerchildren:-moz-outliner-image(FilenameColumn, directory) {
 }
 
 outlinerchildren:-moz-outliner-image(FilenameColumn, file) {
-  list-style-image: url("chrome://global/skin/filepicker/blank.gif");
+  list-style-image: url("chrome://global/skin/filepicker/file.gif");
 }
 
 /* ::::: focus rules ::::: */
@@ -71,4 +71,16 @@ outlinerchildren:-moz-outliner-image(FilenameColumn, file) {
 
 #directoryOutliner:focus > outlinerrows > .outliner-bodybox {
   border-color: #FFCF00;
+}
+
+/* ::::: button items ::::: */
+
+.up-button {
+  list-style-image: url("chrome://global/skin/filepicker/folder-up.gif");
+  max-width: 36px;
+}
+
+.home-button {
+  list-style-image: url("chrome://global/skin/filepicker/folder-home.gif");
+  max-width: 36px;
 }

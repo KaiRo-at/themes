@@ -11,11 +11,11 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is Mozilla Communicator.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 2002
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
@@ -35,22 +35,36 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+@import url("chrome://messenger/skin/");
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* class for text with a 'link' appearance */
-.text-link {
-  color: blue;
-  text-decoration: underline;
+#status-bar #signed-status {
+  list-style-image: none;
+  visibility: collapsed;
 }
 
-.text-link:hover {
-  cursor: pointer;
-} 
-
-.text-link:hover:active {
-  color: red;
+#status-bar[signed="ok"] #signed-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbSignOk.gif");
+  visibility: visible;
 }
 
-.text-link[visited="true"] {
-  color: purple;
+#status-bar[signed="notok"] #signed-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbSignNotOk.gif");
+  visibility: visible;
+}
+
+#status-bar #encrypted-status {
+  list-style-image: none;
+  visibility: collapsed;
+}
+
+#status-bar[encrypted="ok"] #encrypted-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbCryptoOk.gif");
+  visibility: visible;
+}
+
+#status-bar[encrypted="notok"] #encrypted-status {
+  list-style-image: url("chrome://messenger/skin/smime/icons/sbCryptoNotOk.gif");
+  visibility: visible;
 }

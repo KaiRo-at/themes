@@ -163,6 +163,20 @@ tree.list {
   min-height:     50px;
 }
 
+/* These two should be the width of the checkbox and radio button images + margin + padding
+   Used to indent below those to the level of the text label next to image
+*/
+
+.checkbox-spacer {
+  width: 16px;
+  min-width: 16px;
+}
+
+.radio-spacer {
+  width: 16px;
+  min-width: 16px;
+}
+
 #alignTypeSelect,
 label#alignLabel {
   margin-left: 5px;
@@ -306,4 +320,18 @@ label#alignLabel {
 tree.AttributesTree {
   min-width: 200px;
   min-height: 200px;
+}
+
+/* ::::: Publishing Progress ::::: */
+
+.progressitem[progress="busy"] {
+  list-style-image: url("chrome://editor/skin/icons/progress-busy.gif");
+}
+
+.progressitem[progress="done"] {
+  list-style-image: url("chrome://editor/skin/icons/progress-done.gif");
+}
+
+.progressitem[progress="failed"] {
+  list-style-image: url("chrome://editor/skin/icons/progress-failed.gif");
 }
