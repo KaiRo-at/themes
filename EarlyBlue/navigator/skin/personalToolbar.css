@@ -32,14 +32,19 @@
     {
       list-style-image    : url("chrome://communicator/skin/bookmarks/home.gif");
     }
-    
+
+/*    
   #home-button:hover
     {
-      list-style-image    : url("chrome://communicator/skin/bookmarks/home-hover.gif");
+      list-style-image    : url("chrome://communicator/skin/bookmarks/home-sel.gif");
     }
-    
+*/
+
+/*    
   #home-button:hover:active
     {
       list-style-image    : url("chrome://communicator/skin/bookmarks/home-active.gif");
     }
+*/
+
 
