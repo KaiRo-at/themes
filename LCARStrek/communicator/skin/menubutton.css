@@ -115,13 +115,13 @@
 
 .menubutton-dual.top
   {
-    -moz-binding          : url("chrome://global/content/menulistBindings.xml#menubutton-dual-ex");
+    -moz-binding          : url("chrome://global/content/bindings/menubutton.xml#menubutton-dual-ex");
 /*    -moz-user-focus       : ignore !important; */
   }
 
 .menubutton-dual.left
   {
-    -moz-binding          : url("chrome://global/content/menulistBindings.xml#menubutton-dual-ex-left");
+    -moz-binding          : url("chrome://global/content/bindings/menubutton.xml#menubutton-dual-ex-left");
 /*    -moz-user-focus       : none !important; */
   }  
   
@@ -264,8 +264,3 @@ menubutton > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
 /*    padding-bottom           : 17px;  */
     padding-bottom           : 24px;  
   }
-
-
-
-
-

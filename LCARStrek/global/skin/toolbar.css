@@ -26,3 +26,30 @@ toolbarseparator
     width                 : 2em; 
   }
   
+menubar 
+  {
+    border-bottom         : 3px solid #000000;
+  }
+
+menubar > .toolbar-holder
+  {
+    /* max-height is only important as long as we need to workaround bug 24998... */
+    max-height            : 17px;
+    padding-right         : 18px;
+    background-color      : #6000CF;
+    background-image      : url("chrome://global/skin/menubar-endcap.gif");
+    background-repeat     : no-repeat;
+    background-position   : right;
+
+/* THE FOLLOWING LINES ARE NOT WORKING THOUGH THEY SHOULD!  BUG 24998  */
+/*    -moz-border-radius    : 0px 10px 10px 0px;
+    background-image      : url("chrome://global/skin/toolbar-bg.gif");
+    background-repeat     : repeat-y;
+    background-position   : right;
+*/
+  }
+
+menubar > toolbargrippy 
+  {
+/*    display               : none; */
+  }

@@ -1,32 +1,3 @@
- 
-menubar 
-  {
-    border-bottom         : 3px solid #000000;
-  }
-
-menubar > .toolbar-holder
-  {
-    /* max-height is only important as long as we need to workaround bug 24998... */
-    max-height            : 17px;
-    padding-right         : 18px;
-    background-color      : #6000CF;
-    background-image      : url("chrome://global/skin/menubar-endcap.gif");
-    background-repeat     : no-repeat;
-    background-position   : right;
-
-/* THE FOLLOWING LINES ARE NOT WORKING THOUGH THEY SHOULD!  BUG 24998  */
-/*    -moz-border-radius    : 0px 10px 10px 0px;
-    background-image      : url("chrome://global/skin/toolbar-bg.gif");
-    background-repeat     : repeat-y;
-    background-position   : right;
-*/
-  }
-
-menubar > toolbargrippy 
-  {
-/*    display               : none; */
-  }
-
 menu, menuitem  
   {
     background-color      : #000000;
@@ -46,23 +17,14 @@ menuitem[menuactive="true"][disabled="true"]
 	  color                 : #8050B0;
   }
 
-/* XXX menupopups have to have a color explicitly specified. this is a bug */
-menupopup, popup 
+menupopup > menu,
+menupopup > menuitem,
+popup > menu,
+popup > menuitem
   {
-    background-color      : #000000;
-    color                 : #FF9F00;
-    border                : 1px solid #FF9F00;
-  }
-
-menupopup > menu, popup > menu,
-menupopup > menuitem, popup > menuitem
-  {
-    max-width             : 250px;
-    min-width             : 125px;
-    margin-left           : 0px;
-    margin-right          : 0px;
-    margin-top            : 0px;
-    margin-bottom         : 0px;
+    -moz-border-radius    : 0px;
+    max-width             : 42em; /* should move to content */
+    margin                : 0px;
   }
 
 menuseparator 
@@ -77,13 +39,6 @@ menubar > menu
     border                : 1px solid transparent; 
     padding               : 2px 0px 2px 3px;
     margin                : 0px 2px 0px 2px;
-  }
-
-menupopup > menu, menupopup > menuitem,
-popup > menu, popup > menuitem
-  {
-    -moz-border-radius    : 0px;
-    padding               : 2px;
   }
 
 menubar > menu[menuactive="true"] 
@@ -157,21 +112,24 @@ popup > menuitem[menuactive="true"]
     margin                : 0px 2px 0px 0px;
   }
 
+.menu-iconic-text
+  {
+    margin                : 2px 2px 2px 0px;
+  }
+
 .menu-text 
   {
-    padding-left          : 15px;
-    font-weight           : inherit;
+    margin                : 2px 2px 2px 23px;
   }
 
 .menu-accel 
   {
-    margin-left           : 4px;
-    padding-right         : 14px;
+    margin                : 2px 14px 2px 6px;
   }
 
 .menu-iconic-accel 
   {
-    margin-left           : 4px;
+    margin                : 2px 14px 2px 4px;
   }
 
 .menubar-text 
@@ -185,14 +143,29 @@ menuitem[checked="true"]
     list-style-image      : url("chrome://global/skin/menu-check.gif");
   }
 
+menuitem[checked="true"][menuactive="true"]
+  {
+    list-style-image      : url("chrome://global/skin/menu-check-hover.gif");
+  }
+
 menuitem[checked="true"][disabled="true"] 
   {
     list-style-image      : url("chrome://global/skin/menu-check-disabled.gif");
   }
 
-menuitem[checked="true"][menuactive="true"] 
+menuitem[checked="true"][type="radio"] 
   {
-    list-style-image      : url("chrome://global/skin/menu-check-hover.gif");
+    list-style-image      : url("chrome://global/skin/menu-radio.gif");
+  }
+
+menuitem[checked="true"][type="radio"][disabled="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-radio-disabled.gif");
+  }
+
+menuitem[checked="true"][type="radio"][menuactive="true"] 
+  {
+    list-style-image      : url("chrome://global/skin/menu-radio-hover.gif");
   }
 
 /** Tooltips (tooltip <popup> element)
@@ -215,23 +188,46 @@ html#TOOLTIP-tooltipText
     margin                : 0px;
   }
 
-/*
- * Autorepeatbutton
- */
-.autorepeatbutton-up {
-    list-style-image: url("chrome://global/skin/scroll-up.gif")
-}
+/* ::::: autocomplete menuitems ::::: */
 
-.autorepeatbutton-down {
-    list-style-image: url("chrome://global/skin/scroll-down.gif")
-}
+.autocomplete-history-popup > menuitem
+  {
+    max-width              : none !important;
+    font-size              : smaller;
+  }
 
-autorepeatbutton {
-  text-align: center;
-  vertical-align: middle;
-}
+/* ::::: menu/menuitems in a menulist popup ::::: */
 
-autorepeatbutton:hover {
-  background-color: #FFCF00;
-}
+  menulist > menupopup > menuitem,
+  menulist > menupopup > menu
+    {
+      padding             : 0px 4px !important;
+      min-width           : 0px;  /* should be in content*/
+      max-width           : none; /* should be in content*/
+    }
 
+  menulist > menupopup > menuitem > .menu-iconic-accel,
+  menulist > menupopup > menuitem > .menu-accel,
+  menulist > menupopup > menuitem > .menu-text,
+  menulist > menupopup > menuitem > .menu-iconic-text,
+  menulist > menupopup > menu > .menu-text,
+  menulist > menupopup > menu > .menu-accel,
+  menulist > menupopup > menu > .menu-iconic-text,
+  menulist > menupopup > menu > .menu-iconic-accel
+    {
+      margin-top          : 0px;
+      margin-bottom       : 0px;
+    }
+
+  menulist > menupopup > menuitem[selected="true"]
+    {
+      border              : 1px dotted #F5DB95;
+    }
+
+  menulist > menupopup > menuitem > .menu-iconic-left,
+  menulist > menupopup > menuitem > .menu-iconic-left[menuactive="true"]
+    {
+      list-style-image    : inherit;
+      width               : 0px;
+      border              : none;
+    }

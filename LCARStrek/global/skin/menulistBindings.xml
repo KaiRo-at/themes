@@ -5,11 +5,7 @@
    xmlns:html="http://www.w3.org/1999/xhtml"
    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<!-- 
-  BINDING : menulist
-  XUL REPRESENTATION : <menulist>
-  -->
-  <binding id="menulist" extends="chrome://global/content/menulistBindings.xml#menulist">
+  <binding id="menulist" extends="chrome://global/content/bindings/menulist.xml#menulist">
     <content excludes="template,observes,menupopup" flex="1">
       <xul:box class="menulist-internal-box" flex="1">
         <xul:box class="menulist-display-box" flex="1" valign="middle" autostretch="never">
@@ -25,7 +21,7 @@
     </content>
   </binding>
 
-  <binding id="menulistpopup">
+  <binding id="menulistpopup" extends="chrome://global/content/bindings/popup.xml#popup">
     <content>
       <xul:box class="menulistpopup-internal-box" orient="vertical" flex="1" style="overflow: auto">
         <children/>

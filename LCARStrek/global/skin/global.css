@@ -11,25 +11,40 @@
 /* all localizable skin settings shall live here */
 @import url(chrome://global/locale/intl.css);
 
-@import url(chrome://global/skin/box.css);
-@import url(chrome://global/skin/button.css);
-@import url(chrome://global/skin/checkbox.css);
-@import url(chrome://global/skin/radio.css);
-@import url(chrome://global/skin/tree.css);
-@import url(chrome://global/skin/outliner.css);
-@import url(chrome://global/skin/splitter.css);
-@import url(chrome://global/skin/radio.css);
-@import url(chrome://global/skin/menubutton.css);
-@import url(chrome://global/skin/menulist.css);
-@import url(chrome://global/skin/menu.css);
-@import url(chrome://global/skin/formatting.css);
-@import url(chrome://global/skin/textfield.css);
-@import url(chrome://global/skin/tabcontrol.css);
-@import url(chrome://global/skin/toolbar.css);
-@import url(chrome://global/skin/colorpicker.css);
+@import url("chrome://global/skin/formatting.css");
+/*
+@import url("chrome://global/content/bindings/outliner.css");
+@import url("chrome://global/content/bindings/popup.css");
+@import url("chrome://global/content/bindings/scrollbar.css");
+@import url("chrome://global/content/bindings/tree.css");
+
+@import url("chrome://global/skin/button.css");
+@import url("chrome://global/skin/checkbox.css");
+@import url("chrome://global/skin/colorpicker.css");
+@import url("chrome://global/skin/menu.css");
+@import url("chrome://global/skin/menubutton.css");
+@import url("chrome://global/skin/menulist.css");
+@import url("chrome://global/skin/outliner.css");
+@import url("chrome://global/skin/popup.css");
+@import url("chrome://global/skin/progressmeter.css");
+@import url("chrome://global/skin/radio.css");
+@import url("chrome://global/skin/scrollbox.css");
+@import url("chrome://global/skin/splitter.css");
+@import url("chrome://global/skin/tabcontrol.css");
+@import url("chrome://global/skin/textbox.css");
+@import url("chrome://global/skin/toolbar.css");
+@import url("chrome://global/skin/tree.css");
+*/
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); 
-@namespace html url("http://www.w3.org/1999/xhtml"); 
+
+
+/**  
+ * bindings
+ **/
+
+/* LCARStrek does currently not need any bindings here, if we once do, see sample in Classic */
+
 
 /**
  * XXX-DEBUG: HTML namespace/titledbutton striping. 
@@ -158,9 +173,9 @@
 
 
 /**
- * html|iframe default sizing 
+ * iframe default sizing 
  **/
-  html|iframe 
+  iframe 
     {
       min-width           : 10px;
       min-height          : 10px;
@@ -169,74 +184,7 @@
       border              : none;
     }
 
-/** 
- * XUL <progressmeter> 
- **/
-  progressmeter[mode="undetermined"] > .progressmeter-internal-box
-    {
-      background-image    : url(chrome://global/skin/progressmeter-busy.gif);
-    }
- 
-  progressmeter[mode="undetermined"] > .progressmeter-internal-box > .progressmeter-stack > .progressmeter-progressbar {
-      visibility: collapse;
+.tooltip-label
+  {
+    margin                : 0px;
   }
-
-  .progress-text 
-    {
-      font-weight         : normal !important;
-    }
-  
-  progressmeter 
-    {
-      min-width           : 100px;
-      margin              : 0px 4px 0px 4px;
-      border              : 1px solid #FF9F00;
-    }
-
-  progressmeter > .progressmeter-internal-box 
-    {
-      border              : none;
-      padding             : 1px;
-/*      border              : 1px solid #000000; */
-    }
-
-/* progress indicators */
-  .progress-bar 
-    {
-	    background-color    : #FFCF00;
-    }
-  
-  .progress-remainder 
-    {
-	    background-color    : #000000;
-    }
-
-  .progressmeter-statusbar 
-    {
-      border              : 1px solid #FF9F00;
-      margin              : 1px 4px 1px 4px;
-    }
-
-  .progressmeter-statusbar > .progressmeter-internal-box
-    {
-      border              : none;
-      padding             : 1px;
-    }
-    
-  .progressmeter-progressbar[statusbar="true"] > .progress-bar
-    {
-      background-color    : #FFCF00;
-      border-right        : none;
-    }
-   
-  .progressmeter-progressbar[statusbar="true"] > .progress-remainder
-    {
-      background-color    : #000000;
-    }
-    
-/** XUL <scrollbar> element **/
-  scrollbar 
-    { 
-      -moz-user-focus          : ignore; 
-    } 
-

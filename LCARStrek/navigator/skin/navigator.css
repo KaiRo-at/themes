@@ -122,54 +122,6 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 	  list-style-image      : url("chrome://navigator/skin/reload-hover.gif");
   }
 
-/*all the urlbar stuff*/
-#page-proxy-button 
-  {
-	  list-style-image      : url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
-	  cursor                : grab;
-          margin-right          : 3px;
-          margin-left           : 2px;
-  } 
-
-#ubhist-keyword-popup 
-  {
-	  width                 : 10px; 
-	  list-style-image      : url("chrome://global/skin/scroll-down.gif"); 
-  } 
-
-#ubhist
-  {
-    -moz-border-radius    : 0px 5px 5px 0px;
-    list-style-image      : url("chrome://global/skin/scroll-down.gif"); 
-    padding               : 0px 0px 0px 0px;
-    margin                : 0px 3px 0px 0px;
-  }
-
-#ubhist > .menubutton-icon-internal-box
-  {
-    -moz-border-radius    : 0px 5px 5px 0px;
-    border                : 1px solid #9C9CFF;
-  }  
-
-#ubhist:hover > .menubutton-icon-internal-box
-  {
-    list-style-image      : url("chrome://global/skin/scroll-down-hover.gif"); 
-  }  
-
-#ubhist:hover:active > .menubutton-icon-internal-box,
-#ubhist[open="true"] > .menubutton-icon-internal-box
-  {
-    list-style-image      : url("chrome://global/skin/scroll-down-hover.gif"); 
-    border                : 1px solid #FFCF00;
-  }  
-
-#action-popup 
-  {
-    list-style-image      : url("chrome://global/skin/scroll-down.gif"); 
-	  margin                : 0px; 
-	  -moz-border-radius    : 4px; 
-  }
-
 #content-frame 
   {
     min-width             : 0px;
@@ -194,8 +146,9 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 #nav-bar-inner
   {
     padding-left          : 0px;
-    padding-top           : 10px;
-    padding-bottom        : 10px;
+    padding-top           : 11px;
+    padding-bottom        : 11px;
+    vertical-align        : middle;
   }
 
 #search-button
@@ -244,5 +197,43 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
   {
     padding               : 0px;
   }
+
+/* all the urlbar stuff */
+
+#page-proxy-button 
+  {
+	  list-style-image      : url("chrome://communicator/skin/bookmarks/bookmark-item.gif"); 
+	  cursor                : grab;
+          margin-right          : 3px;
+          margin-left           : 2px;
+  } 
+
+#action-popup 
+  {
+    list-style-image      : url("chrome://global/skin/scroll-down.gif"); 
+	  margin                : 0px; 
+	  -moz-border-radius    : 5px; 
+  }
+
+/*
+.autocomplete-textbox-container
+  {
+  }
+*/
+
+#urlbar-container
+  {
+    -moz-border-radius    : 5px;
+    border                : 1px solid #9C9CFF;
+    background-color      : #000000;
+    padding               : 0px;
+  }
+
+#urlbar-group
+  {
+    margin-left           : 3px;
+    margin-right          : 5px;
+  }
+
 
 

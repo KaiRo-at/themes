@@ -265,7 +265,7 @@
   
 menubutton.button-toolbar-4
   {
-    -moz-binding          : url("chrome://global/content/menulistBindings.xml#menubutton-single-right");
+    -moz-binding          : url("chrome://global/content/bindings/menubutton.xml#menubutton-single-right");
     padding               : 0px;
   }
 
@@ -294,7 +294,3 @@ menubutton.button-toolbar-4
   {
     padding               : 2px 0px 0px 4px;
   }
-
-
-
-

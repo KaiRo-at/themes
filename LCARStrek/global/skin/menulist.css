@@ -154,38 +154,3 @@
       border              : 1px solid #FFCF00;
     }
 
-/* rules for popups and separators associated with menulists */
-/*
-  menulist > menupopup 
-    {
-      border              : 1px solid #FF9F00;
-      min-width           : 0px;
-      padding             : 0px;
-    }
-    
-  menulist > menupopup > menuseparator 
-    {
-     border-bottom       : 1px solid #FF9F00;
-    }
-*/
-  menulist > menupopup > menuitem 
-    {
-      padding             : 0px;
-      min-width: 0px;
-      max-width: auto;
-    }
-
-  menulist > menupopup > menuitem > .menu-left 
-    {
-      width               : 13px;
-    }
-
-  menulist > menupopup > menuitem[selected="true"] > .menu-left
-    {
-      list-style-image    : url(chrome://global/skin/menu-check.gif);
-    }
-  
-  menulist > menupopup > menuitem[menuactive="true"][selected="true"] > .menu-left
-    {
-      list-style-image    : url(chrome://global/skin/menu-check-hover.gif);
-    }
