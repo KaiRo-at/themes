@@ -1,0 +1,111 @@
+toolbox
+  {
+    background-color      : #000000;
+  }
+
+toolbar
+  {
+    background-color      : #000000;
+/*    border                : 1px solid #9C9CFF; */
+    /*
+     * DON'T DELETE.  Removes disappearance of scrollbars in content
+     * pane when window is made smaller.
+     * Talk to evaughan@netscape.com for details.
+     */
+    min-width             : 1px;      
+    border-bottom         : 3px solid #000000;
+  }
+  
+toolbar > .toolbar-holder
+  {
+    background-color      : #9C9CFF;
+}
+
+toolbar > .toolbar-endcap
+{
+    -moz-border-radius    : 0px 8px 8px 0px;
+    background-color      : #FF9F00;
+    border                : none;
+    border-left           : 3px solid black;
+    width                 : 15px;
+    min-height            : 16px;
+  }
+
+menubar
+  {
+    /* DON'T DELETE.  Removes disappearance of scrollbars
+     * in content pane when window is made smaller.
+     * Talk to evaughan@netscape.com for details.
+     */
+    min-width             : 1px;
+    border-bottom         : 3px solid #000000;
+   }
+
+menubar > .toolbar-holder
+  {
+    background-color      : #6000CF;
+  }
+
+menubar > .menubar-endcap
+{
+    -moz-border-radius    : 0px 8px 8px 0px;
+    background-color      : #FF9F00;
+    border                : none;
+    border-left           : 3px solid black;
+    width                 : 15px;
+    min-height            : 16px;
+  }
+
+toolbargrippy 
+  { 
+    -moz-box-orient       : vertical;
+    -moz-border-radius    : 8px 0px 0px 8px;
+    background-color      : #FF9F00; 
+    border                : none;
+    border-right          : 3px solid black;
+    width                 : 15px;
+    min-height            : 16px;
+  } 
+
+toolbar[collapsed="true"]
+  {
+    min-height            : 0px;
+  }
+
+toolbargrippy[tbgrippy-collapsed="true"] 
+  {
+    -moz-box-orient       : horizontal;
+    -moz-border-radius    : 5px 0px 0px 5px;
+    margin-bottom         : 3px;
+    min-height            : 10px;
+    max-height            : 10px;
+  }
+
+.collapsed-tray-spacer
+  {
+    border-bottom         : none;
+  }  
+  
+toolbargrippy:hover
+  {
+    background-color      : #FFCF00;
+  }
+  
+toolbar[collapsed="true"] > toolbargrippy
+  {
+    width                 : 30px;
+  }
+  
+toolbarseparator 
+  {
+    width                 : 1px;
+    background-color      : #000000;
+    margin                : 2px;
+    margin-right          : 0px;
+  }
+  
+.toolbar-focustarget
+  {
+    -moz-user-focus       : ignore !important;
+  } 
+

@@ -1,0 +1,158 @@
+/* NEW WIDGET ANDING: <button> */
+
+/** Default Button Styles (apply to usage of <button> without 
+ *  any applied class).
+ **/
+
+/* outer frame */
+  button
+    {
+      -moz-border-radius  : 3px;
+      border              : none;
+      margin              : 1px 5px 2px 5px;
+      min-width           : 6em;
+      background-color    : #000000;
+      color               : #FFCF00;
+      -moz-user-focus     : normal;
+    }
+  
+  .button-text {
+    margin: 0px !important;
+    text-align: center;
+  }
+
+  button[disabled="true"], 
+  button[disabled="true"][default],
+  button[disabled="true"]:hover,
+  button[disabled="true"]:hover:active
+    {
+      border              : none;
+      background-color    : #000000;
+      color               : #8050B0;
+    }
+
+  .button-box,
+  button[disabled="true"][default] > .button-box,
+  button[disabled="true"]:hover:active > .button-box
+    {
+      -moz-border-radius  : 3px;
+      border              : none;
+      -moz-user-focus     : none;
+    }
+
+  .button-box-2,
+  button[disabled="true"][default] > .button-box > .button-box-2,
+  button[disabled="true"]:hover:active > .button-box > .button-box-2
+    {
+			border              : none;	
+    }
+  
+  button:hover,
+  button:hover:active,
+  button[open="true"],
+  button[checked="true"]
+    {
+      border              : none;
+      background-color    : #FFCF00;
+      color               : #000000;
+    }
+
+  button:hover:active > .button-box,
+  button[checked="true"] > .button-box,
+  button[checked="true"]:focus > .button-box,
+  button[open="true"] > .button-box,
+  button[open="true"]:focus > .button-box
+    {
+      border              : none;
+    }
+
+  button:hover:active > .button-box > .button-box-2,
+  button[checked="true"] > .button-box > .button-box-2,
+  button[checked="true"]:focus> .button-box > .button-box-2,
+  button[open="true"] > .button-box > .button-box-2,
+  button[open="true"]:focus > .button-box > .button-box-2
+    {
+      border              : none;
+    }
+
+  button:hover:active > .button-box > .button-box-2 > .button-box-text,
+  button[open="true"] > .button-box > .button-box-2 > .button-box-text
+    {
+      padding             : 1px 2px 0px 3px; 
+    }
+  
+  button[disabled="true"] > .button-box > .button-box-2 > .button-box-text,
+  button[disabled="true"]:hover:active > .button-box > .button-box-2 > .button-box-text
+    {
+      padding             : 0px 3px 1px 2px;
+    }
+
+/* text wrapping frame (hack because <text> does not support alignment) */
+  .button-box-text,
+  button[disabled]:focus > .button-box > .button-box-2 > .button-box-text
+    {
+      padding             : 0px 3px 1px 2px;
+      margin              : 1px;
+    }
+
+/** Styles for "DEFAULT" buttons (usually 'OK' or equivalent in dialogs. 
+ *  To activate, set 'default' attribute on button.
+ **/
+ 
+/* outer frame */  
+  button[default], button:focus
+    {
+      border              : none;
+    }
+
+  button[default] > .button-box > .button-box-2 > .button-box-text
+    {
+      font-weight         : bold;
+      list-style-image    : url("chrome://global/skin/return.gif");
+      -moz-box-direction  : reverse;
+    }
+
+  button[default]:hover > .button-box > .button-box-2 > .button-box-text
+    {
+      list-style-image    : url("chrome://global/skin/return-hover.gif");
+    }
+
+  button[default][disabled="true"] > .button-box > .button-box-2 > .button-box-text,
+  button[default][disabled="true"]:hover > .button-box > .button-box-2 > .button-box-text
+    {
+      list-style-image    : url("chrome://global/skin/return-disabled.gif");
+    }
+
+/* ::::: menu-button buttons ::::: */
+
+button[type="menu-button"] {
+  margin: 0px !important;
+  border: none !important;
+}
+
+.menu-button-dropmarker {
+  list-style-image: url("chrome://global/skin/scroll-down.gif");
+}
+
+.menu-button-dropmarker:hover {
+  list-style-image: url("chrome://global/skin/scroll-down-hover.gif");
+}
+
+.menu-button-dropmarker[disabled="true"],
+.menu-button-dropmarker[disabled="true"]:hover {
+  list-style-image: url("chrome://global/skin/scroll-down-disabled.gif");
+}
+
+/* ::::: plain buttons ::::: */
+
+button.plain, 
+button.plain:hover,
+button.plain:hover:active,
+button.plain > .button-box, 
+button.plain:hover > .button-box, 
+button.plain:hover:active > .button-box {
+  border: 0px ! important;
+  margin: 0px;
+  padding: 0px;
+}
+

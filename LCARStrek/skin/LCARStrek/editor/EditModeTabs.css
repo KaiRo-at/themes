@@ -1,0 +1,44 @@
+/* ............. edit mode tabs ............... */  
+
+.tabs-bottom {
+  border-top: none;
+}
+
+.tabs-bottom > .tabs-spacer {
+  border-top: 1px solid #9C9CFF !important;
+  border-bottom: none;
+}
+
+
+/* ............. edit mode tabs ............... */  
+
+
+.tabs-bottom > tab { 
+  margin-top: 0px;
+  margin-bottom: 2px;
+  border: none;
+/*  border-right: 1px solid ThreeDDarkShadow; */
+  -moz-border-radius: 0px 0px 5px 5px;
+  -moz-user-focus: ignore;
+}
+
+.tabs-bottom > tab > .tab-box { 
+  border: 1px solid #9C9CFF !important;
+  border-top: none !important;
+  -moz-border-radius: 0px 0px 4px 4px;
+}
+
+/* ............. selected state ............... */
+
+/*  
+.tabs-bottom > tab[selected="true"] {
+  margin-bottom: 0px;
+}
+*/
+
+.tabs-bottom > tab[selected="true"] > .tab-box {
+  color: #000000;
+/*  background-color: #008484;
+  border-bottom: 1px solid ThreeDShadow !important;
+  border-top: 1px solid #ffffff !important; */
+}

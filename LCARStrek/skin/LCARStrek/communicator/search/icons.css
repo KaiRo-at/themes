@@ -1,0 +1,10 @@
+/* Default Icon */
+
+titledbutton[loading="true"] {
+	list-style-image: url("chrome://global/skin/loading.gif") ! important ;
+}
+
+titledbutton.iconic {
+	list-style-image: url("chrome://global/skin/document.gif");
+}
+

@@ -1,0 +1,60 @@
+/** 
+ * XUL <progressmeter> 
+ **/
+  progressmeter[mode="undetermined"] > .progressmeter-internal-box
+    {
+      background-image    : url(chrome://global/skin/progressmeter-busy.gif);
+      background-color    : #008484;
+    }
+ 
+  progressmeter[mode="undetermined"] > .progressmeter-internal-box > .progressmeter-stack > .progressmeter-progressbar 
+    {
+      visibility          : collapse;
+    }
+
+  progressmeter
+    {
+      min-width           : 100px;
+      border              : 1px solid #FF9F00;
+      background-color    : #000000;
+    }
+
+  .progressmeter-statusbar 
+    {
+/*      border              : 1px solid #CCD0DD; 
+      background-color    : #8050B0; */
+      margin              : 0px 2px 0px 2px;
+    }
+
+  .progressmeter-statusbar > .progressmeter-internal-box
+    {
+/*      background-color    : #666699; */
+    }
+
+  .progress-text 
+    {
+      visibility          : collapse;
+    }    
+
+  .progressmeter-internal-box
+    {
+/*      border              : 1px solid -moz-Dialog; */
+      padding             : 1px;
+    }
+  
+  .progressmeter-inset  
+    {
+      margin              : 1px 5px 2px 5px;
+    }
+  
+  .progressmeter-inset > .progressmeter-internal-box 
+    {
+      border              : 1px solid #9C9CFF;
+    }
+
+/* progress indicators */
+  .progress-bar 
+    {
+      background-color    : #008484;
+    }
+

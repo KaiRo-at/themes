@@ -1,0 +1,28 @@
+ 
+/******* ToolBox & ToolBar *******/
+
+.toolbar-primary 
+  {
+    padding               : 0px;
+  }
+  
+.toolbar-primary > .toolbar-holder
+  {
+    background-color      : #FF9F00;
+  }
+
+.toolbar-primary > .toolbar-endcap
+  {
+    background-color      : #9C9CFF;
+  }
+
+.toolbar-primary > toolbargrippy
+  {
+    background-color      : #9C9CFF; 
+  }
+
+.toolbar-primary > toolbargrippy:hover
+  {
+    background-color      : #FFCF00; 
+  }
+

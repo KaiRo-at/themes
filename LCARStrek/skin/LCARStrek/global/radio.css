@@ -1,0 +1,97 @@
+/* stylesheet for XUL <radio> element */
+
+/* default radio for dialogs */
+/* outer frame */
+  radio 
+    {
+      margin              : 3px 5px 3px 5px;
+    }
+
+  .radio-checkmark-box-1
+    {
+      border              : 1px solid #FF9F00;
+      -moz-border-radius  : 50%;
+      margin              : 0px 2px 0px 0px;
+      width               : 11px;
+      height              : 11px;
+    }
+
+  .radio-checkmark-box-1[disabled="true"]
+    {
+      background-color    : -moz-Dialog;
+    }
+
+  .radio-checkmark-box-2
+    {
+      -moz-border-radius  : 50%;
+      padding             : 2px;
+      width               : 10px;
+      height              : 10px;
+    }  
+
+  /* ensure that no list-style-image is inherited in from the Outside */
+  .radio-check
+    {
+      list-style-image    : none;
+    }
+
+  .radio-check[checked="true"]
+    {
+      list-style-image    : url(chrome://global/skin/check-radio.gif);
+    }
+  
+  .radio-check[checked="true"][disabled="true"]
+    {
+      list-style-image    : url(chrome://global/skin/check-radio-disabled.gif);
+    }
+
+  radio:hover > .radio-internal-box > .radio-checkmark-box-1
+    {
+      border: 1px solid #FFCF00;
+    }
+
+  radio[disabled="true"] > .radio-internal-box > .radio-checkmark-box-1,
+  radio[disabled="true"]:hover > .radio-internal-box > .radio-checkmark-box-1 
+    {
+      border: 1px solid #8050B0;
+    }
+
+/* text/icon frames */
+  .radio-text
+    {
+      margin              : 0px 0px 0px 2px;
+    }
+
+  .radio-icon 
+    {
+      list-style-image    : inherit;
+    }    
+
+  .radio-text
+    {
+      margin              : 0px !important;
+    }
+    
+  .radio-text[disabled="true"]
+    {
+      color               : #8050B0;
+    }
+  
+  radio[focused="true"] > .radio-internal-box > .radio-text-container
+    { 
+      border              : 1px dotted #FF9F00;
+    }
+  
+  .radio-text-container
+    {
+      border              : 1px solid transparent;
+    }
+  
+  .radio-internal-box
+    {
+      -moz-user-focus     : ignore;
+    }    
+
+
+
+

@@ -1,0 +1,88 @@
+/**  
+ * Small Dialog Header (without icon)
+ **/
+.box-smallheader 
+  {
+    -moz-binding          : url(chrome://communicator/content/dialogBindings.xml#smallheader);
+    -moz-border-radius    : 3px;
+    border                : 1px solid #9C9CFF;
+    margin                : 0px 5px 6px 5px;
+  }
+
+.box-smallheader > .toolbar-primary
+  {
+    padding               : 0px 0px 3px 0px;
+    min-height            : 0px;
+  }
+
+.box-smallheader-left 
+  {
+    font-size             : larger;
+    font-weight           : bold;
+    color                 : #9C9CFF;
+    padding-left          : 6px;
+  }
+
+.box-smallheader-right 
+  {
+    color                 : #FF9F00;
+    padding-right         : 6px;
+  }
+
+.box-smallheader > .toolbar-primary 
+  {
+    background-color      : #000000;
+    padding-top           : 3px;
+  }
+
+
+/** 
+ * Large Dialog Header (with icon) 
+ **/
+.box-header 
+  {
+    -moz-binding          : url(chrome://global/skin/classicBindings.xml#largeheader);
+  }
+
+.largeheader-box
+  {
+  }  
+  
+.largeheader-header-text
+  {
+    color                 : #FF9F00;
+    font-weight           : bold;
+    margin-left           : 23px;
+  }
+
+.largeheader-desc-text
+  {
+    margin-left           : 44px;
+  }  
+
+.largeheader-icon
+  {
+    width                 : 49px;
+    height                : 49px;
+    margin                : 5px;
+  }  
+  
+/**
+ * Dialog status line (blue) including progress area
+ **/
+.box-status 
+  {
+    visibility            : collapse;
+  }
+
+/** 
+ * Utility classes for use when combined headers/footers are used
+ **/
+/* display area framed container */
+#contentarea 
+  {
+    border-top            : 2px solid #9C9CFF;
+    border-bottom         : 2px solid #9C9CFF;
+    padding               : 7px;
+  }
+

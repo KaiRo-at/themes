@@ -1,0 +1,31 @@
+/*
+ * Autorepeatbutton
+ */
+.autorepeatbutton-up 
+  {
+    list-style-image      : url("chrome://global/skin/scroll-up.gif")
+  }
+
+.autorepeatbutton-down 
+  {
+    list-style-image      : url("chrome://global/skin/scroll-down.gif")
+  }
+
+autorepeatbutton 
+  {
+    -moz-box-align        : center;
+    -moz-box-pack         : center;
+    margin                : 1px 2px 2px 1px;
+    padding               : 1px;
+    height                : 1em;  
+  }
+
+autorepeatbutton:hover 
+  {
+    background-color      : #FFCF00;
+    color                 : #000000;
+    margin                : 1px;
+    padding               : 2px 1px 1px 2px;
+  }
+
+

@@ -1,0 +1,95 @@
+@import url(chrome://communicator/skin/bookmarks/bookmarks.css);
+
+/* ::::: bookmark toolbarbuttons ::::: */
+    
+toolbarbutton.bookmark-item {
+  cursor	            : pointer;
+  min-width           : 0px;
+  max-width           : 13em;
+}
+
+toolbarbutton.bookmark-item[container="true"] {
+  cursor              : default;
+}
+
+toolbarbutton.bookmark-item > .toolbarbutton-box > .toolbarbutton-dropmarker {
+  display             : none;
+}
+
+toolbarbutton.bookmark-item[disabled="true"],
+toolbarbutton.bookmark-item[disabled="true"]:hover,
+toolbarbutton.bookmark-item[disabled="true"]:hover:active
+{
+  color               : #8050B0;
+  text-decoration     : none;
+  list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-item-disabled.gif");
+  cursor              : default;
+}
+
+toolbarbutton.bookmark-item[disabled="true"][container="true"],
+toolbarbutton.bookmark-item[disabled="true"][container="true"]:hover,
+toolbarbutton.bookmark-item[disabled="true"][container="true"]:hover:active
+{
+  list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-folder-disabled.gif");
+}
+
+.menuitem-iconic.bookmark-item[disabled="true"]
+{
+  list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-item-disabled.gif");
+}
+
+.menu-iconic.bookmark-item[disabled="true"][container="true"]
+{
+  list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-folder-disabled.gif");
+}
+
+/* ::::: toolbarbutton drag and drop feedback ::::: */
+
+toolbarbutton.bookmark-item[dragover-right="true"] {
+  border-right        : 2px solid #008484;
+}
+
+toolbarbutton.bookmark-item[dragover-left="true"] {
+  border-left         : 2px solid #008484;
+}
+    
+.toolbarbutton-text[dragover-top="true"] {
+  background-color    : #008484;
+  color               : #FFCF00;
+}
+
+/* ::::: menu drag and drop feedback ::::: */
+
+menuitem[dragover-top="true"].bookmark-item {
+  border-top          : 1px solid #008484; !important;
+}
+
+menu[dragover-top="true"].bookmark-item {
+  border-top          : 1px solid #008484; !important;
+} 
+
+/*
+menuitem.bookmark-item {
+  border-top          : 1px solid transparent !important;
+  border-bottom       : 1px solid transparent !important;
+}
+  
+menu.bookmark-item {
+  border-top          : 1px solid transparent !important;
+  border-bottom       : 1px solid transparent !important;
+}
+*/
+
+menu[dragover="true"].bookmark-item {
+  background-color      : #008484; !important;
+  color                 : #FFCF00 !important;
+}
+
+menuitem[dragover-bottom="true"].bookmark-item {
+  border-bottom       : 1px solid #008484; !important;
+}
+
+menu[dragover-bottom="true"].bookmark-item {
+  border-bottom       : 1px solid #008484; !important;
+}
+

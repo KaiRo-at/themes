@@ -1,0 +1,15 @@
+groupbox
+  {
+    -moz-border-radius    : 5px;
+    border                : 2px solid #9C9CFF;
+    padding               : 7px !important;
+    margin                : 5px;
+  }
+
+.groupbox-body
+  {
+    padding               : inherit;
+  }
+
+
+

@@ -1,0 +1,45 @@
+#mini-nav 
+  {
+	  list-style-image      : url("chrome://global/skin/taskbar-navigator.gif");
+  }
+
+#mini-mail 
+  {
+	  list-style-image      : url("chrome://global/skin/taskbar-mail.gif");
+  }
+
+#mini-mail[BiffState="NewMail"]
+  {
+    list-style-image      : url("chrome://global/skin/taskbar-gotmail.gif");
+  }
+
+#mini-addr 
+  {
+	  list-style-image      : url("chrome://global/skin/taskbar-addressbook.gif");
+  }
+
+#mini-comp 
+  {
+	  list-style-image      : url("chrome://global/skin/taskbar-composer.gif");
+  }
+
+.taskbutton > .toolbarbutton-box,
+.taskbutton > .toolbarbutton-box:hover:active {
+  padding: 1px;
+  border: none;
+}
+
+.taskbutton > .toolbarbutton-box:hover,
+.taskbutton:hover > .toolbarbutton-box {
+  background-color      : #FFCF00;
+}
+
+.taskbutton > .toolbarbutton-box:hover:active,
+.taskbutton:hover:active > .toolbarbutton-box {
+  background-color      : #FFCF00;
+}
+
+.taskbutton > .toolbarbutton-box > .toolbarbutton-text
+  {
+    display               : none;
+  }

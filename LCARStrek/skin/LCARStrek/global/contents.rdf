@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:chrome="http://www.mozilla.org/rdf/chrome#">
+
+  <!-- List all the skins being supplied by this theme -->
+  <RDF:Seq about="urn:mozilla:skin:root">
+    <RDF:li resource="urn:mozilla:skin:LCARStrek/0.6" />
+  </RDF:Seq>
+
+  <!-- classic Information -->
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.6"
+        chrome:displayName="LCARStrek"
+        chrome:accessKey="L"
+        chrome:author="Robert Kaiser - KaiRo.at"
+        chrome:description="For all Trekkies: A theme based on LCARS computer design. Get more info at http://www.kairo.at/download/"
+        chrome:name="LCARStrek/0.6"
+        chrome:image="jar:resource:///chrome/LCARStrek.jar!/skin/LCARStrek/global/preview.png">
+    <chrome:packages>
+      <RDF:Seq about="urn:mozilla:skin:LCARStrek/0.6:packages">
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.6:global"/>
+      </RDF:Seq>
+    </chrome:packages>
+  </RDF:Description>
+
+  <!-- Version Information.  State that we work only with a certain version of this package. -->
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.6:global"
+    chrome:skinVersion="0.9.4"/>
+</RDF:RDF>
+
+

@@ -1,0 +1,47 @@
+
+#navigator-throbber
+  {
+    -moz-binding          : url("chrome://global/content/bindings/button.xml#button");
+    border                : none;
+    list-style-image      : url("chrome://global/skin/animthrob_single.gif");
+    margin                : 2px 2px 2px 1px;
+    min-width             : 0px;
+    padding               : 1px;
+    cursor                : pointer;
+    -moz-user-focus       : ignore;
+  }  
+  
+#navigator-throbber > .button-box
+  {
+/*
+    border                : 1px solid transparent;
+*/
+    padding               : 0px;
+  }
+  
+#navigator-throbber > .button-box > .button-text
+  {
+    display               : none;
+  }  
+
+/*
+#navigator-throbber:hover > .button-box
+  {
+    border                : 1px outset #CCD0DD;
+    padding               : 1px !important;
+  }  
+
+#navigator-throbber:hover:active > .button-box
+  {
+    border                : 1px inset #CCD0DD !important;
+    padding               : 2px 0px 0px 2px !important;
+  }  
+*/
+  
+#navigator-throbber[busy="true"]
+  {
+    list-style-image      : url("chrome://global/skin/animthrob.gif");
+  }
+  
+
+
