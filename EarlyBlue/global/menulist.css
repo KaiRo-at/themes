@@ -147,6 +147,11 @@ html|*.menulist-editable-input {
   background: transparent;
 }
 
+menulist:hover:active > .menulist-dropmarker {
+  border: none;
+  padding: 0;
+}
+
 .menulist-compact[open="true"] {
   border: 1px inset #CCD0DD;
 /*  background-color: ThreeDShadow;
