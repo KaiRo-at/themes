@@ -7,15 +7,20 @@
  **/
 
 outliner {
-  background-color: -moz-field;
+  background-color: black;
   border: none;
   border-spacing: 0px;
-  color: black;
+  color: #FF9F00;
+}
+
+outliner > splitter.tree-splitter {
+  margin: 0px;
+  border: none;
 }
 
 outlinerbody {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: #FF9F00;
   -moz-user-select: none;
 }
 
@@ -33,7 +38,7 @@ outlinerbody:-moz-outliner-row(current)
 outlinerbody:-moz-outliner-row(selected)
 {
   background-color: #008484;
-  color: white;
+  color: #FFCF00;
 }
 
 /*
@@ -87,15 +92,19 @@ outlinerbody:-moz-outliner-line(selected)
 
 outlinercol
 { 
-  border: 1px solid #9C9CFF;
+  border: 1px solid #FFCF00;
+  padding: 0px;
+  background-color: #9C9CFF;
+  color: black;
+/*  border: 1px solid #9C9CFF;
   padding: 0px;
   background-color: black;
-  color: FF9F00;
+  color: #FF9F00; */
 }
 
 .outlinercol-box,
 .outlinercol-image-box {
-  border: 1px solid #9C9CFF;
+/*  border: 1px solid #9C9CFF; */
 }  
 
 .outlinercol-box {
@@ -149,6 +158,7 @@ outlinercol:hover:active > .outlinercol-image-box
 
 outlinerbody:-moz-outliner-twisty {
   padding-right: 2px;
+  padding-top: 2px;
   width: 12px; /* The image's width is 12 pixels */
   list-style-image: url("chrome://global/skin/twisty-closed.gif");
 }
@@ -157,5 +167,7 @@ outlinerbody:-moz-outliner-twisty(open) {
   width: 12px; /* The image's width is 12 pixels */
   list-style-image: url("chrome://global/skin/twisty-open.gif");
 }
+
+
 
 
