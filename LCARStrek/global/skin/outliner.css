@@ -10,8 +10,8 @@ outliner {
   -moz-border-radius: 5px;
   border: 1px solid #9C9CFF;
   background-color: black;
-/*  border: none; */
-  border-spacing: 0px;
+/*  border: none; 
+  border-spacing: 0px; */
   color: #FF9F00;
 }
 
@@ -62,7 +62,7 @@ outlinerbody:-moz-outliner-cell
 {
   padding: 0px 0px 1px 2px;
   white-space: nowrap;
-  vertical-align: middle;
+  -moz-box-align: center;
 }
 
 outlinerbody:-moz-outliner-cell(selected)
@@ -99,10 +99,6 @@ outlinercol
   padding: 0px;
   background-color: #9C9CFF;
   color: black;
-/*  border: 1px solid #9C9CFF;
-  padding: 0px;
-  background-color: black;
-  color: #FF9F00; */
 }
 
 .outlinercol-box,
@@ -170,4 +166,3 @@ outlinerbody:-moz-outliner-twisty(open) {
   width: 12px; /* The image's width is 12 pixels */
   list-style-image: url("chrome://global/skin/twisty-open.gif");
 }
-

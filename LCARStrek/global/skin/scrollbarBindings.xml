@@ -9,29 +9,29 @@
    xmlns:html="http://www.w3.org/1999/xhtml"
    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   
-  <binding id="thumbv" extends="xul:box">
-    <content align="vertical">
-      <xul:image inherits="src"/>
-    </content>
-  </binding>
-
-  <binding id="thumbh" extends="xul:box">
+  <binding id="thumbv" extends="xul:vbox">
     <content>
       <xul:image inherits="src"/>
     </content>
   </binding>
 
-  <binding id="scrollbar" extends="xul:scrollbar">
+  <binding id="thumbh" extends="xul:hbox">
     <content>
-      <xul:scrollbarbutton type="decrement" inherits="sborient=align"/>
+      <xul:image inherits="src"/>
+    </content>
+  </binding>
+
+  <binding id="scrollbar" extends="chrome://global/content/bindings/scrollbar.xml#scrollbar">
+    <content>
+      <xul:scrollbarbutton type="decrement" inherits="sborient=orient"/>
       <xul:slider flex="1" inherits="curpos,maxpos,pageincrement,increment">
         <xul:thumb inherits="align,src" flex="1"/>
       </xul:slider>
-      <xul:scrollbarbutton type="increment" inherits="sborient=align"/>
+      <xul:scrollbarbutton type="increment" inherits="sborient=orient"/>
     </content>
   </binding>
 
-  <binding id="scrollbarbutton">
+  <binding id="scrollbarbutton" extends="chrome://global/content/bindings/scrollbar.xml#scrollbarbutton">
     <content>
       <xul:box class="scrollbarbutton-box" flex="1">
         <xul:image class="scrollbarbutton-icon" inherits="src"/>
@@ -41,6 +41,7 @@
 
 
 </bindings>
+
 
 
 

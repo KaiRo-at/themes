@@ -35,8 +35,8 @@
   button > .button-internal-box 
     {
       -moz-border-radius  : 3px;
-      vertical-align      : middle;
-      text-align          : center;
+      -moz-box-align      : center;
+      -moz-box-pack       : center;
       border              : none;
       padding             : 1px;
     }
@@ -58,8 +58,8 @@
 /* text wrapping frame (hack because <text> does not support alignment) */
   .button-text-container
     {
-      text-align          : center;
-      vertical-align      : middle;
+      -moz-box-align      : center;
+      -moz-box-pack       : center;
     }
 
 /* text frame */

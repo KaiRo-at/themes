@@ -40,7 +40,7 @@
 /*  margin: 0px 15px 0px 15px;
   border-left: 3px solid black;
   border-right: 3px solid black; */
-  text-align: left; 
+  -moz-box-pack: start; 
 }
 
 .acctCentralRow
@@ -83,6 +83,3 @@
   background-color: #FFCF00;
   color: black;
 }
-
-
-

@@ -29,7 +29,7 @@
 .box-smallheader > .toolbar-primary 
   {
     border                : 0px solid threeddarkshadow;
-    vertical-align        : middle;
+    -moz-box-align        : center;
     padding-top           : 3px;
   }
 
@@ -49,7 +49,7 @@
 
 .box-header-text-box 
   {
-    vertical-align        : middle;
+    -moz-box-align        : center;
   }
 
 .box-header-text 
@@ -62,7 +62,7 @@
 
 .box-header-icon-box  
   {
-    vertical-align        : middle;
+    -moz-box-align        : center;
   }
   
 .box-header-circle 
@@ -112,5 +112,3 @@
     padding-top           : 1px;
     padding-bottom        : 1px;
   }
-
-

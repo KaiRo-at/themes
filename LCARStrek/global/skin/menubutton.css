@@ -18,7 +18,7 @@
     {
       border              : none;
       padding             : 0px;
-      vertical-align      : middle;
+      -moz-box-align      : center;
     }
 
   .menubutton-single-icon
@@ -190,8 +190,4 @@
     {
       background-color    : #FFCF00;
       padding             : 2px 0px 0px 2px;
-    }    
-    
-
-
-
+    }

@@ -4,7 +4,7 @@
     list-style-image      : url("chrome://global/skin/animthrob_single.gif");
     min-width             : 36px;
     min-height            : 36px;
-    vertical-align        : middle;
+    -moz-box-align        : center;  /* We're in a hbox */
     padding               : 1px;
     margin                : 2px 4px 2px 1px;
     border                : none;
@@ -30,3 +30,4 @@
   {
     display               : none;
   }  
+

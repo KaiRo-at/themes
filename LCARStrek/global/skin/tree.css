@@ -31,7 +31,7 @@ treeitem[dd-dropon="true"] > treerow
 
 treecell { 
   white-space: nowrap;
-  vertical-align: middle;
+  -moz-box-align: center;
   padding: 1px 0px 1px 2px;
 } 
 
@@ -45,7 +45,7 @@ treecell {
 .treecell-inset-header {
   background-color: #9C9CFF; 
   color: black;
-  vertical-align: middle;
+  -moz-box-align: center;
   padding: 0px;
   border: 1px solid #000000;
 } 
@@ -160,4 +160,3 @@ treecol[sortActive="true"]
   {
     margin-left           : 2px;
   }
-

@@ -400,7 +400,7 @@ tab.edit-mode[selected="true"]:hover:active {
 #FormatToolbar > button > .button-internal-box {
         margin: 0px;
         padding: 1px;
-        text-align: center;
+        -moz-box-pack: center;
 }
 
 #FormatToolbar > button:active > .button-internal-box {
@@ -531,7 +531,7 @@ tab.edit-mode[selected="true"]:hover:active {
   border:     1px inset white;
   margin:     0px;
   padding:    2px;
-  text-align: center;
+  -moz-box-pack: center;
 }
 
 /* TODO: How to make inset color skinable? */
@@ -562,6 +562,7 @@ tab.edit-mode[selected="true"]:hover:active {
   /* TEMP: Set color here. TODO: Set color from page */
   background-color: #FFFF00;
 }
+
 
 
 

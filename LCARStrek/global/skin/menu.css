@@ -2,7 +2,7 @@ menu, menuitem
   {
     background-color      : #000000;
     color                 : #FF9F00;
-    vertical-align        : middle;
+    -moz-box-align        : center;
   }
 
 menuitem[default="true"]
@@ -72,7 +72,7 @@ popup > menuitem[menuactive="true"]
   {
     margin                : 0px 0px 0px 6px;
     width                 : 8px;
-    text-align            : center;
+    -moz-box-pack         : center;
     list-style-image      : url("chrome://global/skin/menu-arrow.gif");
   }
 
@@ -97,7 +97,7 @@ popup > menuitem[menuactive="true"]
     color                 : inherit;
     margin                : 0px 4px 0px 3px;
     width                 : 16px;
-    text-align            : center;
+    -moz-box-pack         : center;
     list-style-image      : inherit;
   }
 
@@ -211,5 +211,3 @@ menuitem[checked="true"][type="radio"][menuactive="true"]
       width               : 0px;
       border              : none;
     }
-
-

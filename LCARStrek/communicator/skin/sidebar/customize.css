@@ -84,5 +84,6 @@ treeitem[selected="true"][container="true"][open="true"] > treerow > .treecell-p
 }
 
 box#reorder {
-  text-align: center;
+  -moz-box-pack: center;
 }
+

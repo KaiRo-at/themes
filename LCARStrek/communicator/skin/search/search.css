@@ -25,7 +25,7 @@ titledbutton.sidebartitle:hover {
 }
 
 titledbutton.paneltitle { 
-  horizontal-align: left;
+  -moz-box-pack: start;
 }
 
 treecol.checkboxColumn {
@@ -34,7 +34,7 @@ treecol.checkboxColumn {
 
 box.spaced { 
   padding-top: 5px;
-  paddimg-bottom: 2px;
+  padding-bottom: 2px;
 }
 
 box#engineTabs {
@@ -104,5 +104,3 @@ titledbutton.panelbtn {
     margin-left           : 0px;
     margin-right          : 0px;
   }
-  
-  

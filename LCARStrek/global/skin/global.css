@@ -156,6 +156,7 @@
       background-color    : #8050B0;
       padding-left        : 2px;
       color               : black;
+      -moz-box-align      : center;
     }
 
   .statusbar-left
@@ -177,7 +178,7 @@
   statusbarpanel, .statusbar-panel
     {
       padding             : 0px 1px 0px 1px;
-      vertical-align      : middle;
+      -moz-box-align      : center;
     }
 
   .statusbarpanel-icononly
@@ -207,6 +208,4 @@
   {
     margin                : 0px;
   }
-
-
 

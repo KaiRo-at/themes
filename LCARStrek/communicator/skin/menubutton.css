@@ -157,7 +157,7 @@
 .menubutton-dual-ex-button > .button-internal-box > .button-text-container 
   {
     padding-top             : 3px;
-    text-align              : center;
+    -moz-box-pack           : center;
   }
 
 
@@ -264,3 +264,4 @@ menubutton > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
 /*    padding-bottom           : 17px;  */
     padding-bottom           : 24px;  
   }
+

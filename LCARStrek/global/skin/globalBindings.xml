@@ -9,13 +9,14 @@
   <binding id="statusbar" extends="xul:statusbar">
     <content>
       <xul:box class="statusbar-left"/>
-      <xul:box class="statusbar-center" autostretch="never" flex="1">
+      <xul:hbox class="statusbar-center" autostretch="never" flex="1">
         <children/>
-      </xul:box>
+      </xul:hbox>
       <xul:box class="statusbar-right"/>
     </content>
   </binding>
 
 </bindings>
+
 
 

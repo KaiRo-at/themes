@@ -12,7 +12,7 @@ box[name=header-part3]      { background-color: #DEDEDE; border: 0px solid #DEDE
 box[name=header-seamonkey]  { background-color: #DEDEDE; border: 0px solid #DEDEDE; border-left-width: 4px; }
 
 headerdisplayname			      { font-weight: bold;  white-space: pre; }
-header						          { text-align: left; }
+header						          { -moz-box-pack: start; }
 
 menubar[name=attachment-menubar]  { background-color: #EFEFEF; border: 0px solid #EFEFEF; }
 menu[name=attachment-menu]        { background-color: #EFEFEF; border: 0px solid #EFEFEF; }
@@ -80,4 +80,3 @@ body {
 .moz-txt-sig > a, .moz-signature > a {
   color: 7777FF /* light blue */;
 }
-
