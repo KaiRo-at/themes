@@ -21,6 +21,7 @@
 #
 # Contributor(s):
 #   Ben Goodger <ben@netscape.com> (Original Author)
+#   Robert Kaiser <kairo@kairo.at>
 #
 # Alternatively, the contents of this file may be used under the terms of
 # either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -37,67 +38,65 @@
 # ***** END LICENSE BLOCK *****
 */
 
-.buttonBox {
-  margin: 0px 3px 0px 0px !important;
-}
-
-.buttonBoxButton {
-  border: 1px solid transparent;
-  background-color: transparent;
-  margin: 1px;
-  margin-bottom: 0px;
-  padding: 1px;
-  list-style-image: url("chrome://browser/skin/pref/Options.png")
-}
-
-.buttonBoxButton > .button-box {
-  border: none !important;
-}
-
-.buttonBoxButton > .button-box > .button-icon {
-  width: 32px;
-  height: 32px;
-}
-
-.buttonBoxButton:hover, .buttonBoxButton:focus {
-  border: 1px solid #008484;
-/*  background-color: #008484; */
-  color: #FFCF00;
-}
-
-.buttonBoxButton[checked="true"] {
-  border: 1px solid #9C9CFF;
-  background-color: #008484;
-  color: #FFCF00;
-}
-
-#catGeneralButton { list-style-image: url("chrome://browser/skin/pref/general.gif"); }
-#catPrivacyButton { list-style-image: url("chrome://browser/skin/pref/privacy.gif"); }
-#catFeaturesbutton { list-style-image: url("chrome://browser/skin/pref/features.gif"); }
-#catDownloadsButton { list-style-image: url("chrome://browser/skin/pref/downloads.gif"); }
-#catThemesButton { list-style-image: url("chrome://browser/skin/pref/themes.gif"); }
-#catExtButton { list-style-image: url("chrome://browser/skin/pref/extensions.gif"); }
-#catAdvancedButton { list-style-image: url("chrome://browser/skin/pref/advanced.gif"); }
-
-expander {
-  margin: 2px;
-  border: 1px solid transparent;
-}
-
-#privacyCategories > expander[open="true"] {
-  background-color: #E7ADE7;
-  color: #000000;
-  border: 1px solid #9C9CFF;
+.listBox {
   -moz-border-radius: 3px;
+  margin: 2px 2px;
+  border: 1px solid #9C9CFF;
+  background-color: #000000;
 }
 
-.themesLink {
-  margin-left: 0px;
-  text-decoration: underline;
-  color: blue;
-  cursor: pointer;
+.indent {
+  margin-left: 23px;
+  margin-right: 23px;
 }
 
-.themesLink:active {
-  color: red;
+.small-indent {
+  margin-left: 15px; 
 }
+
+.uniWidthButton {
+  min-width: 8em;
+}
+
+/** Privacy/Advanced Panels Expander Boxes **/
+.settingsBox {
+  margin: 2px;
+  padding: 2px;
+}
+
+#fileExtension {
+  width: 5em; 
+}
+
+#fileExtension.pluginsList {
+  width: 5.5em; 
+}
+
+#typeIcon, 
+.extensionChildren::-moz-tree-image(fileExtension),
+.pluginTypesChildren::-moz-tree-image(fileExtension) {
+  margin: 0px 5px 0px 0px;
+}
+
+.pluginTypesChildren::-moz-tree-image(pluginEnabled) {
+  margin: 0px 5px 0px 0px;
+  list-style-image: url(chrome://mozapps/skin/pref/dot.gif);  
+}
+
+.pluginTypesChildren::-moz-tree-image(pluginEnabled, enabled) {
+  margin: 0px 5px 0px 0px;
+  list-style-image: url(chrome://mozapps/skin/pref/check.gif);  
+}
+
+.biggerIndent {
+  margin-left: 28px; 
+}
+
+#typeField {
+  font-weight: bold; 
+}
+
+#defaultAppName {
+  margin-left: 6px !important; 
+}
+
