@@ -92,3 +92,12 @@ treechildren:-moz-tree-image(FilenameColumn, file) {
 .home-button:hover {
   list-style-image: url("chrome://global/skin/filepicker/folder-home-hover.gif");
 }
+
+.new-dir-button {
+  list-style-image: url("chrome://global/skin/filepicker/folder-new.gif");
+  max-width: 28px;
+}
+
+.new-dir-button:hover {
+  list-style-image: url("chrome://global/skin/filepicker/folder-new-hover.gif");
+}
