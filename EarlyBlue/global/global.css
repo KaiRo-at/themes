@@ -127,6 +127,7 @@ statusbar {
   border-top: 1px solid #9999CC;
   background-color: #666699;
   color: #CCD0DD;
+  min-width: 1px;
 }
 
 statusbarpanel {
