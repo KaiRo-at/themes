@@ -31,6 +31,7 @@
 
   menubutton > .menubutton-internal-box > .menubutton-dual-button,
   menubutton:hover > .menubutton-internal-box > .menubutton-dual-button,
+  menubutton[buttonover="true"] > .menubutton-internal-box > .menubutton-dual-button,
   menubutton:active > .menubutton-internal-box > .menubutton-dual-button
     {
       border              : none;
@@ -75,13 +76,14 @@
       padding             : 1px 1px -1px 3px;
     }
 
-  menubutton > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
+  .menubutton-dual-dropmarker-box > .menubutton-dropmarker
     {
       border              : none;
       list-style-image    : url("chrome://global/skin/scroll-down.gif");
     }
     
-  menubutton[disabled="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
+  menubutton[disabled="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
+  .menubutton-dual-dropmarker-box > .menubutton-dropmarker[disabled="true"]
     {
       list-style-image    : url("chrome://global/skin/scroll-down-disabled.gif");
     }
@@ -124,3 +126,5 @@
       padding             : 2px 0px 0px 2px;
     }    
     
+
+

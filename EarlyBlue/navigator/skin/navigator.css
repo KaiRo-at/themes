@@ -41,12 +41,14 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 /*
  * Images for the main buttons
  */
-.menubutton-dual-button > .button-internal-box > .button-text-container 
+.menubutton-dual-button > .button-internal-box > .button-text-container, 
+.menubutton-dual-ex-button > .button-internal-box > .button-text-container 
   {
     display             : none;
   }
 
-.menubutton-dual-button
+.menubutton-dual-button,
+.menubutton-dual-ex-button
   {
     min-width           : 32px;
     min-height          : 32px;
@@ -191,5 +193,6 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
   {
     padding               : 0px;
   }
+
 
 

@@ -59,79 +59,122 @@
  **/
 
 
+/* This is really a hack to deal with buggy :hover - but it's now in toolkit (see below, taken from classic) */
+
+/**
+ * XXX - this is a hack. :hover does not work to spec and so we're using a binding
+ *       with JS that lives in xpfe/global/resources/content/menulistBindings.xml
+ *       to set attributes on various parts of the button when mouse down/over 
+ *       events fire. When :hover works correctly, this can be removed (see
+ *       revision 1.21 of this file for details.
+ */
+
+
 .menubutton-dual.top
+  {
+    -moz-binding          : url("chrome://global/content/menulistBindings.xml#menubutton-dual-ex");
+/*    -moz-user-focus       : ignore !important; */
+  }
+
+.menubutton-dual.left
+  {
+    -moz-binding          : url("chrome://global/content/menulistBindings.xml#menubutton-dual-ex-left");
+/*    -moz-user-focus       : none !important; */
+  }  
+  
+
+
+.menubutton-dual
   {
     font-size               : smaller;
   }
 
-.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box > .button-text-container 
+.menubutton-dual-ex-button > .button-internal-box > .button-text-container 
   {
     padding-top             : 3px;
     text-align              : center;
   }
 
-.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box
+
+
+.menubutton-dual > .menubutton-dual-ex-button > .button-internal-box
   {
     border                  : 1px solid transparent;
     padding                 : 1px;
   }
 
-.menubutton-dual.top:hover > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-button:hover > .button-internal-box
+.menubutton-dual-ex-button
+  {
+    margin                  : 0px;
+  }
+
+.menubutton-dual:hover > .menubutton-dual-ex-button > .button-internal-box,
+.menubutton-dual[buttonover="true"] > .menubutton-dual-ex-button > .button-internal-box
   {
     border                  : 1px outset #CCD0DD;
     padding                 : 1px;
   }
 
-.menubutton-dual.top:hover:active > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.top[open="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-button:hover:active > .button-internal-box
+.menubutton-dual:hover:active > .menubutton-dual-ex-button > .button-internal-box,
+.menubutton-dual[open="true"] > .menubutton-dual-ex-button > .button-internal-box,
+.menubutton-dual > .menubutton-dual-ex-button:hover:active > .button-internal-box
   {
     border                  : 1px inset #CCD0DD;
     padding                 : 2px 0px 0px 2px;
   }
 
 
-.menubutton-dual.top[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.top[disabled="true"]:hover:active > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.top[disabled="true"][open="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.top[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active > .button-internal-box
+.menubutton-dual[disabled="true"] > .menubutton-dual-ex-button > .button-internal-box,
+.menubutton-dual[disabled="true"]:hover:active > .menubutton-dual-ex-button > .button-internal-box,
+.menubutton-dual[disabled="true"][open="true"] > .menubutton-dual-ex-button > .button-internal-box,
+.menubutton-dual[disabled="true"][buttonover="true"] > .menubutton-dual-ex-button > .button-internal-box,
+.menubutton-dual[disabled="true"] > .menubutton-dual-ex-button:hover:active > .button-internal-box
   {
     border                  : 1px solid transparent;
     padding                 : 1px;
   }
 
-.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-dropmarker-box
+
+  
+.menubutton-dual > .menubutton-dual-dropmarker-box
   {
     border                  : 1px solid transparent;
     padding                 : 1px;
   }
 
-.menubutton-dual.top:hover > .menubutton-internal-box > .menubutton-dual-dropmarker-box
+.menubutton-dual-ex:hover > .menubutton-dual-dropmarker-box,
+.menubutton-dual:hover > .menubutton-dual-dropmarker-box,
+.menubutton-dual > .menubutton-dual-dropmarker-box:hover,
+.menubutton-dual[buttonover="true"] > .menubutton-dual-dropmarker-box
   {
     border                  : 1px outset #CCD0DD;
     padding                 : 1px;
   }
 
-.menubutton-dual.top:hover:active > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
-.menubutton-dual.top[open="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box
+.menubutton-dual:hover:active > .menubutton-dual-dropmarker-box,
+.menubutton-dual[open="true"] > .menubutton-dual-dropmarker-box
   {
     border                  : 1px inset #CCD0DD;
     padding                 : 2px 0px 0px 2px;
   }
 
 
-.menubutton-dual.top[disabled="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
-.menubutton-dual.top[disabled="true"]:hover:active > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
-.menubutton-dual.top[disabled="true"][open="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box
+.menubutton-dual[disabled="true"] > .menubutton-dual-dropmarker-box,
+.menubutton-dual[disabled="true"]:hover:active > .menubutton-dual-dropmarker-box,
+.menubutton-dual[disabled="true"][open="true"] > .menubutton-dual-dropmarker-box,
+.menubutton-dual[disabled="true"][buttonover="true"] > .menubutton-dual-dropmarker-box
   {
     border                  : 1px solid transparent;
     padding                 : 1px;
   }
 
-menubutton > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
+
+menubutton > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
   {
 /*    padding-bottom           : 17px;  */
     padding-bottom           : 24px;  
   }
+
+
+
 
