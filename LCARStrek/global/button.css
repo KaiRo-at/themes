@@ -55,7 +55,7 @@ button {
   
 .button-box {
   -moz-border-radius: 3px;
-  border: 1px solid transparent;
+/*  border: 1px solid transparent; */
   padding: 1px 4px 2px 3px;
 }
 
@@ -71,7 +71,7 @@ button:focus {
 }
 
 button:focus > .button-box {
-  border: 1px dotted #FF9F00;
+/*  border: 1px dotted #FF9F00; */
 }
 
 /* .......... default state .......... */
