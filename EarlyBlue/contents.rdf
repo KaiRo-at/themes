@@ -5,40 +5,40 @@
 
   <!-- List all the skins being supplied by this theme -->
   <RDF:Seq about="urn:mozilla:skin:root">
-    <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b" />
+    <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3" />
   </RDF:Seq>
 
   <!-- classic Information -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b"
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3"
         chrome:displayName="EarlyBlue"
         chrome:accessKey="E"
         chrome:author="Robert Kaiser - KaiRo.at"
         chrome:description="This theme re-introduces a UI design idea based on early Mozilla milestones. Get more info at http://www.kairo.at/download/"
-        chrome:name="EarlyBlue/1.3b"
+        chrome:name="EarlyBlue/1.3"
         chrome:image="global/preview.png">
     <chrome:packages>
-      <RDF:Seq about="urn:mozilla:skin:EarlyBlue/1.3b:packages">
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b:global"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b:communicator"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b:navigator"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b:messenger"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b:editor"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b:chatzilla"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b:inspector"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3b:browser"/>
+      <RDF:Seq about="urn:mozilla:skin:EarlyBlue/1.3:packages">
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3:global"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3:communicator"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3:navigator"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3:messenger"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3:editor"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3:chatzilla"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3:inspector"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.3:browser"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
 
   <!-- Version Information.  State that we work only with a certain version of this package. -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b:global" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b:communicator" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b:navigator" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b:messenger" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b:editor" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3:global" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3:communicator" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3:navigator" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3:messenger" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3:editor" chrome:skinVersion="1.2"/>
 <!-- chatzilla hasn't set skinVersion currently
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b:chatzilla" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3:chatzilla" chrome:skinVersion="1.2"/>
 -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b:inspector" chrome:skinVersion="1.2"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3b:browser" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3:inspector" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.3:browser" chrome:skinVersion="1.2"/>
 </RDF:RDF>
