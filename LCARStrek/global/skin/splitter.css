@@ -44,7 +44,7 @@ grippy:hover:active
   }
 
 /* vertical splitters */
-  window > splitter, box > splitter 
+  window > splitter, box > splitter, hbox > splitter 
     {
       width               : 6px;
       border-left         : 0px solid black;
@@ -56,6 +56,7 @@ grippy:hover:active
          to 'orient' */
   rows > splitter,
   window[orient="vertical"] > splitter,
+  vbox > splitter,
   box[orient="vertical"] > splitter,
   window[align="vertical"] > splitter,
   box[align="vertical"] > splitter
@@ -67,6 +68,7 @@ grippy:hover:active
 
   rows > splitter > grippy,
   window[orient="vertical"] > splitter > grippy,
+  vbox > splitter > grippy,
   box[orient="vertical"] > splitter > grippy,
   window[align="vertical"] > splitter > grippy,
   box[align="vertical"] > splitter > grippy
@@ -76,6 +78,7 @@ grippy:hover:active
 
   rows > splitter[state="collapsed"] > grippy,
   window[orient="vertical"] > splitter[state="collapsed"] > grippy,
+  vbox > splitter[state="collapsed"] > grippy,
   box[orient="vertical"] > splitter[state="collapsed"] > grippy,
   window[align="vertical"] > splitter[state="collapsed"] > grippy,
   box[align="vertical"] > splitter[state="collapsed"] > grippy

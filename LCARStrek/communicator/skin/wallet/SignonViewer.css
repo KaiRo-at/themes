@@ -2,7 +2,7 @@ window {
   background-color: #CCCCCC;
 }
 
-box.tabpanel {
+box.tabpanels {
   border: 1px outset #CCCCCC;
   padding: 10px;
 }

@@ -1,4 +1,4 @@
-tabcontrol {
+tabbox {
   margin: 1px 5px 2px 5px;
 }
 
@@ -26,12 +26,12 @@ tab:hover:active {
   text-decoration: none;
 }
 
-tabbox {
+tabs {
   padding: 0px 2px 0px 2px;
 }
 
     /* top tabs */
-tabcontrol[align="vertical"] tabbox[align="horizontal"] tab { 
+tabbox[align="vertical"] tabs[align="horizontal"] tab { 
   border-bottom: none;
   -moz-border-radius: 8px 8px 0px 0px;
   padding-bottom: 1px;
@@ -39,7 +39,7 @@ tabcontrol[align="vertical"] tabbox[align="horizontal"] tab {
 }
 
 	/* bottom tabs */
-tabcontrol[align="vertical"] tabpanel + tabbox[align="horizontal"] tab { 
+tabbox[align="vertical"] tabpanels + tabs[align="horizontal"] tab { 
   border-top: none;
   border-bottom: 1px solid #9C9CFF;
   border-left: 1px solid #9C9CFF;
@@ -50,7 +50,7 @@ tabcontrol[align="vertical"] tabpanel + tabbox[align="horizontal"] tab {
 }
 
 	/* left tabs */
-tabcontrol[align="horizontal"] tabbox[align="vertical"] tab { 
+tabbox[align="horizontal"] tabs[align="vertical"] tab { 
   border-right: none;
   -moz-border-radius: 8px 0px 0px 8px;
   padding-right: 1px;
@@ -58,7 +58,7 @@ tabcontrol[align="horizontal"] tabbox[align="vertical"] tab {
 }
 
 	/* right tabs */
-tabcontrol[align="horizontal"] tabpanel + tabbox[align="vertical"] tab { 
+tabbox[align="horizontal"] tabpanels + tabs[align="vertical"] tab { 
   border-top: 1px solid #9C9CFF;
   border-bottom: 1px solid #9C9CFF;
   border-left: none;
@@ -68,21 +68,22 @@ tabcontrol[align="horizontal"] tabpanel + tabbox[align="vertical"] tab {
   margin: 2px 1px 2px 1px;
 }
 
-tabcontrol { 
+tabbox { 
   border: none; 
 }
 
 /* border on bottom only, no padding (used in search) */
-tabpanel.light {
+tabpanels.light {
   border: none;
   border-bottom: 1px solid #9C9CFF;
   padding: 0px;
 }
 
-tabpanel {
+tabpanels {
   -moz-border-radius: 5px;
   border: 1px solid #9C9CFF;
   padding: 5px;
 }
+
 
 

@@ -1,6 +1,6 @@
+/* hmm, could this box (hbox) be in any other component than navigator? */
 
-
-.box-toolbar-group > box
+#urlbar-container
   {
     -moz-border-radius    : 5px 0px 0px 5px;
     border                : 1px solid #9C9CFF;
@@ -8,5 +8,4 @@
     padding               : 1px;
     margin                : 0px 0px 0px 3px;
   }
-  
-  
+

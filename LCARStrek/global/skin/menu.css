@@ -208,6 +208,13 @@ menuitem[checked="true"][menuactive="true"]
     padding               : 3px;
   }
 
+/* .tooltip html */
+html#TOOLTIP-tooltipText
+  {
+    padding               : 0px;
+    margin                : 0px;
+  }
+
 /*
  * Autorepeatbutton
  */
@@ -227,3 +234,4 @@ autorepeatbutton {
 autorepeatbutton:hover {
   background-color: #FFCF00;
 }
+

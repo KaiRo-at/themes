@@ -1,0 +1,195 @@
+/* -*- Mode: C; c-basic-offset: 2 -*-
+ *
+ * The contents of this file are subject to the Netscape Public
+ * License Version 1.1 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of
+ * the License at http://www.mozilla.org/NPL/
+ *
+ * Software distributed under the License is distributed on an "AS
+ * IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+ * implied. See the License for the specific language governing
+ * rights and limitations under the License.
+ *
+ * The Original Code is mozilla.org code.
+ *
+ * The Initial Developer of the Original Code is Netscape
+ * Communications Corporation.  Portions created by Netscape are
+ * Copyright (C) 1998 Netscape Communications Corporation. All
+ * Rights Reserved.
+ *
+ * Contributor(s): 
+ */
+
+treeitem[container="true"][open="true"][loading="true"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/bookmarks/loading.gif") ! important ;
+}
+
+treeitem[status="new"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/bookmarks/loading.gif") ! important ;
+}
+
+treeitem[type="http://home.netscape.com/NC-rdf#Folder"] > treerow > .treecell-bookmark,
+treeitem[type="http://home.netscape.com/NC-rdf#IEFavoriteFolder"] > treerow > .treecell-bookmark,
+treeitem[type="http://home.netscape.com/NC-rdf#Folder"][id="NC:PersonalToolbarFolder"] > treerow > .treecell-bookmark,
+treeitem[container="true"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
+}
+
+treeitem[type="http://home.netscape.com/NC-rdf#Folder"][open="true"] > treerow > .treecell-bookmark,
+treeitem[type="http://home.netscape.com/NC-rdf#IEFavoriteFolder"][open="true"] > treerow > .treecell-bookmark,
+treeitem[type="http://home.netscape.com/NC-rdf#Folder"][id="NC:PersonalToolbarFolder"][open="true"] > treerow > .treecell-bookmark,
+treeitem[container="true"][open="true"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
+}
+
+treeitem[type="http://home.netscape.com/NC-rdf#BookmarkSeparator"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+}
+
+treeitem[type="http://home.netscape.com/NC-rdf#Bookmark"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+}
+
+treeitem[type="http://home.netscape.com/NC-rdf#FileSystemObject"][container="true"][open="true"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/directory/folder-open.gif");
+}
+
+treeitem[type="http://home.netscape.com/NC-rdf#FileSystemObject"][container="true"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/directory/folder-closed.gif");
+}
+
+treeitem[type="http://home.netscape.com/NC-rdf#FileSystemObject"] > treerow > .treecell-bookmark
+{
+ list-style-image: url("chrome://communicator/skin/bookmarks/article.gif");
+}
+
+treeitem > treerow > .treecell-bookmark {
+ list-style-image:url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+}
+
+#navprintplus
+{
+ display:none !important; 
+} 
+
+
+/* Style rules below currently do only apply to bookmark window "file" menubutton */ 
+
+/** 
+ * Style rules for bookmarks tree items. Ideally this would be usage agnostic, but
+ * there's window/panel specific cruft in here too. 
+ **/    
+  .treecell-bookmark
+    {
+      list-style-image    : inherit;
+    }
+
+  .treeitem-bookmark
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+    }
+ 
+  .treeitem-bookmark[menuactive="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-item-sel.gif");
+    }
+ 
+  .treeitem-bookmark[container="true"][open="true"][loading="true"]
+    {
+      list-style-image    : url("chrome://global/skin/loading.gif") ! important ;
+    }
+
+  .treeitem-bookmark[status="new"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-item-updated.gif") ! important ;
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Folder"],
+  .treeitem-bookmark[container="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Folder"][menuactive="true"],
+  .treeitem-bookmark[container="true"][menuactive="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-folder-closed-sel.gif");
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Folder"][open="true"],
+  .treeitem-bookmark[container="true"][open="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Folder"][open="true"][menuactive="true"],
+  .treeitem-bookmark[container="true"][open="true"][menuactive="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-folder-open-sel.gif");
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Folder"][id="NC:PersonalToolbarFolder"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/personal-folder-closed.gif") !important;
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Folder"][id="NC:PersonalToolbarFolder"][menuactive="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/personal-folder-closed-sel.gif") !important;
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Folder"][id="NC:PersonalToolbarFolder"][open="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/personal-folder-open.gif") !important;
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Folder"][id="NC:PersonalToolbarFolder"][open="true"][menuactive="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/personal-folder-open-sel.gif") !important;
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#BookmarkSeparator"],
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#Bookmark"]
+    {
+      list-style-image    : url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+    }
+ 
+/**
+ * XXX - need to create some different icons for file system objects
+ **/    
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#FileSystemObject"][container="true"][open="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/directory/file-folder-open.gif");
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#FileSystemObject"][container="true"]
+    {
+      list-style-image    : url("chrome://communicator/skin/directory/file-folder-closed.gif");
+    }
+
+  .treeitem-bookmark[type="http://home.netscape.com/NC-rdf#FileSystemObject"]
+    {
+      list-style-image    : url("chrome://communicator/skin/directory/file-icon.gif");
+    }
+
+/**
+ * Bookmarks tree 
+ **/    
+  .bookmarks-panel-tree, .bookmarks-panel-tree > .tree-container-treerows
+    {
+      border              : none;
+    }
+
+  #bookmarksTree
+    {
+      border-top          : none;
+      border-bottom       : none;
+    }

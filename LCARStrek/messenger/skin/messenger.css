@@ -395,42 +395,130 @@ menu.push[disabled="true"]:active {
 }
 
 /**
- * Make sure the min height is small so we can 
- * resize the pane vertically -EDV
- */
-box#messagepanebox
-{
-   min-height: 10px;
-   height: 0px;
-}
-
-
-/**
  * this belongs in the mail filter window
  */
 
-.enabledcol {
-  list-style-image: url("chrome://messenger/skin/readmail.gif");
+.enabledcol
+  {
+    list-style-image: url("chrome://messenger/skin/readmail.gif");
+  }
+
+.enabledcol[value="true"]
+  {
+    list-style-image: url("chrome://messenger/skin/unreadmail.gif");
+  }
+
+.usesMailWidgets 
+  {
+    -moz-binding          : url(chrome://messenger/content/mailWidgets.xml#dummy);
+  }
+
+searchattribute 
+  {
+    -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchattribute);
+  }
+
+searchoperator
+  {
+    -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchoperator);
+  }
+
+searchvalue
+  {
+   -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchvalue);
+  }
+
+searchterm
+  {
+   -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchterm);
+  }
+
+/* addressing widget trees */
+.treecell-mailcardicon
+  {
+    border-bottom       : 1px solid #9C9CFF !important;
+    padding             : 0px;
+  }
+  
+.textfield-mailcardicon
+  {
+    list-style-image    : url("chrome://messenger/skin/abcard.gif");
+  }
+ 
+/* for the main standard mail window ONLY */    
+.mailwindow-statusbar
+  {
+    border-left         : none;
+  }
+  
+/** 
+ *Focus rings on 3 pane view
+ */
+
+/*
+#threadpane-splitter
+{
+  border-left         : none;
+  border-top          : none;
+}
+*/
+
+#threadTree  
+{
+  border-top            : none;
 }
 
-.enabledcol[value="true"] {
-  list-style-image: url("chrome://messenger/skin/unreadmail.gif");
+#folderTree> treechildren,
+#threadTree > treechildren
+{
+  border                : none;
 }
 
-searchattribute {
-  -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchattribute);
+#folderTree:focus > treechildren,
+#threadTree[focusring="true"] > treechildren
+{
+  border                : none;
 }
 
-searchoperator {
-  -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchoperator);
+#messagepane 
+{
+  border                : none;
 }
 
-searchvalue {
- -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchvalue);
+#messagepanebox[focusring="true"] 
+{
+  border                : none;
 }
 
-searchterm {
- -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchterm);
+#messagepanebox
+  {
+    border              : none;
+  }
+
+#msgHeaderView 
+{
+  border-top           : none;
+}
+
+#msgHeaderView > toolbar > toolbargrippy
+{
+  border-left          : none;
+}
+
+.awIdentityLabel
+{
+  width: 8em; 
+  margin-left: 5px;
+}
+/*
+#accountCentralBox
+{
+  background-color:#FFFFFF;
+}
+*/
+#status-bar 
+{
+  border-left          : none;
 }
 
 

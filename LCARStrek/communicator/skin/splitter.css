@@ -27,6 +27,7 @@ splitter[state="collapsed"] > grippy
     background-image      : url("chrome://global/skin/grippy-vertical-after.gif");
   }
 
+vbox > splitter > grippy,
 box[orient="vertical"] > splitter > grippy,
 window[orient="vertical"] > splitter > grippy {
 	/* a horizontal splitter */
@@ -38,12 +39,14 @@ window[orient="vertical"] > splitter > grippy {
 	height:8px;
  }
 
+vbox > splitter[state="collapsed"] > grippy,
 box[orient="vertical"] > splitter[state="collapsed"] > grippy,
 window[orient="vertical"] > splitter[state="collapsed"] > grippy {
         background-image: url("chrome://global/skin/grippy-horizontal-before.gif"); 
  }
 
 window > splitter > grippy,
+hbox > splitter > grippy,
 box > splitter > grippy {
 	/* a vertical splitter */
 	width: 8px;
@@ -52,6 +55,7 @@ box > splitter > grippy {
         border-bottom: 3px solid black;
 }
 
+vbox > splitter,
 box[orient="vertical"] > splitter,
 window[orient="vertical"] > splitter,
 rows > splitter {

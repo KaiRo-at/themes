@@ -3,14 +3,14 @@
 /********* XP Scrollbar *********/
 
 scrollbar {
-   -moz-binding: url("chrome://global/content/xulBindings.xml#scrollbar");
+  -moz-binding: url("chrome://global/skin/scrollbarBindings.xml#scrollbar"); 
    background-color: black;
 }
 
 /********* XP Scrollbar *********/
 
 thumb {
-  -moz-binding: url(chrome://global/skin/workaround.xml#thumbh);
+  -moz-binding: url(chrome://global/skin/scrollbarBindings.xml#thumbh);
   background-color: #9C9CFF;
   padding: 1px;
   list-style-image: url("chrome://global/skin/scroll-thumb-horiz.gif");
@@ -23,7 +23,7 @@ thumb[disabled="true"] {
 }
 
 scrollbar[align="vertical"] > slider > thumb {
-  -moz-binding: url(chrome://global/skin/workaround.xml#thumbv);
+   -moz-binding: url(chrome://global/skin/scrollbarBindings.xml#thumbv); 
    list-style-image: url("chrome://global/skin/scroll-thumb-vert.gif");
 }
 
@@ -41,6 +41,7 @@ thumb:hover {
 }
 
 scrollbarbutton {
+  -moz-binding: url(chrome://global/skin/scrollbarBindings.xml#scrollbarbutton); 
   vertical-align: bottom;
   cursor: default;
 
@@ -108,6 +109,7 @@ scrollbar[align="vertical"] > scrollbarbutton[type="increment"][disabled="true"]
 slider {
    background-color: #000000;
 }
+
 
 
 

@@ -19,7 +19,7 @@
  * Contributor(s): Stephen Lamm <slamm@netscape.com>
  */
  
-/**/
+@import url(chrome://global/skin/splitter.css);
 
 #sidebar-panels-splitter[state="collapsed"] {
     margin-bottom: 0px;

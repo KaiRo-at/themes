@@ -22,7 +22,7 @@
     <content excludes="observes,template" autostretch="never">
       <xul:image class="classic-simplebutton-icon" inherits="src"/>
       <xul:box orient="vertical" class="classic-simplebutton-textbox" autostretch="never" flex="1">
-        <xul:text class="classic-simplebutton-text" inherits="value,accesskey,crop"/>
+        <xul:text class="classic-simplebutton-text" inherits="value=label,accesskey,crop"/>
       </xul:box>
     </content>
   </binding>
@@ -31,9 +31,10 @@
     <content excludes="observes,template" orient="vertical" autostretch="never" halign="middle">
       <xul:image class="classic-simplebutton-icon" inherits="src"/>
       <xul:box orient="vertical" class="classic-simplebutton-textbox" autostretch="never" flex="1">
-        <xul:text class="classic-simplebutton-text" inherits="value,accesskey,crop"/>
+        <xul:text class="classic-simplebutton-text" inherits="value=label,accesskey,crop"/>
       </xul:box>
     </content>
   </binding>
   
 </bindings>
+

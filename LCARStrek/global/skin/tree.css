@@ -35,30 +35,43 @@ treecell {
   padding: 1px 0px 1px 2px;
 } 
 
-.treecell-header { 
-  background-color: #9C9CFF; 
-  color: black;
-  vertical-align: middle;
-  padding: 0px 0px 0px 5px;
-  border-right: 1px solid black;
-} 
-
 .treecell-header-image 
   {
+    list-style-image      : inherit;
+  }
+
+.treecell-header,
+.treecell-header-image,
+.treecell-inset-header {
   background-color: #9C9CFF; 
   color: black;
   vertical-align: middle;
-  border-right: 1px solid black;
+  padding: 0px;
+  border: 1px solid #000000;
+} 
+
+.treecell-header-box,
+.treecell-header-image-box {
+  padding: 1px;
+}
+
+.treecell-header:hover:active > .treecell-header-box,
+.treecell-inset-header:hover:active > .treecell-header-box,
+.treecell-header-image:hover:active > .treecell-header-image-box {
+  padding: 2px 0px 0px 2px;
+}
+
+.treecell-header:hover:active,
+.treecell-inset-header:hover:active,
+.treecell-header-image:hover:active {
+  border: 1px solid #FFCF00;
+}
+
+.treecell-image 
+  {
+    padding               : 0px;
   }
-
-.treecell-inset-header {
-  background-color: #9C9CFF; 
-  border-right: 1px solid black;
-}
-
-tree.inset > treehead > treerow > treecell.sortable:active {
-  border-right: 1px solid black;
-}
+  
 
 /** class="propertylist" ******************************************
  *  class for cells in grid-formatted property lists.
@@ -119,14 +132,17 @@ treeitem[selected="true"][container="true"][open="true"] > treerow > treecell > 
 
 
 /* tree header with sort direction indicators */
-.sortDirectionIndicator[sortDirection="ascending"]  > .tree-header-sortdirection {
+.tree-header-sortdirection {
+  list-style-image      : none;
+}
+
+.sortDirectionIndicator[sortDirection="ascending"] > .treecell-header-box > .tree-header-sortdirection {
   list-style-image: url("chrome://global/skin/sortAscending.gif");
   margin-right: 3px;
 }
 
-.sortDirectionIndicator[sortDirection="descending"] > .tree-header-sortdirection {
+.sortDirectionIndicator[sortDirection="descending"] > .treecell-header-box > .tree-header-sortdirection {
   list-style-image: url("chrome://global/skin/sortDescending.gif");
-  margin-right: 3px;
 }
 
 treecol[sortDirection="true"],
@@ -140,6 +156,34 @@ treecol[sortActive="true"]
     list-style-image       : url("chrome://global/skin/columnselect.gif");
   }
 
+.inline-edit-cell-box
+  {
+    margin-left           : 2px;
+  }
 
+/* Inline Editable Treecells */
+.textbox-inline-edit 
+  {
+    border                : 1px solid #FFCF00 !important;
+    margin                : 0px !important;
+  }
 
+.textbox-inline-edit > .textbox-internal-box > .textbox-input 
+  {
+    border                : 0px !important;
+    padding               : 1px !important;
+    margin                : 0px !important;
+  }
+
+.textbox-inline-edit > .textbox-internal-box 
+  {
+    border                : 0px !important;
+    padding               : 0px !important;
+    margin                : 0px !important;
+  }
+
+treerow[mode="inline-edit"] 
+  {
+    background            : transparent;
+  }
 

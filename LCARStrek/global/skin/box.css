@@ -3,23 +3,18 @@ titledbox
   {
     -moz-border-radius    : 5px;
     border                : 2px groove #9C9CFF;
-    padding               : 7px;
+    padding               : 7px !important;
     margin                : 5px;
   }
 
-title
+label
   {
-    margin-left           : 6px;
-    padding-right         : 40px;
-  }
-
-box.titledbox-title 
-  {
-    padding-left           : 5px;
-    padding-right          : 5px;     
+    margin                : 0px 40px 2px 6px;
+    padding               : 0px 3px 0px 3px;
+/*    background-color      : ThreeDFace; */
   } 
 
-box.titledbox-body
+.titledbox-body
   {
     display               : block;
     padding               : inherit;
@@ -52,7 +47,7 @@ box.titledbox-body
       text-align          : right;
     }
 
-  row
+  row[autostretch="never"]
     {
       vertical-align      : middle;
     }

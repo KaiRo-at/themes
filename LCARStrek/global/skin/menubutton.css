@@ -35,6 +35,7 @@
 
   menubutton > .menubutton-internal-box > .menubutton-dual-button,
   menubutton:hover > .menubutton-internal-box > .menubutton-dual-button,
+  menubutton[buttonover="true"] > .menubutton-internal-box > .menubutton-dual-button,
   menubutton:active > .menubutton-internal-box > .menubutton-dual-button
     {
       border              : none;
@@ -91,7 +92,7 @@
       padding             : 1px 1px -1px 3px;
     }
 
-  menubutton > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
+  .menubutton-dual-dropmarker-box > .menubutton-dropmarker
     {
       border              : none;
       list-style-image    : url("chrome://global/skin/scroll-down.gif");
@@ -99,14 +100,20 @@
     
   menubutton[disabled="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
   menubutton[disabled="true"]:hover:active > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
-  menubutton[disabled="true"]:hover > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
+  menubutton[disabled="true"]:hover > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
+  .menubutton-dual-dropmarker-box > .menubutton-dropmarker[disabled="true"],
+  .menubutton-dual[disabled="true"][buttonover="true"] > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
+  .menubutton-dual[disabled="true"]:hover > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
     {
       list-style-image    : url("chrome://global/skin/scroll-down-disabled.gif");
     }
 
   menubutton:hover > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
   menubutton:hover:active > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
-  menubutton[open="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
+  menubutton[open="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
+  .menubutton-dual[buttonover="true"] > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
+  .menubutton-dual[open="true"] > .menubutton-dual-dropmarker-box > .menubutton-dropmarker,
+  .menubutton-dual:hover > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
     {
       list-style-image    : url("chrome://global/skin/scroll-down-hover.gif");
     }
@@ -185,3 +192,6 @@
       padding             : 2px 0px 0px 2px;
     }    
     
+
+
+

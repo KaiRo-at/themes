@@ -7,7 +7,7 @@
   <binding id="sidebar-panel-header">
     <content>
       <xul:box class="sidebar-panel-header-box" flex="1" autostretch="never" valign="middle">
-        <xul:text class="sidebar-panel-header-text" inherits="value,accesskey,crop" crop="right"/>
+        <xul:text class="sidebar-panel-header-text" inherits="value=label,accesskey,crop" crop="right"/>
       </xul:box>
     </content>
   </binding>

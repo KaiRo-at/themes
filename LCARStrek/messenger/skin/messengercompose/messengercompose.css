@@ -16,49 +16,53 @@
         color: black;
 }
 
-spring.spacer {
-	width: 5px;
-	height: 5px;
-}
-
-box.cleanborder {
-	margin: 10px;
-	padding: 10px;
-/*	border: 2px groove white; */
-	width: 100%;
-}
-
-box.padded {
-	margin: 10px;
-	width: 100%;
-}
-
-
 /* addressing widget */
+#addressingWidgetTree
+  {
+    height                : 80px;
+    width                 : 0px;
+    -moz-user-focus       : none;
+  }
 
-tree[class="addressingWidget"] treeitem > treerow  > treecell > box > image {
-	vertical-align: middle;
-	padding:2px;
-	border:none;
-	list-style-image: url("chrome://messenger/skin/addressbook/person.gif");
-	-moz-user-focus: ignore;
+#addressingWidgetTree > .tree-container-treerows
+  {
+    border-left: none;
+  }
+
+#listcol-addressingWidget 
+  {
+    width                 : 9em;
+    border-right          : 1px solid #CCD0DD;
+  }
+
+#addressingWidgetTree > treechildren > treeitem > treerow,
+#addressingWidgetTree > treechildren > treeitem[selected="true"] > treerow {
+  border                  : none;
+  background-color        : inherit;
+  color                   : inherit;
 }
 
-textfield.addressingWidget[autocomplete="true"] {
-    border              : 2px solid #FFFFFF;
-    margin              : 1px;
-}
+.treecell-addressingWidget
+  {
+    border-bottom         : 1px solid #CCD0DD;
+    padding               : 0px !important;
+  }
 
-textfield.addressingWidget[autocomplete="true"][focused="true"]
-{
-    border              : 2px solid #6699cc;
-    margin              : 1px;
-}
+.treecell-addressingWidget:first-child 
+  {
+    border-bottom         : none;
+  }
 
-textfield.addressingWidget[autocomplete="true"] > box
-{
-    border              : none;
-}
+.dummy-row-cell:first-child
+  {
+    border-bottom         : 1px solid #CCD0DD;
+  }
+
+.person-icon 
+  {
+    list-style-image      : url("chrome://messenger/skin/addressbook/person.gif");
+    margin                : 0px 3px 0px 3px;
+  }
 
 #button-send {
 	list-style-image:url("chrome://messenger/skin/messengercompose/send.gif");
@@ -144,37 +148,60 @@ textfield.addressingWidget[autocomplete="true"] > box
 	list-style-image:url("chrome://global/skin/stop_dis.gif");
 }
 
-/* hack because of bad skinnability and hardcoded borders */
-toolbar#MsgHeadersToolbar > box > box > box {
-  border: 0px !important;
+
+#compose-toolbar-sizer
+  {
+    height                : 3px;
+    margin-top            : 0px;
+    border-top            : none;
+  }
+
+#content-frame
+  {
+    border                : 1px inset #CCD0DD;
+  }
+
+#msgIdentity, #addressingWidgetTree, #msgSubject
+  {
+    margin-right          : 3px;
 }
 
-/* hack because of bad skinnability and hardcoded borders */
-tree#addressingWidgetTree {
-/*  border: 1px inset #CCCCDD !important; */
+#attachmentbucket-sizer
+  {
+    width                 : 5px;
+  }
+
+#attachmentBucket
+  {
+    margin-left           : 3px;
+    -moz-user-focus: normal !important;
+  }
+
+#attachmentBucketText
+  {
+    margin-left           : 3px;
+    -moz-user-focus       : none;
+  }
+
+/* askSendFormat dialog */
+
+#askSendFormat {
+	width: 40em;
 }
 
-box#addressingWidget {
-  -moz-user-focus: normal;
+#askImageBox {
+        vertical-align: top;
 }
 
-tree#attachmentBucket {
-  -moz-user-focus: normal;
-/*  border: 1px inset #CCCCDD; */
+#convertYes {
+	list-style-image:url("chrome://global/skin/question-icon.gif");
 }
 
-tree#attachmentBucket > treechildren > treeitem {
-  color: #FF9F00;
+#convertAltering {
+	list-style-image:url("chrome://global/skin/question-icon.gif");
 }
 
-#msgSubject {
-  -moz-user-focus: normal;
+#convertNo {
+	list-style-image:url("chrome://global/skin/alert-icon.gif");
 }
 
-#msgIdentity {
-  -moz-user-focus: normal;
-}
-
-button#statusText > .button-internal-box {
-  border: 0px;
-}

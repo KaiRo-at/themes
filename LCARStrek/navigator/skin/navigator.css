@@ -2,7 +2,7 @@
  **/
 
 @import url(chrome://communicator/skin/);
-@import url(chrome://communicator/skin/bookmarks/bookmarks.css);
+@import url(chrome://navigator/skin/personalToolbar.css);
 @import url(chrome://communicator/skin/sidebar/sidebar.css);
 
 #sidebar-parent 
@@ -41,12 +41,14 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 /*
  * Images for the main buttons
  */
-.menubutton-dual-button > .button-internal-box > .button-text-container 
+.menubutton-dual-button > .button-internal-box > .button-text-container, 
+.menubutton-dual-ex-button > .button-internal-box > .button-text-container 
   {
     display             : none;
   }
 
-.menubutton-dual-button
+.menubutton-dual-button,
+.menubutton-dual-ex-button
   {
     min-width           : 32px;
     min-height          : 32px;
@@ -59,9 +61,8 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 
 #back-button:hover,
 #back-button:hover:active,
-#back-button > .menubutton-internal-box > .menubutton-dual-button:hover,
-#back-button > .menubutton-internal-box > .menubutton-dual-button:hover:active,
-#back-button[open="true"] > .menubutton-internal-box > .menubutton-dual-button
+#back-button[buttonover="true"],
+#back-button[open="true"]
   {
 	  list-style-image      : url("chrome://navigator/skin/back-hover.gif");
   }
@@ -69,8 +70,7 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 #back-button[disabled="true"],
 #back-button[disabled="true"]:hover,
 #back-button[disabled="true"]:hover:active,
-#back-button[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover,
-#back-button[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active
+#back-button[disabled="true"][buttonover="true"]
   {
 	  list-style-image      : url("chrome://navigator/skin/back_dis.gif");
   }
@@ -82,9 +82,8 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 
 #forward-button:hover,
 #forward-button:hover:active,
-#forward-button > .menubutton-internal-box > .menubutton-dual-button:hover,
-#forward-button > .menubutton-internal-box > .menubutton-dual-button:hover:active,
-#forward-button[open="true"] > .menubutton-internal-box > .menubutton-dual-button
+#forward-button[buttonover="true"],
+#forward-button[open="true"]
   {
 	  list-style-image      : url("chrome://navigator/skin/forward-hover.gif");
   }
@@ -92,8 +91,7 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 #forward-button[disabled="true"],
 #forward-button[disabled="true"]:hover,
 #forward-button[disabled="true"]:hover:active,
-#forward-button[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover,
-#forward-button[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active
+#forward-button[disabled="true"][buttonover="true"]
   {
 	  list-style-image      : url("chrome://navigator/skin/forward_dis.gif");
   }
@@ -200,7 +198,6 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
     padding-bottom        : 10px;
   }
 
-  
 #search-button
   {
     margin                : 0px 3px 0px 0px;
@@ -249,3 +246,4 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
   {
     padding               : 0px;
   }
+
