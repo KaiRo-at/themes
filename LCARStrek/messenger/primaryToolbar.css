@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
@@ -22,7 +22,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -48,11 +48,10 @@
 }
 
 #button-getmsg:hover,
-#button-getmsg[buttonover="true"],
-#button-getmsg[buttondown="true"],
+#button-getmsg:hover:active,
 #button-getmsg[open="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/getmsg-hover.gif");
-} 
+}
 
 #button-getmsg[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/getmsg-disabled.gif") !important;
@@ -65,7 +64,7 @@
 #button-newmsg:hover,
 #button-newmsg:hover:active {
   list-style-image: url("chrome://messenger/skin/toolbar/newmsg-hover.gif");
-} 
+}
 
 #button-newmsg[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/newmsg-disabled.gif") !important;
@@ -78,7 +77,7 @@
 #button-reply:hover,
 #button-reply:hover:active {
   list-style-image: url("chrome://messenger/skin/toolbar/reply-hover.gif");
-} 
+}
 
 #button-reply[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/reply-disabled.gif") !important;
@@ -91,7 +90,7 @@
 #button-replyall:hover,
 #button-replyall:hover:active {
   list-style-image: url("chrome://messenger/skin/toolbar/replyall-hover.gif");
-} 
+}
 
 #button-replyall[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/replyall-disabled.gif") !important;
@@ -104,7 +103,7 @@
 #button-forward:hover,
 #button-forward:hover:active {
   list-style-image: url("chrome://messenger/skin/toolbar/forward-hover.gif");
-} 
+}
 
 #button-forward[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/forward-disabled.gif") !important;
@@ -115,9 +114,10 @@
 }
 
 #button-file:hover,
+#button-file:hover:active,
 #button-file[open="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/file-hover.gif");
-} 
+}
 
 #button-file[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/file-disabled.gif") !important;
@@ -130,7 +130,7 @@
 #button-next:hover,
 #button-next:hover:active {
   list-style-image: url("chrome://messenger/skin/toolbar/next-hover.gif");
-} 
+}
 
 #button-next[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/next-disabled.gif") !important;
@@ -143,7 +143,7 @@
 #button-delete:hover,
 #button-delete:hover:active {
   list-style-image: url("chrome://global/skin/icons/trash-hover.gif");
-} 
+}
 
 #button-delete[disabled="true"] {
   list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
@@ -154,11 +154,10 @@
 }
 
 #button-mark:hover,
-#button-mark[buttonover="true"],
-#button-mark[buttondown="true"],
+#button-mark:hover:active,
 #button-mark[open="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/mark-hover.gif");
-} 
+}
 
 #button-mark[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/mark-disabled.gif") !important;
@@ -169,8 +168,7 @@
 }
 
 #button-print:hover,
-#button-print[buttonover="true"],
-#button-print[buttondown="true"],
+#button-print:hover:active,
 #button-print[open="true"] {
   list-style-image: url("chrome://global/skin/icons/print-hover.gif");
 }
@@ -201,7 +199,7 @@
 #button-junk[buttondown="true"],
 #button-junk[open="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/junk-hover.gif");
-} 
+}
 
 #button-junk[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/toolbar/junk-disabled.gif") !important;

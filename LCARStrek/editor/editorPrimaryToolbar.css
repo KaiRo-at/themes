@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
@@ -24,7 +24,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -85,7 +85,7 @@
 #saveButton[dirty="true"]:hover,
 #saveButton[dirty="true"]:hover:active {
   list-style-image: url("chrome://editor/skin/icons/savefile-hover.gif");
-} 
+}
 
 #saveButton[dirty="true"][disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/savefile-disabled.gif") !important;
@@ -98,7 +98,7 @@
 #publishButton:hover,
 #publishButton:hover:active {
   list-style-image: url("chrome://editor/skin/icons/publish-hover.gif");
-} 
+}
 
 #publishButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/publish-disabled.gif") !important;
@@ -106,12 +106,12 @@
 
 #previewButton {
   list-style-image: url("chrome://editor/skin/icons/preview.gif");
-} 
+}
 
 #previewButton:hover,
 #previewButton:hover:active {
   list-style-image: url("chrome://editor/skin/icons/preview-hover.gif");
-} 
+}
 
 #previewButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/preview-disabled.gif") !important;
@@ -122,11 +122,10 @@
 }
 
 #printButton:hover,
-#printButton[buttonover="true"],
-#printButton[buttondown="true"],
+#printButton:hover:active,
 #printButton[open="true"] {
   list-style-image: url("chrome://global/skin/icons/print-hover.gif");
-} 
+}
 
 #printButton[disabled="true"] {
   list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
@@ -140,7 +139,7 @@
 #findButton:hover,
 #findButton:hover:active {
   list-style-image: url("chrome://editor/skin/icons/find-hover.gif");
-} 
+}
 
 #findButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/find-disabled.gif") !important;
@@ -154,7 +153,7 @@
 #linkButton:hover,
 #linkButton:hover:active {
   list-style-image: url("chrome://editor/skin/icons/link-hover.gif");
-} 
+}
 
 #linkButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/link-disabled.gif") !important;
@@ -193,7 +192,7 @@
 #hlineButton:hover,
 #hlineButton:hover:active {
   list-style-image: url("chrome://editor/skin/icons/hline-hover.gif");
-} 
+}
 
 #hlineButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/hline-disabled.gif") !important;
@@ -214,8 +213,8 @@
 
 #spellingButton {
   list-style-image: url("chrome://editor/skin/icons/spell.gif");
-} 
- 
+}
+
 #spellingButton:hover,
 #spellingButton:hover:active {
   list-style-image: url("chrome://editor/skin/icons/spell-hover.gif");
@@ -281,8 +280,8 @@
   list-style-image: url("chrome://editor/skin/icons/form.gif");
 }
 
-#formButton[buttonover="true"],
-#formButton[buttondown="true"] {
+#formButton:hover,
+#formButton:hover:active {
   list-style-image: url("chrome://editor/skin/icons/form-hover.gif");
 }
 

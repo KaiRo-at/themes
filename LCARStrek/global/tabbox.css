@@ -73,26 +73,31 @@ tab {
   border-bottom: none;
   padding: 1px 4px 2px 4px;
   background-color: #000000;
-  color: #FF9F00; 
+  color: #FF9F00;
 }
 
 .tab-text {
   margin: 0 !important;
 }
 
-tab[selected="true"]  {
+tab[selected="true"] {
+  -moz-user-focus: normal;
   font-weight: bold;
   background-color: #008484;
 }
 
-tab:hover { 
+tab:hover {
   background-color: #FFCF00;
   color: #000000;
   text-decoration: underline;
 }
 
-tab:hover:active { 
+tab:hover:active {
   text-decoration: none;
+}
+
+tab:focus > .tab-middle {
+  -moz-outline: 1px dotted invert;
 }
 
 /*

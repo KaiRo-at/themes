@@ -52,10 +52,10 @@ button {
   background-color: #000000;
   color: #FFCF00;
 }
-  
+
 .button-box {
   -moz-border-radius: 3px;
-  border: 1px solid transparent; 
+  border: 1px solid transparent;
   padding: 1px 4px 2px 3px;
 }
 
@@ -117,12 +117,13 @@ button[checked="true"] {
 button:hover:active > .button-box,
 button[open="true"] > .button-box,
 button[checked="true"] > .button-box {
-  padding: 2px 3px 1px 4px; 
+  padding: 2px 3px 1px 4px;
 }
 
 /* .......... disabled state .......... */
 
-button[disabled="true"] {
+button[disabled="true"],
+button[disabled="true"]:hover:active {
   border: none;
   background-color: #000000 !important;
   color: #8050B0 !important;
