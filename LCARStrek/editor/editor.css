@@ -72,7 +72,7 @@
 
 #structToolbar {
   min-width: 1px;
-  overflow: hidden;
+  overflow: -moz-hidden-unscrollable;
 }
 
 #structSpacer {
