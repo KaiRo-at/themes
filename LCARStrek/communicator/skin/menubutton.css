@@ -132,40 +132,27 @@
     font-size               : smaller;
   }
 
-/* where have you gone? 
+/* Mail & Co. */
 
-.menubutton-dual.toolbar:hover > .menubutton-internal-box,
-.menubutton-dual.toolbar:hover:active > .menubutton-internal-box
+.menubutton-dual.toolbar
   {
-      -moz-border-radius    : 3px;
-    background-color        : #FFCF00;
-    color                   : #000000;
+    min-width               : 32px;
+    min-height              : 32px;
+    max-height              : 40px;
+    margin                  : 0px 1px 0px 1px;
+    padding                 : 0px;
+    font-size               : smaller;
+    border                  : none;
   }
 
-.menubutton-dual.toolbar[open="true"] > .menubutton-internal-box
+.menubutton-dual.toolbar > button > .button-internal-box
   {
-    background-color        : #FF9F00;
-    color                   : #000000;
+    min-width               : 32px;
+    min-height              : 32px;
+    max-height              : 40px;
+    border                  : none;
   }
 
-.menubutton-dual.toolbar[disabled="true"] > .menubutton-internal-box,
-.menubutton-dual.toolbar[disabled="true"]:hover:active > .menubutton-internal-box,
-.menubutton-dual.toolbar[disabled="true"][open="true"] > .menubutton-internal-box
-  {
-      -moz-border-radius    : 3px;
-    background-color        : #000000;
-    color                   : #8050B0;
-  }
-
-
-.menubutton-dual.toolbar > .menubutton-internal-box > .menubutton-dual-button,
-.menubutton-dual.toolbar:hover > .menubutton-internal-box > .menubutton-dual-button,
-.menubutton-dual.toolbar:hover:active > .menubutton-internal-box > .menubutton-dual-button
-  {
-    -moz-border-radius      : 3px 0px 0px 3px;
-  }
-
-*/
 
 .menubutton-dual-ex-button > .button-internal-box > .button-text-container 
   {
@@ -277,6 +264,7 @@ menubutton > .menubutton-dual-dropmarker-box > .menubutton-dropmarker
 /*    padding-bottom           : 17px;  */
     padding-bottom           : 24px;  
   }
+
 
 
 

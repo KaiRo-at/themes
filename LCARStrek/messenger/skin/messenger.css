@@ -72,9 +72,8 @@ iframe {
 
 #button-getmsg:hover,
 #button-getmsg:hover:active,
-#button-getmsg > .menubutton-internal-box > .menubutton-dual-button:hover,
-#button-getmsg > .menubutton-internal-box > .menubutton-dual-button:hover:active,
-#button-getmsg[open="true"] > .menubutton-internal-box > .menubutton-dual-button
+#button-getmsg[buttonover="true"],
+#button-getmsg[open="true"]
   {
 	list-style-image:url("chrome://messenger/skin/getmsg-hover.gif");
   }
@@ -82,8 +81,7 @@ iframe {
 #button-getmsg[disabled="true"],
 #button-getmsg[disabled="true"]:hover,
 #button-getmsg[disabled="true"]:hover:active,
-#button-getmsg[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover,
-#button-getmsg[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active
+#button-getmsg[disabled="true"][buttonover="true"],
   {
 	list-style-image:url("chrome://messenger/skin/getmsg_dis.gif");
   }
@@ -138,30 +136,27 @@ iframe {
 
 #button-file {
 	list-style-image:url("chrome://messenger/skin/file.gif");
-        padding: 1px;
+        padding: 0px 2px 0px 2px;
 }
 
 #button-file:hover {
 	list-style-image:url("chrome://messenger/skin/file-hover.gif");
         background-color: #FFCF00;
         color: #000000;
-        padding: 2px 0px 0px 2px;
 }
 
 #button-file[open="true"] {
 	list-style-image:url("chrome://messenger/skin/file-hover.gif");
         background-color: #FF9F00;
         color: #000000;
-        padding: 2px 0px 0px 2px;
 }
 
 #button-file[disabled="true"],
-#button-file:hover[disabled="true"],
-#button-file[open="true"][disabled="true"] {
+#button-file[disabled="true"]:hover,
+#button-file[disabled="true"][open="true"] {
 	list-style-image:url("chrome://messenger/skin/file_dis.gif");
         background-color: #000000;
         color: #8050B0;
-        padding: 1px;
 }
 
 #button-file > .button-internal-box 
@@ -194,9 +189,8 @@ iframe {
 
 #button-mark:hover,
 #button-mark:hover:active,
-#button-mark > .menubutton-internal-box > .menubutton-dual-button:hover,
-#button-mark > .menubutton-internal-box > .menubutton-dual-button:hover:active,
-#button-mark[open="true"] > .menubutton-internal-box > .menubutton-dual-button
+#button-mark[buttonover="true"],
+#button-mark[open="true"]
   {
 	list-style-image:url("chrome://messenger/skin/mark-hover.gif");
   }
@@ -204,8 +198,7 @@ iframe {
 #button-mark[disabled="true"],
 #button-mark[disabled="true"]:hover,
 #button-mark[disabled="true"]:hover:active,
-#button-mark[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover,
-#button-mark[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active
+#button-mark[disabled="true"][buttonover="true"]
   {
 	list-style-image:url("chrome://messenger/skin/mark_dis.gif");
   }
@@ -230,9 +223,8 @@ iframe {
 
 #button-print:hover,
 #button-print:hover:active,
-#button-print > .menubutton-internal-box > .menubutton-dual-button:hover,
-#button-print > .menubutton-internal-box > .menubutton-dual-button:hover:active,
-#button-print[open="true"] > .menubutton-internal-box > .menubutton-dual-button
+#button-print[buttonover="true"],
+#button-print[open="true"]
   {
     list-style-image      : url("chrome://global/skin/print-hover.gif");
   }
@@ -240,8 +232,7 @@ iframe {
 #button-print[disabled="true"],
 #button-print[disabled="true"]:hover,
 #button-print[disabled="true"]:hover:active,
-#button-print[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover,
-#button-print[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active
+#button-print[disabled="true"][buttonover="true"]
   {
     list-style-image      : url("chrome://global/skin/print_dis.gif");
   }
@@ -520,6 +511,8 @@ searchterm
 {
   border-left          : none;
 }
+
+
 
 
 

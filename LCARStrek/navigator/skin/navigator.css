@@ -226,9 +226,8 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 
 #print-button:hover,
 #print-button:hover:active,
-#print-button > .menubutton-internal-box > .menubutton-dual-button:hover,
-#print-button > .menubutton-internal-box > .menubutton-dual-button:hover:active,
-#print-button[open="true"] > .menubutton-internal-box > .menubutton-dual-button
+#print-button[buttonover="true"],
+#print-button[open="true"]
   {
     list-style-image      : url("chrome://global/skin/print-hover.gif");
   }
@@ -236,8 +235,7 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
 #print-button[disabled="true"],
 #print-button[disabled="true"]:hover,
 #print-button[disabled="true"]:hover:active,
-#print-button[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover,
-#print-button[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active
+#print-button[disabled="true"][buttonover="true"]
   {
     list-style-image      : url("chrome://global/skin/print_dis.gif");
   }
@@ -246,4 +244,5 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
   {
     padding               : 0px;
   }
+
 
