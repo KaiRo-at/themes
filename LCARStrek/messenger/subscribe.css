@@ -56,8 +56,8 @@ treechildren:-moz-tree-image(subscribedColumn2) {
   list-style-image: url("chrome://messenger/skin/icons/dot.gif");
 }
 
-treechildren:-moz-tree-image(SubscribedColumn, Subscribed-true),
-treechildren:-moz-tree-image(subscribedCol, subscribed) {
+treechildren:-moz-tree-image(subscribedColumn, Subscribed-true),
+treechildren:-moz-tree-image(subscribedColumn2, subscribed) {
   list-style-image: url("chrome://messenger/skin/icons/check.gif");
 }
 

@@ -25,6 +25,7 @@
         <RDF:li resource="urn:mozilla:skin:LCARStrek/1.3:editor"/>
         <RDF:li resource="urn:mozilla:skin:LCARStrek/1.3:chatzilla"/>
         <RDF:li resource="urn:mozilla:skin:LCARStrek/1.3:inspector"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/1.3:browser"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
@@ -39,4 +40,5 @@
   <RDF:Description about="urn:mozilla:skin:LCARStrek/1.3:chatzilla" chrome:skinVersion="1.2"/>
 -->
   <RDF:Description about="urn:mozilla:skin:LCARStrek/1.3:inspector" chrome:skinVersion="1.2"/>
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/1.3:browser" chrome:skinVersion="1.2"/>
 </RDF:RDF>

@@ -445,7 +445,7 @@ toolbar[iconsize="small"] #history-button[disabled="true"] {
   -moz-box-align: center;
   padding: 0 2px 0 0px;
   border-left: 3px solid #000000;
-  height: 28px;
+  min-height: 28px;
 }
 
 #minimize-button {

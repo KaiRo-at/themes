@@ -62,13 +62,15 @@ toolbar > .toolbar-holder {
   background-color: #9C9CFF;
 }
 
-menubar > .toolbar-holder {
+menubar > .toolbar-holder,
+toolbar#toolbar-menubar > .toolbar-holder {
   background-color: #6000CF;
 }
 
 /* ::::: toolbargrippy ::::: */
 
-toolbargrippy {
+toolbargrippy,
+toolbar > .toolbar-begcap {
   -moz-border-radius: 8px 0px 0px 8px;
   -moz-box-orient: vertical;
   -moz-box-align: center;
