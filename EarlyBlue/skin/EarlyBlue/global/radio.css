@@ -1,0 +1,95 @@
+/* stylesheet for XUL <radio> element */
+
+/* default radio for dialogs */
+/* outer frame */
+  radio 
+    {
+      margin              : 3px 5px 3px 5px;
+    }
+
+  .radio-checkmark-box-1
+    {
+      border: 2px outset #CCD0DD;
+      -moz-border-radius  : 50%;
+      margin              : 0px 2px 0px 0px;
+      width               : 12px;
+      height              : 12px;
+    }
+
+  .radio-checkmark-box-1[disabled="true"]
+    {
+      background-color    : -moz-Dialog;
+    }
+
+  .radio-checkmark-box-2
+    {
+      -moz-border-radius  : 50%;
+      padding             : 1px;
+      width               : 11px;
+      height              : 11px;
+    }  
+
+  /* ensure that no list-style-image is inherited in from the Outside */
+  .radio-check
+    {
+      list-style-image    : none;
+    }
+
+  .radio-check[checked="true"]
+    {
+      list-style-image    : url(chrome://global/skin/check-radio.gif);
+    }
+  
+  .radio-check[checked="true"][disabled="true"]
+    {
+      list-style-image    : url(chrome://global/skin/check-radio-disabled.gif);
+    }
+
+  radio:hover:active > .radio-internal-box > .radio-checkmark-box-1
+    {
+      border: 2px inset #CCD0DD;
+    }
+
+  radio[disabled="true"] > .radio-internal-box > .radio-checkmark-box-1,
+  radio[disabled="true"]:active > .radio-internal-box > .radio-checkmark-box-1 
+    {
+      border: 2px outset #CCD0DD;
+    }
+
+/* text/icon frames */
+  .radio-text
+    {
+      margin              : 0px 0px 0px 2px;
+    }
+
+  .radio-icon 
+    {
+      list-style-image    : inherit;
+    }    
+
+  .radio-text
+    {
+      margin              : 0px !important;
+    }
+    
+  .radio-text[disabled="true"]
+    {
+      color               : #999999;
+    }
+  
+  radio[focused="true"] > .radio-internal-box > .radio-text-container
+    { 
+      border              : 1px dotted #9999CC;
+    }
+  
+  .radio-text-container
+    {
+      border              : 1px solid transparent;
+    }
+  
+  .radio-internal-box
+    {
+      -moz-user-focus     : ignore;
+    }    
+
+

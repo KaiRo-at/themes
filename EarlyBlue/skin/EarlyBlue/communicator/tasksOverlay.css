@@ -1,0 +1,81 @@
+#mini-nav 
+  {
+	  list-style-image      : url("chrome://global/skin/taskbar-navigator.gif");
+  }
+
+/*
+#mini-nav:hover
+  {
+    list-style-image      : url("chrome://global/skin/taskbar-navigator-hover.gif");
+  }
+*/
+
+#mini-mail 
+  {
+	  list-style-image      : url("chrome://global/skin/taskbar-mail.gif");
+  }
+
+/*
+#mini-mail:hover
+  {
+    list-style-image      : url("chrome://global/skin/taskbar-mail-hover.gif");
+  }
+*/
+
+#mini-mail[BiffState="NewMail"]
+  {
+    list-style-image      : url("chrome://global/skin/taskbar-gotmail.gif");
+  }
+
+/*
+#mini-mail[BiffState="NewMail"]:hover
+  {
+    list-style-image      : url("chrome://global/skin/taskbar-gotmail-hover.gif");
+  }
+*/
+
+#mini-addr 
+  {
+	  list-style-image      : url("chrome://global/skin/taskbar-addressbook.gif");
+  }
+
+/*
+#mini-addr:hover
+  {
+    list-style-image      : url("chrome://global/skin/taskbar-addressbook-hover.gif");
+  }
+*/
+
+#mini-comp 
+  {
+	  list-style-image      : url("chrome://global/skin/taskbar-composer.gif");
+  }
+
+/*
+#mini-comp:hover
+  {
+    list-style-image      : url("chrome://global/skin/taskbar-composer-hover.gif");
+  }
+*/
+
+.taskbutton > .toolbarbutton-box,
+.taskbutton > .toolbarbutton-box:hover:active {
+  padding: 1px;
+  border: none;
+}
+
+.taskbutton > .toolbarbutton-box:hover,
+.taskbutton:hover > .toolbarbutton-box {
+  background-color      : #9999CC;
+}
+
+.taskbutton > .toolbarbutton-box:hover:active,
+.taskbutton:hover:active > .toolbarbutton-box {
+  background-color      : #CCCCFF;
+}
+
+.taskbutton > .toolbarbutton-box > .toolbarbutton-text
+  {
+    display               : none;
+  }  
+

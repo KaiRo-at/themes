@@ -1,0 +1,12 @@
+groupbox
+  {
+    border                : 2px groove #CCD0DD;
+    padding               : 7px !important;
+    margin                : 5px;
+  }
+
+.groupbox-body
+  {
+    padding               : inherit;
+  }
+
