@@ -18,118 +18,131 @@
  *
  * Contributor(s):
  *  Robert Ginda, rginda@ndcico.com, original author
- * 
+ *
  * Styles for output window
  *
  */
 
-/* 
+/*
  *  a dark background/light text version of the output window.
- *  see output-base.css for details. 
+ *  see output-base.css for details.
  */
 
 @import url(chrome://chatzilla/content/output-base.css);
 
 body.chatzilla-body {               /* The topmost container in the ChatZilla */
-    background: #000000;              /* output window. */
-    color: #E7ADE7;    
+  background: #000000;              /* output window. */
+  color: #E7ADE7;
 }
 
 a.chatzilla-link {
-    color: #FFCF00;
+  color: #FFCF00;
 }
 
 a.chatzilla-link:visited {
-    color: #8050B0;
+  color: #8050B0;
 }
 
-.msg-data[msg-type="JOIN"]  a.chatzilla-link,
-.msg-data[msg-type="PART"]  a.chatzilla-link {
-    color: #008484;
+.header-outer {
+  background-color: #000000;
 }
 
-.msg-data[msg-type="KICK"]  a.chatzilla-link {
-    color: #ff0000;
+.header {
+  color: #000000;
+  background-color: #9C9CFF;
+  -moz-border-radius: 7px;
+}
+
+.value {
+  color: #008484;
+}
+
+#splash {
+  color: #008484;
 }
 
 .chatzilla-rheet {
-    color: magenta !important;
+  color: #FFCF00 !important;
 }
 
 .chatzilla-highlight[name="Slate"] {
-    color: #FFCF00;
-    background: #15272d;
+  color: #FFCF00;
+  background: #15272d;
 }
 
 .chatzilla-highlight[name="Plum"] {
-    color: #FFCF00;
-    background: #442144;
+  color: #FFCF00;
+  background: #442144;
 }
 
 .chatzilla-highlight[name="Brown"] {
-    color: #FFCF00;
-    background: #562a14;
+  color: #FFCF00;
+  background: #562a14;
 }
 
 .msg-type {                                 /* .msg-type = message type       */
-    color: #008484;                          /* indicator                      */
+  color: #008484;                           /* indicator                      */
+}
+
+.msg-data,
+.msg-data[msg-type] {
+  background-color: #000000;
+  -moz-border-radius: 0px 7px 7px 0px;
+  border: 1px solid #735673;
+}
+
+.msg-data[mark="even"] {                    /* use even/odd marks to create a */
+  color: #9C9CFF;                           /* subtle brightness change when  */
+}                                           /* the speaker changes.           */
+
+[condition] {
+  font-weight: bold;
+}
+
+.msg-data a.chatzilla-link,
+.msg-data[msg-type] a.chatzilla-link {
+  color: #FFCF00;
+}
+
+.msg-data a.chatzilla-link:visited,
+.msg-data[msg-type] a.chatzilla-link:visited {
+  color: #8050B0;
+}
+
+.msg-data[msg-type="JOIN"],
+.msg-data[msg-type="PART"],
+.msg-data[msg-type="QUIT"],
+.msg-data[msg-type="NICK"],
+.msg-data[msg-type="NOTICE"],
+.msg-data[msg-type="INFO"],
+.msg-data[msg-type="MODE"] {
+  color: #008484;
+}
+
+.msg-data[msg-type="HELLO"],
+.msg-data[msg-type="USAGE"] {
+  color: #FF9F00;
+}
+
+.msg-data[msg-type="ERROR"],
+.msg-data[msg-type="KICK"] {
+  color: red;
+}
+
+.msg-data[msg-type="ACTION"] {
+  font-weight: bold;
+  font-style: italic;
 }
 
 .msg-user a.chatzilla-link,
 .msg-user {                                 /* msg-user = nickname portion of */
-    color: white !important;                /* a message (channel and query   */
+  color: #FF9F00 !important;                /* a message (channel and query   */
 }                                           /* views)                         */
 
-.msg-data[mark="even"] {                    /* use even/odd marks to create a */
-    color: white;                           /* subtle brightness change when  */
-}                                           /* the speaker changes.           */
-
-.msg-data[msg-type="JOIN"],
-.msg-data[msg-type="PART"] {
-    color: lightblue;
-}
-
-.msg-data[msg-type="PART"] {
-    color: lightblue;
-}
-
-.msg-data[msg-type="HELLO"] {
-    color: yellow;
-}
-
-.msg-data[msg-type="ERROR"] {
-    background: red;
-    color: white;
-}
-
-.msg-data[msg-type="USAGE"] {
-    color: white;
-}
-
-.msg-data[msg-type="ACTION"] {
-    color: #6ac9ee;
-}
-
-.msg-data[msg-type="NICK"] {
-    color: #96fa94;
-}
-
-.msg-data[msg-type="NOTICE"],
-.msg-data[msg-type="MODE"] {
-    color: #60e066;
-}
-
-.msg-data[msg-type="NOTICE"] a.chatzilla-link,
-.msg-data[msg-type="MODE"] a.chatzilla-link {
-    color: #6dff74;
-}
-
-.msg-data[msg-type="KICK"] {
-    color: #d85d24;
-}
-
-.msg-data[msg-type="QUIT"] {
-    color: #f7b183;
+.msg-user {
+  background-color: #000000 !important;
+  -moz-border-radius: 7px 0px 0px 7px;
+  border: 1px solid #004242;
 }
 
 /* important="true" means that the message has text from your /stalk list in
@@ -137,47 +150,51 @@ a.chatzilla-link:visited {
  */
 .msg-user[important="true"],
 .msg-data[important="true"] {
-    background: #333333 !important;
+  background: #4D4D7F !important;
+  color: #FFCF00 !important;
 }
 
 .msg-user:before,
 .msg-user:after {
-    color: blue;
+  color: #008484;
 }
 
 .msg-user[msg-user$="ME!"]:before,
 .msg-user[msg-user$="ME!"]:after {
-    color: #6afc73;
+  color: #9C9CFF;
+}
+.msg-user[msg-user$="ME!"] {
+  border: 1px solid #9C9CFF;
 }
 
 .msg-user[msg-type="ACTION"]:before,
 .msg-user[msg-type="ACTION"]:after {
-    color: cyan;
+  color: #008484;
 }
 
 .msg-user[msg-type="NOTICE"]:before,
 .msg-user[msg-type="NOTICE"]:after {
-    color: #6afc73;
+  color: #008484;
 }
 
 /* private messages *not* in a query window */
 .msg-user[dest-type="IRCUser"]:before,
 .msg-user[dest-type="IRCUser"]:after {
-    color: #6afc73;
+  color: #FFCF00;
 }
 
 .msg-user[msg-dest$="ME!"]:before,
 .msg-user[msg-dest$="ME!"]:after {
-    color: magenta;
+  color: #FFCF00;
 }
 
 /* private messages in a query window */
 .msg-user[view-type="IRCUser"]:before,
 .msg-user[view-type="IRCUser"]:after {
-    color: white;
+  color: #008484;
 }
 
 .msg-user[view-type="IRCUser"][msg-user$="ME!"]:before,
 .msg-user[view-type="IRCUser"][msg-user$="ME!"]:after {
-    color: #6afc73;
+  color: #008484;
 }

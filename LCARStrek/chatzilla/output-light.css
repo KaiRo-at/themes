@@ -39,6 +39,43 @@ a.chatzilla-link {
     color: #777499 /*#ea3838*/;
 }
 
+.header-outer {
+    background-color: #d1d0ea;
+}
+
+.header {
+    color: darkslategrey;
+    background-color: #EEEEEE;
+/*    -moz-opacity: 0.9;*/
+    border: 1px #777499 solid;
+    -moz-border-radius: 7px;
+}
+
+#splash {
+    color: #DDDDDD;
+}
+
+#usr-descnodes,
+#ch-topicnodes {
+    color: black;
+}
+
+[condition] {
+    font-weight: bold;
+}
+
+[condition="red"] {
+    color: red;
+}
+
+[condition="yellow"] {
+    color: orange;
+}
+
+[condition="green"] {
+    color: #2ec908;
+}
+
 .msg-data[msg-type="QUIT"] a.chatzilla-link {
     color: #d1ecf9;
 }

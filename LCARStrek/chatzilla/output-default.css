@@ -34,80 +34,194 @@
 /* LCARtrek needs corrections though. */
 
 body.chatzilla-body {               /* The topmost container in the ChatZilla */
-    background: #000000;              /* output window. */
-    color: #E7ADE7;    
+  background: #000000;              /* output window. */
+  color: #008484;
 }
 
 a.chatzilla-link {
-    color: #FFCF00;
+  color: #FFCF00;
 }
 
 a.chatzilla-link:visited {
-    color: #8050B0;
+  color: #8050B0;
 }
 
-.chatzilla-highlight[name="Bold"] {
-    font-weight: bold;
+.header-outer {
+  background-color: #E7ADE7;
 }
 
-.chatzilla-highlight[name="Italic"] {
-    font-style: italic;
+.header {
+  color: #000000;
+  background-color: #9C9CFF;
+  border-color: #FFCF00;
+  -moz-border-radius: 7px;
 }
 
-.chatzilla-highlight[name="Large"] {
-    font-size: 12pt;
+.value {
+  color: #008484;
 }
 
-.chatzilla-highlight[name="Small"] {
-    font-size: 8pt;
+#splash {
+  color: #FF9F00;
 }
 
-.chatzilla-highlight[name="SmallCap"] {
-    font-variant: small-caps;
-}
-
-.msg-data[msg-type="ACTION"] {
-    font-style: italic;
+.chatzilla-rheet {
+  color: #FFCF00 !important;
 }
 
 .msg-type[msg-type="JOIN"],
 .msg-type[msg-type="PART"],
 .msg-type[msg-type="QUIT"] {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .msg-data[msg-type="QUIT"] {
-    font-variant: small-caps;
-    font-weight: bold;
+  font-variant: small-caps;
+  font-weight: bold;
 }
 
 .msg-data[msg-type="JOIN"],
 .msg-data[msg-type="PART"] {
-    font-variant: small-caps;
+  font-variant: small-caps;
 }
 
 .msg-data[msg-type="HELLO"],
 .msg-type[msg-type="NICK"],
 .msg-data[msg-type="NOTICE"] {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .msg-data[msg-type="NICK"] {
-    font: 10pt courier;
+  font: 10pt courier;
+}
+
+.msg-type {                                 /* .msg-type = message type       */
+  color: #000000;                           /* indicator                      */
+  background-color: #008484;
+  -moz-border-radius: 9px 0px 0px 9px;
+  border: 1px solid transparent;
+}
+
+.msg-data,
+.msg-data[msg-type] {
+  background-color: #9C9CFF;
+  border: 1px solid transparent;
+  -moz-border-radius: 0px 9px 9px 0px;
+  color: #000000;
+}
+
+.msg-data[mark="even"] {                    /* use even/odd marks to create a */
+  color: #004242;                           /* subtle brightness change when  */
+}                                           /* the speaker changes.           */
+
+.msg-data a.chatzilla-link,
+.msg-data[msg-type] a.chatzilla-link {
+  color: #FFCF00;
+}
+
+.msg-data a.chatzilla-link:visited,
+.msg-data[msg-type] a.chatzilla-link:visited {
+  color: #8050B0;
+}
+
+.msg-data[msg-type="JOIN"],
+.msg-data[msg-type="PART"],
+.msg-data[msg-type="QUIT"],
+.msg-data[msg-type="NICK"],
+.msg-data[msg-type="NOTICE"],
+.msg-data[msg-type="INFO"],
+.msg-data[msg-type="MODE"],
+.msg-data[msg-type="HELLO"],
+.msg-data[msg-type="USAGE"] {
+  background-color: #008484;
+  color: #000000;
+}
+
+.msg-data[msg-type="ERROR"],
+.msg-data[msg-type="KICK"] {
+  background-color: red;
+  color: #000000;
+}
+
+.msg-data[msg-type="ACTION"] {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.msg-user a.chatzilla-link,
+.msg-user {                                 /* msg-user = nickname portion of */
+  color: #008484 !important;                /* a message (channel and query   */
+}                                           /* views)                         */
+
+.msg-user {
+  background-color: #9C9CFF;
+  border: 1px solid transparent;
+  -moz-border-radius: 9px 0px 0px 9px;
+}
+
+/* important="true" means that the message has text from your /stalk list in
+ * it, has your nickname in it, or was spoken by someone in your /stalk list.
+ */
+.msg-user[important="true"],
+.msg-data[important="true"] {
+  background: #FF9F00 !important;
+  color: #000000 !important;
 }
 
 /* :before and :after pseudoclasses form the decorations around nicknames.     */
 .msg-user:before,
 .msg-user:after {
-    font: 10pt courier;
-    font-weight: bolder;
+  font: 10pt courier;
+  font-weight: bolder;
+  color: #000000;
+}
+
+.msg-user[msg-user$="ME!"]:before,
+.msg-user[msg-user$="ME!"]:after {
+  color: #000000;
+}
+.msg-user[msg-user$="ME!"] {
+  border: 1px solid #FFCF00;
+  font-weight: bold;
+}
+
+.msg-user[msg-type="ACTION"]:before,
+.msg-user[msg-type="ACTION"]:after {
+  color: #000000;
+}
+
+.msg-user[msg-type="NOTICE"]:before,
+.msg-user[msg-type="NOTICE"]:after {
+  color: #000000;
+}
+
+/* private messages *not* in a query window */
+.msg-user[dest-type="IRCUser"]:before,
+.msg-user[dest-type="IRCUser"]:after {
+  color: #FFCF00;
+}
+.msg-user[dest-type="IRCUser"],
+.msg-user[dest-type="IRCUser"][msg-dest$="ME!"] {
+  font-style: italic;
+}
+
+.msg-user[msg-dest$="ME!"]:before,
+.msg-user[msg-dest$="ME!"]:after {
+  color: #FFCF00;
 }
 
 .msg-user[dest-type="IRCUser"],
-.msg-user[dest-type="IRCUser"][msg-dest$="ME!"] {
-    font-style: italic;
+.msg-user[msg-dest$="ME!"] {
+  border: 1px solid #FFCF00;
 }
 
-.msg-user[msg-user$="ME!"] {
-    font-weight: bold;
+/* private messages in a query window */
+.msg-user[view-type="IRCUser"]:before,
+.msg-user[view-type="IRCUser"]:after {
+  color: #008484;
+}
+
+.msg-user[view-type="IRCUser"][msg-user$="ME!"]:before,
+.msg-user[view-type="IRCUser"][msg-user$="ME!"]:after {
+  color: #008484;
 }
