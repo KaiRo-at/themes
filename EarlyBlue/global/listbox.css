@@ -19,6 +19,7 @@
  *
  * Contributor(s):
  *   Joe Hewitt (hewitt@netscape.com)
+ *   Dean Tessman (dean_tessman@hotmail.com)
  *   Robert Kaiser <KaiRo@KaiRo.at>
  */
 
@@ -44,8 +45,12 @@ listitem {
   border: 1px solid transparent;
 }
 
-listbox:focus > listitem[selected="true"][current="true"] {
+listbox:focus > listitem[current="true"] {
   border: 1px dotted #9999CC;
+}
+
+listbox:focus > listitem[current="true"][selected="true"] {
+  border: 1px dotted #666699;
 }
 
 listitem[selected="true"] {

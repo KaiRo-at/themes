@@ -21,6 +21,7 @@
  * Contributor(s):
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *   Joe Hewitt (hewitt@netscape.com)                                           
+ *   Dean Tessman (dean_tessman@hotmail.com)
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -69,6 +70,10 @@ treechildren:-moz-tree-row(selected, focus) {
 
 treechildren:-moz-tree-row(current, focus) {
   border: 1px dotted #9999CC;
+}
+
+treechildren:-moz-tree-row(selected, current, focus) {
+  border: 1px dotted #666699;
 }
 
 /* ::::: tree cells ::::: */

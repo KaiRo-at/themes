@@ -91,11 +91,13 @@
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
-/* Hides text below the above buttons */
+/* Hides text below the above buttons - should now be configurable */
+/*
 .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-text,
 .toolbarbutton-1 > .toolbarbutton-text {
   display: none;
 }
+*/
 
 #fullscreen-exit-button {
   list-style-image: none;
@@ -107,31 +109,16 @@
 
 /* ::::: small primary toolbar buttons ::::: */
 
-.toolbarbutton-1[toolbarmode="small"],
-.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-button {
-  min-width: 0px;
-  min-height: 0px;
-}
-
-.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-dropmarker {
-  padding: 0px 1px 13px 1px;
-}
-
-.toolbarbutton-1[toolbarmode="small"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-.toolbarbutton-1[toolbarmode="small"][type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
-.toolbarbutton-1[toolbarmode="small"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
-  padding: 1px 0px 12px 2px;
-}
-
-.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-dropmarker[disabled="true"] {
-  padding: 0px 1px 13px 1px !important;
-}
-
-.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-button > .toolbarbutton-text,
-.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-text {
+.toolbarbutton-text[toolbarmode="small"] {
   display: none;
 }
 
+.toolbarbutton-icon[toolbarmode="small"] {
+  display: inline;
+}
+
+#nav-bar[buttonstyle="text"] > #nav-bar-inner,
+#nav-bar[buttonstyle="pictures"] > #nav-bar-inner,
 #nav-bar[toolbarmode="small"] > #nav-bar-inner {
   margin: 2px 0px 2px 4px;
 }
@@ -254,6 +241,25 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   font-weight: bold;
 }
 
+/* ::::: security button ::::: */
+
+#security-button {
+  list-style-image:url("chrome://communicator/skin/icons/lock-insecure.gif");
+  margin-left: 2px;
+}
+
+#security-button[level="high"] {
+  list-style-image:url("chrome://communicator/skin/icons/lock-secure.gif");
+}
+
+#security-button[level="low"] {
+  list-style-image:url("chrome://communicator/skin/icons/lock-secure.gif");
+}
+
+#security-button[level="broken"] {
+  list-style-image:url("chrome://communicator/skin/icons/lock-broken.gif");
+}
+
 /* ::::: personal toolbar ::::: */
 
 #bookmarks-button {
@@ -267,28 +273,3 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 #home-button {
   list-style-image: url("chrome://communicator/skin/bookmarks/home.gif");
 }
-
-/* ::::: sidebar splitter ::::: */
-
-/*
-#sidebar-splitter {
-  border-left: none;
-  border-right: none;
-  min-width: 5px; 
-}
-*/
-
-/* ::::: content area ::::: */
-
-/*
-#content {
-  border-top: 1px solid ThreeDDarkShadow;
-  border-bottom: 1px solid ThreeDLightShadow;
-  border-left: 2px solid;
-  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
-}
-
-#status-bar {
-  border-top: none;
-}
-*/
