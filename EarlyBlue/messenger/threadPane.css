@@ -199,14 +199,39 @@ outlinerchildren:-moz-outliner-image(subjectCol, news) {
   list-style-image: url("chrome://messenger/skin/icons/message-news.gif");
 }
 
+outlinerchildren:-moz-outliner-image(subjectCol, news, attach) {
+  padding-right: 2px;
+  list-style-image: url("chrome://messenger/skin/icons/message-news-attach.gif");
+}
+
+outlinerchildren:-moz-outliner-image(subjectCol, news, attach, offline) {
+  padding-right: 2px;
+  list-style-image: url("chrome://messenger/skin/icons/message-news-attach-offline.gif");
+}
+
 outlinerchildren:-moz-outliner-image(subjectCol, news, new) {
   padding-right: 2px;
   list-style-image: url("chrome://messenger/skin/icons/message-news-new.gif");
 }
 
-outlinerchildren:-moz-outliner-image(subjectCol, news, attach) {
+outlinerchildren:-moz-outliner-image(subjectCol, news, new, attach) {
   padding-right: 2px;
-  list-style-image: url("chrome://messenger/skin/icons/message-news-attach.gif");
+  list-style-image: url("chrome://messenger/skin/icons/message-news-new-attach.gif");
+}
+
+outlinerchildren:-moz-outliner-image(subjectCol, news, new, attach, offline) {
+  padding-right: 2px;
+  list-style-image: url("chrome://messenger/skin/icons/message-news-new-attach-offline.gif");
+}
+
+outlinerchildren:-moz-outliner-image(subjectCol, news, new, offline) {
+  padding-right: 2px;
+  list-style-image: url("chrome://messenger/skin/icons/message-news-new-offline.gif");
+}
+
+outlinerchildren:-moz-outliner-image(subjectCol, news, offl) {
+  padding-right: 2px;
+  list-style-image: url("chrome://messenger/skin/icons/message-news-offline.gif");
 }
 
 #sizeCol,
