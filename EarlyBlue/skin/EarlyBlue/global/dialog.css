@@ -20,6 +20,7 @@
  *
  * Original Author: Joe Hewitt (hewitt@netscape.com)
  * Contributor(s):
+ *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  *
  * Alternatively, the contents of this file may be used under the terms of
@@ -36,11 +37,11 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
 /* ===== dialog.css =====================================================
   == Styles used by the XUL dialog element.
   ======================================================================= */
-
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: dialog ::::: */
 
@@ -57,4 +58,3 @@ dialog {
 .dialog-button {
 /*  font: menu; */
 }
-
