@@ -153,6 +153,3 @@ outlinerbody:-moz-outliner-image(subjectCol, news) {
 outlinerbody:-moz-outliner-image(subjectCol, news, new) {
   list-style-image: url("chrome://messenger/skin/message-news-new.gif");
 }
-
-
-
