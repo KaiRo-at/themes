@@ -93,7 +93,7 @@
  */
   .box-texttab
    {
-      -moz-binding        : url("chrome://communicator/content/sidebar/sidebarBindings.xml#texttab");
+      -moz-binding        : url("chrome://communicator/skin/sidebar/sidebarBindings.xml#panelheader");
       -moz-border-radius  : 5px;
       border-top          : 3px solid black;
     }
@@ -103,60 +103,13 @@
       border-bottom       : 3px solid black;
     }
 
-/*
-  .box-texttab[top-panel="true"]
-    {
-      background-color    : #FF9F00;
-    }
-  
-  .box-texttab[first-panel-after-selected="true"] 
-    {
-      background-color    : #FF9F00;
-    }
-*/
-
   .box-texttab-right-space 
     {
       -moz-border-radius  : 5px;
-/*      width               : 30px;
-      border-bottom       : 1px solid #000000; */
     }
 
-/*
-  .box-texttab[last-panel="true"] > .box-texttab-right-space 
-    {
-      border-bottom       : none;
-    }
 
-  .box-texttab[last-panel="true"][selected="true"] > .box-texttab-right-space 
-    {
-      border-bottom       : 1px solid #000000;
-    } 
-*/
-
-/*
-  .box-texttab-left
-    {
-      list-style-image    : url("chrome://global/skin/tab-leftedge.gif"); 
-    }
-
-  .box-texttab-right
-    {
-      list-style-image    : url("chrome://global/skin/tab-rightedge.gif"); 
-    }
-
-  .box-texttab[selected="true"] > .box-texttab-left
-    {
-      list-style-image    : url("chrome://global/skin/seltab-leftedge.gif");
-    }
-
-  .box-texttab[selected="true"] > .box-texttab-right
-    {
-      list-style-image    : url("chrome://global/skin/seltab-rightedge.gif");
-    }
-*/
-
-  .box-texttab-text-container > .box-texttab-text
+  .panelheader-text
     {
       -moz-border-radius  : 5px;
       background-color    : #FF9F00;
@@ -164,19 +117,19 @@
       color               : #000000;
     }
 
-  .box-texttab:hover > .box-texttab-text-container > .box-texttab-text,
-  .box-texttab > .box-texttab-text-container:hover > .box-texttab-text,
-  .box-texttab > .box-texttab-text-container > .box-texttab-text:hover
+  .box-texttab:hover > .panelheader-box > .panelheader-text,
+  .box-texttab > .panelheader-box > .panelheader-text:hover
     {
       background-color    : #FFCF00;
       color               : #000000;
     }
 
-  .box-texttab[selected="true"] > .box-texttab-text-container > .box-texttab-text
+  .box-texttab > .panelheader-box[selected="true"] > .panelheader-text,
+  .box-texttab:hover > .panelheader-box[selected="true"] > .panelheader-text,
+  .box-texttab > .panelheader-box[selected="true"] > .panelheader-text:hover
     {
       background-color    : #008484;
       color               : #FFCF00;
       font-weight         : bold;
     }
-
 

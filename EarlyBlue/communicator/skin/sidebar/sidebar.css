@@ -97,9 +97,9 @@
  */
   .box-texttab
     {
-      -moz-binding        : url("chrome://communicator/content/sidebar/sidebarBindings.xml#texttab");
+      -moz-binding        : url("chrome://communicator/skin/sidebar/sidebarBindings.xml#panelheader");
       background-color    : #CCD0DD;
-      padding-top         : 2px;
+/*      padding-top         : 2px; */
     }
 
   .box-texttab[selected="true"] 
@@ -109,14 +109,16 @@
     
   .box-texttab[top-panel="true"]
     {
-      background-color    : #666699;
+/*      background-color    : #666699; */
     }
   
   .box-texttab[first-panel-after-selected="true"] 
     {
-      background-color    : #FFFFFF;
+/*      background-color    : #FFFFFF; */
     }
 
+
+/*
   .box-texttab-right-space 
     {
       width               : 30px;
@@ -152,17 +154,23 @@
     {
       list-style-image    : url("chrome://global/skin/seltab-rightedge.gif");
     }
+*/
 
-  .box-texttab-text-container
+  .panelheader-text
     {
-      border-top          : 1px solid #000000;
-      background-color    : #CCD0DD;
+      border-top          : 1px outset #CCD0DD;
+      border-bottom       : 1px outset #CCD0DD;
+      padding             : 5px 3px 3px 3px;
+      color               : #000000;
     }
 
-  .box-texttab[selected="true"] > .box-texttab-text-container
+  .box-texttab[selected="true"] > .panelheader-box > .panelheader-text
     {
+      border-top          : 1px solid transparent;
+      border-bottom       : 1px solid transparent;
       background-color    : #FFFFFF;
       font-weight         : bold;
     }
     
+
 

@@ -4,12 +4,13 @@
           xmlns="http://www.mozilla.org/xbl"
           xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-  <binding id="sidebar-panel-header">
+  <binding id="panelheader" extends="xul:button">
     <content>
-      <xul:box class="sidebar-panel-header-box" flex="1" autostretch="never" valign="middle">
-        <xul:text class="sidebar-panel-header-text" inherits="value=label,accesskey,crop" crop="right"/>
+      <xul:box class="panelheader-box" inherits="selected" orient="vertical" flex="1">
+        <xul:text class="panelheader-text" inherits="value=label" crop="right"/>
       </xul:box>
     </content>
   </binding>
   
 </bindings>
+
