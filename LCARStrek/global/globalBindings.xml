@@ -2,18 +2,19 @@
 
 <bindings id="globalBindings"
    xmlns="http://www.mozilla.org/xbl"
+   xmlns:xbl="http://www.mozilla.org/xbl"
    xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
   <binding id="radio" extends="chrome://global/content/bindings/radio.xml#radio">
     <content>
-      <xul:hbox class="radio-check-box1" inherits="selected,checked,disabled">
+      <xul:hbox class="radio-check-box1" xbl:inherits="selected,checked,disabled">
         <xul:hbox class="radio-check-box2" flex="1">
-          <xul:image class="radio-check" inherits="selected,checked,disabled"/>
+          <xul:image class="radio-check" xbl:inherits="selected,checked,disabled"/>
         </xul:hbox>
       </xul:hbox>
       <xul:hbox class="radio-label-box" flex="1">
-        <xul:image class="radio-icon" inherits="src"/>
-        <xul:label class="radio-label" inherits="xbl:text=label,accesskey,crop" flex="1"/>
+        <xul:image class="radio-icon" xbl:inherits="src"/>
+        <xul:label class="radio-label" xbl:inherits="xbl:text=label,accesskey,crop" flex="1"/>
       </xul:hbox>
     </content>
   </binding>
@@ -31,11 +32,11 @@
 
   <binding id="toolbar" extends="chrome://global/content/bindings/toolbar.xml#toolbar">
     <content>
-      <xul:toolbargrippy inherits="tooltiptext=grippytooltiptext,tooltip=grippytooltip,last-toolbar,hidden=grippyhidden"
+      <xul:toolbargrippy xbl:inherits="tooltiptext=grippytooltiptext,tooltip=grippytooltip,last-toolbar,hidden=grippyhidden"
                          tbattr="toolbar-grippy"
                          class="toolbar-grippy"/>
       <xul:hbox flex="1" class="toolbar-holder" align="center"
-               inherits="collapsed,last-toolbar,orient=tborient,align=tbalign,pack=tbpack">
+               xbl:inherits="collapsed,last-toolbar,orient=tborient,align=tbalign,pack=tbpack">
         <children/>
       </xul:hbox>
       <xul:hbox class="toolbar-endcap"/>
@@ -48,9 +49,9 @@
     </resources>
 
     <content>
-      <xul:toolbargrippy inherits="tooltiptext=grippytooltiptext,tooltip=grippytooltip,last-toolbar,hidden=grippyhidden"
+      <xul:toolbargrippy xbl:inherits="tooltiptext=grippytooltiptext,tooltip=grippytooltip,last-toolbar,hidden=grippyhidden"
                          tbattr="toolbar-grippy" class="toolbar-grippy"/>
-      <xul:hbox flex="1" class="toolbar-holder" inherits="collapsed,last-toolbar" align="center">
+      <xul:hbox flex="1" class="toolbar-holder" xbl:inherits="collapsed,last-toolbar" align="center">
         <children/>
       </xul:hbox>
       <xul:hbox class="menubar-endcap"/>

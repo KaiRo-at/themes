@@ -11,15 +11,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mozilla.org code.
+ * The Original Code is the Mozilla Print Preview Toolbar.
  *
  * The Initial Developer of the Original Code is
- * Netscape Communications Corporation.
+ * Netscape Communications Corp.
  * Portions created by the Initial Developer are Copyright (C) 2002
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *  Brian Ryner <bryner@netscape.com>
+ *   Samir Gehani  <sgehani@netscape.com>
+ *   Bill Law      <law@netscape.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,66 +36,52 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url(http://www.w3.org/1999/xhtml); /* set default namespace to HTML */
-@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* ::::: print preview toolbar ::::: */
 
-/**
- <select/> Widget
- **/
+/* ..... page navigation ..... */
 
-select[size] {
-  border: 2px inset ThreeDFace;
-  margin: 0;
-  min-height: none;
-  color: inherit;
-  font: inherit;
-  -moz-appearance: treeview;
-}
-  
-xul|*.select-outlinerbody:-moz-outliner-row {
-  -moz-apperance: treeitem;
-  border: 1px solid transparent;
+.home-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-end.gif");
 }
 
-xul|*.select-outlinercol {
-  margin: 0px !important;
-  border: none !important;
-  padding: 0px !important;
+.end-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-end.gif");
 }
 
-/* ::::: outliner rows ::::: */
-
-xul|*.select-outlinerbody:-moz-outliner-row {
-  border: 1px solid transparent;
-  height: 18px;
+.last-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp.gif");
 }
 
-xul|*.select-outlinerbody:-moz-outliner-row(selected) {
-  background-color: -moz-Dialog;
+.next-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp.gif");
 }
 
-xul|*.select-outlinerbody:-moz-outliner-row(selected, focus) {
-  background-color: Highlight;
+/* ...... scale in/decrement ..... */
+
+.up-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp.gif");
 }
 
-xul|*.select-outlinerbody:-moz-outliner-row(current, focus) {
-  border: 1px dotted #F5DB95;
+.down-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp.gif");
 }
 
-/* ::::: outliner cells ::::: */
+/* ..... orientation ..... */
 
-xul|*.select-outlinerbody:-moz-outliner-cell {
-  padding: 0px 0px 0px 2px;
+.toolbar-portrait-page {
+  list-style-image: url("chrome://communicator/skin/icons/pg-portrait-small.gif");
 }
 
-xul|*.select-outlinerbody:-moz-outliner-cell-text {
-  color: inherit;
+.toolbar-landscape-page {
+  list-style-image: url("chrome://communicator/skin/icons/pg-landscape-small.gif");
 }
 
-xul|*.select-outlinerbody:-moz-outliner-cell-text(selected) {
-  color: -moz-DialogText;
+/* ::::: page setup dialog ::::: */
+
+.portrait-page {
+  list-style-image: url("chrome://communicator/skin/icons/pg-portrait.gif");
 }
 
-xul|*.select-outlinerbody:-moz-outliner-cell-text(selected, focus) {
-  color: HighlightText;
+.landscape-page {
+  list-style-image: url("chrome://communicator/skin/icons/pg-landscape.gif");
 }
