@@ -54,6 +54,7 @@
   progressmeter
     {
       min-width           : 100px;
+      min-height          : 16px;
       border              : 1px inset #CCD0DD;
       background-color    : #999999;
     }
@@ -95,3 +96,4 @@
     {
 	    background-color    : #6699CC;
     }
+
