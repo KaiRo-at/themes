@@ -191,3 +191,18 @@
 #button-stop[disabled="true"] {
   list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
 }
+
+#button-junk {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark.gif");
+}
+
+#button-junk:hover,
+#button-junk[buttonover="true"],
+#button-junk[buttondown="true"],
+#button-junk[open="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark-hover.gif");
+} 
+
+#button-junk[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark-disabled.gif") !important;
+}

@@ -41,7 +41,6 @@
   ======================================================================= */
 
 @import url("chrome://messenger/skin/");
-@import url("chrome://communicator/skin/sidebar/sidebar.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -125,16 +124,6 @@
   list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
 } 
 
-/* ::::: sidebar header ::::: */
-
-sidebarheader {
-  border: none;
-}
-
-#sidebar-title-box {
-  border: none;
-}
-
 /* CardView styles - used in the Card View Pane */
 
 #CardViewOuterBox {
@@ -213,13 +202,6 @@ html|p {
 }
 
 /* ::::: border adjustments ::::: */
-
-#sidebar-box {
-/*  border-top: none;
-  border-right: 1px solid ThreeDHighlight;
-  border-bottom: none;
-  border-left: 1px solid ThreeDShadow; */
-}
 
 #results-splitter { 
   border: none;

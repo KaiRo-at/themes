@@ -130,3 +130,11 @@
 #button-stop[disabled="true"] {
   list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
 }
+
+#button-junk {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark.gif");
+}
+
+#button-junk[disabled="true"] {
+  list-style-image: url("chrome://messenger/skin/toolbar/mark-disabled.gif") !important;
+}

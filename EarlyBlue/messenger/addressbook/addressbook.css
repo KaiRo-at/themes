@@ -41,7 +41,6 @@
   ======================================================================= */
 
 @import url("chrome://messenger/skin/");
-@import url("chrome://communicator/skin/sidebar/sidebar.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -94,16 +93,6 @@
 #button-delete[disabled="true"] {
   list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
 } 
-
-/* ::::: sidebar header ::::: */
-
-sidebarheader {
-  border: 1px outset #CCD0DD;
-}
-
-#sidebar-title-box {
-  border: none;
-}
 
 /* CardView styles - used in the Card View Pane */
 
@@ -185,13 +174,6 @@ html|p {
 }
 
 /* ::::: border adjustments ::::: */
-
-#sidebar-box {
-/*  border-top: none;
-  border-right: 1px solid ThreeDHighlight;
-  border-bottom: none;
-  border-left: 1px solid ThreeDShadow; */
-}
 
 #dirTree, #abResultsTree { 
   border: none;
