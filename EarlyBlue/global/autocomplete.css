@@ -44,11 +44,10 @@
 
 /* ::::: autocomplete ::::: */
 
-textbox
-  {
-    cursor: default;
-    padding: 0px;
-  }
+textbox {
+  cursor: default;
+  padding: 0px;
+}
 
 .textbox-input-box {
   margin: 0 3px;

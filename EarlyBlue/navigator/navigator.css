@@ -103,8 +103,24 @@
 
 /* ::::: small primary toolbar buttons ::::: */
 
-.toolbarbutton-1[toolbarmode="small"] {
-  min-width: 0;
+.toolbarbutton-1[toolbarmode="small"],
+.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-button {
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 0px 1px 13px 1px;
+}
+
+.toolbarbutton-1[toolbarmode="small"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[toolbarmode="small"][type="menu-button"][buttondown="true"] > .toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1[toolbarmode="small"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 1px 0px 12px 2px;
+}
+
+.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-dropmarker[disabled="true"] {
+  padding: 0px 1px 13px 1px !important;
 }
 
 .toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-button > .toolbarbutton-text,
@@ -112,16 +128,11 @@
   display: none;
 }
 
-#search-button[toolbarmode="small"] > .button-box > .button-text {
-  display: none;
-}
-
 #nav-bar[toolbarmode="small"] > #nav-bar-inner {
-  margin: 0;
-  border: none;
+  margin: 2px 0px;
 }
 
-#nav-bar[toolbarmode="small"] > .toolbar-primary-grippy {
+toolbar[toolbarmode="small"] > toolbargrippy {
   display: none;
 }
 
@@ -294,3 +305,4 @@
   border-top: none;
 }
 */
+

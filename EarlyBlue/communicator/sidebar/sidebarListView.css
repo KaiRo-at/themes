@@ -41,16 +41,3 @@
 outlinerchildren {
   cursor: pointer;  
 }
-
-outlinerchildren:-moz-outliner-row(selected),
-outlinerchildren:-moz-outliner-row(selected, focus) {
-  background-color: #FFFFFF !important;
-  border: 1px solid transparent !important;
-}
-
-outlinerchildren:-moz-outliner-cell-text,
-outlinerchildren:-moz-outliner-cell-text(selected),
-outlinerchildren:-moz-outliner-cell-text(selected, focus) {
-  color: #336699 !important;
-  text-decoration: underline;
-}

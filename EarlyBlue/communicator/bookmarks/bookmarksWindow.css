@@ -45,22 +45,28 @@
 /** 
  * XXX - disable print plus. This needs to go into ns/!!!
  */    
-  #navprintplus
-    {
-      display             : none !important; 
-    }
-      
-  #status-bar
-    {
-      height              : 1em;
-    }
-    
-  #notification-icon  
-    {
-      list-style-image    : url("chrome://communicator/skin/bookmarks/notification.gif");
-    }    
-    
-  #schedule-icon  
-    {
-      list-style-image    : url("chrome://communicator/skin/bookmarks/schedule.gif");
-    }
+#navprintplus {
+  display: none !important; 
+}
+
+#status-bar {
+  height: 1em;
+}
+
+#notification-icon  {
+  list-style-image: url("chrome://communicator/skin/bookmarks/notification.gif");
+}
+
+#schedule-icon {
+  list-style-image: url("chrome://communicator/skin/bookmarks/schedule.gif");
+}
+
+#panel-bar {
+  border-top: 1px outset #CCD0DD;
+  border-bottom: 1px outset #CCD0DD;
+}
+
+bookmarks-outliner.inset {
+  margin: 0px;
+  border: 1px inset #CCD0DD;
+}
