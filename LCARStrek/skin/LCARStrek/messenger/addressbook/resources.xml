@@ -5,19 +5,12 @@
   <binding id="resource_bundle_addressbook">
     <resources>
       <image src="chrome://messenger/skin/addressbook/newcard-hover.gif"/>
-      <image src="chrome://messenger/skin/addressbook/newcard-hover-active.gif"/>
       <image src="chrome://messenger/skin/addressbook/newlist-hover.gif"/>
-      <image src="chrome://messenger/skin/addressbook/newlist-hover-active.gif"/>
       <image src="chrome://messenger/skin/addressbook/person-hover.gif"/>
-      <image src="chrome://messenger/skin/addressbook/person-hover-active.gif"/>
       <image src="chrome://messenger/skin/addressbook/newmsg-hover.gif"/>
-      <image src="chrome://messenger/skin/addressbook/newmsg-hover-active.gif"/>
       <image src="chrome://messenger/skin/addressbook/trash-hover.gif"/>
-      <image src="chrome://messenger/skin/addressbook/trash-hover-active.gif"/>
       <image src="chrome://global/skin/stop-hover.gif"/>
-      <image src="chrome://global/skin/stop-hover-active.gif"/>
       <image src="chrome://messenger/skin/addressbook/searchold-hover.gif"/>
-      <image src="chrome://messenger/skin/addressbook/searchold-hover-active.gif"/>
    </resources>	
   </binding>
           

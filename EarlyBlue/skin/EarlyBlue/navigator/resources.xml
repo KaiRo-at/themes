@@ -9,19 +9,9 @@
    <resources>
      <!-- begin resources -->
      <image src="chrome://navigator/skin/back.gif" />
-     <image src="chrome://navigator/skin/back-hover.gif" />
-     <image src="chrome://navigator/skin/back-hover-active.gif" />
      <image src="chrome://navigator/skin/forward.gif" />
-     <image src="chrome://navigator/skin/forward-hover.gif" />
-     <image src="chrome://navigator/skin/forward-hover-active.gif" />
-     <image src="chrome://navigator/skin/stop-hover.gif" />
-     <image src="chrome://navigator/skin/stop-hover-active.gif" />
-     <image src="chrome://navigator/skin/reload-hover.gif" />
-     <image src="chrome://navigator/skin/reload-hover-active.gif" />
-     <image src="chrome://global/skin/print-hover.gif" />
-     <image src="chrome://global/skin/print-hover-active.gif" />
      <!-- end resources -->
    </resources>	
   </binding>
           
-</bindings>  
+</bindings>
