@@ -54,7 +54,7 @@ tree {
 
 /* ::::: tree focusring ::::: */
 
-/* deactivated, looks to bad for me in EarlyBlue
+/* deactivated, looks too bad for me in EarlyBlue
 .focusring > .tree-rows > .tree-bodybox {
   border: 1px solid transparent;
 }
