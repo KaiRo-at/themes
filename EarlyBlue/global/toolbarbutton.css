@@ -90,7 +90,7 @@ toolbarbutton[disabled="true"] {
 /* ..... checked state ..... */
 
 toolbarbutton[checked="true"] {
-  padding: 2px !important;
+  padding: 1px !important;
   border: 1px inset #CCD0DD !important;
   background-color: #DDDDDD !important;
 }
