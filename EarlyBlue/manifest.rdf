@@ -27,7 +27,16 @@
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
+
+  <!-- Version Information.  State that we work only with major version 1 of this packages. -->
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:communicator" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:editor" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:global" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:messenger" chrome:skinVersion="1"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/0.4:navigator" chrome:skinVersion="1"/>
+
 </RDF:RDF>
+
 
 
 

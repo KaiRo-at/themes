@@ -58,71 +58,72 @@
  * Navigation bar style menubuttons 
  **/
 
-.menubutton-dual.toolbar
+
+.menubutton-dual.top
   {
     font-size               : smaller;
   }
 
-.menubutton-dual.toolbar > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box > .button-text-container 
+.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box > .button-text-container 
   {
     padding-top             : 3px;
     text-align              : center;
   }
 
-.menubutton-dual.toolbar > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box
+.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box
   {
     border                  : 1px solid transparent;
     padding                 : 1px;
   }
 
-.menubutton-dual.toolbar:hover > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.toolbar > .menubutton-internal-box > .menubutton-dual-button:hover > .button-internal-box
+.menubutton-dual.top:hover > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
+.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-button:hover > .button-internal-box
   {
     border                  : 1px outset #CCD0DD;
     padding                 : 1px;
   }
 
-.menubutton-dual.toolbar:hover:active > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.toolbar[open="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.toolbar > .menubutton-internal-box > .menubutton-dual-button:hover:active > .button-internal-box
+.menubutton-dual.top:hover:active > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
+.menubutton-dual.top[open="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
+.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-button:hover:active > .button-internal-box
   {
     border                  : 1px inset #CCD0DD;
     padding                 : 2px 0px 0px 2px;
   }
 
 
-.menubutton-dual.toolbar[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.toolbar[disabled="true"]:hover:active > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.toolbar[disabled="true"][open="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
-.menubutton-dual.toolbar[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active > .button-internal-box
+.menubutton-dual.top[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
+.menubutton-dual.top[disabled="true"]:hover:active > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
+.menubutton-dual.top[disabled="true"][open="true"] > .menubutton-internal-box > .menubutton-dual-button > .button-internal-box,
+.menubutton-dual.top[disabled="true"] > .menubutton-internal-box > .menubutton-dual-button:hover:active > .button-internal-box
   {
     border                  : 1px solid transparent;
     padding                 : 1px;
   }
 
-.menubutton-dual.toolbar > .menubutton-internal-box > .menubutton-dual-dropmarker-box
+.menubutton-dual.top > .menubutton-internal-box > .menubutton-dual-dropmarker-box
   {
     border                  : 1px solid transparent;
     padding                 : 1px;
   }
 
-.menubutton-dual.toolbar:hover > .menubutton-internal-box > .menubutton-dual-dropmarker-box
+.menubutton-dual.top:hover > .menubutton-internal-box > .menubutton-dual-dropmarker-box
   {
     border                  : 1px outset #CCD0DD;
     padding                 : 1px;
   }
 
-.menubutton-dual.toolbar:hover:active > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
-.menubutton-dual.toolbar[open="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box
+.menubutton-dual.top:hover:active > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
+.menubutton-dual.top[open="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box
   {
     border                  : 1px inset #CCD0DD;
     padding                 : 2px 0px 0px 2px;
   }
 
 
-.menubutton-dual.toolbar[disabled="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
-.menubutton-dual.toolbar[disabled="true"]:hover:active > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
-.menubutton-dual.toolbar[disabled="true"][open="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box
+.menubutton-dual.top[disabled="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
+.menubutton-dual.top[disabled="true"]:hover:active > .menubutton-internal-box > .menubutton-dual-dropmarker-box,
+.menubutton-dual.top[disabled="true"][open="true"] > .menubutton-internal-box > .menubutton-dual-dropmarker-box
   {
     border                  : 1px solid transparent;
     padding                 : 1px;
@@ -133,3 +134,4 @@ menubutton > .menubutton-internal-box > .menubutton-dual-dropmarker-box > .menub
 /*    padding-bottom           : 17px;  */
     padding-bottom           : 24px;  
   }
+
