@@ -23,6 +23,7 @@
         <RDF:li resource="urn:mozilla:skin:LCARStrek/0.8:navigator"/>
         <RDF:li resource="urn:mozilla:skin:LCARStrek/0.8:messenger"/>
         <RDF:li resource="urn:mozilla:skin:LCARStrek/0.8:editor"/>
+        <RDF:li resource="urn:mozilla:skin:LCARStrek/0.8:chatzilla"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
@@ -33,4 +34,7 @@
   <RDF:Description about="urn:mozilla:skin:LCARStrek/0.8:navigator" chrome:skinVersion="1.0"/>
   <RDF:Description about="urn:mozilla:skin:LCARStrek/0.8:messenger" chrome:skinVersion="1.0"/>
   <RDF:Description about="urn:mozilla:skin:LCARStrek/0.8:editor" chrome:skinVersion="1.0"/>
+<!-- chatzilla hasn't set skinVersion currently
+  <RDF:Description about="urn:mozilla:skin:LCARStrek/0.8:chatzilla" chrome:skinVersion="1.0"/>
+-->
 </RDF:RDF>

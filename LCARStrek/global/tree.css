@@ -221,12 +221,12 @@ treechildren:-moz-tree-column(insertafter) {
 
 /* ::::: column picker :::::  */
 
-.outliner-columnpicker-icon {
+.tree-columnpicker-icon {
   list-style-image: url("chrome://global/skin/tree/columnpicker.gif");
 }
 
-treecolpicker:hover > .outliner-columnpicker-icon,
-treecolpicker:hover:active > .outliner-columnpicker-icon {
+treecolpicker:hover > .tree-columnpicker-icon,
+treecolpicker:hover:active > .tree-columnpicker-icon {
   list-style-image: url("chrome://global/skin/tree/columnpicker-hover.gif");
 }
 
