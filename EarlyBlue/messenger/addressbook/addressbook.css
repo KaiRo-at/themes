@@ -79,11 +79,11 @@
 } 
 
 #button-newim {
-  list-style-image:url("chrome://messenger/skin/addressbook/icons/newmsg.gif");
+  list-style-image:url("chrome://messenger/skin/addressbook/icons/im.gif");
 }
 
 #button-newim[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/newmsg-disabled.gif") !important;
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/im-disabled.gif") !important;
 } 
 
 #button-delete {

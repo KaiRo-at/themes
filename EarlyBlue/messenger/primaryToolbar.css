@@ -132,9 +132,9 @@
 }
 
 #button-junk {
-  list-style-image: url("chrome://messenger/skin/toolbar/mark.gif");
+  list-style-image: url("chrome://messenger/skin/toolbar/junk.gif");
 }
 
 #button-junk[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/toolbar/mark-disabled.gif") !important;
+  list-style-image: url("chrome://messenger/skin/toolbar/junk-disabled.gif") !important;
 }
