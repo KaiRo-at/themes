@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE window [
+<!ENTITY % textcontextDTD SYSTEM "chrome://global/locale/textcontext.dtd" >
+%textcontextDTD;
+]>
+
+<bindings id="workarounds"
+   xmlns="http://www.mozilla.org/xbl"
+   xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  
+  <binding id="thumbv" extends="xul:box">
+    <content align="vertical">
+      <xul:image inherits="src"/>
+    </content>
+  </binding>
+
+  <binding id="thumbh" extends="xul:box">
+    <content>
+      <xul:image inherits="src"/>
+    </content>
+  </binding>
+
+</bindings>
+
+
+
