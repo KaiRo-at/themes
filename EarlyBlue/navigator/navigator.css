@@ -129,7 +129,7 @@
 }
 
 #nav-bar[toolbarmode="small"] > #nav-bar-inner {
-  margin: 2px 0px;
+  margin: 2px 0px 2px 4px;
 }
 
 toolbar[toolbarmode="small"] > toolbargrippy {
@@ -141,8 +141,11 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 #window-controls {
   -moz-box-align: center;
   padding: 0 2px 0 4px;
-  border-left: 2px solid;
-  -moz-border-left-colors: ThreeDHighlight ThreeDShadow;
+  border-left: 1px solid #9999CC;
+}
+
+#window-controls > toolbarbutton {
+  padding: 2px 0px 2px 2px;
 }
 
 #minimize-button {
@@ -305,4 +308,5 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   border-top: none;
 }
 */
+
 

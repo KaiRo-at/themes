@@ -62,7 +62,7 @@
 }
 
 #navigator-throbber[toolbarmode="small"] {
-  margin: 0 5px 0 0;
+  margin: 0 2px 0 1px;
   list-style-image: url("chrome://communicator/skin/brand/throbber16-single.gif");
 }
 
