@@ -114,21 +114,21 @@ iframe {
 	list-style-image:url("chrome://messenger/skin/file_dis.gif");
 }
 
-#FileButtonMenu > button {
-        border: 1px solid transparent;
+#button-file[open="true"] > .button-internal-box {
+	border: 1px inset #CCCCDD;
+        padding               : 2px 0px 0px 2px;
 }
 
-#FileButtonMenu:hover > button {
-        border: 1px outset #CCD0DD;
+#button-file > .button-internal-box 
+{
+        vertical-align: middle;
+        text-align: center;
 }
 
-#FileButtonMenu[disabled="true"] > button,
-#FileButtonMenu[disabled="true"]:hover > button {
-        border: 1px solid transparent;
-}
-
-#FileButtonMenu[open="true"] > button {
-        border: 1px inset #CCD0DD;
+#button-file > .button-internal-box > .menubutton-single-text 
+{
+        padding-top         : 3px;
+        text-align          : center;
 }
 
 #button-next {
@@ -137,6 +137,14 @@ iframe {
 
 #button-next[disabled="true"] {
 	list-style-image:url("chrome://messenger/skin/next_dis.gif");
+}
+
+#button-mark {
+	list-style-image:url("chrome://messenger/skin/mark.gif");
+}
+
+#button-mark[disabled="true"] {
+	list-style-image:url("chrome://messenger/skin/mark_dis.gif");
 }
 
 #button-delete {
@@ -165,66 +173,66 @@ iframe {
 	list-style-image:url("chrome://global/skin/stop_dis.gif");
 }
 
+.folderMenuItem 
+  {
+    list-style-image      : url("chrome://messenger/skin/folder-closed.gif");
+  }
 
-.folderMenuItem > .menu-left {
- list-style-image: url("chrome://messenger/skin/folder-closed.gif");
-}
-
-
-.folderMenuItem[open="true"] > .menu-left {
- list-style-image: url("chrome://messenger/skin/folder-open.gif");
-}
+.folderMenuItem[open="true"] 
+  {
+    list-style-image      : url("chrome://messenger/skin/folder-open.gif");
+  }
 
 /* special folder */
-.folderMenuItem[SpecialFolder="Inbox"] > .menu-left {
+.folderMenuItem[SpecialFolder="Inbox"] {
  list-style-image: url("chrome://messenger/skin/folder-inbox.gif");
 }
 
-.folderMenuItem[SpecialFolder="Inbox"][open="true"] > .menu-left
+.folderMenuItem[SpecialFolder="Inbox"][open="true"]
 {
     list-style-image: url("chrome://messenger/skin/folder-inbox.gif");
 }
 
-.folderMenuItem[SpecialFolder="Trash"] > .menu-left {
+.folderMenuItem[SpecialFolder="Trash"] {
  list-style-image: url("chrome://messenger/skin/folder-trash.gif");
 }
 
-.folderMenuItem[SpecialFolder="Trash"][open="true"] > .menu-left {
+.folderMenuItem[SpecialFolder="Trash"][open="true"] {
  list-style-image: url("chrome://messenger/skin/folder-trash.gif");
 }
 
-.folderMenuItem[IsServer="true"] > .menu-left
+.folderMenuItem[IsServer="true"]
 {
  list-style-image: url("chrome://messenger/skin/server-mail.gif");
 }
 
-.folderMenuItem[IsServer="true"][open="true"] > .menu-left
+.folderMenuItem[IsServer="true"][open="true"]
 {
  list-style-image: url("chrome://messenger/skin/server-mail.gif");
 }
 
 /* IMAP folders */
 
-.folderMenuItem[IsServer="true"][ServerType="imap"][IsSecure="true"] > .menu-left {
+.folderMenuItem[IsServer="true"][ServerType="imap"][IsSecure="true"] {
     list-style-image: url("chrome://messenger/skin/server-remote-lock.gif");
 }
 
 /* Local Servers */
-.folderMenuItem[IsServer="true"][ServerType="none"] > .menu-left
+.folderMenuItem[IsServer="true"][ServerType="none"]
 {
  list-style-image: url("chrome://messenger/skin/server-local.gif");
 }
 
 /* News folders */
-.folderMenuItem[ServerType="nntp"] > .menu-left {
+.folderMenuItem[ServerType="nntp"] {
     list-style-image: url("chrome://messenger/skin/folder-newsgroup.gif");
 }
 
-.folderMenuItem[IsServer="true"][ServerType="nntp"][IsSecure="true"] > .menu-left {
+.folderMenuItem[IsServer="true"][ServerType="nntp"][IsSecure="true"] {
     list-style-image: url("chrome://messenger/skin/server-news-lock.gif");
 }
 
-.folderMenuItem[IsServer="true"][ServerType="nntp"] > .menu-left {
+.folderMenuItem[IsServer="true"][ServerType="nntp"] {
     list-style-image: url("chrome://messenger/skin/server-news.gif");
 }
 
@@ -339,3 +347,5 @@ searchvalue {
 searchterm {
  -moz-binding: url(chrome://messenger/content/mailWidgets.xml#searchterm);
 }
+
+

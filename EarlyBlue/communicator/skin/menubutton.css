@@ -47,6 +47,7 @@
     }
 
  .button-toolbar[open="true"] > .menubutton-internal-box,
+ .button-toolbar[open="true"] > .button-internal-box,
  .button-toolbar:hover:active > .menubutton-internal-box
     {
       border                : 1px inset #CCD0DD;

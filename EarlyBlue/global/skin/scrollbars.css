@@ -12,19 +12,33 @@ thumb {
   -moz-binding: url(chrome://global/content/xulBindings.xml#thumb);
   background-color: #CCCCCC;
   border: 1px outset #CCCCCC;
-  list-style-image: url("chrome://global/skin/scroll-thumb-horiz.gif")
+  list-style-image: url("chrome://global/skin/scroll-thumb-horiz.gif");
+  text-align: center;
+  vertical-align: middle;
 }
 
 thumb[disabled="true"] {
    list-style-image: url("chrome://global/skin/scroll-thumb-horiz-disabled.gif");
 }
 
-thumb[align="vertical"] {
+scrollbar[align="vertical"] > slider > thumb {
+  -moz-binding: url(chrome://global/skin/workaround.xml#thumbv);
    list-style-image: url("chrome://global/skin/scroll-thumb-vert.gif")
 }
 
+scrollbar[align="vertical"] > slider > thumb[disabled="true"] {
+   list-style-image: url("chrome://global/skin/scroll-thumb-vert-disabled.gif")
+}
+
+
+scrollbar[align="vertical"] > slider > thumb:active {
+   background-color: #DDDDDD;
+/*   background-color: #99CCFF; */
+}
+
+
 scrollbarbutton {
-  vertical-align: bottom;
+  vertical-align: middle;
   cursor: default;
 
   border: 1px outset white;
@@ -61,26 +75,23 @@ scrollbarbutton[type="increment"][disabled="true"] {
 }
 
 
-scrollbar[align="vertical"] scrollbarbutton[type="decrement"] {
+scrollbar[align="vertical"] > scrollbarbutton[type="decrement"] {
    list-style-image: url("chrome://global/skin/scroll-up.gif")
 }
 
-scrollbar[align="vertical"] scrollbarbutton[type="decrement"][disabled="true"] {
+scrollbar[align="vertical"] > scrollbarbutton[type="decrement"][disabled="true"] {
    list-style-image: url("chrome://global/skin/scroll-up-disabled.gif") 
 }
 
-scrollbar[align="vertical"] scrollbarbutton[type="increment"] {
+scrollbar[align="vertical"] > scrollbarbutton[type="increment"] {
    list-style-image: url("chrome://global/skin/scroll-down.gif")
 }
 
-scrollbar[align="vertical"] scrollbarbutton[type="increment"][disabled="true"] {
+scrollbar[align="vertical"] > scrollbarbutton[type="increment"][disabled="true"] {
    list-style-image: url("chrome://global/skin/scroll-down-disabled.gif") 
-}
-
-slider[align="vertical"] thumb:active {
-   background-color: #CCCCCC;
 }
 
 slider {
    background-color: #999999;
 }
+
