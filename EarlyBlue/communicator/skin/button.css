@@ -97,26 +97,26 @@
   .button-toolbar-1 > .button-internal-box
     {
       border              : 1px solid transparent;
-      vertical-align      : middle;
+      -moz-box-align      : center;
     }
     
   .button-toolbar-1:hover > .button-internal-box
     {
       border              : 1px outset #CCD0DD;
-      vertical-align      : middle;
+      -moz-box-align      : center;
     }
     
   .button-toolbar-1:hover:active > .button-internal-box
     {
       border              : 1px inset #CCD0DD;
-      vertical-align      : middle;
+      -moz-box-align      : center;
       padding             : 2px 0px 0px 2px;
     }
     
   .button-toolbar-1 > .button-internal-box > .button-text-container 
     {
       display             : none;
-      text-align          : center;
+      -moz-box-pack       : center;
     }
     
 /** Styles for the standard 'large' toolbar button, these buttons are used for
@@ -140,7 +140,7 @@
     {
       border              : 1px solid transparent;
       padding             : 1px; 
-      vertical-align      : middle;
+      -moz-box-align      : center;
     }
 
   .button-toolbar-2:hover > .button-internal-box
@@ -167,7 +167,7 @@
   .button-toolbar-2 > .button-internal-box > .button-text-container 
     {
       padding-top         : 3px;
-      text-align          : center;
+      -moz-box-pack       : center;
     }
 
 
@@ -287,5 +287,3 @@ menubutton.button-toolbar-4
     padding               : 0px;
     padding-left          : 2px;
   }
-
-

@@ -7,11 +7,11 @@
 
   <binding id="treecell-header">
     <content excludes="observes">
-      <xul:box class="treecell-header-box" flex="1" autostretch="never" valign="middle">
+      <xul:hbox class="treecell-header-box" flex="1" autostretch="never" align="center">
         <xul:image class="tree-header-image" inherits="src"/>
         <xul:text class="tree-header-text" inherits="crop,value" flex="1" crop="right"/>
         <xul:image class="tree-header-sortdirection"/>
-      </xul:box>
+      </xul:hbox>
     </content>
   </binding>
    

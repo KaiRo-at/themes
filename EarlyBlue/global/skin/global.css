@@ -144,12 +144,13 @@
       color               : #CCD0DD;
       user-focus          : ignore;
       overflow            : hidden
+      -moz-box-align      : center;
     }
 
   statusbarpanel, .statusbar-panel
     {
       padding             : 0px 1px 0px 1px;
-      vertical-align      : middle;
+      -moz-box-align      : center;
     }
 
   .statusbarpanel-icononly
@@ -180,11 +181,3 @@
   {
     margin                : 0px;
   }
-  
-  
-
-
-
-
-
-

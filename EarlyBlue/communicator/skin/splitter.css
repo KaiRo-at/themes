@@ -68,26 +68,6 @@ rows > splitter {
         cursor: n-resize;
 }
 
-/* for backwards compatibility */
-box[align="vertical"]>splitter > grippy,
-window[align="vertical"]>splitter > grippy {
-	/* a horizontal splitter */
-        background-image: url("chrome://global/skin/grippy-horizontal-after.gif"); 
-	width: 120px;
-	height: 8px;
-}
-
-box[align="vertical"]>splitter[state="collapsed"] > grippy,
-window[align="vertical"]>splitter[state="collapsed"] > grippy {
-        background-image: url("chrome://global/skin/grippy-horizontal-before.gif"); 
-}
-
-box[align="vertical"]>splitter,
-window[align="vertical"]>splitter {
-	/* a vertical splitter */
-    cursor: n-resize;
-}
-
 /**
  * gray horizontal splitter for pane views
  */
@@ -135,4 +115,3 @@ splitter.gray-horizontal-splitter > #endcap {
 	width: 8px;
 }
 */
-

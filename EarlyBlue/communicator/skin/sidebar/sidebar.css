@@ -80,7 +80,7 @@
     background-color: #666699;
     border: 0px !important;
     padding-left: 4px;
-    vertical-align: middle;
+    -moz-box-align: center;
 }
 .sidebarheader-main > .sidebar-header-text {
     font-weight: bold;
@@ -171,6 +171,3 @@
       background-color    : #FFFFFF;
       font-weight         : bold;
     }
-    
-
-

@@ -14,7 +14,7 @@
     {
       border              : none;
       padding             : 0px;
-      vertical-align      : middle;
+      -moz-box-align      : center;
     }
 
   .menubutton-single-icon
@@ -124,7 +124,4 @@
     {
       border              : 1px inset #CCD0DD;
       padding             : 2px 0px 0px 2px;
-    }    
-    
-
-
+    }

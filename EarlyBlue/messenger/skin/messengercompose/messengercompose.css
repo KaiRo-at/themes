@@ -31,7 +31,7 @@
 
 .treecell-addressingWidget
   {
-  	vertical-align        : middle;
+    -moz-box-align        : center;
     border-bottom         : 1px solid #CCD0DD;
     padding               : 0px !important;
   }
@@ -149,7 +149,7 @@
 }
 
 #askImageBox {
-        vertical-align: top;
+        -moz-box-align: start;
 }
 
 #convertYes {
@@ -163,5 +163,3 @@
 #convertNo {
 	list-style-image:url("chrome://global/skin/alert-icon.gif");
 }
-
-

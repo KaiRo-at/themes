@@ -301,7 +301,7 @@ button.edit-mode[selected="1"]:hover:active {
         margin: 0px;
         padding: 1px;
         border: 1px solid transparent;
-        text-align: center;
+        -moz-box-pack: center;
 }
 #FormatToolbar > button:hover > .button-internal-box {
         border: 1px outset #CCD0DD;
@@ -409,7 +409,7 @@ button.edit-mode[selected="1"]:hover:active {
   border:     1px inset white;
   margin:     0px;
   padding:    2px;
-  text-align: center;
+  -moz-box-pack: center;
 }
 
 /* TODO: How to make inset color skinable? */

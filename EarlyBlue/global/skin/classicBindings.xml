@@ -15,18 +15,18 @@
 
   <binding id="toolbargrippy" extends="chrome://global/content/bindings/toolbar.xml#toolbargrippy">
     <content orient="vertical">
-      <xul:box autostretch="never" halign="center">
+      <xul:vbox autostretch="never" align="center">
         <xul:image class="toolbargrippy-twisty"/>
-      </xul:box>
+      </xul:vbox>
       <xul:spring class="toolbargrippy-texture" flex="1"/>
     </content>
   </binding>
   
   <binding id="toolbargrippy-collapsed" extends="chrome://global/content/bindings/toolbar.xml#toolbargrippy">
     <content>
-      <xul:box autostretch="never" halign="center">
+      <xul:hbox autostretch="never" align="center">
         <xul:image class="toolbargrippy-twisty-collapsed"/>
-      </xul:box>
+      </xul:hbox>
       <xul:spring class="toolbargrippy-texture-collapsed" flex="1"/>
     </content>
   </binding>
@@ -34,7 +34,7 @@
 
   <binding id="radio" extends="chrome://global/content/bindings/radio.xml#radio">
     <content excludes="observes">
-      <xul:box flex="1" class="radio-internal-box" autostretch="never" valign="middle">
+      <xul:box flex="1" class="radio-internal-box" autostretch="never" align="center">
         <xul:box class="radio-checkmark-box-1" autostretch="never" inherits="disabled">
           <xul:box class="radio-checkmark-box-2" autostretch="never" flex="1">
             <xul:image class="radio-check" inherits="checked,disabled"/>
@@ -50,7 +50,7 @@
 
   <binding id="checkbox" extends="chrome://global/content/bindings/checkbox.xml#checkbox">
     <content excludes="observes">
-      <xul:box flex="1" class="checkbox-internal-box" autostretch="never" valign="middle">
+      <xul:box flex="1" class="checkbox-internal-box" autostretch="never" align="center">
         <xul:box class="checkbox-checkmark-box-1" autostretch="never" inherits="disabled">
           <xul:box class="checkbox-checkmark-box-2" autostretch="never" flex="1">
             <xul:image class="checkbox-check" inherits="checked,disabled"/>
@@ -74,11 +74,11 @@
 
   <binding id="scrollbar" extends="chrome://global/content/bindings/scrollbar.xml#scrollbar">
     <content>
-      <xul:scrollbarbutton type="decrement" inherits="align:sborient"/>
+      <xul:scrollbarbutton type="decrement" inherits="sborient=orient"/>
       <xul:slider flex="1" inherits="curpos,maxpos,pageincrement,increment">
 	      <xul:thumb inherits="align,src" flex="1"/>
       </xul:slider>
-      <xul:scrollbarbutton type="increment" inherits="align:sborient"/>
+      <xul:scrollbarbutton type="increment" inherits="sborient=orient"/>
     </content>
   </binding>
   
@@ -113,6 +113,3 @@
   </binding>
   
 </bindings>
-
-
-

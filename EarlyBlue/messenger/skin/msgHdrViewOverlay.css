@@ -173,11 +173,11 @@ text.headerValue
 /* ::::: collapsed view styles ::::: */
 .collapsedToggleHdrBox
 {
-  vertical-align: middle;
+  -moz-box-align: center;
 }
 
 #collapsedAttachmentBox {
-  text-align: center;
+  -moz-box-pack: center;
 }
 
 #collapseddateValue
@@ -212,8 +212,3 @@ text.collapsedHeaderDisplayName
 [hide] {
   visibility: hidden;
 }
-
-
-
-
-

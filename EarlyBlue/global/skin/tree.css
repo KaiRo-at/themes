@@ -29,7 +29,7 @@ treeitem[dd-dropon="true"] > treerow
 
 treecell { 
   white-space: nowrap;
-  vertical-align: middle;
+  -moz-box-align: center;
   padding: 1px 0px 1px 2px;
 } 
 
@@ -44,7 +44,7 @@ treecell {
   background-color: #CCD0DD; 
   color: black;
   border: 1px outset #CCD0DD;
-  vertical-align: middle;
+  -moz-box-align: center;
   padding: 0px;
 }
 
@@ -160,8 +160,3 @@ treecol[sortActive="true"]
   {
     margin-left           : 2px;
   }
-
-
-
-
-

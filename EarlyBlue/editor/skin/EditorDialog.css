@@ -51,7 +51,7 @@ titledbox {
 }
 
 .middle {
-  vertical-align: middle:
+  -moz-box-align: center:
 }
 
 .bold {
@@ -72,7 +72,7 @@ titledbox {
 }
 
 .align-right {
-  text-align: right;
+  -moz-box-pack: end;
 }
 
 .wrap {
@@ -252,4 +252,3 @@ treecell > input {
   margin: 0px;
   background-color: #E5E5E5 ! important;
 }
-

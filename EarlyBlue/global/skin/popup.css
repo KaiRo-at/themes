@@ -14,10 +14,10 @@ menupopup, popup
     padding               : 1px;
   }  
   
-/** Tooltips (tooltip <popup> element)
+/** Tooltips (tooltip <popup> is deprecated, use <tooltip> element)
  *  class="tooltip"
  **/
-.tooltip
+.tooltip, tooltip
   {
     background-color      : #FFFFCC;
     border                : 1px outset #FFFFCC;
@@ -26,7 +26,8 @@ menupopup, popup
     padding               : 3px;
   }
 
-.tooltip > .popup-internal-box
+.tooltip > .popup-internal-box,
+tooltip > .popup-internal-box
   {
     padding               : 0px;
     margin                : 0px;
@@ -41,4 +42,3 @@ menupopup, popup
       min-width           : 0px;
       background-color    : white;
     }
-

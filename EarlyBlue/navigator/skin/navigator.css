@@ -119,7 +119,7 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
     padding-left          : 0px;
     padding-top           : 11px;
     padding-bottom        : 11px;
-    vertical-align        : middle;
+    -moz-box-align        : center;
   }
 
 #search-button
@@ -190,5 +190,3 @@ window[chromehidden~="extrachrome"] .chromeclass-extrachrome {
   {
     margin-right          : 5px;
   }
-
-

@@ -121,14 +121,14 @@ iframe {
 
 #button-file > .button-internal-box 
 {
-        vertical-align: middle;
-        text-align: center;
+        -mox-box-align      : center;
+        -moz-box-pack       : center;
 }
 
 #button-file > .button-internal-box > .menubutton-single-text 
 {
         padding-top         : 3px;
-        text-align          : center;
+        -moz-box-pack       : center;
 }
 
 #button-next {
@@ -241,7 +241,7 @@ menu.push {
   border: 1px outset white;
   padding: 2px;
   margin: 2px;
-  text-align: center;
+  -moz-box-pack: center;
   background-color:inherit;
   background-image: inherit;
 }
@@ -435,4 +435,3 @@ searchterm
 {
   border-left          : none;
 }
-

@@ -32,7 +32,7 @@
   font-size:20px;
   margin:5px 5px 5px 5px;
   border-bottom: 2px solid black;
-  text-align: left;
+  -moz-box-pack: start;
 }
 
 .acctCentralRow
@@ -72,6 +72,3 @@
 {
   cursor:pointer;
 }
-
-
-

@@ -54,7 +54,7 @@ outlinerbody:-moz-outliner-cell
 {
   padding: 0px 0px 1px 2px;
   white-space: nowrap;
-  vertical-align: middle;
+  -moz-box-align: center;
 }
 
 outlinerbody:-moz-outliner-cell(selected)
@@ -157,6 +157,3 @@ outlinerbody:-moz-outliner-twisty(open) {
   width: 12px; /* The image's width is 12 pixels */
   list-style-image: url("chrome://global/skin/twisty-open.gif");
 }
-
-
-

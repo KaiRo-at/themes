@@ -10,9 +10,9 @@
       <xul:stack>
         <xul:button class="menubutton-dual-button button-toolbar-1 top" allowevents="true" 
                     inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value=label,crop,accesskey,disabled"/>
-        <xul:box class="menubutton-dual-dropmarker-box" autostretch="never" valign="top" flex="1">
+        <xul:hbox class="menubutton-dual-dropmarker-box" autostretch="never" align="start" flex="1">
           <xul:image class="menubutton-dual-dropmarker" inherits="disabled"/>
-        </xul:box>
+        </xul:hbox>
       </xul:stack>
     </content>
   </binding>
@@ -21,9 +21,9 @@
     <content excludes="observes,template,menupopup">
         <xul:button class="menubutton-dual-button button-toolbar-1 top" allowevents="true" 
                     inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value=label,crop,accesskey,disabled"/>
-        <xul:box class="menubutton-dual-dropmarker-box" autostretch="never" valign="top" flex="1">
+        <xul:hbox class="menubutton-dual-dropmarker-box" autostretch="never" align="start" flex="1">
           <xul:image class="menubutton-dual-dropmarker" inherits="disabled"/>
-        </xul:box>
+        </xul:hbox>
     </content>
   </binding>
 
@@ -31,18 +31,18 @@
     <content excludes="observes,template,menupopup">
         <xul:button class="menubutton-dual-button button-toolbar-2 top" allowevents="true" 
                     inherits="buttontooltiptext:tooltiptext,buttonaction:oncommand,src,value=label,crop,accesskey,disabled"/>
-        <xul:box class="menubutton-dual-dropmarker-box" autostretch="never" valign="top" flex="1">
+        <xul:hbox class="menubutton-dual-dropmarker-box" autostretch="never" align="start" flex="1">
           <xul:image class="menubutton-dual-dropmarker" inherits="disabled"/>
-        </xul:box>
+        </xul:hbox>
     </content>
   </binding>
 
   <binding id="menubutton-ubhist" extends="xul:menubutton">
     <content excludes="observes,template,menupopup">
       <xul:button class="button-toolbar-3">
-        <xul:box class="button-internal-box">
+        <xul:hbox class="button-internal-box">
           <xul:image inherits="disabled"/>
-        </xul:box>
+        </xul:hbox>
       </xul:button>
     </content>
   </binding>
