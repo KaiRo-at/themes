@@ -71,4 +71,13 @@ grippy:hover:active
       list-style-image      : url("chrome://global/skin/grippy-horizontal-before.gif");
     }
 
+  rows > splitter[state="collapsed"] > grippy,
+  window[orient="vertical"] > splitter[state="collapsed"] > grippy,
+  vbox > splitter[state="collapsed"] > grippy,
+  box[orient="vertical"] > splitter[state="collapsed"] > grippy,
+  window[align="vertical"] > splitter[state="collapsed"] > grippy,
+  box[align="vertical"] > splitter[state="collapsed"] > grippy
+    {
+      list-style-image      : url("chrome://global/skin/grippy-horizontal-after.gif");
+    }
 

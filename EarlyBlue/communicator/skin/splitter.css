@@ -46,8 +46,8 @@ window[orient="vertical"] > splitter > grippy {
 	height:8px;
  }
 
-vbox > splitter[state="collapsed"] > grippy
-box[orient="vertical"] > splitter[state="collapsed"] > grippy
+vbox > splitter[state="collapsed"] > grippy,
+box[orient="vertical"] > splitter[state="collapsed"] > grippy,
 window[orient="vertical"] > splitter[state="collapsed"] > grippy {
         background-image: url("chrome://global/skin/grippy-horizontal-before.gif"); 
  }
@@ -135,3 +135,4 @@ splitter.gray-horizontal-splitter > #endcap {
 	width: 8px;
 }
 */
+

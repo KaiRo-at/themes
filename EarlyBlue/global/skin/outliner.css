@@ -87,7 +87,7 @@ outlinerbody:-moz-outliner-line(selected)
 
 outlinercol
 { 
-  border: #666699;
+  border: 1px solid #666699;
   padding: 0px;
   background-color: #CCD0DD;
   color: black;
@@ -157,4 +157,5 @@ outlinerbody:-moz-outliner-twisty(open) {
   width: 12px; /* The image's width is 12 pixels */
   list-style-image: url("chrome://global/skin/twisty-open.gif");
 }
+
 
