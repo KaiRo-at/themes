@@ -49,8 +49,6 @@
   border: none;
 }
 
-/* EarlyBlue TODO: selected images! */
-
 treechildren:-moz-tree-image(FilenameColumn) {
   margin-right: 2px;
   list-style-image: url("chrome://communicator/skin/directory/file.gif");

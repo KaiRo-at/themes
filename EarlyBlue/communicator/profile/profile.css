@@ -53,7 +53,7 @@ window.dialog {
   list-style-image: url("chrome://communicator/skin/profile/profileicon-large.gif");
 }
 
-#profiles > listitem[rowMigrate="no"] > .tree-cell-icon {
+#profiles > listitem[rowMigrate="no"] {
   list-style-image: url("chrome://communicator/skin/profile/migrate.gif");
 }
 
