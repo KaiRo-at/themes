@@ -153,7 +153,8 @@ toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-men
   padding: 2px 0px 0px 2px !important;
 }
 
-toolbarbutton[disabled="true"] > toolbarbutton.toolbarbutton-menubutton-button {
+toolbarbutton[disabled="true"] > toolbarbutton.toolbarbutton-menubutton-button,
+toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubutton-button {
   padding: 1px !important;
 }
 

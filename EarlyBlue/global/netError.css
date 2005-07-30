@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0 1em;
   color: #000000;
-  font: message-box;
+  font: 12px helvetica,arial,tahoma,sans-serif;
 }
 
 h1 {
