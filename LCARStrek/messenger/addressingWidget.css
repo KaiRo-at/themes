@@ -38,20 +38,24 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: addressing widget ::::: */
-  
+
 #addressingWidget {
 /*  height: 80px; */
   margin-left: 0px;
   margin-right: 0px;
   -moz-user-focus: none;
   width: 0px;
-}  
-  
+}
+
+.textbox-addressingWidget[noMatchesFound="true"] {
+  color: red;
+}
+
 #typecol-addressingWidget {
   min-width: 9em;
   border-right: 1px solid #9C9CFF;
 }
-  
+
 #addressingWidget > listitem,
 .addressingWidgetItem,
 .dummyrow {
@@ -64,7 +68,7 @@
   border-bottom: 1px solid #9C9CFF;
   padding: 0px;
 }
-  
+
 .addressingWidgetCell:first-child {
   border-top: none;
 }

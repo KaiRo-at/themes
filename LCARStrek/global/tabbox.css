@@ -97,7 +97,7 @@ tab:hover:active {
 }
 
 tab:focus > .tab-middle {
-  -moz-outline: 1px dotted invert;
+  outline: 1px dotted invert;
 }
 
 /*
