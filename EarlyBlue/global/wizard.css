@@ -38,7 +38,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 .wizard-header {
-  border-bottom: 2px groove 6699FF;
+  border-bottom: 2px groove #6699FF;
   padding: 10px 0px 10px 0px;
   background-color: #666699;
   color: #CCD0DD;
