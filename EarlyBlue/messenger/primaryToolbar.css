@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
@@ -22,7 +22,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -139,20 +139,28 @@
   list-style-image: url("chrome://messenger/skin/toolbar/junk-disabled.gif") !important;
 }
 
-#junkBarImage {
-  list-style-image: url("chrome://messenger/skin/toolbar/junk.gif");
+/* ::::: message notification bar style rules ::::: */
+
+.msgNotificationBar {
+  /* border-bottom: 1px solid #669999; */
+  background-color: #9999CC;
+  color: black;
 }
 
-#junkBarMessage {
+.msgNotificationBarText {
   font-weight: bold;
 }
 
-#junkBar {
-  /* border-bottom: 1px solid #669999; */
-  background-color: #9999CC;
+#junkBarImage {
+  list-style-image: url("chrome://messenger/skin/toolbar/junk.gif");
 }
 
 #junkIcon {
   margin-left: 0.5ex;
   list-style-image: url("chrome://messenger/skin/icons/folder-junk.gif");
+}
+
+#remoteContentImage {
+  list-style-image: url("chrome://messenger/skin/toolbar/remote-blocked.png");
+  padding: 3px;
 }

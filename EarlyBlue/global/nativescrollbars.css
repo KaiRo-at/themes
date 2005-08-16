@@ -38,8 +38,8 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
 
-/* ===== scrollbars.css =================================================
-  == Styles used by XUL scrollbar-related elements.
+/* ===== nativelscrollbars.css =================================================
+  == Styles used by XUL scrollbar-related elements (only on Mac).
   ======================================================================= */
 
 /* ::::: scrollbar ::::: */

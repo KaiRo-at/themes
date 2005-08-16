@@ -63,12 +63,8 @@ listbox {
   padding-top: 2px;
 }
 
-menulist {
+.search-menulist, .search-value-menulist {
   width: 12em;
-}
-
-menulist > menupopup > menuitem {
-  padding-right: 2px;
 }
 
 textbox {
@@ -78,4 +74,12 @@ textbox {
 #FilterEditor {
   width: 560px;
   min-height: 1px;
+}
+
+.filler {
+  padding-right: 22px;
+}
+
+.ruleactionitem {
+  min-width: 15em;
 }
