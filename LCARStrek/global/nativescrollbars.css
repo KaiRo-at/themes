@@ -1,0 +1,5 @@
+/* ===== nativescrollbars.css =================================================
+  == Styles used by XUL scrollbar-related elements (only on Mac).
+  ======================================================================= */
+
+@import url("chrome://global/skin/scrollbars.css");

@@ -204,15 +204,9 @@
   list-style-image: url("chrome://messenger/skin/toolbar/junk-disabled.gif") !important;
 }
 
-#junkBarImage {
-  list-style-image: url("chrome://messenger/skin/toolbar/junk-hover.gif");
-}
+/* ::::: message notification bar style rules ::::: */
 
-#junkBarMessage {
-  font-weight: bold;
-}
-
-#junkBar {
+.msgNotificationBar {
   -moz-border-radius: 7px;
   padding: 3px;
   margin-bottom: 3px;
@@ -220,7 +214,20 @@
   color: #000000;
 }
 
+.msgNotificationBarText {
+  font-weight: bold;
+}
+
+#junkBarImage {
+  list-style-image: url("chrome://messenger/skin/toolbar/junk-hover.gif");
+}
+
 #junkIcon {
   margin-left: 0.5ex;
   list-style-image: url("chrome://messenger/skin/icons/folder-junk.gif");
+}
+
+#remoteContentImage {
+  list-style-image: url("chrome://messenger/skin/toolbar/remote-blocked.png");
+  padding: 3px;
 }
