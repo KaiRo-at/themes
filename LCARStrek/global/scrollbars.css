@@ -115,6 +115,7 @@ scrollcorner {
   -moz-binding: url("chrome://global/content/bindings/scrollbar.xml#scrollbar-base");
   cursor: default;
   background-color: #000000;
+  width: 13px;
 }
 
 /* ..... increment .... */

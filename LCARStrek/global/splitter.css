@@ -46,13 +46,13 @@
 splitter {
   -moz-box-align: center;
   -moz-box-pack: center;
-  cursor: e-resize;
+  cursor: ew-resize;
   border: none;
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   min-width: 6px;
   background-color: #9C9CFF;
-  margin: 0px 3px 0px 3px; 
+  margin: 0px 3px 0px 3px;
 }
 
 splitter[state="dragging"],
@@ -60,7 +60,7 @@ splitter:hover:active {
   background-color: #FFCF00;
 }
 
-/* This takes margin away from outliner header splitters, else they look ugly! */  
+/* This takes margin away from outliner header splitters, else they look ugly! */
 splitter.tree-splitter {
   margin: 0px;
 }
@@ -68,7 +68,7 @@ splitter.tree-splitter {
 /* ::::: splitter (horizontal) ::::: */
 
 splitter[orient="vertical"] {
-  cursor: n-resize;
+  cursor: ns-resize;
   border: none;
   border-left: 3px solid black;
   border-right: 3px solid black;

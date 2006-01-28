@@ -168,13 +168,37 @@ html|*.menulist-editable-input {
   -moz-box-pack: center;
   margin: 0px;
   border: 1px solid #9C9CFF;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
-.menulist-compact > .menulist-label {
+.menulist-compact > .menulist-label-box {
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: inherit;
+}
+
+.menulist-compact > .menulist-label-box > .menulist-label {
   margin: 0 3px !important;
   text-align: right;
 }
 
+.menulist-compact > .menulist-label-box > .menulist-icon {
+  margin-left: 2px;
+}
+
 .menulist-compact[open="true"] {
   border: 1px solid #FFCF00;
+}
+
+.menulist-compact:hover,
+.menulist-compact[open="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+}
+
+.menulist-compact[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+}
+
+.menulist-compact:focus > .menulist-label-box {
+  border: 1px dotted #008484;
 }
