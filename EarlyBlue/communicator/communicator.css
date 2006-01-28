@@ -58,7 +58,7 @@
 #offline-status {
   list-style-image: url("chrome://communicator/skin/icons/online.gif");
 }
-  
+
 /* ::::: directional button icons ::::: */
 
 .up {
@@ -85,6 +85,24 @@
 }
 
 /* ::::: download manager ::::: */
+
 #downloadView > treechildren::-moz-tree-image(Name) {
   margin-right: 2px;
+}
+
+/* :::::: autoscroll popup ::::: */
+
+#autoscroller {
+  height: 28px;
+  width: 28px;
+  border: 0px;
+  margin: -14px;
+  padding: 0px;
+  background-image: url("chrome://communicator/skin/icons/autoscroll.gif");
+}
+#autoscroller[scrolldir="NS"] {
+  background-image: url("chrome://communicator/skin/icons/autoscroll-ns.gif");
+}
+#autoscroller[scrolldir="EW"] {
+  background-image: url("chrome://communicator/skin/icons/autoscroll-ew.gif");
 }

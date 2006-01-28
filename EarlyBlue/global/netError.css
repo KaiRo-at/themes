@@ -64,6 +64,7 @@ body[dir="rtl"] #errorPageContainer {
 }
 
 #errorShortDesc > p {
+  overflow: auto;
   border-bottom: 1px solid #666699;
   padding-bottom: 1em;
   font-size: 130%;
@@ -97,4 +98,8 @@ body[dir="rtl"] #brand {
 
 #brand > p {
   margin: 0;
+}
+
+#errorContainer {
+  display: none;
 }

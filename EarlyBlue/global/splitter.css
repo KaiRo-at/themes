@@ -46,7 +46,7 @@
 splitter {
   -moz-box-align: center;
   -moz-box-pack: center;
-  cursor: e-resize;
+  cursor: ew-resize;
   border: none;
   border-left: 1px solid #9999CC;
   border-right: 1px solid #9999CC;
@@ -62,7 +62,7 @@ splitter:hover:active {
 /* ::::: splitter (horizontal) ::::: */
 
 splitter[orient="vertical"] {
-  cursor: n-resize;
+  cursor: ns-resize;
   border: none;
   border-top: 1px solid #9999CC;
   border-bottom: 1px solid #9999CC;

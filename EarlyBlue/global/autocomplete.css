@@ -60,7 +60,7 @@ textbox {
   -moz-box-align: center;
   -moz-box-pack: center;
   min-width: 15px;
-  min-height: 19px; 
+  min-height: 19px;
   border: 1px outset #CCD0DD;
   background-color: #9999CC;
   padding: 1px;
@@ -82,7 +82,7 @@ textbox {
 }
 
 .autocomplete-history-popup {
-  max-height: 180px;
+  max-height: 25em;
 }
 
 /* ::::: tree ::::: */

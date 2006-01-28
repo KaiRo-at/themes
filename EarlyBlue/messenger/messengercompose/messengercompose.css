@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
@@ -23,7 +23,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -45,14 +45,14 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: primary toolbar buttons ::::: */
- 
+
 #button-send {
   list-style-image: url("chrome://messenger/skin/messengercompose/send.gif");
 }
 
 #button-send[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/messengercompose/send-disabled.gif") !important;
-} 
+}
 
 #button-send[offline="true"] {
   list-style-image: url("chrome://messenger/skin/messengercompose/sendlater.gif");
@@ -68,7 +68,7 @@
 
 #button-address[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/messengercompose/address-disabled.gif") !important;
-} 
+}
 
 #button-attach {
   list-style-image: url("chrome://messenger/skin/messengercompose/attach.gif");
@@ -76,7 +76,7 @@
 
 #button-attach[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/messengercompose/attach-disabled.gif") !important;
-} 
+}
 
 #button-quote {
   list-style-image: url("chrome://messenger/skin/messengercompose/quote.gif");
@@ -84,7 +84,7 @@
 
 #button-quote[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/messengercompose/quote-disabled.gif") !important;
-} 
+}
 
 #spellingButton {
   list-style-image: url("chrome://editor/skin/icons/spell.gif");
@@ -100,7 +100,7 @@
 
 #button-save[disabled="true"] {
   list-style-image: url("chrome://messenger/skin/messengercompose/savemsg-disabled.gif") !important;
-} 
+}
 
 #button-stop {
   list-style-image: url("chrome://global/skin/icons/stop.gif");
@@ -108,7 +108,7 @@
 
 #button-stop[disabled="true"] {
   list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
-} 
+}
 
 /* ::::: autocomplete icons ::::: */
 
@@ -130,15 +130,6 @@ treechildren::-moz-tree-image(remote-abook) {
 treechildren::-moz-tree-image(remote-err) {
   margin: 2px -3px 2px 2px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook-error.gif");
-}
-
-.identity-popup-item {
-  -moz-binding: url("chrome://messenger/content/messengercompose/mailComposeBindings.xml#fromMenuitem");
-}
-
-.composemenu-text-2 {
-  font-style: italic;
-  color: #C0C0C0;
 }
 
 /* ::::: EarlyBlue layout corrections ::::: */

@@ -139,23 +139,16 @@ html|*.menulist-editable-input {
   border: 1px outset #CCD0DD;
 /*  background-color: -moz-Dialog;
   color: -moz-DialogText; */
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
-.menulist-compact > .menulist-label {
+.menulist-compact > .menulist-label-box > .menulist-label {
   margin: 0 3px !important;
   text-align: right;
 }
 
-.menulist-compact > .menulist-dropmarker {
+.menulist-compact > .menulist-label-box > .menulist-icon {
   margin-left: 2px;
-  border: none;
-  padding: 0 !important;
-  background: transparent;
-}
-
-menulist:hover:active > .menulist-dropmarker {
-  border: none;
-  padding: 0;
 }
 
 .menulist-compact[open="true"] {
@@ -164,3 +157,12 @@ menulist:hover:active > .menulist-dropmarker {
   color: ThreeDHighlight; */
 }
 
+.menulist-compact[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+}
+
+.menulist-compact:focus > .menulist-label-box {
+  border: 1px dotted;
+  background-color: transparent;
+  color: inherit;
+}
