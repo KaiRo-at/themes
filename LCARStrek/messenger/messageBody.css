@@ -36,35 +36,14 @@
  * ***** END LICENSE BLOCK ***** */
 
 @import url("chrome://communicator/skin/smileys.css");
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+@namespace url("http://www.w3.org/1999/xhtml");
 
 /* ===== messageBody.css ================================================
   == Styles for the body of a mail message.
   ======================================================================= */
 
-window {
-  overflow: auto;
-}
-
-mailattachcount {
-  display: none;
-}
-
 /* :::: message header ::::: */
-
-header {
-  text-align: left;
-}
-
-html|html {
-  /* XXX Doesn't seem to work. (Same with "html|body".) */
-  background-color: white;
-}
-
-headerdisplayname {
-  font-weight: bold;
-  white-space: pre;
-}
 
 .header-part1 {
   border-left: 4px solid #EFEFEF;

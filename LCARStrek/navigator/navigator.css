@@ -213,6 +213,12 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   margin: 0px 7px 0px 0px;
 }
 
+#urlbar[level="high"] > .autocomplete-textbox-container,
+#urlbar[level="low"] > .autocomplete-textbox-container {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
 /* ::::: page proxy icon ::::: */
 
 #page-proxy-deck,

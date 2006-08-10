@@ -100,6 +100,22 @@
   background-color: transparent;
 }
 
+.headerValueBox {
+  margin: 0em 0em .25em 0em;
+}
+
+.headerValueBox > .headerValue {
+  margin: 0 0 0 0;
+}
+
+.headerValueBox[singleline="true"] {
+  overflow: hidden;
+}
+
+.headerValueBox[singleline="true"] > .headerValue {
+  overflow: hidden;
+}
+
 .subjectvalue {
   font-weight: bold;
 }

@@ -80,10 +80,10 @@ toolbarbutton.bookmark-item > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 
-.bookmark-item > .toolbarbutton-box > .toolbarbutton-icon {
+.bookmark-item > .toolbarbutton-icon {
   list-style-image: inherit;
-  height: 16px;
-  width: 16px;
+  max-height: 16px;
+  max-width: 16px;
 }
 
 treechildren::-moz-tree-twisty(group, hidetwisty) {

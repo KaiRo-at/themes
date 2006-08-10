@@ -38,9 +38,9 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ===== console.css ====================================================
-  == Styles used by the JavaScript Console window.
+  == Styles used by the Error Console window.
   ======================================================================= */
-  
+
 .console-box {
   background-color: #000000;
   color: #FF9F00;
@@ -90,7 +90,7 @@
 
 .console-row[type="message"] {
   font-family: monospace;
-} 
+}
 
 /* ..... selected state ..... */
 

@@ -38,7 +38,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ===== console.css ====================================================
-  == Styles used by the JavaScript Console window.
+  == Styles used by the Error Console window.
   ======================================================================= */
 
 .console-box {
@@ -61,7 +61,7 @@
 }
 
 .console-icon {
-  list-style-image    : inherit !important;
+  list-style-image: inherit !important;
 }
 
 /* ..... error rows ..... */
@@ -101,24 +101,22 @@
 
 .console-row-code[selected="true"],
 .console-row-content[selected="true"] > .console-row-file > .console-error-source > .text-link {
-  color: inherit !important;  
+  color: inherit !important;
 }
 
 /* ::::: icons ::::: */
 
 .console-row[type="error"],
-.console-row[type="exception"] 
-  {
-    list-style-image    : url("chrome://global/skin/icons/alert-error.gif");
-  }
+.console-row[type="exception"] {
+  list-style-image: url("chrome://global/skin/icons/alert-error.gif");
+}
 
-.console-row[type="warning"] 
-  {
-    list-style-image    : url("chrome://global/skin/icons/alert-exclam.gif");
-  }
+.console-row[type="warning"] {
+  list-style-image: url("chrome://global/skin/icons/alert-exclam.gif");
+}
 
 .console-row[type="message"] {
-  list-style-image      : url("chrome://global/skin/icons/alert-message.gif");
+  list-style-image: url("chrome://global/skin/icons/alert-message.gif");
 }
 
 /* ::::: toolbars ::::: */
