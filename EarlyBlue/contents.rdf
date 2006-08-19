@@ -5,42 +5,42 @@
 
   <!-- List all the skins being supplied by this theme -->
   <RDF:Seq about="urn:mozilla:skin:root">
-    <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1" />
+    <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9" />
   </RDF:Seq>
 
   <!-- classic Information -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1"
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9"
         chrome:displayName="EarlyBlue"
         chrome:accessKey="E"
         chrome:author="Robert Kaiser - KaiRo.at"
         chrome:description="This theme re-introduces a UI design idea based on early Mozilla milestones. Get more info at http://www.kairo.at/download/"
-        chrome:name="EarlyBlue/1.8.1"
+        chrome:name="EarlyBlue/1.9"
         chrome:image="global/preview.png">
     <chrome:packages>
-      <RDF:Seq about="urn:mozilla:skin:EarlyBlue/1.8.1:packages">
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:global"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:communicator"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:navigator"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:messenger"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:editor"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:chatzilla"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:inspector"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:browser"/>
-        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.8.1:mozapps"/>
+      <RDF:Seq about="urn:mozilla:skin:EarlyBlue/1.9:packages">
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:global"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:communicator"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:navigator"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:messenger"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:editor"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:chatzilla"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:inspector"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:browser"/>
+        <RDF:li resource="urn:mozilla:skin:EarlyBlue/1.9:mozapps"/>
       </RDF:Seq>
     </chrome:packages>
   </RDF:Description>
 
   <!-- Version Information.  State that we work only with a certain version of this package. -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:global" chrome:skinVersion="1.8"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:communicator" chrome:skinVersion="1.8"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:navigator" chrome:skinVersion="1.8"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:messenger" chrome:skinVersion="1.8"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:editor" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:global" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:communicator" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:navigator" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:messenger" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:editor" chrome:skinVersion="1.8"/>
 <!-- chatzilla hasn't set skinVersion currently
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:chatzilla" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:chatzilla" chrome:skinVersion="1.8"/>
 -->
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:inspector" chrome:skinVersion="1.8"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:browser" chrome:skinVersion="1.8"/>
-  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.8.1:mozapps" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:inspector" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:browser" chrome:skinVersion="1.8"/>
+  <RDF:Description about="urn:mozilla:skin:EarlyBlue/1.9:mozapps" chrome:skinVersion="1.8"/>
 </RDF:RDF>
