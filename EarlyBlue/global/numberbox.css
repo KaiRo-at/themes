@@ -11,15 +11,12 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
- *
- * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * The Initial Developer of the Original Code is the Mozilla Corporation
+ * Portions created by the Initial Developer are Copyright (C) 2006
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *   Neil Deakin (enndeakin@sympatico.ca)
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,72 +32,23 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+/* ===== numberbox.css ==================================================
+  == Styles used by the XUL textbox type="number" element.
+  ======================================================================= */
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
-/* ===== autocomplete.css =================================================
-  == Styles used by the autocomplete widget.
-  ======================================================================= */
-
-/* ::::: autocomplete ::::: */
-
-textbox {
+textbox[type="number"] {
+  padding: 0 !important;
   cursor: default;
-  padding: 0px;
 }
 
-.textbox-input-box {
-  margin: 0 3px;
+html|*.numberbox-input {
+  text-align: right;
+}
+
+.numberbox-input-box {
   -moz-box-align: center;
 }
 
-/* ::::: history button ::::: */
-
-.autocomplete-history-dropmarker {
-  min-width: 15px;
-  min-height: 19px;
-  background-color: #9999CC;
-}
-
-.autocomplete-history-dropmarker[open="true"] {
-  border: 1px inset #CCD0DD;
-  padding: 2px 0px 0px 2px;
-}
-
-/* ::::: autocomplete popups ::::: */
-
-.autocomplete-result-popup,
-.autocomplete-history-popup {
-  border: 1px solid #9999CC;
-  background-color: white !important;
-  padding: 0;
-}
-
-.autocomplete-history-popup {
-  max-height: 25em;
-}
-
-/* ::::: tree ::::: */
-
-.autocomplete-tree {
-  border: none;
-  background-color: transparent !important;
-}
-
-.autocomplete-treecol {
-  margin: 0px !important;
-  border: none !important;
-  padding: 0px !important;
-}
-
-.autocomplete-treebody::-moz-tree-cell-text {
-  padding-left: 8px;
-}
-
-.autocomplete-treebody::-moz-tree-row(menuactive) {
-  background-color: #336699;
-}
-
-.autocomplete-treebody::-moz-tree-cell-text(menuactive) {
-  color: white !important;
-}

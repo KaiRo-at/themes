@@ -38,18 +38,52 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.up {
-  list-style-image: url("chrome://global/skin/spinbutton/spinbtn-up.gif")
+spinbuttons {
+  cursor: default;
 }
 
-.up:hover:active {
-  list-style-image: url("chrome://global/skin/spinbutton/spinbtn-up-act.gif")
+.spinbuttons-button {
+  min-width: 11px;
+  min-height: 11px;
+  margin: 0 !important;
+  border: 1px outset #CCD0DD;
+  background-color: #CCD0DD;
 }
 
-.down {
-  list-style-image: url("chrome://global/skin/spinbutton/spinbtn-dn.gif")
+.spinbuttons-button > .button-box {
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
-.down:hover:active {
-  list-style-image: url("chrome://global/skin/spinbutton/spinbtn-dn-act.gif")
+.spinbuttons-button[disabled="true"] > .button-box {
+  padding: 0 !important;
+}
+
+.spinbuttons-button:hover:active {
+  border: 1px inset #CCD0DD;
+}
+
+.spinbuttons-button[disabled="true"] {
+  border: 1px outset #CCD0DD;
+}
+
+.spinbuttons-up {
+  background-image: url("chrome://global/skin/arrow/arrow-up.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.spinbuttons-up:hover:active {
+  background-image: url("chrome://global/skin/arrow/arrow-up-disabled.gif");
+}
+
+.spinbuttons-down {
+  background-image: url("chrome://global/skin/arrow/arrow-down.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.spinbuttons-down[disabled="true"] {
+  background-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
 }

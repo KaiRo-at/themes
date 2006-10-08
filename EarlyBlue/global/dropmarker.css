@@ -1,0 +1,20 @@
+dropmarker {
+  width: 15px;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  border: 1px outset #CCD0DD;
+  background-color: #CCD0DD;
+  padding: 1px;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+}
+
+dropmarker:hover:active {
+  border: 1px inset #CCD0DD;
+  padding: 2px 0 0 2px;
+}
+
+dropmarker[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+  border: 1px outset #CCD0DD !important;
+  padding: 1px !important;
+}

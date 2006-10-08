@@ -98,6 +98,9 @@ toolbarbutton[checked="true"] {
 
 .toolbarbutton-menu-dropmarker {
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+  padding: 0px;
+  border: none !important;
+  background-color: transparent !important;
 }
 
 .toolbarbutton-menu-dropmarker[disabled="true"] {
@@ -164,6 +167,8 @@ toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubu
   -moz-box-align: start;
   padding: 3px 1px 1px 1px;
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+  border: none !important;
+  background-color: transparent !important;
 }
 
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,

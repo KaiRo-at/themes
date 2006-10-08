@@ -77,21 +77,11 @@ menulist[open="true"]:focus > .menulist-label-box {
 /* ..... dropmarker ..... */
 
 .menulist-dropmarker {
-  -moz-box-align: center;
-  -moz-box-pack: center;
-  min-width: 15px;
-  border: 1px outset #CCD0DD;
   background-color: #CCCCCC;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
-.menulist-dropmarker,
 menulist[disabled="true"]:hover:active > .menulist-dropmarker {
   padding: 1px;
-}
-
-menulist[disabled="true"] > .menulist-dropmarker {
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
 }
 
 menulist:hover:active > .menulist-dropmarker {

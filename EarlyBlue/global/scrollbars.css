@@ -98,7 +98,8 @@ thumb[orient="horizontal"][disabled="true"] {
 scrollbarbutton {
 }
 
-scrollbarbutton:hover:active {
+scrollbarbutton:hover:active,
+scrollbarbutton[active="true"] {
   border-style: inset;
   padding: 2px 0px 0px 2px;
 }
@@ -201,7 +202,8 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"][disabled="true"
 
   /* ::::: scrollbar button ::::: */
 
-  html|div scrollbarbutton {
+  html|div scrollbarbutton,
+  html|div scrollbarbutton[active="true"] {
     background: -moz-Dialog no-repeat 0px 1px;
     min-width: 16px;
     min-height: 16px;
