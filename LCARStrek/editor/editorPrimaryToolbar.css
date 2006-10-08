@@ -275,16 +275,3 @@
 #findButton[disabled="true"] {
   list-style-image: url("chrome://editor/skin/icons/find-disabled.gif") !important;
 }
-
-#formButton {
-  list-style-image: url("chrome://editor/skin/icons/form.gif");
-}
-
-#formButton:hover,
-#formButton:hover:active {
-  list-style-image: url("chrome://editor/skin/icons/form-hover.gif");
-}
-
-#formButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/form-disabled.gif") !important;
-}

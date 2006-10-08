@@ -146,23 +146,8 @@ button[type="menu-button"] {
 .button-menubutton-dropmarker {
   -moz-border-radius: 3px;
   margin: 1px;
-  background-image: url("chrome://global/skin/arrow/arrow-down.gif");
   min-width: 11px;
   min-height: 11px;
-}
-
-.button-menu-dropmarker:hover,
-.button-menubutton-dropmarker:hover {
-  background-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
-}
-
-.button-menu-dropmarker[disabled="true"],
-.button-menubutton-dropmarker[disabled="true"] {
-  background-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif") !important;
-}
-
-.button-menubutton-dropmarker[open="true"] {
-  margin: 2px 0px 0px 2px;
 }
 
 /* ::::: plain buttons ::::: */

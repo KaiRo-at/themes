@@ -89,7 +89,7 @@ textbox[disabled="true"] {
   -moz-border-left-colors: transparent #8050B0;
   cursor: default;
   color: #8050B0;
-} 
+}
 
 /* ..... focused state ..... */
 
@@ -114,5 +114,7 @@ textbox.plain {
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
+  background-color: inherit !important;
+  color: inherit !important;
   min-height: 0px;
 }

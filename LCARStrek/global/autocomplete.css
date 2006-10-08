@@ -58,28 +58,18 @@ textbox {
 /* ::::: history button ::::: */
 
 .autocomplete-history-dropmarker {
-  -moz-box-align: center;
-  -moz-box-pack: center;
   min-width: 15px;
   min-height: 15px;
-  border: none;
-  border-left: 1px solid #9C9CFF;
   background-color: #000000;
-  padding: 1px;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
   -moz-border-radius: 0px 3px 3px 0px;
 }
 
-.autocomplete-history-dropmarker:hover {
-  background-color: #FFCF00;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
-}
-
+.autocomplete-history-dropmarker,
+.autocomplete-history-dropmarker:hover,
 .autocomplete-history-dropmarker:hover:active,
 .autocomplete-history-dropmarker[open="true"] {
-  background-color: #FF9F00;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
-  padding: 2px 0px 0px 2px;
+  border: none;
+  border-left: 1px solid #9C9CFF;
 }
 
 /* ::::: autocomplete popups ::::: */

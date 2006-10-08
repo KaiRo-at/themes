@@ -39,7 +39,6 @@
 @import url("chrome://communicator/content/communicator.css");
 @import url("chrome://communicator/skin/brand.css");
 @import url("chrome://communicator/skin/button.css");
-@import url("chrome://communicator/skin/formatting.css");
 /* the line below is only LCARStrek */
 @import url("chrome://communicator/skin/toolbar.css");
 
@@ -50,7 +49,7 @@
    ========================================================================== */
 
 .toolbar-primary {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-primary");
+  -moz-binding: url("chrome://communicator/content/bindings/toolbar.xml#grippytoolbar-primary");
 }
 
 #offline-status[offline="true"] {

@@ -1,0 +1,29 @@
+dropmarker {
+  min-width: 11px;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  border: 1px solid #FF9F00;
+  background-color: #000000;
+  padding: 1px;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+}
+
+dropmarker:hover {
+  background-color: #FFCF00;
+  border: 1px solid #FFCF00;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+}
+
+dropmarker:hover:active,
+dropmarker[open="true"] {
+  background-color: #FF9F00;
+  padding: 2px 0 0 2px;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+}
+
+dropmarker[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+  border: 1px solid #8050B0 !important;
+  background-color: #000000 !important;
+  padding: 1px !important;
+}

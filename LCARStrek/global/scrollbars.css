@@ -105,7 +105,8 @@ thumb[orient="horizontal"][disabled="true"] {
 scrollbarbutton {
 }
 
-scrollbarbutton:hover:active {
+scrollbarbutton:hover:active,
+scrollbarbutton[active="true"] {
   padding: 2px 0px 0px 2px;
 }
 
@@ -232,7 +233,8 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"][disabled="true"
     min-height: 16px;
   }
 
-  html|div scrollbarbutton:hover:active {
+  html|div scrollbarbutton:hover:active,
+  html|div scrollbarbutton[active="true"] {
     -moz-border-top-colors: ThreeDShadow -moz-Dialog;
     -moz-border-right-colors: ThreeDShadow -moz-Dialog;
     -moz-border-bottom-colors: ThreeDShadow -moz-Dialog;

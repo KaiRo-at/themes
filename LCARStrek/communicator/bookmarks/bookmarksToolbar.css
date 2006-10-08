@@ -44,7 +44,7 @@
   ======================================================================= */
 
 /* ::::: bookmark toolbar buttons ::::: */
-    
+
 toolbarbutton.bookmark-item {
   cursor: pointer;
   min-width: 0px;
@@ -65,6 +65,11 @@ toolbarbutton.bookmark-item[container="true"][open="true"] {
 
 toolbarbutton.bookmark-item > .toolbarbutton-menu-dropmarker {
   display: none;
+}
+
+.bookmark-item > .menu-iconic-left > .menu-iconic-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .bookmark-group {
