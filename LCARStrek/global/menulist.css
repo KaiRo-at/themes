@@ -94,12 +94,15 @@ menulist[open="true"]:focus > .menulist-label-box {
 .menulist-dropmarker {
   -moz-border-radius: 0px 3px 3px 0px;
   min-width: 15px;
+  border: none;
   border-left: 1px solid #9C9CFF;
 }
 
 .menulist-dropmarker,
 menulist[disabled="true"]:hover:active > .menulist-dropmarker {
   padding: 1px;
+  border: none;
+  border-left: 1px solid #9C9CFF;
 }
 
 menulist[menuactive="true"] > .menulist-dropmarker,
@@ -117,6 +120,7 @@ menulist:hover > .menulist-dropmarker {
 menulist[open="true"] > .menulist-dropmarker,
 menulist:hover:active > .menulist-dropmarker {
   padding: 2px 0px 0px 2px;
+  border: none;
   border-left: 1px solid #FFCF00;
   background-color: #FF9F00;
 }

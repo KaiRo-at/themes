@@ -183,8 +183,8 @@ toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubu
   -moz-border-radius: 3px;
   -moz-box-align: start;
   padding: 3px 1px 1px 1px;
-/*  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
-  border: none; */
+/*  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif"); */
+  border: none;
   background-color: transparent;
 }
 
@@ -196,10 +196,11 @@ toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropm
 toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
-/*  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif"); */
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
 
 .toolbarbutton-menubutton-dropmarker[disabled="true"] {
   padding: 3px 1px 1px 1px !important;
-/*  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif") !important; */
+  border: none !important;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif") !important;
 }

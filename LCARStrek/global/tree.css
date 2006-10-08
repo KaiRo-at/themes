@@ -380,15 +380,17 @@ treechildren.gridlines::-moz-tree-row {
 /* ::::: alternating background ::::: */
 
 treechildren[alternatingbackground="true"]::-moz-tree-row(odd) {
-  background-color: #6000CF;
+  background-color: #404000;
 }
 
 treechildren[alternatingbackground="true"]::-moz-tree-row(odd, selected) {
   background-color: #E7ADE7;
+  color: #000000;
 }
 
 treechildren[alternatingbackground="true"]::-moz-tree-row(odd, selected, focus) {
   background-color: #E7ADE7;
+  color: #000000;
 }
 
 /* ::::: editable tree ::::: */
