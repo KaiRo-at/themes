@@ -90,7 +90,7 @@ menuitem[_moz-menuactive="true"][disabled="true"] {
 
 menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
 menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
-  width: 16px;
+/*  width: 16px; */
 }
 
 .menu-iconic-left {

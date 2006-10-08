@@ -106,5 +106,7 @@ textbox.plain {
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
+  background-color: inherit !important;
+  color: inherit !important;
   min-height: 0px;
 }
