@@ -72,24 +72,6 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-hover.gif");
 }
 
-/* ...... scale in/decrement ..... */
-
-.up-arrow {
-  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp.gif");
-}
-
-.up-arrow:hover {
-  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp-hover.gif");
-}
-
-.down-arrow {
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp.gif");
-}
-
-.down-arrow:hover {
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp-hover.gif");
-}
-
 /* ..... orientation ..... */
 
 .toolbar-portrait-page {
