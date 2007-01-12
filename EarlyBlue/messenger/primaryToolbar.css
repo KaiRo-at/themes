@@ -164,3 +164,7 @@
   list-style-image: url("chrome://messenger/skin/toolbar/remote-blocked.png");
   padding: 3px;
 }
+
+#allowRemoteContentForAuthorDesc {
+  padding-left: 10px;
+}
