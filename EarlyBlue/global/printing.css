@@ -56,16 +56,6 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp.gif");
 }
 
-/* ...... scale in/decrement ..... */
-
-.up-arrow {
-  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp.gif");
-}
-
-.down-arrow {
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp.gif");
-}
-
 /* ..... orientation ..... */
 
 .toolbar-portrait-page {

@@ -74,7 +74,7 @@ spinbuttons {
   background-repeat: no-repeat;
 }
 
-.spinbuttons-up:hover:active {
+.spinbuttons-up[disabled="true"] {
   background-image: url("chrome://global/skin/arrow/arrow-up-disabled.gif");
 }
 

@@ -83,7 +83,7 @@ textbox[disabled="true"] {
   cursor: default;
   background-color: #FFFFFF;
   color: #CCCCCC;
-} 
+}
 
 textbox[focused="true"] {
   -moz-border-top-colors: #6699CC #6699CC;
