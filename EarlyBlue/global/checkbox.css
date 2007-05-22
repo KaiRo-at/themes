@@ -35,12 +35,14 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+/* ===== checkbox.css ===================================================
+  == Styles used by the XUL checkbox element.
+  ======================================================================= */
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* stylesheet for XUL <checkbox> element */
+/* ::::: checkbox ::::: */
 
-/* default checkbox for dialogs */
-/* outer frame */
 checkbox {
   margin: 1px 2px;
   border-left: 1px transparent;
@@ -78,7 +80,7 @@ checkbox:focus > .checkbox-label-center-box > .checkbox-label-box {
 /* ..... disabled state ..... */
 
 checkbox[disabled="true"] > .checkbox-spacer-box > .checkbox-check {
-  background-color: -moz-Dialog;
+  background-color: #CCD0DD;
 }
 
 checkbox[disabled="true"] {
@@ -95,7 +97,7 @@ checkbox[disabled="true"] {
 }
 
 checkbox:hover:active > .checkbox-spacer-box > .checkbox-check {
-  background-color: transparent;
+  background-color: #CCD0DD;
 }
 
 /* ..... checked state ..... */

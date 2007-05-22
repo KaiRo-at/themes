@@ -62,7 +62,7 @@ menulist > menupopup,
 }
 
 .menulist-compact {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#menulist-compact");
+  -moz-binding: url("chrome://global/content/bindings/menulist.xml#menulist-compact");
 }
 
 /*
@@ -76,17 +76,13 @@ progressmeter[mode="undetermined"] {
 window,
 page,
 dialog,
-wizard {
+wizard,
+prefwindow {
   background-color: #CCD0DD;
   color: #000000;
   font: 11px helvetica,arial,tahoma,sans-serif;
 }
 
-page {
-  padding: 3px;
-}
-
-/* deprecated */
 window.dialog {
   padding: 8px 10px 10px 8px;
 }
@@ -137,7 +133,7 @@ statusbar {
   border-top: 1px solid #9999CC;
   background-color: #666699;
   color: #CCD0DD;
-  min-width: 1px;
+  min-height: 16px;
 }
 
 statusbarpanel {
@@ -153,8 +149,8 @@ statusbarpanel {
   padding: 0px;
 }
 
-.statusbarpanel-iconic {
-  padding: 0px;
+.statusbarpanel-iconic,  .statusbarpanel-iconic-text, .statusbarpanel-menu-iconic {
+  padding: 0px 1px 0px 1px;
 }
 
 resizer[dir="bottomright"] {
@@ -165,8 +161,4 @@ resizer[dir="bottomright"] {
 
 .toolbar-focustarget {
   -moz-user-focus: ignore !important;
-}
-
-description.error {
-  color: #FF0000;
 }

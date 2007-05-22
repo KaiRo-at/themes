@@ -35,11 +35,11 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== colorpicker.css ================================================
   == Styles used by the XUL colorpicker element.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: colorpicker button ::::: */
 
@@ -59,7 +59,7 @@ colorpicker[type="button"] {
 
 colorpicker[type="button"]:focus {
 }
- 
+
 colorpicker[type="button"][open="true"] {
   border: 1px inset #CCD0DD;
 }

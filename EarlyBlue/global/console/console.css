@@ -13,7 +13,7 @@
  *
  * The Original Code is mozilla.org code.
  *
- * The Initial Developer of the Original Code is 
+ * The Initial Developer of the Original Code is
  * Netscape Communications Corporation.
  * Portions created by the Initial Developer are Copyright (C) 1998-1999
  * the Initial Developer. All Rights Reserved.
@@ -22,7 +22,7 @@
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
- * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
  * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
  * in which case the provisions of the GPL or the LGPL are applicable instead
  * of those above. If you wish to allow use of your version of this file only
@@ -35,17 +35,17 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== console.css ====================================================
   == Styles used by the Error Console window.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 .console-box {
   background-color: #CCD0DD;
   color: #000000;
 }
- 
+
 /* ::::: console rows ::::: */
 
 .console-row {
@@ -60,14 +60,26 @@
   -moz-box-align: start;
 }
 
+.console-row-msg > label,
+.console-row-file > label:first-child {
+  display: none;
+}
+
 .console-icon {
-  list-style-image: inherit !important;
+  list-style-image: inherit;
+}
+
+.console-error-msg {
+  margin-bottom: 2px;
 }
 
 /* ..... error rows ..... */
 
 .console-row-code {
-  padding: 3px 0px 3px 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 0px;
   font-size: larger;
   color: #0000BB;
 }
@@ -90,13 +102,13 @@
 
 .console-row[type="message"] {
   font-family: monospace;
-} 
+}
 
 /* ..... selected state ..... */
 
 .console-row[selected="true"] {
   background-color: #336699;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .console-row-code[selected="true"],
@@ -109,6 +121,11 @@
 .console-row[type="error"],
 .console-row[type="exception"] {
   list-style-image: url("chrome://global/skin/icons/alert-error.gif");
+}
+
+.console-row[type="error"] .console-row-msg,
+.console-row[type="exception"] .console-row-msg {
+  font-weight: bold;
 }
 
 .console-row[type="warning"] {
@@ -131,4 +148,95 @@
 
 toolbarseparator {
   min-height: 1em;
+}
+
+/* Toolbar icons */
+
+#ToolbarMode toolbarbutton {
+  min-width: 57px;
+  padding: 0px 4px;
+  /* XXX: don't support icons on those yet
+  padding: 4px !important;
+  */
+}
+
+toolbar#ToolbarMode toolbarbutton:active,
+toolbar#ToolbarMode toolbarbutton[checked="true"] {
+  -moz-padding-start: 5px !important;
+  -moz-padding-end: 3px !important;
+}
+
+/* XXX: don't support icons on those yet
+
+
+toolbar#ToolbarMode toolbarbutton {
+  list-style-image: url("chrome://global/skin/console/console-toolbar.png");
+  -moz-box-orient: horizontal;
+  padding: 4px !important;
+}
+
+toolbarbutton[observes="Console:modeAll"] {
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+
+toolbarbutton[observes="Console:modeAll"] {
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+
+toolbarbutton[observes="Console:modeAll"]:hover,
+toolbarbutton[observes="Console:modeAll"][checked="true"] {
+  -moz-image-region: rect(24px 24px 48px 0px);
+}
+
+toolbarbutton[observes="Console:modeErrors"] {
+  -moz-image-region: rect(0px 96px 24px 72px);
+}
+
+toolbarbutton[observes="Console:modeErrors"]:hover,
+toolbarbutton[observes="Console:modeErrors"][checked="true"] {
+  -moz-image-region: rect(24px 96px 48px 72px);
+}
+
+toolbarbutton[observes="Console:modeWarnings"] {
+  -moz-image-region: rect(0px 72px 24px 48px);
+}
+
+toolbarbutton[observes="Console:modeWarnings"]:hover,
+toolbarbutton[observes="Console:modeWarnings"][checked="true"] {
+  -moz-image-region: rect(24px 72px 48px 48px);
+}
+
+toolbarbutton[observes="Console:modeMessages"] {
+  -moz-image-region: rect(0px 48px 24px 24px);
+}
+
+toolbarbutton[observes="Console:modeMessages"]:hover,
+toolbarbutton[observes="Console:modeMessages"][checked="true"] {
+  -moz-image-region: rect(24px 48px 48px 24px);
+}
+
+toolbarbutton[observes="Console:clear"] {
+  -moz-image-region: rect(0px 120px 24px 96px);
+}
+
+toolbarbutton[observes="Console:clear"]:hover,
+toolbarbutton[observes="Console:clear"][checked="true"] {
+  -moz-image-region: rect(24px 120px 48px 96px);
+}
+
+toolbar#ToolbarMode .toolbarbutton-icon {
+  padding: 2px 0 !important;
+}
+
+toolbar#ToolbarMode .toolbarbutton-text {
+  -moz-padding-end: 4px;
+}
+
+*/
+
+/* ::::: Fix Error Console toolbar button text spacing ::::: */
+
+.toolbarbutton-text {
+  -moz-padding-start: 0px;
+  -moz-padding-end: 5px;
 }

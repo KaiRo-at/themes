@@ -42,11 +42,26 @@
   == Styles used by the autocomplete widget.
   ======================================================================= */
 
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
 /* ::::: autocomplete ::::: */
 
 textbox {
   cursor: default;
   padding: 0px;
+}
+
+/* Used by autocomplete widgets that don't have an icon. Gross. -dwh */
+textbox.padded {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
+}
+
+.autocomplete-textbox-container {
+  -moz-box-align: center;
 }
 
 .textbox-input-box {
@@ -60,6 +75,10 @@ textbox {
   min-width: 15px;
   min-height: 19px;
   background-color: #9999CC;
+}
+
+.autocomplete-history-dropmarker[enablehistory="true"] {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#history-dropmarker")
 }
 
 .autocomplete-history-dropmarker[open="true"] {
@@ -97,10 +116,32 @@ textbox {
   padding-left: 8px;
 }
 
+.autocomplete-treebody::-moz-tree-row(selected) {
+  background-color: #336699;
+}
+
+.autocomplete-treebody::-moz-tree-cell-text(selected) {
+  color: white !important;
+}
+
+/* seamonkey and thunderbird do not use the new autocomplete widget yet so we need a couple of the old styles rules */
+
 .autocomplete-treebody::-moz-tree-row(menuactive) {
   background-color: #336699;
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(menuactive) {
   color: white !important;
+}
+
+/* end of seamonkey and thunderbird required autocomplete rules */
+
+/* ::::: textboxes inside toolbarpaletteitems ::::: */
+
+toolbarpaletteitem > toolbaritem > textbox > hbox > hbox > html|*.textbox-input {
+  visibility: hidden;
+}
+
+toolbarpaletteitem > toolbaritem > * > textbox > hbox > hbox > html|*.textbox-input {
+  visibility: hidden;
 }

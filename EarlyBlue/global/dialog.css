@@ -37,16 +37,19 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== dialog.css =====================================================
   == Styles used by the XUL dialog element.
   ======================================================================= */
 
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
 /* ::::: dialog ::::: */
 
 dialog {
-  padding: 8px 10px 10px 8px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 10px;
 }
 
 /* ::::: dialog buttons ::::: */
@@ -79,7 +82,10 @@ dialogheader {
   margin: 0;
   border: none;
   border-bottom: 1px solid #000000;
-  padding: 12px 5px 12px 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  -moz-padding-start: 25px;
+  -moz-padding-end: 5px;
   background-color: #CCD0DD;
   color: #000000;
 }
@@ -90,5 +96,5 @@ dialogheader {
 }
 
 .header-large > .dialogheader-description {
-  margin-left: 12px !important;
+  -moz-margin-start: 12px !important;
 }

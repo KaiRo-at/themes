@@ -98,12 +98,23 @@
 
 /* ::::: tree rows ::::: */
 
-treechildren::-moz-tree-cell-text(user)
+#configTreeBody::-moz-tree-cell-text(user)
 {
   font-weight: bold;
 }
 
-treechildren::-moz-tree-cell-text(locked)
+#configTreeBody::-moz-tree-cell-text(locked)
 {
   font-style: italic;
+}
+
+#configTree
+{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#filterRow
+{
+  margin-top: 5px;
 }
