@@ -2,22 +2,31 @@
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
   <Description about="urn:mozilla:install-manifest">
     <em:id>EarlyBlue@kairo.at</em:id>
-    <em:version>1.9</em:version>
+    <em:version>1.9a1pre</em:version>
+
+    <!-- SeaMonkey -->
     <em:targetApplication>
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
-	<em:minVersion>1.5a</em:minVersion>
-	<em:maxVersion>1.5a</em:maxVersion>
+        <em:minVersion>2.0a1pre</em:minVersion>
+        <em:maxVersion>2.0a1pre</em:maxVersion>
       </Description>
     </em:targetApplication>
+
+    <!-- Front End MetaData -->
     <em:name>EarlyBlue</em:name>
     <em:description>This theme reflects the early days of Mozilla (M4 to M8) and tries to restore the blue-styled look of like those early milestones in current SeaMonkey without cutting any functionality.</em:description>
+
+    <!-- Front End Integration Hooks (used by Theme Manager)-->
     <em:creator>Robert Kaiser (KaiRo) - kairo@kairo.at</em:creator>
+    <em:contributor>Robert Kaiser (KaiRo) - kairo@kairo.at</em:contributor>
     <em:homepageURL>http://www.kairo.at/download/mozskins</em:homepageURL>
+
     <!--em:updateURL--> <!--/em:updateURL-->
     <!--em:aboutURL--> <!--/em:aboutURL-->
-    <em:internalName>EarlyBlue/1.9</em:internalName>
+    <em:internalName>EarlyBlue/1.9a1pre</em:internalName>
   </Description>
 </RDF>
