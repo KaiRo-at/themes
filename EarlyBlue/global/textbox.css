@@ -35,14 +35,12 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url("chrome://global/content/autocomplete.css");
-
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml");
-
 /* ===== textbox.css ==================================================
   == Styles used by the XUL textbox element.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
 
 /* ::::: textbox ::::: */
 
@@ -60,7 +58,7 @@ textbox {
   min-height: 19px;
 }
 
-html|*.textbox-input, 
+html|*.textbox-input,
 html|*.textbox-textarea {
   margin: 0px !important;
   border: none !important;
@@ -68,6 +66,10 @@ html|*.textbox-textarea {
   background-color: inherit;
   color: inherit;
   font: inherit;
+}
+
+.textbox-input-box menupopup {
+  cursor: default;
 }
 
 /* ..... readonly state ..... */
@@ -109,4 +111,10 @@ textbox.plain {
   background-color: inherit !important;
   color: inherit !important;
   min-height: 0px;
+}
+
+/* ::::: textboxes inside toolbarpaletteitems ::::: */
+
+toolbarpaletteitem > toolbaritem > textbox > .textbox-input-box > html|*.textbox-input {
+  visibility: hidden;
 }

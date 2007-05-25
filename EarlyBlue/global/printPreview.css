@@ -33,88 +33,43 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
- * ***** END LICENSE BLOCK ***** */
 
-/* ===== tabbox.css =================================================
-  == Styles used by XUL tab-related elements.
-  ======================================================================= */
+/* ::::: print preview toolbar ::::: */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* ..... page navigation ..... */
 
-/* ::::: tabs ::::: */
-
-.tabs-left,
-.tabs-right {
-/*
-  border-bottom: 2px solid;
-  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
-*/
+.home-arrow, .end-arrow[chromedir="rtl"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-end.gif");
 }
 
-/* ::::: tabpanels ::::: */
-
-/* tabpanel is the box in which contents show up */
-
-tabpanels {
-  border: 1px outset #CCD0DD;
-  padding: 5px;
-  background-color: #CCD0DD;
-  color: #000000;
+.end-arrow, .home-arrow[chromedir="rtl"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-end.gif");
 }
 
-/* ::::: tab ::::: */
-
-tab {
-  margin-top: 2px;
-  border: 1px outset #CCD0DD;
-  border-bottom: none;
-  padding: 1px 4px 2px 4px;
-  background-color: #CCD0DD;
-  color: #000000;
+.left-arrow, .right-arrow[chromedir="rtl"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp.gif");
 }
 
-.tab-text {
-  margin: 0 !important;
+.right-arrow, .left-arrow[chromedir="rtl"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp.gif");
 }
 
-tab[selected="true"] {
-  -moz-user-focus: normal;
-  font-weight: bold;
-  background-color: #EDF1FF;
+/* ...... scale in/decrement ..... */
+
+.up-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp.gif");
 }
 
-tab:hover {
-  color: #336699;
+.down-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-sharp.gif");
 }
 
-tab:focus > .tab-middle {
-  outline: 1px dotted invert;
+/* ..... orientation ..... */
+
+.toolbar-portrait-page {
+  list-style-image: url("chrome://global/skin/icons/pg-portrait-small.gif");
 }
 
-/*
-tab[first-tab="true"][selected="true"] {
-  padding-right: 5px;
-  padding-left: 5px;
-}
-*/
-
-/* ::::: tab-bottom ::::::::::
-   :: Tabs that are attached to the bottom of a panel, but not necessarily
-   :: a tabpanels.
-   ::::: */
-
-.tab-bottom {
-  margin-top: 0;
-  margin-bottom: 2px;
-  border: 1px outset #CCD0DD;
-  border-top: none;
-  padding: 2px 4px 1px 4px;
-}
-
-/* ::::: tabs-bottom ::::: */
-
-.tabs-bottom > .tabs-left,
-.tabs-bottom > .tabs-right {
-  border-top: 1px solid #666699;
-  border-bottom: none;
+.toolbar-landscape-page {
+  list-style-image: url("chrome://global/skin/icons/pg-landscape-small.gif");
 }

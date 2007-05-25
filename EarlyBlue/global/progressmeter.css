@@ -35,11 +35,11 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== progressmeter.css ==============================================
   == Styles used by the XUL progressmeter element.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: progressmeter ::::: */
 
@@ -48,7 +48,7 @@ progressmeter {
   border: 1px inset #CCD0DD;
   background-color: #999999;
   min-width: 128px;
-  height: 15px;
+  min-height: 15px;
 }
 
 progressmeter[mode="undetermined"] {
@@ -72,6 +72,6 @@ progressmeter[mode="undetermined"] {
   margin: 0px 2px 0px 2px;
   border: 1px solid #CCD0DD;
   background-color: #666699;
-  min-width: 100px;
-  height: 16px;
+  min-width: 96px;
+  min-height: 16px;
 }

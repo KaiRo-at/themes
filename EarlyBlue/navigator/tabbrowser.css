@@ -35,86 +35,80 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/* ===== tabbox.css =================================================
-  == Styles used by XUL tab-related elements.
-  ======================================================================= */
-
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ::::: tabs ::::: */
+.tabbrowser-strip {
+  padding-bottom: 1px;
+  border-bottom: 1px solid #666699;
+}
+
+tabpanels {
+}
+
+.tabbrowser-tabs {
+  padding-top: 1px;
+}
 
 .tabs-left,
 .tabs-right {
-/*
-  border-bottom: 2px solid;
-  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
-*/
+  width: 0px;
 }
 
-/* ::::: tabpanels ::::: */
-
-/* tabpanel is the box in which contents show up */
-
-tabpanels {
-  border: 1px outset #CCD0DD;
-  padding: 5px;
-  background-color: #CCD0DD;
-  color: #000000;
+.tab-icon {
+  margin-top: 1px;
+  margin-right: 3px;
+  width: 16px;
+  height: 16px;
 }
-
-/* ::::: tab ::::: */
 
 tab {
-  margin-top: 2px;
-  border: 1px outset #CCD0DD;
-  border-bottom: none;
-  padding: 1px 4px 2px 4px;
-  background-color: #CCD0DD;
-  color: #000000;
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item16.gif");
 }
 
-.tab-text {
-  margin: 0 !important;
+tab[busy] {
+  list-style-image: url("chrome://global/skin/icons/loading.gif");
 }
 
-tab[selected="true"] {
-  -moz-user-focus: normal;
-  font-weight: bold;
-  background-color: #EDF1FF;
+tabbrowser > tabbox > tabpanels {
+  border: none;
+  padding: 0px;
+  margin: 0px;
 }
 
-tab:hover {
-  color: #336699;
-}
+/* ::::: close & new tab buttons ::::: */
 
-tab:focus > .tab-middle {
-  outline: 1px dotted invert;
-}
-
-/*
-tab[first-tab="true"][selected="true"] {
-  padding-right: 5px;
-  padding-left: 5px;
-}
-*/
-
-/* ::::: tab-bottom ::::::::::
-   :: Tabs that are attached to the bottom of a panel, but not necessarily
-   :: a tabpanels.
-   ::::: */
-
-.tab-bottom {
-  margin-top: 0;
+.tabs-closebutton {
   margin-bottom: 2px;
-  border: 1px outset #CCD0DD;
-  border-top: none;
-  padding: 2px 4px 1px 4px;
+  margin-right: 2px;
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
-/* ::::: tabs-bottom ::::: */
+.tabs-closebutton > .toolbarbutton-icon {
+  margin: 0;
+}
 
-.tabs-bottom > .tabs-left,
-.tabs-bottom > .tabs-right {
-  border-top: 1px solid #666699;
-  border-bottom: none;
+.tabs-newbutton {
+  margin: 0px;
+  margin-top: 2px;
+  padding: 0px;
+  list-style-image: url("chrome://global/skin/icons/tab-new.gif");
+}
+
+.tab-drop-indicator-bar {
+  height: 11px;
+  margin-top: -11px;
+  margin-left: -8px;
+  position: relative;
+}
+
+.tab-drop-indicator {
+  height: 11px;
+  width: 11px;
+  margin-bottom: -8px;
+  position: relative;
+  list-style-image: url('chrome://global/skin/icons/tab-drag-indicator.gif');
+}
+
+tooltip[tabpreview="true"] {
+  max-width: none;
 }

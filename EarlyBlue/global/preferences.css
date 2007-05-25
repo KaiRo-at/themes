@@ -11,15 +11,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is the Preferences UI System.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * Ben Goodger.
+ * Portions created by the Initial Developer are Copyright (C) 2005-2007
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *   Ben Goodger <ben@mozilla.org>
+ *   Robert kaiser <kairo@kairo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,86 +36,67 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/* ===== tabbox.css =================================================
-  == Styles used by XUL tab-related elements.
+/* ===== preferences.css =====================================================
+  == Styles used by the XUL prefwindow element.
   ======================================================================= */
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ::::: tabs ::::: */
+/* ::::: dialog ::::: */
 
-.tabs-left,
-.tabs-right {
-/*
-  border-bottom: 2px solid;
-  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
-*/
+prefwindow {
+  padding: 0px;
 }
 
-/* ::::: tabpanels ::::: */
+prefpane {
+  padding-top: 8px;
+  padding-bottom: 10px;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 10px;
+}
 
-/* tabpanel is the box in which contents show up */
+prefwindow[type="child"] {
+  padding-top: 8px;
+  padding-bottom: 10px;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 10px;
+}
 
-tabpanels {
-  border: 1px outset #CCD0DD;
-  padding: 5px;
-  background-color: #CCD0DD;
+prefwindow[type="child"] > prefpane {
+  padding: 0px;
+}
+
+.prefWindow-dlgbuttons {
+  padding-bottom: 10px;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 10px;
+}
+
+prefwindow[type="child"] .prefWindow-dlgbuttons {
+  padding: 0px;
+}
+
+radio[pane] {
+  margin: 0px 1px 0px 1px;
+  padding: 1px 3px 1px 3px;
+  min-width: 4.5em;
+}
+
+.paneSelector {
+  border-bottom: 1px solid #666699;
+  margin: 0px;
+  -moz-padding-start: 10px;
+  background-color: #FFFFFF;
   color: #000000;
 }
 
-/* ::::: tab ::::: */
-
-tab {
-  margin-top: 2px;
-  border: 1px outset #CCD0DD;
-  border-bottom: none;
-  padding: 1px 4px 2px 4px;
-  background-color: #CCD0DD;
-  color: #000000;
+.paneButtonIcon {
+  width: 32px;
+  height: 32px;
 }
 
-.tab-text {
-  margin: 0 !important;
+radio[pane][selected="true"] {
+  background-color: #336699;
+  color: #FFFFFF;
 }
 
-tab[selected="true"] {
-  -moz-user-focus: normal;
-  font-weight: bold;
-  background-color: #EDF1FF;
-}
-
-tab:hover {
-  color: #336699;
-}
-
-tab:focus > .tab-middle {
-  outline: 1px dotted invert;
-}
-
-/*
-tab[first-tab="true"][selected="true"] {
-  padding-right: 5px;
-  padding-left: 5px;
-}
-*/
-
-/* ::::: tab-bottom ::::::::::
-   :: Tabs that are attached to the bottom of a panel, but not necessarily
-   :: a tabpanels.
-   ::::: */
-
-.tab-bottom {
-  margin-top: 0;
-  margin-bottom: 2px;
-  border: 1px outset #CCD0DD;
-  border-top: none;
-  padding: 2px 4px 1px 4px;
-}
-
-/* ::::: tabs-bottom ::::: */
-
-.tabs-bottom > .tabs-left,
-.tabs-bottom > .tabs-right {
-  border-top: 1px solid #666699;
-  border-bottom: none;
-}

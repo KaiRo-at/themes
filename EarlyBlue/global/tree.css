@@ -19,9 +19,9 @@
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
  *   Joe Hewitt (hewitt@netscape.com)
  *   Dean Tessman (dean_tessman@hotmail.com)
+ *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -37,16 +37,16 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== tree.css =======================================================
   == Styles used by the XUL tree element.
   ======================================================================= */
 
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
 /* ::::: tree ::::: */
 
 tree {
-  border-spacing: 0px;
+  margin: 0px;
   border: 1px inset #CCD0DD;
   background-color: #FFFFFF;
   color: #000000;
@@ -54,7 +54,6 @@ tree {
 
 /* ::::: tree focusring ::::: */
 
-/* deactivated, looks too bad for me in EarlyBlue
 .focusring > .tree-stack > .tree-rows > .tree-bodybox {
   border: 1px solid transparent;
 }
@@ -62,7 +61,6 @@ tree {
 .focusring:focus > .tree-stack > .tree-rows > .tree-bodybox {
   border: 1px solid #000000;
 }
-*/
 
 /* ::::: tree rows ::::: */
 
@@ -98,7 +96,7 @@ tree[seltype="text"] > treechildren::-moz-tree-row {
 /* ::::: tree cells ::::: */
 
 treechildren::-moz-tree-cell {
-  padding: 0px 2px 0px 2px;
+  padding: 0px 2px;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell-text,
@@ -262,7 +260,7 @@ treecolpicker {
 }
 
 .treecol-image {
-  padding: 1px;
+  padding: 0 1px;
 }
 
 .treecol-text {
@@ -321,12 +319,12 @@ treechildren::-moz-tree-column(insertafter) {
   width: 8px;  /* The image's width is 7 pixels */
 }
 
-.treecol-sortdirection[sortDirection="ascending"] {
+treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="ascending"] {
   list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
 }
 
-.treecol-sortdirection[sortDirection="descending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-dsc.gif");
+treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="descending"] {
+  list-style-image: url("chrome://global/skin/tree/sort-desc.gif");
 }
 
 /* ::::: column picker :::::  */
@@ -364,6 +362,41 @@ treechildren.gridlines::-moz-tree-row {
   border: none;
 }
 
+/* ::::: Name (what is that?) ::::: */
+
+treechildren::-moz-tree-image(Name) {
+  padding-right: 2px;
+}
+
+treechildren::-moz-tree-image(Name) {
+  margin: 0px 1px;
+  list-style-image: url("chrome://global/skin/filepicker/file.gif") !important;
+}
+
+treechildren::-moz-tree-image(Name, container) {
+  list-style-image: url("chrome://global/skin/filepicker/dir-closed.gif") !important;
+}
+
+treechildren::-moz-tree-image(Name, open) {
+  list-style-image: url("chrome://global/skin/filepicker/dir-open.gif") !important;
+}
+
+treechildren::-moz-tree-image(Name, separator) {
+  list-style-image: none;
+  width: 0px !important;
+  height: 0px !important;
+  margin: 0px 0px;
+}
+
+treechildren::-moz-tree-cell-text(Name, separator) {
+  color: #666699;
+  margin: 0px 3px;
+}
+
+treechildren::-moz-tree-cell-text(Name, separator, selected, focus) {
+  color: #FFFFFF;
+}
+
 /* ::::: alternating background ::::: */
 
 treechildren[alternatingbackground="true"]::-moz-tree-row(odd) {
@@ -390,7 +423,6 @@ treechildren::-moz-tree-cell-text(selected, editing) {
 }
 
 .tree-input {
-  -moz-appearance: none;
   border: 1px solid #336699;
   margin: 0 0 0 -4px;
   padding: 1px;

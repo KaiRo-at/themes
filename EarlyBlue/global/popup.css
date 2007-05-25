@@ -35,11 +35,11 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== popup.css ======================================================
   == Styles used by the XUL popup element.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: menupopup ::::: */
 
@@ -55,7 +55,7 @@ tooltip {
   background-color : #FFFFCC;
   border : 1px outset #FFFFCC;
   color: #000000;
-  font-size: smaller;
+  /* font-size: smaller; */
   padding: 2px;
   max-width: 40em;
 }
@@ -63,6 +63,7 @@ tooltip {
 .tooltip-label {
   border: 0px;
   padding: 0px;
+  margin: 0px !important;
 }
 
 tooltip[titletip="true"] {

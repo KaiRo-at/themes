@@ -90,7 +90,7 @@ menulist[disabled="true"]:hover:active > .menulist-dropmarker {
 }
 
 menulist:hover:active > .menulist-dropmarker,
-menulist:[open="true"] > .menulist-dropmarker {
+menulist[open="true"] > .menulist-dropmarker {
   border: 1px inset #CCD0DD;
   padding: 2px 0px 0px 2px;
 }

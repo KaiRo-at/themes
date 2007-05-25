@@ -11,15 +11,15 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is mozilla.org code.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *   Scott MacGregor <mscott@netscape.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,86 +35,58 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/* ===== tabbox.css =================================================
-  == Styles used by XUL tab-related elements.
+/* ===== alert.css =====================================================
+  == Styles specific to the alerts dialog.
   ======================================================================= */
+
+@import url("chrome://global/skin/");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ::::: tabs ::::: */
-
-.tabs-left,
-.tabs-right {
-/*
-  border-bottom: 2px solid;
-  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
-*/
-}
-
-/* ::::: tabpanels ::::: */
-
-/* tabpanel is the box in which contents show up */
-
-tabpanels {
-  border: 1px outset #CCD0DD;
-  padding: 5px;
+.alertBox {
+  border: 2px solid #666699;
   background-color: #CCD0DD;
-  color: #000000;
+  min-height: 50px;
 }
 
-/* ::::: tab ::::: */
-
-tab {
-  margin-top: 2px;
-  border: 1px outset #CCD0DD;
-  border-bottom: none;
-  padding: 1px 4px 2px 4px;
-  background-color: #CCD0DD;
-  color: #000000;
+.alertBox[orient="horizontal"] > .alertImageBox {
+  -moz-margin-start: 4px;
+  -moz-margin-end: 6px;
+  min-height: 46px;
 }
 
-.tab-text {
-  margin: 0 !important;
+.alertBox[orient="vertical"] > .alertImageBox {
+  margin-top: 6px;
+  margin-bottom: 4px;
+  min-width: 46px;
 }
 
-tab[selected="true"] {
-  -moz-user-focus: normal;
+.alertTitle {
   font-weight: bold;
-  background-color: #EDF1FF;
 }
 
-tab:hover {
-  color: #336699;
+.alertText {
+  -moz-margin-end: 6px;
 }
 
-tab:focus > .tab-middle {
-  outline: 1px dotted invert;
+.alertText[clickable="true"] {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
 }
 
-/*
-tab[first-tab="true"][selected="true"] {
-  padding-right: 5px;
-  padding-left: 5px;
-}
-*/
-
-/* ::::: tab-bottom ::::::::::
-   :: Tabs that are attached to the bottom of a panel, but not necessarily
-   :: a tabpanels.
-   ::::: */
-
-.tab-bottom {
-  margin-top: 0;
-  margin-bottom: 2px;
-  border: 1px outset #CCD0DD;
-  border-top: none;
-  padding: 2px 4px 1px 4px;
+.alertText[clickable="true"]:hover:active {
+  color: red;
 }
 
-/* ::::: tabs-bottom ::::: */
+.alertBox[orient="horizontal"] > .alertTextBox {
+  -moz-padding-end: 10px;
+  padding-top: 5px;
+}
 
-.tabs-bottom > .tabs-left,
-.tabs-bottom > .tabs-right {
-  border-top: 1px solid #666699;
-  border-bottom: none;
+.alertBox[orient="vertical"] > .alertTextBox {
+  -moz-padding-start: 5px;
+  -moz-padding-end: 5px;
+  margin-bottom: 8px;
+  -moz-box-align: center; /* also hard-coded in alert.js, see bug 311557 */
 }

@@ -35,11 +35,11 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== toolbar.css ====================================================
   == Styles used by XUL toolbar-related elements.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: toolbox ::::: */
 
@@ -53,48 +53,93 @@ toolbar,
 menubar {
   border-bottom: 1px solid #9999CC;
   background-color: #CCD0DD;
-  min-width: 1px; /* DON'T DELETE!
-    Prevents hiding of scrollbars in browser when window is made smaller.*/
+  min-width: 1px;
 }
 
-.toolbar-holder
-  {
-  }  
-
-/* ::::: toolbargrippy ::::: */
-
-toolbargrippy {
-  -moz-box-orient: vertical;
-  -moz-box-align: center;
-  border: 1px solid #999999;
-  background-color: #666699;
-  width: 9px;
-  padding: 2px 0px;
-  list-style-image: url("chrome://global/skin/toolbar/tbgrip-arrow.gif");
+/* in browser.xul, the menubar is inside a toolbar... */
+toolbaritem > menubar {
+  border-bottom-style: none;
+  background-color: transparent;
 }
 
-toolbargrippy:hover {
-  background-color: #6699FF;
-}
-
-/* ::::: collapsed tray and grippies ::::: */
-
-toolbargrippy[tbgrippy-collapsed="true"] {
-  -moz-box-orient: horizontal;
-  width: 40px;
-  height: 9px;
-  padding: 0px 2px;
-  list-style-image: url("chrome://global/skin/toolbar/tbgrip-arrow-collapsed.gif");
-}
-
-.collapsed-tray-spacer {
-  border-bottom: 1px solid #9999CC;
-}
-
-/* ::::: toolbarseparator ::::: */
+/* ::::: toolbar decorations ::::: */
 
 toolbarseparator {
-  margin: 2px 0.2em 2px 0.2em;
-  border-right: 1px solid #666699; 
-  width: 1px;
+  margin : 2px 0.2em;
+  border-right: 1px solid #666699;
+  width : 1px;
+}
+
+toolbarspacer {
+  width: 10px;
+}
+
+toolbar[mode="icons"] .toolbarbutton-text {
+  display: none;
+}
+
+toolbar[mode="text"] .toolbarbutton-icon {
+  display: none;
+}
+
+toolbar[mode="text"] .toolbarbutton-text {
+  padding: 0 !important;
+  margin: 1px 3px !important;
+}
+
+/* ::::: toolbarpaletteitem ::::: */
+
+toolbarpaletteitem {
+  cursor: -moz-grab;
+}
+
+.toolbarpaletteitem-box[type="spacer"],
+.toolbarpaletteitem-box[type="spring"] {
+  border: 1px solid #666699;
+  background-color: #FFFFFF !important;
+}
+
+toolbarpaletteitem[place="toolbar"] {
+  margin-left: -2px;
+  margin-right: -2px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+toolbarpaletteitem[place="toolbar"] > toolbarspacer {
+  width: 11px;
+}
+
+.toolbarpaletteitem-box[type="spacer"][place="toolbar"],
+.toolbarpaletteitem-box[type="spring"][place="toolbar"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  -moz-margin-start: 0px;
+  -moz-margin-end: 2px;
+}
+
+.toolbarpaletteitem-box[type="separator"][place="palette"] {
+  width: 2px;
+  height: 50px;
+}
+
+.toolbarpaletteitem-box[type="spacer"][place="palette"],
+.toolbarpaletteitem-box[type="spring"][place="palette"] {
+  margin-bottom: 2px;
+  width: 50px;
+  height: 50px;
+}
+
+.toolbarpaletteitem-box[type="spring"][place="palette"] {
+  background: url("chrome://global/skin/toolbar/spring.gif") no-repeat center;
+}
+
+/* ..... drag and drop feedback ..... */
+
+toolbarpaletteitem[dragover="left"] {
+  border-left-color: #000000;
+}
+
+toolbarpaletteitem[dragover="right"] {
+  border-right-color: #000000;
 }
