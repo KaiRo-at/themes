@@ -1,0 +1,8 @@
+#licenseContainer, #pluginList {
+  -moz-appearance: listbox;
+  margin: 2px 4px;
+  border: 1px inset #CCD0DD;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
