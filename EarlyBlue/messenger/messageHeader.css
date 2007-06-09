@@ -93,7 +93,7 @@
 }
 
 .headerValue {
-  margin: 0em 0em .25em 0em;
+  margin: 0em 0em 3px 0em;
   min-width: 50px;
   white-space: normal;
   color: inherit;
@@ -101,7 +101,7 @@
 }
 
 .headerValueBox {
-  margin: 0em 0em .25em 0em;
+  margin: 0em 0em 3px 0em;
 }
 
 .headerValueBox > .headerValue {

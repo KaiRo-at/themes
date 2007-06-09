@@ -61,11 +61,11 @@ tabpanels {
   height: 16px;
 }
 
-tab {
+.tabbrowser-tab {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item16.gif");
 }
 
-tab[busy] {
+.tabbrowser-tab[busy] {
   list-style-image: url("chrome://global/skin/icons/loading.gif");
 }
 
@@ -91,7 +91,7 @@ tabbrowser > tabbox > tabpanels {
   margin: 0px;
   margin-top: 2px;
   padding: 0px;
-  list-style-image: url("chrome://global/skin/icons/tab-new.gif");
+  list-style-image: url("chrome://navigator/skin/icons/tab-new.gif");
 }
 
 .tab-drop-indicator-bar {
@@ -106,7 +106,7 @@ tabbrowser > tabbox > tabpanels {
   width: 11px;
   margin-bottom: -8px;
   position: relative;
-  list-style-image: url('chrome://global/skin/icons/tab-drag-indicator.gif');
+  list-style-image: url('chrome://navigator/skin/icons/tab-drag-indicator.gif');
 }
 
 tooltip[tabpreview="true"] {
