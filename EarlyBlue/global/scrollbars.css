@@ -104,6 +104,12 @@ scrollbarbutton[active="true"] {
   padding: 2px 0px 0px 2px;
 }
 
+/* XXX - scrollbar.xml always grabs the OS settings and we don't want that */
+scrollbarbutton[sbattr="scrollbar-up-bottom"],
+scrollbarbutton[sbattr="scrollbar-down-top"] {
+  display: none;
+}
+
 /* ::::: square at the corner of two scrollbars ::::: */
 
 scrollcorner {

@@ -103,3 +103,25 @@ body[dir="rtl"] #brand {
 #errorContainer {
   display: none;
 }
+
+/* Custom styling for 'blacklist' error class */
+
+:root.blacklist #errorTitle, :root.blacklist #errorLongContent,
+:root.blacklist #errorShortDesc, :root.blacklist #errorLongDesc,
+:root.blacklist a {
+  background-color: #FFC0C0; /* red */
+  color: #666699;
+}
+
+:root.blacklist #errorPageContainer {
+  background-image: url("chrome://global/skin/icons/blacklist_large.png");
+  background-color: #FFC0C0;
+}
+
+:root.blacklist {
+  background: #000000;
+}
+
+:root.blacklist #errorTryAgain {
+  display: none;
+}

@@ -1,6 +1,6 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-findbar > toolbarbutton.findbar-closebutton {
+.findbar-closebutton {
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
@@ -12,7 +12,7 @@ findbar {
 
 /* find-next button */
 
-findbar > toolbarbutton.findbar-find-next {
+.findbar-find-next {
   /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/find.png");
   -moz-image-region: rect(0px 16px 16px 0px);
@@ -21,7 +21,7 @@ findbar > toolbarbutton.findbar-find-next {
 
 /* find-previous button */
 
-findbar > toolbarbutton.findbar-find-previous {
+.findbar-find-previous {
   /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/find.png");
   -moz-image-region: rect(0px 32px 16px 16px);
@@ -30,14 +30,14 @@ findbar > toolbarbutton.findbar-find-previous {
 
 /* highlight button */
 
-findbar > toolbarbutton.findbar-highlight {
+.findbar-highlight {
   /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/find.png");
   -moz-image-region: rect(0px 48px 16px 32px);
   */
 }
 
-findbar > image.find-status-icon {
+.find-status-icon {
   list-style-image: none;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -47,7 +47,7 @@ findbar > image.find-status-icon {
   height: 16px;
 }
 
-findbar > label.findbar-find-status {
+.findbar-find-status {
   margin-top: 0px;
   margin-bottom: 0px;
   -moz-margin-start: 3px;
@@ -55,33 +55,33 @@ findbar > label.findbar-find-status {
   padding: 2px;
 }
 
-findbar > image.find-status-icon[status="notfound"] {
+.find-status-icon[status="notfound"] {
   /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/notfound.png");
   */
 }
 
-findbar > .find-field-container > textbox.findbar-textbox {
+.findbar-textbox {
   -moz-binding: url("chrome://global/content/bindings/findbar.xml#findbar-textbox");
   border: none;
   margin: 0px;
 }
 
-findbar > .find-field-container > textbox.findbar-textbox[status="notfound"] {
+.findbar-textbox[status="notfound"] {
   background-color: #FFC0C0;
   color: #000000;
 }
 
-findbar[flash="true"]  > .find-field-container > textbox.findbar-textbox {
+.findbar-textbox {
   background-color: #FFFFC0;
 }
 
-findbar > image.find-status-icon[status="wrapped"] {
+.find-status-icon[status="wrapped"] {
   /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/wrap.png");
   */
 }
 
-findbar > .find-field-container {
+.find-field-container {
   /* -moz-appearance: textfield; */
 }

@@ -121,17 +121,18 @@ html|*.menulist-editable-input {
   margin: 0px;
   border: 1px outset #CCD0DD;
   color: #000000;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+/*  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif"); */
 }
 
 .menulist-compact > .menulist-dropmarker {
   -moz-margin-start: 2px;
   padding: 0 !important;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+  border: none !important;
+/*  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif"); */
 }
 
 .menulist-compact[disabled="true"] > .menulist-dropmarker {
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+/*  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif"); */
 }
 
 .menulist-compact > .menulist-label {
