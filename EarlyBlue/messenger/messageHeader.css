@@ -125,6 +125,25 @@
   margin-left: 0;
 }
 
+/* ::::: msg header message ids ::::: */
+
+.messageIdDisplayButton {
+  color: #336699;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px 1px;
+}
+
+.messageIdDisplayButton:hover {
+  color: black;
+  background-color: #336699;
+}
+
+.messageIdDisplayImage {
+  padding-left: 2px;
+  -moz-box-pack: end;
+}
+
 /* ::::: msg header email addresses ::::: */
 
 .emailDisplayButton {

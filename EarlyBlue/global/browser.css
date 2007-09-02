@@ -178,8 +178,6 @@ tabpanels {
  */
 
 .alltabs-item > .menu-iconic-left > .menu-iconic-icon {
-  width: 16px;
-  height: 16px;
   /* XXX: Firefox rules - look into those when we support FF
   list-style-image: url("chrome://global/skin/icons/folder-item.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);

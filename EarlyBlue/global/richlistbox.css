@@ -40,6 +40,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 richlistbox {
+  -moz-appearance: none;
   margin: 2px 4px;
   background-color: #FFFFFF;
   color: #000000;

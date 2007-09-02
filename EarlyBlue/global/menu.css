@@ -145,6 +145,13 @@ menulist > menupopup > menu {
   color: inherit;
 }
 
+.menu-iconic-icon {
+/*
+  width: 16px;
+  height: 16px;
+*/
+}
+
 .menu-iconic-left {
   width: 16px;
 }

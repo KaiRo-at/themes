@@ -32,7 +32,7 @@ margin-top: -12px;
 
 /* Command Bar */
 #commandBarBottom {
-  margin: 10px 10px 5px 10px;
+  margin: 5px 5px 10px 10px;
   min-width: 1px;
 }
 
@@ -226,11 +226,15 @@ richlistitem[satisfiesDependencies="false"] .notifyBadge {
 
 .enableHide,
 .uninstallShow,
+.installShow,
+.upgradeShow,
 richlistitem[isDisabled="true"] .disableHide {
   display: none;
 }
 
 richlistitem[opType="needs-uninstall"] .uninstallShow,
+richlistitem[opType="needs-install"] .installShow,
+richlistitem[opType="needs-upgrade"] .upgradeShow,
 richlistitem[opType="needs-enable"] .enableShow,
 richlistitem[opType="needs-disable"] .disableShow,
 richlistitem[isDisabled="true"] .disableShow {
@@ -238,17 +242,20 @@ richlistitem[isDisabled="true"] .disableShow {
 }
 
 richlistitem[opType="needs-uninstall"] .uninstallHide,
+richlistitem[opType="needs-install"] .uninstallHide,
+richlistitem[opType="needs-upgrade"] .uninstallHide,
 richlistitem[opType="needs-enable"] .enableHide,
 richlistitem[opType="needs-disable"] .disableHide {
   display: none;
 }
 
+richlistitem[plugin] .themeButton,
+richlistitem[plugin] .optionsButton,
+richlistitem[plugin] .uninstallButton,
 richlistitem[type="2"] .themeButton,
 richlistitem[type="8"] .themeButton,
-richlistitem[type="16"] .themeButton,
 richlistitem[type="4"] .optionsButton,
 richlistitem[type="8"] .optionsButton,
-richlistitem[type="16"] .optionsButton,
 richlistitem[type="4"] .disableShow,
 richlistitem[type="4"] .disableHide {
   display: none;

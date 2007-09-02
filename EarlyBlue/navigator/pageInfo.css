@@ -36,20 +36,23 @@
 
 @import "chrome://global/skin/";
 
+/* Misc */
 tree {
   margin: .5em;
 }
 
-textbox,
-textbox > .textbox-internal-box,
-textbox > .textarea-internal-box {
+.gridSeparator {
+  width: .5em;
+}
+
+textbox {
   background: transparent !important;
   border: none;
   padding: 0px;
 }
 
 textbox.header {
-  margin-left: 0;
+  -moz-margin-start: 0;
 }
 
 .iframe {
@@ -58,14 +61,86 @@ textbox.header {
   overflow: auto;
 }
 
-#thepreviewimage {
-  margin: 1em;
-}
-
 .fixedsize {
   height: 8.5em;
 }
 
 textbox[disabled] {
   font-style: italic;
+}
+
+/* General Tab */
+groupbox tree { 
+  margin: 0;
+  border: none;
+}
+
+groupbox.treebox .groupbox-body { 
+  padding-top: 0;
+}
+
+#general-security-identity {
+  white-space: -moz-pre-wrap;
+  line-height: 2em;
+}
+
+/* Media Tab */
+#imagetree {
+  min-height: 10em;
+}
+
+#thepreviewimage {
+  margin: 1em;
+}
+
+treechildren::-moz-tree-cell-text(broken) {
+  font-style: italic;
+  color: #808080;
+}
+
+/* Feeds Tab */
+#feedListbox richlistitem {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  -moz-padding-start: 7px;
+  -moz-padding-end: 7px;
+  min-height: 25px;
+  border-bottom: 1px dotted #9999CC;
+}
+
+.feedTitle {
+  font-weight: bold;
+}
+
+/* Permissions Tab */
+#permList {
+  margin-top: .5em;
+  overflow: auto;
+}
+
+#permList > vbox {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  -moz-padding-start: 7px;
+  -moz-padding-end: 7px;
+  min-height: 25px;
+  border-bottom: 1px dotted #9999CC;
+}
+
+#permList > vbox > label {
+  font-weight: bold;
+}
+
+/* Security Tab */
+#securityPanel > .header {
+  font-size: 120%;
+}
+ 
+#securityPanel > .fieldLabel {
+  margin: 2px 10px 3px 10px;
+}
+
+#securityPanel > .fieldValue {
+  font-weight: bold;
+  margin: 2px 10px 0px 10px;
 }
