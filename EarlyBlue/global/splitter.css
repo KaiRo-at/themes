@@ -59,6 +59,13 @@ splitter:hover:active {
   background-color: #999999;
 }
 
+.toolbar-splitter {
+  min-width: 2px;
+  margin: 2px 0;
+  border: none;
+  -moz-border-start: 1px dotted #666699;
+}
+
 /* ::::: splitter (horizontal) ::::: */
 
 splitter[orient="vertical"] {

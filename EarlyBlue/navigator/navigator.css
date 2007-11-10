@@ -47,19 +47,21 @@
 /* ::::: primary toolbar buttons ::::: */
 
 #back-button {
-  list-style-image: url("chrome://navigator/skin/icons/back.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(42px 25px 63px 0px);
 }
 
 #back-button[disabled="true"] {
-  list-style-image: url("chrome://navigator/skin/icons/back-disabled.gif") !important;
+  -moz-image-region: rect(42px 50px 63px 25px) !important;
 }
 
 #forward-button {
-  list-style-image: url("chrome://navigator/skin/icons/forward.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(63px 25px 84px 0px);
 }
 
 #forward-button[disabled="true"] {
-  list-style-image: url("chrome://navigator/skin/icons/forward-disabled.gif") !important;
+  -moz-image-region: rect(63px 50px 84px 25px) !important;
 }
 
 #reload-button {
@@ -71,19 +73,21 @@
 }
 
 #stop-button {
-  list-style-image: url("chrome://global/skin/icons/stop.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(21px 25px 42px 0px);
 }
 
 #stop-button[disabled="true"] {
-  list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
+  -moz-image-region: rect(21px 50px 42px 25px) !important;
 }
 
 #print-button {
-  list-style-image: url("chrome://global/skin/icons/print.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
 }
 
 #print-button[disabled="true"] {
-  list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
+  -moz-image-region: rect(0px 50px 21px 25px) !important;
 }
 
 #clear-button {
@@ -260,10 +264,6 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 #security-button[level="broken"] {
   list-style-image:url("chrome://communicator/skin/icons/lock-broken.gif");
-}
-
-#privacy-button {
-  list-style-image: url("chrome://communicator/skin/permissions/taskbar-cookie.gif");
 }
 
 #popupIcon {

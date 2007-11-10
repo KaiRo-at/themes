@@ -68,6 +68,7 @@ body[dir="rtl"] #errorPageContainer {
   border-bottom: 1px solid #666699;
   padding-bottom: 1em;
   font-size: 130%;
+  white-space: -moz-pre-wrap;
 }
 
 #errorLongDesc {
@@ -102,6 +103,16 @@ body[dir="rtl"] #brand {
 
 #errorContainer {
   display: none;
+}
+
+#securityOverrideDiv {
+  padding-top: 10px;
+}
+
+#securityOverrideContent {
+  background-color: #FFFFCC; /* Pale yellow */
+  padding: 10px;
+  -moz-border-radius: 10px;
 }
 
 /* Custom styling for 'blacklist' error class */
