@@ -6,6 +6,7 @@ dropmarker {
   background-color: #CCD0DD;
   padding: 1px;
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+ -moz-image-region: auto;
 }
 
 dropmarker:hover:active {
@@ -15,6 +16,7 @@ dropmarker:hover:active {
 
 dropmarker[disabled="true"] {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+ -moz-image-region: auto;
   border: 1px outset #CCD0DD !important;
   padding: 1px !important;
 }

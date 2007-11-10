@@ -97,7 +97,8 @@ toolbarbutton[checked="true"] {
   color: #FFCF00;
 }
 
-toolbarbutton[checked="true"]:hover {
+toolbarbutton[checked="true"]:hover,
+toolbarbutton[checked="true"]:hover:active {
   background-color: #FFCF00;
   color: #000000;
 }

@@ -61,10 +61,6 @@
   -moz-image-region: inherit;
 }
 
-toolbarbutton > dropmarker {
-  -moz-image-region: auto;
-}
-
 /* Set the minimum sidebar width so the help contents aren't squeezed together.*/
 #help-sidebar { min-width: 15em; width: 20em; max-width: 25em; }
 
