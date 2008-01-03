@@ -101,15 +101,15 @@ treechildren::-moz-tree-cell-text(priorityCol, selected, focus) {
 /* ..... thread column ..... */
 
 .threadColumnHeader {
-  list-style-image: url("chrome://messenger/skin/icons/unthreadcol.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-thread-unthread.gif");
 }
 
 .threadColumnHeader[sortDirection="ascending"]  {
-  list-style-image: url("chrome://messenger/skin/icons/threadcol.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-thread.gif");
 }
 
 .threadColumnHeader[sortDirection="descending"] {
-  list-style-image: url("chrome://messenger/skin/icons/threadcol.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-thread.gif");
 }
 
 treechildren::-moz-tree-image(threadCol, container) {
@@ -147,15 +147,15 @@ treechildren::-moz-tree-image(threadCol, container, hasUnread, open, offline) {
 /* ..... read column ..... */
 
 .readColumnHeader {
-  list-style-image: url("chrome://messenger/skin/icons/readcol.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-read-header.gif");
 }
 
 treechildren::-moz-tree-image(unreadButtonColHeader) {
-  list-style-image: url("chrome://messenger/skin/icons/readmail.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-neutral.gif");
 }
 
 treechildren::-moz-tree-image(unreadButtonColHeader, unread) {
-  list-style-image: url("chrome://messenger/skin/icons/unreadmail.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-read-unread.gif");
 }
 
 /* ..... attachment column ..... */
@@ -171,34 +171,34 @@ treechildren::-moz-tree-image(attachmentCol, attach) {
 /* ..... flag column ..... */
 
 .flagColumnHeader {
-  list-style-image: url("chrome://messenger/skin/icons/flagcol.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-flag.gif");
 }
 
 treechildren::-moz-tree-image(flaggedCol) {
-  list-style-image: url("chrome://messenger/skin/icons/readmail.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-neutral.gif");
 }
 
 treechildren::-moz-tree-image(flaggedCol, flagged) {
-  list-style-image: url("chrome://messenger/skin/icons/flaggedmail.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-flag.gif");
 }
 
 /* ..... junkStatus column ..... */
 
 .junkStatusHeader {
-  list-style-image: url("chrome://messenger/skin/icons/message-junk-other.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-junk.gif");
 }
 
-/* "unknown" now looks like "not junk".  see bug #182386 */
+/* "unknown" now looks almost like "not junk", but not quite */
 treechildren::-moz-tree-image(junkStatusCol) {
-  list-style-image: url("chrome://messenger/skin/icons/readmail.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-junk-unknown.gif");
 }
 
 treechildren::-moz-tree-image(junkStatusCol, junk) {
-  list-style-image: url("chrome://messenger/skin/icons/message-junk-other.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-junk.gif");
 }
 
 treechildren::-moz-tree-image(junkStatusCol, notjunk) {
-  list-style-image: url("chrome://messenger/skin/icons/readmail.gif");
+  list-style-image: url("chrome://messenger/skin/icons/column-neutral.gif");
 }
 
 /* ..... subject column ..... */
