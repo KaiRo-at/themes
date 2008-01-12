@@ -113,6 +113,11 @@ panel[type="autocomplete-richlistbox"],
   padding: 0px !important;
 }
 
+/* GTK calculates space for a sort arrow */
+.autocomplete-treecol > .treecol-sortdirection {
+  -moz-appearance: none !important;
+}
+
 .autocomplete-treebody::-moz-tree-cell-text {
   padding-left: 8px;
 }
@@ -125,6 +130,11 @@ panel[type="autocomplete-richlistbox"],
   color: white !important;
 }
 
+.autocomplete-treebody::-moz-tree-image(treecolAutoCompleteValue) {
+  max-width: 16px;
+  height: 16px;
+}
+
 /* ::::: richlistbox autocomplete ::::: */
 
 .autocomplete-richlistbox {
@@ -134,36 +144,31 @@ panel[type="autocomplete-richlistbox"],
   background-color: transparent !important;
 }
 
-.autocomplete-richlistbox > richlistitem[selected="true"] {
+.autocomplete-richlistbox > scrollbox {
+  overflow-x: hidden !important;
+}
+
+.autocomplete-richlistitem[selected="true"] {
   background-color: #336699;
   color: white;
 }
 
 .autocomplete-richlistitem {
-  overflow: hidden;
+  -moz-box-orient: vertical;
+  overflow:-moz-hidden-unscrollable;
   padding: 1px 0px 1px 2px;
+  border-bottom: 1px solid #666699;
 }
 
 .ac-site-icon {
   width: 16px;
   height: 16px;
+  margin-right: 8px;
 }
 
 .ac-type-icon {
   width: 16px;
   height: 16px;
-}
-
-.ac-ellipsis-before {
-  margin: 2px -2px 0px 2px !important;
-  padding: 0;
-  min-width: 1em;
-}
-
-.ac-ellipsis-between {
-  margin: 2px 0px 0px 0px !important;
-  -moz-padding-end: 8px;
-  min-width: 2em;
 }
 
 .ac-ellipsis-after {
@@ -177,10 +182,11 @@ panel[type="autocomplete-richlistbox"],
   padding: 0;
 }
 
-.ac-emphasize-text {
+html|*.ac-emphasize-text {
   margin: 0 !important;
   padding: 0;
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .ac-title, .ac-url {

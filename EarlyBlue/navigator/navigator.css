@@ -120,8 +120,8 @@
   display: inline;
 }
 
-#nav-bar[buttonstyle="text"] > #nav-bar-inner,
-#nav-bar[buttonstyle="pictures"] > #nav-bar-inner,
+#nav-bar[mode="text"] > #nav-bar-inner,
+#nav-bar[mode="icons"] > #nav-bar-inner,
 #nav-bar[toolbarmode="small"] > #nav-bar-inner {
   margin: 2px 0px 2px 4px;
 }
@@ -268,11 +268,6 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 #popupIcon {
   list-style-image:url("chrome://navigator/skin/icons/popup-blocked.gif");
-}
-
-#popupImage {
-  list-style-image: url("chrome://navigator/skin/icons/about-popups.gif");
-  margin: 6px 0px;
 }
 
 /* ::::: personal toolbar ::::: */

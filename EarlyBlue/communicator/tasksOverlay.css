@@ -44,21 +44,6 @@
 
 /* ::::: communicator product icons ::::: */
 
-.taskbutton,
-.taskbutton:hover,
-.taskbutton:hover:active {
-  padding: 1px 3px;
-  border: none;
-}
-
-.taskbutton:hover {
-  background-color: #9999CC;
-}
-
-.taskbutton:hover:active {
-  background-color: #CCCCFF;
-}
-
 #mini-nav {
   list-style-image: url("chrome://communicator/skin/taskbar/navigator.gif");
 }

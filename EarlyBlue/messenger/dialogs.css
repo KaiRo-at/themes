@@ -44,7 +44,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: button-like menus ::::: */
- 
+
 menu.push {
   border: 1px outset #CCD0DD;
   padding: 2px;
@@ -75,10 +75,7 @@ askSendFormat {
  -moz-box-align: start;
 }
 
-#convertYes {
-  list-style-image:url("chrome://global/skin/icons/alert-question.gif");
-}
-
+#convertYes,
 #convertAltering {
   list-style-image:url("chrome://global/skin/icons/alert-question.gif");
 }

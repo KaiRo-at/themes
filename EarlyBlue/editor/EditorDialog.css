@@ -279,7 +279,7 @@ label#alignLabel {
 
 /* Don't change width/height of these without changing values in 
   GetOriginalWidth(), EdImageProps.js
-*/    
+*/
 #preview-image-box {
   border: 1px inset #CCD0DD;
   width: 82px;

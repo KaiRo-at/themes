@@ -96,7 +96,8 @@ window.dialog {
 .message-icon,
 .alert-icon,
 .error-icon,
-.question-icon {
+.question-icon,
+.authentication-icon {
   width: 32px;
   height: 32px;
 }
@@ -113,7 +114,8 @@ window.dialog {
   list-style-image: url("chrome://global/skin/icons/alert-error.gif");
 }
 
-.question-icon {
+.question-icon,
+.authentication-icon {
   list-style-image: url("chrome://global/skin/icons/alert-question.gif");
 }
 
