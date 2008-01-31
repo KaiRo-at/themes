@@ -77,10 +77,6 @@ textbox.padded {
   background-color: #9999CC;
 }
 
-.autocomplete-history-dropmarker[enablehistory="true"] {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#history-dropmarker")
-}
-
 .autocomplete-history-dropmarker[open="true"] {
   border: 1px inset #CCD0DD;
   padding: 2px 0px 0px 2px;
