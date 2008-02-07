@@ -91,7 +91,7 @@ separator.thin {
 .acctCentralLinkText {
   cursor: pointer;
   color: #336699;
-  text-decoration: normal;
+  text-decoration: none;
 }
 
 .acctCentralLinkText:hover {

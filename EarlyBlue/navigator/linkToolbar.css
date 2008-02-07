@@ -87,9 +87,18 @@
 }
 
 #link-last {
-  list-style-image    : url("chrome://navigator/skin/linkButtons/last.gif");
+  list-style-image: url("chrome://navigator/skin/linkButtons/last.gif");
 }
 
 #link-last[disabled="true"] {
   list-style-image: url("chrome://navigator/skin/linkButtons/last-disabled.gif") !important;
+}
+
+#link-feed {
+  list-style-image: url("chrome://navigator/skin/linkButtons/feeds.png") !important;
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+#link-feed[disabled="true"] {
+  -moz-image-region: rect(32px 32px 48px 16px);
 }
