@@ -48,7 +48,7 @@ panel[disabled="true"] > .viewer-pane-box-1 {
   list-style-image: url("chrome://inspector/skin/iconViewerList-dis.gif");
 }
 
-.viewer-menu > .toolbarbutton-box > .toolbarbutton-dropmarker {
+.viewer-menu > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 

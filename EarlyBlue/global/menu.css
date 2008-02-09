@@ -163,6 +163,7 @@ menulist > menupopup > menu {
   -moz-margin-end: 0px;
   width: 8px;
   list-style-image: url("chrome://global/skin/menu/menu-arrow.gif");
+  -moz-image-region: auto;
 }
 
 .menu-right[_moz-menuactive="true"] {

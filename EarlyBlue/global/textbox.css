@@ -46,12 +46,8 @@
 
 textbox {
   cursor: text;
-  margin: 1px 3px;
-  border: 2px solid;
-  -moz-border-top-colors: transparent #71737A;
-  -moz-border-right-colors: transparent #EFF0F4;
-  -moz-border-bottom-colors: transparent #EFF0F4;
-  -moz-border-left-colors: transparent #71737A;
+  margin: 2px 3px;
+  border: 1px inset #CCD0DD;
   padding: 1px 0px 1px 2px;
   background-color: #FFFFFF;
   color: #000000;
@@ -88,18 +84,13 @@ textbox[disabled="true"] {
 }
 
 textbox[focused="true"] {
-  -moz-border-top-colors: #6699CC #6699CC;
-  -moz-border-right-colors: #6699CC #6699CC;
-  -moz-border-bottom-colors: #6699CC #6699CC;
-  -moz-border-left-colors: #6699CC #6699CC;
-  margin: 1px 3px;
+  border: 1px solid #6699CC;
+  outline: 1px solid #6699CC;
 }
 
 textbox[focused="true"][readonly="true"] {
-  -moz-border-top-colors: transparent #717171;
-  -moz-border-right-colors: transparent #EFEFEF;
-  -moz-border-bottom-colors: transparent #EFEFEF;
-  -moz-border-left-colors: transparent #717171;
+  border: 1px solid #6699CC;
+  outline: none;
 }
 
 /* ::::: plain textbox ::::: */
