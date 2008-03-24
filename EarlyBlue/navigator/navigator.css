@@ -163,11 +163,8 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 }
 
 #urlbar {
-  border: 1px solid;
-  -moz-border-top-colors: #71737A;
-  -moz-border-right-colors: #EFF0F4;
-  -moz-border-bottom-colors: #EFF0F4;
-  -moz-border-left-colors: #71737A;
+  outline: none;
+  border: 1px inset #CCD0DD;
   margin: 0px 7px 0px 0px;
 }
 
