@@ -21,6 +21,10 @@ body {
   background: #FFFFFF;
 }
 
+.aboutPageWideContainer {
+  max-width: 80% !important;
+}
+
 #aboutLogoContainer {
   border: 1px solid #9999CC;
   width: 300px;

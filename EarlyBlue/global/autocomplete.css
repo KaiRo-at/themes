@@ -88,7 +88,7 @@ panel[type="autocomplete"],
 panel[type="autocomplete-richlistbox"],
 .autocomplete-history-popup {
   border: 1px solid #9999CC;
-  background-color: white !important;
+  background-color: white;
   padding: 0;
 }
 
@@ -134,10 +134,7 @@ panel[type="autocomplete-richlistbox"],
 /* ::::: richlistbox autocomplete ::::: */
 
 .autocomplete-richlistbox {
-  -moz-appearance: none !important;
   margin: 0;
-  border: none !important;
-  background-color: transparent !important;
 }
 
 .autocomplete-richlistbox > scrollbox {
@@ -150,21 +147,27 @@ panel[type="autocomplete-richlistbox"],
 }
 
 .autocomplete-richlistitem {
-  -moz-box-orient: vertical;
-  overflow:-moz-hidden-unscrollable;
-  padding: 1px 0px 1px 2px;
+  padding: 1px 2px;
   border-bottom: 1px solid #666699;
 }
 
 .ac-site-icon {
   width: 16px;
   height: 16px;
-  margin-right: 8px;
+  margin: 0 5px -3px 3px;
 }
 
 .ac-type-icon {
   width: 16px;
   height: 16px;
+}
+
+.ac-extra > .ac-result-type-tag {
+  margin: 0 4px;
+}
+
+.ac-extra > .ac-comment {
+  padding-right: 4px;
 }
 
 .ac-ellipsis-after {
@@ -178,10 +181,17 @@ panel[type="autocomplete-richlistbox"],
   padding: 0;
 }
 
-html|*.ac-emphasize-text {
+.ac-normal-text > html|span {
   margin: 0 !important;
   padding: 0;
+}
+
+html|span.ac-emphasize-text {
   font-weight: bold;
+  text-decoration: underline;
+}
+
+html|span.ac-emphasize-alt {
   text-decoration: underline;
 }
 

@@ -76,7 +76,7 @@ div.headerdisplayname {
 }
 
 .moz-text-plain[wrap="true"] {
-  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
 }
 
 .moz-text-plain[wrap="false"] {
@@ -84,7 +84,7 @@ div.headerdisplayname {
 }
 
 .moz-text-plain[wrap="flow"] .moz-txt-sig {
-  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
 }
 
 .moz-text-plain[graphical-quote="false"] blockquote {
@@ -122,6 +122,30 @@ span.moz-txt-formfeed {
 .moz-txt-sig > a,
 .moz-signature > a {
   color: #7777FF; /* light blue */
+}
+
+/* ::::: vcard ::::: */
+
+.moz-vcard-table {
+  /* -moz-border-radius: 8px; */
+  border: thin solid #6666CC;
+  margin-top: 10px;
+}
+
+.moz-vcard-property {
+  font-size: 80%;
+  color: #666699;
+}
+
+.moz-vcard-title-property {
+  padding-bottom: 10px;
+}
+
+.moz-vcard-badge {
+  height: 21px;
+  width: 25px;
+  display: block;
+  background-image: url("chrome://messenger/skin/messengercompose/address.gif");
 }
 
 /* ::::: attached images ::::: */

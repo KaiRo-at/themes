@@ -13,6 +13,11 @@
 richlistitem[type="download"] {
   padding: 4px 8px 4px 4px;
   min-height: 46px;
+  border-bottom: 1px solid #9999CC;
+}
+
+richlistitem[type="download"][selected="true"] {
+  background-image: url("chrome://mozapps/skin/extensions/itemEnabledFader.png");
 }
 
 richlistitem[type="download"][alternate="true"]:not([selected="true"]) {
@@ -25,6 +30,11 @@ richlistitem[type="download"] .name {
 
 richlistitem[type="download"] .dateTime {
   font-size: smaller;
+}
+
+richlistitem[type="download"]:not([selected="true"]) .dateTime,
+richlistitem[type="download"]:not([selected="true"]) .status {
+  color: #000000;
 }
 
 .mini-button {
@@ -70,4 +80,10 @@ richlistitem[type="download"] .dateTime {
 
 #searchbox[empty] {
   color: #808080;
+}
+
+#clearListButton {
+  min-height: 0;
+  min-width: 0;
+  margin-top: 3px;
 }

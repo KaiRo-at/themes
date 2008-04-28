@@ -2,15 +2,10 @@
   font-size: 120%;
 }
 
-#scrollbox {
-  overflow-y: auto;
-  background-color: #CCD0DD;
+#eula {
+  -moz-appearance: none;
+  font-family: monospace;
+  color: #000000;
   border: 1px solid #9999CC;
   margin: 1em 0 1em 0;
-  padding: 5px;
-}
-
-#eula {
-  font-family: monospace;
-  white-space: -moz-pre-wrap;
 }

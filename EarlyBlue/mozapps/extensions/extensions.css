@@ -32,56 +32,7 @@
 
 #commandBarBottom button {
   margin: 0;
-  list-style-image: url("chrome://mozapps/skin/extensions/actionbuttons.png");
   -moz-margin-end: 5px;
-}
-
-#commandBarBottom button .button-icon {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  -moz-margin-start: 0px;
-  -moz-margin-end: 5px;
-}
-
-#installFileButton, #installUpdatesAllButton {
-  -moz-image-region: rect(0px, 84px, 21px, 63px);
-}
-
-#installFileButton[disabled="true"],
-#installUpdatesAllButton[disabled="true"] {
-  -moz-image-region: rect(21px, 84px, 42px, 63px);
-}
-
-#checkUpdatesAllButton, #showUpdateInfoButton, #hideUpdateInfoButton {
-  -moz-image-region: rect(0px, 63px, 21px, 42px);
-}
-#checkUpdatesAllButton[disabled="true"] {
-  -moz-image-region: rect(21px, 63px, 42px, 42px);
-}
-
-#restartAppButton {
-  -moz-image-region: rect(0px, 42px, 21px, 21px);
-}
-
-#restartAppButton[disabled="true"] {
-  -moz-image-region: rect(21px, 42px, 42px, 21px);
-}
-
-/* these skip/continue icons don't make sense. it's just a placeholder. */
-#skipDialogButton {
-  -moz-image-region: rect(0px, 42px, 21px, 21px);
-}
-
-#skipDialogButton[disabled="true"] {
-  -moz-image-region: rect(21px, 42px, 42px, 21px);
-}
-
-#continueDialogButton {
-  -moz-image-region: rect(0px, 42px, 21px, 21px);
-}
-
-#continueDialogButton[disabled="true"] {
-  -moz-image-region: rect(21px, 42px, 42px, 21px);
 }
 
 /* List Items */
@@ -102,9 +53,18 @@ richlistitem[isDisabled="true"] {
   color: #808080;
 }
 
+richlistitem[newAddon="true"] {
+  background-color: #FFFFCC;
+  color: #000000;
+}
+
 richlistitem[selected="true"] {
   background-color: #CCD0DD;
   color: #000000;
+}
+
+richlistitem[selected="true"] .text-link {
+  color: inherit;
 }
 
 #extensionsView:focus > richlistitem[selected="true"] {
@@ -151,8 +111,11 @@ richlistitem[selected="true"]:not([opType]) .descriptionCrop {
 .addonIcon {
   -moz-margin-end: 2px;
   width: 32px;
-  max-width: 32px;
   height: 32px;
+}
+
+.addonIcon > image {
+  max-width: 32px;
   max-height: 32px;
 }
 
@@ -277,6 +240,8 @@ richlistitem[opType="needs-uninstall"] .notifyBadge {
 
 .addonMissingThumbnail {
   color: GrayText;
+  font-size: larger;
+  font-weight: bold;
 }
 
 .addonFailure {
@@ -305,23 +270,23 @@ richlistitem[opType="needs-uninstall"] .notifyBadge {
   -moz-image-region: rect(0px 68px 12px 0px);
 }
 
-.addonRating[rating="1"], .addonRating[rating="2"] {
+.addonRating[rating="1"] {
   -moz-image-region: rect(12px 68px 24px 0px);
 }
 
-.addonRating[rating="3"], .addonRating[rating="4"] {
+.addonRating[rating="2"] {
   -moz-image-region: rect(24px 68px 36px 0px);
 }
 
-.addonRating[rating="5"], .addonRating[rating="6"] {
+.addonRating[rating="3"] {
   -moz-image-region: rect(36px 68px 48px 0px);
 }
 
-.addonRating[rating="7"], .addonRating[rating="8"] {
+.addonRating[rating="4"] {
   -moz-image-region: rect(48px 68px 60px 0px);
 }
 
-.addonRating[rating="9"], .addonRating[rating="10"] {
+.addonRating[rating="5"] {
   -moz-image-region: rect(60px 68px 72px 0px);
 }
 
@@ -360,14 +325,12 @@ vbox[typeName="status"][type="header-recommended"] {
 }
 
 #searchbox {
-  list-style-image: url("chrome://mozapps/skin/extensions/searchIcons.png");
-  -moz-image-region: rect(0px 19px 19px 0px);
   padding: 0;
 }
 
 .searchbox-search, .searchbox-cancel {
   -moz-appearance: none;
-  cursor: pointer;
+  cursor: default;
   margin: 0;
   border: 0;
   padding: 0;

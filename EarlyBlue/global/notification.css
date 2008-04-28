@@ -7,10 +7,12 @@ notification {
 
 notification[type="info"] {
   background-color: #CCD0DD;
+  color: #000000;
 }
 
 notification[type="critical"] {
   background-color: #FFC0C0;
+  color: #000000;
 }
 
 .messageImage {

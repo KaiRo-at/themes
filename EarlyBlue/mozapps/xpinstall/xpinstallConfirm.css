@@ -37,11 +37,9 @@ installitem {
   margin-bottom: 1em;
 }
 
-.xpinstallItemIcon {
+.xpinstallIconContainer {
   width: 32px;
   height: 32px;
-  max-width: 32px !important;
-  max-height: 32px !important;
   -moz-margin-end: 5px;
 }
 
@@ -67,5 +65,7 @@ installitem {
 }
 
 .xpinstallItemIcon {
+  max-width: 32px;
+  max-height: 32px;
   list-style-image: url("chrome://mozapps/skin/xpinstall/xpinstallItemGeneric.png");
 }

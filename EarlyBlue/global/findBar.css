@@ -72,7 +72,7 @@ findbar {
   color: #000000;
 }
 
-.findbar-textbox {
+findbar[flash="true"] > .findbar-container > .find-field-container > .findbar-textbox {
   background-color: #FFFFC0;
 }
 
