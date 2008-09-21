@@ -39,7 +39,7 @@
 
 /* ::::: Scroll arrows ::::: */
 
-/* Horizonal enabled */
+/* Horizontal enabled */
 .autorepeatbutton-up[orient="horizontal"],
 .autorepeatbutton-down[chromedir="rtl"][orient="horizontal"],
 .scrollbutton-up[orient="horizontal"],
@@ -54,7 +54,7 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-right.gif");
 }
 
- /* Horizonal disabled */
+ /* Horizontal disabled */
 .autorepeatbutton-up[orient="horizontal"][disabled="true"],
 .autorepeatbutton-down[chromedir="rtl"][orient="horizontal"][disabled="true"],
 .scrollbutton-up[orient="horizontal"][disabled="true"],

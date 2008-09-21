@@ -328,7 +328,8 @@ vbox[typeName="status"][type="header-recommended"] {
   padding: 0;
 }
 
-.searchbox-search, .searchbox-cancel {
+.searchbox-search,
+.searchbox-cancel {
   -moz-appearance: none;
   cursor: default;
   margin: 0;

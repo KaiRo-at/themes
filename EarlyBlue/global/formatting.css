@@ -196,16 +196,13 @@ label {
 .text-link {
   color: blue;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .text-link:focus {
   color: red;
   /* Don't specify the outline-color, we should always use initial value. */
   outline: 1px dotted;
-}
-
-.text-link:hover {
-  cursor: pointer;
 }
 
 .text-link:hover:active {

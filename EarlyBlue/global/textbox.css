@@ -105,6 +105,30 @@ textbox.plain {
   min-height: 0px;
 }
 
+/* ::::: search textbox ::::: */
+
+.textbox-search-icon {
+  list-style-image: url("chrome://global/skin/icons/search.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.textbox-search-icon[chromedir="rtl"] {
+  -moz-image-region: rect(16px, 16px, 32px, 0);
+}
+
+.textbox-search-icon[searchbutton]:not([disabled]) {
+  cursor: pointer;
+}
+
+.textbox-search-clear {
+  list-style-image: url("chrome://global/skin/icons/search.png");
+  -moz-image-region: rect(32px, 16px, 48px, 0);
+}
+
+.textbox-search-clear:not([disabled]) {
+  cursor: default;
+}
+
 /* ::::: textboxes inside toolbarpaletteitems ::::: */
 
 toolbarpaletteitem > toolbaritem > textbox > .textbox-input-box > html|*.textbox-input {

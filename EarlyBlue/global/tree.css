@@ -171,18 +171,16 @@ treechildren::-moz-tree-line {
   visibility: hidden;
 }
 
-/*
 tree[seltype="cell"] > treechildren::-moz-tree-line,
 tree[seltype="text"] > treechildren::-moz-tree-line,
 treechildren::-moz-tree-line {
-  border: 1px dotted grey;
+  border: 1px dotted #CCD0DD;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-line(active, selected, focus),
 treechildren::-moz-tree-line(selected, focus) {
-  border: 1px dotted black;
+  border: 1px dotted #666699;
 }
-*/
 
 /* ::::: tree separator ::::: */
 
