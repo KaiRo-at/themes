@@ -6,6 +6,7 @@
 #extensionsView {
   border: 1px inset #CCD0DD;
   margin: 0;
+  min-width: 245px;
 }
 
 #resizerBox {
@@ -100,8 +101,12 @@ richlistitem[selected="true"]:not([opType]) .descriptionCrop {
   border: 1px inset #CCD0DD;
   background-color: #FFFFFF;
   color: #000000;
+  min-width: 65px;
   overflow: auto;
-  width: 0px;
+}
+
+#previewImageDeck {
+  min-width: 220px;
 }
 
 #themeSplitter {
@@ -326,34 +331,6 @@ vbox[typeName="status"][type="header-recommended"] {
 
 #searchbox {
   padding: 0;
-}
-
-.searchbox-search,
-.searchbox-cancel {
-  -moz-appearance: none;
-  cursor: default;
-  margin: 0;
-  border: 0;
-  padding: 0;
-  width: 19px;
-  height: 19px;
-  min-width: 19px;
-}
-
-.searchbox-search .button-box,
-.searchbox-cancel .button-box {
-  border: 0px;
-  padding: 0px;
-}
-
-.searchbox-search {
-  list-style-image: url("chrome://mozapps/skin/extensions/searchIcons.png");
-  -moz-image-region: rect(0px 38px 19px 19px);
-}
-
-.searchbox-cancel {
-  list-style-image: url("chrome://mozapps/skin/extensions/searchIcons.png");
-  -moz-image-region: rect(0px 57px 19px 38px);
 }
 
 #progressBox {

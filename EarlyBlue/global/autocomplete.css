@@ -64,6 +64,10 @@ textbox.padded {
   -moz-box-align: center;
 }
 
+textbox[nomatch="true"][highlightnonmatches="true"] {
+  color: red;
+}
+
 .textbox-input-box {
   margin: 0 3px;
   -moz-box-align: center;

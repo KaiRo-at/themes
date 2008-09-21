@@ -1,15 +1,11 @@
 html {
   background-color: #CCD0DD;
+  padding: 0 1em;
+  font: 11px helvetica,arial,tahoma,sans-serif;
 }
 
 body {
   color: #000000;
-  font: 11px helvetica,arial,tahoma,sans-serif;
-  margin: 0;
-  padding: 0 1em;
-}
-
-#aboutPageContainer {
   position: relative;
   min-width: 330px;
   max-width: 50em;
@@ -22,7 +18,7 @@ body {
 }
 
 .aboutPageWideContainer {
-  max-width: 80% !important;
+  max-width: 80%;
 }
 
 #aboutLogoContainer {
@@ -50,4 +46,8 @@ ul {
 
 ul > li {
   margin-top: .5em;
+}
+
+th, td {
+  padding: 0 5px;
 }

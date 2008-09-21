@@ -83,3 +83,8 @@ menulist > menupopup,
   padding: 0px;
   background-color: white;
 }
+
+menupopup > menu > menupopup,
+popup > menu > menupopup {
+  margin-top: -2px;
+}

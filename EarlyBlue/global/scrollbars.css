@@ -198,14 +198,6 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"][disabled="true"
     min-width: 8px;
   }
 
-  html|div thumb > gripper {
-    -moz-appearance: scrollbargripper-vertical;
-  }
-
-  html|div thumb[orient="horizontal"] > gripper {
-    -moz-appearance: scrollbargripper-horizontal;
-  }
-
   /* ::::: scrollbar button ::::: */
 
   html|div scrollbarbutton,

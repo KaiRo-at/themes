@@ -81,6 +81,7 @@ textbox[disabled="true"] {
   cursor: default;
   background-color: #FFFFFF;
   color: #CCCCCC;
+  border: 1px solid #666699;
 }
 
 textbox[focused="true"] {
