@@ -5,14 +5,14 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>EarlyBlue@kairo.at</em:id>
-    <em:version>1.9a1pre</em:version>
+    <em:version>2.0a1</em:version>
 
     <!-- SeaMonkey -->
     <em:targetApplication>
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
         <em:minVersion>2.0a1pre</em:minVersion>
-        <em:maxVersion>2.0a1pre</em:maxVersion>
+        <em:maxVersion>2.0a2pre</em:maxVersion>
       </Description>
     </em:targetApplication>
 
@@ -27,6 +27,6 @@
 
     <!--em:updateURL--> <!--/em:updateURL-->
     <!--em:aboutURL--> <!--/em:aboutURL-->
-    <em:internalName>EarlyBlue/1.9a1pre</em:internalName>
+    <em:internalName>EarlyBlue</em:internalName>
   </Description>
 </RDF>
