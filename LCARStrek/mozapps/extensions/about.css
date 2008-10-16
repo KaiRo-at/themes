@@ -1,0 +1,48 @@
+#clientBox {
+  background-color: #000000;
+  color: #FF9F00;
+}
+
+#extensionName {
+  font-size: large;
+  font-weight: bold;
+}
+
+#extensionVersion {
+  font-weight: bold;
+  color: #9C9CFF;
+}
+
+#genericAbout {
+  padding: 0px 0px 10px 0px;
+  min-height: 200px;
+  width: 30em;
+}
+
+#groove {
+  margin-top: 0px;
+}
+
+#clientBox {
+  padding: 10px;
+}
+
+#extensionDescription {
+  color: #8050B0;
+}
+
+.boxIndent {
+  -moz-margin-start: 6px;
+}
+
+#extensionCreator, .contributor {
+  margin: 0px;
+}
+
+.sectionTitle {
+  border-top: 2px groove #008484;
+  padding: 3px 0px;
+  margin-top: 3px;
+  font-weight: bold;
+}
+

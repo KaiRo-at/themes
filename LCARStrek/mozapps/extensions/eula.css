@@ -1,0 +1,12 @@
+#heading {
+  font-size: 120%;
+}
+
+#eula {
+  -moz-appearance: none;
+  font-family: monospace;
+  background-color: #000000;
+  color: #FF9F00;
+  border: 1px solid #9C9CFF;
+  margin: 1em 0 1em 0;
+}

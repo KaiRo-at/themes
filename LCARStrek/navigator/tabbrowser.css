@@ -1,0 +1,114 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is "Classic" theme of mozilla.org code.
+ *
+ * The Initial Developer of the Original Code is
+ * the Mozilla Organization.
+ * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Robert Kaiser <KaiRo@KaiRo.at>
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.tabbrowser-strip {
+  padding-bottom: 1px;
+  border-bottom: 1px solid #FF9F00;
+}
+
+tabpanels {
+}
+
+.tabbrowser-tabs {
+  padding-top: 1px;
+}
+
+.tabs-left,
+.tabs-right {
+  width: 0px;
+}
+
+.tab-icon {
+  margin-top: 1px;
+  margin-right: 3px;
+  width: 16px;
+  height: 16px;
+}
+
+.tabbrowser-tab {
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item16.gif");
+}
+
+.tabbrowser-tab[busy] {
+  list-style-image: url("chrome://global/skin/icons/loading.gif");
+}
+
+tabbrowser > tabbox > tabpanels {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* ::::: close & new tab buttons ::::: */
+
+.tabs-closebutton {
+  margin-bottom: 2px;
+  margin-right: 2px;
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+}
+
+.tabs-closebutton > .toolbarbutton-icon {
+  margin: 0;
+}
+
+.tabs-newbutton {
+  margin: 0px;
+  margin-top: 2px;
+  padding: 0px;
+  list-style-image: url("chrome://navigator/skin/icons/tab-new.gif");
+}
+
+.tab-drop-indicator-bar {
+  height: 11px;
+  margin-top: -11px;
+  margin-left: -8px;
+  position: relative;
+}
+
+.tab-drop-indicator {
+  height: 11px;
+  width: 11px;
+  margin-bottom: -8px;
+  position: relative;
+  list-style-image: url('chrome://navigator/skin/icons/tab-drag-indicator.gif');
+}
+
+tooltip[tabpreview="true"] {
+  max-width: none;
+}

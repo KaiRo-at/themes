@@ -55,6 +55,10 @@ textbox {
   min-height: 19px;
 }
 
+textbox[empty="true"] {
+  color: #6000CF;
+}
+
 html|*.textbox-input,
 html|*.textbox-textarea {
   -moz-border-radius: 3px;

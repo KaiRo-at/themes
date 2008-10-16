@@ -51,7 +51,7 @@
 }
 
 .small-indent {
-  margin-left: 15px; 
+  margin-left: 15px;
 }
 
 .uniWidthButton {
@@ -65,14 +65,14 @@
 }
 
 #fileExtension {
-  width: 5em; 
+  width: 5em;
 }
 
 #fileExtension.pluginsList {
-  width: 5.5em; 
+  width: 5.5em;
 }
 
-#typeIcon, 
+#typeIcon,
 .extensionChildren::-moz-tree-image(fileExtension),
 .pluginTypesChildren::-moz-tree-image(fileExtension) {
   margin: 0px 5px 0px 0px;
@@ -80,23 +80,22 @@
 
 .pluginTypesChildren::-moz-tree-image(pluginEnabled) {
   margin: 0px 5px 0px 0px;
-  list-style-image: url(chrome://mozapps/skin/pref/dot.gif);  
+  list-style-image: url("chrome://mozapps/skin/pref/dot.gif");
 }
 
 .pluginTypesChildren::-moz-tree-image(pluginEnabled, enabled) {
   margin: 0px 5px 0px 0px;
-  list-style-image: url(chrome://mozapps/skin/pref/check.gif);  
+  list-style-image: url("chrome://mozapps/skin/pref/check.gif");
 }
 
 .biggerIndent {
-  margin-left: 28px; 
+  margin-left: 28px;
 }
 
 #typeField {
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 #defaultAppName {
-  margin-left: 6px !important; 
+  margin-left: 6px !important;
 }
-
