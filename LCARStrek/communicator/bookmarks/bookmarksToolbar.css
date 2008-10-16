@@ -68,8 +68,8 @@ toolbarbutton.bookmark-item > .toolbarbutton-menu-dropmarker {
 }
 
 .bookmark-item > .menu-iconic-left > .menu-iconic-icon {
-  width: 16px;
-  height: 16px;
+  max-width: 16px;
+  max-height: 16px;
 }
 
 .bookmark-group {
@@ -104,7 +104,7 @@ toolbarbutton.bookmark-item[disabled="true"][container="true"]:hover:active {
 toolbarbutton.bookmark-item[dragover-left="true"] {
   border-left: 2px solid #008484;
 }
-    
+
 toolbarbutton.bookmark-item[dragover-right="true"] {
   border-right: 2px solid #008484;
 }
@@ -120,13 +120,12 @@ menu.bookmark-item,
 menuitem.bookmark-item {
   border-top: 1px solid transparent !important;
   border-bottom: 1px solid transparent !important;
-  padding: 1px 3px 1px 2px;
-  margin-top: -1px;
+  padding: 0px 2px 0px 2px;
 }
 
 .menuitem-iconic.bookmark-item[disabled="true"] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item-disabled.gif");
-} 
+}
 
 .menu-iconic.bookmark-item[disabled="true"][container="true"] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-disabled.gif");

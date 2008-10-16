@@ -173,7 +173,7 @@ resizer[dir="bottomright"] {
   border: 0px;
   margin: -14px;
   padding: 0px;
-  background-image: url("chrome://communicator/skin/icons/autoscroll.png");
+  background-image: url("chrome://global/skin/icons/autoscroll.png");
   background-color: transparent;
   -moz-appearance: none;
 }

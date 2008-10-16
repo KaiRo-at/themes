@@ -37,9 +37,9 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ==== toolbar.css =========================================================
-   == Styles for special toolbars in the Communicator suite.
-   ========================================================================== */
+/* ===== toolbar.css ====================================================
+  == Styles used by XUL grippytoolbar in addition to general toolbar styles.
+  ======================================================================= */
 
 /* ::::: primary toolbar ::::: */
 
@@ -52,7 +52,7 @@
 }
 
 .toolbar-primary > toolbargrippy {
-  background-color: #9C9CFF; 
+  background-color: #9C9CFF;
 }
 
 .toolbar-primary > toolbargrippy:hover {

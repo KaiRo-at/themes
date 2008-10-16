@@ -6,12 +6,14 @@ dropmarker {
   background-color: #000000;
   padding: 1px;
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+ -moz-image-region: auto;
 }
 
 dropmarker:hover {
   background-color: #FFCF00;
   border: 1px solid #FFCF00;
   list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+ -moz-image-region: auto;
 }
 
 dropmarker:hover:active,
@@ -19,6 +21,7 @@ dropmarker[open="true"] {
   background-color: #FF9F00;
   padding: 2px 0 0 2px;
   list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+ -moz-image-region: auto;
 }
 
 dropmarker[disabled="true"] {
@@ -26,4 +29,5 @@ dropmarker[disabled="true"] {
   border: 1px solid #8050B0 !important;
   background-color: #000000 !important;
   padding: 1px !important;
+ -moz-image-region: auto;
 }

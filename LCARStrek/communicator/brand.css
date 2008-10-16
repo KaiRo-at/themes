@@ -54,8 +54,8 @@
 }
 
 window[chromehidden~="toolbar"] #navigator-throbber,
-#navigator-throbber[buttonstyle="text"],
-#navigator-throbber[buttonstyle="pictures"],
+toolbar[mode="text"] #navigator-throbber,
+toolbar[mode="icons"] #navigator-throbber,
 #navigator-throbber[toolbarmode="small"] {
   margin: 0 3px 0 1px;
   padding: 2px;
@@ -63,8 +63,8 @@ window[chromehidden~="toolbar"] #navigator-throbber,
 }
 
 window[chromehidden~="toolbar"] #navigator-throbber[busy="true"],
-#navigator-throbber[buttonstyle="text"][busy="true"],
-#navigator-throbber[buttonstyle="pictures"][busy="true"],
+toolbar[mode="text"] #navigator-throbber[busy="true"],
+toolbar[mode="icons"] #navigator-throbber[busy="true"],
 #navigator-throbber[toolbarmode="small"][busy="true"] {
   list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.gif");
 }

@@ -11,15 +11,15 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is Mozilla Communicator client code, released
+ * March 31, 1998.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998-1999
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -34,55 +34,14 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
  * ***** END LICENSE BLOCK ***** */
-
-/* ===== colorpicker.css ================================================
-  == Styles used by the XUL colorpicker element.
-  ======================================================================= */
-
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-/* ::::: colorpicker button ::::: */
-
-colorpicker[type="button"] {
-  width: 34px;
-  height: 20px;
-  -moz-border-radius: 3px;
-  border: 1px solid #9C9CFF;
-  padding: 3px;
+ 
+.expanderButton {
+  cursor: pointer !important;
 }
 
-.colorpicker-button-colorbox {
-  border: 1px solid #FF9F00;
-}
-
-colorpicker[type="button"]:focus {
-}
-
-colorpicker[type="button"][open="true"] {
-  border: 1px solid #FFCF00;
-}
-
-colorpicker[type="button"][open="true"] > .colorpicker-button-internal-box {
-}
-
-/* ::::: colorpicker tiles ::::: */
-
-.colorpickertile {
-  width: 20px;
-  height: 20px;
-  margin: 1px;
-  -moz-border-radius: 3px;
-  border : 1px solid #9C9CFF;
-}
-
-.colorpickertile[selected="true"] {
-  border: 1px solid #008484;
-}
-
-.colorpickertile[hover="true"] {
-  border: 1px solid #FFCF00;
-}
-
-.cp-light[hover="true"] {
-  border: 2px dotted #FF9F00;
+.settingsContainer {
+  padding-top: 3px;
+  padding-bottom: 5px;
+  -moz-padding-start: 20px;
+  -moz-padding-end: 5px;
 }

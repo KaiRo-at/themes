@@ -35,11 +35,12 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== autocomplete.css =================================================
   == Styles used by the autocomplete widget.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
 
 /* ::::: autocomplete ::::: */
 
@@ -47,6 +48,22 @@ textbox {
   cursor: default;
   padding: 0px;
   -moz-border-radius: 3px;
+}
+
+/* Used by autocomplete widgets that don't have an icon. Gross. -dwh */
+textbox.padded {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
+}
+
+.autocomplete-textbox-container {
+  -moz-box-align: center;
+}
+
+textbox[nomatch="true"][highlightnonmatches="true"] {
+  color: red;
 }
 
 .textbox-input-box {
@@ -74,9 +91,11 @@ textbox {
 
 /* ::::: autocomplete popups ::::: */
 
+panel[type="autocomplete"],
+panel[type="autocomplete-richlistbox"],
 .autocomplete-history-popup {
   border: 1px solid #FF9F00;
-  background-color: #000000 !important;
+  background-color: #000000;
   padding: 0;
 }
 
@@ -97,14 +116,102 @@ textbox {
   padding: 0px !important;
 }
 
+/* GTK calculates space for a sort arrow */
+.autocomplete-treecol > .treecol-sortdirection {
+  -moz-appearance: none !important;
+}
+
 .autocomplete-treebody::-moz-tree-cell-text {
   padding-left: 8px;
 }
 
-.autocomplete-treebody::-moz-tree-row(menuactive) {
+.autocomplete-treebody::-moz-tree-row(selected) {
   background-color: #FFCF00;
 }
 
-.autocomplete-treebody::-moz-tree-cell-text(menuactive) {
+.autocomplete-treebody::-moz-tree-cell-text(selected) {
   color: #000000 !important;
+}
+
+.autocomplete-treebody::-moz-tree-image(treecolAutoCompleteValue) {
+  max-width: 16px;
+  height: 16px;
+}
+
+/* ::::: richlistbox autocomplete ::::: */
+
+.autocomplete-richlistbox {
+  margin: 0;
+}
+
+.autocomplete-richlistbox > scrollbox {
+  overflow-x: hidden !important;
+}
+
+.autocomplete-richlistitem[selected="true"] {
+  background-color: #008484;
+  color: #000000;
+}
+
+.autocomplete-richlistitem {
+  padding: 1px 2px;
+  border-bottom: 1px solid #E7ADE7;
+}
+
+.ac-site-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0 5px -3px 3px;
+}
+
+.ac-type-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.ac-extra > .ac-result-type-tag {
+  margin: 0 4px;
+}
+
+.ac-extra > .ac-comment {
+  padding-right: 4px;
+}
+
+.ac-ellipsis-after {
+  margin: 2px 0px 0px 0px !important;
+  padding: 0;
+  min-width: 1em;
+}
+
+.ac-normal-text {
+  margin: 2px 0px 0px 0px !important;
+  padding: 0;
+}
+
+.ac-normal-text > html|span {
+  margin: 0 !important;
+  padding: 0;
+}
+
+html|span.ac-emphasize-text {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+html|span.ac-emphasize-alt {
+  text-decoration: underline;
+}
+
+.ac-title, .ac-url {
+  overflow: hidden;
+}
+
+/* ::::: textboxes inside toolbarpaletteitems ::::: */
+
+toolbarpaletteitem > toolbaritem > textbox > hbox > hbox > html|*.textbox-input {
+  visibility: hidden;
+}
+
+toolbarpaletteitem > toolbaritem > * > textbox > hbox > hbox > html|*.textbox-input {
+  visibility: hidden;
 }

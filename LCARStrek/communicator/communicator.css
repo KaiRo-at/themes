@@ -39,7 +39,6 @@
 @import url("chrome://communicator/content/communicator.css");
 @import url("chrome://communicator/skin/brand.css");
 @import url("chrome://communicator/skin/button.css");
-/* the line below is only LCARStrek */
 @import url("chrome://communicator/skin/toolbar.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
@@ -51,6 +50,14 @@
 .toolbar-primary {
   -moz-binding: url("chrome://communicator/content/bindings/toolbar.xml#grippytoolbar-primary");
 }
+
+/* ::::: autocomplete ::::: */
+
+.autocomplete-history-popup {
+  max-height: 25em;
+}
+
+/* ::::: online/offline icons ::::: */
 
 #offline-status[offline="true"] {
   list-style-image: url("chrome://communicator/skin/icons/offline.gif");
@@ -95,49 +102,4 @@
 
 #downloadView > treechildren::-moz-tree-image(Name) {
   margin-right: 2px;
-}
-
-/* :::::: autoscroll popup ::::: */
-
-#autoscroller {
-  height: 28px;
-  width: 28px;
-  border: 0px;
-  margin: -14px;
-  padding: 0px;
-  background-image: url("chrome://communicator/skin/icons/autoscroll.png");
-  background-color: transparent;
-  -moz-appearance: none;
-}
-
-#autoscroller[scrolldir="NS"] {
-  background-position: left center;
-}
-
-#autoscroller[scrolldir="EW"] {
-  background-position: left bottom;
-}
-
-#autoscroller[transparent="true"] {
-  background-position: center top;
-}
-
-#autoscroller[transparent="true"][scrolldir="NS"] {
-  background-position: center center;
-}
-
-#autoscroller[transparent="true"][scrolldir="EW"] {
-  background-position: center bottom;
-}
-
-#autoscroller[translucent="true"] {
-  background-position: right top;
-}
-
-#autoscroller[translucent="true"][scrolldir="NS"] {
-  background-position: right center;
-}
-
-#autoscroller[translucent="true"][scrolldir="EW"] {
-  background-position: right bottom;
 }

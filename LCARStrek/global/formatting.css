@@ -53,7 +53,7 @@
 
 /* formatting */
 .groove-top {
-  border-top: 2px groove #FF9F00;  
+  border-top: 2px groove #FF9F00;
 }
 
 .groove-right {
@@ -70,7 +70,12 @@
 
 .outset {
 /*  border: 1px outset #FF9F00; */
-}  
+}
+
+.outset-top-bottom {
+/*  border-top: 1px outset #FF9F00;
+  border-bottom: 1px outset #FF9F00; */
+}
 
 /** separator rules **/
 /* standard separators */
@@ -122,6 +127,12 @@ separator[orient="vertical"].groove-thin {
   margin: 0px 1px;
 }
 
+.plain {
+  margin: 0px !important;
+  border: none;
+  padding: 0px;
+}
+
 label[disabled="true"] {
   color: #8050B0;
 }
@@ -136,7 +147,12 @@ description {
 }
 
 label {
-/*  margin: 1px 5px 2px 6px; */
+/*
+  margin-top: 1px;
+  margin-bottom: 2px;
+  -moz-margin-start: 6px;
+  -moz-margin-end: 5px;
+*/
 }
 
 .header {
@@ -180,15 +196,13 @@ label {
 .text-link {
   color: blue;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .text-link:focus {
   color: red;
-  outline: 1px dotted invert;
-}
-
-.text-link:hover {
-  cursor: pointer;
+  /* Don't specify the outline-color, we should always use initial value. */
+  outline: 1px dotted;
 }
 
 .text-link:hover:active {

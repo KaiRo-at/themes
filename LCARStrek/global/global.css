@@ -90,7 +90,8 @@ progressmeter[mode="undetermined"] {
 window,
 page,
 dialog,
-wizard {
+wizard,
+prefwindow {
   background-color: #000000;
   color: #FF9F00;
 /*  font: 3mm "Final Frontier",tahoma,arial,helvetica,sans-serif; */
@@ -113,7 +114,8 @@ window.dialog {
 .message-icon,
 .alert-icon,
 .error-icon,
-.question-icon {
+.question-icon,
+.authentication-icon {
   width: 32px;
   height: 32px;
 }
@@ -130,7 +132,8 @@ window.dialog {
   list-style-image: url("chrome://global/skin/icons/alert-error.gif");
 }
 
-.question-icon {
+.question-icon,
+.authentication-icon {
   list-style-image: url("chrome://global/skin/icons/alert-question.gif");
 }
 
@@ -148,7 +151,7 @@ iframe {
 
 statusbar {
   margin-top: 3px;
-  min-width: 1px;
+  min-height: 16px;
 }
 
 .statusbar-center {
@@ -184,8 +187,8 @@ statusbarpanel {
   padding: 0px;
 }
 
-.statusbarpanel-iconic {
-  padding: 0px;
+.statusbarpanel-iconic, .statusbarpanel-iconic-text, .statusbarpanel-menu-iconic {
+  padding: 0px 1px 0px 1px;
 }
 
 resizer[dir="bottomright"] {
@@ -198,6 +201,47 @@ resizer[dir="bottomright"] {
   -moz-user-focus: ignore !important;
 }
 
-description.error {
-  color: #FF0000;
+/* :::::: autoscroll popup ::::: */
+
+#autoscroller {
+  height: 28px;
+  width: 28px;
+  border: 0px;
+  margin: -14px;
+  padding: 0px;
+  background-image: url("chrome://global/skin/icons/autoscroll.png");
+  background-color: transparent;
+  -moz-appearance: none;
+}
+
+#autoscroller[scrolldir="NS"] {
+  background-position: left center;
+}
+
+#autoscroller[scrolldir="EW"] {
+  background-position: left bottom;
+}
+
+#autoscroller[transparent="true"] {
+  background-position: center top;
+}
+
+#autoscroller[transparent="true"][scrolldir="NS"] {
+  background-position: center center;
+}
+
+#autoscroller[transparent="true"][scrolldir="EW"] {
+  background-position: center bottom;
+}
+
+#autoscroller[translucent="true"] {
+  background-position: right top;
+}
+
+#autoscroller[translucent="true"][scrolldir="NS"] {
+  background-position: right center;
+}
+
+#autoscroller[translucent="true"][scrolldir="EW"] {
+  background-position: right bottom;
 }
