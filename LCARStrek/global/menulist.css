@@ -35,12 +35,12 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
-
 /* ===== menulist.css ===================================================
   == Styles used by the XUL menulist element.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
 
 /* :::::::::: menulist :::::::::: */
 
@@ -69,13 +69,6 @@ menulist[open="true"] {
   -moz-box-align: center;
   -moz-box-pack: center;
 /*  margin: 1px; */
-}
-
-.menulist-label-box,
-menulist[open="true"]:focus > .menulist-label-box {
-  -moz-border-radius: 3px 0px 0px 3px;
-/*  border: 1px solid transparent; */
-  background-color: transparent;
   color: inherit;
 }
 
@@ -87,6 +80,18 @@ menulist[open="true"]:focus > .menulist-label-box {
   font-style: italic;
   color: #8050B0;
   margin-left: 1ex !important;
+}
+
+menulist:focus > .menulist-label-box {
+/*  border: 1px dotted #008484; */
+  background-color: #008484;
+  color: #000000;
+}
+
+menulist[disabled="true"] {
+  background-color: #000000;
+  color: #8050B0;
+  border: 1px solid #8050B0;
 }
 
 /* ..... dropmarker ..... */
@@ -117,29 +122,19 @@ menulist:hover > .menulist-dropmarker {
   background-color: #FFCF00;
 }
 
-menulist[open="true"] > .menulist-dropmarker,
-menulist:hover:active > .menulist-dropmarker {
+menulist:hover:active > .menulist-dropmarker,
+menulist[open="true"] > .menulist-dropmarker {
   padding: 2px 0px 0px 2px;
   border: none;
   border-left: 1px solid #FFCF00;
   background-color: #FF9F00;
 }
 
-/* ..... focused state ..... */
-
-menulist:focus > .menulist-label-box {
-/*  border: 1px dotted #FF9F00; */
-}
-
-/* ..... disabled state ..... */
-
-menulist[disabled="true"] {
-  background-color: #000000;
-  color: #8050B0;
-  border: 1px solid #8050B0;
-}
-
 /* ::::: editable menulists ::::: */
+
+menulist[editable="true"] {
+  color: #E7ADE7;
+}
 
 .menulist-editable-box {
   background-color: #000000;
@@ -150,8 +145,6 @@ html|*.menulist-editable-input {
   margin: 0px !important;
   border: none !important;
   padding: 0px !important;
-  background-color: #000000;
-  color: #FFCF00;
   font: inherit;
 }
 
@@ -161,14 +154,9 @@ html|*.menulist-editable-input {
   -moz-box-align: center;
   -moz-box-pack: center;
   margin: 0px;
+  color: #E7ADE7;
   border: 1px solid #9C9CFF;
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
-}
-
-.menulist-compact > .menulist-label-box {
-  border: 1px solid transparent;
-  background-color: transparent;
-  color: inherit;
 }
 
 .menulist-compact > .menulist-label-box > .menulist-label {
@@ -177,7 +165,7 @@ html|*.menulist-editable-input {
 }
 
 .menulist-compact > .menulist-label-box > .menulist-icon {
-  margin-left: 2px;
+  -moz-margin-start: 2px;
 }
 
 .menulist-compact[open="true"] {
@@ -195,4 +183,6 @@ html|*.menulist-editable-input {
 
 .menulist-compact:focus > .menulist-label-box {
   border: 1px dotted #008484;
+  background-color: transparent;
+  color: inherit;
 }

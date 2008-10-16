@@ -35,11 +35,11 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== radio.css ===================================================
   == Styles used by the XUL radio element.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: radio ::::: */
 
@@ -66,7 +66,7 @@ radio {
 }
 
 .radio-icon[src] {
-  margin-right: 2px;
+  -moz-margin-end: 2px;
 }
 
 .radio-label {
@@ -82,6 +82,10 @@ radio[focused="true"] > .radio-label-center-box > .radio-label-box {
 /* ..... disabled state ..... */
 
 radio[disabled="true"] > .radio-spacer-box > .radio-check-box1 {
+  background-color: #000000;
+}
+
+radio[disabled="true"] {
   color: #8050B0;
 }
 
@@ -94,7 +98,8 @@ radio[disabled="true"] > .radio-spacer-box > .radio-check-box1 {
   -moz-border-radius: 50%;
   width: 10px;
   height: 10px;
-  background-color: transparent;
+  background-color: #000000;
+  /* background-color: transparent; */
 }
 
 .radio-check-box2 {

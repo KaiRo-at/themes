@@ -14,12 +14,12 @@
  * The Original Code is "Classic" theme of mozilla.org code.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * Håkan Waara
+ * Portions created by the Initial Developer are Copyright (C) 2001
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Hakan Waara (Original Author) 
+ *   Håkan Waara (Original Author)
  *   Robert Kaiser <KaiRo@KaiRo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
@@ -44,8 +44,8 @@ spinbuttons {
 
 .spinbuttons-button {
   -moz-border-radius: 3px;
-  min-width: 11px;
-  min-height: 11px;
+  min-width: 3px;
+  min-height: 3px;
   margin: 0 !important;
   border: none;
   background-color: #000000;

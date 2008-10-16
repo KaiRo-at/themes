@@ -57,7 +57,7 @@ panel[disabled="true"] > .viewer-pane-box-1 {
   color: #000000;
 }
 
-.viewer-menu > .toolbarbutton-box > .toolbarbutton-dropmarker {
+.viewer-menu > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 

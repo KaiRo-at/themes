@@ -39,18 +39,30 @@
 
 .wizard-header {
   border-bottom: 2px groove #9C9CFF;
-  padding: 10px 0px 10px 0px;
   background-color: #E7ADE7;
   color: #000000;
 }
 
+.wizard-header-box-1 {
+  padding: 5px 0px;
+}
+
+wizard[description=""] .wizard-header-description {
+  display: none;
+}
+
 .wizard-header-label {
-  margin-left: 23px;
+  -moz-margin-start: 23px;
   font-weight: bold;
 }
 
 .wizard-header-description {
-  margin-left: 44px;
+  -moz-margin-start: 44px;
+}
+
+wizard[branded="true"] .wizard-header-icon {
+  list-style-image: url("chrome://branding/content/icon48.png");
+  -moz-margin-end: 5px;
 }
 
 .wizard-page-box {
@@ -67,9 +79,9 @@
 
 .wizard-button[wizardbutton="finish"],
 .wizard-button[wizardbutton="next"] {
-  margin-left: -1px !important;
+  -moz-margin-start: -1px !important;
 }
 
 .wizard-button[wizardbutton="back"] {
-  margin-right: 0px !important;
+  -moz-margin-end: 0px !important;
 }

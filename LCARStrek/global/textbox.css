@@ -35,33 +35,27 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@import url("chrome://global/content/autocomplete.css");
-
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
-
 /* ===== textbox.css ==================================================
   == Styles used by the XUL textbox element.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
 
 /* ::::: textbox ::::: */
 
 textbox {
   -moz-border-radius: 3px;
   cursor: text;
-  margin: 1px 3px;
-  border: 2px solid;
-  -moz-border-top-colors: transparent #9C9CFF;
-  -moz-border-right-colors: transparent #9C9CFF;
-  -moz-border-bottom-colors: transparent #9C9CFF;
-  -moz-border-left-colors: transparent #9C9CFF;
+  margin: 2px 3px;
+  border: 1px solid #9C9CFF;
   padding: 1px 0px 1px 2px;
   background-color: #000000;
   color: #E7ADE7;
   min-height: 19px;
 }
 
-html|*.textbox-input, 
+html|*.textbox-input,
 html|*.textbox-textarea {
   -moz-border-radius: 3px;
   margin: 0px !important;
@@ -70,6 +64,10 @@ html|*.textbox-textarea {
   background-color: inherit;
   color: inherit;
   font: inherit;
+}
+
+.textbox-input-box menupopup {
+  cursor: default;
 }
 
 /* ..... readonly state ..... */
@@ -82,30 +80,23 @@ textbox[readonly="true"] {
 /* ..... disabled state ..... */
 
 textbox[disabled="true"] {
-  border: 2px solid;
-  -moz-border-top-colors: transparent #8050B0;
-  -moz-border-right-colors: transparent #8050B0;
-  -moz-border-bottom-colors: transparent #8050B0;
-  -moz-border-left-colors: transparent #8050B0;
+  border: 1px solid #8050B0;
   cursor: default;
   color: #8050B0;
+  border: 1px solid #666699;
 }
 
 /* ..... focused state ..... */
 
 textbox[focused="true"] {
-  -moz-border-top-colors: #008484 #008484;
-  -moz-border-right-colors: #008484 #008484;
-  -moz-border-bottom-colors: #008484 #008484;
-  -moz-border-left-colors: #008484 #008484;
+  border: 1px solid #008484;
+  outline: 1px solid #008484;
   margin: 1px 3px;
 }
 
 textbox[focused="true"][readonly="true"] {
-  -moz-border-top-colors: transparent #8050B0;
-  -moz-border-right-colors: transparent #8050B0;
-  -moz-border-bottom-colors: transparent #8050B0;
-  -moz-border-left-colors: transparent #8050B0;
+  border: 1px solid #8050B0;
+  outline: none;
 }
 
 /* ::::: plain textbox ::::: */
@@ -114,7 +105,38 @@ textbox.plain {
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
+  outline: none !important;
   background-color: inherit !important;
   color: inherit !important;
   min-height: 0px;
+}
+
+/* ::::: search textbox ::::: */
+
+.textbox-search-icon {
+  list-style-image: url("chrome://global/skin/icons/search.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.textbox-search-icon[chromedir="rtl"] {
+  -moz-image-region: rect(16px, 16px, 32px, 0);
+}
+
+.textbox-search-icon[searchbutton]:not([disabled]) {
+  cursor: pointer;
+}
+
+.textbox-search-clear {
+  list-style-image: url("chrome://global/skin/icons/search.png");
+  -moz-image-region: rect(32px, 16px, 48px, 0);
+}
+
+.textbox-search-clear:not([disabled]) {
+  cursor: default;
+}
+
+/* ::::: textboxes inside toolbarpaletteitems ::::: */
+
+toolbarpaletteitem > toolbaritem > textbox > .textbox-input-box > html|*.textbox-input {
+  visibility: hidden;
 }

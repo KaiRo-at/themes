@@ -11,15 +11,17 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is Richlistbox CSS.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * IBM Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 2005-2007
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *   Doron Rosenberg <doronr@us.ibm.com> (original author)
+ *   Simon Bünzli <zeniko@gmail.com>
+ *   Robert kaiser <kairo@kairo.at>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,41 +37,37 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/* ===== progressmeter.css ==============================================
-  == Styles used by the XUL progressmeter element.
-  ======================================================================= */
-
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ::::: progressmeter ::::: */
-
-progressmeter {
+richlistbox {
+  -moz-border-radius: 5px;
+  border: 1px solid #9C9CFF;
   margin: 2px 4px;
-  border: 1px solid #FF9F00;
   background-color: #000000;
-  min-width: 128px;
-  min-height: 15px;
+  color: #FF9F00;
 }
 
-progressmeter[mode="undetermined"] {
-  background-image: url("chrome://global/skin/progressmeter/progressmeter-busy.gif");
+richlistbox[disabled="true"] {
+  border: 1px solid #8050B0;
+  color: #8050B0;
+}
+
+richlistitem[selected="true"] {
   background-color: #008484;
+  color: #000000;
 }
 
-.progress-bar {
-  min-width: 0px;
+richlistbox:focus > richlistitem[selected="true"] {
   background-color: #008484;
+  color: #FFCF00;
 }
 
-.progress-bar[mode="undetermined"],
-.progress-remainder[mode="undetermined"] {
-  visibility: collapse;
+richlistbox[seltype="multiple"]:focus > richlistitem[current="true"] {
+  outline: 1px dotted #FF9F00;
+  -moz-outline-offset: -1px;
 }
 
-/* ::::: statusbar progressmeter ::::: */
-
-.progressmeter-statusbar {
-  margin: 0px 2px 0px 2px;
-  min-width: 96px;
-  min-height: 16px;
+richlistbox[seltype="multiple"]:focus > richlistitem[current="true"][selected="true"] {
+  outline: 1px dotted #FF9F00;
 }
+

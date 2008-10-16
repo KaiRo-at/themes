@@ -35,11 +35,11 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== tabbox.css =================================================
   == Styles used by XUL tab-related elements.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: tabs ::::: */
 
@@ -61,7 +61,6 @@ tabpanels {
   padding: 5px;
   background-color: #000000;
   color: #FF9F00;
-  -moz-user-focus: normal;
 }
 
 /* ::::: tab ::::: */
@@ -97,7 +96,8 @@ tab:hover:active {
 }
 
 tab:focus > .tab-middle {
-  outline: 1px dotted invert;
+  /* Don't specify the outline-color, we should always use initial value. */
+  outline: 1px dotted;
 }
 
 /*

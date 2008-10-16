@@ -43,6 +43,7 @@
 
 textbox[type="number"] {
   padding: 0 !important;
+  border: none;
   cursor: default;
 }
 
@@ -52,5 +53,10 @@ html|*.numberbox-input {
 
 .numberbox-input-box {
   -moz-box-align: center;
+  cursor: text;
+  margin-right: -1px;
+  border: 1px solid #9C9CFF;
+  padding: 1px;
+  background-color: #000000;
+  color: #E7ADE7;
 }
-

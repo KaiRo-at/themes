@@ -37,17 +37,17 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
 /* ===== tree.css =======================================================
   == Styles used by the XUL tree element.
   ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: tree ::::: */
 
 tree {
   -moz-border-radius: 5px;
-  border-spacing: 0px;
+  margin: 0px;
   border: 1px solid #9C9CFF;
   background-color: #000000;
   color: #FF9F00;
@@ -55,7 +55,6 @@ tree {
 
 /* ::::: tree focusring ::::: */
 
-/* deactivated, looks too bad for me in LCARStrek
 .focusring > .tree-stack > .tree-rows > .tree-bodybox {
   border: 1px solid transparent;
 }
@@ -63,7 +62,6 @@ tree {
 .focusring:focus > .tree-stack > .tree-rows > .tree-bodybox {
   border-color: #FFCF00;
 }
-*/
 
 /* ::::: tree rows ::::: */
 
@@ -101,7 +99,10 @@ tree[seltype="text"] > treechildren::-moz-tree-row {
 /* ::::: tree cells ::::: */
 
 treechildren::-moz-tree-cell {
-  padding: 0px 0px 1px 2px;
+  padding-top: 0px;
+  padding-bottom: 1px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell-text,
@@ -176,18 +177,16 @@ treechildren::-moz-tree-line {
   visibility: hidden;
 }
 
-/*
 tree[seltype="cell"] > treechildren::-moz-tree-line,
 tree[seltype="text"] > treechildren::-moz-tree-line,
 treechildren::-moz-tree-line {
-  border: 1px dotted grey;
+  border: 1px dotted #9C9CFF;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-line(active, selected, focus),
 treechildren::-moz-tree-line(selected) {
-  border: 1px dotted black;
+  border: 1px dotted #000000;
 }
-*/
 
 /* ::::: tree separator ::::: */
 
@@ -210,7 +209,7 @@ treechildren::-moz-tree-drop-feedback {
   background-color: #008484;
   width: 50px;
   height: 2px;
-  margin-left: 5px;
+  -moz-margin-start: 5px;
 }
 
 treechildren::-moz-tree-drop-feedback(selected) {
@@ -265,7 +264,7 @@ treecolpicker {
 }
 
 .treecol-image {
-  padding: 1px;
+  padding: 0 1px;
 }
 
 .treecol-text {
@@ -282,7 +281,10 @@ treecol[hideheader="true"] {
 
 treecol:hover:active {
   border: 1px solid #FFCF00;
-  padding: 2px 3px 0px 5px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 5px;
+  -moz-padding-end: 3px;
 }
 
 treecolpicker:hover {
@@ -295,7 +297,10 @@ treecolpicker:hover:active {
 }
 
 .treecol-image:hover:active {
-  padding: 2px 0px 0px 2px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
 }
 
 /* ::::: column drag and drop styles ::::: */
@@ -329,12 +334,12 @@ treechildren::-moz-tree-column(insertafter) {
   width: 8px;  /* The image's width is 7 pixels */
 }
 
-.treecol-sortdirection[sortDirection="ascending"] {
+treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="ascending"] {
   list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
 }
 
-.treecol-sortdirection[sortDirection="descending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-dsc.gif");
+treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="descending"] {
+  list-style-image: url("chrome://global/skin/tree/sort-desc.gif");
 }
 
 /* ::::: column picker :::::  */
@@ -351,7 +356,7 @@ treecolpicker:hover:active > .tree-columnpicker-icon {
 /* ::::: twisty :::::  */
 
 treechildren::-moz-tree-twisty {
-  padding-right: 2px;
+  -moz-padding-end: 2px;
   padding-top: 1px;
   width: 11px; /* The image's width is 11 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
@@ -375,6 +380,41 @@ treechildren.gridlines::-moz-tree-cell {
 
 treechildren.gridlines::-moz-tree-row {
   border: none;
+}
+
+/* ::::: Name (what is that?) ::::: */
+
+treechildren::-moz-tree-image(Name) {
+  -moz-padding-end: 2px;
+}
+
+treechildren::-moz-tree-image(Name) {
+  margin: 0px 1px;
+  list-style-image: url("chrome://global/skin/filepicker/file.gif") !important;
+}
+
+treechildren::-moz-tree-image(Name, container) {
+  list-style-image: url("chrome://global/skin/filepicker/dir-closed.gif") !important;
+}
+
+treechildren::-moz-tree-image(Name, open) {
+  list-style-image: url("chrome://global/skin/filepicker/dir-open.gif") !important;
+}
+
+treechildren::-moz-tree-image(Name, separator) {
+  list-style-image: none;
+  width: 0px !important;
+  height: 0px !important;
+  margin: 0px 0px;
+}
+
+treechildren::-moz-tree-cell-text(Name, separator) {
+  color: #9C9CFF;
+  margin: 0px 3px;
+}
+
+treechildren::-moz-tree-cell-text(Name, separator, selected, focus) {
+  color: #000000;
 }
 
 /* ::::: alternating background ::::: */
@@ -405,8 +445,8 @@ treechildren::-moz-tree-cell-text(selected, editing) {
 }
 
 .tree-input {
-  -moz-appearance: none;
   border: 1px solid #9C9CFF;
-  margin: 0 0 0 -4px;
+  margin: 0;
+  -moz-margin-start: -4px;
   padding: 1px;
 }

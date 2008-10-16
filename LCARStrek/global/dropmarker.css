@@ -19,7 +19,10 @@ dropmarker:hover {
 dropmarker:hover:active,
 dropmarker[open="true"] {
   background-color: #FF9F00;
-  padding: 2px 0 0 2px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
   list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
  -moz-image-region: auto;
 }
