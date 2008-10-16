@@ -54,6 +54,10 @@ textbox {
   min-height: 19px;
 }
 
+textbox[empty="true"] {
+  color: #CCD0DD;
+}
+
 html|*.textbox-input,
 html|*.textbox-textarea {
   margin: 0px !important;
