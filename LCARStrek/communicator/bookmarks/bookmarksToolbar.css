@@ -120,7 +120,7 @@ menu.bookmark-item,
 menuitem.bookmark-item {
   border-top: 1px solid transparent !important;
   border-bottom: 1px solid transparent !important;
-  padding: 0px 2px 0px 2px;
+  padding: 0px 2px;
 }
 
 .menuitem-iconic.bookmark-item[disabled="true"] {
@@ -135,7 +135,7 @@ menuitem.bookmark-item {
 
 menu.bookmark-item[dragover-top="true"],
 menuitem.bookmark-item[dragover-top="true"] {
-  border-top: 1px solid #008484; !important;
+  border-top: 1px solid #008484 !important;
 }
 
 menu.bookmark-item[dragover-bottom="true"],

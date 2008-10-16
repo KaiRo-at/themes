@@ -135,6 +135,7 @@
 /* ::::: msg header message ids ::::: */
 
 .messageIdDisplayButton {
+  -moz-border-radius: 3px;
   color: #008484;
   cursor: pointer;
   margin: 0px;

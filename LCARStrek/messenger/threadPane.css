@@ -51,6 +51,7 @@ treechildren::-moz-tree-cell-text(read) {
 
 treechildren::-moz-tree-cell-text(unread) {
   font-weight: bold;
+  color: #FFCF00;
 }
 
 treechildren::-moz-tree-cell-text(imapdeleted) {
@@ -62,6 +63,7 @@ treechildren::-moz-tree-cell-text(imapdeleted) {
  */
 treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
   text-decoration: underline;
+  color: #FFCF00;
 }
 
 /* ::::: priority colors ::::: */

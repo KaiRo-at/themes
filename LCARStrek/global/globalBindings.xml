@@ -52,7 +52,7 @@
   </binding>
 
 
-  <binding id="statusbar" extends="xul:statusbar">
+  <binding id="statusbar" extends="chrome://global/content/bindings/general.xml#statusbar">
     <content>
       <xul:box class="statusbar-left"/>
       <xul:hbox class="statusbar-center" autostretch="never" flex="1">
