@@ -150,6 +150,10 @@
   list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
 }
 
+#MsgHeadersToolbar {
+  min-height: 0px; /* this undoes the min-height in toolbar.css */
+}
+
 /* ::::: autocomplete icons ::::: */
 
 treechildren::-moz-tree-cell-text(default-match) {
@@ -194,7 +198,7 @@ treechildren::-moz-tree-image(remote-err) {
 }
 
 #msgSubject {
-  margin-right: -1px;
+  margin-right: 0px;
 }
 
 #attachmentBucket {

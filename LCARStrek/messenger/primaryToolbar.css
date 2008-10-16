@@ -123,6 +123,24 @@
   list-style-image: url("chrome://messenger/skin/toolbar/file-disabled.gif") !important;
 }
 
+#button-goback {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(42px 25px 63px 0px);
+}
+
+#button-goback[disabled="true"] {
+  -moz-image-region: rect(42px 50px 63px 25px) !important;
+}
+
+#button-goforward {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(63px 25px 84px 0px);
+}
+
+#button-goforward[disabled="true"] {
+  -moz-image-region: rect(63px 50px 84px 25px) !important;
+}
+
 #button-next {
   list-style-image: url("chrome://messenger/skin/toolbar/next.gif");
 }
@@ -164,30 +182,32 @@
 }
 
 #button-print {
-  list-style-image: url("chrome://global/skin/icons/print.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
 }
 
 #button-print:hover,
 #button-print:hover:active,
 #button-print[open="true"] {
-  list-style-image: url("chrome://global/skin/icons/print-hover.gif");
+  -moz-image-region: rect(0px 75px 21px 50px);
 }
 
 #button-print[disabled="true"] {
-  list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
+  -moz-image-region: rect(0px 50px 21px 25px) !important;
 }
 
 #button-stop {
-  list-style-image: url("chrome://global/skin/icons/stop.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(21px 25px 42px 0px);
 }
 
 #button-stop:hover,
 #button-stop:hover:active {
-  list-style-image: url("chrome://global/skin/icons/stop-hover.gif");
+  -moz-image-region: rect(21px 75px 42px 50px);
 }
 
 #button-stop[disabled="true"] {
-  list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
+  -moz-image-region: rect(21px 50px 42px 25px) !important;
 }
 
 #button-junk {

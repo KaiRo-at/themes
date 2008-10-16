@@ -96,7 +96,7 @@ separator.thin {
   color: #008484;
   padding: 0px 5px 0px 5px;
   -moz-border-radius: 3px;
-  text-decoration: normal;
+  text-decoration: none;
 }
 
 .acctCentralLinkText:hover {
