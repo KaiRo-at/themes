@@ -128,6 +128,12 @@
   -moz-image-region: rect(42px 25px 63px 0px);
 }
 
+#button-goback:hover,
+#button-goback:hover:active,
+#button-goback[open="true"] {
+  -moz-image-region: rect(42px 75px 63px 50px);
+}
+
 #button-goback[disabled="true"] {
   -moz-image-region: rect(42px 50px 63px 25px) !important;
 }
@@ -135,6 +141,12 @@
 #button-goforward {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
   -moz-image-region: rect(63px 25px 84px 0px);
+}
+
+#button-goforward:hover,
+#button-goforward:hover:active,
+#button-goforward[open="true"] {
+  -moz-image-region: rect(63px 75px 84px 50px);
 }
 
 #button-goforward[disabled="true"] {
