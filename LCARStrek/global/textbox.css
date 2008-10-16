@@ -46,6 +46,7 @@
 
 textbox {
   -moz-border-radius: 3px;
+  -moz-outline-radius: 3px;
   cursor: text;
   margin: 2px 3px;
   border: 1px solid #9C9CFF;
@@ -95,7 +96,6 @@ textbox[disabled="true"] {
 textbox[focused="true"] {
   border: 1px solid #008484;
   outline: 1px solid #008484;
-  margin: 1px 3px;
 }
 
 textbox[focused="true"][readonly="true"] {

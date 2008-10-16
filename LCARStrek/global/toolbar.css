@@ -66,10 +66,11 @@ toolbar#toolbar-menubar > .toolbar-holder {
   background-color: #6000CF;
 }
 
-/* ::::: toolbargrippy ::::: */
+/* ::::: toolbargrippy, startcap (LCARStrek specific) ::::: */
 
 toolbargrippy,
-toolbar > .toolbar-begcap {
+toolbar > .toolbar-startcap,
+menubar > .menubar-startcap {
   -moz-border-radius: 8px 0px 0px 8px;
   -moz-box-orient: vertical;
   -moz-box-align: center;

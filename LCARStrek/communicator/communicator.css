@@ -47,8 +47,24 @@
    == Styles shared everywhere throughout the Communicator suite.
    ========================================================================== */
 
+toolbar {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#grippytoolbar");
+}
+
+menubar {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#grippymenubar");
+}
+
 .toolbar-primary {
-  -moz-binding: url("chrome://communicator/content/bindings/toolbar.xml#grippytoolbar-primary");
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#grippytoolbar-primary");
+}
+
+toolbar[xpfe="false"] {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar");
+}
+
+menubar[xpfe="false"] {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#menubar");
 }
 
 /* ::::: autocomplete ::::: */
