@@ -88,11 +88,11 @@ tab[selected="true"] {
 tab:hover {
   background-color: #FFCF00;
   color: #000000;
-  text-decoration: underline;
 }
 
 tab:hover:active {
-  text-decoration: none;
+  background-color: #FF9F00;
+  color: #000000;
 }
 
 tab:focus > .tab-middle {

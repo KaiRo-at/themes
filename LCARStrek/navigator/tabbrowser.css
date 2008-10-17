@@ -38,7 +38,6 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 .tabbrowser-strip {
-  padding-bottom: 1px;
   border-bottom: 1px solid #FF9F00;
 }
 
@@ -85,6 +84,11 @@ tabbrowser > tabbox > tabpanels {
 
 .tabs-closebutton > .toolbarbutton-icon {
   margin: 0;
+}
+
+.tabs-closebutton:hover,
+.tabs-closebutton:hover:active {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
 }
 
 .tabs-newbutton {

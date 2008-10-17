@@ -427,12 +427,12 @@ treechildren[alternatingbackground="true"]::-moz-tree-row(odd) {
 }
 
 treechildren[alternatingbackground="true"]::-moz-tree-row(odd, selected) {
-  background-color: #E7ADE7;
+  background-color: #008484;
   color: #000000;
 }
 
 treechildren[alternatingbackground="true"]::-moz-tree-row(odd, selected, focus) {
-  background-color: #E7ADE7;
+  background-color: #008484;
   color: #000000;
 }
 
