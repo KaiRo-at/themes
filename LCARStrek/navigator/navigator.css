@@ -279,6 +279,15 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   margin-right: 4px;
 }
 
+.autocomplete-history-dropmarker:hover {
+  background-color: #FFCF00;
+}
+
+.autocomplete-history-dropmarker:hover:active,
+.autocomplete-history-dropmarker[open="true"] {
+  background-color: #FF9F00;
+}
+
 /* ::::: go and searchbuttons ::::: */
 
 #search-button,
