@@ -85,11 +85,3 @@
 #component-bar {
   -moz-box-align: stretch;
 }
-
-/* ::::: cookie button ::::: */
-
-#mini-cookie {
-  background-color: transparent;
-  padding: 1px;
-  
-}

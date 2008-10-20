@@ -46,7 +46,7 @@
 
 textbox {
   -moz-border-radius: 3px;
-  -moz-outline-radius: 3px;
+  -moz-outline-radius: 5px;
   cursor: text;
   margin: 2px 3px;
   border: 1px solid #9C9CFF;

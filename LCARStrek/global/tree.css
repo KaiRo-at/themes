@@ -258,7 +258,16 @@ treecol {
   padding: 1px 4px;
 }
 
+treecol:first-child {
+  -moz-border-radius-topleft: 3px;
+}
+
+treecol:last-child {
+  -moz-border-radius-topright: 3px;
+}
+
 treecolpicker {
+  -moz-border-radius-topright: 3px;
   -moz-box-align: center;
   -moz-box-pack: center;
   border: 1px solid transparent;

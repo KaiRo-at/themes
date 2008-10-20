@@ -45,6 +45,7 @@
 
 toolbox {
   background-color: #000000;
+  color: #FF9F00;
 }
 
 /* ::::: toolbar & menubar ::::: */
@@ -53,24 +54,27 @@ toolbar,
 menubar {
   border-bottom: 3px solid #000000;
   background-color: #000000;
+  color: #FF9F00;
   min-width: 1px;
 }
 
 /* toolbar-holder is the body of the main part of a toolbar */
-toolbar > .toolbar-holder {
+.toolbar-holder {
   background-color: #9C9CFF;
+  color: #000000;
 }
 
-menubar > .toolbar-holder,
-toolbar#toolbar-menubar > .toolbar-holder {
+menubar > .toolbar-box > .toolbar-holder,
+toolbar#toolbar-menubar > .toolbar-box > .toolbar-holder {
   background-color: #6000CF;
+  color: #FF9F00;
 }
 
 /* ::::: toolbargrippy, startcap (LCARStrek specific) ::::: */
 
 toolbargrippy,
-toolbar > .toolbar-startcap,
-menubar > .menubar-startcap {
+.toolbar-startcap,
+.menubar-startcap {
   -moz-border-radius: 8px 0px 0px 8px;
   -moz-box-orient: vertical;
   -moz-box-align: center;
@@ -78,7 +82,7 @@ menubar > .menubar-startcap {
   border: none;
   border-right: 3px solid black;
   width: 15px;
-  min-height: 16px;
+  /*min-height: 16px;*/
 }
 
 toolbargrippy:hover {
@@ -87,16 +91,8 @@ toolbargrippy:hover {
 
 /* ::::: endcap (LCARStrek specific) ::::: */
 
-toolbar > .toolbar-endcap {
-  -moz-border-radius: 0px 8px 8px 0px;
-  background-color: #FF9F00;
-  border: none;
-  border-left: 3px solid black;
-  width: 15px;
-  min-height: 16px;
-}
-
-menubar > .menubar-endcap {
+.toolbar-endcap,
+.menubar-endcap {
   -moz-border-radius: 0px 8px 8px 0px;
   background-color: #FF9F00;
   border: none;

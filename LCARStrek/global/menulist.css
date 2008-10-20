@@ -180,9 +180,3 @@ html|*.menulist-editable-input {
 .menulist-compact[disabled="true"] {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
 }
-
-.menulist-compact:focus > .menulist-label-box {
-  border: 1px dotted #008484;
-  background-color: transparent;
-  color: inherit;
-}

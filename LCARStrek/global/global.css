@@ -162,7 +162,7 @@ statusbar {
   background-color: #8050B0;
   padding-left: 2px;
   color: #000000;
-  -moz-box-align: center;
+  -moz-box-align: stretch;
 }
 
 .statusbar-left {

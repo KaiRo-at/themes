@@ -71,8 +71,9 @@ menuitem[_moz-menuactive="true"][disabled="true"] {
 }
 
 menubar > menu {
-  padding: 2px 0px 2px 3px;
-  margin: 0px 0px 0px 2px;
+  padding: 2px;
+  margin: 0px;
+  -moz-margin-start: 2px;
   border: none;
 }
 

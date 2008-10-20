@@ -43,18 +43,18 @@
 
 /* ::::: primary toolbar ::::: */
 
-.toolbar-primary > .toolbar-holder {
+.toolbar-primary > .toolbar-box > .toolbar-holder {
   background-color: #FF9F00;
 }
 
-.toolbar-primary > .toolbar-endcap {
+.toolbar-primary > .toolbar-box > .toolbar-endcap {
   background-color: #9C9CFF;
 }
 
-.toolbar-primary > toolbargrippy {
+.toolbar-primary > .toolbar-box > toolbargrippy {
   background-color: #9C9CFF;
 }
 
-.toolbar-primary > toolbargrippy:hover {
+.toolbar-primary > .toolbar-box > toolbargrippy:hover {
   background-color: #FFCF00;
 }
