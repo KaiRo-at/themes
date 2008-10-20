@@ -124,6 +124,10 @@ html|*.menulist-editable-input {
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
+.menulist-compact > .menulist-label-box {
+  border: 1px solid transparent;
+}
+
 .menulist-compact > .menulist-label-box > .menulist-label {
   margin: 0 3px !important;
   text-align: right;

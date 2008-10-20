@@ -141,7 +141,7 @@ statusbar {
 statusbarpanel {
   -moz-box-align: center;
   -moz-box-pack: center;
-  padding: 0px 1px 0px 1px;
+  padding: 0px 1px;
 }
 
 
