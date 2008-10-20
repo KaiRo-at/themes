@@ -55,4 +55,4 @@ fi
 zip -rX9Dq $XPI_FILE *
 
 echo cleaning work directory...
-rm -rf $WORK_DIR/*
+rm -rf $WORK_DIR
