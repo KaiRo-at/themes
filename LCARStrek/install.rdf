@@ -2,20 +2,29 @@
 
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
   <Description about="urn:mozilla:install-manifest">
     <em:id>LCARStrek@kairo.at</em:id>
-    <em:version>2.0a1</em:version>
+    <em:version>2.0a2pre</em:version>
+
+    <!-- SeaMonkey -->
     <em:targetApplication>
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
-	<em:minVersion>2.0a1pre</em:minVersion>
-	<em:maxVersion>2.0a2pre</em:maxVersion>
+        <em:minVersion>2.0a2pre</em:minVersion>
+        <em:maxVersion>2.0a2pre</em:maxVersion>
       </Description>
     </em:targetApplication>
+
+    <!-- Front End MetaData -->
     <em:name>LCARStrek</em:name>
     <em:description>This one is a Star Trek theme, using the LCARS interface known of Federation Star Ships (heavily used in The Next Generation and Voyager series). It's got lot of rounded borders and hover (mouse-over) effects, be aware that it may look and feel quite unusual or strange for you, but keep in mind that this is an interface design which was not originally designed for the 21st but the 24th century...</em:description>
+
+    <!-- Front End Integration Hooks (used by Theme Manager)-->
     <em:creator>Robert Kaiser (KaiRo) - kairo@kairo.at</em:creator>
+    <em:contributor>Robert Kaiser (KaiRo) - kairo@kairo.at</em:contributor>
     <em:homepageURL>http://www.kairo.at/download/mozskins</em:homepageURL>
+
     <!--em:updateURL--> <!--/em:updateURL-->
     <!--em:aboutURL--> <!--/em:aboutURL-->
     <em:internalName>LCARStrek</em:internalName>
