@@ -4,6 +4,7 @@
 }
 
 #extensionsView {
+  -moz-appearance: none;
   -moz-border-radius: 3px;
   border: 1px solid #9C9CFF;
   margin: 0;
@@ -348,7 +349,7 @@ vbox[typeName="status"][type="header-recommended"] {
 .viewSelector {
   border-bottom: 1px solid #9C9CFF;
   margin: 0px;
-  margin-bottom: 3px;
+  padding-bottom: 3px;
   -moz-padding-start: 10px;
   background-color: #000000;
   color: #FF9F00;

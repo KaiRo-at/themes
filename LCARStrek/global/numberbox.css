@@ -52,11 +52,33 @@ html|*.numberbox-input {
 }
 
 .numberbox-input-box {
+  -moz-border-radius: 3px 0px 0px 3px;
   -moz-box-align: center;
   cursor: text;
-  margin-right: -1px;
   border: 1px solid #9C9CFF;
+  border-right-width: 0px;
   padding: 1px;
   background-color: #000000;
   color: #E7ADE7;
+}
+
+textbox[type="number"] > spinbuttons {
+  -moz-border-radius: 0px 3px 3px 0px;
+  border: 1px solid #9C9CFF;
+  border-left-width: 0px;
+}
+
+
+textbox[type="number"][focused="true"] > .numberbox-input-box,
+textbox[type="number"][focused="true"] > spinbuttons {
+  border-color: #008484;
+}
+
+textbox[type="number"][readonly="true"] > .numberbox-input-box,
+textbox[type="number"][readonly="true"] > spinbuttons,
+textbox[type="number"][readonly="true"][focused="true"] > .numberbox-input-box,
+textbox[type="number"][readonly="true"][focused="true"] > spinbuttons,
+textbox[type="number"][disabled="true"] > .numberbox-input-box,
+textbox[type="number"][disabled="true"] > spinbuttons {
+  border-color: #8050B0;
 }

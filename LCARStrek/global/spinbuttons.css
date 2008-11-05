@@ -44,8 +44,8 @@ spinbuttons {
 
 .spinbuttons-button {
   -moz-border-radius: 3px;
-  min-width: 3px;
-  min-height: 3px;
+  min-width: 9px;
+  min-height: 9px;
   margin: 0 !important;
   border: none;
   background-color: #000000;
@@ -62,6 +62,7 @@ spinbuttons {
   padding: 0 !important;
 }
 
+.spinbuttons-button:hover,
 .spinbuttons-button:hover:active {
   background-color: #FFCF00;
 }
@@ -76,6 +77,7 @@ spinbuttons {
   background-repeat: no-repeat;
 }
 
+.spinbuttons-up:hover,
 .spinbuttons-up:hover:active {
   background-image: url("chrome://global/skin/arrow/arrow-up-hover.gif");
 }
@@ -90,6 +92,7 @@ spinbuttons {
   background-repeat: no-repeat;
 }
 
+.spinbuttons-down:hover,
 .spinbuttons-down:hover:active {
   background-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
