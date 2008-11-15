@@ -128,40 +128,10 @@
   list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
 }
 
-/* Hides text below the above buttons */
-/*
-.toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-text,
-.toolbarbutton-1 > .toolbarbutton-text {
-  display: none;
-}
-*/
-
-#fullscreen-exit-button {
-  list-style-image: none;
-}
-
-#fullscreen-exit-button > .toolbarbutton-text {
-/*   display: normal; */
-}
-
 /* ::::: small primary toolbar buttons ::::: */
 
-.toolbarbutton-text[toolbarmode="small"] {
-  display: none;
-}
-
-.toolbarbutton-icon[toolbarmode="small"] {
-  display: inline;
-}
-
-#nav-bar[mode="text"] > #nav-bar-inner,
-#nav-bar[mode="icons"] > #nav-bar-inner,
-#nav-bar[toolbarmode="small"] > #nav-bar-inner {
-  margin: 2px 0px 2px 6px;
-}
-
-toolbar[toolbarmode="small"] > toolbargrippy {
-/*  display: none; */
+#nav-bar[inFullscreen="true"] .toolbar-grippy {
+  /* display: none; */
 }
 
 /* ::::: fullscreen window controls ::::: */
@@ -174,6 +144,10 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 #window-controls > toolbarbutton {
   padding: 2px 0px 2px 2px;
+}
+
+toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
+  display: -moz-box;
 }
 
 #minimize-button {
@@ -309,6 +283,13 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   font-weight: bold;
 }
 
+/*
+toolbar[mode="text"] #search-button > .button-box > .button-icon,
+toolbar[mode="icons"] #search-button > .button-box > .button-text {
+  display: none;
+}
+*/
+
 /* ::::: throbber ::::: */
 
 #throbber-box {
@@ -360,8 +341,22 @@ toolbar[toolbarmode="small"] > toolbargrippy {
   list-style-image: url("chrome://navigator/skin/icons/chevron-hover.gif") !important;
 }
 
-#bookmarks-chevron > .toolbarbutton-menu-dropmarker {
+toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
   display: none;
+}
+
+toolbarbutton.chevron > .toolbarbutton-text {
+  display: none; /* hide chevron label which has a width even if blank */
+}
+
+toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
+  display: -moz-box; /* display chevron icon in text mode */
+}
+
+/* Prevent [mode="icons"|"text"] from hiding the label and icon */
+#bookmarks-ptf .bookmark-item > .toolbarbutton-text,
+#bookmarks-ptf .bookmark-item > .toolbarbutton-icon {
+  display: -moz-box !important;
 }
 
 /* ::::: feeds ::::: */
@@ -386,4 +381,19 @@ toolbar[toolbarmode="small"] > toolbargrippy {
 
 #feedsButton:hover:active {
   -moz-image-region: rect(48px 32px 64px 16px);
+}
+
+/* ::::: home button on the personal toolbar ::::: */
+
+#PersonalToolbar[iconsize="small"] > #home-button > .toolbarbutton-icon {
+  /* width: 16px;
+  height: 16px; */
+}
+
+#PersonalToolbar > #home-button {
+  cursor: pointer;
+}
+
+#PersonalToolbar > #home-button[disabled="true"] {
+  cursor: default !important;
 }
