@@ -62,12 +62,6 @@ tooltip {
   max-width: 40em;
 }
 
-.tooltip-label {
-  border: 0px;
-  padding: 0px;
-  margin: 0px !important;
-}
-
 tooltip[titletip="true"] {
   /* See bug 32157 comment 128
    * margin: -2px 0px 0px -3px;

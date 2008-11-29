@@ -62,7 +62,7 @@ richlistbox:focus > richlistitem[selected="true"] {
 
 richlistbox[seltype="multiple"]:focus > richlistitem[current="true"] {
   outline: 1px dotted #666699;
-  -moz-outline-offset: -1px;
+  outline-offset: -1px;
 }
 
 richlistbox[seltype="multiple"]:focus > richlistitem[current="true"][selected="true"] {

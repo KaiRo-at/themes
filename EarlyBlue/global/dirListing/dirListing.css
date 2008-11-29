@@ -103,7 +103,7 @@ th:hover > a {
 
 tbody > tr:hover {
   outline: 1px solid #808080;
-  -moz-outline-radius: .3em;
+  outline-radius: .3em;
 }
 
 /* let 'Size' and 'Last Modified' take only as much space as they need and 'Name' all the rest */
