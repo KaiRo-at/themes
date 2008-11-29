@@ -111,7 +111,7 @@ toolbargrippy[tbgrippy-collapsed="true"] {
   /* height gets set to the width of the uncollapsed grippy by default
      so use !important to force all to the same smaller height */
   height: 10px !important;
-  min-height: 11px;
+  min-height: 10px;
 }
 
 .collapsed-tray-spacer {
