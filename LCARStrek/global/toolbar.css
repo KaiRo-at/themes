@@ -82,7 +82,7 @@ toolbargrippy,
   border: none;
   border-right: 3px solid black;
   width: 15px;
-  /*min-height: 16px;*/
+  min-height: 16px;
 }
 
 toolbargrippy:hover {
@@ -105,10 +105,13 @@ toolbargrippy:hover {
 
 toolbargrippy[tbgrippy-collapsed="true"] {
   -moz-box-orient: horizontal;
-  -moz-border-radius: 5px 0px 0px 5px;
+  -moz-border-radius: 4px 0px 0px 4px;
   margin-bottom: 3px;
   width: 30px;
-  height: 10px;
+  /* height gets set to the width of the uncollapsed grippy by default
+     so use !important to force all to the same smaller height */
+  height: 10px !important;
+  min-height: 11px;
 }
 
 .collapsed-tray-spacer {
