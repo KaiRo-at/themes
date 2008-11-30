@@ -62,6 +62,7 @@ menubar {
 .toolbar-holder {
   background-color: #9C9CFF;
   color: #000000;
+  -moz-padding-end: 2px;
 }
 
 menubar > .toolbar-box > .toolbar-holder,

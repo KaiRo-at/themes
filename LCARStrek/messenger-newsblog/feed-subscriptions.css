@@ -1,4 +1,5 @@
-/* ***** BEGIN LICENSE BLOCK *****
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
+ * ***** BEGIN LICENSE BLOCK *****
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
@@ -11,15 +12,15 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is Thunderbird RSS Subscription CSS
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * The Mozilla Foundation.
+ * Portions created by the Initial Developer are Copyright (C) 2005
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *   Scott MacGregor <mscott@mozilla.org>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -33,37 +34,34 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
- * ***** END LICENSE BLOCK ***** */
+ * ***** END LICENSE BLOCK ****** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* ::::: Feed Subscription UI icons :::::: */
 
-#navigator-throbber {
-  -moz-binding: url("chrome://global/content/bindings/button.xml#button-image");
-  -moz-user-focus: ignore;
-  /*-moz-box-align: center;
-  -moz-box-pack: center; */
-  margin: 0;
-  border: none;
-  padding: 2px;
-  min-width: 0;
-  list-style-image: url("chrome://communicator/skin/brand/throbber-single.gif");
+#contentPane {
+  padding: 14px;
 }
 
-#navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://communicator/skin/brand/throbber-anim.gif");
+#subscriptionChildren::-moz-tree-image(folderNameCol) {
+  margin-right: 2px;
+  list-style-image: url("chrome://messenger/skin/icons/folder-newsgroup.png");
 }
 
-window[chromehidden~="toolbar"] #navigator-throbber,
-toolbar[mode="text"] #navigator-throbber,
-toolbar[mode="icons"] #navigator-throbber,
-toolbar[iconsize="small"] #navigator-throbber {
-  padding: 1px;
-  list-style-image: url("chrome://communicator/skin/brand/throbber16-single.gif");
+#subscriptionChildren::-moz-tree-image(folderNameCol, container) {
+  list-style-image: url("chrome://messenger/skin/icons/folder-closed.png");
 }
 
-window[chromehidden~="toolbar"] #navigator-throbber[busy="true"],
-toolbar[mode="text"] #navigator-throbber[busy="true"],
-toolbar[mode="icons"] #navigator-throbber[busy="true"],
-toolbar[iconsize="small"] #navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.gif");
+#subscriptionChildren::-moz-tree-image(folderNameCol, container, open) {
+  list-style-image: url("chrome://messenger/skin/icons/folder-open.png");
+}
+
+#rssFeedInfoBox {
+  border: 1px solid #9C9CFF;
+  -moz-border-radius: 0px;
+  margin: 4px;
+  padding: 0px;
+}
+
+#backgroundBox {
+  background-color: #000000;
 }
