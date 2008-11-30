@@ -273,7 +273,7 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 #search-button,
 #go-button {
   margin: 0;
-  padding: 2px 0;
+  padding: 1px 0;
   -moz-margin-start: 2px;
   font-weight: bold;
   background-color: #000000;
@@ -349,7 +349,6 @@ toolbar[mode="icons"] #search-button > .button-box > .button-text {
 
 toolbarbutton.chevron {
   list-style-image: url("chrome://navigator/skin/icons/chevron.gif") !important;
-  margin-right: 2px;
 }
 
 toolbarbutton.chevron:hover,
