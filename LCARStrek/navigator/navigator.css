@@ -139,12 +139,15 @@
 
 #window-controls {
   -moz-box-align: center;
-  padding: 0 3px 0 1px;
+  padding: 0 1px;
   border-left: 3px solid #000000;
+  -moz-margin-start: 2px;
 }
 
 #window-controls > toolbarbutton {
-  padding: 2px 0px 2px 2px;
+  padding: 3px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 1px;
 }
 
 toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
