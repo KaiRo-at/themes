@@ -1,6 +1,7 @@
 skin global LCARStrek global/
 skin mozapps LCARStrek mozapps/
 skin messenger LCARStrek messenger/
+skin messenger-newsblog LCARStrek messenger-newsblog/
 skin communicator LCARStrek communicator/
 skin help LCARStrek help/
 skin navigator LCARStrek navigator/

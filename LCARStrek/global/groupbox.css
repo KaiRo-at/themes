@@ -61,3 +61,10 @@ caption {
   background-color: #9C9CFF;
   color: #000000;
 }
+
+.caption-text {
+  margin-top: 0;
+  margin-bottom: 0;
+  -moz-margin-start: 1px;
+  -moz-margin-end: 2px;
+}

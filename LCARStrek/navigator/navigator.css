@@ -53,14 +53,14 @@
   -moz-image-region: rect(42px 25px 63px 0px);
 }
 
-#back-button:hover,
-#back-button:hover:active,
-#back-button[open="true"] {
-  -moz-image-region: rect(42px 72px 63px 50px);
+#back-button[disabled="true"] {
+  -moz-image-region: rect(42px 50px 63px 25px);
 }
 
-#back-button[disabled="true"] {
-  -moz-image-region: rect(42px 50px 63px 25px) !important;
+#back-button:not([disabled="true"]):hover,
+#back-button:not([disabled="true"]):hover:active,
+#back-button[open="true"] {
+  -moz-image-region: rect(42px 75px 63px 50px);
 }
 
 #forward-button {
@@ -68,27 +68,28 @@
   -moz-image-region: rect(63px 25px 84px 0px);
 }
 
-#forward-button:hover,
-#forward-button:hover:active,
+#forward-button[disabled="true"] {
+  -moz-image-region: rect(63px 50px 84px 25px);
+}
+
+#forward-button:not([disabled="true"]):hover,
+#forward-button:not([disabled="true"]):hover:active,
 #forward-button[open="true"] {
   -moz-image-region: rect(63px 75px 84px 50px);
 }
 
-#forward-button[disabled="true"] {
-  -moz-image-region: rect(63px 50px 84px 25px) !important;
-}
-
 #reload-button {
-  list-style-image: url("chrome://navigator/skin/icons/reload.gif");
-}
-
-#reload-button:hover,
-#reload-button:hover:active {
-  list-style-image: url("chrome://navigator/skin/icons/reload-hover.gif");
+  list-style-image: url("chrome://navigator/skin/icons/navigatoricons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
 }
 
 #reload-button[disabled="true"] {
-  list-style-image: url("chrome://navigator/skin/icons/reload-disabled.gif") !important;
+  -moz-image-region: rect(0px 50px 21px 25px);
+}
+
+#reload-button:not([disabled="true"]):hover,
+#reload-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(0px 75px 21px 50px);
 }
 
 #stop-button {
@@ -96,13 +97,13 @@
   -moz-image-region: rect(21px 25px 42px 0px);
 }
 
-#stop-button:hover,
-#stop-button:hover:active {
-  -moz-image-region: rect(21px 75px 42px 50px);
+#stop-button[disabled="true"] {
+  -moz-image-region: rect(21px 50px 42px 25px);
 }
 
-#stop-button[disabled="true"] {
-  -moz-image-region: rect(21px 50px 42px 25px) !important;
+#stop-button:not([disabled="true"]):hover,
+#stop-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(21px 75px 42px 50px);
 }
 
 #print-button {
@@ -110,14 +111,14 @@
   -moz-image-region: rect(0px 25px 21px 0px);
 }
 
-#print-button:hover,
-#print-button:hover:active,
-#print-button[open="true"] {
-  -moz-image-region: rect(0px 75px 21px 50px);
+#print-button[disabled="true"] {
+  -moz-image-region: rect(0px 50px 21px 25px);
 }
 
-#print-button[disabled="true"] {
-  -moz-image-region: rect(0px 50px 21px 25px) !important;
+#print-button:not([disabled="true"]):hover,
+#print-button:not([disabled="true"]):hover:active,
+#print-button[open="true"] {
+  -moz-image-region: rect(0px 75px 21px 50px);
 }
 
 #clear-button {
@@ -177,17 +178,21 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 /* ::::: nav-bar-inner ::::: */
 
 #nav-bar-inner {
-  padding-left: 0px;
+  -moz-padding-start: 1px;
+  -moz-padding-end: 1px;
   min-width: 0px;
-  margin: 6px 4px 7px 4px;
+  /*margin: 0px 4px; */
+  -moz-box-align: center;
 }
 
 #urlbar {
   -moz-border-radius: 5px;
-  outline: none;
+  /*outline: none;
   border: 1px solid #9C9CFF;
-  background-color: #000000;
-  margin: 0px 7px 0px 0px;
+  background-color: #000000; */
+  margin: 0;
+  -moz-margin-start: 3px;
+  padding: 1px 0;
 }
 
 #urlbar[level="high"] > .autocomplete-textbox-container,
@@ -267,8 +272,9 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 
 #search-button,
 #go-button {
-  margin: 1px 3px 1px 0px;
-/*  min-height: 25px; */
+  margin: 0;
+  padding: 2px 0;
+  -moz-margin-start: 2px;
   font-weight: bold;
   background-color: #000000;
 }
@@ -328,16 +334,26 @@ toolbar[mode="icons"] #search-button > .button-box > .button-text {
 }
 
 #home-button {
-  list-style-image: url("chrome://communicator/skin/bookmarks/home.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(84px 25px 105px 0px);
 }
 
-#bookmarks-chevron {
+#home-button[disabled="true"] {
+  -moz-image-region: rect(84px 50px 105px 25px);
+}
+
+#home-button:not([disabled="true"]):hover,
+#home-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(84px 75px 105px 50px);
+}
+
+toolbarbutton.chevron {
   list-style-image: url("chrome://navigator/skin/icons/chevron.gif") !important;
   margin-right: 2px;
 }
 
-#bookmarks-chevron:hover,
-#bookmarks-chevron[open="true"] {
+toolbarbutton.chevron:hover,
+toolbarbutton.chevron[open="true"] {
   list-style-image: url("chrome://navigator/skin/icons/chevron-hover.gif") !important;
 }
 
@@ -385,6 +401,90 @@ toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
 
 #urlbar-icons {
   -moz-margin-end: 2px;
+}
+
+toolbar[iconsize="small"] > #back-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(32px 16px 48px 0);
+}
+
+toolbar[iconsize="small"] > #back-button[disabled="true"] {
+  -moz-image-region: rect(32px 32px 48px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #back-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #back-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(32px 48px 48px 32px);
+}
+
+toolbar[iconsize="small"] > #forward-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(48px 16px 64px 0);
+}
+
+toolbar[iconsize="small"] > #forward-button[disabled="true"] {
+  -moz-image-region: rect(48px 32px 64px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #forward-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #forward-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(48px 48px 64px 32px);
+}
+
+toolbar[iconsize="small"] > #reload-button {
+  list-style-image: url("chrome://navigator/skin/icons/navigatoricons-small.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+toolbar[iconsize="small"] > #reload-button[disabled="true"] {
+  -moz-image-region: rect(0 32px 16px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #reload-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #reload-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(0 48px 16px 32px);
+}
+
+toolbar[iconsize="small"] > #stop-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(16px 16px 32px 0);
+}
+
+toolbar[iconsize="small"] > #stop-button[disabled="true"] {
+  -moz-image-region: rect(16px 32px 32px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #stop-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #stop-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(16px 48px 32px 32px);
+}
+
+toolbar[iconsize="small"] > #print-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+toolbar[iconsize="small"] > #print-button[disabled="true"] {
+  -moz-image-region: rect(0 32px 16px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(0 48px 16px 32px);
+}
+
+toolbar[iconsize="small"] > #home-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(64px 16px 80px 0);
+}
+
+toolbar[iconsize="small"] > #home-button[disabled="true"] {
+  -moz-image-region: rect(64px 32px 80px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #home-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #home-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(64px 48px 80px 32px);
 }
 
 /* ::::: home button on the personal toolbar ::::: */

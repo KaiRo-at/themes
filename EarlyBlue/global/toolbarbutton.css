@@ -71,7 +71,7 @@ toolbarbutton.tabbable {
 
 toolbarbutton:focus {
   outline: 1px dotted #666699;
-  -moz-outline-offset: -1px;
+  outline-offset: -1px;
 }
 
 /*
