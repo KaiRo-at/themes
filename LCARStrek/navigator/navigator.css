@@ -383,6 +383,10 @@ toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
   -moz-image-region: rect(48px 32px 64px 16px);
 }
 
+#urlbar-icons {
+  -moz-margin-end: 2px;
+}
+
 /* ::::: home button on the personal toolbar ::::: */
 
 #PersonalToolbar[iconsize="small"] > #home-button > .toolbarbutton-icon {
