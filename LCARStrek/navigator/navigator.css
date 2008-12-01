@@ -184,18 +184,18 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   -moz-padding-start: 1px;
   -moz-padding-end: 1px;
   min-width: 0px;
-  /*margin: 0px 4px; */
   -moz-box-align: center;
 }
 
 #urlbar {
   -moz-border-radius: 5px;
-  /*outline: none;
-  border: 1px solid #9C9CFF;
-  background-color: #000000; */
   margin: 0;
   -moz-margin-start: 3px;
-  padding: 1px 0;
+}
+
+#urlbar > .autocomplete-textbox-container {
+  -moz-border-radius: 3px 0 0 3px;
+  padding: 2px;
 }
 
 #urlbar[level="high"] > .autocomplete-textbox-container,
@@ -215,7 +215,7 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 
 #page-proxy-deck {
   cursor: -moz-grab;
-  margin: 1px 1px 1px 2px;
+  margin: 0;
 }
 
 #page-proxy-button {
@@ -285,6 +285,13 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 #search-button:hover,
 #go-button:hover {
   background-color: #FFCF00;
+}
+
+/* care that those buttons base on the same min height of 16px that the urlbar
+   autocomplete box gets through site icon and urlbar icons at the right */
+#search-button > .button-box ,
+#go-button > .button-box {
+  min-height: 16px;
 }
 
 #search-button {
@@ -399,10 +406,6 @@ toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
 
 #feedsButton:hover:active {
   -moz-image-region: rect(48px 32px 64px 16px);
-}
-
-#urlbar-icons {
-  -moz-margin-end: 2px;
 }
 
 toolbar[iconsize="small"] > #back-button {
