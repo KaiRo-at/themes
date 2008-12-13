@@ -113,16 +113,17 @@
 }
 
 #button-delete {
-  list-style-image:url("chrome://global/skin/icons/trash.gif");
-}
-
-#button-delete:hover,
-#button-delete:hover:active {
-  list-style-image:url("chrome://global/skin/icons/trash-hover.gif");
+  list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
 }
 
 #button-delete[disabled="true"] {
-  list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
+  -moz-image-region: rect(0px 50px 21px 25px);
+}
+
+#button-delete:not([disabled="true"]):hover,
+#button-delete:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(0px 75px 21px 50px);
 }
 
 /* CardView styles - used in the Card View Pane */
