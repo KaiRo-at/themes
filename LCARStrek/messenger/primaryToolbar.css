@@ -250,7 +250,7 @@
 }
 
 /* ::::: small primary toolbar buttons ::::: */
-/*
+
 toolbar[iconsize="small"] > #button-getmsg {
   list-style-image: url("chrome://messenger/skin/icons/messengericons-small.png");
   -moz-image-region: rect(48px 16px 64px 0);
@@ -261,7 +261,8 @@ toolbar[iconsize="small"] > #button-getmsg[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-getmsg:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-getmsg:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-getmsg:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-getmsg[open="true"] {
   -moz-image-region: rect(48px 48px 64px 32px);
 }
 
@@ -289,7 +290,8 @@ toolbar[iconsize="small"] > #button-reply[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-reply:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-reply:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-reply:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-reply[open="true"] {
   -moz-image-region: rect(112px 48px 128px 32px);
 }
 
@@ -303,7 +305,8 @@ toolbar[iconsize="small"] > #button-replyall[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-replyall:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-replyall:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-replyall:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-replyall[open="true"] {
   -moz-image-region: rect(128px 48px 144px 32px);
 }
 
@@ -317,7 +320,8 @@ toolbar[iconsize="small"] > #button-forward[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-forward:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-forward:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-forward:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-forward[open="true"] {
   -moz-image-region: rect(32px 48px 48px 32px);
 }
 
@@ -331,10 +335,11 @@ toolbar[iconsize="small"] > #button-file[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-file:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-file:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-file:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-file[open="true"] {
   -moz-image-region: rect(16px 48px 32px 32px);
 }
-*/
+
 toolbar[iconsize="small"] > #button-goback {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
   -moz-image-region: rect(32px 16px 48px 0);
@@ -345,7 +350,8 @@ toolbar[iconsize="small"] > #button-goback[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-goback:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-goback:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-goback:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-goback[open="true"] {
   -moz-image-region: rect(32px 48px 48px 32px);
 }
 
@@ -359,10 +365,11 @@ toolbar[iconsize="small"] > #button-goforward[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-goforward:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-goforward:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-goforward:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-goforward[open="true"] {
   -moz-image-region: rect(48px 48px 64px 32px);
 }
-/*
+
 toolbar[iconsize="small"] > #button-next {
   list-style-image: url("chrome://messenger/skin/icons/messengericons-small.png");
   -moz-image-region: rect(96px 16px 112px 0);
@@ -373,7 +380,8 @@ toolbar[iconsize="small"] > #button-next[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-next:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-next:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-next:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-next[open="true"] {
   -moz-image-region: rect(96px 48px 112px 32px);
 }
 
@@ -401,24 +409,25 @@ toolbar[iconsize="small"] > #button-mark[disabled="true"] {
 }
 
 toolbar[iconsize="small"] > #button-mark:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-mark:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-mark:not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] > #button-mark[open="true"] {
   -moz-image-region: rect(64px 48px 80px 32px);
 }
 
-toolbar[iconsize="small"] > #button-junk > .toolbarbutton-1 {
+toolbar[iconsize="small"] > #button-junk {
   list-style-image: url("chrome://messenger/skin/icons/messengericons-small.png");
   -moz-image-region: rect(192px 16px 208px 0);
 }
 
-toolbar[iconsize="small"] > #button-replyall[disabled="true"] {
+toolbar[iconsize="small"] > #button-junk[disabled="true"] {
   -moz-image-region: rect(192px 32px 208px 16px) !important;
 }
 
-toolbar[iconsize="small"] > #button-replyall:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-replyall:not([disabled="true"]):hover:active {
+toolbar[iconsize="small"] > #button-junk:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #button-junk:not([disabled="true"]):hover:active {
   -moz-image-region: rect(192px 48px 208px 32px);
 }
-*/
+
 toolbar[iconsize="small"] > #button-print {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
   -moz-image-region: rect(0 16px 16px 0);
