@@ -1,6 +1,7 @@
 skin global EarlyBlue global/
 skin mozapps EarlyBlue mozapps/
 skin messenger EarlyBlue messenger/
+skin messenger-newsblog EarlyBlue messenger-newsblog/
 skin communicator EarlyBlue communicator/
 skin help EarlyBlue help/
 skin navigator EarlyBlue navigator/

@@ -11,16 +11,18 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is mozilla.org code.
  *
  * The Initial Developer of the Original Code is
- * Håkan Waara
- * Portions created by the Initial Developer are Copyright (C) 2001
+ * Mozilla Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 2008
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Håkan Waara (Original Author)
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *   William Price <bugzilla@mob.rice.edu>
+ *   Steven Garrity <steven@silverorange.com>
+ *   Henrik Skupin  <mozilla@hskupin.info>
+ *   Johnathan Nightingale <johnath@mozilla.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -36,54 +38,72 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-spinbuttons {
-  cursor: default;
+html {
+  background: #CCD0DD;
 }
 
-.spinbuttons-button {
-  min-width: 9px;
-  min-height: 9px;
-  margin: 0 !important;
-  border: 1px outset #CCD0DD;
-  background-color: #CCD0DD;
-}
-
-.spinbuttons-button > .button-box {
-  border: 0;
-  padding: 0;
+body {
   margin: 0;
+  padding: 0 1em;
+  color: #000000;
+  font: 12px helvetica,arial,tahoma,sans-serif;
 }
 
-.spinbuttons-button[disabled="true"] > .button-box {
-  padding: 0 !important;
+h1 {
+  margin: 0 0 .6em 0;
+  border-bottom: 1px solid #666699;
+  font-size: 160%;
 }
 
-.spinbuttons-button:hover:active {
-  border: 1px inset #CCD0DD;
+h2 {
+  font-size: 130%;
 }
 
-.spinbuttons-button[disabled="true"] {
-  border: 1px outset #CCD0DD;
+#errorPageContainer {
+  position: relative;
+  min-width: 13em;
+  max-width: 52em;
+  margin: 4em auto;
+  border: 2px solid #FFFFCC;
+  -moz-border-radius: 10px;
+  padding: 3em;
+  -moz-padding-start: 30px;
+  background: url("chrome://global/skin/icons/sslWarning.png") left 0 no-repeat #9999CC;
+  -moz-background-origin: content;
 }
 
-.spinbuttons-up {
-  background-image: url("chrome://global/skin/arrow/arrow-up.gif");
-  background-position: center center;
-  background-repeat: no-repeat;
+body[dir="rtl"] #errorPageContainer {
+  background-position: right 0;
 }
 
-.spinbuttons-up[disabled="true"] {
-  background-image: url("chrome://global/skin/arrow/arrow-up-disabled.gif");
+#errorTitle {
+  -moz-margin-start: 80px;
 }
 
-.spinbuttons-down {
-  background-image: url("chrome://global/skin/arrow/arrow-down.gif");
-  background-position: center center;
-  background-repeat: no-repeat;
+#errorLongContent {
+  -moz-margin-start: 80px;
 }
 
-.spinbuttons-down[disabled="true"] {
-  background-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+#technicalContent > h2, #expertContent > h2 {
+  cursor: pointer;
+  padding-left: 20px;
+  position: relative;
+  left: -20px;
+  background: url("chrome://global/skin/tree/twisty-open-selected.gif") left center no-repeat;
+}
+
+#technicalContent[collapsed] > h2,
+#expertContent[collapsed] > h2 {
+  background-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
+}
+
+#technicalContent[collapsed] > p,
+#expertContent[collapsed] > div {
+  display: none;
+}
+
+#technicalContentText {
+  overflow: auto;
+  white-space: pre-wrap;
 }

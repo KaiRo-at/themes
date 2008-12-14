@@ -1,4 +1,5 @@
-/* ***** BEGIN LICENSE BLOCK *****
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
+ * ***** BEGIN LICENSE BLOCK *****
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
@@ -11,15 +12,15 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is "Classic" theme of mozilla.org code.
+ * The Original Code is Thunderbird RSS Subscription CSS
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2001
+ * The Mozilla Foundation.
+ * Portions created by the Initial Developer are Copyright (C) 2005
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *   Scott MacGregor <mscott@mozilla.org>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -33,52 +34,33 @@
  * the provisions above, a recipient may use your version of this file under
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
- * ***** END LICENSE BLOCK ***** */
+ * ***** END LICENSE BLOCK ****** */
 
-/* ===== popup.css ======================================================
-  == Styles used by the XUL popup element.
-  ======================================================================= */
+/* ::::: Feed Subscription UI icons :::::: */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-/* ::::: menupopup ::::: */
-
-menupopup,
-popup,
-panel {
-  border: 1px outset #CCD0DD;
-  padding: 1px;
-  min-width: 1px;
-  background-color: #CCD0DD;
+#contentPane {
+  padding: 14px;
 }
 
-tooltip {
-  background-color : #FFFFCC;
-  border : 1px outset #FFFFCC;
-  color: #000000;
-  /* font-size: smaller; */
-  padding: 2px;
-  max-width: 40em;
+#subscriptionChildren::-moz-tree-image(folderNameCol) {
+  margin-right: 2px;
+  list-style-image: url("chrome://messenger/skin/icons/folder-newsgroup.png");
 }
 
-tooltip[titletip="true"] {
-  /* See bug 32157 comment 128
-   * margin: -2px 0px 0px -3px;
-   */
-  max-width: none;
+#subscriptionChildren::-moz-tree-image(folderNameCol, container) {
+  list-style-image: url("chrome://messenger/skin/icons/folder-closed.png");
 }
 
-/* rules for popups associated with menulists */
+#subscriptionChildren::-moz-tree-image(folderNameCol, container, open) {
+  list-style-image: url("chrome://messenger/skin/icons/folder-open.png");
+}
 
-menulist > menupopup,
-.menulist-menupopup {
+#rssFeedInfoBox {
   border: 1px solid #666699;
-  min-width: 0px;
+  margin: 4px;
   padding: 0px;
-  background-color: white;
 }
 
-menupopup > menu > menupopup,
-popup > menu > menupopup {
-  margin-top: -2px;
+#backgroundBox {
+  background-color: #DDDDDD;
 }

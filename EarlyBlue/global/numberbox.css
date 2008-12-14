@@ -54,9 +54,24 @@ html|*.numberbox-input {
 .numberbox-input-box {
   -moz-box-align: center;
   cursor: text;
-  margin-right: -1px;
   border: 1px inset #CCD0DD;
+  border-right-width: 0px;
   padding: 1px;
   background-color: #FFFFFF;
   color: #000000;
+}
+
+textbox[type="number"] > spinbuttons {
+  border: 1px inset #CCD0DD;
+  border-left-width: 0px;
+}
+
+textbox[type="number"][focused="true"] > .numberbox-input-box,
+textbox[type="number"][focused="true"] > spinbuttons {
+  border-color: #6699CC;
+}
+
+textbox[type="number"][disabled="true"] > .numberbox-input-box,
+textbox[type="number"][disabled="true"] > spinbuttons {
+  border-color: #666699;
 }

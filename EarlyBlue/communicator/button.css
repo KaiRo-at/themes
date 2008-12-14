@@ -75,10 +75,10 @@
 
 toolbar[mode="text"] .toolbarbutton-1,
 toolbar[mode="icons"] .toolbarbutton-1,
-.toolbarbutton-1[toolbarmode="small"],
+toolbar[iconsize="small"] .toolbarbutton-1,
 toolbar[mode="text"] .toolbarbutton-menubutton-button,
 toolbar[mode="icons"] .toolbarbutton-menubutton-button,
-.toolbarbutton-menubutton-button[toolbarmode="small"] {
+toolbar[iconsize="small"] .toolbarbutton-menubutton-button {
   min-width: 0px;
   min-height: 0px;
 }
@@ -88,7 +88,7 @@ toolbar[mode="text"] .toolbarbutton-menubutton-dropmarker {
 }
 
 toolbar[mode="icons"] .toolbarbutton-menubutton-dropmarker,
-.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-dropmarker {
+toolbar[iconsize="small"] .toolbarbutton-menubutton-dropmarker {
   padding: 0px 1px 13px 1px;
 }
 
@@ -99,8 +99,8 @@ toolbar[mode="text"] .toolbarbutton-1[type="menu-button"][open="true"] > .toolba
 
 toolbar[mode="icons"] .toolbarbutton-1[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
 toolbar[mode="icons"] .toolbarbutton-1[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker,
-.toolbarbutton-1[toolbarmode="small"][type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-.toolbarbutton-1[toolbarmode="small"][type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding: 1px 0px 12px 2px;
 }
 
@@ -109,7 +109,7 @@ toolbar[mode="text"] .toolbarbutton-menubutton-dropmarker[disabled="true"] {
 }
 
 toolbar[mode="icons"] .toolbarbutton-menubutton-dropmarker[disabled="true"],
-.toolbarbutton-1[toolbarmode="small"] > .toolbarbutton-menubutton-dropmarker[disabled="true"] {
+toolbar[iconsize="small"] .toolbarbutton-menubutton-dropmarker[disabled="true"] {
   padding: 0px 1px 13px 1px !important;
 }
 
@@ -120,6 +120,17 @@ toolbar[mode="text"] .toolbarbutton-icon {
 
 toolbar[mode="text"] .toolbarbutton-text {
   padding: 4px 0;
+}
+
+toolbar[mode="text"] .toolbarbutton-1,
+toolbar[mode="text"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
+  -moz-box-orient: horizontal;
+}
+
+toolbar[labelalign="end"] .toolbarbutton-1,
+toolbar[labelalign="end"] .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+toolbar[labelalign="end"] .toolbarbutton-1 > hbox > vbox {
+  -moz-box-orient: horizontal;
 }
 
 /* ::::: standard toolbar buttons ::::: */
