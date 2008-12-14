@@ -19,7 +19,6 @@ notification[type="critical"] {
 .messageImage {
   width: 16px;
   height: 16px;
-  margin: 0px 1px 0px 6px;
 }
 
 /* Default icons for notifications */
@@ -39,8 +38,18 @@ notification[type="critical"] .messageImage {
   -moz-margin-start: 5px;
 }
 
+.notification-inner {
+  -moz-margin-start: 8px;
+  -moz-margin-end: 12px;
+}
+
 .messageCloseButton {
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
   padding: 4px 2px;
   border: none;
+}
+
+.messageCloseButton:hover,
+.messageCloseButton:hover:active {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
 }
