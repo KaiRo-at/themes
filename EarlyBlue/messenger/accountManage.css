@@ -66,6 +66,10 @@ treechildren::-moz-tree-cell-text(isDefaultServer-true) {
   font-weight: bold;
 }
 
+#contentFrame {
+  -moz-margin-start: 2px;
+}
+
 /* ::::: SMTP Server Panel :::::: */
 
 .smtpServerListItem {

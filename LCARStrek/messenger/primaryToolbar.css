@@ -137,14 +137,14 @@
   -moz-image-region: rect(42px 25px 63px 0px);
 }
 
-#button-goback:hover,
-#button-goback:hover:active,
+#button-goback:not([disabled="true"]):hover,
+#button-goback:not([disabled="true"]):hover:active,
 #button-goback[open="true"] {
   -moz-image-region: rect(42px 75px 63px 50px);
 }
 
 #button-goback[disabled="true"] {
-  -moz-image-region: rect(42px 50px 63px 25px) !important;
+  -moz-image-region: rect(42px 50px 63px 25px);
 }
 
 #button-goforward {
@@ -152,14 +152,14 @@
   -moz-image-region: rect(63px 25px 84px 0px);
 }
 
-#button-goforward:hover,
-#button-goforward:hover:active,
+#button-goforward:not([disabled="true"]):hover,
+#button-goforward:not([disabled="true"]):hover:active,
 #button-goforward[open="true"] {
   -moz-image-region: rect(63px 75px 84px 50px);
 }
 
 #button-goforward[disabled="true"] {
-  -moz-image-region: rect(63px 50px 84px 25px) !important;
+  -moz-image-region: rect(63px 50px 84px 25px);
 }
 
 #button-next {
@@ -211,14 +211,14 @@
   -moz-image-region: rect(0px 25px 21px 0px);
 }
 
-#button-print:hover,
-#button-print:hover:active,
+#button-print:not([disabled="true"]):hover,
+#button-print:not([disabled="true"]):hover:active,
 #button-print[open="true"] {
   -moz-image-region: rect(0px 75px 21px 50px);
 }
 
 #button-print[disabled="true"] {
-  -moz-image-region: rect(0px 50px 21px 25px) !important;
+  -moz-image-region: rect(0px 50px 21px 25px);
 }
 
 #button-stop {
@@ -226,13 +226,13 @@
   -moz-image-region: rect(21px 25px 42px 0px);
 }
 
-#button-stop:hover,
-#button-stop:hover:active {
+#button-stop:not([disabled="true"]):hover,
+#button-stop:not([disabled="true"]):hover:active {
   -moz-image-region: rect(21px 75px 42px 50px);
 }
 
 #button-stop[disabled="true"] {
-  -moz-image-region: rect(21px 50px 42px 25px) !important;
+  -moz-image-region: rect(21px 50px 42px 25px);
 }
 
 #button-junk {
@@ -257,7 +257,7 @@ toolbar[iconsize="small"] > #button-getmsg {
 }
 
 toolbar[iconsize="small"] > #button-getmsg[disabled="true"] {
-  -moz-image-region: rect(48px 32px 64px 16px) !important;
+  -moz-image-region: rect(48px 32px 64px 16px);
 }
 
 toolbar[iconsize="small"] > #button-getmsg:not([disabled="true"]):hover,
@@ -272,7 +272,7 @@ toolbar[iconsize="small"] > #button-newmsg {
 }
 
 toolbar[iconsize="small"] > #button-newmsg[disabled="true"] {
-  -moz-image-region: rect(80px 32px 96px 16px) !important;
+  -moz-image-region: rect(80px 32px 96px 16px);
 }
 
 toolbar[iconsize="small"] > #button-newmsg:not([disabled="true"]):hover,
@@ -286,7 +286,7 @@ toolbar[iconsize="small"] > #button-reply {
 }
 
 toolbar[iconsize="small"] > #button-reply[disabled="true"] {
-  -moz-image-region: rect(112px 32px 128px 16px) !important;
+  -moz-image-region: rect(112px 32px 128px 16px);
 }
 
 toolbar[iconsize="small"] > #button-reply:not([disabled="true"]):hover,
@@ -301,7 +301,7 @@ toolbar[iconsize="small"] > #button-replyall {
 }
 
 toolbar[iconsize="small"] > #button-replyall[disabled="true"] {
-  -moz-image-region: rect(128px 32px 144px 16px) !important;
+  -moz-image-region: rect(128px 32px 144px 16px);
 }
 
 toolbar[iconsize="small"] > #button-replyall:not([disabled="true"]):hover,
@@ -316,7 +316,7 @@ toolbar[iconsize="small"] > #button-forward {
 }
 
 toolbar[iconsize="small"] > #button-forward[disabled="true"] {
-  -moz-image-region: rect(32px 32px 48px 16px) !important;
+  -moz-image-region: rect(32px 32px 48px 16px);
 }
 
 toolbar[iconsize="small"] > #button-forward:not([disabled="true"]):hover,
@@ -331,7 +331,7 @@ toolbar[iconsize="small"] > #button-file {
 }
 
 toolbar[iconsize="small"] > #button-file[disabled="true"] {
-  -moz-image-region: rect(16px 32px 32px 16px) !important;
+  -moz-image-region: rect(16px 32px 32px 16px);
 }
 
 toolbar[iconsize="small"] > #button-file:not([disabled="true"]):hover,
@@ -346,7 +346,7 @@ toolbar[iconsize="small"] > #button-goback {
 }
 
 toolbar[iconsize="small"] > #button-goback[disabled="true"] {
-  -moz-image-region: rect(32px 32px 48px 16px) !important;
+  -moz-image-region: rect(32px 32px 48px 16px);
 }
 
 toolbar[iconsize="small"] > #button-goback:not([disabled="true"]):hover,
@@ -361,7 +361,7 @@ toolbar[iconsize="small"] > #button-goforward {
 }
 
 toolbar[iconsize="small"] > #button-goforward[disabled="true"] {
-  -moz-image-region: rect(48px 32px 64px 16px) !important;
+  -moz-image-region: rect(48px 32px 64px 16px);
 }
 
 toolbar[iconsize="small"] > #button-goforward:not([disabled="true"]):hover,
@@ -376,7 +376,7 @@ toolbar[iconsize="small"] > #button-next {
 }
 
 toolbar[iconsize="small"] > #button-next[disabled="true"] {
-  -moz-image-region: rect(96px 32px 112px 16px) !important;
+  -moz-image-region: rect(96px 32px 112px 16px);
 }
 
 toolbar[iconsize="small"] > #button-next:not([disabled="true"]):hover,
@@ -391,7 +391,7 @@ toolbar[iconsize="small"] > #button-delete {
 }
 
 toolbar[iconsize="small"] > #button-delete[disabled="true"] {
-  -moz-image-region: rect(0 32px 16px 16px) !important;
+  -moz-image-region: rect(0 32px 16px 16px);
 }
 
 toolbar[iconsize="small"] > #button-delete:not([disabled="true"]):hover,
@@ -405,7 +405,7 @@ toolbar[iconsize="small"] > #button-mark {
 }
 
 toolbar[iconsize="small"] > #button-mark[disabled="true"] {
-  -moz-image-region: rect(64px 32px 80px 16px) !important;
+  -moz-image-region: rect(64px 32px 80px 16px);
 }
 
 toolbar[iconsize="small"] > #button-mark:not([disabled="true"]):hover,
@@ -420,7 +420,7 @@ toolbar[iconsize="small"] > #button-junk {
 }
 
 toolbar[iconsize="small"] > #button-junk[disabled="true"] {
-  -moz-image-region: rect(192px 32px 208px 16px) !important;
+  -moz-image-region: rect(192px 32px 208px 16px);
 }
 
 toolbar[iconsize="small"] > #button-junk:not([disabled="true"]):hover,
@@ -434,7 +434,7 @@ toolbar[iconsize="small"] > #button-print {
 }
 
 toolbar[iconsize="small"] > #button-print[disabled="true"] {
-  -moz-image-region: rect(0 32px 16px 16px) !important;
+  -moz-image-region: rect(0 32px 16px 16px);
 }
 
 toolbar[iconsize="small"] > #button-print:not([disabled="true"]):hover,
@@ -448,7 +448,7 @@ toolbar[iconsize="small"] > #button-stop {
 }
 
 toolbar[iconsize="small"] > #button-stop[disabled="true"] {
-  -moz-image-region: rect(16px 32px 32px 16px) !important;
+  -moz-image-region: rect(16px 32px 32px 16px);
 }
 
 toolbar[iconsize="small"] > #button-stop:not([disabled="true"]):hover,

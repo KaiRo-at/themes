@@ -135,13 +135,13 @@
   -moz-image-region: rect(21px 25px 42px 0px);
 }
 
-#button-stop:hover,
-#button-stop:hover:active {
+#button-stop:not([disabled="true"]):hover,
+#button-stop:not([disabled="true"]):hover:active {
   -moz-image-region: rect(21px 75px 42px 50px);
 }
 
 #button-stop[disabled="true"] {
-  -moz-image-region: rect(21px 50px 42px 25px) !important;
+  -moz-image-region: rect(21px 50px 42px 25px);
 }
 
 #MsgHeadersToolbar {

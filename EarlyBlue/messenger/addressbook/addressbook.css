@@ -88,11 +88,12 @@
 }
 
 #button-delete {
-  list-style-image:url("chrome://global/skin/icons/icons/trash.gif");
+  list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
 }
 
 #button-delete[disabled="true"] {
-  list-style-image: url("chrome://global/skin/icons/trash-disabled.gif") !important;
+  -moz-image-region: rect(0px 50px 21px 25px);
 }
 
 /* CardView styles - used in the Card View Pane */

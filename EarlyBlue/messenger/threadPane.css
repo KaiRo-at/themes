@@ -236,6 +236,7 @@ treechildren::-moz-tree-image(subjectCol, imapdeleted, offline) {
   list-style-image: url("chrome://messenger/skin/icons/message-mail-imapdel-offline.gif");
 }
 
+treechildren::-moz-tree-image(subjectCol, rss),
 treechildren::-moz-tree-image(subjectCol, news) {
   list-style-image: url("chrome://messenger/skin/icons/message-news.gif");
 }
@@ -248,6 +249,7 @@ treechildren::-moz-tree-image(subjectCol, news, attach, offline) {
   list-style-image: url("chrome://messenger/skin/icons/message-news-attach-offline.gif");
 }
 
+treechildren::-moz-tree-image(subjectCol, rss, new),
 treechildren::-moz-tree-image(subjectCol, news, new) {
   list-style-image: url("chrome://messenger/skin/icons/message-news-new.gif");
 }

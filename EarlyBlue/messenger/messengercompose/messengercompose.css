@@ -47,43 +47,38 @@
 /* ::::: primary toolbar buttons ::::: */
 
 #button-send {
-  list-style-image: url("chrome://messenger/skin/messengercompose/send.gif");
+  list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
+  -moz-image-region: rect(231px 25px 252px 0px);
 }
 
 #button-send[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/messengercompose/send-disabled.gif") !important;
+  -moz-image-region: rect(231px 50px 252px 25px);
 }
 
 #button-send[offline="true"] {
-  list-style-image: url("chrome://messenger/skin/messengercompose/sendlater.gif");
+  -moz-image-region: rect(273px 25px 294px 0px);
 }
 
 #button-send[offline="true"][disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/messengercompose/sendlater-disabled.gif") !important;
+  -moz-image-region: rect(273px 50px 294px 25px);
 }
 
 #button-address {
-  list-style-image: url("chrome://messenger/skin/messengercompose/address.gif");
+  list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
+  -moz-image-region: rect(189px 25px 210px 0px);
 }
 
 #button-address[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/messengercompose/address-disabled.gif") !important;
+  -moz-image-region: rect(189px 50px 210px 25px);
 }
 
 #button-attach {
-  list-style-image: url("chrome://messenger/skin/messengercompose/attach.gif");
+  list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
+  -moz-image-region: rect(210px 25px 231px 0px);
 }
 
 #button-attach[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/messengercompose/attach-disabled.gif") !important;
-}
-
-#button-quote {
-  list-style-image: url("chrome://messenger/skin/messengercompose/quote.gif");
-}
-
-#button-quote[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/messengercompose/quote-disabled.gif") !important;
+  -moz-image-region: rect(210px 50px 231px 25px);
 }
 
 #spellingButton {
@@ -91,23 +86,25 @@
 }
 
 #spellingButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/spell-disabled.gif") !important;
+  list-style-image: url("chrome://editor/skin/icons/spell-disabled.gif");
 }
 
 #button-save {
-  list-style-image: url("chrome://messenger/skin/messengercompose/savemsg.gif");
+  list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
+  -moz-image-region: rect(294px 25px 315px 0px);
 }
 
 #button-save[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/messengercompose/savemsg-disabled.gif") !important;
+  -moz-image-region: rect(294px 50px 315px 25px);
 }
 
 #button-stop {
-  list-style-image: url("chrome://global/skin/icons/stop.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(21px 25px 42px 0px);
 }
 
 #button-stop[disabled="true"] {
-  list-style-image: url("chrome://global/skin/icons/stop-disabled.gif") !important;
+  -moz-image-region: rect(21px 50px 42px 25px);
 }
 
 #MsgHeadersToolbar {
