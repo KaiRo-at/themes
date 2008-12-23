@@ -115,7 +115,7 @@ remotecontent {
 
 #pauseButton {
   -moz-appearance: none;
-  list-style-image: url(chrome://mozapps/skin/downloads/downloadButtons.png);
+  list-style-image: url("chrome://mozapps/skin/downloads/downloadButtons.png");
   -moz-image-region: rect(0px, 48px, 16px, 32px);
   background-color: transparent;
   border: none;
