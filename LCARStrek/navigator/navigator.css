@@ -121,6 +121,20 @@
   -moz-image-region: rect(0px 75px 21px 50px);
 }
 
+#home-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(84px 25px 105px 0px);
+}
+
+#home-button[disabled="true"] {
+  -moz-image-region: rect(84px 50px 105px 25px);
+}
+
+#home-button:not([disabled="true"]):hover,
+#home-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(84px 75px 105px 50px);
+}
+
 #clear-button {
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
@@ -133,6 +147,90 @@
 
 #nav-bar[inFullscreen="true"] .toolbar-grippy {
   /* display: none; */
+}
+
+toolbar[iconsize="small"] > #back-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(32px 16px 48px 0);
+}
+
+toolbar[iconsize="small"] > #back-button[disabled="true"] {
+  -moz-image-region: rect(32px 32px 48px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #back-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #back-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(32px 48px 48px 32px);
+}
+
+toolbar[iconsize="small"] > #forward-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(48px 16px 64px 0);
+}
+
+toolbar[iconsize="small"] > #forward-button[disabled="true"] {
+  -moz-image-region: rect(48px 32px 64px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #forward-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #forward-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(48px 48px 64px 32px);
+}
+
+toolbar[iconsize="small"] > #reload-button {
+  list-style-image: url("chrome://navigator/skin/icons/navigatoricons-small.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+toolbar[iconsize="small"] > #reload-button[disabled="true"] {
+  -moz-image-region: rect(0 32px 16px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #reload-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #reload-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(0 48px 16px 32px);
+}
+
+toolbar[iconsize="small"] > #stop-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(16px 16px 32px 0);
+}
+
+toolbar[iconsize="small"] > #stop-button[disabled="true"] {
+  -moz-image-region: rect(16px 32px 32px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #stop-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #stop-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(16px 48px 32px 32px);
+}
+
+toolbar[iconsize="small"] > #print-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+toolbar[iconsize="small"] > #print-button[disabled="true"] {
+  -moz-image-region: rect(0 32px 16px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(0 48px 16px 32px);
+}
+
+toolbar[iconsize="small"] > #home-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(64px 16px 80px 0);
+}
+
+toolbar[iconsize="small"] > #home-button[disabled="true"] {
+  -moz-image-region: rect(64px 32px 80px 16px) !important;
+}
+
+toolbar[iconsize="small"] > #home-button:not([disabled="true"]):hover,
+toolbar[iconsize="small"] > #home-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(64px 48px 80px 32px);
 }
 
 /* ::::: fullscreen window controls ::::: */
@@ -343,20 +441,6 @@ toolbar[mode="icons"] #search-button > .button-box > .button-text {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
 }
 
-#home-button {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
-  -moz-image-region: rect(84px 25px 105px 0px);
-}
-
-#home-button[disabled="true"] {
-  -moz-image-region: rect(84px 50px 105px 25px);
-}
-
-#home-button:not([disabled="true"]):hover,
-#home-button:not([disabled="true"]):hover:active {
-  -moz-image-region: rect(84px 75px 105px 50px);
-}
-
 toolbarbutton.chevron {
   list-style-image: url("chrome://navigator/skin/icons/chevron.gif") !important;
 }
@@ -384,6 +468,19 @@ toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
   display: -moz-box !important;
 }
 
+#PersonalToolbar[iconsize="small"] > #home-button > .toolbarbutton-icon {
+  /* width: 16px;
+  height: 16px; */
+}
+
+#PersonalToolbar > #home-button {
+  cursor: pointer;
+}
+
+#PersonalToolbar > #home-button[disabled="true"] {
+  cursor: default !important;
+}
+
 /* ::::: feeds ::::: */
 
 #feedsMenu {
@@ -406,103 +503,4 @@ toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
 
 #feedsButton:hover:active {
   -moz-image-region: rect(48px 32px 64px 16px);
-}
-
-toolbar[iconsize="small"] > #back-button {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
-  -moz-image-region: rect(32px 16px 48px 0);
-}
-
-toolbar[iconsize="small"] > #back-button[disabled="true"] {
-  -moz-image-region: rect(32px 32px 48px 16px) !important;
-}
-
-toolbar[iconsize="small"] > #back-button:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #back-button:not([disabled="true"]):hover:active {
-  -moz-image-region: rect(32px 48px 48px 32px);
-}
-
-toolbar[iconsize="small"] > #forward-button {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
-  -moz-image-region: rect(48px 16px 64px 0);
-}
-
-toolbar[iconsize="small"] > #forward-button[disabled="true"] {
-  -moz-image-region: rect(48px 32px 64px 16px) !important;
-}
-
-toolbar[iconsize="small"] > #forward-button:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #forward-button:not([disabled="true"]):hover:active {
-  -moz-image-region: rect(48px 48px 64px 32px);
-}
-
-toolbar[iconsize="small"] > #reload-button {
-  list-style-image: url("chrome://navigator/skin/icons/navigatoricons-small.png");
-  -moz-image-region: rect(0 16px 16px 0);
-}
-
-toolbar[iconsize="small"] > #reload-button[disabled="true"] {
-  -moz-image-region: rect(0 32px 16px 16px) !important;
-}
-
-toolbar[iconsize="small"] > #reload-button:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #reload-button:not([disabled="true"]):hover:active {
-  -moz-image-region: rect(0 48px 16px 32px);
-}
-
-toolbar[iconsize="small"] > #stop-button {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
-  -moz-image-region: rect(16px 16px 32px 0);
-}
-
-toolbar[iconsize="small"] > #stop-button[disabled="true"] {
-  -moz-image-region: rect(16px 32px 32px 16px) !important;
-}
-
-toolbar[iconsize="small"] > #stop-button:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #stop-button:not([disabled="true"]):hover:active {
-  -moz-image-region: rect(16px 48px 32px 32px);
-}
-
-toolbar[iconsize="small"] > #print-button {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
-  -moz-image-region: rect(0 16px 16px 0);
-}
-
-toolbar[iconsize="small"] > #print-button[disabled="true"] {
-  -moz-image-region: rect(0 32px 16px 16px) !important;
-}
-
-toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover:active {
-  -moz-image-region: rect(0 48px 16px 32px);
-}
-
-toolbar[iconsize="small"] > #home-button {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
-  -moz-image-region: rect(64px 16px 80px 0);
-}
-
-toolbar[iconsize="small"] > #home-button[disabled="true"] {
-  -moz-image-region: rect(64px 32px 80px 16px) !important;
-}
-
-toolbar[iconsize="small"] > #home-button:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #home-button:not([disabled="true"]):hover:active {
-  -moz-image-region: rect(64px 48px 80px 32px);
-}
-
-/* ::::: home button on the personal toolbar ::::: */
-
-#PersonalToolbar[iconsize="small"] > #home-button > .toolbarbutton-icon {
-  /* width: 16px;
-  height: 16px; */
-}
-
-#PersonalToolbar > #home-button {
-  cursor: pointer;
-}
-
-#PersonalToolbar > #home-button[disabled="true"] {
-  cursor: default !important;
 }
