@@ -62,6 +62,11 @@ html|*.numberbox-input {
   color: #E7ADE7;
 }
 
+.numberbox-input-box[hidespinbuttons="true"] {
+  -moz-border-radius: 3px;
+  border-right-width: 1px;
+}
+
 textbox[type="number"] > spinbuttons {
   -moz-border-radius: 0px 3px 3px 0px;
   border: 1px solid #9C9CFF;
