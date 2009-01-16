@@ -56,11 +56,12 @@ tree {
 /* ::::: tree focusring ::::: */
 
 .focusring > .tree-stack > .tree-rows > .tree-bodybox {
-  border: 1px solid transparent;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
 }
 
 .focusring:focus > .tree-stack > .tree-rows > .tree-bodybox {
-  border: 1px dotted #008484;
+  outline: 1px dotted #008484;
 }
 
 /* ::::: tree rows ::::: */
@@ -83,7 +84,7 @@ treechildren::-moz-tree-row(selected, focus) {
 }
 
 treechildren::-moz-tree-row(current, focus) {
-  border: 1px dotted #FF9F00;
+  border: 1px dotted #008484;
 }
 
 treechildren::-moz-tree-row(selected, current, focus) {
@@ -157,11 +158,11 @@ tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, current, focus) {
-  border: 1px dotted #FF9F00;
+  border: 1px dotted #008484;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, current, focus) {
-  border: 1px dotted #FF9F00;
+  border: 1px dotted #008484;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected, current, focus) {
