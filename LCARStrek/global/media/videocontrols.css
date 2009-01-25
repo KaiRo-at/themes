@@ -12,30 +12,40 @@
   border: none;
   min-height: 24px;
   min-width: 24px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.playButton:hover, .muteButton:hover {
+  background-color: rgba(255,207,0,0.75);
+}
+.playButton:focus > .button-box,
+.muteButton:focus > .button-box {
+  border: 1px dotted rgba(0,0,0,0.75);
 }
 
 .playButton {
-  background: url("chrome://global/skin/media/pauseButton.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/pauseButton.png");
 }
 .playButton:hover {
-  background: url("chrome://global/skin/media/pauseButton-hover.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/pauseButton-hover.png");
 }
 .playButton[paused="true"] {
-  background: url("chrome://global/skin/media/playButton.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/playButton.png");
 }
 .playButton[paused="true"]:hover {
-  background: url("chrome://global/skin/media/playButton-hover.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/playButton-hover.png");
 }
 
 .muteButton {
-  background: url("chrome://global/skin/media/muteButton.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/muteButton.png");
 }
 .muteButton:hover {
-  background: url("chrome://global/skin/media/muteButton-hover.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/muteButton-hover.png");
 }
 .muteButton[muted="true"] {
-  background: url("chrome://global/skin/media/unmuteButton.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/unmuteButton.png");
 }
 .muteButton[muted="true"]:hover {
-  background: url("chrome://global/skin/media/unmuteButton-hover.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/unmuteButton-hover.png");
 }
