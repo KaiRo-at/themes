@@ -63,6 +63,10 @@
   border: none;
 }
 
+#folderpane_splitter {
+  border: none;
+}
+
 /* XXX bug 313731 buttons are taller than menulists */
 
 #msgLocationToolbar > #searchBox[collapsed="true"] {
