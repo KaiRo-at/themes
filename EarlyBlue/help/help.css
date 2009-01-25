@@ -62,7 +62,11 @@
 }
 
 /* Set the minimum sidebar width so the help contents aren't squeezed together.*/
-#help-sidebar { min-width: 15em; width: 20em; max-width: 25em; }
+#help-sidebar {
+  min-width: 30px;
+  width: 20em;
+  max-width: 25em;
+}
 
 /* ----- BACK BUTTON ----- */
 
