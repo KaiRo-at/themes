@@ -18,6 +18,7 @@ if [ -n "$1" ]; then
   esac
 else
   echo "You must specify a theme name."
+  exit 1
 fi
 
 # define variables

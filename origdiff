@@ -1,0 +1,59 @@
+#!/bin/sh
+
+HG_COMM_DIR=/mnt/mozilla/hg/comm-central
+HG_MOZ_DIR=/mnt/mozilla/hg/comm-central/mozilla
+
+RUN_DIR=$(pwd)
+cd $(dirname "$0")
+SCRIPT_DIR=$(pwd)
+
+if [ -n "$1" ]; then
+  SRC_DATE="$1"
+  DST_DATE=`TZ=PST8PDT date +%Y-%m-%d`
+  COMM_DIR=suite/themes/classic/
+  MOZ_DIR=toolkit/themes/winstripe/
+  COMM_LOG=$RUN_DIR/themelog-suitedefault.$SRC_DATE.$DST_DATE.diff
+  MOZ_LOG=$RUN_DIR/themelog-tkwinstripe.$SRC_DATE.$DST_DATE.diff
+
+  if [ ! -e $COMM_LOG ]; then
+    echo "Getting $COMM_LOG..."
+    cd $HG_COMM_DIR
+    hg log -d ">$SRC_DATE" $COMM_DIR > $COMM_LOG
+  fi
+  if [ ! -e $MOZ_LOG ]; then
+    echo "Getting $MOZ_LOG..."
+    cd $HG_MOZ_DIR
+    hg log -d ">$SRC_DATE" $MOZ_DIR > $MOZ_LOG
+  fi
+  cd $RUN_DIR
+else
+  echo "You must specify a start date."
+  exit 1
+fi
+
+for repo in "COMM" "MOZ"; do
+  HG_DIR_VAR="HG_${repo}_DIR"
+  LOG_VAR="${repo}_LOG"
+  HG_URL=`awk -F ' *= *' '/default *=/ { print $2 }' ${!HG_DIR_VAR}/.hg/hgrc`
+  REPO_NAME=`basename $HG_URL`
+  DIFF_NAME=${!LOG_VAR}
+  HTML_NAME=${DIFF_NAME/.diff/.html}
+  echo "Writing $HTML_NAME..."
+  echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">' > $HTML_NAME
+  echo "<html>" >> $HTML_NAME
+  echo "  <head>" >> $HTML_NAME
+  echo "    <title>$REPO_NAME Theme Changes</title>" >> $HTML_NAME
+  echo "  </head>" >> $HTML_NAME
+  echo "  <body>" >> $HTML_NAME
+  echo "  <h1>$REPO_NAME Theme Changes</h1>" >> $HTML_NAME
+  echo "  <h2>$SRC_DATE to $DST_DATE</h2>" >> $HTML_NAME
+  echo "    <pre>" >> $HTML_NAME
+  sed -e "s/user:\(.*\)<\(.*\)>/user:\1\&lt;\2\&gt;/" \
+      -e "s|\(changeset: *[0-9]*\):\([0-9a-f]*\)|\1:<a href=\"$HG_URL/rev/\2\">\2</a>|" \
+      $DIFF_NAME >> $HTML_NAME
+  echo "    </pre>" >> $HTML_NAME
+  echo "  </body>" >> $HTML_NAME
+  echo "</html>" >> $HTML_NAME
+done
+
+echo "done."
