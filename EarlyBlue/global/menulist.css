@@ -65,7 +65,7 @@ menulist {
 .menulist-description {
   font-style: italic;
   color: #808080;
-  margin-left: 1ex !important;
+  -moz-margin-start: 1ex !important;
 }
 
 menulist:focus > .menulist-label-box {

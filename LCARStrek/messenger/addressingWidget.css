@@ -41,8 +41,8 @@
 
 #addressingWidget {
 /*  height: 80px; */
-  margin-left: 0px;
-  margin-right: 0px;
+  -moz-margin-start: 0px;
+  -moz-margin-end: 0px;
   -moz-user-focus: none;
   width: 0px;
 }

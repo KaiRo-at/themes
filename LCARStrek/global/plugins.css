@@ -64,8 +64,8 @@ hr {
 div#outside {
  text-align: justify;
  width: 90%;
- margin-left: 5%;
- margin-right: 5%;
+ -moz-margin-start: 5%;
+ -moz-margin-end: 5%;
 }
 
 div#plugs {
@@ -93,7 +93,7 @@ div.plugname {
   background-color: #E7ADE7;
   color: #000000;
   padding: 2px;
-  padding-left: 12px;
+  -moz-padding-start: 12px;
   margin-top: 2em;
   margin-bottom: 1em;
   font-size: 16px;

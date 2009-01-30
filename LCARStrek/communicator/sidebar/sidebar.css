@@ -57,7 +57,7 @@
 }
 
 #sidebar-splitter[state="collapsed"] {
-  margin-left: 0px;
+  -moz-margin-start: 0px;
 }
 
 /* ::::: sidebar header ::::: */
@@ -112,7 +112,7 @@
 }
 
 .text-panel-loading[loading="false"] {
-  margin-left: 11px;
+  -moz-margin-start: 11px;
 }
 
 .image-panel-loading {

@@ -86,7 +86,7 @@ listheader[sortable="true"]:hover:active {
 }
 
 .listheader-icon {
-  margin-right: 2px;
+  -moz-margin-end: 2px;
 }
 
 .listheader-label {

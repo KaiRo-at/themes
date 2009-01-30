@@ -65,8 +65,8 @@
 
 #newEditButtonBox {
   padding-top: 0.5em; 
-  padding-right: 0px;
-  margin-left: 0px;
+  -moz-padding-end: 0px;
+  -moz-margin-start: 0px;
 }
 
 .middle-button-spacer {

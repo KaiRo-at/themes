@@ -122,7 +122,7 @@
 
 .tagvalue {
   margin-top: 0;
-  margin-left: 0;
+  -moz-margin-start: 0;
 }
 
 /* ::::: msg header message ids ::::: */
@@ -140,7 +140,7 @@
 }
 
 .messageIdDisplayImage {
-  padding-left: 2px;
+  -moz-padding-start: 2px;
   -moz-box-pack: end;
 }
 
@@ -159,7 +159,7 @@
 }
 
 .emailDisplayImage {
-  padding-left: 2px;
+  -moz-padding-start: 2px;
   -moz-box-pack: end;
 }
 
@@ -226,5 +226,5 @@
 
 .collapsedAttachmentButton {
   list-style-image: url("chrome://messenger/skin/icons/message-mail-attach.gif");
-  margin-right: .5em;
+  -moz-margin-end: .5em;
 }

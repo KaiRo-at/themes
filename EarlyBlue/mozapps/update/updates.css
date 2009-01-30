@@ -6,8 +6,8 @@
 }
 
 .wizard-button > .button-box {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
+  -moz-padding-start: 15px !important;
+  -moz-padding-end: 15px !important;
 }
 
 link {
@@ -67,7 +67,7 @@ remotecontent {
 }
 
 #updateForMoreInfo {
-  margin-left: 5px;
+  -moz-margin-start: 5px;
 }
 
 #updateName, #updateFinishedName {
@@ -77,7 +77,7 @@ remotecontent {
 
 #alertImage {
   list-style-image: url("chrome://global/skin/icons/alert-exclam.gif");
-  margin-right: 5px;
+  -moz-margin-end: 5px;
 }
 
 #incompatibleWarning {
@@ -100,7 +100,7 @@ remotecontent {
 }
 
 #downloadThrobber {
-  margin-left: 5px;
+  -moz-margin-start: 5px;
   list-style-image: url("chrome://global/skin/filepicker/blank.gif");
 }
 
@@ -109,7 +109,7 @@ remotecontent {
 }
 
 #downloadStatusProgress {
-  padding-right: 5px;
+  -moz-padding-end: 5px;
 }
 
 #pauseButton {
@@ -158,7 +158,7 @@ remotecontent {
 }
 
 #verificationFailedIcon {
-  margin-left: 5px;
+  -moz-margin-start: 5px;
   list-style-image: url("chrome://global/skin/icons/notfound.png");
 }
 
@@ -208,7 +208,7 @@ update {
 
 .updatePrefsInfo {
   font-size: smaller;
-  margin-left: 27px;
+  -moz-margin-start: 27px;
   margin-bottom: 10px;
 }
 

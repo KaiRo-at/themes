@@ -53,7 +53,7 @@ toolbar {
 }
 
 menubar > menu {
-  margin-left: 2px;
+  -moz-margin-start: 2px;
 }
 
 .toolbar-primary > .toolbar-holder {
@@ -73,7 +73,7 @@ menubar > menu {
 
 toolbarbutton.bookmark-item {
   margin: 0;
-  margin-right: 2px;
+  -moz-margin-end: 2px;
   min-width: 0;
   max-width: 13em;
   min-height: 20px;
@@ -600,7 +600,7 @@ toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"]:
 
 
 statusbarpanel#statusbar-display {
-  padding-left: 0;
+  -moz-padding-start: 0;
 }
 
 /* ::::: search-bar ::::: */
@@ -648,7 +648,7 @@ statusbarpanel#statusbar-display {
 }
 
 #go-button > .button-box > .button-text {
-  margin-left: 5px !important;
+  -moz-margin-start: 5px !important;
 }
 
 #go-button > .button-box {
@@ -709,7 +709,7 @@ statusbarpanel#statusbar-display {
 #navigator-throbber {
   -moz-user-focus: ignore;
   margin: 0;
-  margin-right: 2px;
+  -moz-margin-end: 2px;
   border: none !important;
   padding: 0px !important;
   min-width: 0;

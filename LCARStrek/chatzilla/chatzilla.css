@@ -95,13 +95,13 @@ window {
  * keys */
 .view-button[viewKey="4"],
 .view-button[viewKey="8"] {
-  margin-left: 5px;
+  -moz-margin-start: 5px;
 }
 
 .header-box, .usercount-data {
   padding-top: 2px;
   padding-bottom: 2px;
-  padding-right: 10px;
+  -moz-padding-end: 10px;
 }
 
 #user-list {
@@ -115,12 +115,12 @@ window {
 .header-label {
   font-weight: bold;
   text-align: right;
-  margin-left: 10px;
+  -moz-margin-start: 10px;
 }
 
 .header-data {
   text-align: left;
-  margin-left: 5px;
+  -moz-margin-start: 5px;
 }
 
 #channel-topic {
@@ -152,7 +152,7 @@ treechildren::-moz-tree-cell-text {
 /* no mode */
 treechildren::-moz-tree-image {
   list-style-image: url(chrome://chatzilla/skin/images/no-symbol.gif);
-  margin-right: 3px;
+  -moz-margin-end: 3px;
 }
 
 #user-list[mode="graphic"] treechildren::-moz-tree-image {

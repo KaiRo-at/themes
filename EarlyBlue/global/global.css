@@ -200,8 +200,8 @@ separator.groove:not([orient="vertical"]) {
 
 separator.groove[orient="vertical"] {
   border-left: 2px groove #CCD0DD;
-  margin-left: 0.4em;
-  margin-right: 0.4em;
+  -moz-margin-start: 0.4em;
+  -moz-margin-end: 0.4em;
 }
 
 /* groove separators (0 padding, for dividing effects) */
@@ -250,8 +250,8 @@ description {
 }
 
 .indent {
-/*  margin-left: 23px; */
-  margin-left: 15px;
+/*  -moz-margin-start: 23px; */
+  -moz-margin-start: 15px;
 }
 
 .box-padded {

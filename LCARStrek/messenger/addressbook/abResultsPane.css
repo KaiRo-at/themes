@@ -39,11 +39,11 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 treechildren::-moz-tree-image(GeneratedName) {
-  padding-right: 2px;
+  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/abcard.gif");
 }
 
 treechildren::-moz-tree-image(GeneratedName, MailList) {
-  padding-right: 2px;
+  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/ablist.gif");
 }

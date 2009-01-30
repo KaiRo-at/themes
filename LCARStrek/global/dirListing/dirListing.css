@@ -38,8 +38,8 @@
   background-color: #000000;
   color: #FF9F00;
   font: 12px helvetica,arial,tahoma,sans-serif;
-  padding-left: 2em;
-  padding-right: 2em;
+  -moz-padding-start: 2em;
+  -moz-padding-end: 2em;
 }
 
 body {

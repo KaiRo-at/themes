@@ -89,7 +89,7 @@ expander {
 }
 
 .themesLink {
-  margin-left: 0px;
+  -moz-margin-start: 0px;
   text-decoration: underline;
   color: blue;
   cursor: pointer;

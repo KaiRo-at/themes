@@ -100,8 +100,8 @@ toolbarpaletteitem {
 }
 
 toolbarpaletteitem[place="toolbar"] {
-  margin-left: -2px;
-  margin-right: -2px;
+  -moz-margin-start: -2px;
+  -moz-margin-end: -2px;
   border-left: 2px solid transparent;
   border-right: 2px solid transparent;
 }

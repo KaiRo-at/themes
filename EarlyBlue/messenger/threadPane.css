@@ -204,7 +204,7 @@ treechildren::-moz-tree-image(junkStatusCol, notjunk) {
 /* ..... subject column ..... */
 
 treechildren::-moz-tree-image(subjectCol) {
-  margin-right: 2px;
+  -moz-margin-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/message-mail.gif");
 }
 

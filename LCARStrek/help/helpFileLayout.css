@@ -122,8 +122,8 @@ li {
 .menuPath {
   background: #c4d0f4; /* bluish color */
   color: inherit;
-  padding-left:  1px; /* else bgcolor ends at last char - no space */
-  padding-right: 1px;
+  -moz-padding-start:  1px; /* else bgcolor ends at last char - no space */
+  -moz-padding-end: 1px;
 }
 
 table {

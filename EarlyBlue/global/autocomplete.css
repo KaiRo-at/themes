@@ -115,7 +115,7 @@ panel[type="autocomplete-richlistbox"],
 }
 
 .autocomplete-treebody::-moz-tree-cell-text {
-  padding-left: 8px;
+  -moz-padding-start: 8px;
 }
 
 .autocomplete-treebody::-moz-tree-row(selected) {
@@ -167,7 +167,7 @@ panel[type="autocomplete-richlistbox"],
 }
 
 .ac-extra > .ac-comment {
-  padding-right: 4px;
+  -moz-padding-end: 4px;
 }
 
 .ac-ellipsis-after {

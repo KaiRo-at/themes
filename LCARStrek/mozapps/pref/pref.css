@@ -46,12 +46,12 @@
 }
 
 .indent {
-  margin-left: 23px;
-  margin-right: 23px;
+  -moz-margin-start: 23px;
+  -moz-margin-end: 23px;
 }
 
 .small-indent {
-  margin-left: 15px;
+  -moz-margin-start: 15px;
 }
 
 .uniWidthButton {
@@ -89,7 +89,7 @@
 }
 
 .biggerIndent {
-  margin-left: 28px;
+  -moz-margin-start: 28px;
 }
 
 #typeField {
@@ -97,5 +97,5 @@
 }
 
 #defaultAppName {
-  margin-left: 6px !important;
+  -moz-margin-start: 6px !important;
 }

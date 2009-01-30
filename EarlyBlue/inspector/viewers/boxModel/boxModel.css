@@ -41,7 +41,7 @@
 /* ::::: statistics ::::: */
 
 .value-column {
-  margin-right: 30px;
+  -moz-margin-end: 30px;
 }
 
 /* ::::: image capture area ::::: */

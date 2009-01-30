@@ -51,6 +51,6 @@
 }
 
 #tagList > listitem > listcell {
-  padding-left:  16px;
-  padding-right: 16px;
+  -moz-padding-start:  16px;
+  -moz-padding-end: 16px;
 }

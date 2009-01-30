@@ -15,18 +15,18 @@ download {
 }
 
 #downloadHistoryView > treechildren::-moz-tree-image(Name) {
-  margin-right: 2px;
+  -moz-margin-end: 2px;
 }
 
 .indented {
-  margin-left: 17px;
+  -moz-margin-start: 17px;
 }
 
 listcell {
   margin-top: 2px;
   margin-bottom: 2px;
-  margin-left: 4px;
-  margin-right: 4px;
+  -moz-margin-start: 4px;
+  -moz-margin-end: 4px;
 }
 
 .link {

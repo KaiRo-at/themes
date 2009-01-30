@@ -57,8 +57,8 @@ hr {
 div#outside {
  text-align: justify;
  width: 90%;
- margin-left: 5%;
- margin-right: 5%;
+ -moz-margin-start: 5%;
+ -moz-margin-end: 5%;
 }
 
 div#plugs {

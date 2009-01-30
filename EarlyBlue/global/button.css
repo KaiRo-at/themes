@@ -57,7 +57,7 @@ button {
 }
 
 .button-icon {
-  margin-right: 2px;
+  -moz-margin-end: 2px;
 }
 
 .button-text {
@@ -83,8 +83,8 @@ button[default="true"] > .button-box {
 }
 
 button[default="true"] > .button-box > .button-icon {
-  margin-right: 0px;
-  margin-left: 2px;
+  -moz-margin-end: 0px;
+  -moz-margin-start: 2px;
 }
 
 button[default="true"][disabled="true"] > .button-box {

@@ -142,15 +142,15 @@ treechildren::-moz-tree-image(remote-err) {
 
 #addresses-box > hbox > label,
 #attachments-box > label {
-  margin-left: 0px;
+  -moz-margin-start: 0px;
 }
 
 #msgIdentity{
-  margin-right: 0px;
+  -moz-margin-end: 0px;
 }
 
 #msgSubject {
-  margin-right: 0px;
+  -moz-margin-end: 0px;
 }
 
 #attachmentBucket {

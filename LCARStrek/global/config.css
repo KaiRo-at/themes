@@ -59,8 +59,8 @@
   -moz-border-radius: 10px;
   padding: 3em;
   -moz-padding-start: 30px;
-  margin-left: 1em;
-  margin-right: 1em;
+  -moz-margin-start: 1em;
+  -moz-margin-end: 1em;
 }
 
 #warningInnerBox
@@ -78,7 +78,7 @@
 #warningText
 {
   font-size: 110%;
-  margin-left: 0;
+  -moz-margin-start: 0;
 }
 
 #warningButton
@@ -94,7 +94,7 @@
 #exclam
 {
   list-style-image: url("chrome://global/skin/icons/alert-exclam.gif");
-  margin-right: 3em;
+  -moz-margin-end: 3em;
 }
 
 /* ::::: tree rows ::::: */

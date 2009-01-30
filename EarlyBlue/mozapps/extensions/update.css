@@ -17,7 +17,7 @@
   color: #000000;
   border: 0px solid transparent;
   border-bottom: 1px solid #9999CC;
-  margin-left: 3px;
-  margin-right: 3px;
+  -moz-margin-start: 3px;
+  -moz-margin-end: 3px;
   padding: 5px;
 }

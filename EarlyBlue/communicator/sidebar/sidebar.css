@@ -51,7 +51,7 @@
   border: none;
   color: #CCD0DD;
   background-color: #666699;
-  padding-left: 4px;
+  -moz-padding-start: 4px;
 }
 
 #sidebar-panel-picker {
@@ -90,7 +90,7 @@
 }
 
 .text-panel-loading[loading="false"] {
-  margin-left: 11px;
+  -moz-margin-start: 11px;
 }
 
 .image-panel-loading {

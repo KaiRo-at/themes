@@ -56,7 +56,7 @@ tabpanels {
 
 .tab-icon {
   margin-top: 1px;
-  margin-right: 3px;
+  -moz-margin-end: 3px;
   width: 16px;
   height: 16px;
 }
@@ -79,7 +79,7 @@ tabbrowser > tabbox > tabpanels {
 
 .tabs-closebutton {
   margin-bottom: 2px;
-  margin-right: 2px;
+  -moz-margin-end: 2px;
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
@@ -97,7 +97,7 @@ tabbrowser > tabbox > tabpanels {
 .tab-drop-indicator-bar {
   height: 11px;
   margin-top: -11px;
-  margin-left: -8px;
+  -moz-margin-start: -8px;
   position: relative;
 }
 

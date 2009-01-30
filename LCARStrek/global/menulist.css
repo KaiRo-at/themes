@@ -79,7 +79,7 @@ menulist[open="true"] {
 .menulist-description {
   font-style: italic;
   color: #8050B0;
-  margin-left: 1ex !important;
+  -moz-margin-start: 1ex !important;
 }
 
 menulist:focus > .menulist-label-box {

@@ -386,7 +386,7 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 }
 
 .autocomplete-search-engine-img {
-  margin-right: 4px;
+  -moz-margin-end: 4px;
 }
 
 .autocomplete-history-dropmarker:hover {

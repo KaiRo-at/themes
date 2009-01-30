@@ -147,16 +147,16 @@ tree.list {
 
 #ColorPreview {
   border: 1px inset #CCD0DD;
-  margin-left: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
+  -moz-margin-start: 10px;
+  -moz-padding-start: 5px;
+  -moz-padding-end: 5px;
   min-width: 100px;
   min-height: 50px;
 }
 
 #alignTypeSelect,
 label#alignLabel {
-  margin-left: 5px;
+  -moz-margin-start: 5px;
 }
 
 /* ::::: table properties dialog ::::: */
@@ -208,7 +208,7 @@ label#alignLabel {
 .colorpicker {
   border: 1px outset #CCD0DD;
   /* This should be the same as for textbox */
-  margin-left: 4px;
+  -moz-margin-start: 4px;
   /* For a little extra space between buttons */
   margin-bottom: 2px;
 }

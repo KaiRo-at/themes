@@ -481,7 +481,7 @@ toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"]:
 
 
 statusbarpanel#statusbar-display {
-  padding-left: 0;
+  -moz-padding-start: 0;
 }
 
 /* ::::: search-bar ::::: */
@@ -531,7 +531,7 @@ statusbarpanel#statusbar-display {
 }
 
 #go-button > .button-box > .button-text {
-  margin-left: 5px !important;
+  -moz-margin-start: 5px !important;
 }
 
 #go-button > .button-box {

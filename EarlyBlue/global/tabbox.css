@@ -94,8 +94,8 @@ tab:focus > .tab-middle {
 
 /*
 tab[first-tab="true"][selected="true"] {
-  padding-right: 5px;
-  padding-left: 5px;
+  -moz-padding-end: 5px;
+  -moz-padding-start: 5px;
 }
 */
 
