@@ -1,7 +1,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 .controlBar {
-  height: 24px;
+  height: 28px;
   background-color: rgba(156,156,255,0.75);
 }
 
@@ -10,11 +10,16 @@
   margin: 0px;
   padding: 0px;
   border: none;
-  min-height: 24px;
-  min-width: 24px;
+  min-height: 28px;
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center center;
+}
+.playButton {
+  min-width: 28px;
+}
+.muteButton {
+  min-width: 33px;
 }
 .playButton:hover, .muteButton:hover {
   background-color: rgba(255,207,0,0.75);
@@ -48,4 +53,58 @@
 }
 .muteButton[muted="true"]:hover {
   background-image: url("chrome://global/skin/media/unmuteButton-hover.png");
+}
+
+.backgroundBar {
+  /* make bar 8px tall (control height = 28, minus 2 * 10 margin) */
+  margin: 10px 2px;
+  background-color: rgba(0,0,0,0.75);
+  -moz-border-radius: 3px 3px;
+}
+
+.bufferBar, .progressBar {
+  /* make bar 8px tall (control height = 28, minus 2 * 10 margin) */
+  margin: 10px 2px;
+  border: none;
+  background-color: transparent;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+/* .progress-bar is an element inside the <progressmeter> implementation. */
+.bufferBar .progress-bar {
+  /*
+   * Note that this is drawn on top of the .backgroundBar. So although this
+   * has the same background-color specified, the semitransparent
+   * compositing gives it a different visual appearance.
+   */
+  background-color: rgba(255,159,0,0.75);
+  -moz-border-radius: 3px 3px;
+  -moz-appearance: none;
+}
+
+.progressBar .progress-bar {
+  background-color: #008484;
+  -moz-border-radius: 3px 3px;
+  -moz-appearance: none;
+}
+
+/* .scale-slider is an element inside the <scale> implementation. */
+.scale-slider {
+  /* Hide the default horizontal bar. */
+  background: none;
+  margin: 0 2px;
+}
+
+/* .scale-thumb is an element inside the <scale> implementation. */
+.scale-thumb {
+  /* Override the default thumb appearance with a custom image. */
+  background: url("chrome://global/skin/media/scrubberThumb.png") no-repeat center;
+  border: none !important;
+  min-width: 11px;
+  min-height: 20px;
+}
+
+.scale-thumb:hover, .scale-thumb:active {
+  background-image: url("chrome://global/skin/media/scrubberThumb-hover.png");
 }

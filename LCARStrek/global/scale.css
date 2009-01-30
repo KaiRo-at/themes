@@ -49,6 +49,7 @@
   background: url("chrome://global/skin/scale/scale-tray-horiz.gif") 0% 50% repeat-x;
   margin: 2px 4px;
   width: 100px;
+  height: auto;
 }
 
 .scale-slider[orient="vertical"]
