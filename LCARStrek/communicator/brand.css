@@ -37,11 +37,16 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+#throbber-box {
+  -moz-box-orient: vertical;
+}
+
 #navigator-throbber {
   -moz-binding: url("chrome://global/content/bindings/button.xml#button-image");
   -moz-user-focus: ignore;
-  /*-moz-box-align: center;
-  -moz-box-pack: center; */
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  -moz-box-flex: 1;
   margin: 0;
   border: none;
   padding: 2px;

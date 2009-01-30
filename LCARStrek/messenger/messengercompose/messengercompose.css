@@ -148,6 +148,10 @@
   min-height: 0px; /* this undoes the min-height in toolbar.css */
 }
 
+#MsgHeadersToolbar > .toolbar-box > .toolbar-holder {
+  -moz-padding-end: 0; /* this undoes the padding in toolbar.css */
+}
+
 /* ::::: autocomplete icons ::::: */
 
 treechildren::-moz-tree-cell-text(default-match) {
