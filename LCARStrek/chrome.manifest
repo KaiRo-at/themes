@@ -5,6 +5,7 @@ skin messenger-newsblog LCARStrek messenger-newsblog/
 skin communicator LCARStrek communicator/
 skin help LCARStrek help/
 skin navigator LCARStrek navigator/
+style chrome://global/content/customizeToolbar.xul chrome://navigator/skin/navigator.css
 skin editor LCARStrek editor/
 skin chatzilla LCARStrek chatzilla/
 skin inspector LCARStrek inspector/

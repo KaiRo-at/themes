@@ -5,6 +5,7 @@ skin messenger-newsblog EarlyBlue messenger-newsblog/
 skin communicator EarlyBlue communicator/
 skin help EarlyBlue help/
 skin navigator EarlyBlue navigator/
+style chrome://global/content/customizeToolbar.xul chrome://navigator/skin/navigator.css
 skin editor EarlyBlue editor/
 skin chatzilla EarlyBlue chatzilla/
 skin inspector EarlyBlue inspector/
