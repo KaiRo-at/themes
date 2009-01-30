@@ -12,8 +12,8 @@ if [ -n "$1" ]; then
   DST_DATE=`TZ=PST8PDT date +%Y-%m-%d`
   COMM_DIR=suite/themes/classic/
   MOZ_DIR=toolkit/themes/winstripe/
-  COMM_LOG=$RUN_DIR/themelog-suitedefault.$SRC_DATE.$DST_DATE.diff
-  MOZ_LOG=$RUN_DIR/themelog-tkwinstripe.$SRC_DATE.$DST_DATE.diff
+  COMM_LOG=$RUN_DIR/themelog-suitedefault.$SRC_DATE.$DST_DATE.log
+  MOZ_LOG=$RUN_DIR/themelog-tkwinstripe.$SRC_DATE.$DST_DATE.log
 
   if [ ! -e $COMM_LOG ]; then
     echo "Getting $COMM_LOG..."
@@ -36,7 +36,7 @@ for repo in "COMM" "MOZ"; do
   LOG_VAR="${repo}_LOG"
   HG_URL=`awk -F ' *= *' '/default *=/ { print $2 }' ${!HG_DIR_VAR}/.hg/hgrc`
   REPO_NAME=`basename $HG_URL`
-  DIFF_NAME=${!LOG_VAR}
+  LOG_NAME=${!LOG_VAR}
   HTML_NAME=${DIFF_NAME/.diff/.html}
   echo "Writing $HTML_NAME..."
   echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">' > $HTML_NAME
@@ -50,7 +50,7 @@ for repo in "COMM" "MOZ"; do
   echo "    <pre>" >> $HTML_NAME
   sed -e "s/user:\(.*\)<\(.*\)>/user:\1\&lt;\2\&gt;/" \
       -e "s|\(changeset: *[0-9]*\):\([0-9a-f]*\)|\1:<a href=\"$HG_URL/rev/\2\">\2</a>|" \
-      $DIFF_NAME >> $HTML_NAME
+      $LOG_NAME >> $HTML_NAME
   echo "    </pre>" >> $HTML_NAME
   echo "  </body>" >> $HTML_NAME
   echo "</html>" >> $HTML_NAME
