@@ -52,7 +52,7 @@ splitter {
   border-bottom: 3px solid black;
   min-width: 6px;
   background-color: #9C9CFF;
-  margin: 0px 3px 0px 3px;
+  margin: 0px 3px;
 }
 
 splitter[state="dragging"],
@@ -73,7 +73,7 @@ splitter[orient="vertical"] {
   border-left: 3px solid black;
   border-right: 3px solid black;
   min-height: 6px;
-  margin: 3px 0px 3px 0px;
+  margin: 3px 0px;
 }
 
 /* ::::: splitter grippy ::::: */

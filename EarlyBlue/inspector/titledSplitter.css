@@ -58,7 +58,7 @@ box[orient="vertical"] > .titled-splitter {
 }
 
 .titledsplitter-titlebox {
-  padding: 0px 5px 0px 5px;
+  padding: 0px 5px;
 }
 
 .titledsplitter-text {
@@ -81,7 +81,10 @@ box[orient="vertical"] > .titled-splitter {
 
 .titledsplitter-closebutton:hover:active {
   border-style: inset;
-  padding: 3px 1px 1px 3px;
+  padding-top: 3px;
+  padding-bottom: 1px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 1px;
 }
 
 

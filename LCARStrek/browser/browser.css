@@ -82,7 +82,10 @@ toolbarbutton.bookmark-item {
 
 toolbarbutton.bookmark-item:hover:active,
 toolbarbutton.bookmark-item[open="true"] {
-  padding: 2px 0px 0px 2px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
 }
 
 .bookmark-item > .toolbarbutton-icon {
@@ -130,7 +133,10 @@ menuitem.bookmark-item {
   max-width: 26em;
   border-top: 1px solid transparent !important;
   border-bottom: 1px solid transparent !important;
-  padding: 1px 3px 1px 2px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 3px;
   margin-top: -1px;
 }
 
@@ -509,7 +515,10 @@ toolbar[iconsize="small"] .toolbarbutton-1 {
 
 toolbar[iconsize="small"] .toolbarbutton-1:hover:active,
 toolbar[iconsize="small"] .toolbarbutton-1[open="true"] {
-  padding: 3px 1px 1px 3px;
+  padding-top: 3px;
+  padding-bottom: 1px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 1px;
 }
 
 toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"],
@@ -520,7 +529,10 @@ toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"][open="true"] {
 }
 
 toolbar[iconsize="small"] .toolbarbutton-1[checked="true"] {
-  padding: 3px 1px 1px 3px !important;
+  padding-top: 3px !important;
+  padding-bottom: 1px !important;
+  -moz-padding-start: 3px !important;
+  -moz-padding-end: 1px !important;
 }
 
 toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"],
@@ -537,7 +549,10 @@ toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"]:
 
 #window-controls {
   -moz-box-align: center;
-  padding: 0 2px 0 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  -moz-padding-start: 0px;
+  -moz-padding-end: 2px;
   border-left: 3px solid #000000;
   min-height: 28px;
 }
@@ -691,7 +706,7 @@ statusbarpanel#statusbar-display {
 #page-report-button[blocked] {
   display: -moz-box;
   list-style-image: url("chrome://browser/skin/icons/info.gif");
-  padding: 0px 3px 0px 3px;
+  padding: 0px 3px;
 }
 
 #page-theme-button {
@@ -701,7 +716,7 @@ statusbarpanel#statusbar-display {
 #page-theme-button[themes] {
   display: -moz-box;
   list-style-image: url("chrome://browser/skin/icons/page-themes.gif");
-  padding: 0px 3px 0px 3px;
+  padding: 0px 3px;
 }
 
 /* ::::: throbber ::::: */

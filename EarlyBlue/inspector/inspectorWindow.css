@@ -80,7 +80,7 @@
 /* HACK: this button has no id !!! */
 #bxURLBarContainer + toolbarbutton {
   border: 1px outset #CCD0DD;
-  margin: 2px 0px 4px 0px;
+  margin: 2px 0px 4px;
   font-weight: bold;
   background-color: #9999CC;
 }

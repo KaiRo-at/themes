@@ -47,7 +47,7 @@ remotecontent {
  * License Page
  */
 .loadingBox {
-  padding: 3px 5px 3px 5px;
+  padding: 3px 5px;
 }
 .remoteLoadingThrobber {
   margin-top: 3px;
@@ -63,7 +63,10 @@ remotecontent {
  * Update Found Page
  */
 #moreDetails {
-  margin: 1px 5px 4px 3px;
+  margin-top: 1px;
+  margin-bottom: 4px;
+  -moz-margin-start: 3px;
+  -moz-margin-end: 5px;
 }
 
 #updateForMoreInfo {
@@ -86,7 +89,7 @@ remotecontent {
   -moz-border-radius: 5px;
   border: 1px solid #9C9CFF;
   padding: 3px;
-  margin: 1px 5px 4px 5px;
+  margin: 1px 5px 4px;
 }
 
 /**
@@ -200,7 +203,7 @@ update {
 
 #historyItems {
   height: 200px;
-  margin: 1px 5px 4px 5px;
+  margin: 1px 5px 4px;
 }
 
 #historyItems > scrollbox {
@@ -212,4 +215,3 @@ update {
   -moz-margin-start: 27px;
   margin-bottom: 10px;
 }
-

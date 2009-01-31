@@ -78,7 +78,7 @@ h5 { font-size: 90%; }
 h6 { font-size: 90%; border: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0 0.2em 0;
+  margin: 1em 0 0.2em;
   border-bottom: 1px solid #ccc;
   font-family: arial, verdana, sans-serif;
 }
@@ -107,7 +107,7 @@ li {
 
 .contentsBox > ul,
 .contentsBox ul > ul{
-	margin: 0 0 0 0;
+	margin: 0;
 	list-style-type: none;
 }
 

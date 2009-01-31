@@ -66,7 +66,8 @@
   border: none;
   color: #FF9F00;
   background-color: #6000CF;
-  padding: 0px 2px 0px 4px;
+  padding: 0px 2px;
+  -moz-padding-start: 4px;
 }
 
 .sidebar-header-text {
@@ -89,7 +90,7 @@
 /* ..... panel picker button ..... */
 
 #sidebar-panel-picker {
-  padding: 3px 1px 3px 1px;
+  padding: 3px 1px;
   /** bugzilla 89144 - must be able to access tabs dropdown **/
   -moz-user-focus:normal !important;
 }
@@ -131,7 +132,7 @@
 .box-texttab > hbox {
   -moz-border-radius: 5px;
   -moz-box-align: stretch;
-  padding: 2px 0px 2px 0px;
+  padding: 2px 0px;
   background-color: #FF9F00;
   color: #000000;
 }
@@ -160,11 +161,11 @@
 }
 
 .sbtab-label {
-  margin: 0px 0px 0px 0px !important;
+  margin: 0px !important;
 }
 
 .sbtab-twisty {
-  margin: 2px 3px 0px 3px;
+  margin: 2px 3px 0px;
   list-style-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
 }
 
@@ -186,7 +187,7 @@
 
 .sidebar-nav-button {
   -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton-image");
-  padding: 5px 0px 5px 0px;
+  padding: 5px 0px;
 }
 
 .tab-fwd {

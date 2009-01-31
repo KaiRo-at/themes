@@ -41,24 +41,30 @@
 
 toolbar#toolbox {
   margin: 0px;
-  padding: 4px 0px 0px 0px;
+  padding: 4px 0px 0px;
 }
 
 toolbar#toolbox button.tool:active {
-	margin: 2px 0px 0px 2px;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  -moz-margin-start: 2px;
+  -moz-margin-end: 0px;
 }
 
 toolbar#toolbox button.tool[toggled="1"] {
-  margin: 2px 0px 0px 2px;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  -moz-margin-start: 2px;
+  -moz-margin-end: 0px;
   border: 1px white inset;
 }
 
 toolbar#toolbox button.tool {
   border: 1px solid transparent;
-  margin: 1px 1px 1px 1px;
-	padding: 2px;
-	text-decoration: none;
-	color: inherit;
+  margin: 1px;
+  padding: 2px;
+  text-decoration: none;
+  color: inherit;
 }
 
 toolbar.toolbox > toolbargrippy {
@@ -66,41 +72,41 @@ toolbar.toolbox > toolbargrippy {
 }
 
 #pointerButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_pointerTool.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_pointerTool.gif");
 }
 
 #rectButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_rectangleTool.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_rectangleTool.gif");
 }
 
 #cirButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_circleTool.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_circleTool.gif");
 }
 
 #polyButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_polygonTool.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_polygonTool.gif");
 }
 
 #cutButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_Cut.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_Cut.gif");
 }
 
 #copyButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_Copy.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_Copy.gif");
 }
 
 #pasteButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_Paste.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_Paste.gif");
 }
 
 #zoomInButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_zoomIn.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_zoomIn.gif");
 }
 
 #zoomOutButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_zoomOut.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_zoomOut.gif");
 }
 
 #contrastButton {
-	list-style-image:url("chrome://editor/skin/icons/Map_contrast.gif");
+  list-style-image:url("chrome://editor/skin/icons/Map_contrast.gif");
 }

@@ -38,7 +38,8 @@
 */
 
 .buttonBox {
-  margin: 0px 3px 0px 0px !important;
+  margin: 0 !important;
+  -moz-margin-end: 3px !important;
 }
 
 .buttonBoxButton {

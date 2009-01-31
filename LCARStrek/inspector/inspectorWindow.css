@@ -88,6 +88,6 @@
 
 /* HACK: this button has no id !!! */
 #bxURLBarContainer + toolbarbutton {
-  margin: 2px 0px 4px 0px;
+  margin: 2px 0px 4px;
   font-weight: bold;
 }

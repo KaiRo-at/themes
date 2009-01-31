@@ -40,7 +40,7 @@
 
 .listBox {
   -moz-border-radius: 3px;
-  margin: 2px 2px;
+  margin: 2px;
   border: 1px solid #9C9CFF;
   background-color: #000000;
 }
@@ -75,16 +75,19 @@
 #typeIcon,
 .extensionChildren::-moz-tree-image(fileExtension),
 .pluginTypesChildren::-moz-tree-image(fileExtension) {
-  margin: 0px 5px 0px 0px;
+  margin: 0;
+  -moz-margin-end: 5px;
 }
 
 .pluginTypesChildren::-moz-tree-image(pluginEnabled) {
-  margin: 0px 5px 0px 0px;
+  margin: 0;
+  -moz-margin-end: 5px;
   list-style-image: url("chrome://mozapps/skin/pref/dot.gif");
 }
 
 .pluginTypesChildren::-moz-tree-image(pluginEnabled, enabled) {
-  margin: 0px 5px 0px 0px;
+  margin: 0;
+  -moz-margin-end: 5px;
   list-style-image: url("chrome://mozapps/skin/pref/check.gif");
 }
 

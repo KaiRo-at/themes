@@ -68,7 +68,7 @@ tab {
   margin-top: 2px;
   border: 1px outset #CCD0DD;
   border-bottom: none;
-  padding: 1px 4px 2px 4px;
+  padding: 1px 4px 2px;
   background-color: #CCD0DD;
   color: #000000;
 }
@@ -109,7 +109,7 @@ tab[first-tab="true"][selected="true"] {
   margin-bottom: 2px;
   border: 1px outset #CCD0DD;
   border-top: none;
-  padding: 2px 4px 1px 4px;
+  padding: 2px 4px 1px;
 }
 
 /* ::::: tabs-bottom ::::: */

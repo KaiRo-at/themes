@@ -107,7 +107,10 @@ scrollbarbutton {
 
 scrollbarbutton:hover:active,
 scrollbarbutton[active="true"] {
-  padding: 2px 0px 0px 2px;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
 }
 
 /* XXX - scrollbar.xml always grabs the OS settings and we don't want that */
@@ -129,7 +132,8 @@ scrollcorner {
 
 scrollbarbutton[type="increment"] {
   background-image: url("chrome://global/skin/scrollbar/button-right.gif");
-  margin: 0px 0px 0px 3px;
+  margin: 0px;
+  -moz-margin-start: 3px;
 }
 
 scrollbarbutton[type="increment"]:hover {
@@ -142,7 +146,7 @@ scrollbarbutton[type="increment"][disabled="true"] {
 
 scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
   background-image: url("chrome://global/skin/scrollbar/button-down.gif");
-  margin: 3px 0px 0px 0px;
+  margin: 3px 0px 0px;
 }
 
 scrollbar[orient="vertical"] > scrollbarbutton[type="increment"]:hover {
@@ -157,7 +161,8 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="increment"][disabled="true"
 
 scrollbarbutton[type="decrement"] {
   background-image: url("chrome://global/skin/scrollbar/button-left.gif");
-  margin: 0px 3px 0px 0px;
+  margin: 0px;
+  -moz-margin-end: 3px;
 }
 
 scrollbarbutton[type="decrement"]:hover {
@@ -170,7 +175,7 @@ scrollbarbutton[type="decrement"][disabled="true"] {
 
 scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
   background-image: url("chrome://global/skin/scrollbar/button-up.gif");
-  margin: 0px 0px 3px 0px;
+  margin: 0px 0px 3px;
 }
 
 scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"]:hover {

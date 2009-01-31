@@ -58,7 +58,7 @@ separator.thin {
 /* ::::: rows ::::: */
 
 #acctCentralHeaderRow {
-  margin: 5px 5px 5px 5px;
+  margin: 5px;
   background-color: #FF9F00;
   -moz-border-radius: 10px;
   color: #000000;
@@ -94,7 +94,7 @@ separator.thin {
 .acctCentralLinkText {
   cursor: pointer;
   color: #008484;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 5px;
   -moz-border-radius: 3px;
   text-decoration: none;
 }

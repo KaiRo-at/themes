@@ -1,5 +1,5 @@
 #extensionsBox {
-  margin: 10px 10px 0px 10px;
+  margin: 10px 10px 0px;
   min-width: 1px;
 }
 
@@ -29,7 +29,10 @@
 
 /* Command Bar */
 #commandBarBottom {
-  margin: 5px 5px 10px 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  -moz-margin-start: 10px;
+  -moz-margin-end: 5px;
   min-width: 1px;
 }
 
@@ -342,7 +345,7 @@ vbox[typeName="status"][type="header-recommended"] {
 }
 
 #progressBox {
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
 }
 
 #progressBox > hbox {
@@ -433,7 +436,7 @@ richlistitem[selected="true"] .includeUpdate {
 #infoDisplay h3 {
   text-align: left;
   font-weight: bold;
-  margin: 0 0 0.7em 0;
+  margin: 0 0 0.7em;
 }
 
 #infoDisplay h1 {
@@ -450,7 +453,7 @@ richlistitem[selected="true"] .includeUpdate {
 
 #infoDisplay ol,
 #infoDisplay ul {
-  margin: 0 0 0.7em 0;
+  margin: 0 0 0.7em;
 }
 
 #infoDisplay li {
@@ -459,5 +462,5 @@ richlistitem[selected="true"] .includeUpdate {
 
 #infoDisplay p {
   text-align: justify;
-  margin: 0 0 0.7em 0;
+  margin: 0 0 0.7em;
 }

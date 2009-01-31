@@ -104,7 +104,10 @@ prefwindow {
 /* deprecated */
 window.dialog {
   background-color: #000000;
-  padding: 8px 10px 10px 8px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 10px;
 }
 
 /* ::::: alert icons :::::*/
@@ -176,7 +179,7 @@ statusbar {
 statusbarpanel {
   -moz-box-align: center;
   -moz-box-pack: center;
-  padding: 0px 1px 0px 1px;
+  padding: 0px 1px;
 }
 
 .statusbar-resizerpanel {
@@ -207,7 +210,7 @@ window:not([active="true"]) menubar > menu {
 
 .inset {
 /*  border: 1px inset #FF9F00;
-  margin: 0px 5px 5px 5px; */
+  margin: 0px 5px 5px; */
 }
 
 .outset {
@@ -303,7 +306,7 @@ description {
 }
 
 .wizard-box {
-  padding: 15px 35px 10px 35px;
+  padding: 15px 35px 10px;
 }
 
 .text-link {

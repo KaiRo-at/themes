@@ -11,7 +11,8 @@
 
 /* Download View Items */
 richlistitem[type="download"] {
-  padding: 4px 8px 4px 4px;
+  padding: 4px;
+  -moz-padding-end: 8px;
   min-height: 46px;
   border-bottom: 1px solid #9C9CFF;
 }

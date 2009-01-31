@@ -111,12 +111,12 @@ treechildren::-moz-tree-cell-text(selected) {
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell {
   border: 1px solid transparent;
-  padding: 0px 1px 0px 1px;
+  padding: 0px 1px;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text {
   border: 1px solid transparent;
-  padding: 0px 1px 1px 1px;
+  padding: 0px 1px 1px;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected) {

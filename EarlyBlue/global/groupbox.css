@@ -46,7 +46,10 @@
 groupbox {
   margin: 3px 2px;
   border: 2px groove #CCD0DD;
-  padding: 3px 3px 5px 5px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  -moz-padding-start: 5px;
+  -moz-padding-end: 3px;
 }
 
 .groupbox-body {
@@ -54,7 +57,7 @@ groupbox {
 }
 
 caption {
-  margin: 0px 6px 2px 6px;
+  margin: 0px 6px 2px;
   padding: 0px 3px;
   background-color: #CCD0DD;
 }

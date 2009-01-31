@@ -63,7 +63,8 @@
 }
 
 #attachmentTree {
-  margin: 3px 3px 3px 0px;
+  margin: 3px;
+  -moz-margin-start: 0;
   height: 0px;
   width: 20em;
   color: #FF9F00;
@@ -93,14 +94,15 @@
 }
 
 .headerName {
-  margin: 0em .25em 0em 0em;
+  margin: 0;
+  -moz-margin-end: .25em;
   min-height: 16px;
   font-weight: bold;
   text-align: right;
 }
 
 .headerValue {
-  margin: 0em 0em 3px 0em;
+  margin: 0 0 3px;
   min-width: 50px;
   white-space: normal;
   color: inherit;
@@ -108,11 +110,11 @@
 }
 
 .headerValueBox {
-  margin: 0em 0em 3px 0em;
+  margin: 0 0 3px;
 }
 
 .headerValueBox > .headerValue {
-  margin: 0 0 0 0;
+  margin: 0;
 }
 
 .headerValueBox[singleline="true"] {
@@ -187,7 +189,7 @@
 
 .expandHeaderViewButton,
 .collapsedHeaderViewButton  {
-  margin: 2px .5em 0 .5em;
+  margin: 2px .5em 0;
   padding: 0px;
 }
 
@@ -228,7 +230,10 @@
 }
 
 .collapsedHeaderDisplayName {
-  margin: 2px .5em 2px .55em;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  -moz-margin-start: .55em;
+  -moz-margin-end: .5em;
   min-height: 12px;
   font-weight: bold;
 }

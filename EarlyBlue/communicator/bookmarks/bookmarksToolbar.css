@@ -112,7 +112,7 @@ menu.bookmark-item,
 menuitem.bookmark-item {
   border-top: 1px solid transparent !important;
   border-bottom: 1px solid transparent !important;
-  padding: 0px 2px 0px 2px;
+  padding: 0px 2px;
 }
 
 .menuitem-iconic.bookmark-item[disabled="true"] {

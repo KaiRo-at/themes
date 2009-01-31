@@ -105,7 +105,7 @@ treechildren::-moz-tree-image(Name, separator) {
 
 treechildren::-moz-tree-cell-text(Name, separator) {
   color: #808080;
-  margin: 0px 5px 0px 5px;
+  margin: 0px 5px;
 }
 
 treechildren::-moz-tree-cell-text(Name, separator, selected, focus) {

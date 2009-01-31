@@ -124,7 +124,10 @@ menulist:hover > .menulist-dropmarker {
 
 menulist:hover:active > .menulist-dropmarker,
 menulist[open="true"] > .menulist-dropmarker {
-  padding: 2px 0px 0px 2px;
+  padding-top: 2px;
+  padding-bottom: 0;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0;
   border: none;
   border-left: 1px solid #FFCF00;
   background-color: #FF9F00;

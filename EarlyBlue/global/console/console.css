@@ -139,11 +139,14 @@
 /* ::::: toolbars ::::: */
 
 #TextboxEval {
-  margin: 1px 2px 1px 2px ;
+  margin: 1px 2px;
 }
 
 #ButtonEval {
-  margin: 1px 2px 1px 0px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  -moz-margin-start: 0;
+  -moz-margin-end: 2px;
 }
 
 toolbarseparator {

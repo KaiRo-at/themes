@@ -82,7 +82,10 @@ prefwindow {
 }
 
 window.dialog {
-  padding: 8px 10px 10px 8px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 10px;
 }
 
 /* ::::: alert icons :::::*/
@@ -167,7 +170,7 @@ window:not([active="true"]) menubar > menu {
 
 .inset {
   border: 1px inset #CCD0DD;
-  /* margin: 0px 5px 5px 5px; */
+  /* margin: 0px 5px 5px; */
 }
 
 .outset {
@@ -263,7 +266,7 @@ description {
 }
 
 .wizard-box {
-  padding: 15px 35px 10px 35px;
+  padding: 15px 35px 10px;
 }
 
 .text-link {

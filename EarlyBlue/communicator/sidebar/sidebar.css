@@ -68,7 +68,8 @@
 
 #sidebar-close-button {
   -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton-image");
-  padding: 1px 3px 1px 4px;
+  padding: 1px 3px;
+  -moz-padding-start: 4px;
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
@@ -102,7 +103,7 @@
 
 .box-texttab {
   -moz-binding: url("chrome://communicator/skin/sidebar/sidebarBindings.xml#sbtab");
-  padding: 2px 0px 2px 0px;
+  padding: 2px 0px;
   background-color: #CCD0DD;
   color: #000000;
   cursor: pointer;
@@ -115,7 +116,8 @@
 .box-texttab[selected="true"]:hover:active {
   background-color: #336699;
   border-top: 1px solid #336699;
-  padding: 1px 1px 1px 0px;
+  padding: 1px;
+  -moz-padding-start: 0px;
 }
     
 .box-texttab[last-panel="true"], 
@@ -128,11 +130,11 @@
 }
 
 .sbtab-label {
-  margin: 0px 0px 0px 0px !important;
+  margin: 0px !important;
 }
 
 .sbtab-twisty {
-  margin: 2px 3px 0px 3px;
+  margin: 2px 3px 0px;
   list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
 }
 
@@ -172,7 +174,7 @@
 
 .sidebar-nav-button {
   -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton-image");
-  padding: 5px 0px 5px 0px;
+  padding: 5px 0px;
 }
 
 .tab-fwd {

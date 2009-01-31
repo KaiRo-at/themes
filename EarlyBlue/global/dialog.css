@@ -62,7 +62,7 @@ dialog {
 /* ::::: dialog header ::::: */
 
 dialogheader {
-  margin: 0px 5px 5px 5px;
+  margin: 0px 5px 5px;
   border: 1px inset #666699;
   padding: 3px 4px;
   background-color: #666699;

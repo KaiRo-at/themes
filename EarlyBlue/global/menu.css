@@ -69,8 +69,10 @@ menuitem[_moz-menuactive="true"][disabled="true"] {
 }
 
 menubar > menu {
-  padding: 2px 0px 2px 3px;
-  margin: 0px 2px 0px 0px;
+  padding: 2px 0px;
+  -moz-padding-start: 3px;
+  margin: 0px 2px;
+  -moz-margin-start: 0px;
   border: 1px solid #CCD0DD;
 }
 

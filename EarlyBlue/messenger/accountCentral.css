@@ -58,7 +58,7 @@ separator.thin {
 /* ::::: rows ::::: */
 
 #acctCentralHeaderRow {
-  margin: 5px 5px 5px 5px;
+  margin: 5px;
   background-color: #666699;
   color: #FFFFFF;
   font-weight: bold;

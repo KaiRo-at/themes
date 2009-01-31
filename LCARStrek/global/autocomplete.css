@@ -157,7 +157,10 @@ panel[type="autocomplete-richlistbox"],
 .ac-site-icon {
   width: 16px;
   height: 16px;
-  margin: 0 5px -3px 3px;
+  margin-top: 0;
+  margin-bottom: -3px;
+  -moz-margin-start: 3px;
+  -moz-margin-end: 5px;
 }
 
 .ac-type-icon {
@@ -174,13 +177,13 @@ panel[type="autocomplete-richlistbox"],
 }
 
 .ac-ellipsis-after {
-  margin: 2px 0px 0px 0px !important;
+  margin: 2px 0px 0px !important;
   padding: 0;
   min-width: 1em;
 }
 
 .ac-normal-text {
-  margin: 2px 0px 0px 0px !important;
+  margin: 2px 0px 0px !important;
   padding: 0;
 }
 

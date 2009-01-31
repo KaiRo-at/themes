@@ -204,7 +204,7 @@ toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubu
 .toolbarbutton-menubutton-dropmarker {
   -moz-border-radius: 3px;
   -moz-box-align: start;
-  padding: 3px 1px 1px 1px;
+  padding: 3px 1px 1px;
   border: none;
   background-color: transparent;
 }
@@ -229,6 +229,6 @@ toolbarbutton[type="menu"][open="true"]:not([disabled="true"]) .toolbarbutton-me
 
 
 .toolbarbutton-menubutton-dropmarker[disabled="true"] {
-  padding: 3px 1px 1px 1px !important;
+  padding: 3px 1px 1px !important;
   border: none !important;
 }

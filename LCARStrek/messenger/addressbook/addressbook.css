@@ -163,7 +163,7 @@
 .CardViewHeading {
   padding: 1px;
   -moz-padding-start: 5px;
-  margin: 0px 0px 1px 0px;
+  margin: 0 0 1px;
   background-color: #008484;
   color: #000000;
   font-weight: bold;

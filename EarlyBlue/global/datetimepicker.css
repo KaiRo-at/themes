@@ -53,7 +53,7 @@ datepicker, timepicker {
   cursor: text;
   -moz-margin-end: 2px;
   border: 1px inset #CCD0DD;
-  padding: 2px 0 3px 0;
+  padding: 2px 0 3px;
   -moz-padding-start: 4px;
   -moz-padding-end: 2px;
   background-color: #FFFFFF;

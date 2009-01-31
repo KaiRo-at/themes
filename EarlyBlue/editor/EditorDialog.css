@@ -122,7 +122,8 @@ groupbox {
   border: 2px outset #CCD0DD;
   width: 25px;
   height: 20px;
-  margin: 0px 3px 0px 0px;
+  margin: 0;
+  -moz-margin-end: 3px;
 }
 
 #ColorPickerSwatch[default="true"] {
@@ -134,14 +135,17 @@ groupbox {
   width: 17px;
   height: 13px; 
   border: 1px inset #CCD0DD;
-  margin: 1px 2px 2px 4px;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  -moz-margin-start: 4px;
+  -moz-margin-end: 2px;
 }
 
 /* temporary -- we need a simple box-based list defined in XBL */
 tree.list {
   border: 1px inset #CCD0DD;
   /* same as in menulist.css */
-  margin: 1px 5px 2px 5px;
+  margin: 1px 5px 2px;
   /* use rows="#" in XUL to define height */
 }
 
@@ -288,7 +292,7 @@ label#alignLabel {
   height: 52px;
   max-height: 52px;
   min-height: 52px;
-  margin: 6px 5px 6px 5px;
+  margin: 6px 5px;
   overflow: -moz-hidden-unscrollable;
 }
 

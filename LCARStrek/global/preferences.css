@@ -75,8 +75,8 @@ prefwindow[type="child"] .prefWindow-dlgbuttons {
 }
 
 radio[pane] {
-  margin: 0px 1px 0px 1px;
-  padding: 1px 3px 1px 3px;
+  margin: 0px 1px;
+  padding: 1px 3px;
   min-width: 4.5em;
   -moz-border-radius: 5px;
 }
@@ -104,4 +104,3 @@ radio[pane][selected="true"] {
   background-color: #008484;
   color: #000000;
 }
-
