@@ -1,30 +1,41 @@
-/*
- * The contents of this file are subject to the Mozilla Public
- * License Version 1.1 (the "License"); you may not use this file
- * except in compliance with the License. You may obtain a copy of
- * the License at http://www.mozilla.org/MPL/
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
- * Software distributed under the License is distributed on an "AS
- * IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
- * implied. See the License for the specific language governing
- * rights and limitations under the License.
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
  *
  * The Original Code is Mozilla JSIRC Library.
  *
- * The Initial Developer of the Original Code is New Dimensions Consulting,
- * Inc. Portions created by New Dimensions Consulting, Inc. are
- * Copyright (C) 1999 New Dimenstions Consulting, Inc. All
- * Rights Reserved.
+ * The Initial Developer of the Original Code is
+ * New Dimensions Consulting, Inc.
+ * Portions created by the Initial Developer are Copyright (C) 1999
+ * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *  Robert Ginda, rginda@ndcico.com, original author
- *  Robert Kaiser, KaiRo@KaiRo.at, skinning
- * 
- * Styles for UI, See output-default.css for output window styles
+ *   Robert Ginda, rginda@ndcico.com, original author
  *
- */
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
 
-@import url(chrome://communicator/skin/);
+@import url("chrome://communicator/skin/");
 
 window {
   width: 640px;
@@ -36,12 +47,7 @@ window {
 }
 
 #tabpanels-contents-box {
-  margin: 3px;
-}
-
-.header-label,
-.header-data {
-  color: #000000;
+  margin: 3px 0;
 }
 
 #header-url:hover {
@@ -49,11 +55,11 @@ window {
 }
 
 #outer-box {
-/*  margin: 5px; */
+  margin: 5px;
 }
 
-#main-splitter {
-  border: none;
+.toolbarbutton-menu-dropmarker {
+  margin-left: 0.5em;
 }
 
 #input-widget,
@@ -62,13 +68,51 @@ window {
   border: 1px solid #9C9CFF;
 }
 
+#button-multiline-expand {
+  list-style-image:url("chrome://chatzilla/skin/images/multiline-expand.png");
+}
+
+#button-multiline-contract {
+  list-style-image:url("chrome://chatzilla/skin/images/multiline-contract.png");
+}
+
+#button-input {
+  list-style-image:url("chrome://chatzilla/skin/images/input-send.png");
+}
+
 .highlight-menu-item:hover {
   color: #000000 !important;
   background: #008484 !important;
 }
 
+#view-tabs {
+  overflow: hidden;
+}
+
+#views-tbar-spacer {
+  -moz-box-flex: 10000;
+}
+
+#tabs-drop-indicator-bar {
+  position: relative;
+  margin-top: -3px;
+  -moz-margin-start: -5px;
+  height: 3px;
+}
+
+#tabs-drop-indicator {
+  position: relative;
+  margin-bottom: -8px;
+  width: 11px;
+  height: 11px;
+  background: url("chrome://chatzilla/skin/images/drop-indicator-bottom.png") 50% 50% no-repeat;
+}
+
 .view-button {
-  /* do NOT set color, at least not without background. :) */
+  /* do NOT set colour, at least not without background. :) */
+  text-align: center;
+  max-width: 30ex;
+  -moz-box-flex: 1;
 }
 
 .view-button[state="current"] {
@@ -91,111 +135,238 @@ window {
   color: #000000;
 }
 
-/* spaces after the 4th and 8th tab, so you can line them up with your Fn
- * keys */
-.view-button[viewKey="4"],
-.view-button[viewKey="8"] {
-  -moz-margin-start: 5px;
-}
-
-.header-box, .usercount-data {
-  padding-top: 2px;
-  padding-bottom: 2px;
-  -moz-padding-end: 10px;
-}
-
-#user-list {
-  margin: 0px;
-}
-
-#server-nick {
-  padding-top: 5px;
-}
-
-.header-label {
-  font-weight: bold;
-  text-align: right;
-  -moz-margin-start: 10px;
-}
-
-.header-data {
-  text-align: left;
-  -moz-margin-start: 5px;
-}
-
-#channel-topic {
-  cursor: default;
-}
-
-#channel-topic[editable="true"] {
-  cursor: text;
-}
-
 .output-container {
   -moz-border-radius: 5px;
   border: 1px solid #9C9CFF;
 }
 
-treecol {
+treecol { 
   border: none;
 }
 
-treechildren::-moz-tree-cell-text {
-  padding-top: 1px;
-}
-
-/* The userlist can be in one of two state.  In "symbol", the user's
+/* we need to define both the : and :: versions of the treechildren selector
+ *  so that we work on both 1.5 and pre 1.5 builds.
+ *
+ * The userlist can be in one of two state.  In "symbol", the user's
  * channel mode is shown as a @ or + image, while in "graphic" mode, the
  * image is one of the LED images.
  */
 
 /* no mode */
+treechildren:-moz-tree-image {
+  list-style-image: url("chrome://chatzilla/skin/images/no-symbol.png");
+}
+
 treechildren::-moz-tree-image {
-  list-style-image: url(chrome://chatzilla/skin/images/no-symbol.gif);
-  -moz-margin-end: 3px;
+  list-style-image: url("chrome://chatzilla/skin/images/no-symbol.png");
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image {
+  list-style-image: url("chrome://chatzilla/skin/images/no-graphic.png");
 }
 
 #user-list[mode="graphic"] treechildren::-moz-tree-image {
-  list-style-image: url(chrome://chatzilla/skin/images/no-graphic.gif);
+  list-style-image: url("chrome://chatzilla/skin/images/no-graphic.png");
 }
 
 /* voice */
+treechildren:-moz-tree-image(voice-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/voice-symbol.png");
+}
+
 treechildren::-moz-tree-image(voice-true) {
-  list-style-image: url(chrome://chatzilla/skin/images/voice-symbol.gif);
+  list-style-image: url("chrome://chatzilla/skin/images/voice-symbol.png");
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(voice-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/voice-graphic.png");
 }
 
 #user-list[mode="graphic"] treechildren::-moz-tree-image(voice-true) {
-  list-style-image: url(chrome://chatzilla/skin/images/voice-graphic.gif);
+  list-style-image: url("chrome://chatzilla/skin/images/voice-graphic.png");
 }
 
 /* half-chanop */
+treechildren:-moz-tree-image(halfop-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/halfop-symbol.png");
+}
+
 treechildren::-moz-tree-image(halfop-true) {
-  list-style-image: url(chrome://chatzilla/skin/images/halfop-symbol.gif);
+  list-style-image: url("chrome://chatzilla/skin/images/halfop-symbol.png");
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(halfop-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/halfop-graphic.png");
 }
 
 #user-list[mode="graphic"] treechildren::-moz-tree-image(halfop-true) {
-  list-style-image: url(chrome://chatzilla/skin/images/halfop-graphic.gif);
+  list-style-image: url("chrome://chatzilla/skin/images/halfop-graphic.png");
 }
 
 /* chanop */
+treechildren:-moz-tree-image(op-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/op-symbol.png");
+}
+
 treechildren::-moz-tree-image(op-true) {
-  list-style-image: url(chrome://chatzilla/skin/images/op-symbol.gif);
+  list-style-image: url("chrome://chatzilla/skin/images/op-symbol.png");
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(op-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/op-graphic.png");
 }
 
 #user-list[mode="graphic"] treechildren::-moz-tree-image(op-true) {
-  list-style-image: url(chrome://chatzilla/skin/images/op-graphic.gif);
+  list-style-image: url("chrome://chatzilla/skin/images/op-graphic.png");
 }
 
-.colorGrid {
+/* admin */
+treechildren:-moz-tree-image(admin-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/admin-symbol.png");
+}
+
+treechildren::-moz-tree-image(admin-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/admin-symbol.png");
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(admin-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/admin-graphic.png");
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(admin-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/admin-graphic.png");
+}
+
+/* founder */
+treechildren:-moz-tree-image(founder-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/founder-symbol.png");
+}
+
+treechildren::-moz-tree-image(founder-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/founder-symbol.png");
+}
+
+#user-list[mode="graphic"] treechildren:-moz-tree-image(founder-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/founder-graphic.png");
+}
+
+#user-list[mode="graphic"] treechildren::-moz-tree-image(founder-true) {
+  list-style-image: url("chrome://chatzilla/skin/images/founder-graphic.png");
+}
+
+/* away */
+treechildren:-moz-tree-cell-text(away-true) {
+  color: #8050B0;
+  font-style: italic;
+}
+
+treechildren::-moz-tree-cell-text(away-true) {
+  color: #8050B0;
+  font-style: italic;
+}
+
+treechildren:-moz-tree-cell-text(away-false) {
+}
+
+treechildren::-moz-tree-cell-text(away-false) {
+}
+
+menuitem[header="true"] {
+  text-align: center;
+}
+
+.colorGrid
+{
   width: 24px;
   height: 16px;
-  border: 1px solid 9C9CFF;
+  border: 1px solid #9C9CFF;
   -moz-box-align: center;
   -moz-box-pack: center;
 }
 
-#colorTooltip {
+#colorTooltip
+{
   padding: 0px;
   -moz-box-align: center;
   -moz-box-pack: center;
+}
+
+/* Feel the hacks. */
+progressmeter[mode="undetermined"] {
+  -moz-appearance: none;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Hack; Stop the status-bar from distorting without a security icon */
+#status-text {
+  min-height: 17px;
+}
+
+#status-text[notice="true"] {
+  font-weight: bold;
+}
+
+#security-button {
+  min-width: 20px;
+}
+
+#security-button:not([level="high"]):not([level="low"]):not([level="broken"]) {
+  display: none;
+}
+
+#security-button[level="high"] > image {
+  list-style-image: url("chrome://communicator/skin/icons/lock-secure.gif");
+}
+
+#security-button[level="low"] > image {
+  list-style-image: url("chrome://communicator/skin/icons/lock-secure.gif");
+}
+
+#security-button[level="broken"] > image {
+  list-style-image: url("chrome://communicator/skin/icons/lock-broken.gif");
+}
+
+/* prevent margins of a value-less label from shifting the image */
+#security-button > label:not([value]) {
+  display: none;
+}
+
+#offline-status[offlinestate="offline"] {
+  list-style-image: url("chrome://communicator/skin/icons/offline.gif");
+}
+
+#offline-status[offlinestate="online"] {
+  list-style-image: url("chrome://communicator/skin/icons/online.gif");
+}
+
+/* Focus styling for a11y reasons */
+#user-list-box[focusobvious="true"], #browser-box[focusobvious="true"],
+#multiline-hug-box[focusobvious="true"], #singleline-hug-box[focusobvious="true"] {
+  border-color: highlight !important;
+}
+
+/* Not setting a right border so the scrollbar remains on the window edge. */
+#browser-box:last-child, #user-list-box:last-child {
+  border-left: 2px solid transparent;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+#user-list-box:first-child, #browser-box:first-child {
+  border-right: 2px solid transparent;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+#singleline-hug-box, #multiline-hug-box {
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-top: 2px solid transparent;
 }

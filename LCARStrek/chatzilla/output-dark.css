@@ -1,34 +1,47 @@
 /* -*- Mode: Text; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
- * The contents of this file are subject to the Mozilla Public
- * License Version 1.1 (the "License"); you may not use this file
- * except in compliance with the License. You may obtain a copy of
- * the License at http://www.mozilla.org/MPL/
+ * ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
- * Software distributed under the License is distributed on an "AS
- * IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
- * implied. See the License for the specific language governing
- * rights and limitations under the License.
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
  *
  * The Original Code is Chatzilla.
  *
- * The Initial Developer of the Original Code is New Dimensions Consulting,
- * Inc. Portions created by New Dimensions Consulting, Inc. are
- * Copyright (C) 1999 New Dimenstions Consulting, Inc. All
- * Rights Reserved.
+ * The Initial Developer of the Original Code is
+ * New Dimensions Consulting, Inc.
+ * Portions created by the Initial Developer are Copyright (C) 1999
+ * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *  Robert Ginda, rginda@ndcico.com, original author
+ *   Robert Ginda, rginda@ndcico.com, original author
  *
- * Styles for output window
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
  *
- */
+ * ***** END LICENSE BLOCK ***** */
 
 /*
  *  a dark background/light text version of the output window.
  *  see output-base.css for details.
  */
 
-@import url(chrome://chatzilla/content/output-base.css);
+@import url("chrome://chatzilla/content/output-base.css");
 
 body.chatzilla-body {               /* The topmost container in the ChatZilla */
   background: #000000;              /* output window. */
@@ -53,12 +66,68 @@ a.chatzilla-link:visited {
   -moz-border-radius: 7px;
 }
 
+.progress-fg {
+  background-color: #008484;
+}
+
 .value {
   color: #008484;
 }
 
+/* Style userlist as white-on-black. */
+treechildren {
+  background: #FFCF00;
+  color: #000000;
+}
+
+/* For Mac, who's theme sucks. */
+treechildren:-moz-tree-row(unselected),
+treechildren:-moz-tree-cell(unselected),
+treechildren:-moz-tree-cell-text(unselected) {
+  border-color: #FFCF00 !important;
+  background: #FFCF00 !important;
+  color: #000000 !important;
+}
+treechildren::-moz-tree-row(unselected),
+treechildren::-moz-tree-cell(unselected),
+treechildren::-moz-tree-cell-text(unselected) {
+  border-color: #FFCF00 !important;
+  background: #FFCF00 !important;
+  color: #000000 !important;
+}
+
 #splash {
   color: #008484;
+}
+
+#usr-descnodes,
+#ch-topicnodes {
+  color: #000000;
+}
+
+[condition] {
+  font-weight: bold;
+}
+
+[condition="red"] {
+  color: red;
+}
+
+[condition="yellow"] {
+  color: yellow;
+}
+
+[condition="green"] {
+  color: #008484;
+}
+
+.msg[msg-type="JOIN"] .msg-data a.chatzilla-link,
+.msg[msg-type="PART"] .msg-data a.chatzilla-link {
+  /* color: #9C9CFF; */
+}
+
+.msg[msg-type="KICK"] .msg-data a.chatzilla-link {
+  /* color: #000000; */
 }
 
 .chatzilla-rheet {
@@ -80,58 +149,20 @@ a.chatzilla-link:visited {
   background: #562a14;
 }
 
-.msg-type {                                 /* .msg-type = message type       */
-  color: #008484;                           /* indicator                      */
+.msg-user {
+  background-color: #000000;
+  -moz-border-radius: 7px 0px 0px 7px;
+  border: 1px solid #004242;
 }
 
-.msg-data,
-.msg-data[msg-type] {
+.msg-data {
   background-color: #000000;
   -moz-border-radius: 0px 7px 7px 0px;
   border: 1px solid #735673;
 }
 
-.msg-data[mark="even"] {                    /* use even/odd marks to create a */
-  color: #9C9CFF;                           /* subtle brightness change when  */
-}                                           /* the speaker changes.           */
-
-[condition] {
-  font-weight: bold;
-}
-
-.msg-data a.chatzilla-link,
-.msg-data[msg-type] a.chatzilla-link {
-  color: #FFCF00;
-}
-
-.msg-data a.chatzilla-link:visited,
-.msg-data[msg-type] a.chatzilla-link:visited {
-  color: #8050B0;
-}
-
-.msg-data[msg-type="JOIN"],
-.msg-data[msg-type="PART"],
-.msg-data[msg-type="QUIT"],
-.msg-data[msg-type="NICK"],
-.msg-data[msg-type="NOTICE"],
-.msg-data[msg-type="INFO"],
-.msg-data[msg-type="MODE"] {
-  color: #008484;
-}
-
-.msg-data[msg-type="HELLO"],
-.msg-data[msg-type="USAGE"] {
-  color: #FF9F00;
-}
-
-.msg-data[msg-type="ERROR"],
-.msg-data[msg-type="KICK"] {
-  color: red;
-}
-
-.msg-data[msg-type="ACTION"] {
-  font-weight: bold;
-  font-style: italic;
+.msg-type {                                 /* .msg-type = message type       */
+  color: #008484;                           /* indicator                      */
 }
 
 .msg-user a.chatzilla-link,
@@ -139,62 +170,105 @@ a.chatzilla-link:visited {
   color: #FF9F00 !important;                /* a message (channel and query   */
 }                                           /* views)                         */
 
-.msg-user {
-  background-color: #000000 !important;
-  -moz-border-radius: 7px 0px 0px 7px;
-  border: 1px solid #004242;
+.msg[mark="even"] .msg-data {               /* use even/odd marks to create a */
+  color: #9C9CFF;                           /* subtle brightness change when  */
+}                                           /* the speaker changes.           */
+
+.msg[msg-type="JOIN"] .msg-data,
+.msg[msg-type="PART"] .msg-data {
+  color: #008484;
+}
+
+.msg[msg-type="HELLO"] .msg-data {
+  color: #FF9F00;
+}
+
+.msg[msg-type="ERROR"] .msg-data,
+.msg[msg-type="DISCONNECT"] .msg-data {
+  color: red;
+}
+
+.msg[msg-type="USAGE"] .msg-data {
+  color: #FF9F00;
+}
+
+.msg[msg-type="ACTION"] .msg-data {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.msg[msg-type="NICK"] .msg-data {
+  color: #008484;
+}
+
+.msg[msg-type="NOTICE"] .msg-data,
+.msg[msg-type="MODE"] .msg-data {
+  color: #008484;
+}
+
+.msg[msg-type="NOTICE"] .msg-data a.chatzilla-link,
+.msg[msg-type="MODE"] .msg-data a.chatzilla-link {
+  color: #008484;
+}
+
+.msg[msg-type="KICK"] .msg-data {
+  color: red;
+}
+
+.msg[msg-type="QUIT"] .msg-data {
+  color: #008484;
 }
 
 /* important="true" means that the message has text from your /stalk list in
  * it, has your nickname in it, or was spoken by someone in your /stalk list.
  */
-.msg-user[important="true"],
-.msg-data[important="true"] {
+.msg[important="true"] .msg-user,
+.msg[important="true"] .msg-data {
   background: #4D4D7F !important;
   color: #FFCF00 !important;
 }
 
-.msg-user:before,
-.msg-user:after {
+.msg:before,
+.msg:after {
   color: #008484;
 }
 
-.msg-user[msg-user$="ME!"]:before,
-.msg-user[msg-user$="ME!"]:after {
+.msg[msg-user$="ME!"] .msg-user:before,
+.msg[msg-user$="ME!"] .msg-user:after {
   color: #9C9CFF;
 }
-.msg-user[msg-user$="ME!"] {
+.msg[msg-user$="ME!"] .msg-user {
   border: 1px solid #9C9CFF;
 }
 
-.msg-user[msg-type="ACTION"]:before,
-.msg-user[msg-type="ACTION"]:after {
+.msg[msg-type="ACTION"] .msg-user:before,
+.msg[msg-type="ACTION"] .msg-user:after {
   color: #008484;
 }
 
-.msg-user[msg-type="NOTICE"]:before,
-.msg-user[msg-type="NOTICE"]:after {
+.msg[msg-type="NOTICE"] .msg-user:before,
+.msg[msg-type="NOTICE"] .msg-user:after {
   color: #008484;
 }
 
 /* private messages *not* in a query window */
-.msg-user[dest-type="IRCUser"]:before,
-.msg-user[dest-type="IRCUser"]:after {
+.msg[dest-type="IRCUser"] .msg-user:before,
+.msg[dest-type="IRCUser"] .msg-user:after {
   color: #FFCF00;
 }
 
-.msg-user[msg-dest$="ME!"]:before,
-.msg-user[msg-dest$="ME!"]:after {
+.msg[msg-dest$="ME!"] .msg-user:before,
+.msg[msg-dest$="ME!"] .msg-user:after {
   color: #FFCF00;
 }
 
 /* private messages in a query window */
-.msg-user[view-type="IRCUser"]:before,
-.msg-user[view-type="IRCUser"]:after {
+.msg[view-type="IRCUser"] .msg-user:before,
+.msg[view-type="IRCUser"] .msg-user:after {
   color: #008484;
 }
 
-.msg-user[view-type="IRCUser"][msg-user$="ME!"]:before,
-.msg-user[view-type="IRCUser"][msg-user$="ME!"]:after {
+.msg[view-type="IRCUser"][msg-user$="ME!"] .msg-user:before,
+.msg[view-type="IRCUser"][msg-user$="ME!"] .msg-user:after {
   color: #008484;
 }

@@ -1,5 +1,4 @@
-/* -*- Mode: Text; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 4 -*-
- * ***** BEGIN LICENSE BLOCK *****
+/* ***** BEGIN LICENSE BLOCK *****
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
@@ -12,7 +11,7 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is Chatzilla.
+ * The Original Code is Mozilla JSIRC Library.
  *
  * The Initial Developer of the Original Code is
  * New Dimensions Consulting, Inc.
@@ -36,75 +35,147 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/* 
- *  a version of the output window that uses only your default foreground and
- *  backgrond colors.  Message types are distinguished by font changes.
- *  see output-base.css for details. 
- */
+body {
 
-/* EarlyBlue needs little corrections though. */
+    margin: 0px 0px 0px 0px;
+    background: url(chrome://chatzilla/skin/images/xtal.jpg);
 
-@import url("chrome://chatzilla/content/output-base.css");
-
-a.chatzilla-link {
-    color: #336699;
 }
 
-a.chatzilla-link:visited {
-    color: #666699;
+.bold {
+
+    font-weight: bold;
+
 }
 
-.header-outer {
-    background-color: white;
-}
+.italic {
 
-.progress-fg {
-    background-color: grey;
-}
-
-.msg[msg-type="ACTION"] .msg-data {
     font-style: italic;
+
 }
 
-.msg[msg-type="JOIN"] .msg-type,
-.msg[msg-type="PART"] .msg-type,
-.msg[msg-type="QUIT"] .msg-type {
-    font-weight: bold;
+.underline {
+
+    text-decoration: underline;
+
 }
 
-.msg[msg-type="QUIT"] .msg-data {
-    font-variant: small-caps;
-    font-weight: bold;
+.strikethrough {
+
+    text-decoration: line-through;
+
 }
 
-.msg[msg-type="JOIN"] .msg-data,
-.msg[msg-type="PART"] .msg-data {
-    font-variant: small-caps;
-}
+.teletype {
 
-.msg[msg-type="HELLO"] .msg-data,
-.msg[msg-type="NICK"] .msg-type,
-.msg[msg-type="NOTICE"] .msg-data {
-    font-weight: bold;
-}
-
-.msg[msg-type="NICK"] .msg-data {
     font-family: monospace;
+
 }
 
-/* :before and :after pseudoclasses form the decorations around nicknames.     */
-.msg-user:before,
-.msg-user:after {
-    font-size: 100%;
-    font-family: monospace;
-    font-weight: bolder;
+.smallcap {
+
+    font-variant: small-caps;
+
 }
 
-.msg[dest-type="IRCUser"] .msg-user,
-.msg[dest-type="IRCUser"][msg-dest$="ME!"] .msg-user {
+.rheet {
+
+    font-size: 14pt;
+    font-weight: bold;
+    color: magenta;
+
+}
+
+/* output from a chat session (contains msgs) */
+.chat-view {
+
+    vertical-align: text-bottom;
+
+}
+
+/* common container for all portions of a message
+ * (contains msg-*s) */
+.msg {
+
+    font-family: sans-serif;
+
+}
+
+.msg[user="!ME"] {
+
+    background: lightgrey;
+
+}
+
+/* message data in output window */
+.msg-data {
+
+    font-weight: bold;
+
+}
+
+.msg-data[msgtype="JOIN"],
+.msg-data[msgtype="PART"] {
+
+    font-variant: small-caps;
+    color: darkslategrey;
+
+}
+
+.msg-data[msgtype="ACTION"] {
+
+    color: darkred;
+
+}
+
+.msg-data[msgtype="NOTICE"] {
+
+    color: green;
+
+}
+
+.msg-data[msgtype="KICK"] {
+
+    color: slategrey;
+
+}
+
+.msg-data[msgtype="QUIT"] {
+
+    color: brown;
+
+}
+
+/* nickname field in output */
+.msg-user {
+	
+    text-align: center;
+    vertical-align: middle;
+    color: blue;
+    font-weight: bold;
+    background: grey;
+
+}
+
+.msg-user[user="!ME"] {
+
+    color: green;
+
+}
+
+.msg-user[msgtype="ACTION"] {
+
     font-style: italic;
+
 }
 
-.msg[msg-user$="ME!"] .msg-user {
+/* Message type indicator in output window */
+.msg-type {
+
+    text-align: center;
+    vertical-align: middle;
+    color: brown;
     font-weight: bold;
+    background: lightgrey;
+
 }
