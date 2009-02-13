@@ -1,8 +1,5 @@
 #!/bin/sh
 
-HG_COMM_DIR=/mnt/mozilla/hg/comm-central
-HG_MOZ_DIR=/mnt/mozilla/hg/comm-central/mozilla
-
 RUN_DIR=$(pwd)
 cd $(dirname "$0")
 SCRIPT_DIR=$(pwd)
@@ -10,10 +7,18 @@ SCRIPT_DIR=$(pwd)
 if [ -n "$1" ]; then
   SRC_DATE="$1"
   DST_DATE=`TZ=PST8PDT date +%Y-%m-%d`
+
+  HG_COMM_DIR=/mnt/mozilla/hg/comm-central
   COMM_DIR=suite/themes/classic/
-  MOZ_DIR=toolkit/themes/winstripe/
   COMM_LOG=$RUN_DIR/themelog-suitedefault.$SRC_DATE.$DST_DATE.log
+
+  HG_MOZ_DIR=/mnt/mozilla/hg/comm-central/mozilla
+  MOZ_DIR=toolkit/themes/winstripe/
   MOZ_LOG=$RUN_DIR/themelog-tkwinstripe.$SRC_DATE.$DST_DATE.log
+
+  HG_DOMI_DIR=/mnt/mozilla/hg/comm-central/mozilla/extensions/inspector
+  DOMI_DIR=resources/skin/classic/
+  DOMI_LOG=$RUN_DIR/themelog-domiclassic.$SRC_DATE.$DST_DATE.log
 
   if [ ! -e $COMM_LOG ]; then
     echo "Getting $COMM_LOG..."
@@ -25,19 +30,24 @@ if [ -n "$1" ]; then
     cd $HG_MOZ_DIR
     hg log -d ">$SRC_DATE" $MOZ_DIR > $MOZ_LOG
   fi
+  if [ ! -e $DOMI_LOG ]; then
+    echo "Getting $DOMI_LOG..."
+    cd $HG_DOMI_DIR
+    hg log -d ">$SRC_DATE" $DOMI_DIR > $DOMI_LOG
+  fi
   cd $RUN_DIR
 else
   echo "You must specify a start date."
   exit 1
 fi
 
-for repo in "COMM" "MOZ"; do
+for repo in "COMM" "MOZ" "DOMI"; do
   HG_DIR_VAR="HG_${repo}_DIR"
   LOG_VAR="${repo}_LOG"
   HG_URL=`awk -F ' *= *' '/default *=/ { print $2 }' ${!HG_DIR_VAR}/.hg/hgrc`
   REPO_NAME=`basename $HG_URL`
   LOG_NAME=${!LOG_VAR}
-  HTML_NAME=${DIFF_NAME/.diff/.html}
+  HTML_NAME=${LOG_NAME/.log/.html}
   echo "Writing $HTML_NAME..."
   echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">' > $HTML_NAME
   echo "<html>" >> $HTML_NAME
