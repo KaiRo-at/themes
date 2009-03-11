@@ -56,8 +56,6 @@
 
 #sidebar-panel-picker {
   color: inherit;
-  /** bugzilla 89144 - must be able to access tabs dropdown **/
-  -moz-user-focus:normal !important;
 }
   
 .sidebar-header-text {
