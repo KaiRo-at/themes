@@ -45,7 +45,7 @@
  */
 
 treechildren::-moz-tree-image(Name) {
-    -moz-padding-end: 2px;
+  -moz-padding-end: 2px;
 }
 
 .bookmark-item,
