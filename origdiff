@@ -6,7 +6,7 @@ SCRIPT_DIR=$(pwd)
 
 if [ -n "$1" ]; then
   SRC_DATE="$1"
-  DST_DATE=`TZ=PST8PDT date +%Y-%m-%d`
+  DST_DATE=`TZ=America/Los_Angeles date +%Y-%m-%d`
 
   HG_COMM_DIR=/mnt/mozilla/hg/comm-central
   COMM_DIR=suite/themes/classic/
@@ -58,7 +58,7 @@ for repo in "COMM" "MOZ" "DOMI"; do
   echo "  <h1>$REPO_NAME Theme Changes</h1>" >> $HTML_NAME
   echo "  <h2>$SRC_DATE to $DST_DATE</h2>" >> $HTML_NAME
   echo "    <pre>" >> $HTML_NAME
-  sed -e "s/user:\(.*\)<\(.*\)>/user:\1\&lt;\2\&gt;/" \
+  sed -e "s/&/\&amp;/g" -e "s/</\&lt;/g" -e "s/>/\&gt;/g" \
       -e "s|\(changeset: *[0-9]*\):\([0-9a-f]*\)|\1:<a href=\"$HG_URL/rev/\2\">\2</a>|" \
       $LOG_NAME >> $HTML_NAME
   echo "    </pre>" >> $HTML_NAME
