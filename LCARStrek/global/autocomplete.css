@@ -151,7 +151,10 @@ panel[type="autocomplete-richlistbox"],
 
 .autocomplete-richlistitem {
   padding: 1px 2px;
-  border-bottom: 1px solid #E7ADE7;
+}
+
+.autocomplete-richlistitem:not(:first-child) {
+  border-top: 1px solid #E7ADE7;
 }
 
 .ac-site-icon {

@@ -101,7 +101,7 @@ tab:focus > .tab-middle {
 }
 
 /*
-tab[first-tab="true"][selected="true"] {
+tab:first-of-type[selected="true"] {
   -moz-padding-end: 5px;
   -moz-padding-start: 5px;
 }

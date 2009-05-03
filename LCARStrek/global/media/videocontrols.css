@@ -17,6 +17,8 @@
 }
 .playButton {
   min-width: 28px;
+  margin-right: -22px; /* 1/2 of scrubber thumb width, for overhang. */
+  position: relative; /* Trick to work around negative margin interfering with clicking on the button. */
 }
 .muteButton {
   min-width: 33px;
@@ -55,16 +57,66 @@
   background-image: url("chrome://global/skin/media/unmuteButton-hover.png");
 }
 
+.volumeStack {
+  width: 28px;
+  height: 70px;
+  background-color: rgba(156,156,255,0.74);
+  /* use negative margin to place stack over the mute button to its left. */
+  margin: -70px 3px 28px -31px;
+  overflow: hidden; /* crop it when sliding down, don't grow the control bar */
+  position: relative; /* Trick to work around negative margin interfering with dragging the thumb. */
+  padding-top: 6px;
+}
+
+.volumeControl {
+  min-height: 64px;
+}
+
+/* .scale-thumb is an element inside the <scale> implementation. */
+.volumeControl .scale-thumb {
+  /* Override the default thumb appearance with a custom image. */
+  -moz-appearance: none;
+  background: url("chrome://global/skin/media/volumeThumb.png") no-repeat center;
+  border: none !important;
+  min-width: 16px;
+  min-height: 11px;
+}
+.volumeControl .scale-thumb:hover, .volumeControl .scale-thumb:active {
+  background-image: url("chrome://global/skin/media/volumeThumb-hover.png");
+}
+
+.volumeBackgroundBar {
+  /* margin left/right: make bar 8px wide (control width = 28, minus 2 * 10 margin) */
+  margin: 0px 10px;
+  background-color: rgba(0,0,0,0.5);
+  -moz-border-radius: 4px 4px;
+}
+
+
+.durationBox {
+  -moz-box-pack: center;
+}
+
+.durationLabel {
+  margin-left: -22px; /* 1/2 of scrubber thumb width, for overhang. */
+  padding-left: 8px; /* don't bump into the scrubber bar */
+  padding-top: 0px; /* center vertically with scrubber bar */
+  color: rgba(0,0,0,0.75);
+  font: 11px sans-serif;
+}
+
 .backgroundBar {
-  /* make bar 8px tall (control height = 28, minus 2 * 10 margin) */
-  margin: 10px 2px;
+  /* margin top/bottom: make bar 8px tall (control height = 28, minus 2 * 10 margin) */
+  /* margin left/right: 1/2 of scrubber thumb width, for overhang. */
+  margin: 10px 22px;
   background-color: rgba(0,0,0,0.75);
-  -moz-border-radius: 3px 3px;
+  -moz-border-radius: 4px 4px;
 }
 
 .bufferBar, .progressBar {
-  /* make bar 8px tall (control height = 28, minus 2 * 10 margin) */
-  margin: 10px 2px;
+  /* margin top/bottom: make bar 8px tall (control height = 28, minus 2 * 10 margin) */
+  /* margin left/right: 1/2 of scrubber thumb width, for overhang. */
+  margin: 10px 22px;
   border: none;
   background-color: transparent;
   min-width: 0px;
@@ -79,32 +131,78 @@
    * compositing gives it a different visual appearance.
    */
   background-color: rgba(255,159,0,0.75);
-  -moz-border-radius: 3px 3px;
+  -moz-border-radius: 4px 4px;
   -moz-appearance: none;
 }
 
 .progressBar .progress-bar {
   background-color: #008484;
-  -moz-border-radius: 3px 3px;
+  -moz-border-radius: 4px 0px 0px 4px;
   -moz-appearance: none;
 }
 
 /* .scale-slider is an element inside the <scale> implementation. */
-.scale-slider {
+.scrubber .scale-slider, .volumeControl .scale-slider {
   /* Hide the default horizontal bar. */
   background: none;
-  margin: 0 2px;
+  margin: 0;
+}
+
+.scrubber .scale-slider {
+    /* abs(margin-top) + margin-bottom + bar height == timeThumb height */
+    margin-top: -9px;
+    margin-bottom: 10px;
 }
 
 /* .scale-thumb is an element inside the <scale> implementation. */
-.scale-thumb {
+.scrubber .scale-thumb {
   /* Override the default thumb appearance with a custom image. */
-  background: url("chrome://global/skin/media/scrubberThumb.png") no-repeat center;
+  background: transparent;
   border: none !important;
-  min-width: 11px;
-  min-height: 20px;
 }
 
-.scale-thumb:hover, .scale-thumb:active {
+.timeThumb {
+  background: url("chrome://global/skin/media/scrubberThumb.png") no-repeat center;
+  min-width: 45px;
+  min-height: 27px;
+  -moz-box-pack: center;
+}
+
+.timeThumb[showhours="true"] {
+  background: url("chrome://global/skin/media/scrubberThumbWide.png") no-repeat center;
+}
+
+/*
+.timeThumb:hover, .timeThumb:active {
   background-image: url("chrome://global/skin/media/scrubberThumb-hover.png");
+}
+*/
+
+.timeLabel {
+    color: rgba(0,0,0,0.75);
+    font: 10px sans-serif;
+    text-shadow: rgba(255,259,0, 0.3) 0 1px;
+    padding-top: 2px;
+}
+
+.timeThumb[showhours="true"] > .timeLabel {
+    padding-top: 1px;
+}
+
+.statusOverlay {
+    background-color: rgba(0,0,0,0.55);
+}
+
+.statusIcon {
+    margin-bottom: 28px; /* same height as .controlBar, to keep icon centered above it */
+    width: 36px;
+    height: 36px;
+}
+
+.statusIcon[type="throbber"] {
+    background: url("chrome://communicator/skin/brand/throbber-anim.gif") no-repeat center;
+}
+
+.statusIcon[type="error"] {
+    background: url("chrome://global/skin/icons/alert-error.gif") no-repeat center;
 }

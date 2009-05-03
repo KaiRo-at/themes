@@ -194,10 +194,6 @@ statusbarpanel {
   padding: 0px 1px;
 }
 
-resizer[dir="bottomright"] {
-  cursor: se-resize;
-}
-
 window:not([active="true"]) menubar > menu {
   color: #8050B0;
 }

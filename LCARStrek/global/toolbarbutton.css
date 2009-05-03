@@ -57,7 +57,8 @@ toolbarbutton {
   color: #FFCF00;
 }
 
-.toolbarbutton-icon {
+.toolbarbutton-icon[label]:not([label=""]),
+.toolbarbutton-icon[type="menu"] {
   -moz-margin-start: 1px;
   -moz-margin-end: 2px;
 }
