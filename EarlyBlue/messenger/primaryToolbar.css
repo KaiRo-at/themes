@@ -133,6 +133,10 @@
   -moz-image-region: rect(0px 50px 21px 25px);
 }
 
+toolbarpaletteitem > #button-delete {
+  display: -moz-box;
+}
+
 #button-mark {
   list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
   -moz-image-region: rect(84px 25px 105px 0px);
@@ -160,12 +164,12 @@
   -moz-image-region: rect(21px 50px 42px 25px);
 }
 
-#button-junk {
+#junk-deck {
   list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
   -moz-image-region: rect(252px 25px 273px 0px);
 }
 
-#button-junk[disabled="true"] {
+#junk-deck[disabled="true"] {
   -moz-image-region: rect(252px 50px 273px 25px);
 }
 
@@ -270,12 +274,12 @@ toolbar[iconsize="small"] > #button-mark[disabled="true"] {
   -moz-image-region: rect(64px 32px 80px 16px);
 }
 
-toolbar[iconsize="small"] > #button-junk {
+toolbar[iconsize="small"] > #button-junk > #junk-deck > .toolbarbutton-1 {
   list-style-image: url("chrome://messenger/skin/icons/messengericons-small.png");
   -moz-image-region: rect(192px 16px 208px 0);
 }
 
-toolbar[iconsize="small"] > #button-junk[disabled="true"] {
+toolbar[iconsize="small"] > #button-junk > #junk-deck[disabled="true"] > .toolbarbutton-1 {
   -moz-image-region: rect(192px 32px 208px 16px);
 }
 
