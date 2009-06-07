@@ -26,6 +26,10 @@
   border-bottom: 1px solid #9999CC;
 }
 
+#searchfield {
+  -moz-margin-start: 0;
+}
+
 /* Command Bar */
 #commandBarBottom {
   margin-top: 5px;
