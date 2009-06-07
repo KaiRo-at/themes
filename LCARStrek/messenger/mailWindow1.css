@@ -63,7 +63,7 @@
   border: none;
 }
 
-#folderpane_splitter {
+#folderpane-splitter {
   border: none;
 }
 
@@ -91,4 +91,11 @@
 #threadTree {
   min-width: 1px;
   border: none;
+}
+
+/* ..... tabmail ..... */
+
+tabpanels {
+  /* don't draw tabpanel borders; see also tabbrowser.css */
+  -moz-appearance: none;
 }
