@@ -41,6 +41,10 @@
   border-bottom: 1px solid #FF9F00;
 }
 
+.tabmail-strip {
+  border-bottom: none;
+}
+
 tabpanels {
 }
 
@@ -66,6 +70,10 @@ tabpanels {
 
 .tabbrowser-tab[busy] {
   list-style-image: url("chrome://global/skin/icons/loading.gif");
+}
+
+.tabbrowser-tab[busy]:hover {
+  list-style-image: url("chrome://global/skin/icons/loading-hover.gif");
 }
 
 tabbrowser > tabbox > tabpanels {
