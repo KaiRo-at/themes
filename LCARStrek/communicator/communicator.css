@@ -51,7 +51,8 @@ toolbar {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#grippytoolbar");
 }
 
-menubar {
+menubar,
+toolbar[type="menubar"] {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#grippymenubar");
 }
 

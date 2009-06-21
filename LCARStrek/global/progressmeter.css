@@ -71,5 +71,10 @@ progressmeter[mode="undetermined"] {
 .progressmeter-statusbar {
   margin: 0px 2px;
   min-width: 96px;
-  min-height: 16px;
+  -moz-box-flex: 1;
+  background-color: #794900;
+  border-left: 3px solid #000000;
+  border-right: 3px solid #000000;
+  border-top: none;
+  border-bottom: none;
 }

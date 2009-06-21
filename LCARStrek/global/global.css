@@ -158,7 +158,7 @@ statusbar {
 .statusbar-center {
   background-color: #8050B0;
   -moz-padding-start: 2px;
-  color: #000000;
+  color: #FFCF00;
   -moz-box-align: stretch;
 }
 
@@ -179,7 +179,7 @@ statusbar {
 statusbarpanel {
   -moz-box-align: center;
   -moz-box-pack: center;
-  padding: 0px 1px;
+  padding: 0px 2px;
 }
 
 .statusbar-resizerpanel {
@@ -191,7 +191,11 @@ statusbarpanel {
 .statusbarpanel-iconic,
 .statusbarpanel-iconic-text,
 .statusbarpanel-menu-iconic {
-  padding: 0px 1px;
+  padding: 0px 2px;
+}
+
+.statusbarpanel-progress {
+  -moz-box-orient: vertical;
 }
 
 window:not([active="true"]) menubar > menu {

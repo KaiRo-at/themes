@@ -214,7 +214,7 @@ toolbar[iconsize="small"] > #stop-button[disabled="true"] {
   -moz-image-region: rect(16px 32px 32px 16px) !important;
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #stop-button:not([disabled="true"]):hove,
+toolbar[iconsize="small"] > toolbarpaletteitem > #stop-button:not([disabled="true"]):hover,
 toolbar[iconsize="small"] > toolbarpaletteitem > #stop-button:not([disabled="true"]):hover:active,
 toolbar[iconsize="small"] > #stop-button:not([disabled="true"]):hover,
 toolbar[iconsize="small"] > #stop-button:not([disabled="true"]):hover:active {
@@ -232,7 +232,7 @@ toolbar[iconsize="small"] > #print-button[disabled="true"] {
   -moz-image-region: rect(0 32px 16px 16px) !important;
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #print-button:not([disabled="true"]):hove,
+toolbar[iconsize="small"] > toolbarpaletteitem > #print-button:not([disabled="true"]):hover,
 toolbar[iconsize="small"] > toolbarpaletteitem > #print-button:not([disabled="true"]):hover:active,
 toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover,
 toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover:active {
@@ -245,7 +245,7 @@ toolbar[iconsize="small"] > #home-button {
   -moz-image-region: rect(64px 16px 80px 0);
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #home-butto[disabled="true"]n,
+toolbar[iconsize="small"] > toolbarpaletteitem > #home-button[disabled="true"],
 toolbar[iconsize="small"] > #home-button[disabled="true"] {
   -moz-image-region: rect(64px 32px 80px 16px) !important;
 }
