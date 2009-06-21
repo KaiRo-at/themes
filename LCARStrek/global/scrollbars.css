@@ -54,6 +54,7 @@ scrollbar {
 
 slider {
   height: 13px;
+  background-color: #794900;
 }
 
 slider[orient="vertical"] {
@@ -103,6 +104,7 @@ thumb[orient="horizontal"][disabled="true"] {
 /* ::::: scrollbar button ::::: */
 
 scrollbarbutton {
+  background-color: #FF9F00;
 }
 
 scrollbarbutton:hover:active,
@@ -111,6 +113,18 @@ scrollbarbutton[active="true"] {
   padding-bottom: 0px;
   -moz-padding-start: 2px;
   -moz-padding-end: 0px;
+}
+
+scrollbarbutton:hover {
+  background-color: #FFCF00;
+}
+
+scrollbarbutton:hover:active {
+  background-color: #FF0000;
+}
+
+scrollbarbutton[disabled="true"] {
+  background-color: #8050B0 !important;
 }
 
 /* XXX - scrollbar.xml always grabs the OS settings and we don't want that */
@@ -131,59 +145,31 @@ scrollcorner {
 /* ..... increment .... */
 
 scrollbarbutton[type="increment"] {
-  background-image: url("chrome://global/skin/scrollbar/button-right.gif");
+  background-image: url("chrome://global/skin/scrollbar/arrow-right.png");
+  -moz-border-radius: 0 50% 50% 0;
   margin: 0px;
   -moz-margin-start: 3px;
 }
 
-scrollbarbutton[type="increment"]:hover {
-  background-image: url("chrome://global/skin/scrollbar/button-right-hover.gif");
-}
-
-scrollbarbutton[type="increment"][disabled="true"] {
-  background-image: url("chrome://global/skin/scrollbar/button-right-disabled.gif") !important;
-}
-
 scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
-  background-image: url("chrome://global/skin/scrollbar/button-down.gif");
+  background-image: url("chrome://global/skin/scrollbar/arrow-down.png");
+  -moz-border-radius: 0 0 50% 50%;
   margin: 3px 0px 0px;
-}
-
-scrollbar[orient="vertical"] > scrollbarbutton[type="increment"]:hover {
-  background-image: url("chrome://global/skin/scrollbar/button-down-hover.gif");
-}
-
-scrollbar[orient="vertical"] > scrollbarbutton[type="increment"][disabled="true"] {
-  background-image: url("chrome://global/skin/scrollbar/button-down-disabled.gif") !important;
 }
 
 /* ..... decrement .... */
 
 scrollbarbutton[type="decrement"] {
-  background-image: url("chrome://global/skin/scrollbar/button-left.gif");
+  background-image: url("chrome://global/skin/scrollbar/arrow-left.png");
+  -moz-border-radius: 50% 0 0 50%;
   margin: 0px;
   -moz-margin-end: 3px;
 }
 
-scrollbarbutton[type="decrement"]:hover {
-  background-image: url("chrome://global/skin/scrollbar/button-left-hover.gif");
-}
-
-scrollbarbutton[type="decrement"][disabled="true"] {
-  background-image: url("chrome://global/skin/scrollbar/button-left-disabled.gif") !important;
-}
-
 scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
-  background-image: url("chrome://global/skin/scrollbar/button-up.gif");
+  background-image: url("chrome://global/skin/scrollbar/arrow-up.png");
+  -moz-border-radius: 50% 50% 0 0;
   margin: 0px 0px 3px;
-}
-
-scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"]:hover {
-  background-image: url("chrome://global/skin/scrollbar/button-up-hover.gif");
-}
-
-scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"][disabled="true"] {
-   background-image: url("chrome://global/skin/scrollbar/button-up-disabled.gif") !important;
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
