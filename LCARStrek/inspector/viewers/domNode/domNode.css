@@ -39,6 +39,10 @@
 @import url("chrome://inspector/skin");
 @import url("chrome://inspector/content/extensions/treeEditable.css");
 
+#winNodeDefault {
+  padding: 0 !important;
+}
+
 .olNodeInfoLabel {
   -moz-padding-end: 0.5em;
 }
