@@ -87,6 +87,11 @@ treechildren::-moz-tree-image(ActionStop, inactive) {
   -moz-image-region: auto;
 }
 
+#search-box, #clearListButton {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 /* progress dialogs */
 
 /* focusable label, focus ring like .link-text but not a link */
