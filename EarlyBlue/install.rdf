@@ -28,5 +28,6 @@
     <!--em:updateURL--> <!--/em:updateURL-->
     <!--em:aboutURL--> <!--/em:aboutURL-->
     <em:internalName>EarlyBlue</em:internalName>
-  </Description>
+    <em:type>4</em:type>
+</Description>
 </RDF>
