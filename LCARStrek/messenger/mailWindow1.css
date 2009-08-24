@@ -55,7 +55,7 @@
   height: 0px;
 }
 
-#gray_vertical_splitter {
+#gray_vertical_splitter { /* XXX: can die when tabmail has landed */
   border: none;
 }
 
@@ -98,4 +98,8 @@
 tabpanels {
   /* don't draw tabpanel borders; see also tabbrowser.css */
   -moz-appearance: none;
+}
+
+.tab-close-button {
+  margin: 0;
 }

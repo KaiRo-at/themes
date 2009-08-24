@@ -48,21 +48,29 @@
 
 treechildren::-moz-tree-image(folderNameCol) {
   -moz-padding-end: 2px;
+}
+
+.tabmail-tab[type="folder"],
+treechildren::-moz-tree-image(folderNameCol) {
   list-style-image: url("chrome://messenger/skin/icons/folder-closed.gif");
 }
 
+.tabmail-tab[type="folder"][NewMessages="true"],
 treechildren::-moz-tree-image(folderNameCol, newMessages-true) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-new-closed.gif");
 }
 
 /* ..... News and Feeds ..... */
 
+.tabmail-tab[type="folder"][ServerType="nntp"],
+.tabmail-tab[type="folder"][ServerType="rss"],
 treechildren::-moz-tree-image(folderNameCol, serverType-nntp),
 treechildren::-moz-tree-image(folderNameCol, serverType-rss) {
   list-style-image: url("chrome://messenger/skin/icons/folder-newsgroup.gif");
 }
 
+.tabmail-tab[type="folder"][ServerType="nntp"][NewMessages="true"],
+.tabmail-tab[type="folder"][ServerType="rss"][NewMessages="true"],
 treechildren::-moz-tree-image(folderNameCol, serverType-nntp, newMessages-true),
 treechildren::-moz-tree-image(folderNameCol, serverType-rss, newMessages-true) {
   list-style-image: url("chrome://messenger/skin/icons/folder-newsgroup-new.gif");
@@ -70,70 +78,73 @@ treechildren::-moz-tree-image(folderNameCol, serverType-rss, newMessages-true) {
 
 /* ..... Inbox ..... */
 
+.tabmail-tab[type="folder"][SpecialFolder="Inbox"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Inbox) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-inbox.gif");
 }
 
+.tabmail-tab[type="folder"][SpecialFolder="Inbox"][NewMessages="true"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Inbox, newMessages-true) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-inbox-new.gif");
 }
 
 /* ..... Sent ..... */
 
+.tabmail-tab[type="folder"][SpecialFolder="Sent"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Sent) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-sent.gif");
 }
 
 /* ..... Unsent ..... */
 
+.tabmail-tab[type="folder"][SpecialFolder="Outbox"],
+.tabmail-tab[type="folder"][SpecialFolder="Unsent Messages"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Outbox),
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Unsent Messages) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-outbox.gif");
 }
 
 /* ..... Drafts ..... */
 
+.tabmail-tab[type="folder"][SpecialFolder="Drafts"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Drafts) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-draft.gif");
 }
 
 /* ..... Templates ..... */
 
+.tabmail-tab[type="folder"][SpecialFolder="Templates"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Templates) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-template.gif");
 }
 
 /* ..... Junk ..... */
 
+.tabmail-tab[type="folder"][SpecialFolder="Junk"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Junk) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-junk.gif");
 }
 
 /* ..... Trash ..... */
 
+.tabmail-tab[type="folder"][SpecialFolder="Trash"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Trash) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-trash.gif");
 }
 
 /* ..... Saved Searches ..... */
 
+.tabmail-tab[type="folder"][SpecialFolder="Virtual"],
 treechildren::-moz-tree-image(folderNameCol, specialFolder-Virtual) {
   list-style-image: url("chrome://messenger/skin/icons/folder-search.gif");
 }
 
-treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true),
-treechildren::-moz-tree-cell-text(folderNameCol, specialFolder-Inbox, newMessages-true) {
+.tabmail-tab[type="folder"][NewMessages="true"],
+treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true) {
   font-weight: bold;
 }
 
+.tabmail-tab[type="folder"][ImapShared="true"],
 treechildren::-moz-tree-image(folderNameCol, imapShared-true) {
   -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/folder-share.gif");
@@ -141,45 +152,47 @@ treechildren::-moz-tree-image(folderNameCol, imapShared-true) {
 
 /* ..... Server Folders ..... */
 
+.tabmail-tab[type="folder"][IsServer="true"],
 treechildren::-moz-tree-image(folderNameCol, isServer-true) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/server-mail.gif");
 }
 
+.tabmail-tab[type="folder"][BiffState="NewMail"][IsServer="true"],
 treechildren::-moz-tree-image(folderNameCol, biffState-NewMail, isServer-true) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/server-mail-new.gif");
 }
 
+.tabmail-tab[type="folder"][IsServer="true"][ServerType="pop3"][IsSecure="true"],
 treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-pop3, isSecure-true) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/server-remote-lock.gif");
 }
 
+.tabmail-tab[type="folder"][IsServer="true"][ServerType="imap"][IsSecure="true"],
 treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-imap, isSecure-true) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/server-remote-lock.gif");
 }
 
+.tabmail-tab[type="folder"][BiffState="NewMail"][IsServer="true"][ServerType="imap"][IsSecure="true"],
 treechildren::-moz-tree-image(folderNameCol, biffState-NewMail, isServer-true, isSecure-true) {
   list-style-image: url("chrome://messenger/skin/icons/server-remote-lock-new.gif");
 }
 
+.tabmail-tab[type="folder"][IsServer="true"][ServerType="none"],
 treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-none) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/server-local.gif");
 }
 
+.tabmail-tab[type="folder"][IsServer="true"][ServerType="nntp"],
 treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-nntp) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/server-news.gif");
 }
 
+.tabmail-tab[type="folder"][IsServer="true"][ServerType="nntp"][IsSecure="true"],
 treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-nntp, isSecure-true) {
-  -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/icons/server-news-lock.gif");
 }
 
+.tabmail-tab[type="folder"][IsServer="true"][ServerType="rss"],
 treechildren::-moz-tree-image(folderNameCol, isServer-true, serverType-rss) {
   list-style-image: url("chrome://communicator/skin/icons/feedIcon16.png");
 }
@@ -190,6 +203,7 @@ treechildren::-moz-tree-cell-text(closed, subfoldersHaveUnreadMessages-true) {
   font-weight: bold;
 }
 
+.tabmail-tab[type="folder"][IsServer="true"],
 treechildren::-moz-tree-cell-text(folderNameCol, isServer-true),
 treechildren::-moz-tree-cell-text(hasUnreadMessages-true) {
   font-weight: bold;

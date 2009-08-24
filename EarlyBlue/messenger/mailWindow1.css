@@ -87,3 +87,7 @@ tabpanels {
   /* don't draw tabpanel borders; see also tabbrowser.css */
   -moz-appearance: none;
 }
+
+.tab-close-button {
+  margin: 0;
+}
