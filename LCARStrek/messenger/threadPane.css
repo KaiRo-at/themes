@@ -215,7 +215,7 @@ treechildren::-moz-tree-image(junkStatusCol, notjunk) {
 
 .tabmail-tab[type="message"],
 treechildren::-moz-tree-image(subjectCol) {
-  list-style-image: url("chrome://messenger/skin/icons/message-mail.png");
+  list-style-image: url("chrome://messenger/skin/icons/message-mail.gif");
 }
 
 treechildren::-moz-tree-image(subjectCol) {
