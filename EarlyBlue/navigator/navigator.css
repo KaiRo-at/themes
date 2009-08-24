@@ -104,12 +104,6 @@
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
-/* ::::: small primary toolbar buttons ::::: */
-
-#nav-bar[inFullscreen="true"] .toolbar-grippy {
-  /* display: none; */
-}
-
 toolbar[iconsize="small"] > toolbarpaletteitem > #back-button,
 toolbar[iconsize="small"] > #back-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
