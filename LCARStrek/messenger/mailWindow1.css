@@ -55,10 +55,6 @@
   height: 0px;
 }
 
-#gray_vertical_splitter { /* XXX: can die when tabmail has landed */
-  border: none;
-}
-
 #threadpane-splitter {
   border: none;
 }

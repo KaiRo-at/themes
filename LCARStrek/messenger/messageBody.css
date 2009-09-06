@@ -173,3 +173,14 @@ body[selected="false"] {
   height: 100%;
   border: none;
 }
+
+
+.mimeAttachmentHeader {
+  border-style: none;
+  border-top: 1px solid #8050B0;
+}
+
+.mimeAttachmentName {
+  color: #8050B0;
+  font-size: 80%;
+}

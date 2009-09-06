@@ -104,68 +104,56 @@
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #back-button,
 toolbar[iconsize="small"] > #back-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
   -moz-image-region: rect(32px 16px 48px 0);
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #back-button[disabled="true"],
 toolbar[iconsize="small"] > #back-button[disabled="true"] {
   -moz-image-region: rect(32px 32px 48px 16px) !important;
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #forward-button,
 toolbar[iconsize="small"] > #forward-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
   -moz-image-region: rect(48px 16px 64px 0);
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #forward-button[disabled="true"],
 toolbar[iconsize="small"] > #forward-button[disabled="true"] {
   -moz-image-region: rect(48px 32px 64px 16px) !important;
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #reload-button,
 toolbar[iconsize="small"] > #reload-button {
   list-style-image: url("chrome://navigator/skin/icons/navigatoricons-small.png");
   -moz-image-region: rect(0 16px 16px 0);
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #reload-button[disabled="true"],
 toolbar[iconsize="small"] > #reload-button[disabled="true"] {
   -moz-image-region: rect(0 32px 16px 16px) !important;
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #stop-button,
 toolbar[iconsize="small"] > #stop-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
   -moz-image-region: rect(16px 16px 32px 0);
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #stop-button[disabled="true"],
 toolbar[iconsize="small"] > #stop-button[disabled="true"] {
   -moz-image-region: rect(16px 32px 32px 16px) !important;
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #print-button,
 toolbar[iconsize="small"] > #print-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
   -moz-image-region: rect(0 16px 16px 0);
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #print-button[disabled="true"],
 toolbar[iconsize="small"] > #print-button[disabled="true"] {
   -moz-image-region: rect(0 32px 16px 16px) !important;
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #home-button,
 toolbar[iconsize="small"] > #home-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
   -moz-image-region: rect(64px 16px 80px 0);
 }
 
-toolbar[iconsize="small"] > toolbarpaletteitem > #home-button[disabled="true"],
 toolbar[iconsize="small"] > #home-button[disabled="true"] {
   -moz-image-region: rect(64px 32px 80px 16px) !important;
 }
