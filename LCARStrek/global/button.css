@@ -162,8 +162,8 @@ button[type="menu-button"] {
 .button-menubutton-dropmarker {
   -moz-border-radius: 3px;
   margin: 1px;
-  min-width: 11px;
-  min-height: 11px;
+  width: 11px;
+  height: 11px;
 }
 
 /* ::::: plain buttons ::::: */

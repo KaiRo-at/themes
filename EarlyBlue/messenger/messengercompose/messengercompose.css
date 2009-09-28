@@ -98,15 +98,59 @@
   -moz-image-region: rect(294px 50px 315px 25px);
 }
 
-#button-stop {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
-  -moz-image-region: rect(21px 25px 42px 0px);
+/* ::::: small primary toolbar buttons ::::: */
+
+/* TODO: correct coords!
+toolbar[iconsize="small"] > #button-send,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-send {
+  list-style-image: url("chrome://messenger/skin/icons/messengericons-small.png");
+  -moz-image-region: rect(220px 19px 239px 0);
 }
 
-#button-stop[disabled="true"] {
-  -moz-image-region: rect(21px 50px 42px 25px);
+toolbar[iconsize="small"] > #button-send[disabled="true"] {
+  -moz-image-region: rect(220px 79px 239px 60px) !important;
 }
 
+toolbar[iconsize="small"] > #button-address,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-address {
+  list-style-image: url("chrome://messenger/skin/icons/messengericons-small.png");
+  -moz-image-region: rect(180px 19px 199px 0);
+}
+
+toolbar[iconsize="small"] > #button-address[disabled="true"] {
+  -moz-image-region: rect(180px 79px 199px 60px) !important;
+}
+
+toolbar[iconsize="small"] > #button-attach,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-attach {
+  list-style-image: url("chrome://messenger/skin/icons/messengericons-small.png");
+  -moz-image-region: rect(200px 19px 219px 0);
+}
+
+toolbar[iconsize="small"] > #button-attach[disabled="true"] {
+  -moz-image-region: rect(200px 79px 219px 60px) !important;
+}
+
+toolbar[iconsize="small"] > #spellingButton,
+toolbar[iconsize="small"] > toolbarpaletteitem > #spellingButton {
+  list-style-image: url("chrome://editor/skin/icons/editoricons-small.png");
+  -moz-image-region: rect(160px 19px 179px 0);
+}
+
+toolbar[iconsize="small"] > #spellingButton[disabled="true"] {
+  -moz-image-region: rect(160px 79px 179px 60px) !important;
+}
+
+toolbar[iconsize="small"] > #button-save,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-save {
+  list-style-image: url("chrome://editor/skin/icons/editoricons-small.png");
+  -moz-image-region: rect(140px 19px 159px 0);
+}
+
+toolbar[iconsize="small"] > #button-save[disabled="true"] {
+  -moz-image-region: rect(140px 79px 159px 60px) !important;
+}
+*/
 #MsgHeadersToolbar {
   min-height: 0px; /* this undoes the min-height in toolbar.css */
 }

@@ -139,8 +139,8 @@ button[type="menu-button"] {
 .button-menu-dropmarker,
 .button-menubutton-dropmarker {
   margin: 1px;
-  min-width: 11px;
-  min-height: 11px;
+  width: 11px;
+  height: 11px;
   background-color: transparent;
   border: none;
 }
