@@ -42,13 +42,23 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 #button-security {
-  list-style-image: url("chrome://messenger/skin/smime/icons/lock.gif");
+  list-style-image: url("chrome://messenger/skin/smime/icons/smimeicons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
 }
 
 #button-security[disabled] {
-  list-style-image: url("chrome://messenger/skin/smime/icons/lock-disabled.gif");
+  -moz-image-region: rect(0px 50px 21px 25px);
 }
 
+toolbar[iconsize="small"] > #button-security,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-security {
+  list-style-image: url("chrome://messenger/skin/smime/icons/smimeicons-small.png");
+  -moz-image-region: rect(0 16px 16px 0px);
+}
+
+toolbar[iconsize="small"] > #button-security[disabled] {
+  -moz-image-region: rect(0 32px 16px 16px);
+}
 
 #msgcomposeWindow #signing-status {
   list-style-image: none;

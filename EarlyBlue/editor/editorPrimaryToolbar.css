@@ -40,147 +40,145 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 #newButton {
-  list-style-image: url("chrome://editor/skin/icons/newfile.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(84px 25px 105px 0px);
 }
 
 #newButton[disabled="true"]  {
-  list-style-image: url("chrome://editor/skin/icons/newfile-disabled.gif") !important;
+  -moz-image-region: rect(84px 50px 105px 25px);
 } 
 
 #openButton {
-  list-style-image: url("chrome://editor/skin/icons/openfile.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(105px 25px 126px 0px);
 } 
 
 #openButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/openfile-disabled.gif") !important;
+  -moz-image-region: rect(105px 50px 126px 25px);
 } 
 
 #saveButton {
-  list-style-image: url("chrome://editor/skin/icons/savefile.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(147px 25px 168px 0px);
 } 
 
 #saveButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/savefile-disabled.gif") !important;
-} 
-
-#saveButton[dirty="true"] {
-  list-style-image: url("chrome://editor/skin/icons/savefile-dirty.gif");
-} 
-
-#saveButton[dirty="true"][disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/savefile-disabled.gif") !important;
+  -moz-image-region: rect(147px 50px 168px 25px);
 } 
 
 #publishButton {
-  list-style-image: url("chrome://editor/skin/icons/publish.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(210px 25px 231px 0px);
 } 
 
 #publishButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/publish-disabled.gif") !important;
+  -moz-image-region: rect(210px 50px 231px 25px);
 }
 
 #previewButton {
-  list-style-image: url("chrome://editor/skin/icons/preview.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(126px 25px 147px 0px);
 } 
 
 #previewButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/preview-disabled.gif") !important;
+  -moz-image-region: rect(126px 50px 147px 25px);
 } 
 
 #printButton {
-  list-style-image: url("chrome://global/skin/icons/print.gif");
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
 } 
 
 #printButton[disabled="true"] {
-  list-style-image: url("chrome://global/skin/icons/print-disabled.gif") !important;
+  -moz-image-region: rect(0px 50px 21px 25px);
 } 
 
-/*
 #findButton {
-  list-style-image: url("chrome://editor/skin/icons/find.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(294px 25px 315px 0px);
 } 
 
 #findButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/find-disabled.gif") !important;
+  -moz-image-region: rect(294px 50px 315px 25px);
 }
-*/
 
 #linkButton {
-  list-style-image: url("chrome://editor/skin/icons/link.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(63px 25px 84px 0px);
 } 
 
 #linkButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/link-disabled.gif") !important;
+  -moz-image-region: rect(63px 50px 84px 25px);
 } 
 
 #imageButton {
-  list-style-image: url("chrome://editor/skin/icons/image.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(42px 25px 63px 0px);
 } 
 
 #imageButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/image-disabled.gif") !important;
+  -moz-image-region: rect(42px 50px 63px 25px);
 } 
 
 #namedAnchorButton {
-  list-style-image: url("chrome://editor/skin/icons/anchor.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
 } 
 
 #namedAnchorButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/anchor-disabled.gif") !important;
+  -moz-image-region: rect(0px 50px 21px 25px);
 } 
 
 #hlineButton {
-  list-style-image: url("chrome://editor/skin/icons/hline.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(21px 25px 42px 0px);
 } 
 
 #hlineButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/hline-disabled.gif") !important;
+  -moz-image-region: rect(21px 50px 42px 25px);
 } 
 
 #tableButton {
-  list-style-image: url("chrome://editor/skin/icons/table.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(189px 25px 210px 0px);
 } 
 
 #tableButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/table-disabled.gif") !important;
+  -moz-image-region: rect(189px 50px 210px 25px);
 } 
 
 #spellingButton {
-  list-style-image: url("chrome://editor/skin/icons/spell.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(168px 25px 189px 0px);
 }
 
 #spellingButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/spell-disabled.gif") !important;
+  -moz-image-region: rect(168px 50px 189px 25px);
 }
 
 #cutButton {
-  list-style-image: url("chrome://editor/skin/icons/cut.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(231px 25px 252px 0px);
 }
 
 #cutButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/cut-disabled.gif") !important;
+  -moz-image-region: rect(231px 50px 252px 25px);
 }
 
 #copyButton {
-  list-style-image: url("chrome://editor/skin/icons/copy.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(252px 25px 273px 0px);
 }
 
 #copyButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/copy-disabled.gif") !important;
+  -moz-image-region: rect(252px 50px 273px 25px);
 }
 
 #pasteButton {
-  list-style-image: url("chrome://editor/skin/icons/paste.gif");
+  list-style-image: url("chrome://editor/skin/icons/editoricons.png");
+  -moz-image-region: rect(273px 25px 294px 0px);
 }
 
 #pasteButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/paste-disabled.gif") !important;
-}
-
-#findButton {
-  list-style-image: url("chrome://editor/skin/icons/find.gif");
-}
-
-#findButton[disabled="true"] {
-  list-style-image: url("chrome://editor/skin/icons/find-disabled.gif") !important;
+  -moz-image-region: rect(273px 50px 294px 25px);
 }
