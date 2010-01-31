@@ -8,19 +8,19 @@ if [ -n "$1" ]; then
   SRC_DATE="$1"
   DST_DATE=`TZ=America/Los_Angeles date +%Y-%m-%d`
 
-  HG_COMM_DIR=/mnt/mozilla/hg/comm-1.9.1
+  HG_COMM_DIR=/mnt/mozilla/hg/comm-central
   COMM_DIR=suite/themes/classic/
   COMM_LOG=$RUN_DIR/themelog-suitedefault.$SRC_DATE.$DST_DATE.log
 
-  HG_MOZ_DIR=/mnt/mozilla/hg/comm-1.9.1/mozilla
+  HG_MOZ_DIR=/mnt/mozilla/hg/comm-central/mozilla
   MOZ_DIR=toolkit/themes/winstripe/
   MOZ_LOG=$RUN_DIR/themelog-tkwinstripe.$SRC_DATE.$DST_DATE.log
 
-  HG_DOMI_DIR=/mnt/mozilla/hg/comm-1.9.1/mozilla/extensions/inspector
+  HG_DOMI_DIR=/mnt/mozilla/hg/comm-central/mozilla/extensions/inspector
   DOMI_DIR=resources/skin/classic/
   DOMI_LOG=$RUN_DIR/themelog-domiclassic.$SRC_DATE.$DST_DATE.log
 
-  HG_CZ_DIR=/mnt/mozilla/hg/comm-1.9.1/mozilla/extensions/irc
+  HG_CZ_DIR=/mnt/mozilla/hg/comm-central/mozilla/extensions/irc
   CZ_DIR=xul/skin/
   CZ_LOG=$RUN_DIR/themelog-chatzilla.$SRC_DATE.$DST_DATE.log
 
