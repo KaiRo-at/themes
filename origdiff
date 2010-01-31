@@ -4,6 +4,8 @@ RUN_DIR=$(pwd)
 cd $(dirname "$0")
 SCRIPT_DIR=$(pwd)
 
+REPO_LIST="COMM MOZ DOMI CZ"
+
 if [ -n "$1" ]; then
   SRC_DATE="$1"
   DST_DATE=`TZ=America/Los_Angeles date +%Y-%m-%d`
@@ -24,7 +26,7 @@ if [ -n "$1" ]; then
   CZ_DIR=xul/skin/
   CZ_LOG=$RUN_DIR/themelog-chatzilla.$SRC_DATE.$DST_DATE.log
 
-  for repo in "COMM" "MOZ" "DOMI" "CZ"; do
+  for repo in $REPO_LIST; do
     HG_DIR_VAR="HG_${repo}_DIR"
     HG_DIR=${!HG_DIR_VAR}
     SKIN_DIR_VAR="${repo}_DIR"
@@ -34,7 +36,7 @@ if [ -n "$1" ]; then
     if [ ! -e $LOG_NAME ]; then
       echo "Getting $LOG_NAME..."
       cd $HG_DIR
-      hg log -d ">$SRC_DATE" $SKIN_DIR > $LOG_NAME
+      LC_ALL=C hg log -d ">$SRC_DATE" $SKIN_DIR > $LOG_NAME
     fi
   done
   cd $RUN_DIR
@@ -43,7 +45,7 @@ else
   exit 1
 fi
 
-for repo in "COMM" "MOZ" "DOMI" "CZ"; do
+for repo in $REPO_LIST; do
   HG_DIR_VAR="HG_${repo}_DIR"
   LOG_VAR="${repo}_LOG"
   HG_URL=`awk -F ' *= *' '/default *=/ { print $2 }' ${!HG_DIR_VAR}/.hg/hgrc`
