@@ -41,6 +41,7 @@
   -moz-box-orient: vertical;
 }
 
+#wrapper-throbber-box > #throbber-box > #navigator-throbber,
 #navigator-throbber {
   -moz-binding: url("chrome://global/content/bindings/button.xml#button-image");
   -moz-user-focus: ignore;
@@ -59,6 +60,8 @@
 }
 
 window[chromehidden~="toolbar"] #navigator-throbber,
+toolbar[mode="text"] #wrapper-throbber-box > #throbber-box > #navigator-throbber,
+toolbar[iconsize="small"] #wrapper-throbber-box > #throbber-box > #navigator-throbber,
 toolbar[mode="text"] #navigator-throbber,
 toolbar[mode="icons"] #navigator-throbber,
 toolbar[iconsize="small"] #navigator-throbber {

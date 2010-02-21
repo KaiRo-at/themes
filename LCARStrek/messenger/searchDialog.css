@@ -58,6 +58,11 @@
   height: 100px;
 }
 
+#searchAddressBookWindow,
+#searchMailWindow {
+  padding: 0px;
+}
+
 .search-menulist[unavailable="true"] {
   color: #8050B0;
 }
