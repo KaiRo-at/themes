@@ -57,7 +57,7 @@ textbox {
   min-height: 19px;
 }
 
-textbox[empty="true"] {
+textbox[isempty="true"] {
   color: #6000CF;
 }
 
@@ -122,8 +122,8 @@ textbox.plain {
   -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
-.textbox-search-icon[chromedir="rtl"] {
-  -moz-image-region: rect(16px, 16px, 32px, 0);
+.textbox-search-icon:-moz-locale-dir(rtl) {
+  -moz-transform: scaleX(-1);
 }
 
 .textbox-search-icon[searchbutton]:not([disabled]) {
@@ -132,7 +132,7 @@ textbox.plain {
 
 .textbox-search-clear {
   list-style-image: url("chrome://global/skin/icons/search.png");
-  -moz-image-region: rect(32px, 16px, 48px, 0);
+  -moz-image-region: rect(16px, 16px, 32px, 0);
 }
 
 .textbox-search-clear:not([disabled]) {

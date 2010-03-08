@@ -139,18 +139,18 @@ timepicker[disabled="true"] {
   list-style-image: url("chrome://global/skin/arrow/arrow-right-disabled.gif");
 }
 
-.datepicker-previous[chromedir="rtl"] {
+.datepicker-previous:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-right.gif");
 }
 
-.datepicker-next[chromedir="rtl"] {
+.datepicker-next:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-left.gif");
 }
 
-.datepicker-previous[disabled="true"][chromedir="rtl"] {
+.datepicker-previous[disabled="true"]:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-right-disabled.gif");
 }
 
-.datepicker-next[disabled="true"][chromedir="rtl"] {
+.datepicker-next[disabled="true"]:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-left-disabled.gif");
 }

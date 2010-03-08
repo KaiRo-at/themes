@@ -300,20 +300,22 @@ treecol[dragging="true"] {
   color: #000000;
 }
 
-treecol[insertafter="true"] {
+tree:-moz-locale-dir(ltr) treecol[insertafter="true"],
+tree:-moz-locale-dir(rtl) treecol[insertbefore="true"] {
   border-right: 1px solid #000000;
 }
 
-treecol[insertbefore="true"] {
+tree:-moz-locale-dir(rtl) treecol[insertafter="true"],
+tree:-moz-locale-dir(ltr) treecol[insertbefore="true"] {
   border-left: 1px solid #000000;
 }
 
 treechildren::-moz-tree-column(insertbefore) {
-  border-left: 1px solid #000000;
+  -moz-border-start: 1px solid #000000;
 }
 
 treechildren::-moz-tree-column(insertafter) {
-  border-right: 1px solid #000000;
+  -moz-border-end: 1px solid #000000;
 }
 
 /* ::::: sort direction indicator :::::  */

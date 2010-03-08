@@ -80,12 +80,12 @@
 }
 
 .folderview-cycler[dir="prev"],
-.folderview-cycler[dir="next"][chromedir="rtl"] {
+.folderview-cycler[dir="next"]:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-left.gif");
 }
 
 .folderview-cycler[dir="next"],
-.folderview-cycler[dir="prev"][chromedir="rtl"] {
+.folderview-cycler[dir="prev"]:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-right.gif");
 }
 

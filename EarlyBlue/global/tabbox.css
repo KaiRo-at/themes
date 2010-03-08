@@ -78,7 +78,6 @@ tab {
 }
 
 tab[selected="true"] {
-  -moz-user-focus: normal;
   font-weight: bold;
   background-color: #EDF1FF;
 }
