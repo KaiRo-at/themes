@@ -46,11 +46,11 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-end.gif");
 }
 
-.left-arrow, .right-arrow:-moz-locale-dir(rtl) {
+.previous-arrow, .next-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp.gif");
 }
 
-.right-arrow, .left-arrow:-moz-locale-dir(rtl) {
+.next-arrow, .previous-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp.gif");
 }
 

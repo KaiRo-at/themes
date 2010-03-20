@@ -169,6 +169,26 @@ toolbar[mode="text"] .toolbarbutton-text {
 
 /* ::::: miscellaneous formatting ::::: */
 
+:root:-moz-lwtheme,
+[lwthemefooter="true"] {
+  -moz-appearance: none;
+}
+
+:root:-moz-lwtheme-darktext {
+  text-shadow: 1px 1px 2px #FFFFFF;
+}
+
+:root:-moz-lwtheme-brighttext {
+  text-shadow: 1px 1px 2px #000000;
+}
+
+statusbar:-moz-lwtheme,
+sidebarheader:-moz-lwtheme {
+  -moz-appearance: none;
+  background: none;
+  border-style: none;
+}
+
 .inset {
   border: 1px inset #CCD0DD;
   /* margin: 0px 5px 5px; */

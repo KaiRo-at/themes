@@ -62,6 +62,15 @@ toolbaritem > menubar {
   background-color: transparent;
 }
 
+/* ::::: lightweight theme ::::: */
+
+toolbox:-moz-lwtheme,
+toolbar:-moz-lwtheme {
+  -moz-appearance: none;
+  background: none;
+  border-style: none;
+}
+
 /* ::::: toolbar decorations ::::: */
 
 toolbarseparator {

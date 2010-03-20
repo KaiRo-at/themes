@@ -59,6 +59,10 @@ splitter:hover:active {
   background-color: #999999;
 }
 
+splitter:-moz-lwtheme {
+  background: none;
+}
+
 /* ::::: splitter (horizontal) ::::: */
 
 splitter[orient="vertical"] {

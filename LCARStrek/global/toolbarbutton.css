@@ -110,6 +110,11 @@ toolbarbutton[disabled="true"][checked="true"] {
   color: #8050B0;
 }
 
+toolbarbutton:-moz-lwtheme {
+  text-shadow: none;
+}
+
+
 /* ..... checked state ..... */
 
 toolbarbutton[checked="true"] {

@@ -115,6 +115,10 @@ menulist > menupopup > menu {
   max-width: none;
 }
 
+menubar > menu:-moz-lwtheme {
+  -moz-appearance: none;
+}
+
 /* ..... internal content .... */
 
 .menu-text,

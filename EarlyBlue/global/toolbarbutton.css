@@ -104,6 +104,10 @@ toolbarbutton[disabled="true"][open="true"] {
   color: #999999;
 }
 
+toolbarbutton:-moz-lwtheme {
+  text-shadow: none;
+}
+
 /* ..... checked state ..... */
 
 toolbarbutton[checked="true"] {

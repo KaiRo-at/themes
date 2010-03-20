@@ -54,19 +54,19 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-end-hover.gif");
 }
 
-.left-arrow, .right-arrow:-moz-locale-dir(rtl) {
+.previous-arrow, .next-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp.gif");
 }
 
-.left-arrow:hover, .right-arrow:-moz-locale-dir(rtl):hover {
+.previous-arrow:hover, .next-arrow:-moz-locale-dir(rtl):hover {
   list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-hover.gif");
 }
 
-.right-arrow, .left-arrow:-moz-locale-dir(rtl) {
+.next-arrow, .previous-arrow:-moz-locale-dir(rtl) {
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp.gif");
 }
 
-.right-arrow:hover, .left-arrow:-moz-locale-dir(rtl):hover {
+.next-arrow:hover, .previous-arrow:-moz-locale-dir(rtl):hover {
   list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-hover.gif");
 }
 
