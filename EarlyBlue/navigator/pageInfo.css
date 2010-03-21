@@ -112,7 +112,7 @@ treechildren::-moz-tree-cell-text(broken) {
   overflow: auto;
 }
 
-#permList > vbox {
+.permission {
   padding-top: 6px;
   padding-bottom: 6px;
   -moz-padding-start: 7px;
@@ -121,7 +121,7 @@ treechildren::-moz-tree-cell-text(broken) {
   border-bottom: 1px dotted #9999CC;
 }
 
-#permList > vbox > label {
+.permissionLabel {
   font-weight: bold;
 }
 
