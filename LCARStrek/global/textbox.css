@@ -57,9 +57,11 @@ textbox {
   min-height: 19px;
 }
 
+/* this color should be on the -moz-placeholder
 textbox[isempty="true"] {
   color: #6000CF;
 }
+*/
 
 html|*.textbox-input,
 html|*.textbox-textarea {
