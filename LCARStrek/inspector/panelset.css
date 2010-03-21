@@ -57,23 +57,6 @@ panel[disabled="true"] > .viewer-pane-box-1 {
   color: #000000;
 }
 
-.viewer-menu > .toolbarbutton-menu-dropmarker {
-  display: none;
-}
-
-.viewer-menu {
-  list-style-image: url("chrome://inspector/skin/iconViewerMenu.gif");
-}
-
-.viewer-menu:hover {
-  list-style-image: url("chrome://inspector/skin/iconViewerMenu-act.gif");
-}
-
-.viewer-menu[disabled="true"],
-.viewer-menu[disabled="true"]:hover {
-  list-style-image: url("chrome://inspector/skin/iconViewerMenu-dis.gif");
-}
-
 .viewer-pane-toolbox {
   border-right: none;
 }
