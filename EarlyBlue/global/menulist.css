@@ -49,6 +49,7 @@ menulist {
   border: 1px inset #CCD0DD;
   background-color: #CCCCCC;
   color: #000000;
+  text-shadow: none;
 }
 
 .menulist-label-box {

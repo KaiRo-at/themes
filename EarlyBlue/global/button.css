@@ -49,6 +49,7 @@ button {
   border: 1px outset #CCD0DD;
   background-color: #CCD0DD;
   color: #000000;
+  text-shadow: none;
 }
 
 .button-box {

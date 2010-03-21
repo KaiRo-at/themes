@@ -81,8 +81,7 @@ toolbarbutton.toolbarbutton-menubutton-button[open="true"] {
 }
 */
 
-toolbarbutton:hover,
-toolbarbutton[buttonover="true"] {
+toolbarbutton:hover {
   border: 1px outset #CCD0DD;
 }
 

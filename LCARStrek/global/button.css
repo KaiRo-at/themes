@@ -50,6 +50,7 @@ button {
   border: none;
   background-color: #000000;
   color: #FFCF00;
+  text-shadow: none;
 }
 
 .button-box {

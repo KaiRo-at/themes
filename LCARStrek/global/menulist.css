@@ -50,6 +50,7 @@ menulist {
   border: 1px solid #9C9CFF;
   background-color: #000000;
   color: #E7ADE7;
+  text-shadow: none;
 }
 
 menulist[menuactive="true"],

@@ -79,8 +79,7 @@ toolbarbutton:focus {
   -moz-outline-offset: -1px;
 }
 
-toolbarbutton:hover,
-toolbarbutton[buttonover="true"] {
+toolbarbutton:hover {
   background-color: #FFCF00;
   color: #000000;
 }
