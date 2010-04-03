@@ -205,10 +205,6 @@ statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
   -moz-box-orient: vertical;
 }
 
-window:not([active="true"]) menubar > menu {
-  color: #8050B0;
-}
-
 .toolbar-focustarget {
   -moz-user-focus: ignore !important;
 }

@@ -160,10 +160,6 @@ statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
   padding: 0px 1px;
 }
 
-window:not([active="true"]) menubar > menu {
-  color: #808080;
-}
- 
 .toolbar-focustarget {
   -moz-user-focus: ignore !important;
 }

@@ -89,6 +89,14 @@ menubar > menu[open] {
   border: none;
 }
 
+menubar > menu:-moz-lwtheme {
+  -moz-appearance: none;
+}
+
+menubar > menu:-moz-window-inactive {
+  color: #8050B0;
+}
+
 menuitem.spell-suggestion {
   font-weight: bold;
 }
@@ -113,10 +121,6 @@ menulist > menupopup > menu {
   -moz-padding-start: 1px;
   -moz-padding-end: 22px;
   max-width: none;
-}
-
-menubar > menu:-moz-lwtheme {
-  -moz-appearance: none;
 }
 
 /* ..... internal content .... */
