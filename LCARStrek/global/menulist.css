@@ -79,14 +79,14 @@ menulist[open="true"] {
 
 .menulist-description {
   font-style: italic;
-  color: #8050B0;
+  color: #9C9CFF;
   -moz-margin-start: 1ex !important;
 }
 
 menulist:focus > .menulist-label-box {
 /*  border: 1px dotted #008484; */
   background-color: #008484;
-  color: #000000;
+  color: #FFCF00;
 }
 
 menulist[disabled="true"] {
