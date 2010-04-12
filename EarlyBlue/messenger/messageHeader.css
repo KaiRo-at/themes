@@ -58,13 +58,6 @@
   list-style-image: url("chrome://messenger/skin/icons/attach.gif");
 }
 
-#attachmentTree {
-  margin: 3px;
-  -moz-margin-start: 0;
-  height: 0px;
-  width: 20em;
-}
-
 #attachmentText {
   font-weight: bold;
 }
