@@ -1,5 +1,9 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+resizer {
+  background-color: #CCD0DD;
+}
+
 resizer[dir="top"],
 resizer[dir="bottom"] {
   cursor: ns-resize;
@@ -30,5 +34,8 @@ resizer[dir="bottomend"]:-moz-locale-dir(rtl) {
 
 resizer[dir="bottomright"]:-moz-locale-dir(ltr),
 resizer[dir="bottomend"] {
-  /* -moz-appearance: resizer; */
+  background-image: url("chrome://global/skin/icons/resizer.png");
+  background-position: bottom right;
+  width: 15px;
+  height: 15px;
 }
