@@ -1,8 +1,10 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/*
 resizer {
   background-color: #CCD0DD;
 }
+*/
 
 resizer[dir="top"],
 resizer[dir="bottom"] {
