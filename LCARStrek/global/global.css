@@ -344,7 +344,7 @@ description {
   cursor: pointer;
 }
 
-.text-link:focus {
+.text-link:-moz-focusring {
   /* Don't specify the outline-color, we should always use initial value. */
   outline: 1px dotted;
 }

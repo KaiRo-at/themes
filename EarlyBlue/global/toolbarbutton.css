@@ -70,7 +70,7 @@ toolbarbutton.tabbable {
   -moz-user-focus: normal !important;
 }
 
-toolbarbutton:focus {
+toolbarbutton:-moz-focusring {
   outline: 1px dotted #666699;
   outline-offset: -1px;
 }

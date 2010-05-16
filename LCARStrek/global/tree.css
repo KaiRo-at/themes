@@ -60,7 +60,7 @@ tree {
   outline-offset: -1px;
 }
 
-.focusring:focus > .tree-stack > .tree-rows > .tree-bodybox {
+.focusring:-moz-focusring > .tree-stack > .tree-rows > .tree-bodybox {
   outline: 1px dotted #008484;
 }
 

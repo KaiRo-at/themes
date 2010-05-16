@@ -83,10 +83,13 @@ menulist[open="true"] {
   -moz-margin-start: 1ex !important;
 }
 
-menulist:focus > .menulist-label-box {
-/*  border: 1px dotted #008484; */
+menulist:focus:not(.menulist-compact) > .menulist-label-box {
   background-color: #008484;
   color: #FFCF00;
+}
+
+menulist:-moz-focusring:not([open="true"]):not(.menulist-compact) > .menulist-label-box {
+/*  border: 1px dotted #FFCF00; */
 }
 
 menulist[disabled="true"] {

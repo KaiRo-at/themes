@@ -26,8 +26,8 @@
 .playButton:hover, .muteButton:hover {
   background-color: rgba(255,207,0,0.75);
 }
-.playButton:focus > .button-box,
-.muteButton:focus > .button-box {
+.playButton:-moz-focusring > .button-box,
+.muteButton:-moz-focusring > .button-box {
   border: 1px dotted rgba(0,0,0,0.75);
 }
 

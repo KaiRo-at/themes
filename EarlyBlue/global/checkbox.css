@@ -73,7 +73,7 @@ checkbox {
 
 /* ..... focused state ..... */
 
-checkbox:focus > .checkbox-label-center-box > .checkbox-label-box {
+checkbox:-moz-focusring > .checkbox-label-center-box > .checkbox-label-box {
   border: 1px dotted #9999CC;
 }
 

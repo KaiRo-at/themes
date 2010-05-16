@@ -71,10 +71,7 @@ button {
 
 /* .......... focused state .......... */
 
-button:focus {
-}
-
-button:focus > .button-box {
+button:-moz-focusring > .button-box {
   border: 1px dotted #9999CC;
 }
 

@@ -51,11 +51,11 @@ listitem {
   border: 1px solid transparent;
 }
 
-listbox:focus > listitem[current="true"] {
+listbox:-moz-focusring > listitem[current="true"] {
   border: 1px dotted #FF9F00;
 }
 
-listbox:focus > listitem[current="true"][selected="true"] {
+listbox:-moz-focusring > listitem[current="true"][selected="true"] {
   border: 1px dotted #FF9F00;
 }
 

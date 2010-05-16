@@ -69,10 +69,13 @@ menulist {
   -moz-margin-start: 1ex !important;
 }
 
-menulist:focus > .menulist-label-box {
-/*  border: 1px dotted #999999; */
+menulist:focus:not(.menulist-compact) > .menulist-label-box {
   background-color: #336699;
   color: #000000;
+}
+
+menulist:-moz-focusring:not([open="true"]):not(.menulist-compact) > .menulist-label-box {
+/*  border: 1px dotted #808080; */
 }
 
 menulist[disabled="true"] {
@@ -150,8 +153,6 @@ html|*.menulist-editable-input {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
 }
 
-.menulist-compact:focus > .menulist-label-box {
+.menulist-compact:-moz-focusring:not([open="true"]) > .menulist-label-box {
   border: 1px dotted #999999;
-  background-color: transparent;
-  color: inherit;
 }
