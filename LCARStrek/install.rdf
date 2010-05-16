@@ -5,13 +5,13 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>LCARStrek@kairo.at</em:id>
-    <em:version>2.1a1</em:version>
+    <em:version>2.1a2pre</em:version>
 
     <!-- SeaMonkey -->
     <em:targetApplication>
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
-        <em:minVersion>2.1a1pre</em:minVersion>
+        <em:minVersion>2.1a2pre</em:minVersion>
         <em:maxVersion>2.1a2pre</em:maxVersion>
       </Description>
     </em:targetApplication>
