@@ -97,7 +97,7 @@ prefwindow {
   background-color: #000000;
   color: #FF9F00;
 /*  font: 3mm "Final Frontier",tahoma,arial,helvetica,sans-serif; */
-  font: 11px helvetica,arial,tahoma,sans-serif;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   padding: 3px;
 }
 

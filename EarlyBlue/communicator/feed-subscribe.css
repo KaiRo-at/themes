@@ -1,6 +1,6 @@
 html {
   background: #CCD0DD;
-  font: 12px helvetica,arial,tahoma,sans-serif;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
 #feedBody {
@@ -83,7 +83,7 @@ body {
   margin: 0;
   padding: 0 3em;
   color: #000000;
-  font: 12px helvetica,arial,tahoma,sans-serif;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
 h1 {

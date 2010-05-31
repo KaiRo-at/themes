@@ -78,7 +78,7 @@ wizard,
 prefwindow {
   background-color: #CCD0DD;
   color: #000000;
-  font: 11px helvetica,arial,tahoma,sans-serif;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
 window.dialog {

@@ -38,7 +38,7 @@
 :root {
   background-color: #CCD0DD;
   color: #000000;
-  font: 12px helvetica,arial,tahoma,sans-serif;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   -moz-padding-start: 2em;
   -moz-padding-end: 2em;
 }

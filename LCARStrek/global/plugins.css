@@ -42,7 +42,7 @@
 body {
   background-color: #000000;
   color: #FF9F00;
-  font: 12px helvetica,arial,tahoma,sans-serif;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
 a:link, a:visited, a:active {
