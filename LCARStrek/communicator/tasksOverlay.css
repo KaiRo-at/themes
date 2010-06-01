@@ -84,4 +84,9 @@
 
 #component-bar {
   -moz-box-align: stretch;
+  -moz-padding-start: 0px;
+}
+
+#component-bar + statusbarpanel {
+  border-left: none;
 }

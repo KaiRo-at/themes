@@ -414,11 +414,6 @@ toolbar[mode="icons"] #search-button > .button-box > .button-text {
 /* ::::: security button ::::: */
 
 #security-button {
-  border-left: 3px solid black;
-  -moz-padding-start: 2px;
-}
-
-#security-button {
   list-style-image: url("chrome://communicator/skin/icons/lock-insecure.gif");
 }
 

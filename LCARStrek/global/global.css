@@ -179,7 +179,12 @@ statusbar {
 statusbarpanel {
   -moz-box-align: center;
   -moz-box-pack: center;
+  border-left: 3px solid black;
   padding: 0px 2px;
+}
+
+statusbarpanel:first-child {
+  border-left: none;
 }
 
 statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
