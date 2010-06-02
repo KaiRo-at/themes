@@ -203,11 +203,11 @@ statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
 .statusbarpanel-iconic,
 .statusbarpanel-iconic-text,
 .statusbarpanel-menu-iconic {
-  padding: 0px 2px;
 }
 
 .statusbarpanel-progress {
   -moz-box-orient: vertical;
+  padding: 0px;
 }
 
 .toolbar-focustarget {
