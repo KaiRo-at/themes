@@ -105,19 +105,19 @@ button[default="true"][disabled="true"] > .button-box {
 
 button:hover,
 button:hover:active {
-  border : none;
+  border: none;
   background-color: #FFCF00;
   color: #000000;
 }
 
 button[open="true"] {
-  border : none;
+  border: none;
   background-color: #FF9F00;
   color: #000000;
 }
 
-button[checked="true"] {
-  border : none;
+button[checked="true"]:not(:hover) {
+  border: none;
   background-color: #008484;
   color: #000000;
 }

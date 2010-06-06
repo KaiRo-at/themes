@@ -371,7 +371,7 @@
 }
 
 .addon[selected] .details-container {
-  border-color: #AAA;
+  border-color: #9999CC;
 }
 
 
@@ -579,8 +579,8 @@
   background-color: #CCD0DD;
   border-width: 1px 0px 0px 1px;
   border-style: solid;
-  -moz-border-top-colors: #FFFFF;
-  -moz-border-left-colors: #FFFFF;
+  -moz-border-top-colors: #FFFFFF;
+  -moz-border-left-colors: #FFFFFF;
   /* -moz-border-radius: 100%; */
   min-width: 16px;
   width: 16px;
