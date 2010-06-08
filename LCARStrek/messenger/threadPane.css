@@ -208,9 +208,9 @@ treechildren::-moz-tree-image(junkStatusCol, notjunk) {
 /* ..... subject column and tab icons ..... */
 
 .tabmail-tab[type="message"] .tab-icon {
-  margin-top: -4px;
   /* the message icons are only 14px high */
   height: 14px;
+  margin-bottom: 2px;
 }
 
 .tabmail-tab[type="message"],
