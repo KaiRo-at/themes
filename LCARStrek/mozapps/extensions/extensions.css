@@ -318,11 +318,15 @@
   margin: 7px 5px;
   width: 32px;
   height: 32px;
-  list-style-image: url("chrome://mozapps/skin/xpinstall/xpinstallItemGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
 }
 
 .addon[type="theme"] .icon {
   list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.png");
+}
+
+.addon[type="locale"] .icon {
+  list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.png");
 }
 
 .addon[type="plugin"] .icon {
@@ -456,11 +460,15 @@
   width: 32px;
   height: 32px;
   -moz-margin-end: 10px;
-  list-style-image: url("chrome://mozapps/skin/xpinstall/xpinstallItemGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
 }
 
 #detail-view[type="theme"] #detail-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.png");
+}
+
+#detail-view[type="locale"] #detail-icon {
+  list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.png");
 }
 
 #detail-view[type="plugin"] #detail-icon {
@@ -585,6 +593,14 @@
   width: 16px;
   height: 16px;
   margin: 3px;
+}
+
+.download-progress .pause {
+  list-style-image: url('chrome://mozapps/skin/extensions/pause.png');
+}
+
+.download-progress .cancel {
+  list-style-image: url('chrome://mozapps/skin/extensions/cancel.png');
 }
 
 .download-progress .status-container {

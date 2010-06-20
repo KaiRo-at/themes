@@ -48,7 +48,7 @@ ul {
   padding: 3em;
   -moz-padding-start: 30px;
   background: url("chrome://global/skin/icons/alert-exclam.gif") left 0 no-repeat #000000;
-  -moz-background-origin: content;
+  background-origin: content-box;
 }
 
 #errorPageContainer.certerror {
