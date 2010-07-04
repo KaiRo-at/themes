@@ -17,6 +17,10 @@ findbar {
   -moz-image-region: rect(0px 16px 16px 0px);
 }
 
+.findbar-find-next[disabled="true"] {
+  -moz-image-region: rect(16px 16px 32px 0px);
+}
+
 /* find-previous button */
 
 .findbar-find-previous {
@@ -24,11 +28,19 @@ findbar {
   -moz-image-region: rect(0px 32px 16px 16px);
 }
 
+.findbar-find-previous[disabled="true"] {
+  -moz-image-region: rect(16px 32px 32px 16px);
+}
+
 /* highlight button */
 
 .findbar-highlight {
   list-style-image: url("chrome://global/skin/icons/find.png");
   -moz-image-region: rect(0px 48px 16px 32px);
+}
+
+.findbar-higlight[disabled="true"] {
+  -moz-image-region: rect(16px 48px 32px 32px);
 }
 
 .find-status-icon {
