@@ -274,7 +274,7 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 
 /* ::::: nav-bar-inner ::::: */
 
-#nav-bar-inner {
+.nav-bar-class {
   -moz-padding-start: 1px;
   -moz-padding-end: 1px;
   min-width: 0px;
@@ -377,7 +377,6 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   margin: 0;
   padding: 1px 0;
   -moz-margin-start: 2px;
-  font-weight: bold;
   background-color: #000000;
 }
 
@@ -388,14 +387,13 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 
 /* care that those buttons base on the same min height of 16px that the urlbar
    autocomplete box gets through site icon and urlbar icons at the right */
-#search-button > .button-box ,
+#search-button > .button-box,
 #go-button > .button-box {
   min-height: 16px;
 }
 
 #search-button {
 /*  list-style-image: url("chrome://communicator/skin/icons/search.gif"); */
-  font-weight: bold;
 }
 
 /*
