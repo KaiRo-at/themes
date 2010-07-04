@@ -173,6 +173,27 @@ toolbarpaletteitem > #button-delete {
   -moz-image-region: rect(252px 50px 273px 25px);
 }
 
+#locationFolders {
+  width: 22em;
+}
+
+toolbarpaletteitem[place="palette"] > #folder-location-container > #locationFolders {
+  max-width: 11em;
+}
+
+toolbarpaletteitem[place="palette"] > #search-container > #searchInput {
+  max-width: 11em;
+}
+
+toolbarpaletteitem[place="palette"] > #mailviews-container > #viewPicker {
+  max-width: 11em;
+}
+
+#viewPickerPopup > menuitem > .menu-iconic-left,
+#viewPickerPopup > menu > menupopup > menuitem > .menu-iconic-left {
+  display: -moz-box !important;
+}
+
 /* ::::: small primary toolbar buttons ::::: */
 
 toolbar[iconsize="small"] > #button-getmsg,

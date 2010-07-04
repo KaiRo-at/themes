@@ -13,28 +13,22 @@ findbar {
 /* find-next button */
 
 .findbar-find-next {
-  /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/find.png");
   -moz-image-region: rect(0px 16px 16px 0px);
-  */
 }
 
 /* find-previous button */
 
 .findbar-find-previous {
-  /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/find.png");
   -moz-image-region: rect(0px 32px 16px 16px);
-  */
 }
 
 /* highlight button */
 
 .findbar-highlight {
-  /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/find.png");
   -moz-image-region: rect(0px 48px 16px 32px);
-  */
 }
 
 .find-status-icon {
@@ -54,9 +48,7 @@ findbar {
 }
 
 .find-status-icon[status="notfound"] {
-  /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/notfound.png");
-  */
 }
 
 .findbar-textbox[status="notfound"] {
@@ -70,7 +62,5 @@ findbar {
 }
 
 .find-status-icon[status="wrapped"] {
-  /* XXX: look into this when we support FF
   list-style-image: url("chrome://global/skin/icons/wrap.png");
-  */
 }
