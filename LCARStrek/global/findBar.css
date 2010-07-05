@@ -4,6 +4,10 @@
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
+.findbar-closebutton:hover {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+}
+
 findbar {
   border-top: 1px solid #000000;
   border-bottom: 1px solid transparent;
