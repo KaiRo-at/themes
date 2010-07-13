@@ -648,7 +648,7 @@
   background: transparent;
   border: none;
   text-decoration: underline;
-  color: blue;
+  color: #CCCCFF;
   cursor: pointer;
   min-width: 0;
 }
