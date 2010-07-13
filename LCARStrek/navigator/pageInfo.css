@@ -68,8 +68,16 @@ textbox.header {
   height: 8.5em;
 }
 
+textbox[readonly="true"] {
+  color: #9C9CFF;
+}
+
 textbox[disabled] {
   font-style: italic;
+}
+
+row > label {
+  padding: 3px 0;
 }
 
 /* General Tab */

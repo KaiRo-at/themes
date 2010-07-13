@@ -303,7 +303,7 @@ separator[orient="vertical"].groove-thin {
 
 description, label  {
   cursor: default;
-  margin: 1px 3px;
+  margin: 1px 2px;
 }
 
 label[disabled="true"] {
