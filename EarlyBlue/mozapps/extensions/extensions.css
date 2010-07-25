@@ -165,6 +165,10 @@
   -moz-margin-end: 6px;
 }
 
+#header-searching {
+  list-style-image: url("chrome://global/skin/icons/loading.gif");
+}
+
 .view-header {
   background: #9999CC;
   padding: 4px;

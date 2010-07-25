@@ -44,7 +44,6 @@
 /* ::::: menupopup ::::: */
 
 menupopup,
-popup,
 panel {
   border: 1px solid #FF9F00;
   padding: 1px;
@@ -79,7 +78,6 @@ menulist > menupopup,
   background-color: #000000;
 }
 
-menupopup > menu > menupopup,
-popup > menu > menupopup {
+menupopup > menu > menupopup {
   margin-top: -2px;
 }

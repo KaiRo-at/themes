@@ -35,16 +35,11 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/* ===== popup.css ======================================================
-  == Styles used by the XUL popup element.
-  ======================================================================= */
-
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: menupopup ::::: */
 
 menupopup,
-popup,
 panel {
   border: 1px outset #CCD0DD;
   padding: 1px;
@@ -78,7 +73,6 @@ menulist > menupopup,
   background-color: white;
 }
 
-menupopup > menu > menupopup,
-popup > menu > menupopup {
+menupopup > menu > menupopup {
   margin-top: -2px;
 }

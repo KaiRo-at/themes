@@ -80,7 +80,7 @@
   padding-top: 0px; /* center vertically with scrubber bar */
   color: rgba(204,208,221,0.75);
   font-size: 11px;
-  font-family: helvetica,arial,tahoma,sans-serif;
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
 .backgroundBar {
@@ -124,9 +124,9 @@
 }
 
 .scrubber .scale-slider {
-    /* abs(margin-top) + margin-bottom + bar height == timeThumb height */
-    margin-top: -10px;
-    margin-bottom: 10px;
+  /* abs(margin-top) + margin-bottom + bar height == timeThumb height */
+  margin-top: -10px;
+  margin-bottom: 10px;
 }
 
 /* .scale-thumb is an element inside the <scale> implementation. */
@@ -137,14 +137,14 @@
 }
 
 .timeThumb {
-    background: url("chrome://global/skin/media/scrubberThumb.png") no-repeat center;
-    min-width: 45px;
-    min-height: 28px;
-    -moz-box-pack: center;
+  background: url("chrome://global/skin/media/scrubberThumb.png") no-repeat center;
+  min-width: 45px;
+  min-height: 28px;
+  -moz-box-pack: center;
 }
 
 .timeThumb[showhours="true"] {
-    background: url("chrome://global/skin/media/scrubberThumbWide.png") no-repeat center;
+  background: url("chrome://global/skin/media/scrubberThumbWide.png") no-repeat center;
 }
 
 /*
@@ -154,29 +154,29 @@
 */
 
 .timeLabel {
-    color: rgba(0,0,0,0.75);
-    font-size: 10px;
-    font-family: helvetica,arial,tahoma,sans-serif;
-    text-shadow: rgba(102,102,153, 0.3) 0 1px;
-    padding-top: 2px;
+  color: rgba(0,0,0,0.75);
+  font-size: 10px;
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  text-shadow: rgba(102,102,153, 0.3) 0 1px;
+  padding-top: 2px;
 }
 
 .statusOverlay {
-    -moz-box-align: center;
-    -moz-box-pack: center;
-    background-color: rgba(0,0,0,0.55);
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  background-color: rgba(0,0,0,0.55);
 }
 
 .statusIcon {
-    margin-bottom: 28px; /* same height as .controlBar, to keep icon centered above it */
-    width: 32px;
-    height: 32px;
+  margin-bottom: 28px; /* same height as .controlBar, to keep icon centered above it */
+  width: 32px;
+  height: 32px;
 }
 
 .statusIcon[type="throbber"] {
-    background: url("chrome://communicator/skin/brand/throbber-anim.gif") no-repeat center;
+  background: url("chrome://communicator/skin/brand/throbber-anim.gif") no-repeat center;
 }
 
 .statusIcon[type="error"] {
-    background: url("chrome://global/skin/icons/alert-error.gif") no-repeat center;
+  background: url("chrome://global/skin/icons/alert-error.gif") no-repeat center;
 }
