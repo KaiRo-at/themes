@@ -50,6 +50,8 @@ a:link, a:visited, a:active {
   color: #FFCF00;
   background-color: #000000;
   text-decoration: none;
+  -moz-padding-start: 1px;
+  -moz-padding-end: 1px;
 }
 
 a:hover {
@@ -62,10 +64,10 @@ hr {
 }
 
 div#outside {
- text-align: justify;
- width: 90%;
- -moz-margin-start: 5%;
- -moz-margin-end: 5%;
+  text-align: justify;
+  width: 90%;
+  -moz-margin-start: 5%;
+  -moz-margin-end: 5%;
 }
 
 div#plugs {
@@ -140,19 +142,18 @@ th, td {
   padding: 3px;
 }
 
-th.type {
+th:first-child {
   -moz-border-radius: 9px 0px 0px 0px;
 }
 
 th.type, th.suff {
-  width: 20%;
+  width: 25%;
 }
 
 th.desc {
   width: 50%;
 }
 
-th.enabled {
-  width: 10%;
+th:last-child {
   -moz-border-radius: 0px 9px 0px 0px;
 }
