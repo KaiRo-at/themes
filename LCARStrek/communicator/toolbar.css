@@ -58,3 +58,15 @@
 .toolbar-primary > .toolbar-box > toolbargrippy:hover {
   background-color: #FFCF00;
 }
+
+/* ::::: solid background status bar panel ::::: */
+
+.statusbarpanel-backgroundbox {
+  -moz-box-align: stretch;
+  padding: 0px;
+}
+
+.statusbarpanel-backgroundbox > .statusbarpanel-contentbox {
+  padding: 0px 2px;
+  -moz-box-align: center;
+}

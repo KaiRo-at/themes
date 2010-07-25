@@ -121,3 +121,14 @@ menu.menu-iconic > .menu-iconic-left,
 menuitem.menuitem-iconic > .menu-iconic-left {
   display: -moz-box;
 }
+
+/******* lightweight themes *******/
+window[lwtheme="true"] {
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+statusbar[lwthemefooter="true"] {
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
