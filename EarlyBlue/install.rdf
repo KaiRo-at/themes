@@ -5,7 +5,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>EarlyBlue@kairo.at</em:id>
-    <em:version>2.1a3pre</em:version>
+    <em:version>2.1a3</em:version>
 
     <!-- SeaMonkey -->
     <em:targetApplication>
