@@ -48,51 +48,56 @@
 /* ::::: primary toolbar buttons ::::: */
 
 #button-newcard {
-  list-style-image:url("chrome://messenger/skin/addressbook/icons/newcard.gif");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons.png");
+  -moz-image-region: rect(42px 25px 63px 0px);
 }
 
 #button-newcard[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/newcard-disabled.gif") !important;
+  -moz-image-region: rect(42px 50px 63px 25px);
 }
 
 #button-newlist {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/newlist.gif");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons.png");
+  -moz-image-region: rect(63px 25px 84px 0px);
 }
 
 #button-newlist[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/newlist-disabled.gif") !important;
+  -moz-image-region: rect(63px 50px 84px 25px);
 }
 
 #button-editcard {
-  list-style-image:url("chrome://messenger/skin/addressbook/icons/person.gif");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons.png");
+  -moz-image-region: rect(21px 25px 42px 0px);
 }
 
 #button-editcard[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/person-disabled.gif") !important;
+  -moz-image-region: rect(21px 50px 42px 25px);
 }
 
 #button-newmessage {
-  list-style-image:url("chrome://messenger/skin/addressbook/icons/newmsg.gif");
+  list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
+  -moz-image-region: rect(105px 25px 126px 0px);
 }
 
 #button-newmessage[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/newmsg-disabled.gif") !important;
+  -moz-image-region: rect(105px 50px 126px 25px);
 }
 
 #button-newim {
-  list-style-image:url("chrome://messenger/skin/addressbook/icons/im.gif");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons.png");
+  -moz-image-region: rect(84px 25px 105px 0px);
 }
 
 #button-newim[disabled="true"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/im-disabled.gif") !important;
+  -moz-image-region: rect(84px 25px 105px 0px);
 }
 
-#button-delete {
-  list-style-image: url("chrome://messenger/skin/icons/messengericons.png");
+#button-abdelete {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons.png");
   -moz-image-region: rect(0px 25px 21px 0px);
 }
 
-#button-delete[disabled="true"] {
+#button-abdelete[disabled="true"] {
   -moz-image-region: rect(0px 50px 21px 25px);
 }
 
