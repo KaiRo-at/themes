@@ -12,3 +12,7 @@
   padding: 2px 0;
   -moz-padding-end: 3px;
 }
+
+#back-button, #forward-button {
+  display: none;
+}

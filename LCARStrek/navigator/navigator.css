@@ -328,8 +328,6 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 
 #page-proxy-button {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
-  padding-top: 2px;
-  padding-bottom: 2px;
 }
 
 #page-proxy-favicon {
