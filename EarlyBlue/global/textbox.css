@@ -55,12 +55,6 @@ textbox {
   min-height: 19px;
 }
 
-/* this color should be on the -moz-placeholder
-textbox[isempty="true"] {
-  color: #CCD0DD;
-}
-*/
-
 html|*.textbox-input,
 html|*.textbox-textarea {
   margin: 0px !important;
@@ -69,6 +63,11 @@ html|*.textbox-textarea {
   background-color: inherit;
   color: inherit;
   font: inherit;
+}
+
+html|*.textbox-input:-moz-placeholder,
+html|*.textbox-textarea:-moz-placeholder {
+  color: #CCD0DD;
 }
 
 .textbox-input-box menupopup {

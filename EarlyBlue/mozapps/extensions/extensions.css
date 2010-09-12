@@ -35,18 +35,14 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-
-.pane-splitter {
-  -moz-appearance: none;
-  border: none;
-  -moz-border-start: 1px solid #666699;
-  background-color: transparent;
-  background-image: none;
-  min-width: 1px;
+#addons-page {
+  background-color: #CCD0DD;
+  margin: 20px;
 }
 
-.view-pane {
+#view-port {
   background-color: #FFFFFF;
+  border: 1px solid #666699;
 }
 
 
@@ -55,12 +51,16 @@
 #categories {
   -moz-appearance: none;
   border: none;
-  margin: 0px;
+  -moz-margin-end: -1px;
+  background-color: transparent;
+  position: relative;
 }
 
 .category {
-  border: none;
-  -moz-appearance: none;
+  border-width: 1px;
+  -moz-border-end-width: 0;
+  border-style: solid;
+  border-color: transparent;
   padding: 10px 4px;
   -moz-box-align: center;
   overflow: hidden;
@@ -81,8 +81,9 @@
 }
 
 .category[selected] {
-  background-color: #9999CC;
+  background-color: #FFFFFF;
   color: #000000;
+  border-color: #666699;
 }
 
 .category-name {
@@ -136,12 +137,8 @@
 /*** header ***/
 
 #header {
-  background-color: #666699;
-  border: 1px inset #666699;
-  padding: 8px;
-  margin: 0px;
-  -moz-box-align: center;
-  height: 4.5em;
+  margin-bottom: 20px;
+  height: 2em;
 }
 
 #header-name, #header-link {
@@ -170,7 +167,6 @@
 }
 
 .view-header {
-  background: #9999CC;
   padding: 4px;
   margin: 0px;
   border-bottom: 1px solid #666699;
@@ -226,101 +222,36 @@
 /*** list ***/
 
 .list {
-  -moz-appearance: none;
   margin: 0px;
   border: none;
+  background-color: transparent;
 }
 
-.addon[status="installed"], .addon[status="installing"] {
-  background-color: #CCD0DD;
-  /* -moz-border-radius: 10px; */
-  border: 1px solid #9999CC;
-  padding: 6px 7px;
-  margin: 3px 8px;
+.addon {
+  border-bottom: 1px solid #9999CC;
+  padding: 5px;
 }
 
 .addon[status="installing"] {
   -moz-box-align: center;
-  border-color: #336699;
 }
 
-.addon[selected]:not([status="uninstalled"]) {
-  background: #DDDDDD;
-  border-style: inset;
-  color: inherit;
-}
-
-.addon[status="installed"][selected]:not([pending="true"]) {
-  border: none;
-  padding: 8px 9px;
-}
-
-.addon[status="installed"][active="false"] .fade {
-  opacity: 0.5;
-}
-
-.addon[status="installed"][pending="true"] {
-  border-color: red;
-}
-
-.addon[selected] {
-  /* color: -moz-dialogtext; */
-}
-
-.addon[selected] .text-link {
-  /* color: -moz-nativehyperlinktext; */
-}
-
-.addon .toggle-more {
-  /* -moz-border-radius: 100%; */
-  padding: 0px 6px;
-  margin: 0px 6px;
-  min-width: 12px !important;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
-  -moz-box-direction: reverse;
-  border: 1px solid transparent;
-  background: transparent;
+.details {
   cursor: pointer;
+  margin: 0;
+  -moz-margin-start: 10px;
 }
 
-.addon .toggle-more > .button-box > .button-icon {
-  -moz-padding-start: 4px;
+.icon-container {
+  width: 48px;
+  height: 48px;
+  margin: 7px;
 }
 
-.addon[show-extra] .toggle-more {
-  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
-}
-
-.addon .toggle-more:hover {
-  background-color: #CCD0DD;
-  border: 1px outset #CCD0DD;
-}
-
-.addon[selected] .toggle-more:hover {
-  background-color: #CCD0DD;
-  border: 1px outset #CCD0DD;
-}
-
-.addon .extra-details {
-  height: 0px;
-  overflow: hidden;
-  opacity: 0;
-  text-align: end;
-  -moz-transition-property: height, opacity;
-  -moz-transition-duration: 0.5s, 0.5s;
-}
-
-.addon[show-extra] .extra-details {
-  opacity: 1;
-  -moz-transition-property: height, opacity;
-  -moz-transition-duration: 0.5s, 0.5s;
-}
-
-.addon .icon {
-  margin: 7px 5px;
-  width: 32px;
-  height: 32px;
+.icon {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
+  max-width: 48px;
+  max-height: 48px;
 }
 
 .addon[type="theme"] .icon {
@@ -335,54 +266,92 @@
   list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
 }
 
-.addon .name-container {
-  -moz-box-align: end;
-}
-
-.addon .name,
-.addon .version {
+.name,
+.version,
+.update-postfix {
   font-size: 150%;
   margin-bottom: 0px;
 }
 
-.addon .disabled-postfix {
+.disabled-postfix {
   font-size: 130%;
 }
 
-.addon .description {
+.description-container {
   margin-top: 8px;
   -moz-margin-start: 6px;
 }
 
-.addon .warning {
+.description {
+  margin: 0;
+}
+
+.warning, .pending, .error, .info {
+  -moz-margin-start: 48px;
+}
+
+.addon:not([selected]) .warning {
+  color: #808000;
+}
+
+.addon:not([selected]) .error {
   color: #FF0000;
-  -moz-box-align: start;
+}
+
+.addon:not([selected]) .pending {
+  color: #33FF33;
 }
 
 .addon .warning-icon {
   opacity: 0.7;
   list-style-image: url("chrome://global/skin/icons/warning-16.png");
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
-.addon[selected] .warning-icon {
-  opacity: 1;
+.addon .error-icon {
+  list-style-image: url("chrome://global/skin/icons/error-16.png");
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
-.addon .details-container {
-  -moz-box-align: end;
-  -moz-margin-start: 20px;
+.addon .pending-icon,
+.addon .info-icon {
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  width: 16px;
+  height: 16px;
+  margin: 0;
 }
 
-.addon .control-container {
-  -moz-box-align: center;
-  -moz-box-pack: end;
-  margin-top: 6px;
+.addon[notification="warning"] {
+  background-color : #FFFFCC;
 }
 
-.addon[selected] .details-container {
-  border-color: #9999CC;
+.addon[notification="error"] {
+  background-color: #FFD0DD;
 }
 
+.addon[notification="info"] {
+  background-color: #9999CC;
+}
+
+.addon[pending="enable"],
+.addon[pending="upgrade"],
+.addon[pending="install"] {
+  background-color: #CCFFDD;
+}
+
+.addon[pending="disable"],
+.addon[pending="uninstall"] {
+  background-color: #808080;
+}
+
+
+.remove-container {
+  width: 16px;
+}
 
 /*** item - uninstalled ***/
 
@@ -406,13 +375,37 @@
 
 /*** search view ***/
 
-.search-filter {
-  padding: 20px;
+#search-filter {
+  padding: 5px 20px;
   -moz-box-align: center;
   background-color: #FFFFFF;
   font-size: 120%;
 }
 
+#search-filter-label {
+  font-weight: bold;
+  color: #808080;
+}
+
+.search-filter-radio {
+  -moz-appearance: none;
+  padding: 0px 6px;
+  margin: 0px 3px;
+  -moz-border-radius: 100%;
+}
+
+.search-filter-radio[selected] {
+  background-color: #3366699;
+  color: #000000;
+}
+
+.search-filter-radio .radio-check-box1 {
+  display: none;
+}
+
+.search-filter-radio .radio-icon {
+  display: none;
+}
 
 /*** detail view ***/
 
@@ -638,11 +631,27 @@
 
 /*** buttons ***/
 
-.addon-control {
-  padding: 0px 5px;
+.remove-button {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  list-style-image: url("chrome://global/skin/icons/delete.png");
+  border: 1px solid transparent;
 }
 
-.addon-control[disabled="true"] {
+.remove-button .button-box {
+  padding: 0;
+}
+
+.remove-button:hover {
+  border: 1px outset #CCD0DD;
+}
+
+.remove-button:active {
+  border: 1px inset #CCD0DD;
+}
+
+.remove-button .button-text {
   display: none;
 }
 
@@ -658,4 +667,5 @@
   color: #CCCCFF;
   cursor: pointer;
   min-width: 0;
+  margin: 0 6px;
 }
