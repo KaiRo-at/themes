@@ -119,9 +119,9 @@ toolbargrippy[tbgrippy-collapsed="true"] {
   border-bottom: none;
 }
 
-
-/* in browser.xul, the menubar is inside a toolbar... */
-toolbaritem > menubar {
+/* in some cases, the menubar is inside a toolbar... */
+toolbaritem > menubar,
+toolbar > menubar {
   border-bottom-style: none;
   background-color: transparent;
 }

@@ -1,3 +1,12 @@
+#placesMenu > menu {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#placesList-splitter,
+#detailsDeck-splitter {
+  border: none;
+}
 
 /* Info box */
 #detailsDeck {

@@ -97,6 +97,7 @@ tab:hover:active {
 tab:-moz-focusring > .tab-middle {
   /* Don't specify the outline-color, we should always use initial value. */
   outline: 1px dotted;
+  -moz-outline-radius: 3px 3px 0px 0px;
 }
 
 /*
