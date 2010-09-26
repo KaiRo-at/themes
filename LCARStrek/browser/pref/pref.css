@@ -89,7 +89,7 @@ expander {
   background-color: #E7ADE7;
   color: #000000;
   border: 1px solid #9C9CFF;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .themesLink {

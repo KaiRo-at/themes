@@ -61,7 +61,7 @@ h2 {
   font-size: 130%;
   background-color: #9C9CFF;
   color: #000000;
-  -moz-border-radius: 8px;
+  border-radius: 8px;
   -moz-padding-start: 10px;
 }
 
@@ -71,7 +71,7 @@ h2 {
   max-width: 52em;
   margin: 4em auto;
   border: 2px solid #FFCF00;
-  -moz-border-radius: 10px;
+  border-radius: 10px;
   padding: 3em;
   -moz-padding-start: 30px;
   background: url("chrome://global/skin/icons/sslWarning.png") left 0 no-repeat #000000;

@@ -43,7 +43,7 @@ spinbuttons {
 }
 
 .spinbuttons-button {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   min-width: 9px;
   min-height: 9px;
   margin: 0 !important;
@@ -52,7 +52,7 @@ spinbuttons {
 }
 
 .spinbuttons-button > .button-box {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: 0;
   padding: 0;
   margin: 0;

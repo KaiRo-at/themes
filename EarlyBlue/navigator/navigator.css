@@ -213,7 +213,7 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 }
 
 #urlbar > .autocomplete-textbox-container {
-  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
   padding: 2px;
 }
 

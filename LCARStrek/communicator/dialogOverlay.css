@@ -43,7 +43,7 @@
 .box-smallheader 
   {
     -moz-binding          : url(chrome://communicator/content/dialogBindings.xml#smallheader);
-    -moz-border-radius    : 3px;
+    border-radius    : 3px;
     border                : 1px solid #9C9CFF;
     margin                : 0px 5px 6px 5px;
   }

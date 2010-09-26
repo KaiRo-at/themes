@@ -45,7 +45,7 @@
 /* :::::::::: menulist :::::::::: */
 
 menulist {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   margin: 2px 4px;
   border: 1px solid #9C9CFF;
   background-color: #000000;
@@ -101,7 +101,7 @@ menulist[disabled="true"] {
 /* ..... dropmarker ..... */
 
 .menulist-dropmarker {
-  -moz-border-radius: 0px 3px 3px 0px;
+  border-radius: 0px 3px 3px 0px;
   min-width: 15px;
   border: none;
   border-left: 1px solid #9C9CFF;

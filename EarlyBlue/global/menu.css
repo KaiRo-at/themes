@@ -115,10 +115,7 @@ popup > menuitem {
 menulist > menupopup > menuitem,
 .menulist-menupopup > menu,
 menulist > menupopup > menu {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  -moz-padding-start: 1px;
-  -moz-padding-end: 22px;
+  padding: 1px 5px;
   max-width: none;
 }
 

@@ -11,15 +11,16 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mozilla.org code.
+ * The Original Code is DevTools code
  *
  * The Initial Developer of the Original Code is
- * Dão Gottwald <dao@design-noir.de>.
- * Portions created by the Initial Developer are Copyright (C) 2007
+ *   Mozilla Corporation
+ * Portions created by the Initial Developer are Copyright (C) 2010
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Ehsan Akhgari <ehsan.akhgari@gmail.com>
+ *   Joe Walker <jwalker@mozilla.com>
+ *   Julian Viereck <jviereck@mozilla.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,101 +36,68 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-:root {
-  background-color: #000000;
-  color: #FF9F00;
-  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
-  -moz-padding-start: 2em;
-  -moz-padding-end: 2em;
+body {
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  font-size: 11px;
+  background: #000000;
 }
 
-body {
-  border: 1px solid #9C9CFF;
-  border-radius: 10px;
-  padding: 3em;
-  min-width: 30em;
-  max-width: 65em;
-  margin: 4em auto;
-  background-color: #000000;
-  color: #FF9F00;
+div#header {
+  padding: 5px;
+  overflow-x:auto;
 }
 
 h1 {
-  margin: 0 0 .6em;
-  border-bottom: 1px solid #008484;
-  font-size: 160%;
-  font-weight: normal;
+  font-size: 13px;
+  padding: 2px 10px;
+  margin: 0px;
+  border-bottom: 1px solid #9C9CFF;
 }
 
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  background-color: #FFCF00;
-  color: #000000;
-}
-
-p {
-  font-size: 110%;
-}
-
-#UI_goUp {
-  margin-top: 0;
-  float: left;
-}
-
-body[dir="rtl"] #UI_goUp {
+h1 .info {
+  font-size: 11px;
   float: right;
+  color: #9C9CFF;
+  padding-right: 3px;
 }
 
-#UI_showHidden {
-  margin-top: 0;
-  float: right;
+div.property-header {
+  padding: 2px 5px;
+  color: #9C9CFF;
+  max-height: 330px;
+  overflow-y: auto;
+  overflow-x: auto;
+  white-space: pre-wrap;
 }
 
-body[dir="rtl"] #UI_showHidden {
-  float: left;
+span.property-name {
+  font-size: 11px;
+  font-weight: bold;
+  padding-right: 4px;
+  color: #FF9F00;
 }
 
-table {
-  clear: both;
-  width: 90%;
-  margin: 0 auto;
+span.property-value {
+  padding-right: 5px;
+  font-size: 11px;
 }
 
-thead {
-  font-size: 130%;
+div.group {
+  margin-top: 10px;
 }
 
-/* last modified */
-th:first-child {
-  text-align: center !important;
+div.group, div#header {
+  background: #000000;
+  border-color: #9C9CFF;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px 4px 4px 4px;
 }
 
-th:hover > a {
-  background-color: #FFCF00;
-  color: #000000;
+img#responseImageNode {
+  max-width: 100%;
 }
 
-tbody > tr:hover {
-  outline: 1px solid #008484;
-  -moz-outline-radius: .3em;
-}
-
-/* let 'Size' and 'Last Modified' take only as much space as they need and 'Name' all the rest */
-td:not(:first-child) {
-  width: 0;
-}
-
-.up {
-  padding: 0 .5em;
-  -moz-margin-start: 20px;
-}
-
-.up::before {
-  -moz-margin-end: 4px;
-  -moz-margin-start: -20px;
-  vertical-align: middle;
-  content: url("chrome://global/skin/dirListing/up.png");
+#responseImageNodeDiv {
+  padding: 5px;
 }

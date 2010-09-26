@@ -67,7 +67,7 @@ a.chatzilla-link:visited {
   color: #000000;
   background-color: #9C9CFF;
   border-color: #FFCF00;
-  -moz-border-radius: 7px;
+  border-radius: 7px;
 }
 
 .value {
@@ -119,14 +119,14 @@ a.chatzilla-link:visited {
 .msg-type {                                 /* .msg-type = message type       */
   color: #000000;                           /* indicator                      */
   background-color: #008484;
-  -moz-border-radius: 9px 0px 0px 9px;
+  border-radius: 9px 0px 0px 9px;
   border: 1px solid transparent;
 }
 
 .msg-data {
   background-color: #9C9CFF;
   border: 1px solid transparent;
-  -moz-border-radius: 0px 9px 9px 0px;
+  border-radius: 0px 9px 9px 0px;
   color: #000000;
 }
 
@@ -166,7 +166,7 @@ a.chatzilla-link:visited {
 .msg-user {
   background-color: #9C9CFF;
   border: 1px solid transparent;
-  -moz-border-radius: 9px 0px 0px 9px;
+  border-radius: 9px 0px 0px 9px;
 }
 
 /* important="true" means that the message has text from your /stalk list in

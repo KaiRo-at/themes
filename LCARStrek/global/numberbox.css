@@ -53,7 +53,7 @@ html|*.numberbox-input {
 }
 
 .numberbox-input-box {
-  -moz-border-radius: 3px 0px 0px 3px;
+  border-radius: 3px 0px 0px 3px;
   -moz-box-align: center;
   cursor: text;
   border: 1px solid #9C9CFF;
@@ -64,12 +64,12 @@ html|*.numberbox-input {
 }
 
 .numberbox-input-box[hidespinbuttons="true"] {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   border-right-width: 1px;
 }
 
 textbox[type="number"] > spinbuttons {
-  -moz-border-radius: 0px 3px 3px 0px;
+  border-radius: 0px 3px 3px 0px;
   border: 1px solid #9C9CFF;
   border-left-width: 0px;
 }

@@ -46,7 +46,7 @@
 colorpicker[type="button"] {
   width: 34px;
   height: 20px;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: 1px solid #9C9CFF;
   padding: 3px;
 }
@@ -71,7 +71,7 @@ colorpicker[type="button"][open="true"] > .colorpicker-button-internal-box {
   width: 20px;
   height: 20px;
   margin: 1px;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   border : 1px solid #9C9CFF;
 }
 

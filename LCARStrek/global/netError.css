@@ -46,7 +46,7 @@ ul {
   max-width: 52em;
   margin: 4em auto;
   border: 1px solid #9C9FFF;
-  -moz-border-radius: 10px;
+  border-radius: 10px;
   padding: 3em;
   -moz-padding-start: 30px;
   background: url("chrome://global/skin/icons/alert-exclam.gif") left 0 no-repeat #000000;
@@ -119,7 +119,7 @@ body[dir="rtl"] #brand {
   background-color: #FFCF00;
   color: #000000;
   padding: 10px;
-  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 /* Custom styling for 'blacklist' error class */

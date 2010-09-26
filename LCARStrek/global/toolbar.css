@@ -76,7 +76,7 @@ toolbar#toolbar-menubar > .toolbar-box > .toolbar-holder {
 toolbargrippy,
 .toolbar-startcap,
 .menubar-startcap {
-  -moz-border-radius: 8px 0px 0px 8px;
+  border-radius: 8px 0px 0px 8px;
   -moz-box-orient: vertical;
   -moz-box-align: center;
   background-color: #FF9F00;
@@ -94,7 +94,7 @@ toolbargrippy:hover {
 
 .toolbar-endcap,
 .menubar-endcap {
-  -moz-border-radius: 0px 8px 8px 0px;
+  border-radius: 0px 8px 8px 0px;
   background-color: #FF9F00;
   border: none;
   border-left: 3px solid black;
@@ -106,7 +106,7 @@ toolbargrippy:hover {
 
 toolbargrippy[tbgrippy-collapsed="true"] {
   -moz-box-orient: horizontal;
-  -moz-border-radius: 4px 0px 0px 4px;
+  border-radius: 4px 0px 0px 4px;
   margin-bottom: 3px;
   width: 30px;
   /* height gets set to the width of the uncollapsed grippy by default
@@ -169,7 +169,7 @@ toolbarpaletteitem {
 
 .toolbarpaletteitem-box[type="spacer"],
 .toolbarpaletteitem-box[type="spring"] {
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   border: 1px solid #9C9CFF;
   background-color: #000000 !important;
 }

@@ -45,7 +45,7 @@
   padding-bottom: 2px;
   -moz-padding-start: 6px;
   -moz-padding-end: 0px;
-  -moz-border-radius: 8px 0px 0px 0px;
+  border-radius: 8px 0px 0px 0px;
 }
 
 #engineTabs {
@@ -60,7 +60,7 @@
 }
 
 #engineTabs > button {
-  -moz-border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
   -moz-margin-start: 5px;
   -moz-margin-end: 5px;
 }

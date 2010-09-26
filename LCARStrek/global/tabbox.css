@@ -56,7 +56,7 @@
 /* tabpanel is the box in which contents show up */
 
 tabpanels {
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   border: 1px solid #9C9CFF;
   padding: 5px;
   background-color: #000000;
@@ -66,7 +66,7 @@ tabpanels {
 /* ::::: tab ::::: */
 
 tab {
-  -moz-border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
   margin-top: 2px;
   border: 1px solid #9C9CFF;
   border-bottom: none;
@@ -113,7 +113,7 @@ tab:first-of-type[selected="true"] {
    ::::: */
 
 .tab-bottom {
-  -moz-border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 8px 8px;
   margin-top: 0;
   margin-bottom: 2px;
   border: 1px solid #9C9CFF;

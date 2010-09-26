@@ -44,7 +44,7 @@
 /* ::::: groupbox ::::: */
 
 groupbox {
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   margin: 3px 2px;
   border: 2px solid #9C9CFF;
   padding-top: 3px;
@@ -58,7 +58,7 @@ groupbox {
 }
 
 caption {
-  -moz-border-radius: 7px;
+  border-radius: 7px;
   margin: 0px 6px 2px;
   padding: 0px 3px;
   background-color: #9C9CFF;

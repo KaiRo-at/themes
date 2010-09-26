@@ -128,7 +128,7 @@
 }
 
 .box-texttab > hbox {
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   -moz-box-align: stretch;
   padding: 2px 0px;
   background-color: #FF9F00;

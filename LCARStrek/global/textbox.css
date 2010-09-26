@@ -45,7 +45,7 @@
 /* ::::: textbox ::::: */
 
 textbox {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   -moz-outline-radius: 5px;
   cursor: text;
   margin: 1px 2px;
@@ -59,7 +59,7 @@ textbox {
 
 html|*.textbox-input,
 html|*.textbox-textarea {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   margin: 0px !important;
   border: none !important;
   padding: 0px !important;

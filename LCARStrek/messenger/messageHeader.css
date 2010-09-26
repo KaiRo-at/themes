@@ -50,7 +50,7 @@
   min-width: 1px;
   background-color: #E7ADE7;
   color: #000000;
-  -moz-border-radius: 8px;
+  border-radius: 8px;
   margin-bottom: 3px;
 }
 
@@ -121,7 +121,7 @@ mail-urlfield {
 /* ::::: msg header message ids ::::: */
 
 .messageIdDisplayButton {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   color: #008484;
   cursor: pointer;
   margin: 0px;
@@ -141,7 +141,7 @@ mail-urlfield {
 /* ::::: msg header email addresses ::::: */
 
 .emailDisplayButton {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   color: #008484;
   cursor: pointer;
   margin: 0px;

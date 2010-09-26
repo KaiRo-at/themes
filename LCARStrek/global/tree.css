@@ -46,7 +46,7 @@
 /* ::::: tree ::::: */
 
 tree {
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   margin: 0px;
   border: 1px solid #9C9CFF;
   background-color: #000000;
@@ -260,15 +260,15 @@ treecol {
 }
 
 treecol:first-child {
-  -moz-border-radius-topleft: 3px;
+  border-top-left-radius: 3px;
 }
 
 tree[hidecolumnpicker] treecol:last-child {
-  -moz-border-radius-topright: 3px;
+  border-top-right-radius: 3px;
 }
 
 treecolpicker {
-  -moz-border-radius-topright: 3px;
+  border-top-right-radius: 3px;
   -moz-box-align: center;
   -moz-box-pack: center;
   border: 1px solid #FF9F00;

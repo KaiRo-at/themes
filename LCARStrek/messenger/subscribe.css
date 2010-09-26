@@ -104,7 +104,7 @@ treechildren::-moz-tree-image(nameColumn2, nntp) {
 /* ::::: statusbar adjustments :::::: */
 
 #statusContainerBox {
-  -moz-border-radius: 9px;
+  border-radius: 9px;
   margin-top: 3px;
   -moz-padding-end: 9px;
   background-color: #8050B0;

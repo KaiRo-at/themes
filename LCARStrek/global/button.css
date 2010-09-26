@@ -42,7 +42,7 @@
 /* :::::::::: button :::::::::: */
 
 button {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   margin: 1px 2px;
   min-width: 6.3em;
   border: none;
@@ -52,7 +52,7 @@ button {
 }
 
 .button-box {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: 1px solid transparent;
   padding-top: 1px;
   padding-bottom: 2px;
@@ -65,7 +65,7 @@ button {
 }
 
 .button-text {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   margin: 0px !important;
   text-align: center;
 }
@@ -156,7 +156,7 @@ button[type="menu-button"] {
 
 .button-menu-dropmarker,
 .button-menubutton-dropmarker {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   margin: 1px;
   width: 11px;
   height: 11px;

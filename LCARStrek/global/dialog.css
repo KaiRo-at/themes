@@ -59,7 +59,7 @@ dialog {
 /* ::::: dialog header ::::: */
 
 dialogheader {
-  -moz-border-radius: 8px;
+  border-radius: 8px;
   margin: 0px;
   padding: 1px 12px;
   background-color: #FF9F00;

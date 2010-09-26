@@ -63,7 +63,7 @@ a.chatzilla-link:visited {
 .header {
   color: #000000;
   background-color: #9C9CFF;
-  -moz-border-radius: 7px;
+  border-radius: 7px;
 }
 
 .progress-fg {
@@ -144,13 +144,13 @@ treechildren::-moz-tree-cell-text(unselected) {
 
 .msg-user {
   background-color: #000000;
-  -moz-border-radius: 7px 0px 0px 7px;
+  border-radius: 7px 0px 0px 7px;
   border: 1px solid #004242;
 }
 
 .msg-data {
   background-color: #000000;
-  -moz-border-radius: 0px 7px 7px 0px;
+  border-radius: 0px 7px 7px 0px;
   border: 1px solid #735673;
 }
 

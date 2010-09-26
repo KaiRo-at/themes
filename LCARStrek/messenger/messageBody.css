@@ -127,7 +127,7 @@ span.moz-txt-formfeed {
 /* ::::: vcard ::::: */
 
 .moz-vcard-table {
-  -moz-border-radius: 8px;
+  border-radius: 8px;
   border: thin solid #9C9CFF;
   margin-top: 10px;
 }

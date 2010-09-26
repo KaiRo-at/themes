@@ -291,13 +291,13 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 }
 
 #urlbar {
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   margin: 0;
   -moz-margin-start: 3px;
 }
 
 #urlbar > .autocomplete-textbox-container {
-  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
   padding: 2px;
 }
 

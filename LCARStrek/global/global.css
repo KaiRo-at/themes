@@ -163,14 +163,14 @@ statusbar {
 }
 
 .statusbar-left {
-  -moz-border-radius: 9px 0px 0px 9px;
+  border-radius: 9px 0px 0px 9px;
   background-color: #6000CF;
   width: 13px;
   -moz-margin-end: 3px;
 }
 
 .statusbar-right {
-  -moz-border-radius: 0px 9px 9px 0px;
+  border-radius: 0px 9px 9px 0px;
   background-color: #6000CF;
   width: 13px;
   -moz-margin-start: 3px;

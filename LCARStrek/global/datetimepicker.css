@@ -53,7 +53,7 @@ datepicker, timepicker {
 .datetimepicker-input-box {
   cursor: text;
   -moz-margin-end: 2px;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: 1px solid #9C9CFF;
   padding: 2px 0 3px;
   -moz-padding-start: 4px;
@@ -93,7 +93,7 @@ timepicker[disabled="true"] {
 
 .datepicker-mainbox {
   margin: 2px 4px;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: 1px solid #9C9CFF;
   background-color: #000000;
   color: #FF9F00;

@@ -60,7 +60,7 @@ separator.thin {
 #acctCentralHeaderRow {
   margin: 5px;
   background-color: #FF9F00;
-  -moz-border-radius: 10px;
+  border-radius: 10px;
   color: #000000;
   font-weight: bold;
   font-size: 20px;
@@ -75,7 +75,7 @@ separator.thin {
 /*  border-bottom: 1px solid #9C9CFF; */
   background-color: #9C9CFF;
   padding-top: 3px;
-  -moz-border-radius: 7px;
+  border-radius: 7px;
   color: #000000;
 }
 
@@ -95,7 +95,7 @@ separator.thin {
   cursor: pointer;
   color: #008484;
   padding: 0px 5px;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   text-decoration: none;
 }
 

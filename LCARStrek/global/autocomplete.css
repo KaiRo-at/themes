@@ -48,7 +48,7 @@
 textbox:not(.padded) {
   cursor: default;
   padding: 0px;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 textbox[nomatch="true"][highlightnonmatches="true"] {
@@ -65,7 +65,7 @@ textbox:not(.padded) .textbox-input-box {
 
 .textbox-input-box {
   -moz-box-align: center;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 /* ::::: history button ::::: */
@@ -74,7 +74,7 @@ textbox:not(.padded) .textbox-input-box {
   min-width: 15px;
   min-height: 15px;
   background-color: #000000;
-  -moz-border-radius: 0px 3px 3px 0px;
+  border-radius: 0px 3px 3px 0px;
 }
 
 .autocomplete-history-dropmarker,

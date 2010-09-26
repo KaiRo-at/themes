@@ -46,7 +46,7 @@
 /* ::::: toolbarbutton ::::: */
 
 toolbarbutton {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   -moz-box-align: center;
   -moz-box-pack: center;
   margin: 0px;
@@ -207,7 +207,7 @@ toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubu
 /* .......... dropmarker .......... */
 
 .toolbarbutton-menubutton-dropmarker {
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   -moz-box-align: start;
   padding: 3px 1px 1px;
   border: none;

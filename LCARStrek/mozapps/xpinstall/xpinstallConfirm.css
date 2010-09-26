@@ -5,7 +5,7 @@
 #itemList {
   margin: 3px 4px 10px;
   height: 14em;
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   border: 1px solid #9C9CFF;
   background-color: #000000;
   color: #FF9F00;

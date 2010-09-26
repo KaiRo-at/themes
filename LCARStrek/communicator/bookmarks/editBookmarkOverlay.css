@@ -92,7 +92,7 @@
  */
 #editBMPanel_namePicker[droppable="false"] {
   /* These rules come from the textbox element in textbox.css. */
-  -moz-border-radius: 3px;
+  border-radius: 3px;
   -moz-outline-radius: 5px;
   cursor: text;
   margin: 1px 2px;

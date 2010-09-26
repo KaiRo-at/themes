@@ -45,6 +45,47 @@
   border: 1px solid #666699;
 }
 
+/*** global warnings ***/
+ 
+.global-warning {
+  -moz-box-align: center;
+  padding: 0 8px;
+  color: #000000;
+  font-weight: bold;
+}
+
+#addons-page[warning] .global-warning-container {
+  background-color: #FFFFCC;
+}
+
+#detail-view .global-warning {
+  padding: 4px 12px;
+  border-bottom: 1px solid #9999CC;  
+}
+
+/*** notification icons ***/
+
+.warning-icon {
+  list-style-image: url("chrome://global/skin/icons/warning-16.png");
+  width: 16px;
+  height: 16px;
+  margin: 3px 0;
+}
+
+.error-icon {
+  list-style-image: url("chrome://global/skin/icons/error-16.png");
+  width: 16px;
+  height: 16px;
+  margin: 3px 0;
+}
+
+.pending-icon,
+.info-icon {
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  width: 16px;
+  height: 16px;
+  margin: 3px 0;
+}
 
 /*** category selector ***/
 
@@ -95,7 +136,6 @@
   padding: 2px 8px;
   margin: 6px 0px;
   border: 1px outset #666699;
-  /* -moz-border-radius: 100%; */
   color: #FFFFFF;
   font-weight: bold;
   text-align: center;
@@ -183,7 +223,6 @@
   -moz-appearance: none;
   border: none;
   background-color: transparent;
-  /* -moz-border-radius: 100%; */
   padding: 0px 6px;
   margin: 0px 6px;
   min-width: 12px !important;
@@ -254,27 +293,21 @@
   max-height: 48px;
 }
 
-.addon[type="theme"] .icon {
+.addon-view[type="theme"] .icon {
   list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.png");
 }
 
-.addon[type="locale"] .icon {
+.addon-view[type="locale"] .icon {
   list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.png");
 }
 
-.addon[type="plugin"] .icon {
+.addon-view[type="plugin"] .icon {
   list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
 }
 
-.name,
-.version,
-.update-postfix {
+.name-container {
   font-size: 150%;
   margin-bottom: 0px;
-}
-
-.disabled-postfix {
-  font-size: 130%;
 }
 
 .description-container {
@@ -290,67 +323,39 @@
   -moz-margin-start: 48px;
 }
 
-.addon:not([selected]) .warning {
+.addon-view:not([selected]) .warning {
   color: #808000;
 }
 
-.addon:not([selected]) .error {
+.addon-view:not([selected]) .error {
   color: #FF0000;
 }
 
-.addon:not([selected]) .pending {
+.addon-view:not([selected]) .pending {
   color: #33FF33;
 }
 
-.addon .warning-icon {
-  opacity: 0.7;
-  list-style-image: url("chrome://global/skin/icons/warning-16.png");
-  width: 16px;
-  height: 16px;
-  margin: 0;
-}
-
-.addon .error-icon {
-  list-style-image: url("chrome://global/skin/icons/error-16.png");
-  width: 16px;
-  height: 16px;
-  margin: 0;
-}
-
-.addon .pending-icon,
-.addon .info-icon {
-  list-style-image: url("chrome://global/skin/icons/information-16.png");
-  width: 16px;
-  height: 16px;
-  margin: 0;
-}
-
-.addon[notification="warning"] {
+.addon-view[notification="warning"] {
   background-color : #FFFFCC;
 }
 
-.addon[notification="error"] {
+.addon-view[notification="error"] {
   background-color: #FFD0DD;
 }
 
-.addon[notification="info"] {
+.addon-view[notification="info"] {
   background-color: #9999CC;
 }
 
-.addon[pending="enable"],
-.addon[pending="upgrade"],
-.addon[pending="install"] {
+.addon-view[pending="enable"],
+.addon-view[pending="upgrade"],
+.addon-view[pending="install"] {
   background-color: #CCFFDD;
 }
 
-.addon[pending="disable"],
-.addon[pending="uninstall"] {
+.addon-view[pending="disable"],
+.addon-view[pending="uninstall"] {
   background-color: #808080;
-}
-
-
-.remove-container {
-  width: 16px;
 }
 
 /*** item - uninstalled ***/
@@ -363,14 +368,13 @@
   -moz-box-align: center;
   padding: 4px 20px;
   background-color: #808080;
-  -moz-border-radius: 8px;
+  border-radius: 8px;
   font-size: 120%;
 }
 
 .addon[status="uninstalled"][selected] {
   background-color: transparent;
 }
-
 
 
 /*** search view ***/
@@ -391,7 +395,7 @@
   -moz-appearance: none;
   padding: 0px 6px;
   margin: 0px 3px;
-  -moz-border-radius: 100%;
+  border-radius: 10000px;
 }
 
 .search-filter-radio[selected] {
@@ -413,15 +417,15 @@
   opacity: 0.5;
 }
 
-#detail-view > .loading {
+#detail-view .loading {
   opacity: 0;
 }
 
-#detail-view:not([loading]) > .loading {
+#detail-view:not([loading]) .loading {
   visibility: collapse;
 }
 
-#detail-view[loading-extended] > .loading {
+#detail-view[loading-extended] .loading {
   -moz-box-align: center;
   -moz-box-pack: center;
   opacity: 1;
@@ -429,76 +433,92 @@
   -moz-transition-duration: 1s;
 }
 
-#detail-view > .loading > image {
+#detail-view .loading > image {
   list-style-image: url("chrome://global/skin/icons/loading.gif");
 }
 
 .detail-view-container {
   overflow: auto;
-  padding: 10px 20px;
+  padding: 2em;
+  font-size: 110%;
 }
 
-.detail-basicinfo {
-  padding: 10px 0px;
-  -moz-box-align: center;
+#detail-notifications {
+  margin-bottom: 2em;
 }
 
-.detail-extra {
-  margin-top: 20px;
-}
-
-#detail-desc {
-  min-height: 40px;
-  margin-bottom: 20px;
+#detail-notifications .warning,
+#detail-notifications .pending,
+#detail-notifications .error,
+#detail-notifications .info {
+  -moz-margin-start: 0;
 }
 
 #detail-icon {
-  width: 32px;
-  height: 32px;
   -moz-margin-end: 10px;
-  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
 }
 
-#detail-view[type="theme"] #detail-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.png");
+#detail-summary {
+  margin-bottom: 2em;
 }
 
-#detail-view[type="locale"] #detail-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.png");
-}
-
-#detail-view[type="plugin"] #detail-icon {
-  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
-}
-
-#detail-name {
+#detail-name-container {
   font-size: 200%;
 }
 
 #detail-screenshot {
-  width: 140px;
-  height: 140px;
-  background-color: blue;
-  margin: 0px 10px 0px 0px;
+  -moz-margin-end: 2em;
 }
 
-.detail-prefs {
-  -moz-box-align: start;
+#detail-desc-container {
+  margin-bottom: 2em;
+  /* This is necessary to fix layout issues with multi-line descriptions, see
+     bug 592712*/
+  outline: solid transparent;
 }
 
-.meta-label {
-  font-weight: bold;
+#detail-desc {
+  -moz-margin-start: 6px;
+  white-space: pre-wrap;
 }
 
-#detail-notification {
-  -moz-box-align: center;
-  -moz-box-pack: center;
-  margin: 0px 50px;
-  padding: 4px 20px;
-  background-color: #FFFFCC;
-  /* -moz-border-radius: 8px; */
-  font-size: 120%;
+#detail-contributions {
+  border-radius: 5px;
   border: 1px solid #666699;
+  margin-bottom: 2em;
+  padding: 1em;
+  background: #FFFFCC;
+}
+
+#detail-contrib-description {
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+#detail-contrib-suggested {
+  color: grey;
+}
+
+#detail-contrib-button {
+  list-style-image: url("chrome://mozapps/skin/extensions/heart.png");
+}
+
+#detail-contrib-button .button-icon {
+  -moz-margin-end: 3px;
+}
+
+#detail-grid {
+  margin-bottom: 2em;
+}
+
+.detail-row,
+.detail-row-complex {
+  border-bottom: 1px solid #808080;
+  -moz-box-align: center;
+}
+
+.detail-row-value {
+  -moz-margin-start: 0;
 }
 
 
@@ -544,7 +564,6 @@
 
 .download-progress {
   background-color: #CCD0DD;
-  /* -moz-border-radius: 100%; */
   border: 1px solid #808080;
   width: 200px;
   height: 24px;
@@ -567,12 +586,12 @@
 
 .download-progress .start-cap:-moz-locale-dir(ltr),
 .download-progress .end-cap:-moz-locale-dir(rtl) {
-  -moz-border-radius: 100% 0 0 100%;
+  border-radius: 10000px 0 0 10000px;
 }
 
 .download-progress .end-cap:-moz-locale-dir(ltr),
 .download-progress .start-cap:-moz-locale-dir(rtl) {
-  -moz-border-radius: 0 100% 100% 0;
+  border-radius: 0 10000px 10000px 0;
 }
 
 .download-progress .progress {
@@ -590,7 +609,6 @@
   border-style: solid;
   -moz-border-top-colors: #FFFFFF;
   -moz-border-left-colors: #FFFFFF;
-  /* -moz-border-radius: 100%; */
   min-width: 16px;
   width: 16px;
   height: 16px;
@@ -628,37 +646,11 @@
   font-weight: bold;
 }
 
+#update-selected {
+  margin: 12px;
+}
 
 /*** buttons ***/
-
-.remove-button {
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  list-style-image: url("chrome://global/skin/icons/delete.png");
-  border: 1px solid transparent;
-}
-
-.remove-button .button-box {
-  padding: 0;
-}
-
-.remove-button:hover {
-  border: 1px outset #CCD0DD;
-}
-
-.remove-button:active {
-  border: 1px inset #CCD0DD;
-}
-
-.remove-button .button-text {
-  display: none;
-}
-
-.contribute {
-  -moz-padding-start: 20px;
-  -moz-padding-end: 4px;
-}
 
 .button-link {
   background: transparent;

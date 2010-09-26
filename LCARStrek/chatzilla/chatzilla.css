@@ -64,7 +64,7 @@ window {
 
 #input-widget,
 #input-widget-multiline {
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   border: 1px solid #9C9CFF;
 }
 
@@ -136,7 +136,7 @@ window {
 }
 
 .output-container {
-  -moz-border-radius: 5px;
+  border-radius: 5px;
   border: 1px solid #9C9CFF;
 }
 
