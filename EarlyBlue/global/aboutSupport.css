@@ -70,8 +70,12 @@ table {
 }
 
 th, td {
-  border: 1px dotted #9999CC;
   padding: 3px;
+}
+
+th + th,
+td + td {
+  border-left: 1px dotted #9999CC;
 }
 
 thead th {

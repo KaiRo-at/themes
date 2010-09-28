@@ -48,6 +48,20 @@ body {
   margin-right: 5%;
 }
 
+a:link, a:visited, a:active {
+  border-radius: 3px;
+  color: #FFCF00;
+  background-color: #000000;
+  text-decoration: none;
+  -moz-padding-start: 1px;
+  -moz-padding-end: 1px;
+}
+
+a:hover {
+  color: #000000;
+  background-color: #FFCF00;
+}
+
 .page-subtitle {
   margin-bottom: 3em;
 }
@@ -65,13 +79,18 @@ table {
   color: #E7ADE7;
   text-align: start;
   width: 100%;
+  border-radius: 10px;
   border: 1px solid #9C9FFF;
   border-spacing: 0px;
 }
 
 th, td {
-  border: 1px dotted #9C9FFF;
   padding: 3px;
+}
+
+th + th,
+td + td {
+  border-left: 1px dotted #9C9FFF;
 }
 
 thead th {
