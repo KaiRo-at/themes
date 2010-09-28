@@ -11,15 +11,15 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mozilla.org code.
+ * The Original Code is aboutSupport.css.
  *
  * The Initial Developer of the Original Code is
- * the Mozilla Organization.
- * Portions created by the Initial Developer are Copyright (C) 1998-2002
+ * Mozilla Foundation.
+ * Portions created by the Initial Developer are Copyright (C) 2009
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Robert Kaiser <KaiRo@KaiRo.at>
+ *   Curtis Bartley <cbartley@mozilla.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -35,125 +35,78 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
-/* ===== plugins.css =====================================================
-   == Styles used by the about:plugins dialog.
-   ======================================================================= */
-
-body {
+html {
   background-color: #000000;
   color: #FF9F00;
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
-a:link, a:visited, a:active {
-  border-radius: 3px;
-  color: #FFCF00;
-  background-color: #000000;
-  text-decoration: none;
-  -moz-padding-start: 1px;
-  -moz-padding-end: 1px;
-}
-
-a:hover {
-  color: #000000;
-  background-color: #FFCF00;
-}
-
-hr {
-  display: none;
-}
-
-div#outside {
+body {
   text-align: justify;
   width: 90%;
-  -moz-margin-start: 5%;
-  -moz-margin-end: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-div#plugs {
-  border-radius: 15px;
-  background-color: #008484;
-  color: #000000;
-  padding: 3px;
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
+.page-subtitle {
+  margin-bottom: 3em;
 }
 
-div#noplugs {
-  color: #FF0000;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-div#findmore {
-  margin-top: 2em;
-}
-
-div.plugname {
-  border-radius: 10px;
-  background-color: #E7ADE7;
-  color: #000000;
-  padding: 2px;
-  -moz-padding-start: 12px;
+.major-section {
   margin-top: 2em;
   margin-bottom: 1em;
-  font-size: 16px;
-  text-align: left;
+  font-size: large;
+  text-align: start;
   font-weight: bold;
-}
-
-dl {
-  margin: 0px 0px 3px;
-}
-
-span.label {
-  font-style: italic;
-  color: #8050B0;
 }
 
 table {
   background-color: #000000;
   color: #E7ADE7;
-  text-align: left;
+  text-align: start;
   width: 100%;
-  border-radius: 10px;
   border: 1px solid #9C9FFF;
   border-spacing: 0px;
 }
 
-th {
+th, td {
+  border: 1px dotted #9C9FFF;
+  padding: 3px;
+}
+
+thead th {
   text-align: center;
+}
+
+th {
+  text-align: start;
   background-color: #008484;
   color: #FFCF00;
 }
 
-th + th,
-td + td {
-  border-left: 1px dotted #9C9FFF;
+th.column {
+  white-space: nowrap;
+  width: 0px;
 }
 
 td {
-  text-align: left;
+  text-align: start;
   border-top: 1px dotted #9C9FFF;
 }
 
-th, td {
-  padding: 3px;
+.prefs-table {
+  width: 100%;
+  table-layout: fixed;
 }
 
-th:first-child {
-  border-radius: 9px 0px 0px 0px;
+.pref-name {
+  width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-th.type, th.suff {
-  width: 25%;
-}
-
-th.desc {
-  width: 50%;
-}
-
-th:last-child {
-  border-radius: 0px 9px 0px 0px;
+.pref-value {
+  width: 30%;
+  white-space: nowrap;
+  overflow: hidden;
 }
