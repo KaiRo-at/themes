@@ -40,6 +40,15 @@
     </content>
   </binding>
 
+  <binding id="toolbarpaletteitem-spacer"
+           extends="chrome://global/content/bindings/toolbar.xml#toolbarpaletteitem">
+    <content>
+      <xul:spacer class="spacer-left"/>
+      <children/>
+      <xul:spacer class="spacer-right"/>
+    </content>
+  </binding>
+
   <binding id="menulist-compact" display="xul:menu"
            extends="chrome://global/content/bindings/menulist.xml#menulist">
     <content sizetopopup="false">
