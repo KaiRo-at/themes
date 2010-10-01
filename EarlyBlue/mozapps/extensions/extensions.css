@@ -45,6 +45,32 @@
   border: 1px solid #666699;
 }
 
+.nav-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  min-width: 0;
+  -moz-margin-end: 0;
+}
+
+#back-btn:-moz-locale-dir(ltr),
+#forward-btn:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(42px 25px 63px 0px);
+}
+
+#back-btn[disabled="true"]:-moz-locale-dir(ltr),
+#forward-btn[disabled="true"]:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(42px 50px 63px 25px);
+}
+
+#back-btn:-moz-locale-dir(rtl),
+#forward-btn:-moz-locale-dir(ltr) {
+  -moz-image-region: rect(63px 25px 84px 0px);
+}
+
+#back-btn[disabled="true"]:-moz-locale-dir(rtl),
+#forward-btn[disabled="true"]:-moz-locale-dir(ltr) {
+  -moz-image-region: rect(63px 50px 84px 25px);
+}
+
 /*** global warnings ***/
  
 .global-warning {
@@ -172,6 +198,12 @@
 #category-plugins > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-plugins.png");
 }
+#category-availableUpdates > .category-icon {
+  list-style-image: url("chrome://mozapps/skin/extensions/category-available.png");
+}
+#category-recentUpdates > .category-icon {
+  list-style-image: url("chrome://mozapps/skin/extensions/category-recent.png");
+}
 
 
 /*** header ***/
@@ -204,6 +236,15 @@
 
 #header-searching {
   list-style-image: url("chrome://global/skin/icons/loading.gif");
+}
+
+#header-utils-btn {
+  min-width: 4.5em;
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities.png");
+}
+
+#header-utils-btn:-moz-focusring > .button-box {
+  border: none;
 }
 
 .view-header {
@@ -358,6 +399,43 @@
   background-color: #808080;
 }
 
+.addon .relnotes-container {
+  -moz-box-align: start;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  -moz-transition-property: height, opacity;
+  -moz-transition-duration: 0.5s, 0.5s;
+}
+
+.addon[show-relnotes] .relnotes-container {
+  opacity: 1;
+  -moz-transition-property: height, opacity;
+  -moz-transition-duration: 0.5s, 0.5s;
+}
+
+.addon .relnotes-header {
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.addon .relnotes-toggle {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  -moz-box-direction: reverse;
+  cursor: pointer;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+}
+
+.addon .relnotes-toggle > .button-box > .button-icon {
+  -moz-padding-start: 4px;
+}
+
+.addon[show-relnotes] .relnotes-toggle {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
+}
+
 /*** item - uninstalled ***/
 
 .addon[status="uninstalled"] {
@@ -409,6 +487,11 @@
 
 .search-filter-radio .radio-icon {
   display: none;
+}
+
+#search-allresults-link {
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 /*** detail view ***/
@@ -651,6 +734,10 @@
 }
 
 /*** buttons ***/
+
+.addon-control[disabled="true"] {
+  display: none;
+}
 
 .button-link {
   background: transparent;

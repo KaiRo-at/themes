@@ -110,10 +110,6 @@ richlistitem[type="download"] .dateTime {
   min-width: 32px;
 }
 
-#searchbox[empty] {
-  color: #808080;
-}
-
 #clearListButton {
   min-height: 0;
   min-width: 0;
