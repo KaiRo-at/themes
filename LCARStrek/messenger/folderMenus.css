@@ -67,14 +67,6 @@
   list-style-image: url("chrome://messenger/skin/icons/folder-inbox.gif");
 }
 
-.folderMenuItem[SpecialFolder="Trash"] {
-  list-style-image: url("chrome://messenger/skin/icons/folder-trash.gif");
-}
-
-.folderMenuItem[SpecialFolder="Trash"][open="true"] {
-  list-style-image: url("chrome://messenger/skin/icons/folder-trash.gif");
-}
-
 .folderMenuItem[SpecialFolder="Sent"] {
   list-style-image: url("chrome://messenger/skin/icons/folder-sent.gif");
 }
@@ -113,6 +105,14 @@
 
 .folderMenuItem[SpecialFolder="Junk"][open="true"] {
   list-style-image: url("chrome://messenger/skin/icons/folder-junk.gif");
+}
+
+.folderMenuItem[SpecialFolder="Trash"] {
+  list-style-image: url("chrome://messenger/skin/icons/folder-trash.gif");
+}
+
+.folderMenuItem[SpecialFolder="Trash"][open="true"] {
+  list-style-image: url("chrome://messenger/skin/icons/folder-trash.gif");
 }
 
 .folderMenuItem[SpecialFolder="Virtual"] {
