@@ -131,20 +131,6 @@
   min-height:     50px;
 }
 
-/* These two should be the width of the checkbox and radio button images + margin + padding
-   Used to indent below those to the level of the text label next to image
-*/
-
-.checkbox-spacer {
-  width: 16px;
-  min-width: 16px;
-}
-
-.radio-spacer {
-  width: 16px;
-  min-width: 16px;
-}
-
 /* ::::: table properties dialog ::::: */
 
 #MoreFewerButton[more="0"] {
@@ -218,6 +204,20 @@
   height: 10px;
   min-width:  10px;
   min-height: 10px;
+}
+
+/* These two should be the width of the checkbox and radio button images + margin + padding
+   Used to indent below those to the level of the text label next to image
+*/
+
+.checkbox-spacer {
+  width: 16px;
+  min-width: 16px;
+}
+
+.radio-spacer {
+  width: 16px;
+  min-width: 16px;
 }
 
 .align-menu > .menu-iconic-left > .menu-iconic-icon {
