@@ -380,6 +380,10 @@
   background-color : #FFFFCC;
 }
 
+richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
+  color: #336699;
+}
+
 .addon-view[notification="error"] {
   background-color: #FFD0DD;
 }
@@ -392,6 +396,12 @@
 .addon-view[pending="upgrade"],
 .addon-view[pending="install"] {
   background-color: #CCFFDD;
+}
+
+.addon-view[pending="enable"] .pending,
+.addon-view[pending="upgrade"] .pending,
+.addon-view[pending="install"] .pending {
+  color: #008000;
 }
 
 .addon-view[pending="disable"],
@@ -743,7 +753,7 @@
   background: transparent;
   border: none;
   text-decoration: underline;
-  color: #CCCCFF;
+  color: #0000FF;
   cursor: pointer;
   min-width: 0;
   margin: 0 6px;

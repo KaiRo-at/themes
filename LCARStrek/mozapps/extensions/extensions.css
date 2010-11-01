@@ -95,14 +95,14 @@
   list-style-image: url("chrome://global/skin/icons/warning-16.png");
   width: 16px;
   height: 16px;
-  margin: 3px 0;
+  margin: 1px 0;
 }
 
 .error-icon {
   list-style-image: url("chrome://global/skin/icons/error-16.png");
   width: 16px;
   height: 16px;
-  margin: 3px 0;
+  margin: 1px 0;
 }
 
 .pending-icon,
@@ -110,7 +110,7 @@
   list-style-image: url("chrome://global/skin/icons/information-16.png");
   width: 16px;
   height: 16px;
-  margin: 3px 0;
+  margin: 1px 0;
 }
 
 /*** category selector ***/
@@ -252,13 +252,28 @@
   list-style-image: url("chrome://mozapps/skin/extensions/utilities.png");
 }
 
+#header-utils-btn:hover,
+#header-utils-btn:hover:active,
+#header-utils-btn[open="true"] {
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities-hover.png");
+}
+
 #header-utils-btn:-moz-focusring > .button-box {
   border: none;
 }
 
+#header-utils-btn > .button-box > .button-menu-dropmarker {
+  border: none;
+  background: transparent;
+}
+
+#header-utils-btn:hover > .button-box > .button-menu-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+}
+
 .view-header {
   border-radius: 8px;
-  padding: 0px 4em;
+  padding: 0px 1em;
   margin: 3px;
 }
 
@@ -267,21 +282,27 @@
 
 .sort-controls {
   -moz-appearance: none;
+  border-right: 3px solid #000000;
 }
 
 .sorter {
   -moz-appearance: none;
   border: none;
   border-left: 3px solid #000000;
-  border-right: 3px solid #000000;
   background-color: transparent;
+  color: #8050B0;
   border-radius: 0;
   padding: 0px 6px;
-  margin: 0px 6px;
+  -moz-padding-start: 6px;
+  -moz-padding-end: 3px;
+  margin: 0px;
   min-width: 12px !important;
   -moz-box-direction: reverse;
 }
-
+.sorter:hover {
+  background-color: #FFCF00;
+  color: #000000;
+}
 
 .sorter[checkState="1"],
 .sorter[checkState="2"] {
@@ -395,8 +416,16 @@
   color: #000000;
 }
 
+.addon-view[notification="warning"] .warning {
+  color: #000000;
+}
+
 .addon-view[notification="error"] {
   background-color: #FF0000;
+  color: #000000;
+}
+
+.addon-view[notification="error"] .error {
   color: #000000;
 }
 
@@ -409,6 +438,12 @@
 .addon-view[pending="upgrade"],
 .addon-view[pending="install"] {
   background-color: #008484;
+}
+
+.addon-view[pending="enable"] .pending,
+.addon-view[pending="upgrade"] .pending,
+.addon-view[pending="install"] .pending {
+  color: #000000;
 }
 
 .addon-view[pending="disable"],
