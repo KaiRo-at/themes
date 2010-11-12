@@ -427,7 +427,7 @@ toolbar[mode="icons"] #search-button > .button-box > .button-text {
   list-style-image: url("chrome://communicator/skin/icons/lock-insecure.gif");
 }
 
-#security-button > .statusbarpanel-text {
+#security-button > .statusbarpanel-contentbox > .statusbarpanel-text {
   margin: 0px;
 }
 
