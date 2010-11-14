@@ -505,6 +505,10 @@ toolbar[iconsize="small"] > #button-stop:not([disabled="true"]):hover:active {
   color: #000000;
 }
 
+.msgNotificationBar:-moz-lwtheme {
+  text-shadow: none;
+}
+
 .msgNotificationBarText {
   font-weight: bold;
 }

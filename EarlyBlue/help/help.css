@@ -117,3 +117,14 @@
 #context-copy[disabled="true"] {
   display: none;
 }
+
+/* make findbar appear above content */
+#appcontent {
+  -moz-box-direction: reverse;
+}
+
+/* style findbar for being on top */
+#FindToolbar {
+  border-bottom: 1px solid #666699;
+  border-top: 1px solid transparent;
+}

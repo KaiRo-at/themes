@@ -43,3 +43,12 @@
 @import url("chrome://messenger/content/messenger.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: lightweight themes ::::: */
+
+#msgHeaderView:-moz-lwtheme,
+treecols:-moz-lwtheme {
+  text-shadow: none;
+  color: -moz-dialogtext;
+  background-color: -moz-dialog;
+}

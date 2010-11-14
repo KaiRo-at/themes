@@ -72,6 +72,7 @@
 
 #ContentWindowDeck {
 }
+
 /* ::::: struct toolbar ::::: */
 
 #structToolbar {
@@ -95,4 +96,12 @@
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
+}
+
+/* ::::: lightweight themes ::::: */
+
+#EditModeToolbar:-moz-lwtheme {
+  text-shadow: none;
+  /* color: -moz-dialogtext;
+  background-color: -moz-dialog; */
 }

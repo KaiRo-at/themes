@@ -304,3 +304,19 @@ treechildren::-moz-tree-image(remote-err) {
   margin-top: 0px;
   border: none;
 }
+
+/* ::::: lightweight themes ::::: */
+
+#MsgHeadersToolbar:-moz-lwtheme,
+#FormatToolbar:-moz-lwtheme,
+#compose-toolbar-sizer:-moz-lwtheme {
+  text-shadow: none;
+  /* color: -moz-dialogtext;
+  background-color: -moz-dialog; */
+}
+
+#MsgHeadersToolbar textbox:-moz-lwtheme,
+#MsgHeadersToolbar menulist:-moz-lwtheme,
+#FormatToolbar menulist:-moz-lwtheme {
+  opacity: 1;
+}
