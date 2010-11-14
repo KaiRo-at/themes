@@ -51,6 +51,45 @@ panel {
   background-color: #000000;
 }
 
+panel[type="arrow"] {
+  -moz-transition: opacity 300ms;
+}
+
+.panel-arrowcontent {
+  border-radius: 6px;
+  padding: 6px;
+  margin: 3px;
+}
+
+.panel-arrow[side="top"] {
+  list-style-image: url("chrome://global/skin/arrow/panelarrow-up.png");
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: -13px;
+}
+
+.panel-arrow[side="bottom"] {
+  list-style-image: url("chrome://global/skin/arrow/panelarrow-down.png");
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: -12px;
+}
+
+.panel-arrow[side="left"] {
+  list-style-image: url("chrome://global/skin/arrow/panelarrow-horiz.png");
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-right: -12px;
+}
+
+.panel-arrow[side="right"] {
+  list-style-image: url("chrome://global/skin/arrow/panelarrow-horiz.png");
+  -moz-transform: scaleX(-1);
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: -12px;
+}
+
 tooltip {
   border-radius: 3px;
   background-color: #9C9CFF;

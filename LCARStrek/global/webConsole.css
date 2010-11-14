@@ -39,8 +39,8 @@
   border-bottom: 3px solid #000000;
 }
 
-.hud-group label {
-  padding-left: 1em;
+.hud-box.animated {
+  -moz-transition: height 350ms;
 }
 
 .hud-outer-wrapper {
@@ -66,31 +66,31 @@
 }
 
 .hud-clickable {
-  cursor: pointer !important;
+  cursor: pointer;
   text-decoration: underline;
 }
 
-.hud-output-node .hud-network {
+.hud-network {
   color: blue;
 }
 
-.hud-output-node .hud-error {
+.hud-error {
   color: red;
 }
 
-.hud-output-node .hud-log {
+.hud-log {
   color: black;
 }
 
-.hud-output-node .hud-warn {
+.hud-warn {
   color: orange;
 }
 
-.hud-output-node .hud-info {
+.hud-info {
   color: green;
 }
 
-.hud-output-node .hud-exception {
+.hud-exception {
   color: red; font-weight: bold;
 }
 
@@ -98,8 +98,10 @@
   width: 100%;
   margin-top: 0.3em; 
   margin-bottom: 0.3em; 
-  padding-left: 0.3em;
-  /* border-bottom: 1px solid #eee; */
+  padding-left: 1em;
+  -moz-user-select: text;
+  white-space: pre-wrap;
+  -moz-user-focus: normal;
 }
 
 .hud-output-node {
@@ -110,11 +112,12 @@
   width: 100%;
 }
 
-.hud-filtered-by-type, .hud-filtered-by-string {
+.hud-filtered-by-type,
+.hud-filtered-by-string {
   display: none;
 }
 
-.hud-group:first-child .hud-divider {
+.hud-group:first-child > .hud-divider {
   display: none;
 }
 
@@ -141,10 +144,6 @@
   -moz-box-direction: reverse;
 }
 
-.jsterm-output-node div {
-  -moz-user-select: text;
-}
-
 .jsterm-scroll-to-node {
   height: 1px; width: 1px; position: relative; top: 92%; display: block;
 }
@@ -152,12 +151,12 @@
 .jsterm-input-node {
   font-family: monospace;
   font-size: 9pt;
-  background: url("chrome://global/skin/icons/commandline.png") 4px 3px no-repeat !important;
-  border: none !important;
-  padding: 0px 0px 0px 16px !important;
+  background: url("chrome://global/skin/icons/commandline.png") 4px 3px no-repeat;
+  border: none;
+  padding: 0px 0px 0px 16px;
 }
 
-.jsterm-input-node textarea {
+.jsterm-input-node > .textbox-input-box > .textbox-textarea {
   overflow-x: hidden;
 }
 
@@ -171,12 +170,12 @@
 }
 
 .jsterm-close-button {
-  background: none !important;
-  border: none !important;
+  background: none;
+  border: none;
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
-  margin: 0px !important;
-  min-width: 0px !important;
-  padding: 1px 3px 1px 7px !important;
+  margin: 0px;
+  min-width: 0px;
+  padding: 1px 3px 1px 7px;
   -moz-user-focus: ignore;
 }
 
