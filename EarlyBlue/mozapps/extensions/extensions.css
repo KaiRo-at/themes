@@ -37,6 +37,7 @@
 
 #addons-page {
   background-color: #CCD0DD;
+  color: #000000;
   margin: 20px;
 }
 
@@ -50,7 +51,10 @@
 .nav-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
   min-width: 0;
-  -moz-margin-end: 0;
+}
+
+#forward-btn {
+  -moz-border-start: none;
 }
 
 #back-btn:-moz-locale-dir(ltr),
@@ -75,6 +79,10 @@
 
 /*** global warnings ***/
  
+.global-warning-container {
+  overflow-x: hidden;
+}
+
 .global-warning {
   -moz-box-align: center;
   padding: 0 8px;
@@ -89,6 +97,18 @@
 #detail-view .global-warning {
   padding: 4px 12px;
   border-bottom: 1px solid #9999CC;  
+}
+
+@media all and (max-width: 600px) {
+  .global-warning-text {
+    display: none;
+  }
+
+  .global-warning .warning-icon {
+    /* background-color: #FFF;
+    box-shadow: 0px 0px 2px 5px #FFF;
+    border-radius: 10px; */
+  }
 }
 
 /*** notification icons ***/
@@ -115,6 +135,55 @@
   margin: 3px 0;
 }
 
+.addon-view[pending="disable"] .pending-icon,
+.addon-view[pending="uninstall"] .pending-icon {
+  list-style-image: url("chrome://global/skin/icons/warning-16.png");
+  width: 16px;
+  height: 15px;
+  margin: 3px 0;
+}
+
+
+/*** view alert boxes ***/
+
+.alert-container {
+  -moz-box-align: center;
+}
+
+.alert-spacer-before {
+  -moz-box-flex: 1;
+}
+
+.alert-spacer-after {
+  -moz-box-flex: 3;
+}
+
+.alert {
+  -moz-box-align: center;
+  padding: 10px;
+  color: #FF9F00;
+  border: 1px solid #9C9CFF;
+  border-radius: 8px;
+  background-color: #000000;
+}
+
+.alert .alert-title {
+  font-weight: bold;
+  font-size: 200%;
+  margin-bottom: 15px;
+}
+
+.alert .addon-control {
+  margin: 1em 2em;
+}
+
+.loading {
+  list-style-image: url("chrome://global/skin/icons/loading.gif");
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
 /*** category selector ***/
 
 #categories {
@@ -123,21 +192,23 @@
   -moz-margin-end: -1px;
   background-color: transparent;
   position: relative;
+  margin-top: 31px;
 }
 
 .category {
+  background-color: transparent;
+  color: #FF9F00;
+  min-height: 0;
+  padding: 10px 4px;
   border-width: 1px;
-  -moz-border-end-width: 0;
   border-style: solid;
   border-color: transparent;
-  padding: 10px 4px;
   -moz-box-align: center;
   overflow: hidden;
-  min-height: 0px;
 }
 
 .category[disabled] {
-  height: 0px;
+  height: 0;
   opacity: 0;
   -moz-transition-property: height, opacity;
   -moz-transition-duration: 1s, 0.8s;
@@ -152,6 +223,7 @@
 .category[selected] {
   background-color: #FFFFFF;
   color: #000000;
+  font-weight: bold;
   border-color: #666699;
 }
 
@@ -159,10 +231,17 @@
   font-size: 150%;
 }
 
+/* Maximize the size of the viewport when the window is small */
+@media all and (max-width: 800px) {
+  .category-name {
+    display: none;
+  }
+}
+
 .category-badge {
   background-color: #666699;
   padding: 2px 8px;
-  margin: 6px 0px;
+  margin: 6px 0;
   border: 1px outset #666699;
   color: #FFFFFF;
   font-weight: bold;
@@ -211,47 +290,37 @@
 /*** header ***/
 
 #header {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   height: 2em;
 }
 
-#header-name, #header-link {
-  color: #FFFFFF;
+#header-search {
+  color: #000000;
+  border: 1px inset #CCD0DD;
+  padding: 3px;
+  background-color: #CCD0DD;
+  margin: 0;
 }
 
-#header-name {
-  font-size: 180%;
+#header-search .textbox-input:-moz-placeholder {
+  color: #808080;
 }
 
-#header-link {
-  -moz-appearance: none;
-  border: none;
-  background: transparent;
-  font-size: 120%;
-  cursor: pointer;
-  list-style-image: url("chrome://mozapps/skin/extensions/go-back.png");
-}
-
-#header-link .button-icon {
-  -moz-margin-end: 6px;
-}
-
-#header-searching {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
+#header-search[focused="true"] {
+  background-color: #FFFFFF;
 }
 
 #header-utils-btn {
   min-width: 4.5em;
   list-style-image: url("chrome://mozapps/skin/extensions/utilities.png");
-}
-
-#header-utils-btn:-moz-focusring > .button-box {
-  border: none;
+  -moz-margin-end: 18px;
 }
 
 .view-header {
+  background-color: #9999CC;
   padding: 4px;
-  margin: 0px;
+  margin: 0;
+  min-height: 31px;
   border-bottom: 1px solid #666699;
 }
 
@@ -266,10 +335,16 @@
   -moz-appearance: none;
   border: none;
   background-color: transparent;
-  padding: 0px 6px;
-  margin: 0px 6px;
+  color: #000000;
+  padding: 0 6px;
+  margin: 0 6px;
   min-width: 12px !important;
   -moz-box-direction: reverse;
+}
+
+.sorter .button-box {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .sorter[checkState="1"],
@@ -290,21 +365,10 @@
 }
 
 
-/*** empty list notification ***/
-
-.empty-list-notice {
-  -moz-box-align: center;
-}
-
-.empty-list-notice > button {
-  margin: 20px;
-}
-
-
 /*** list ***/
 
 .list {
-  margin: 0px;
+  margin: 0;
   border: none;
   background-color: transparent;
 }
@@ -312,6 +376,7 @@
 .addon {
   border-bottom: 1px solid #9999CC;
   padding: 5px;
+  background-origin: border-box;
 }
 
 .addon[status="installing"] {
@@ -327,7 +392,11 @@
 .icon-container {
   width: 48px;
   height: 48px;
-  margin: 7px;
+  margin: 22px 7px 7px 7px;
+}
+
+.addon[active="false"] .icon {
+/*  filter: url("chrome://mozapps/skin/extensions/extensions.svg#greyscale"); */
 }
 
 .icon {
@@ -348,9 +417,20 @@
   list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
 }
 
-.name-container {
+.name-container,
+.addon[status="installing"] .name {
   font-size: 150%;
-  margin-bottom: 0px;
+  font-weight: bold;
+  color: #404040;
+  margin-bottom: 0;
+}
+
+.creator {
+  font-weight: bold;
+}
+
+.creator .text-link {
+  /* color: #0066CC; */
 }
 
 .description-container {
@@ -362,20 +442,76 @@
   margin: 0;
 }
 
-.warning, .pending, .error, .info {
+.warning,
+.pending,
+.error,
+.info {
   -moz-margin-start: 48px;
+  font-weight: bold;
 }
 
-.addon-view:not([selected]) .warning {
+.addon-view .warning {
   color: #808000;
 }
 
-.addon-view:not([selected]) .error {
+.addon-view .error {
   color: #FF0000;
 }
 
-.addon-view:not([selected]) .pending {
+.addon-view .pending {
   color: #33FF33;
+}
+
+.addon-view[pending="disable"] .pending,
+.addon-view[pending="uninstall"] .pending {
+  color: #000000;
+}
+
+.addon .relnotes-container {
+  -moz-box-align: start;
+  -moz-margin-start: 6px;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  -moz-transition-property: height, opacity;
+  -moz-transition-duration: 0.5s, 0.5s;
+}
+
+.addon[show-relnotes] .relnotes-container {
+  opacity: 1;
+  -moz-transition-property: height, opacity;
+  -moz-transition-duration: 0.5s, 0.5s;
+}
+
+.addon .relnotes-header {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.addon .relnotes-toggle {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  -moz-box-direction: reverse;
+  cursor: pointer;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+}
+
+.addon .relnotes-toggle > .button-box > .button-icon {
+  -moz-padding-start: 4px;
+}
+
+.addon[show-relnotes] .relnotes-toggle {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
+}
+
+.addon[active="false"] {
+  /* background-color: rgba(135, 135, 135, 0.1); */
+}
+
+.addon-view[active="false"],
+.addon-view[active="false"] .name-container {
+  color: #666699;
 }
 
 .addon-view[notification="warning"] {
@@ -411,42 +547,19 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
   background-color: #808080;
 }
 
-.addon .relnotes-container {
-  -moz-box-align: start;
-  height: 0px;
-  overflow: hidden;
-  opacity: 0;
-  -moz-transition-property: height, opacity;
-  -moz-transition-duration: 0.5s, 0.5s;
+.addon[selected] {
+  background-color: #336699;
+  color: #000000;
 }
 
-.addon[show-relnotes] .relnotes-container {
-  opacity: 1;
-  -moz-transition-property: height, opacity;
-  -moz-transition-duration: 0.5s, 0.5s;
+.addon[selected] .name-container {
+  /* text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);  */
 }
 
-.addon .relnotes-header {
-  font-weight: bold;
-  margin: 10px 0px;
+.addon[active="false"][selected] .name-container {
+  color: #222233;
 }
 
-.addon .relnotes-toggle {
-  border: none;
-  background: transparent;
-  font-weight: bold;
-  -moz-box-direction: reverse;
-  cursor: pointer;
-  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
-}
-
-.addon .relnotes-toggle > .button-box > .button-icon {
-  -moz-padding-start: 4px;
-}
-
-.addon[show-relnotes] .relnotes-toggle {
-  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
-}
 
 /*** item - uninstalled ***/
 
@@ -474,6 +587,8 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
   -moz-box-align: center;
   background-color: #FFFFFF;
   font-size: 120%;
+  border-bottom: 1px solid #666699;
+  overflow-x: hidden;
 }
 
 #search-filter-label {
@@ -483,8 +598,8 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
 
 .search-filter-radio {
   -moz-appearance: none;
-  padding: 0px 6px;
-  margin: 0px 3px;
+  padding: 0 6px;
+  margin: 0 3px;
   border-radius: 10000px;
 }
 
@@ -508,48 +623,41 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
 
 /*** detail view ***/
 
-#detail-view[active="false"] .fade {
-  opacity: 0.5;
-}
-
 #detail-view .loading {
   opacity: 0;
 }
 
-#detail-view:not([loading]) .loading {
+#detail-view:not([loading]) .alert-container {
   visibility: collapse;
 }
 
 #detail-view[loading-extended] .loading {
-  -moz-box-align: center;
-  -moz-box-pack: center;
   opacity: 1;
   -moz-transition-property: opacity;
   -moz-transition-duration: 1s;
 }
 
-#detail-view .loading > image {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
-}
-
 .detail-view-container {
-  padding: 2em;
+  padding: 0 2em 2em 2em;
   font-size: 110%;
 }
 
 #detail-notifications {
+  margin-top: 1em;
   margin-bottom: 2em;
 }
 
 #detail-notifications .warning,
 #detail-notifications .pending,
-#detail-notifications .error,
-#detail-notifications .info {
+#detail-notifications .error {
   -moz-margin-start: 0;
 }
 
 #detail-icon {
   -moz-margin-end: 10px;
+  margin-top: 6px;
+  max-width: 64px;
+  max-height: 64px;
 }
 
 #detail-summary {
@@ -574,6 +682,7 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
   /* This is necessary to fix layout issues with multi-line descriptions, see
      bug 592712*/
   outline: solid transparent;
+  min-width: 8em;
 }
 
 #detail-contributions {
@@ -581,23 +690,25 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
   border: 1px solid #666699;
   margin-bottom: 2em;
   padding: 1em;
-  background: #FFFFCC;
+  background-color: #FFFFCC;
 }
 
 #detail-contrib-description {
   font-style: italic;
   margin-bottom: 1em;
+  color: #000000;
 }
 
 #detail-contrib-suggested {
-  color: grey;
+  color: #808080;
+  font-weight: bold;
 }
 
-#detail-contrib-button {
+#detail-contrib-btn {
   list-style-image: url("chrome://mozapps/skin/extensions/heart.png");
 }
 
-#detail-contrib-button .button-icon {
+#detail-contrib-btn .button-icon {
   -moz-margin-end: 3px;
 }
 
@@ -620,12 +731,19 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
   -moz-margin-start: 0;
 }
 
+#detail-controls {
+  margin-bottom: 1em;
+}
+
+#detail-view[active="false"]:not([pending]):not([notification]) {
+  /* background-color: foo; */
+}
 
 /*** creator ***/
 
 .creator > label {
-  -moz-margin-start: 0px;
-  -moz-margin-end: 0px;
+  -moz-margin-start: 0;
+  -moz-margin-end: 0;
 }
 
 .creator > .text-link {
@@ -637,25 +755,18 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
 /*** rating ***/
 
 .meta-rating {
-  -moz-margin-start: 0px;
-  -moz-margin-end: 0px;
-  vertical-align: text-top;
+  -moz-margin-start: 0;
+  -moz-margin-end: 0;
+  padding-top: 2px;
 }
 
-.meta-rating[showrating="average"] > .star {
+.meta-rating > .star {
   list-style-image: url("chrome://mozapps/skin/extensions/rating-not-won.png");
-  padding: 0px 1px;
+  padding: 0 1px;
 }
 
-.meta-rating[showrating="user"] > .star {
-  list-style-image: url("chrome://mozapps/skin/extensions/rating-unrated.png");
-  padding: 2px 3px;
-}
-
-.meta-rating > .star[on="true"],
-.meta-rating[showrating="user"] > .star[hover] {
+.meta-rating > .star[on="true"] {
   list-style-image: url("chrome://mozapps/skin/extensions/rating-won.png");
-  padding: 0px 1px;
 }
 
 
@@ -665,8 +776,8 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
   background-color: #CCD0DD;
   border: 1px solid #808080;
   width: 200px;
-  height: 24px;
-  margin: 0px 8px;
+  height: 21px;
+  margin: 0 8px;
 }
 
 .download-progress .start-cap,
@@ -677,6 +788,9 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
 
 .download-progress .progress {
   background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 .download-progress .start-cap, .download-progress .end-cap {
@@ -685,33 +799,38 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
 
 .download-progress .start-cap:-moz-locale-dir(ltr),
 .download-progress .end-cap:-moz-locale-dir(rtl) {
-  border-radius: 10000px 0 0 10000px;
+  border-radius: 3px 0 0 3px;
 }
 
 .download-progress .end-cap:-moz-locale-dir(ltr),
 .download-progress .start-cap:-moz-locale-dir(rtl) {
-  border-radius: 0 10000px 10000px 0;
+  border-radius: 0 3px 3px 0;
 }
 
-.download-progress .progress {
+.download-progress .pause,
+.download-progress .cancel {
   -moz-appearance: none;
-  padding: 0px;
-  margin: 0px;
+  background-color: #CCD0DD;
+  border: 1px solid #666699;
+  padding: 3px;
+  min-width: 0;
+  margin: 3px;
+}
+
+.download-progress .pause .button-box,
+.download-progress .cancel .button-box {
+  padding: 0;
   border: none;
 }
 
-.download-progress .pause, .download-progress .cancel {
-  -moz-appearance: none;
-  background-color: #CCD0DD;
-  border-width: 1px 0px 0px 1px;
-  padding-right: 1px;
-  border-style: solid;
-  -moz-border-top-colors: #FFFFFF;
-  -moz-border-left-colors: #FFFFFF;
-  min-width: 16px;
-  width: 16px;
-  height: 16px;
-  margin: 3px;
+.download-progress .pause .button-text,
+.download-progress .cancel .button-text {
+  display: none;
+}
+
+.download-progress .pause .button-icon,
+.download-progress .cancel .button-icon {
+  -moz-margin-start: 0;
 }
 
 .download-progress .pause {
@@ -726,6 +845,9 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
   -moz-box-align: center;
 }
 
+.download-progress .status {
+/*  text-shadow: #FFF 0 0 2px; */
+}
 
 /*** install status ***/
 
@@ -740,7 +862,12 @@ richlistbox:focus > .addon-view[notification="warning"][selected="true"] {
   -moz-box-align: center;
 }
 
-#updates-installed, #updates-downloaded {
+#updates-container .button-link {
+  font-weight: bold;
+}
+
+#updates-installed,
+#updates-downloaded {
   color: #00CC00;
   font-weight: bold;
 }
