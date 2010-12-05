@@ -112,3 +112,9 @@ toolbar menulist:-moz-lwtheme:not([open="true"]),
 toolbar textbox:-moz-lwtheme:not([focused="true"]) {
   opacity: .8;
 }
+
+treecols:-moz-lwtheme {
+  text-shadow: none;
+  color: #000000;
+  background-color: #CCD0DD;
+}

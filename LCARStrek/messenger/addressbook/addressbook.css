@@ -214,12 +214,7 @@ html|p {
   border: none;
 }
 
-#dirTree, #abResultsTree {
-  border: none;
-  margin: 0px;
-}
-
-#resultsTree {
+#abResultsTree {
 /*  border-left: 1px solid ThreeDShadow; */
 }
 
