@@ -88,3 +88,7 @@
 #bxURLBarContainer + toolbarbutton:hover:active {
   border: 1px inset #CCD0DD;
 }
+
+.viewer-list, .viewer-menu {
+  -moz-user-focus: ignore;
+}

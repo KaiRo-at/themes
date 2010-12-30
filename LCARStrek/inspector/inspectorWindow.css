@@ -91,3 +91,7 @@
   margin: 2px 0px 4px;
   font-weight: bold;
 }
+
+.viewer-list, .viewer-menu {
+  -moz-user-focus: ignore;
+}
