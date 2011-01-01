@@ -54,3 +54,17 @@ notification[type="critical"] .messageImage {
 .messageCloseButton > .toolbarbutton-icon {
   -moz-margin-start: 5px;
 }
+
+/* Popup notification */
+
+.popup-notification-description {
+  max-width: 248px;
+}
+
+.popup-notification-menubutton {
+  margin-top: 17px;
+}
+
+.popup-notification-closeitem {
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+}

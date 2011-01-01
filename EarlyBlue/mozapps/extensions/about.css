@@ -1,6 +1,36 @@
+#genericAbout {
+  padding: 0px;
+  min-height: 200px;
+  max-height: 400px;
+  width: 30em;
+}
+
 #clientBox {
   background-color: #FFFFFF;
   color: #000000;
+}
+
+.basic-info {
+  padding: 10px;
+}
+
+#extensionIcon {
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
+  max-width: 64px;
+  max-height: 64px;
+  -moz-margin-end: 6px;
+}
+
+#genericAbout[addontype="theme"] #extensionIcon {
+  list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.png");
+}
+
+#genericAbout[addontype="locale"] #extensionIcon {
+  list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.png");
+}
+
+#genericAbout[addontype="plugin"] #extensionIcon {
+  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
 }
 
 #extensionName {
@@ -13,22 +43,17 @@
   color: #808080;
 }
 
-#genericAbout {
-  padding: 0px 0px 10px;
-  min-height: 200px;
-  width: 30em;
+#extensionDescription {
+  margin-top: 4px;
 }
 
 #groove {
   margin-top: 0px;
 }
 
-#clientBox {
-  padding: 10px;
-}
-
-#extensionDescription {
-  color: #666699;
+#extensionDetailsBox {
+  overflow: auto;
+  min-height: 100px;
 }
 
 .boxIndent {
