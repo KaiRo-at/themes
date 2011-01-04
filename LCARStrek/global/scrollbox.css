@@ -54,6 +54,21 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-right.gif");
 }
 
+/* Horizontal hovered */
+.autorepeatbutton-up[orient="horizontal"]:hover,
+.autorepeatbutton-down:-moz-locale-dir(rtl)[orient="horizontal"]:hover,
+.scrollbutton-up[orient="horizontal"]:hover,
+.scrollbutton-down:-moz-locale-dir(rtl)[orient="horizontal"]:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-hover.gif");
+}
+
+.autorepeatbutton-down[orient="horizontal"]:hover,
+.autorepeatbutton-up:-moz-locale-dir(rtl)[orient="horizontal"]:hover,
+.scrollbutton-down[orient="horizontal"]:hover,
+.scrollbutton-up:-moz-locale-dir(rtl)[orient="horizontal"]:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right-hover.gif");
+}
+
  /* Horizontal disabled */
 .autorepeatbutton-up[orient="horizontal"][disabled="true"],
 .autorepeatbutton-down:-moz-locale-dir(rtl)[orient="horizontal"][disabled="true"],
@@ -78,6 +93,17 @@
 .autorepeatbutton-down,
 .scrollbutton-down {
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+}
+
+/* Vertical hovered */
+.autorepeatbutton-up:hover,
+.scrollbutton-up:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up-hover.gif");
+}
+
+.autorepeatbutton-down:hover,
+.scrollbutton-down:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
 
 /* Vertical disabled */

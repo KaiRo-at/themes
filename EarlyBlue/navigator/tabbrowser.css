@@ -75,16 +75,54 @@ tabbrowser > tabbox > tabpanels {
   margin: 0px;
 }
 
+.tabbrowser-tab:-moz-lwtheme {
+   text-shadow: none;
+}
+
+.scrollbutton-up:-moz-lwtheme,
+.scrollbutton-down:-moz-lwtheme:not([selected="true"]),
+.tabbrowser-tab:-moz-lwtheme:not([selected="true"]) {
+  opacity: .8;
+}
+
+.toolbarbutton-text {
+  display: none;
+}
+
+.toolbarbutton-icon {
+  margin: 0px !important; /* needs to override communicator.css */
+}
+
+/* ::::: Tab scrollbox arrow, and all-tabs buttons ::::: */
+
+.scrollbutton-up,
+.scrollbutton-down {
+}
+
+.tabs-alltabs-button {
+  margin: 2px 0px 1px;
+}
+
+/* All tabs menupopup */
+.alltabs-item {
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+}
+
+.alltabs-item[selected="true"] {
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item-sel.gif");
+  font-weight: bold;
+}
+
+.alltabs-item[busy] {
+  list-style-image: url("chrome://communicator/skin/icons/loading.gif");
+}
+
 /* ::::: close & new tab buttons ::::: */
 
 .tabs-closebutton {
   margin-bottom: 2px;
   -moz-margin-end: 2px;
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
-}
-
-.tabs-closebutton > .toolbarbutton-icon {
-  margin: 0;
 }
 
 .tabs-newbutton {
@@ -97,7 +135,7 @@ tabbrowser > tabbox > tabpanels {
 .tab-drop-indicator-bar {
   height: 11px;
   margin-top: -11px;
-  -moz-margin-start: -8px;
+  -moz-margin-start: -6px;
   position: relative;
 }
 

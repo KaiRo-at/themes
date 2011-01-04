@@ -281,14 +281,6 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   -moz-box-align: center;
 }
 
-.tabbrowser-tab:-moz-lwtheme:not([selected="true"]) {
-  opacity: .8;
-}
-
-.tabbrowser-tab:-moz-lwtheme {
-  text-shadow: none;
-}
-
 #urlbar {
   border-radius: 5px;
   margin: 0;
@@ -328,6 +320,15 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   list-style-image: url("chrome://communicator/skin/icons/geolocation-64.png");
 }
 
+.popup-notification-icon[popupid="addon-install-disabled"],
+.popup-notification-icon[popupid="addon-install-blocked"],
+.popup-notification-icon[popupid="addon-install-failed"],
+.popup-notification-icon[popupid="addon-install-complete"] {
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
+  width: 32px;
+  height: 32px;
+}
+
 .popup-notification-icon[popupid="password-save"] {
   list-style-image: url("chrome://mozapps/skin/passwordmgr/key-64.png");
 }
@@ -343,6 +344,12 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 
 #geo-notification-icon {
   list-style-image: url("chrome://communicator/skin/icons/geolocation-16.png");
+  width: 16px;
+  height: 16px;
+}
+
+#addons-notification-icon {
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
   width: 16px;
   height: 16px;
 }
@@ -595,6 +602,11 @@ toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
 
 #star-button[starred="true"]:hover:active {
   -moz-image-region: rect(0px 48px 16px 32px);
+}
+
+#editBookmarkPanelStarIcon {
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
 }
 
 /* ::::: feeds ::::: */
