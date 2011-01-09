@@ -40,6 +40,18 @@
 
 /* ::::: statistics ::::: */
 
-.value-column {
-  -moz-margin-end: 30px;
+.nonzero {
+  font-weight: bold;
+}
+
+groupbox:not(#boxBorder) textbox {
+  text-align: right;
+}
+
+row {
+  -moz-box-align: baseline;
+}
+
+#enclosingBox {
+  overflow: auto;
 }
