@@ -9,3 +9,4 @@ style chrome://global/content/customizeToolbar.xul chrome://navigator/skin/navig
 skin editor LCARStrek editor/
 skin chatzilla LCARStrek chatzilla/
 skin inspector LCARStrek inspector/
+skin browser LCARStrek browser/

@@ -1,0 +1,778 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: NPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Netscape Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/NPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is mozilla.org code.
+ *
+ * The Initial Developer of the Original Code is
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998-1999
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Joe Hewitt (hewitt@netscape.com)
+ *   Jason Kersey (kerz@netscape.com)
+ *   Pierre Chanial (chanial@noos.fr)
+ *   Dean Tessman (dean_tessman@hotmail.com)
+ *   Robert Kaiser (kairo@kairo.at)
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the NPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the NPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+@import url("chrome://global/skin/");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+menubar {
+  -moz-binding: url("chrome://global/content/widgets/toolbar.xml#menubar");
+  background-color: transparent;
+}
+
+toolbar {
+  -moz-binding: url("chrome://browser/skin/browser.xml#toolbar");
+}
+
+menubar > menu {
+  -moz-margin-start: 2px;
+}
+
+.toolbar-primary > .toolbar-holder {
+  background-color: #FF9F00;
+}
+
+.toolbar-primary > .toolbar-begcap,
+.toolbar-primary > .toolbar-endcap {
+  background-color: #9C9CFF;
+}
+
+#PersonalToolbar {
+  min-height: 20px;
+}
+
+/* ::::: bookmark buttons ::::: */
+
+toolbarbutton.bookmark-item {
+  margin: 0;
+  -moz-margin-end: 2px;
+  min-width: 0;
+  max-width: 13em;
+  min-height: 20px;
+  padding: 1px;
+}
+
+toolbarbutton.bookmark-item:hover:active,
+toolbarbutton.bookmark-item[open="true"] {
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
+}
+
+.bookmark-item > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Prevent [mode="icons"] from hiding the label */
+.bookmark-item > .toolbarbutton-text {
+  display: -moz-box !important;
+}
+
+.bookmark-item > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+.toolbarpaletteitem-box[type="bookmarks-toolbar"][place="palette"] {
+  width: 32px;
+  height: 32px;
+  background: url("chrome://browser/skin/icons/bookmarks-folder.gif") no-repeat;
+}
+
+.bookmarks-toolbar-customize {
+  display: none;
+  max-width: 15em !important;
+}
+
+toolbarpaletteitem[place="toolbar"] .bookmarks-toolbar-customize {
+  display: -moz-box;
+}
+
+toolbarpaletteitem[place="toolbar"] .bookmarks-toolbar-overflow-items {
+  visibility: hidden;
+}
+
+toolbarpaletteitem[place="toolbar"] .bookmarks-toolbar-items {
+  visibility: hidden;
+}
+
+/* ::::: bookmark menus ::::: */
+
+menu.bookmark-item,
+menuitem.bookmark-item {
+  min-width: 0;
+  max-width: 26em;
+  border-top: 1px solid transparent !important;
+  border-bottom: 1px solid transparent !important;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 3px;
+  margin-top: -1px;
+}
+
+.bookmark-item > .menu-iconic-left > .menu-iconic-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ..... drag and drop styles ..... */
+
+.bookmark-item[dragover-left="true"] {
+  -moz-border-left-colors: #008484;
+}
+.bookmark-item[dragover-right="true"] {
+  -moz-border-right-colors: #008484;
+}
+.bookmark-item[dragover-top="true"] {
+  -moz-border-top-colors: #008484;
+}
+.bookmark-item[dragover-bottom="true"] {
+  -moz-border-bottom-colors: #008484;
+}
+
+/* ::::: bookmark items ::::: */
+
+.bookmark-item  {
+  list-style-image: url("chrome://browser/skin/icons/bookmark-item.gif");
+}
+
+.bookmark-item[container="true"] {
+  list-style-image: url("chrome://browser/skin/icons/bookmark-folder-closed.gif");
+}
+.bookmark-item[open="true"],
+.bookmark-item[container="true"][open="true"] {
+  list-style-image: url("chrome://browser/skin/icons/bookmark-folder-open.gif");
+}
+
+/* ::::: primary toolbar buttons ::::: */
+
+.toolbarbutton-1,
+.toolbarbutton-1 > .toolbarbutton-menubutton-button {
+  -moz-box-orient: vertical;
+  min-width: 0px;
+}
+
+toolbarbutton:not([disabled="true"]):hover,
+menubutton:not([disabled="true"]):hover,
+toolbarbutton:not([disabled="true"]):hover:active,
+menubutton:not([disabled="true"]):hover:active {
+  color: #000000 !important;
+}
+
+/*
+.toolbarbutton-menubutton-stack,
+.toolbarbutton-menubutton-button,
+.toolbarbutton-menubutton-stack:hover,
+.toolbarbutton-menubutton-button:hover,
+.toolbarbutton-menubutton-stack:hover:active,
+.toolbarbutton-menubutton-button:hover:active {
+  margin: 0 !important;
+  display: -moz-box;
+}
+*/
+
+toolbarbutton[type="menu-button"] {
+  -moz-box-orient: horizontal;
+}
+
+toolbar[mode="icons"] .toolbarbutton-text {
+  display: none;
+}
+
+toolbar[mode="text"] .toolbarbutton-menubutton-dropmarker,
+toolbar[mode="text"] .toolbarbutton-icon {
+  display: none;
+}
+
+toolbar[mode="text"] .toolbarbutton-text {
+  padding: 0 !important;
+  margin: 3px 5px !important;
+}
+
+#back-button {
+/*  -moz-binding: url("chrome://browser/skin/browser.xml#toolbar-menu-button"); */
+  list-style-image: url("chrome://browser/skin/icons/back.gif");
+}
+#back-button:hover,
+#back-button[open="true"] {
+  list-style-image: url("chrome://browser/skin/icons/back-hover.gif");
+}
+#back-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/back-disabled.gif");
+}
+
+#forward-button {
+/*  -moz-binding: url("chrome://browser/skin/browser.xml#toolbar-menu-button"); */
+  list-style-image: url("chrome://browser/skin/icons/forward.gif");
+}
+#forward-button:hover,
+#forward-button[open="true"] {
+  list-style-image: url("chrome://browser/skin/icons/forward-hover.gif");
+}
+#forward-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/forward-disabled.gif");
+}
+
+#reload-button {
+  list-style-image: url("chrome://browser/skin/icons/reload.gif");
+}
+#reload-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/reload-hover.gif");
+}
+#reload-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/reload-disabled.gif");
+}
+
+#stop-button {
+  list-style-image: url("chrome://browser/skin/icons/stop.gif");
+}
+#stop-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/stop-hover.gif");
+}
+#stop-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/stop-disabled.gif");
+}
+
+#home-button {
+  list-style-image: url("chrome://browser/skin/icons/home.gif");
+}
+#home-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/home-hover.gif");
+}
+#home-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/home-disabled.gif");
+}
+
+#print-button {
+  list-style-image: url("chrome://browser/skin/icons/print.gif");
+}
+#print-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/print-hover.gif");
+}
+#print-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/print-disabled.gif");
+}
+
+#new-tab-button {
+  list-style-image: url("chrome://browser/skin/icons/new-tab.gif");
+}
+#new-tab-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/new-tab-hover.gif");
+}
+#new-tab-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/new-tab-disabled.gif");
+}
+
+#new-window-button {
+  list-style-image: url("chrome://browser/skin/icons/new-window.gif");
+}
+#new-window-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/new-window-hover.gif");
+}
+#new-window-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/new-window-disabled.gif");
+}
+
+#downloads-button {
+  list-style-image: url("chrome://browser/skin/icons/downloads.gif");
+}
+#downloads-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/downloads-hover.gif");
+}
+#downloads-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/downloads-disabled.gif");
+}
+
+#bookmarks-button {
+  list-style-image: url("chrome://browser/skin/icons/bookmarks.gif");
+}
+#bookmarks-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/bookmarks-hover.gif");
+}
+#bookmarks-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/bookmarks-disabled.gif");
+}
+
+#history-button {
+  list-style-image: url("chrome://browser/skin/icons/history.gif");
+}
+#history-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/history-hover.gif");
+}
+#history-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/history-disabled.gif");
+}
+
+#cut-button {
+  list-style-image: url("chrome://browser/skin/icons/cut.gif");
+}
+#cut-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/cut-hover.gif");
+}
+#cut-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/cut-disabled.gif");
+}
+
+#copy-button {
+  list-style-image: url("chrome://browser/skin/icons/copy.gif");
+}
+#copy-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/copy-hover.gif");
+}
+#copy-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/copy-disabled.gif");
+}
+
+#paste-button {
+  list-style-image: url("chrome://browser/skin/icons/paste.gif");
+}
+#paste-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/paste-hover.gif");
+}
+#paste-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/paste-disabled.gif");
+}
+
+
+/* ::::: small primary toolbar buttons ::::: */
+
+toolbar[iconsize="small"] #back-button {
+  list-style-image: url("chrome://browser/skin/icons/back-small.gif");
+}
+toolbar[iconsize="small"] #back-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/back-small-hover.gif");
+}
+toolbar[iconsize="small"] #back-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/back-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #forward-button {
+  list-style-image: url("chrome://browser/skin/icons/forward-small.gif");
+}
+toolbar[iconsize="small"] #forward-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/forward-small-hover.gif");
+}
+toolbar[iconsize="small"] #forward-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/forward-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #reload-button {
+  list-style-image: url("chrome://browser/skin/icons/reload-small.gif");
+}
+toolbar[iconsize="small"] #reload-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/reload-small-hover.gif");
+}
+toolbar[iconsize="small"] #reload-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/reload-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #stop-button {
+  list-style-image: url("chrome://browser/skin/icons/stop-small.gif");
+}
+toolbar[iconsize="small"] #stop-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/stop-small-hover.gif");
+}
+toolbar[iconsize="small"] #stop-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/stop-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #home-button {
+  list-style-image: url("chrome://browser/skin/icons/home-small.gif");
+}
+toolbar[iconsize="small"] #home-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/home-small-hover.gif");
+}
+toolbar[iconsize="small"] #home-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/home-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #print-button {
+  list-style-image: url("chrome://browser/skin/icons/print-small.gif");
+}
+toolbar[iconsize="small"] #print-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/print-small-hover.gif");
+}
+toolbar[iconsize="small"] #print-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/print-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #downloads-button {
+  list-style-image: url("chrome://browser/skin/icons/downloads-small.gif");
+}
+toolbar[iconsize="small"] #downloads-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/downloads-small-hover.gif");
+}
+toolbar[iconsize="small"] #downloads-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/downloads-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #new-tab-button {
+  list-style-image: url("chrome://browser/skin/icons/new-tab-small.gif");
+}
+toolbar[iconsize="small"] #new-tab-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/new-tab-small-hover.gif");
+}
+toolbar[iconsize="small"] #new-tab-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/new-tab-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #new-window-button {
+  list-style-image: url("chrome://browser/skin/icons/new-window-small.gif");
+}
+toolbar[iconsize="small"] #new-window-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/new-window-small-hover.gif");
+}
+toolbar[iconsize="small"] #new-window-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/new-window-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #bookmarks-button {
+  list-style-image: url("chrome://browser/skin/icons/bookmarks-small.gif");
+}
+toolbar[iconsize="small"] #bookmarks-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/bookmarks-small-hover.gif");
+}
+toolbar[iconsize="small"] #bookmarks-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/bookmarks-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #history-button {
+  list-style-image: url("chrome://browser/skin/icons/history-small.gif");
+}
+toolbar[iconsize="small"] #history-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/history-small-hover.gif");
+}
+toolbar[iconsize="small"] #history-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/history-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #cut-button {
+  list-style-image: url("chrome://browser/skin/icons/cut-small.gif");
+}
+toolbar[iconsize="small"] #cut-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/cut-small-hover.gif");
+}
+toolbar[iconsize="small"] #cut-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/cut-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #copy-button {
+  list-style-image: url("chrome://browser/skin/icons/copy-small.gif");
+}
+toolbar[iconsize="small"] #copy-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/copy-small-hover.gif");
+}
+toolbar[iconsize="small"] #copy-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/copy-small-disabled.gif");
+}
+
+toolbar[iconsize="small"] #paste-button {
+  list-style-image: url("chrome://browser/skin/icons/paste-small.gif");
+}
+toolbar[iconsize="small"] #paste-button:hover {
+  list-style-image: url("chrome://browser/skin/icons/paste-small-hover.gif");
+}
+toolbar[iconsize="small"] #paste-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/paste-small-disabled.gif");
+}
+
+
+/* Smaller padding on small toolbar buttons */
+
+toolbar[iconsize="small"] .toolbarbutton-1 {
+  padding: 2px;
+}
+
+toolbar[iconsize="small"] .toolbarbutton-1:hover:active,
+toolbar[iconsize="small"] .toolbarbutton-1[open="true"] {
+  padding-top: 3px;
+  padding-bottom: 1px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 1px;
+}
+
+toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"],
+toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"]:hover,
+toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"]:hover:active,
+toolbar[iconsize="small"] .toolbarbutton-1[disabled="true"][open="true"] {
+  padding: 2px;
+}
+
+toolbar[iconsize="small"] .toolbarbutton-1[checked="true"] {
+  padding-top: 3px !important;
+  padding-bottom: 1px !important;
+  -moz-padding-start: 3px !important;
+  -moz-padding-end: 1px !important;
+}
+
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"],
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"]:hover,
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"]:hover:active,
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][open="true"],
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"],
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"]:hover,
+toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][disabled="true"]:hover:active {
+  padding: 0;
+}
+
+/* ::::: fullscreen window controls ::::: */
+
+#window-controls {
+  -moz-box-align: center;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  -moz-padding-start: 0px;
+  -moz-padding-end: 2px;
+  border-left: 3px solid #000000;
+  min-height: 28px;
+}
+
+#minimize-button {
+  list-style-image: url("chrome://navigator/skin/icons/win-minimize.gif");
+}
+#minimize-button:hover {
+  list-style-image: url("chrome://navigator/skin/icons/win-minimize-hover.gif");
+}
+#restore-button {
+  list-style-image: url("chrome://navigator/skin/icons/win-restore.gif");
+}
+#restore-button:hover {
+  list-style-image: url("chrome://navigator/skin/icons/win-restore-hover.gif");
+}
+#close-button {
+  list-style-image: url("chrome://navigator/skin/icons/win-close.gif");
+}
+#close-button:hover {
+  list-style-image: url("chrome://navigator/skin/icons/win-close-hover.gif");
+}
+
+/* ::::: nav-bar-inner ::::: */
+
+#urlbar {
+  margin: 2px 3px;
+}
+
+#search-bar {
+  width: 12em;
+}
+
+/* ::::: page proxy icon ::::: */
+
+#page-proxy-deck,
+#page-proxy-favicon,
+#page-proxy-button {
+  width: 16px;
+  height: 16px;
+}
+
+#page-proxy-deck {
+  cursor: -moz-grab;
+  margin: 2px 3px;
+}
+
+#page-proxy-favicon {
+  list-style-image: none;
+}
+
+#page-proxy-button {
+  list-style-image: url("chrome://browser/skin/icons/bookmark-item.gif") !important;
+}
+
+#page-proxy-button[pageproxystate="invalid"] {
+  cursor: default;
+  list-style-image: url("chrome://browser/skin/icons/bookmark-item.gif") !important;
+}
+
+
+statusbarpanel#statusbar-display {
+  -moz-padding-start: 0;
+}
+
+/* ::::: search-bar ::::: */
+
+#search-proxy-button {
+  margin: 2px;
+  list-style-image: url("chrome://browser/skin/icons/search-bar.gif");
+}
+
+#miSearchModeFind {
+  list-style-image: url("chrome://browser/skin/icons/search-bar.gif");
+}
+
+/* ::::: autocomplete ::::: */
+
+.autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment) {
+  color: #336699;
+}
+
+/* ::::: go button ::::: */
+
+#go-button,
+#go-container {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  list-style-image: url("chrome://browser/skin/icons/go.gif");
+}
+
+#go-button {
+  border: 1px solid transparent;
+}
+
+#go-button:hover,
+#go-button:hover:active {
+  list-style-image: url("chrome://browser/skin/icons/go-hover.gif");
+  border: 1px outset #CCD0DD;
+}
+
+#go-button[disabled="true"] {
+  list-style-image: url("chrome://browser/skin/icons/go-disabled.gif");
+  border: 1px solid transparent;
+}
+
+#go-button > .button-box > .button-text {
+  -moz-margin-start: 5px !important;
+}
+
+#go-button > .button-box {
+  border: none;
+}
+
+#sidebar {
+  background-color: #CCD0DD;
+}
+
+/* ::::: content area ::::: */
+
+#status-bar {
+  border-top: none;
+}
+
+#security-button {
+  display: none;
+}
+
+#security-button[level="high"] {
+  list-style-image: url("chrome://browser/skin/icons/secure.gif");
+  display: -moz-box;
+}
+
+#security-button[level="low"] {
+  list-style-image: url("chrome://browser/skin/icons/secure.gif");
+  display: -moz-box;
+}
+
+#security-button[level="broken"] {
+  list-style-image: url("chrome://browser/skin/icons/security-broken.gif");
+ display: -moz-box;
+}
+
+#page-report-button {
+  display: none;
+}
+
+#page-report-button[blocked] {
+  display: -moz-box;
+  list-style-image: url("chrome://browser/skin/icons/info.gif");
+  padding: 0px 3px;
+}
+
+#page-theme-button {
+  display: none;
+}
+
+#page-theme-button[themes] {
+  display: -moz-box;
+  list-style-image: url("chrome://browser/skin/icons/page-themes.gif");
+  padding: 0px 3px;
+}
+
+/* ::::: throbber ::::: */
+
+#navigator-throbber {
+  -moz-user-focus: ignore;
+  margin: 0;
+  -moz-margin-end: 2px;
+  border: none !important;
+  padding: 0px !important;
+  min-width: 0;
+  list-style-image: url("chrome://browser/skin/icons/throbber-stopped.gif");
+}
+#navigator-throbber[busy="true"] {
+  list-style-image: url("chrome://browser/skin/icons/throbber.gif");
+}
+
+toolbar[iconsize="small"] #navigator-throbber,
+toolbar[mode="text"] #navigator-throbber {
+  list-style-image: url("chrome://browser/skin/icons/throbber-small-stopped.gif");
+}
+toolbar[iconsize="small"] #navigator-throbber[busy="true"],
+toolbar[mode="text"] #navigator-throbber[busy="true"] {
+  list-style-image: url("chrome://browser/skin/icons/throbber-small.gif");
+}
+
+.tabs-closebutton {
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+}
+/*
+#content .tabs-closebutton {
+  list-style-image: url("chrome://browser/skin/Close-tab.png");
+  -moz-image-region: rect(0px, 18px, 14px, 0px);
+}
+
+#content .tabs-closebutton:hover {
+  -moz-image-region: rect(0px, 36px, 14px, 18px);
+}
+*/
+toolbarbutton.chevron {
+  list-style-image: url("chrome://global/skin/toolbar/chevron.gif") !important;
+}
+
+
+toolbarbutton.chevron > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
+  display: -moz-box;
+}
+
+toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-text {
+   display: none;
+}
+
+#sidebar-throbber[loading="true"] {
+  list-style-image: url(chrome://global/skin/icons/loading.gif);
+}
