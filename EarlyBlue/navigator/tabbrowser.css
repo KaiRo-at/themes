@@ -38,7 +38,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 .tabbrowser-strip {
-  padding-bottom: 1px;
+  padding-bottom: 0px;
   border-bottom: 1px solid #666699;
 }
 
@@ -97,10 +97,12 @@ tabbrowser > tabbox > tabpanels {
 
 .scrollbutton-up,
 .scrollbutton-down {
+  margin-top: 1px;
+  margin-bottom: 0;
 }
 
 .tabs-alltabs-button {
-  margin: 2px 0px 1px;
+  margin-top: 1px;
 }
 
 /* All tabs menupopup */
@@ -119,9 +121,18 @@ tabbrowser > tabbox > tabpanels {
 
 /* ::::: close & new tab buttons ::::: */
 
+.tabs-closebutton-box {
+  -moz-box-direction: reverse;
+}
+
+.tabs-closebutton-box > hbox {
+  -moz-box-orient: vertical;
+}
+
 .tabs-closebutton {
-  margin-bottom: 2px;
-  -moz-margin-end: 2px;
+  margin-top: 1px;
+  padding: 0 3px;
+  -moz-box-flex: 1;
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 

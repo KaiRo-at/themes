@@ -107,7 +107,6 @@ tabbrowser > tabbox > tabpanels {
 }
 
 .tabs-alltabs-button {
-  margin: 2px 0px 1px;
 }
 
 /* All tabs menupopup */
@@ -126,6 +125,10 @@ tabbrowser > tabbox > tabpanels {
 /* ::::: close & new tab buttons ::::: */
 
 .tabs-closebutton-box {
+  -moz-box-direction: reverse;
+}
+
+.tabs-closebutton-box > hbox {
   -moz-box-orient: vertical;
 }
 
