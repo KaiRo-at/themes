@@ -232,7 +232,6 @@
 .category[selected] {
   background-color: #FFFFFF;
   color: #000000;
-  font-weight: bold;
   border-color: #666699;
 }
 
@@ -394,10 +393,6 @@
   background-origin: border-box;
 }
 
-.addon[status="installing"] {
-  -moz-box-align: center;
-}
-
 .details {
   cursor: pointer;
   margin: 0;
@@ -432,8 +427,7 @@
   list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
 }
 
-.name-container,
-.addon[status="installing"] .name {
+.name-container {
   font-size: 150%;
   font-weight: bold;
   color: #404040;
@@ -642,10 +636,6 @@
   opacity: 0;
 }
 
-#detail-view:not([loading]) .alert-container {
-  visibility: collapse;
-}
-
 #detail-view[loading-extended] .loading {
   opacity: 1;
   -moz-transition-property: opacity;
@@ -693,13 +683,17 @@
   margin-bottom: 2em;
 }
 
-#detail-desc {
+#detail-desc, #detail-fulldesc {
   -moz-margin-start: 6px;
   white-space: pre-wrap;
   /* This is necessary to fix layout issues with multi-line descriptions, see
      bug 592712*/
   outline: solid transparent;
   min-width: 8em;
+}
+
+#detail-fulldesc {
+  margin-top: 1em;
 }
 
 #detail-contributions {
@@ -835,7 +829,6 @@
   border-radius: 0 3px 3px 0;
 }
 
-.download-progress .pause,
 .download-progress .cancel {
   -moz-appearance: none;
   background-color: #CCD0DD;
@@ -845,24 +838,17 @@
   margin: 3px;
 }
 
-.download-progress .pause .button-box,
 .download-progress .cancel .button-box {
   padding: 0;
   border: none;
 }
 
-.download-progress .pause .button-text,
 .download-progress .cancel .button-text {
   display: none;
 }
 
-.download-progress .pause .button-icon,
 .download-progress .cancel .button-icon {
   -moz-margin-start: 0;
-}
-
-.download-progress .pause {
-  list-style-image: url('chrome://mozapps/skin/extensions/pause.png');
 }
 
 .download-progress .cancel {

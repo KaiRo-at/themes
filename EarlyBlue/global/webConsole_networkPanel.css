@@ -47,6 +47,7 @@ body {
 #header {
   padding: 5px;
   overflow-x:auto;
+  display: block;
 }
 
 h1 {
@@ -64,6 +65,7 @@ h1 .info {
   float: right;
   color: #666699;
   padding-right: 3px;
+  display: block;
 }
 
 .property-table {

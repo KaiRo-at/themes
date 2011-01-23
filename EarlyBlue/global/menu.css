@@ -44,7 +44,8 @@
 /* ::::: menu/menuitem ::::: */
 
 menu,
-menuitem {
+menuitem,
+.splitmenu-menuitem {
   -moz-box-align: center;
   max-width: 42em;
   color: #000000;
@@ -56,15 +57,18 @@ menuitem[default="true"] {
 }
 
 menu[_moz-menuactive="true"],
-menuitem[_moz-menuactive="true"] {
+menuitem[_moz-menuactive="true"],
+.splitmenu-menuitem[_moz-menuactive="true"] {
   background-color: #336699;
   color: #FFFFFF;
 }
 
 menu[disabled="true"],
 menuitem[disabled="true"],
+.splitmenu-menuitem[disabled="true"],
 menu[_moz-menuactive="true"][disabled="true"],
-menuitem[_moz-menuactive="true"][disabled="true"] {
+menuitem[_moz-menuactive="true"][disabled="true"],
+.splitmenu-menuitem[_moz-menuactive="true"][disabled="true"] {
   color: #999999;
 }
 
