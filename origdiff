@@ -4,7 +4,7 @@ RUN_DIR=$(pwd)
 cd $(dirname "$0")
 SCRIPT_DIR=$(pwd)
 
-REPO_LIST="COMM MOZ DOMI CZ"
+REPO_LIST="COMM MOZ MOZB DOMI CZ"
 
 if [ -n "$1" ]; then
   SRC_DATE="$1"
@@ -19,6 +19,11 @@ if [ -n "$1" ]; then
   MOZ_HG_OPTIONS=
   MOZ_DIR=toolkit/themes/winstripe/
   MOZ_LOG=$RUN_DIR/themelog-tkwinstripe.$SRC_DATE.$DST_DATE.log
+
+  HG_MOZB_DIR=/mnt/mozilla/hg/comm-central/mozilla
+  MOZB_HG_OPTIONS=
+  MOZB_DIR=browser/themes/winstripe/
+  MOZB_LOG=$RUN_DIR/themelog-browserwin.$SRC_DATE.$DST_DATE.log
 
   HG_DOMI_DIR=/mnt/mozilla/hg/comm-central/mozilla/extensions/inspector
   DOMI_HG_OPTIONS=

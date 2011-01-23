@@ -158,7 +158,7 @@ menubar {
   -moz-margin-start: .5em;
 }
 
-.split-menuitem-menu {
+.splitmenu-menu {
   -moz-box-pack: end;
 }
 
@@ -328,7 +328,7 @@ toolbarbutton.bookmark-item[open="true"] {
 menu.bookmark-item,
 menuitem.bookmark-item {
   min-width: 0;
-  max-width: 26em;
+  max-width: 32em;
 }
 
 .bookmark-item > .menu-iconic-left {
@@ -395,11 +395,10 @@ menuitem.bookmark-item {
 .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   min-width: 36px;
   min-height: 36px;
-  -moz-box-orient: vertical;
 }
 
-.toolbarbutton-1[type="menu-button"] {
-  -moz-box-orient: horizontal;
+.toolbarbutton-1:not([type="menu-button"]) {
+  -moz-box-orient: vertical;
 }
 
 .toolbarbutton-1,
@@ -745,6 +744,10 @@ toolbar:not([iconsize="small"])[mode="icons"] #forward-button:not([disabled="tru
 
 /* ::::: fullscreen window controls ::::: */
 
+#TabsToolbar > #window-controls {
+  -moz-margin-start: 4px;
+}
+
 #minimize-button,
 #restore-button,
 #close-button {
@@ -861,12 +864,14 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 #urlbar-display {
   margin-top: -2px;
   margin-bottom: -2px;
-  padding-top: 3px;
-  padding-bottom: 2px;
-  -moz-padding-end: 3px;
-  color: #8050B0;
   -moz-border-end: 1px solid #9C9CFF;
   -moz-margin-end: 3px;
+}
+
+#urlbar-display {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #8050B0;
 }
 
 /* over-link in location bar */
@@ -1212,14 +1217,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 #tabbrowser-tabs[tabsontop="true"] > .tabbrowser-arrowscrollbox > scrollbox:not(:-moz-lwtheme) {
-  padding-bottom: 1px;
   margin-bottom: -1px;
-  position: relative;
-}
-
-#tabbrowser-tabs[tabsontop="true"] > .tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) {
-  margin-bottom: -1px;
-  padding-bottom: 1px;
 }
 
 /* Tabs */
@@ -1662,6 +1660,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 .notification-anchor-icon:-moz-focusring {
   outline: 1px dotted -moz-DialogText;
   outline-offset: -3px;
+}
+
+#default-notification-icon {
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
 }
 
 #geo-notification-icon {
