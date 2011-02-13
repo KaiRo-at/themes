@@ -1,29 +1,22 @@
 /* Tab Modal Prompt boxes */
 tabmodalprompt {
-  background-color: hsla(0,0%,97%,.15);
-  background-image: -moz-radial-gradient(center 40%, circle closest-side, hsla(0,0%,90%,.5), hsla(0,0%,90%,0));
+  background-color: hsla(0,0%,10%,.5);
+  font-family: sans-serif; /* use content font not system UI font */
 }
 
 .mainContainer {
-  padding: 20px;
   color: #000000;
   background-color: #CCD0DD;
+  background-clip: padding-box;
   border: 1px outset #CCD0DD;
 }
 
+.topContainer {
+  padding: 20px;
+}
+
 .buttonContainer {
-  margin-top: 10px;
-}
-
-.info\.icon {
-  width: 64px !important;
-  height: 64px !important;
-}
-
-.alert-icon {
-  list-style-image: url("chrome://global/skin/icons/information-tabmodal-64.png") !important;
-}
-
-.question-icon {
-  list-style-image: url("chrome://global/skin/icons/question-tabmodal-64.png") !important;
+  padding: 12px 20px 15px;
+  background-color: #9999CC;
+  border-top: 1px solid #666699;
 }
