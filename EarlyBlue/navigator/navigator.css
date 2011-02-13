@@ -100,9 +100,19 @@
   -moz-image-region: rect(84px 50px 105px 25px);
 }
 
+#sync-button {
+  list-style-image: url("chrome://communicator/skin/sync/sync-32.png");
+}
+
+#sync-button[status=active] {
+  list-style-image: url("chrome://communicator/skin/sync/sync-32-throbber.png");
+}
+
 #clear-button {
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
+
+/* ::::: small primary toolbar buttons ::::: */
 
 toolbar[iconsize="small"] > #back-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
@@ -156,6 +166,16 @@ toolbar[iconsize="small"] > #home-button {
 
 toolbar[iconsize="small"] > #home-button[disabled="true"] {
   -moz-image-region: rect(64px 32px 80px 16px) !important;
+}
+
+toolbar[iconsize="small"] > toolbarpaletteitem > #sync-button,
+toolbar[iconsize="small"] > #sync-button {
+  list-style-image: url("chrome://communicator/skin/sync/sync-16.png");
+}
+
+toolbar[iconsize="small"] > toolbarpaletteitem > #sync-button[status=active],
+toolbar[iconsize="small"] > #sync-button[status=active] {
+  list-style-image: url("chrome://communicator/skin/sync/sync-16-throbber.png");
 }
 
 /* ::::: fullscreen window controls ::::: */
@@ -239,6 +259,12 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   height: 32px;
 }
 
+.popup-notification-icon[popupid="indexedDB-permissions-prompt"],
+.popup-notification-icon[popupid="indexedDB-quota-prompt"] {
+  list-style-image: url("chrome://global/skin/icons/question-64.png");
+}
+
+.popup-notification-icon[popupid="password-change"],
 .popup-notification-icon[popupid="password-save"] {
   list-style-image: url("chrome://mozapps/skin/passwordmgr/key-64.png");
 }
@@ -252,6 +278,12 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   outline: 1px dotted;
 }
 
+#default-notification-icon {
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  width: 16px;
+  height: 16px;
+}
+
 #geo-notification-icon {
   list-style-image: url("chrome://communicator/skin/icons/geolocation-16.png");
   width: 16px;
@@ -260,6 +292,12 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 
 #addons-notification-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
+  width: 16px;
+  height: 16px;
+}
+
+#indexedDB-notification-icon {
+  list-style-image: url("chrome://global/skin/icons/question-16.png");
   width: 16px;
   height: 16px;
 }
