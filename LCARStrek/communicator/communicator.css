@@ -122,6 +122,16 @@ menuitem.menuitem-iconic > .menu-iconic-left {
   display: -moz-box;
 }
 
+/* ::::: sync notification ::::: */
+
+#sync-notifications > notification {
+  margin-top: 3px;
+}
+
+#sync-notifications > notification > .notification-inner > hbox > button {
+  margin: 0;
+}
+
 /******* lightweight themes *******/
 
 toolbar button:-moz-lwtheme,

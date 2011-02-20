@@ -117,6 +117,8 @@ html|*.menulist-editable-input {
   margin: 0px !important;
   border: none !important;
   padding: 0px !important;
+  background-color: inherit;
+  color: inherit;
   font: inherit;
 }
 

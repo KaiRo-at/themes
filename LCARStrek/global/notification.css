@@ -52,7 +52,7 @@ notification[type="critical"] .messageImage {
 }
 
 .messageCloseButton > .toolbarbutton-icon {
-  -moz-margin-start: 5px;
+  -moz-margin-start: 2px;
 }
 
 /* Popup notification */
