@@ -32,22 +32,12 @@ if [ -e $WORK_DIR ] ; then
 fi
 mkdir -p $WORK_DIR/chrome
 
-echo copying basic files....
-cp $THEME_DIR/install.rdf $THEME_DIR/icon.png $THEME_DIR/preview.png $WORK_DIR/
-
-echo packing internal jar file...
-cd $THEME_DIR
-SUBDIRS=
-for filename in *; do
-  if [ -d "$filename" ]; then
-    SUBDIRS="$SUBDIRS $filename"
-  fi
-done
-zip -rX0Dq $WORK_DIR/chrome/$THEME_NAME.jar $SUBDIRS
+echo copying theme files...
+cp -a $THEME_DIR/* $WORK_DIR/
 cd $WORK_DIR
 
-echo adjusting manifest...
-sed -e "s/skin \w* $THEME_NAME /\0jar:chrome\/$THEME_NAME.jar\!\//" $THEME_DIR/chrome.manifest > chrome.manifest
+echo removing x-* file not intended for shipping...
+rm -rf x-*
 
 echo creating new xpi file...
 if [ -e $XPI_FILE ] ; then
