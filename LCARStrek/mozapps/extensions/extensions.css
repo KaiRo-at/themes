@@ -623,6 +623,12 @@
   background-color: #008484;
 }
 
+.addon-view[pending="enable"] .pending,
+.addon-view[pending="upgrade"] .pending,
+.addon-view[pending="install"] .pending {
+  color: #000000;
+}
+
 .addon-view[pending="disable"],
 .addon-view[pending="uninstall"] {
   color: #8050B0;
