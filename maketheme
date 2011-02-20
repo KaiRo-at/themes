@@ -26,34 +26,24 @@ THEME_DIR=$SCRIPT_DIR/$THEME_NAME/
 WORK_DIR=$SCRIPT_DIR/$THEME_NAME.tmp/
 XPI_FILE=$SCRIPT_DIR/$THEME_NAME.xpi
 
-echo ensuring a clean work directory...
+echo "Ensuring a clean work directory..."
 if [ -e $WORK_DIR ] ; then
   rm -rf $WORK_DIR/*
 fi
 mkdir -p $WORK_DIR/chrome
 
-echo copying basic files....
-cp $THEME_DIR/install.rdf $THEME_DIR/icon.png $THEME_DIR/preview.png $WORK_DIR/
-
-echo packing internal jar file...
-cd $THEME_DIR
-SUBDIRS=
-for filename in *; do
-  if [ -d "$filename" ]; then
-    SUBDIRS="$SUBDIRS $filename"
-  fi
-done
-zip -rX0Dq $WORK_DIR/chrome/$THEME_NAME.jar $SUBDIRS
+echo "Copying theme files..."
+cp -a $THEME_DIR/* $WORK_DIR/
 cd $WORK_DIR
 
-echo adjusting manifest...
-sed -e "s/skin \w* $THEME_NAME /\0jar:chrome\/$THEME_NAME.jar\!\//" $THEME_DIR/chrome.manifest > chrome.manifest
+echo "Removing x-* files not intended for shipping..."
+rm -rf x-*
 
-echo creating new xpi file...
+echo "Creating new xpi file..."
 if [ -e $XPI_FILE ] ; then
   rm $XPI_FILE
 fi
 zip -rX9Dq $XPI_FILE *
 
-echo cleaning work directory...
+echo "Cleaning work directory..."
 rm -rf $WORK_DIR
