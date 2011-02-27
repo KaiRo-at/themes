@@ -77,6 +77,7 @@
   -moz-image-region: rect(63px 50px 84px 25px);
 }
 
+
 /*** global warnings ***/
 
 .global-warning-container {
@@ -174,6 +175,7 @@
   border: 1px inset #CCD0DD;
   border-radius: 8px;
   background-color: #CCD0DD;
+  background-clip: padding-box;
 }
 
 .alert .alert-title {
@@ -439,16 +441,18 @@
   width: 48px;
   height: 48px;
   margin: 3px 7px;
-}
-
-.addon[active="false"] .icon {
-/*  filter: url("chrome://mozapps/skin/extensions/extensions.svg#greyscale"); */
+  -moz-box-align: center;
+  -moz-box-pack: center;
 }
 
 .icon {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
   max-width: 48px;
   max-height: 48px;
+}
+
+.addon[active="false"] .icon {
+/*  filter: url("chrome://mozapps/skin/extensions/extensions.svg#greyscale"); */
 }
 
 .addon-view[type="theme"] .icon {
@@ -468,6 +472,7 @@
   font-weight: bold;
   color: #404040;
   margin-bottom: 0;
+  -moz-box-align: end;
 }
 
 .creator {
@@ -481,6 +486,7 @@
 .description-container {
   margin-top: 8px;
   -moz-margin-start: 6px;
+  -moz-box-align: center;
 }
 
 .description {
@@ -493,6 +499,44 @@
 .info {
   -moz-margin-start: 48px;
   font-weight: bold;
+  -moz-box-align: center;
+}
+
+.content-container,
+.basicinfo-container {
+  -moz-box-align: start;
+}
+
+.addon[status="installing"] > .content-container {
+  -moz-box-align: stretch;
+}
+
+.update-info-container {
+  -moz-box-align: center;
+}
+
+.advancedinfo-container,
+.update-available {
+  -moz-box-align: end;
+}
+
+.install-status-container {
+  -moz-box-pack: end;
+  -moz-box-align: end;
+}
+
+.name-outer-container {
+  -moz-box-pack: center;
+}
+
+.relnotes-toggle-container,
+.icon-outer-container {
+  -moz-box-pack: start;
+}
+
+.status-container,
+.control-container {
+  -moz-box-pack: end;
 }
 
 .addon-view .warning {
