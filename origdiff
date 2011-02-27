@@ -13,26 +13,31 @@ if [ -n "$1" ]; then
   HG_COMM_DIR=/mnt/mozilla/hg/comm-central
   COMM_HG_OPTIONS=
   COMM_DIR=suite/themes/classic/
+  COMM_NAME_EXTRA=" (suite)"
   COMM_LOG=$RUN_DIR/themelog-suitedefault.$SRC_DATE.$DST_DATE.log
 
   HG_MOZ_DIR=/mnt/mozilla/hg/comm-central/mozilla
   MOZ_HG_OPTIONS=
   MOZ_DIR=toolkit/themes/winstripe/
+  MOZ_NAME_EXTRA=" (toolkit)"
   MOZ_LOG=$RUN_DIR/themelog-tkwinstripe.$SRC_DATE.$DST_DATE.log
 
   HG_MOZB_DIR=/mnt/mozilla/hg/comm-central/mozilla
   MOZB_HG_OPTIONS=
   MOZB_DIR=browser/themes/winstripe/
+  MOZB_NAME_EXTRA=" (browser)"
   MOZB_LOG=$RUN_DIR/themelog-browserwin.$SRC_DATE.$DST_DATE.log
 
   HG_DOMI_DIR=/mnt/mozilla/hg/comm-central/mozilla/extensions/inspector
   DOMI_HG_OPTIONS=
   DOMI_DIR=resources/skin/classic/
+  DOMI_NAME_EXTRA=
   DOMI_LOG=$RUN_DIR/themelog-domiclassic.$SRC_DATE.$DST_DATE.log
 
   HG_CZ_DIR=/mnt/mozilla/hg/comm-central/mozilla/extensions/irc
   CZ_HG_OPTIONS=
   CZ_DIR=xul/skin/
+  CZ_NAME_EXTRA=
   CZ_LOG=$RUN_DIR/themelog-chatzilla.$SRC_DATE.$DST_DATE.log
 
   for repo in $REPO_LIST; do
@@ -59,8 +64,10 @@ fi
 for repo in $REPO_LIST; do
   HG_DIR_VAR="HG_${repo}_DIR"
   LOG_VAR="${repo}_LOG"
+  NAME_EXTRA_VAR="${repo}_NAME_EXTRA"
+  NAME_EXTRA=${!NAME_EXTRA_VAR}
   HG_URL=`awk -F ' *= *' '/default *=/ { print $2 }' ${!HG_DIR_VAR}/.hg/hgrc`
-  REPO_NAME=`basename $HG_URL`
+  REPO_NAME=`basename $HG_URL`$NAME_EXTRA
   LOG_NAME=${!LOG_VAR}
   HTML_NAME=${LOG_NAME/.log/.html}
   echo "Writing $HTML_NAME..."
