@@ -12,7 +12,7 @@
 .searchbar-engine-image {
   height: 16px;
   width: 16px;
-  list-style-image: url("chrome://communicator/skin/directory/file.gif");
+  list-style-image: url("chrome://global/skin/filepicker/file.gif");
   -moz-margin-start: 2px;
 }
 
