@@ -39,12 +39,12 @@
 
 /* ::::: formatting buttons ::::: */
 
-#FormatToolbar > toolbarbutton {
-  min-width: 18px;
-}
-
 #FormatToolbar > toolbarbutton > .toolbarbutton-text {
   display: none;
+}
+
+toolbarbutton.formatting-button {
+  min-width: 18px;
 }
 
 #DecreaseFontSizeButton {
@@ -294,49 +294,53 @@
 
 /* ..... insert menu ..... */
 
+#InsertPopup > menuitem {
+  list-style-image: url("chrome://editor/skin/icons/editoricons-small.png");
+}
+
 #InsertLinkItem {
-  list-style-image: url("chrome://editor/skin/icons/link.gif");
+  -moz-image-region: rect(48px 16px 64px 0);
 }
 
 #InsertLinkItem:hover,
 #InsertLinkItem:hover:active {
-  list-style-image: url("chrome://editor/skin/icons/link-hover.gif");
+  -moz-image-region: rect(48px 48px 64px 32px);
 }
 
 #InsertAnchorItem {
-  list-style-image: url("chrome://editor/skin/icons/anchor.gif");
+  -moz-image-region: rect(0px 16px 16px 0);
 }
 
 #InsertAnchorItem:hover,
 #InsertAnchorItem:hover:active {
-  list-style-image: url("chrome://editor/skin/icons/anchor-hover.gif");
+  -moz-image-region: rect(0px 48px 16px 32px);
 }
 
 #InsertImageItem {
-  list-style-image: url("chrome://editor/skin/icons/image.gif");
+  -moz-image-region: rect(32px 16px 48px 0);
 }
 
 #InsertImageItem:hover,
 #InsertImageItem:hover:active {
-  list-style-image: url("chrome://editor/skin/icons/image-hover.gif");
+  -moz-image-region: rect(32px 48px 48px 32px);
 }
 
 #InsertHRuleItem {
-  list-style-image: url("chrome://editor/skin/icons/hline.gif");
+  -moz-image-region: rect(16px 16px 32px 0);
 }
 
 #InsertHRuleItem:hover,
 #InsertHRuleItem:hover:active {
-  list-style-image: url("chrome://editor/skin/icons/hline-hover.gif");
+  -moz-image-region: rect(16px 48px 32px 32px);
 }
 
 #InsertTableItem {
-  list-style-image: url("chrome://editor/skin/icons/table.gif");
+  -moz-image-region: rect(144px 16px 160px 0);
 }
 
 #InsertTableItem:hover,
 #InsertTableItem:hover:active {
-  list-style-image: url("chrome://editor/skin/icons/table-hover.gif");
+  -moz-image-region: rect(144px 48px 160px 32px);
 }
 
 /* ..... smiley menu ..... */
@@ -475,15 +479,18 @@
   list-style-image: url("chrome://editor/skin/icons/notpinned-hover.gif");
 }
 
-#FormatToolbar > #increaseZIndexButton {
+#increaseZIndexButton {
   list-style-image: url("chrome://editor/content/images/bringtofront.gif");
 }
-#FormatToolbar > #increaseZIndexButton[disabled="true"] {
+
+#increaseZIndexButton[disabled="true"] {
   list-style-image: url("chrome://editor/content/images/bringtofront-disabled.gif");
 }
-#FormatToolbar > #decreaseZIndexButton {
+
+#decreaseZIndexButton {
   list-style-image: url("chrome://editor/content/images/sendtoback.gif");
 }
-#FormatToolbar > #decreaseZIndexButton[disabled="true"] {
+
+#decreaseZIndexButton[disabled="true"] {
   list-style-image: url("chrome://editor/content/images/sendtoback-disabled.gif");
 }
