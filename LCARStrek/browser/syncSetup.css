@@ -91,23 +91,25 @@ wizardpage {
 }
 
 .inputColumn {
-  -moz-margin-end: 2px;
+  -moz-margin-end: 2px
 }
 
-.recommended {
-  font-weight: bold;
+.pin {
+  font-size: 18pt;
+  width: 4em;
+  text-align: center;
 }
 
-#connect-throbber image,
-#passphrase-throbber image {
+#passphraseHelpSpacer {
+  width: 0.5em;
+}
+
+#add-device-throbber > image,
+#login-throbber > image {
   list-style-image: url("chrome://global/skin/icons/loading.gif");
 }
 
 #successPageIcon {
   /* TODO replace this with a 128px version (bug 591122) */
-  list-style-image: url("chrome://communicator/skin/sync/sync-32.png");
-}
-
-#pickSetupDesc {
-  padding: 0 7em;
+  list-style-image: url("chrome://browser/skin/sync-32.png");
 }
