@@ -1,11 +1,14 @@
 .searchbar-textbox {
   width: 6em;
   min-width: 6em;
+  margin: 0;
+  -moz-margin-start: 3px;
 }
 
-.textbox-input-box {
-  margin: 0;
+.searchbar-textbox > .autocomplete-textbox-container {
+  padding: 2px;
 }
+
 
 /* ::::: searchbar-engine-button ::::: */
 
@@ -13,16 +16,9 @@
   height: 16px;
   width: 16px;
   list-style-image: url("chrome://communicator/skin/directory/file.gif");
-  -moz-margin-start: 2px;
 }
 
-.searchbar-engine-button {
-  min-width: 0;
-  -moz-padding-end: 2px;
-  background-color: transparent;
-}
-
-.searchbar-dropmarker-image {
+.toolbarbutton-menu-dropmarker {
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
@@ -34,7 +30,6 @@
 }
 
 .search-go-button {
-  padding: 1px;
   -moz-padding-end: 2px;
   list-style-image: url("chrome://global/skin/icons/search.png");
   -moz-image-region: rect(0, 16px, 16px, 0);

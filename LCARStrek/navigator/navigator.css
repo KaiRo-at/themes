@@ -308,8 +308,8 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   padding: 2px;
 }
 
-#urlbar[level="high"] > .autocomplete-textbox-container,
-#urlbar[level="low"] > .autocomplete-textbox-container {
+.urlbar-security-level[level="high"],
+.urlbar-security-level[level="low"] {
   background-color: #FFCF00;
   color: #000000;
 }
@@ -658,24 +658,24 @@ toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
 
 /* ::::: feeds ::::: */
 
-#feedsMenu {
-  list-style-image: url("chrome://navigator/skin/linkButtons/feeds.png") !important;
+.feedsMenu {
+  list-style-image: url("chrome://navigator/skin/linkButtons/feeds.png");
   -moz-image-region: rect(0px 16px 16px 0px);
 }
 
-#feedsMenu[disabled="true"] {
+.feedsMenu[disabled="true"] {
   -moz-image-region: rect(32px 16px 48px 0px);
 }
 
-#feedsButton {
+.feedsButton {
   list-style-image: url("chrome://navigator/skin/linkButtons/feeds.png");
   -moz-image-region: rect(0px 32px 16px 16px);
 }
 
-#feedsButton:hover {
+.feedsButton:hover {
   -moz-image-region: rect(16px 32px 32px 16px);
 }
 
-#feedsButton:hover:active {
+.feedsButton:hover:active {
   -moz-image-region: rect(48px 32px 64px 16px);
 }
