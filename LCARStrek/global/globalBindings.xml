@@ -84,6 +84,19 @@
     </content>
   </binding>
 
+  <binding id="toolbar-menubar-autohide" extends="chrome://global/content/bindings/toolbar.xml#toolbar-menubar-autohide">
+    <content>
+      <xul:hbox flex="1" class="toolbar-box">
+        <xul:vbox class="toolbar-startcap"/>
+        <xul:hbox flex="1" class="toolbar-holder" align="center"
+                  xbl:inherits="collapsed,last-toolbar,orient=tborient,align=tbalign,pack=tbpack">
+          <children/>
+        </xul:hbox>
+        <xul:vbox class="toolbar-endcap"/>
+      </xul:hbox>
+    </content>
+  </binding>
+
   <binding id="menubar" extends="chrome://global/content/bindings/toolbar.xml#menubar">
     <resources>
       <stylesheet src="chrome://global/skin/toolbar.css"/>
