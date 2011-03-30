@@ -223,7 +223,7 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   -moz-margin-start: 3px;
 }
 
-#urlbar > .autocomplete-textbox-container {
+.urlbar-security-level {
   padding: 2px;
 }
 
