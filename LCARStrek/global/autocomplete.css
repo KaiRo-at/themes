@@ -73,16 +73,26 @@ textbox:not(.padded) .textbox-input-box {
 .autocomplete-history-dropmarker {
   min-width: 15px;
   min-height: 15px;
-  background-color: #000000;
   border-radius: 0px 3px 3px 0px;
 }
+.autocomplete-history-dropmarker:-moz-locale-dir(rtl) {
+  border-radius: 3px 0px 0px 3px;
+}
 
-.autocomplete-history-dropmarker,
-.autocomplete-history-dropmarker:hover,
-.autocomplete-history-dropmarker:hover:active,
-.autocomplete-history-dropmarker[open="true"] {
+.autocomplete-history-dropmarker:-moz-locale-dir(ltr),
+.autocomplete-history-dropmarker:-moz-locale-dir(ltr):hover,
+.autocomplete-history-dropmarker:-moz-locale-dir(ltr):hover:active,
+.autocomplete-history-dropmarker:-moz-locale-dir(ltr)[open="true"] {
   border: none;
   border-left: 1px solid #9C9CFF;
+}
+
+.autocomplete-history-dropmarker:-moz-locale-dir(rtl),
+.autocomplete-history-dropmarker:-moz-locale-dir(rtl):hover,
+.autocomplete-history-dropmarker:-moz-locale-dir(rtl):hover:active,
+.autocomplete-history-dropmarker:-moz-locale-dir(rtl)[open="true"] {
+  border: none;
+  border-right: 1px solid #9C9CFF;
 }
 
 /* ::::: autocomplete popups ::::: */
