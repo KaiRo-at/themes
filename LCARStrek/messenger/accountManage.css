@@ -81,7 +81,7 @@ treechildren::-moz-tree-cell-text(isDefaultServer-true) {
 }
 
 #backgroundBox {
-  background-color: #CCD0DD;
+  background-color: #000000;
 }
 
 #smtpServerInfoBox textbox {
