@@ -698,12 +698,22 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 
 .unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr),
 .unified-nav-forward[_moz-menuactive]:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://browser/skin/menu-back.png") !important;
+  list-style-image: url("chrome://global/skin/arrow/arrow-left.gif") !important;
+}
+
+.unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr):hover,
+.unified-nav-forward[_moz-menuactive]:-moz-locale-dir(rtl):hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-hover.gif") !important;
 }
 
 .unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr),
 .unified-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://browser/skin/menu-forward.png") !important;
+  list-style-image: url("chrome://global/skin/arrow/arrow-right.gif") !important;
+}
+
+.unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr):hover,
+.unified-nav-back[_moz-menuactive]:-moz-locale-dir(rtl):hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-right.gif") !important;
 }
 
 /* stop button */
@@ -1229,7 +1239,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 
 .ac-result-type-bookmark,
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
-  list-style-image: url("chrome://browser/skin/places/editBookmark.png");
+  list-style-image: url("chrome://browser/skin/places/bookmark.png");
   -moz-image-region: rect(0px 16px 16px 0px);
   width: 16px; 
   height: 16px;
@@ -1365,32 +1375,37 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
-#page-report-button:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
+#page-report-button:hover ,
 #page-report-button:hover:active,
 #page-report-button[open="true"] {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
+  -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
 /* star button */
 
 #star-button {
-  list-style-image: url("chrome://browser/skin/places/bookmark.png");
-  -moz-image-region: rect(0px 16px 16px 0px);
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark.png");
+  -moz-image-region: rect(16px 16px 32px 0px);
 }
 
 #star-button:hover {
-  -moz-image-region: rect(0px 32px 16px 16px);
+  -moz-image-region: rect(16px 32px 32px 16px);
 }
 
 #star-button:hover:active {
-  -moz-image-region: rect(0px 48px 16px 32px);
+  -moz-image-region: rect(16px 48px 32px 32px);
 }
 
 #star-button[starred="true"] {
-  list-style-image: url("chrome://browser/skin/places/editBookmark.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+#star-button[starred="true"]:hover {
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+#star-button[starred="true"]:hover:active {
+  -moz-image-region: rect(0px 48px 16px 32px);
 }
 
 /* bookmarking panel */
