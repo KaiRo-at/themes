@@ -66,6 +66,7 @@
   overflow: hidden; /* crop it when sliding down, don't grow the control bar */
   position: relative; /* Trick to work around negative margin interfering with dragging the thumb. */
   padding-top: 6px;
+  border-radius: 3px 3px 0 0;
 }
 
 .volumeControl {
