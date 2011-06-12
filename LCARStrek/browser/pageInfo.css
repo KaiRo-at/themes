@@ -52,15 +52,15 @@
   padding: 5px 3px 1px 3px;
   margin: 0 1px;
   min-width: 4.5em;
+  border-radius: 3px;
 }
 
 #viewGroup > radio:hover {
-  border: 1px solid #008484;
-  color: #FFCF00;
+  background-color: #FFCF00;
+  color: #000000;
 }
 
 #viewGroup > radio[selected="true"] {
-  border: 1px solid #9C9CFF;
   background-color: #008484;
   color: #FFCF00;
 }
@@ -123,6 +123,10 @@ tree {
 
 .gridSeparator {
   width: .5em;
+}
+
+row > label {
+  padding: 3px 0;
 }
 
 textbox {
