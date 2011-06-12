@@ -1,0 +1,161 @@
+html {
+  background: #000000;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+}
+
+#feedBody {
+  border: 1px solid #9C9CFF;
+  padding: 2em;
+  -moz-padding-start: 30px;
+  margin: 2em auto;
+  background: #FFFFFF;
+}
+
+#feedHeaderContainer {
+  border: 1px solid #9C9CFF;
+  border-radius: 10px;
+  margin: -3em auto 0 auto;
+  background-color: #FFCF00;
+}
+
+#feedHeader {
+  margin-top: 3.9em;
+  margin-bottom: 1em;
+  -moz-margin-start: 2em;
+  -moz-margin-end: 1em;
+  /* padding for making up icon space */
+  -moz-padding-start: 35px;
+  font-size: 110%;
+  color: #000000;
+}
+
+.alwaysUse .checkbox-check {
+  border-color: #9C9CFF !important;
+  background-color: #000000 !important;
+}
+
+.alwaysUse .checkbox-label-box {
+  color: #000000 !important;
+}
+
+.feedBackground {
+  background: url("chrome://communicator/skin/icons/feedIcon.png") 0% 10% no-repeat #FFCF00;
+}
+
+.videoPodcastBackground {
+  background: url("chrome://communicator/skin/icons/videoFeedIcon.png") 0% 10% no-repeat #FFCF00;
+}
+
+.audioPodcastBackground {
+  background: url("chrome://communicator/skin/icons/audioFeedIcon.png") 0% 10% no-repeat #FFCF00;
+}
+
+#feedHeader[dir="rtl"] {
+  background-position: 100% 10%;
+}
+
+#feedHeader[firstrun="true"] #feedIntroText {
+  padding-top: 0.1em;
+  -moz-padding-start: 0.6em;
+  display: block;
+}
+
+#feedHeader[firstrun="true"] > #feedSubscribeLine {
+  -moz-padding-start: 1.8em;
+}
+
+#feedSubscribeLine {
+  padding-top: 0.2em;
+}
+
+/* Don't print subscription UI */
+@media print {
+  #feedHeaderContainer {
+    display: none;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0 2em;
+  color: #000000;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+}
+
+h1 {
+  font-size: 160%;
+  border-bottom: 2px solid #008484;
+  margin: 0 0 .2em 0;
+}
+
+h2 {
+  font-size: 110%;
+  font-weight: normal;
+  margin: 0 0 .6em 0;
+}
+
+#feedTitleLink {
+  float: right;
+  -moz-margin-start: .6em;
+  -moz-margin-end: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a[href] img {
+  border: none;
+}
+
+#feedTitleContainer {
+  -moz-margin-start: 0;
+  -moz-margin-end: .6em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#feedTitleImage {
+  -moz-margin-start: .6em;
+  -moz-margin-end: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 300px;
+  max-height: 150px;
+}
+
+.feedEntryContent {
+  font-size: 110%;
+}
+
+.link {
+  color: #0000FF;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link:hover:active {
+  color: #FF0000;
+}
+
+.lastUpdated {
+  font-size: 85%;
+  font-weight: normal;
+}
+
+.type-icon {
+  vertical-align: bottom;
+  height: 16px;
+  width: 16px;
+}
+
+.enclosures {
+  border: 1px solid #9C9CFF;
+  padding: 1em;
+  margin: 1em auto;
+  background: #000000;
+  color: #FF9C00;
+}
+
+.enclosure {
+  vertical-align: middle;
+  margin-left: 2px;
+}
