@@ -163,12 +163,16 @@ menubar {
 }
 
 #appmenu-button > .button-box > .button-menu-dropmarker {
-  list-style-image: url("appmenu-dropmarker.png");
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
   width: auto;
   height: auto;
   padding: 0;
   margin: 0;
   -moz-margin-start: .5em;
+}
+
+#main-window[privatebrowsingmode=temporary] #appmenu-button > .button-box > .button-menu-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
 #appmenuPrimaryPane > menuitem,
