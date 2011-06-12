@@ -136,12 +136,16 @@ menubar {
   background-clip: padding-box;
   border-radius: 0;
   border: none;
-  border-left: 3px solid #000000;
   border-right: 3px solid #000000;
   color: #000000;
   font-weight: bold;
-  padding: 0 1.5em .05em;
-  margin: 0 0 2px;
+  padding: 1px 1.5em;
+  margin: 0;
+}
+
+#appmenu-button:-moz-locale-dir(rtl) {
+  border-left: 3px solid #000000;
+  border-right: none;
 }
 
 #main-window[privatebrowsingmode=temporary] #appmenu-button {
@@ -168,6 +172,8 @@ menubar {
   height: auto;
   padding: 0;
   margin: 0;
+  border: none;
+  background-color: transparent;
   -moz-margin-start: .5em;
 }
 
@@ -336,13 +342,28 @@ menubar {
 
 /* ::::: titlebar ::::: */
 
+#titlebar {
+  /* like menubar */
+  background-color: #6000CF;
+  color: #FF9F00;
+}
+#titlebar:-moz-window-inactive {
+  background-color: #8050B0;
+  color: #FF9F00;
+}
+
 #main-window[sizemode="normal"] > #titlebar {
+  margin-top: -3px;
+  margin-bottom: 3px;
 }
 
 #main-window[sizemode="maximized"] > #titlebar {
+  margin-top: 4px;
 }
 
 #titlebar-buttonbox {
+  margin-top: 5px;
+  -moz-margin-end: 3px;
 }
 
 #main-window[sizemode="maximized"] #titlebar-buttonbox {
@@ -359,15 +380,35 @@ menubar {
 /* titlebar command buttons */
 
 #titlebar-min {
+  list-style-image: url("chrome://navigator/skin/icons/win-minimize.gif");
+}
+
+#titlebar-min:hover {
+  list-style-image: url("chrome://navigator/skin/icons/win-minimize-hover.gif");
 }
 
 #titlebar-max {
+  list-style-image: url("chrome://browser/skin/win-maximize.gif");
+}
+
+#titlebar-max:hover {
+  list-style-image: url("chrome://browser/skin/win-maximize-hover.gif");
 }
 
 #main-window[sizemode="maximized"] #titlebar-max {
+  list-style-image: url("chrome://navigator/skin/icons/win-restore.gif");
+}
+
+#main-window[sizemode="maximized"] #titlebar-max:hover {
+  list-style-image: url("chrome://navigator/skin/icons/win-restore-hover.gif");
 }
 
 #titlebar-close {
+  list-style-image: url("chrome://navigator/skin/icons/win-close.gif");
+}
+
+#titlebar-close:hover {
+  list-style-image: url("chrome://navigator/skin/icons/win-close-hover.gif");
 }
 
 /* ::::: bookmark buttons ::::: */
