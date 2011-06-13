@@ -430,12 +430,12 @@ menubar {
 #wrapper-personal-bookmarks[place="palette"] > .toolbarpaletteitem-box {
   width: 16px;
   height: 16px;
-  background: url("chrome://browser/skin/places/bookmarksToolbar.png") no-repeat;
+  background: url("chrome://communicator/skin/bookmarks/bookmarksToolbar.png") no-repeat;
 }
 
 .bookmarks-toolbar-customize {
   max-width: 15em !important;
-  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png") !important;
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmarksToolbar.png") !important;
 }
 
 /* ::::: bookmark menus ::::: */
@@ -459,28 +459,31 @@ menuitem.bookmark-item {
 
 .bookmark-item  {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+  -moz-image-region: auto;
 }
 
 .bookmark-item[container] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
+  -moz-image-region: auto;
 }
 
 .bookmark-item[container][open] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
+  -moz-image-region: auto;
 }
 
-.bookmark-item[container][livemark] { 
-  list-style-image: url("chrome://browser/skin/livemark-folder.png");
+.bookmark-item[container][livemark] {
+  list-style-image: url("chrome://communicator/skin/bookmarks/livemark-folder.png");
   -moz-image-region: auto;
 }
 
 .bookmark-item[container][livemark] .bookmark-item {
-  list-style-image: url("chrome://browser/skin/livemark-item.png");
+  list-style-image: url("chrome://communicator/skin/bookmarks/livemark-item.png");
   -moz-image-region: auto;
 }
 
 .bookmark-item[container][query] {
-  list-style-image: url("chrome://browser/skin/places/query.png");
+  list-style-image: url("chrome://communicator/skin/bookmarks/query.png");
   -moz-image-region: auto;
 }
 
@@ -490,16 +493,18 @@ menuitem.bookmark-item {
 }
 
 .bookmark-item[query][dayContainer] {
-  list-style-image: url("chrome://browser/skin/places/calendar.png");
+  list-style-image: url("chrome://communicator/skin/history/calendar.png");
   -moz-image-region: auto;
 }
 
 .bookmark-item[query][hostContainer] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-closed.gif");
+  -moz-image-region: auto;
 }
 
 .bookmark-item[query][hostContainer][open] {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-folder-open.gif");
+  -moz-image-region: auto;
 }
 
 /* ::::: primary toolbar buttons ::::: */
@@ -885,11 +890,12 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 
 #bookmarks-button,
 #bookmarks-menu-button {
+  list-style-image: url("chrome://browser/skin/Toolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 144px, 18px, 126px);
 }
 
 #bookmarks-menu-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
+  /* list-style-image: url("chrome://browser/skin/Toolbar.png"); */
 }
 
 #bookmarks-menu-button.toolbarbutton-1 {
@@ -1056,6 +1062,7 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 /* sync button */
 
 #sync-button {
+  list-style-image: url("chrome://browser/skin/Toolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 324px, 18px, 306px);
 }
 
@@ -1300,7 +1307,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 
 .ac-result-type-tag,
 .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
-  list-style-image: url("chrome://browser/skin/places/tag.png");
+  list-style-image: url("chrome://mozapps/skin/places/tagContainerIcon.png");
   width: 16px; 
   height: 16px;
 }
@@ -1572,7 +1579,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   width: 16px;
   height: 16px;
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  -moz-image-region: auto;
   -moz-margin-end: 3px;
 }
 
@@ -1685,32 +1692,32 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   -moz-image-region: rect(0, 14px, 16px, 0);
 }
 
+#alltabs-button:hover,
 #alltabs-button:hover:active {
   -moz-image-region: rect(0, 28px, 16px, 14px);
 }
 
 #alltabs-button[type="menu"] {
-  list-style-image: url("chrome://browser/skin/mainwindow-dropdown-arrow.png");
-  -moz-image-region: rect(0, 13px, 11px, 0);
-}
-
-#alltabs-button[type="menu"] > .toolbarbutton-icon {
-  margin: 3px 0;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+  -moz-image-region: auto;
 }
 
 #alltabs-button[type="menu"] > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 
+#alltabs-button[type="menu"]:hover,
 #alltabs-button[type="menu"]:hover:active,
 #alltabs-button[type="menu"][open="true"] {
-  -moz-image-region: rect(0, 26px, 11px, 13px);
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+  -moz-image-region: auto;
 }
 
 /* All tabs menupopup */
 .alltabs-item > .menu-iconic-left > .menu-iconic-icon {
   list-style-image: url("chrome://global/skin/icons/folder-item.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
+  -moz-image-region: auto;
 }
 
 .alltabs-item[selected="true"] {
@@ -1730,6 +1737,10 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .tabs-closebutton > .toolbarbutton-icon {
+}
+
+.tabs-closebutton > .toolbarbutton-text {
+  display: none;
 }
 
 .tabs-closebutton:hover,
@@ -1770,7 +1781,7 @@ toolbar[mode="text"] toolbarbutton.chevron > .toolbarbutton-icon {
 
 /* Bookmarks toolbar */
 #PlacesToolbarDropIndicator {
-  list-style-image: url("chrome://browser/skin/places/toolbarDropMarker.png");
+  list-style-image: url("chrome://communicator/skin/bookmarks/toolbarDropMarker.png");
 }
 
 toolbarbutton.bookmark-item[dragover="true"][open="true"] {
@@ -1988,13 +1999,13 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #bookmarksToolbarFolderMenu,
 #appmenu_bookmarksToolbar,
 #BMB_bookmarksToolbar {
-  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.png");
+  list-style-image: url("chrome://communicator/skin/bookmarks/bookmarksToolbar.png");
   -moz-image-region: auto;
 }
 
 #appmenu_unsortedBookmarks,
 #BMB_unsortedBookmarks {
-  list-style-image: url("chrome://browser/skin/places/unsortedBookmarks.png");
+  list-style-image: url("chrome://communicator/skin/bookmarks/unsortedBookmarks.png");
   -moz-image-region: auto;
 }
 
