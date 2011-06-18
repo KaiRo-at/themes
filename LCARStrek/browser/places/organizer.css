@@ -1,0 +1,125 @@
+
+/* Toolbar */
+#placesToolbar {
+}
+
+/* back & forward buttons */
+#back-button, #forward-button {
+  list-style-image: url(libraryNavigation.png);
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+}
+
+#placesToolbar > toolbarbutton > .toolbarbutton-icon,
+#placesToolbar > toolbarbutton > .toolbarbutton-text {
+  margin: 0;
+  padding: 0;
+}
+
+#back-button,
+#forward-button:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(0px, 24px, 24px, 0px);
+}
+#back-button:not([disabled="true"]):hover,
+#forward-button:not([disabled="true"]):hover:-moz-locale-dir(rtl),
+#back-button:not([disabled="true"]):hover:active,
+#forward-button:not([disabled="true"]):hover:active:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(24px, 24px, 48px, 0px);
+}
+#back-button[disabled="true"],
+#forward-button:-moz-locale-dir(rtl)[disabled="true"] {
+  -moz-image-region: rect(48px, 24px, 72px, 0px) !important;
+}
+
+#forward-button,
+#back-button:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(0px, 48px, 24px, 24px);
+}
+#forward-button:not([disabled="true"]):hover,
+#back-button:not([disabled="true"]):hover:-moz-locale-dir(rtl),
+#forward-button:not([disabled="true"]):hover:active,
+#back-button:not([disabled="true"]):hover:active:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(24px, 48px, 48px, 24px);
+}
+#forward-button[disabled="true"],
+#back-button:-moz-locale-dir(rtl)[disabled="true"] {
+  -moz-image-region: rect(48px, 48px, 72px, 24px) !important;
+}
+
+/* Menu */
+#placesMenu {
+  border: none;
+}
+
+#placesMenu > menu {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.menubar-startcap,
+.menubar-endcap {
+  display: none;
+}
+
+#placesMenu > .toolbar-box > .toolbar-holder {
+  background-color: transparent;
+}
+
+/* organize, view and maintenance buttons icons */
+#organizeButton,
+#viewMenu,
+#maintenanceButton {
+  list-style-image: url("chrome://browser/skin/places/libraryToolbar.png");
+}
+
+/* organize button */
+#organizeButton {
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#organizeButton:hover,
+#organizeButton[open="true"] {
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+/* view button */
+#viewMenu {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+#viewMenu:hover,
+#viewMenu[open="true"] {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+/* maintenance button */
+#maintenanceButton {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+#maintenanceButton:hover,
+#maintenanceButton[open="true"] {
+  -moz-image-region: rect(16px, 48px, 32px, 32px);
+}
+
+/* Root View */
+#placesView {
+}
+
+#placesView > splitter {
+  border: none;
+}
+
+#placesList {
+  border: none;
+}
+
+/* Info box */
+#detailsDeck {
+  padding: 5px 0;
+}
+
+#infoBoxExpanderLabel {
+  -moz-padding-start: 2px;
+}
+
+#organizerScopeBar {
+}
