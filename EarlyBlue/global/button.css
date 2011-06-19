@@ -125,9 +125,21 @@ button[disabled="true"] > .button-box {
 
 /* ::::: menu/menu-button buttons ::::: */
 
-button[type="menu-button"] {
+.button-menubutton-button,
+.button-menubutton-button:hover:active,
+.button-menubutton-button[open="true"],
+.button-menubutton-button[disabled="true"] {
   margin: 0px;
+  background-color: transparent;
   border: none;
+}
+
+button[type="menu-button"]:hover:active > .button-menubutton-button > .button-box,
+button[type="menu-button"][open="true"] > .button-menubutton-button > .button-box {
+  padding-top: 1px;
+  padding-bottom: 0px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 2px;
 }
 
 .button-menu-dropmarker,
@@ -145,7 +157,6 @@ button[type="menu-button"] {
   -moz-margin-start: 2px;
   -moz-margin-end: 0;
 }
-
 
 /* ::::: plain buttons ::::: */
 

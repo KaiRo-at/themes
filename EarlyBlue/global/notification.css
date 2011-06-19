@@ -59,8 +59,8 @@ notification[type="critical"] .messageImage {
 }
 
 .popup-notification-closebutton {
-  -moz-margin-end: -14px;
-  margin-top: -10px;
+  -moz-margin-end: -5px;
+  margin-top: -5px;
 }
 
 .popup-notification-closeitem {
