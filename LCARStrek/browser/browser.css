@@ -1126,6 +1126,7 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 #urlbar {
   width: 7em;
   min-width: 7em;
+  color: #FFBFFF;
 }
 
 #urlbar,
@@ -1188,13 +1189,8 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 }
 
 #urlbar-display {
-  margin-top: -2px;
-  margin-bottom: -2px;
   -moz-border-end: 1px solid #9C9CFF;
   -moz-margin-end: 3px;
-}
-
-#urlbar-display {
   margin-top: 0;
   margin-bottom: 0;
   color: #8050B0;
@@ -1293,7 +1289,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/places/bookmark.png");
   -moz-image-region: rect(0px 16px 16px 0px);
-  width: 16px; 
+  width: 16px;
   height: 16px;
 }
 
@@ -1308,7 +1304,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 .ac-result-type-tag,
 .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
   list-style-image: url("chrome://mozapps/skin/places/tagContainerIcon.png");
-  width: 16px; 
+  width: 16px;
   height: 16px;
 }
 
@@ -1339,8 +1335,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   color: inherit !important;
 }
 
-.autocomplete-treebody::-moz-tree-cell-text(suggesthint, treecolAutoCompleteComment), 
-.autocomplete-treebody::-moz-tree-cell-text(suggestfirst, treecolAutoCompleteComment) 
+.autocomplete-treebody::-moz-tree-cell-text(suggesthint, treecolAutoCompleteComment),
+.autocomplete-treebody::-moz-tree-cell-text(suggestfirst, treecolAutoCompleteComment)
 {
   color: #8050B0;
   font-size: smaller;
@@ -1521,7 +1517,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 #TabsToolbar .toolbar-holder {
-  background-color: #000000; /* correct effect of being an actal toolbar */
+  background-color: #000000; /* correct effect of being an actual toolbar */
 }
 
 #main-window[disablechrome] #TabsToolbar,
@@ -1679,7 +1675,11 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .tabs-newtab-button {
-  width: 31px;
+  width: 28px;
+}
+
+#TabsToolbar > #new-tab-button {
+  width: 26px;
 }
 
 .tabs-newtab-button:hover,

@@ -41,6 +41,10 @@
   == Styles used by XUL grippytoolbar in addition to general toolbar styles.
   ======================================================================= */
 
+toolbar[type="menubar"]:not([autohide="true"]):not([xpfe="false"]):not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#grippytoolbar-drag");
+}
+
 /* ::::: primary toolbar ::::: */
 
 .toolbar-primary > .toolbar-box > .toolbar-holder {

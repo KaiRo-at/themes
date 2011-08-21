@@ -262,6 +262,11 @@ treechildren::-moz-tree-image(subjectCol, news) {
   list-style-image: url("chrome://messenger/skin/icons/message-news.gif");
 }
 
+treechildren::-moz-tree-image(subjectCol, rss, ignoreSubthread),
+treechildren::-moz-tree-image(subjectCol, news, ignoreSubthread) {
+  list-style-image: url("chrome://messenger/skin/icons/message-news-kill.gif");
+}
+
 .tabmail-tab[type="message"][MessageType="rss"][Attachment="true"],
 .tabmail-tab[type="message"][MessageType="nntp"][Attachment="true"],
 tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, rss, attach),
@@ -269,11 +274,21 @@ tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, news, attac
   list-style-image: url("chrome://messenger/skin/icons/message-news-attach.gif");
 }
 
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, rss, attach, ignoreSubthread),
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, news, attach, ignoreSubthread) {
+  list-style-image: url("chrome://messenger/skin/icons/message-news-attach-kill.gif");
+}
+
 .tabmail-tab[type="message"][MessageType="rss"][Attachment="true"][Offline="true"],
 .tabmail-tab[type="message"][MessageType="nntp"][Attachment="true"][Offline="true"],
 tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, rss, attach, offline),
 tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, news, attach, offline) {
   list-style-image: url("chrome://messenger/skin/icons/message-news-attach-offline.gif");
+}
+
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, rss, attach, offline, ignoreSubthread),
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, news, attach, offline, ignoreSubthread) {
+  list-style-image: url("chrome://messenger/skin/icons/message-news-attach-kill-offline.gif");
 }
 
 treechildren::-moz-tree-image(subjectCol, rss, new),
@@ -294,6 +309,11 @@ treechildren::-moz-tree-image(subjectCol, news, new, offline) {
 treechildren::-moz-tree-image(subjectCol, rss, offline),
 treechildren::-moz-tree-image(subjectCol, news, offline) {
   list-style-image: url("chrome://messenger/skin/icons/message-news-offline.gif");
+}
+
+treechildren::-moz-tree-image(subjectCol, rss, offline, ignoreSubthread),
+treechildren::-moz-tree-image(subjectCol, news, offline, ignoreSubthread) {
+  list-style-image: url("chrome://messenger/skin/icons/message-news-kill-offline.gif");
 }
 
 /* ..... new thread icons for watch and ignore ..... */

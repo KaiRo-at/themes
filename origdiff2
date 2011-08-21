@@ -1,0 +1,72 @@
+#!/bin/sh
+
+RUN_DIR=$(pwd)
+cd $(dirname "$0")
+SCRIPT_DIR=$(pwd)
+
+# ============ vars specific to the versions ==============
+
+NAME_PRE=2
+NAME_POST=5
+
+TAG_PRE_COMM=COMM_2_0_BASE
+TAG_POST_COMM=BETA_5_END
+TAG_PRE_MOZ=GECKO_2_0_BASE
+TAG_POST_MOZ=FIREFOX_BETA_5_END
+TAG_PRE_EXT=SEAMONKEY_2_1_RELEASE
+TAG_POST_EXT=SEAMONKEY_2_2_RELEASE
+
+# ===================== process repos =====================
+
+REPO_LIST="COMM MOZ MOZB DOMI CZ"
+
+HG_COMM_DIR=/mnt/mozilla/hg/comm-beta
+COMM_DIR=suite/themes/classic/
+COMM_TAG_PRE=$TAG_PRE_COMM
+COMM_TAG_POST=$TAG_POST_COMM
+COMM_OUT=$RUN_DIR/theme-suitedefault.$NAME_PRE-$NAME_POST.diff
+
+HG_MOZ_DIR=/mnt/mozilla/hg/comm-beta/mozilla
+MOZ_DIR=toolkit/themes/winstripe/
+MOZ_TAG_PRE=$TAG_PRE_MOZ
+MOZ_TAG_POST=$TAG_POST_MOZ
+MOZ_OUT=$RUN_DIR/theme-toolkitwin.$NAME_PRE-$NAME_POST.diff
+
+HG_MOZB_DIR=/mnt/mozilla/hg/comm-beta/mozilla
+MOZB_DIR=browser/themes/winstripe/
+MOZB_TAG_PRE=$TAG_PRE_MOZ
+MOZB_TAG_POST=$TAG_POST_MOZ
+MOZB_OUT=$RUN_DIR/theme-browserwin.$NAME_PRE-$NAME_POST.diff
+
+HG_DOMI_DIR=/mnt/mozilla/hg/comm-beta/mozilla/extensions/inspector
+DOMI_DIR=resources/skin/classic/
+DOMI_TAG_PRE=$TAG_PRE_EXT
+DOMI_TAG_POST=$TAG_POST_EXT
+DOMI_OUT=$RUN_DIR/theme-domiclassic.$NAME_PRE-$NAME_POST.diff
+
+HG_CZ_DIR=/mnt/mozilla/hg/comm-beta/mozilla/extensions/irc
+CZ_DIR=xul/skin/
+CZ_TAG_PRE=$TAG_PRE_EXT
+CZ_TAG_POST=$TAG_POST_EXT
+CZ_OUT=$RUN_DIR/theme-chatzilla.$NAME_PRE-$NAME_POST.diff
+
+for repo in $REPO_LIST; do
+  HG_DIR_VAR="HG_${repo}_DIR"
+  HG_DIR=${!HG_DIR_VAR}
+  SKIN_DIR_VAR="${repo}_DIR"
+  SKIN_DIR=${!SKIN_DIR_VAR}
+  TAG_PRE_VAR="${repo}_TAG_PRE"
+  TAG_PRE=${!TAG_PRE_VAR}
+  TAG_POST_VAR="${repo}_TAG_POST"
+  TAG_POST=${!TAG_POST_VAR}
+  OUT_VAR="${repo}_OUT"
+  OUT_NAME=${!OUT_VAR}
+  if [ ! -e $OUT_NAME ]; then
+    echo "Getting $OUT_NAME..."
+    cd $HG_DIR
+    LC_ALL=C hg diff -r $TAG_PRE -r $TAG_POST $SKIN_DIR > $OUT_NAME
+  fi
+done
+cd $RUN_DIR
+
+echo "done."

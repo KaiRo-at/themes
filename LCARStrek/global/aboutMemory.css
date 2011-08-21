@@ -1,1 +1,15 @@
 @import url("chrome://global/content/aboutMemory.css");
+
+/* correct horrible colors for black background */
+
+.mrValue {
+  color: #E7ADE7;
+}
+
+.mrPerc {
+  color: #008484;
+}
+
+.mrName {
+  color: #9C9CFF;
+}

@@ -35,6 +35,8 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
 #addons-page {
   background-color: #CCD0DD;
   color: #000000;
@@ -52,7 +54,6 @@
 
 .nav-button {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
-  min-width: 0;
 }
 
 #forward-btn {
@@ -320,14 +321,13 @@
   color: #808080;
 }
 
-#header-search[focused="true"] {
+#header-search[focused] {
   background-color: #FFFFFF;
 }
 
 #header-utils-btn {
-  min-width: 4.5em;
   list-style-image: url("chrome://mozapps/skin/extensions/utilities.png");
-  -moz-margin-end: 18px;
+  -moz-margin-end: 16px;
 }
 
 .view-header {
@@ -475,6 +475,7 @@
   color: #404040;
   margin-bottom: 0;
   -moz-box-align: end;
+  -moz-box-flex: 1;
 }
 
 .creator {
@@ -486,7 +487,6 @@
 }
 
 .description-container {
-  margin-top: 8px;
   -moz-margin-start: 6px;
   -moz-box-align: center;
 }
@@ -513,11 +513,11 @@
   -moz-box-align: stretch;
 }
 
+.advancedinfo-container,
 .update-info-container {
   -moz-box-align: center;
 }
 
-.advancedinfo-container,
 .update-available {
   -moz-box-align: end;
 }

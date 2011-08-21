@@ -128,7 +128,37 @@
     </content>
   </binding>
 
+  <binding id="grippytoolbar-drag" extends="chrome://communicator/content/bindings/toolbar.xml#grippytoolbar-drag">
+    <content>
+      <xul:hbox flex="1" class="toolbar-box">
+        <xul:toolbargrippy xbl:inherits="last-toolbar,hidden=grippyhidden"
+                           tbattr="toolbar-grippy"
+                           class="toolbar-grippy"/>
+        <xul:hbox flex="1" class="toolbar-holder"
+                  xbl:inherits="collapsed,last-toolbar,orient,align,pack">
+          <children/>
+        </xul:hbox>
+        <xul:vbox class="toolbar-endcap"/>
+      </xul:hbox>
+    </content>
+  </binding>
+
   <binding id="grippytoolbar-primary" extends="chrome://communicator/content/bindings/toolbar.xml#grippytoolbar-primary">
+    <content>
+      <xul:hbox flex="1" class="toolbar-box">
+        <xul:toolbargrippy xbl:inherits="last-toolbar,hidden=grippyhidden"
+                           tbattr="toolbar-grippy"
+                           class="toolbar-grippy"/>
+        <xul:hbox flex="1" class="toolbar-holder"
+                  xbl:inherits="collapsed,last-toolbar,orient,align,pack">
+          <children/>
+        </xul:hbox>
+        <xul:vbox class="toolbar-endcap"/>
+      </xul:hbox>
+    </content>
+  </binding>
+
+  <binding id="grippytoolbar-primary-drag" extends="chrome://communicator/content/bindings/toolbar.xml#grippytoolbar-primary-drag">
     <content>
       <xul:hbox flex="1" class="toolbar-box">
         <xul:toolbargrippy xbl:inherits="last-toolbar,hidden=grippyhidden"

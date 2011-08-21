@@ -4,70 +4,89 @@ RUN_DIR=$(pwd)
 cd $(dirname "$0")
 SCRIPT_DIR=$(pwd)
 
+# ============ vars specific to the versions ==============
+
+NAME_PRE=2
+NAME_POST=5
+
+TAG_PRE_COMM=COMM_2_0_BASE
+TAG_POST_COMM=BETA_5_END
+TAG_PRE_MOZ=GECKO_2_0_BASE
+TAG_POST_MOZ=FIREFOX_BETA_5_END
+TAG_PRE_EXT=SEAMONKEY_2_1_RELEASE
+TAG_POST_EXT=SEAMONKEY_2_2_RELEASE
+
+# ===================== process repos =====================
+
 REPO_LIST="COMM MOZ MOZB DOMI CZ"
 
-if [ -n "$1" ]; then
-  SRC_DATE="$1"
-  DST_DATE=`TZ=America/Los_Angeles date +%Y-%m-%d`
+HG_COMM_DIR=/mnt/mozilla/hg/comm-beta
+COMM_HG_OPTIONS=
+COMM_DIR=suite/themes/classic/
+COMM_TAG_PRE=$TAG_PRE_COMM
+COMM_TAG_POST=$TAG_POST_COMM
+COMM_NAME_EXTRA=" (suite)"
+COMM_LOG=$RUN_DIR/theme-suitedefault.$NAME_PRE-$NAME_POST.log
 
-  HG_COMM_DIR=/mnt/mozilla/hg/comm-2.0
-  #HG_COMM_DIR=/mnt/mozilla/hg/comm-central
-  COMM_HG_OPTIONS=
-  COMM_DIR=suite/themes/classic/
-  COMM_NAME_EXTRA=" (suite)"
-  COMM_LOG=$RUN_DIR/themelog-suitedefault.$SRC_DATE.$DST_DATE.log
+HG_MOZ_DIR=/mnt/mozilla/hg/comm-beta/mozilla
+MOZ_HG_OPTIONS=
+MOZ_DIR=toolkit/themes/winstripe/
+MOZ_TAG_PRE=$TAG_PRE_MOZ
+MOZ_TAG_POST=$TAG_POST_MOZ
+MOZ_NAME_EXTRA=" (toolkit)"
+MOZ_LOG=$RUN_DIR/theme-toolkitwin.$NAME_PRE-$NAME_POST.log
 
-  HG_MOZ_DIR=/mnt/mozilla/hg/comm-2.0/mozilla
-  #HG_MOZ_DIR=/mnt/mozilla/hg/comm-central/mozilla
-  MOZ_HG_OPTIONS=
-  MOZ_DIR=toolkit/themes/winstripe/
-  MOZ_NAME_EXTRA=" (toolkit)"
-  MOZ_LOG=$RUN_DIR/themelog-tkwinstripe.$SRC_DATE.$DST_DATE.log
+HG_MOZB_DIR=/mnt/mozilla/hg/comm-beta/mozilla
+MOZB_HG_OPTIONS=
+MOZB_DIR=browser/themes/winstripe/
+MOZB_TAG_PRE=$TAG_PRE_MOZ
+MOZB_TAG_POST=$TAG_POST_MOZ
+MOZB_NAME_EXTRA=" (browser)"
+MOZB_LOG=$RUN_DIR/theme-browserwin.$NAME_PRE-$NAME_POST.log
 
-  HG_MOZB_DIR=/mnt/mozilla/hg/comm-2.0/mozilla
-  #HG_MOZB_DIR=/mnt/mozilla/hg/comm-central/mozilla
-  MOZB_HG_OPTIONS=
-  MOZB_DIR=browser/themes/winstripe/
-  MOZB_NAME_EXTRA=" (browser)"
-  MOZB_LOG=$RUN_DIR/themelog-browserwin.$SRC_DATE.$DST_DATE.log
+HG_DOMI_DIR=/mnt/mozilla/hg/comm-beta/mozilla/extensions/inspector
+DOMI_HG_OPTIONS=
+DOMI_DIR=resources/skin/classic/
+DOMI_TAG_PRE=$TAG_PRE_EXT
+DOMI_TAG_POST=$TAG_POST_EXT
+DOMI_NAME_EXTRA=
+DOMI_LOG=$RUN_DIR/theme-domiclassic.$NAME_PRE-$NAME_POST.log
 
-  HG_DOMI_DIR=/mnt/mozilla/hg/comm-2.0/mozilla/extensions/inspector
-  #HG_DOMI_DIR=/mnt/mozilla/hg/comm-central/mozilla/extensions/inspector
-  DOMI_HG_OPTIONS=
-  DOMI_DIR=resources/skin/classic/
-  DOMI_NAME_EXTRA=
-  DOMI_LOG=$RUN_DIR/themelog-domiclassic.$SRC_DATE.$DST_DATE.log
-
-  HG_CZ_DIR=/mnt/mozilla/hg/comm-2.0/mozilla/extensions/irc
-  #HG_CZ_DIR=/mnt/mozilla/hg/comm-central/mozilla/extensions/irc
-  CZ_HG_OPTIONS=
-  CZ_DIR=xul/skin/
-  CZ_NAME_EXTRA=
-  CZ_LOG=$RUN_DIR/themelog-chatzilla.$SRC_DATE.$DST_DATE.log
-
-  for repo in $REPO_LIST; do
-    HG_DIR_VAR="HG_${repo}_DIR"
-    HG_DIR=${!HG_DIR_VAR}
-    HG_OPTIONS_VAR="${repo}_HG_OPTIONS"
-    HG_OPTIONS=${!HG_OPTIONS_VAR}
-    SKIN_DIR_VAR="${repo}_DIR"
-    SKIN_DIR=${!SKIN_DIR_VAR}
-    LOG_VAR="${repo}_LOG"
-    LOG_NAME=${!LOG_VAR}
-    if [ ! -e $LOG_NAME ]; then
-      echo "Getting $LOG_NAME..."
-      cd $HG_DIR
-      LC_ALL=C hg log -d ">$SRC_DATE" $HG_OPTIONS $SKIN_DIR > $LOG_NAME
-    fi
-  done
-  cd $RUN_DIR
-else
-  echo "You must specify a start date."
-  exit 1
-fi
+HG_CZ_DIR=/mnt/mozilla/hg/comm-beta/mozilla/extensions/irc
+CZ_HG_OPTIONS=
+CZ_DIR=xul/skin/
+CZ_TAG_PRE=$TAG_PRE_EXT
+CZ_TAG_POST=$TAG_POST_EXT
+CZ_NAME_EXTRA=
+CZ_LOG=$RUN_DIR/theme-chatzilla.$NAME_PRE-$NAME_POST.log
 
 for repo in $REPO_LIST; do
   HG_DIR_VAR="HG_${repo}_DIR"
+  HG_DIR=${!HG_DIR_VAR}
+  HG_OPTIONS_VAR="${repo}_HG_OPTIONS"
+  HG_OPTIONS=${!HG_OPTIONS_VAR}
+  SKIN_DIR_VAR="${repo}_DIR"
+  SKIN_DIR=${!SKIN_DIR_VAR}
+  TAG_PRE_VAR="${repo}_TAG_PRE"
+  TAG_PRE=${!TAG_PRE_VAR}
+  TAG_POST_VAR="${repo}_TAG_POST"
+  TAG_POST=${!TAG_POST_VAR}
+  LOG_VAR="${repo}_LOG"
+  LOG_NAME=${!LOG_VAR}
+  if [ ! -e $LOG_NAME ]; then
+    echo "Getting $LOG_NAME..."
+    cd $HG_DIR
+    LC_ALL=C hg log -r $TAG_PRE:$TAG_POST $HG_OPTIONS $SKIN_DIR > $LOG_NAME
+  fi
+done
+cd $RUN_DIR
+
+for repo in $REPO_LIST; do
+  HG_DIR_VAR="HG_${repo}_DIR"
+  TAG_PRE_VAR="${repo}_TAG_PRE"
+  TAG_PRE=${!TAG_PRE_VAR}
+  TAG_POST_VAR="${repo}_TAG_POST"
+  TAG_POST=${!TAG_POST_VAR}
   LOG_VAR="${repo}_LOG"
   NAME_EXTRA_VAR="${repo}_NAME_EXTRA"
   NAME_EXTRA=${!NAME_EXTRA_VAR}
@@ -83,7 +102,7 @@ for repo in $REPO_LIST; do
   echo "  </head>" >> $HTML_NAME
   echo "  <body>" >> $HTML_NAME
   echo "  <h1>$REPO_NAME Theme Changes</h1>" >> $HTML_NAME
-  echo "  <h2>$SRC_DATE to $DST_DATE</h2>" >> $HTML_NAME
+  echo "  <h2>$TAG_PRE to $TAG_POST</h2>" >> $HTML_NAME
   echo "    <pre>" >> $HTML_NAME
   sed -e "s/&/\&amp;/g" -e "s/</\&lt;/g" -e "s/>/\&gt;/g" \
       -e "s|\(changeset: *[0-9]*\):\([0-9a-f]*\)|\1:<a href=\"$HG_URL/rev/\2\">\2</a>|" \
