@@ -1227,7 +1227,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 
 #identity-box:-moz-focusring {
   outline: 1px dotted #008484;
-  outline-offset: -3px;
+  outline-offset: -1px;
 }
 
 #identity-box.verifiedDomain:-moz-focusring,
@@ -1238,7 +1238,6 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 #identity-icon-labels {
   -moz-margin-start: 1px;
   -moz-margin-end: 3px;
-  -moz-transform: translate(0, -1px);
 }
 
 /* Location bar dropmarker */
@@ -1264,7 +1263,6 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
   width: 24px;
   height: 18px;
   padding: 1px 4px;
-  background: url("urlbar-favicon-glow.png") center center no-repeat;
 }
 
 #page-proxy-favicon:not([src]) {
@@ -1479,6 +1477,41 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* Implements editBookmarkPanel resizing on folderTree un-collapse. */
 #editBMPanel_folderTree {
   min-width: 27em;
+}
+
+.panel-promo-box {
+  margin: 8px -16px -16px -16px;
+  padding: 8px 16px;
+  background-color: #000000;
+  color: #FF9F00;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top: 1px solid #9C9CFF;
+}
+
+.panel-promo-icon {
+  list-style-image: url("chrome://browser/skin/sync-notification-24.png");
+  -moz-margin-end: 10px;
+  vertical-align: middle;
+}
+
+.panel-promo-closebutton {
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+  -moz-margin-end: -10px;
+  margin-top: -5px;
+}
+
+.panel-promo-closebutton:hover {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+}
+
+.panel-promo-closebutton:hover:active {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+}
+
+.panel-promo-closebutton > .toolbarbutton-text {
+  padding: 0;
+  margin: 0;
 }
 
 /* ::::: content area ::::: */
@@ -1944,7 +1977,25 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 /* Notification icon box */
 #notification-popup-box {
-  margin: 0 3px;
+  position: relative;
+  background-color: #000000;
+  background-clip: padding-box;
+  padding-left: 3px;
+  border-radius: 2.5px 0 0 2.5px;
+  -moz-border-image: url("chrome://browser/skin/urlbar-arrow.png") 0 8 0 0 / 0 8px 0 0;
+  -moz-margin-end: -8px;
+  margin-top: -2px;
+  margin-bottom: -2px;
+}
+
+#notification-popup-box:not([hidden]) + #identity-box {
+  -moz-padding-start: 10px;
+  border-radius: 0;
+}
+
+#notification-popup-box:-moz-locale-dir(rtl),
+.notification-anchor-icon:-moz-locale-dir(rtl) {
+  -moz-transform: scaleX(-1);
 }
 
 .notification-anchor-icon {

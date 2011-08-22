@@ -100,7 +100,7 @@
 
 #detail-view .global-warning {
   padding: 4px 12px;
-  border-bottom: 3px solid #000000;  
+  border-bottom: 3px solid #000000;
 }
 
 @media all and (max-width: 600px) {
@@ -113,6 +113,13 @@
     box-shadow: 0px 0px 2px 5px #FFF;
     border-radius: 10px; */
   }
+}
+
+/*** global informations ***/
+#addons-page .global-info-container {
+  background-color: #9C9CFF;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 /* Plugins aren't yet disabled by safemode (bug 342333),
@@ -289,19 +296,19 @@
 #category-discover > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-discover.png");
 }
-#category-languages > .category-icon {
+#category-locale > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-languages.png");
 }
-#category-searchengines > .category-icon {
+#category-searchengine > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-searchengines.png");
 }
-#category-extensions > .category-icon {
+#category-extension > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-extensions.png");
 }
-#category-themes > .category-icon {
+#category-theme > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-themes.png");
 }
-#category-plugins > .category-icon {
+#category-plugin > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-plugins.png");
 }
 #category-availableUpdates > .category-icon {

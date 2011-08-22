@@ -67,20 +67,20 @@ colorpicker[type="button"][open="true"] {
 /* ::::: colorpicker tiles ::::: */
 
 .colorpickertile {
-  width                 : 20px;
-  height                : 20px;
-  margin                : 1px;
-  border                : 1px inset #CCD0DD;
+  width: 20px;
+  height: 20px;
+  margin: 1px;
+  border: 1px inset #CCD0DD;
 }
 
 .colorpickertile[selected="true"] {
-  border                : 1px solid #000000;
+  border: 1px solid #000000;
 }
 
 .colorpickertile[hover="true"] {
-  border                : 1px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
 }
 
 .cp-light[hover="true"] {
-  border                : 2px dotted #9999CC;
+  border: 2px dotted #9999CC;
 }
