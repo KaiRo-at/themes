@@ -1480,12 +1480,12 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .panel-promo-box {
-  margin: 8px -16px -16px -16px;
-  padding: 8px 16px;
-  background-color: #000000;
+  margin: 5px -6px -6px -6px;
+  padding: 5px;
+  background-color: #000040;
   color: #FF9F00;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   border-top: 1px solid #9C9CFF;
 }
 
@@ -1497,8 +1497,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 .panel-promo-closebutton {
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
-  -moz-margin-end: -10px;
-  margin-top: -5px;
+  -moz-margin-end: -3px;
+  margin-top: -3px;
 }
 
 .panel-promo-closebutton:hover {
@@ -1981,16 +1981,13 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   background-color: #000000;
   background-clip: padding-box;
   padding-left: 3px;
-  border-radius: 2.5px 0 0 2.5px;
+  border-radius: 3px 0 0 3px;
   -moz-border-image: url("chrome://browser/skin/urlbar-arrow.png") 0 8 0 0 / 0 8px 0 0;
   -moz-margin-end: -8px;
-  margin-top: -2px;
-  margin-bottom: -2px;
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
   -moz-padding-start: 10px;
-  border-radius: 0;
 }
 
 #notification-popup-box:-moz-locale-dir(rtl),
@@ -2004,8 +2001,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .notification-anchor-icon:-moz-focusring {
-  outline: 1px dotted -moz-DialogText;
-  outline-offset: -3px;
+  outline: 1px dotted #008484;
+/*  outline-offset: -3px; */
 }
 
 #default-notification-icon {

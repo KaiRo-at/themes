@@ -84,13 +84,48 @@ table {
   border-spacing: 0px;
 }
 
+table + table {
+  margin-top: 1em;
+}
+
 th, td {
   padding: 3px;
 }
 
-th + th,
-td + td {
+th:not(:first-child),
+td:not(:first-child) {
   border-left: 1px dotted #9C9FFF;
+}
+
+/* adjustments for not painting outside of table border */
+thead:first-child > th:first-child, /* prefs table misses a tr in thead */
+thead:first-child > tr:first-child > th:first-child,
+thead:first-child > tr:first-child > td:first-child,
+tbody:first-child > tr:first-child > th:first-child,
+tbody:first-child > tr:first-child > td:first-child {
+  border-top-left-radius: 9px;
+}
+
+thead:first-child > th:last-child, /* prefs table misses a tr in thead */
+thead:first-child > tr:first-child > th:last-child,
+thead:first-child > tr:first-child > td:last-child,
+tbody:first-child > tr:first-child > th:last-child,
+tbody:first-child > tr:first-child > td:last-child {
+  border-top-right-radius: 9px;
+}
+
+thead:last-child > tr:last-child > th:first-child,
+thead:last-child > tr:last-child > td:first-child,
+tbody:last-child > tr:last-child > th:first-child,
+tbody:last-child > tr:last-child > td:first-child {
+  border-bottom-left-radius: 9px;
+}
+
+thead:last-child > tr:last-child > th:last-child,
+thead:last-child > tr:last-child > td:last-child,
+tbody:last-child > tr:last-child > th:last-child,
+tbody:last-child > tr:last-child > td:last-child {
+  border-bottom-right-radius: 9px;
 }
 
 thead th {
@@ -108,9 +143,15 @@ th.column {
   width: 0px;
 }
 
+tr:not(:first-child) > td,
+tr:not(:first-child) > th,
+tbody:not(:first-child) > tr > td,
+tbody:not(:first-child) > tr > th {
+  border-top: 1px dotted #9C9FFF;
+}
+
 td {
   text-align: start;
-  border-top: 1px dotted #9C9FFF;
 }
 
 .prefs-table {
