@@ -1482,7 +1482,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .panel-promo-box {
   margin: 5px -6px -6px -6px;
   padding: 5px;
-  background-color: #000040;
+  background-color: #000000;
   color: #FF9F00;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -2206,10 +2206,7 @@ panel[dimmed="true"] {
 #addon-bar {
   min-height: 20px;
   border-top: 3px solid #000000;
-}
-
-#addon-bar:not(:-moz-lwtheme) {
-  -moz-appearance: statusbar;
+  border-bottom-width: 0;
 }
 
 #addon-bar .toolbar-holder {
@@ -2274,4 +2271,10 @@ panel[dimmed="true"] {
   border-left-style: solid;
   border-top-left-radius: .3em;
   margin-left: 1em;
+}
+
+/* HACK to abolish devily color on main content */
+
+#content {
+  background-color: transparent !important;
 }
