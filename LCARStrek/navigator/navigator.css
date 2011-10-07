@@ -245,6 +245,11 @@ toolbar[iconsize="small"] > #sync-button[status=active] {
   list-style-image: url("chrome://communicator/skin/sync/sync-16-throbber.png");
 }
 
+#FindToolbar:-moz-lwtheme {
+/*  -moz-border-top-colors: transparent;
+  -moz-border-bottom-colors: transparent; */
+}
+
 /* ::::: fullscreen window controls ::::: */
 
 #window-controls {
