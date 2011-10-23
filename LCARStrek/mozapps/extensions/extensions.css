@@ -181,7 +181,7 @@
   margin-bottom: 15px;
 }
 
-.alert .addon-control {
+.alert button {
   margin: 1em 2em;
 }
 
@@ -889,6 +889,10 @@ setting[type="string"] > .setting-input > textbox {
   -moz-box-flex: 1;
 }
 
+setting[type="radio"] > radiogroup {
+  -moz-box-orient: horizontal;
+}
+
 menulist { /* Fixes some styling inconsistencies */
   margin: 1px 5px 2px 5px;
 }
@@ -1039,13 +1043,7 @@ menulist { /* Fixes some styling inconsistencies */
   display: none;
 }
 
-setting[type="color"] colorpicker[type="button"] {
-/*  margin: 1px 5px 2px 5px;
-  padding: 3px;
-  height: 25px; */
-}
-
-.button-link {
+button.button-link {
   background: transparent;
   border: none;
   text-decoration: underline;
@@ -1053,4 +1051,8 @@ setting[type="color"] colorpicker[type="button"] {
   cursor: pointer;
   min-width: 0;
   margin: 0 6px;
+}
+
+/* Needed to override normal button style from inContent.css */
+button.button-link:not([disabled="true"]):active:hover {
 }

@@ -206,7 +206,11 @@
 .statusIcon[type="throbber"] {
   background: url("chrome://communicator/skin/brand/throbber-anim.gif") no-repeat center;
 }
-
+/*
+.statusIcon[type="throbber"][stalled] {
+  background: url("chrome://global/skin/media/stalled.png") no-repeat center;
+}
+*/
 .statusIcon[type="error"] {
   background: url("chrome://global/skin/icons/alert-error.gif") no-repeat center;
 }
