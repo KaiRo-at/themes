@@ -11,6 +11,7 @@ body {
 ----------------------------------*/
 
 .tab {
+  margin: 4px;
   padding-top: 4px;
   -moz-padding-end: 6px;
   padding-bottom: 6px;
@@ -19,7 +20,6 @@ body {
   border-radius: 0.4em;
   border: 1px solid #9C9CFF;
   cursor: pointer;
-  margin: 4px;
 }
 
 .tab canvas,
@@ -117,8 +117,6 @@ html[dir=rtl] .expander {
   bottom: -20px;
   text-align: center;
   width: 94.5%;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .stacked {
@@ -167,15 +165,6 @@ html[dir=rtl] .expander {
 
 /* Tab GroupItem
 ----------------------------------*/
-
-.tabInGroupItem {
-  box-shadow: none;
-  background-color: #000000;
-}
-
-.tabInGroupItem .favicon {
-  background-color: #000000;
-}
 
 .groupItem {
   cursor: move;
