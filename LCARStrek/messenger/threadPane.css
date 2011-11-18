@@ -226,9 +226,33 @@ treechildren::-moz-tree-image(subjectCol, new) {
   list-style-image: url("chrome://messenger/skin/icons/message-mail-new.gif");
 }
 
+treechildren::-moz-tree-image(subjectCol, forwarded) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-forward.gif");
+}
+
+treechildren::-moz-tree-image(subjectCol, replied) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-reply.gif");
+}
+
+treechildren::-moz-tree-image(subjectCol, forwarded, replied) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-forward-reply.gif");
+}
+
 .tabmail-tab[type="message"][Attachment="true"],
 tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, attach) {
   list-style-image: url("chrome://messenger/skin/icons/message-mail-attach.gif");
+}
+
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, attach, forwarded) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-attach-forward.gif");
+}
+
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, attach, replied) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-attach-reply.gif");
+}
+
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, attach, forwarded, replied) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-attach-forward-reply.gif");
 }
 
 .tabmail-tab[type="message"][IMAPDeleted="true"],
@@ -245,9 +269,33 @@ treechildren::-moz-tree-image(subjectCol, new, offline) {
   list-style-image: url("chrome://messenger/skin/icons/message-mail-new-offline.gif");
 }
 
+treechildren::-moz-tree-image(subjectCol, forwarded, offline) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-forward-offline.gif");
+}
+
+treechildren::-moz-tree-image(subjectCol, offline, replied) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-offline-reply.gif");
+}
+
+treechildren::-moz-tree-image(subjectCol, forwarded, offline, replied) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-forward-offline-reply.gif");
+}
+
 .tabmail-tab[type="message"][Attachment="true"][Offline="true"],
 treechildren::-moz-tree-image(subjectCol, attach, offline) {
   list-style-image: url("chrome://messenger/skin/icons/message-mail-attach-offline.gif");
+}
+
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, attach, forwarded, offline) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-attach-forward-offline.gif");
+}
+
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, attach, offline, replied) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-attach-offline-reply.gif");
+}
+
+tree[noattachcol="true"] > treechildren::-moz-tree-image(subjectCol, attach, forwarded, offline, replied) {
+  list-style-image: url("chrome://messenger/skin/icons/message-mail-attach-forward-offline-reply.gif");
 }
 
 .tabmail-tab[type="message"][IMAPDeleted="true"][Offline="true"],

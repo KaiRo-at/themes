@@ -146,7 +146,7 @@ radio[pane=paneSync] {
   width: 16px;
   height: 16px;
   margin: 0 2px;
-  list-style-image: url("chrome://global/skin/filepicker/file.gif");
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
 }
 
 #cookiesChildren::-moz-tree-image(domainCol, container) {

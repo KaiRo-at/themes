@@ -131,6 +131,7 @@ menubar {
 
 /* ::::: app menu button ::::: */
 
+.tab-drag-preview::before,
 #appmenu-button {
   background-color: #FF9F00;
   background-clip: padding-box;
@@ -148,6 +149,7 @@ menubar {
   border-right: none;
 }
 
+#main-window[privatebrowsingmode=temporary] .tab-drag-preview::before,
 #main-window[privatebrowsingmode=temporary] #appmenu-button {
   background-color: #6000CF;
   color: #FFCF00;
@@ -458,7 +460,7 @@ menuitem.bookmark-item {
 /* ::::: bookmark items ::::: */
 
 .bookmark-item  {
-  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
   -moz-image-region: auto;
 }
 
@@ -1071,7 +1073,7 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 
 /* sync button */
 
-#sync-button {
+#sync-button:not([status]) {
   list-style-image: url("chrome://browser/skin/Toolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 324px, 18px, 306px);
 }
@@ -1276,11 +1278,11 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 }
 
 #page-proxy-favicon:not([src]) {
-  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
 }
 
 #page-proxy-favicon[pageproxystate="invalid"] {
-  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+  opacity: 0.5;
 }
 
 #urlbar-throbber {
@@ -1391,9 +1393,13 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   border-bottom-right-radius: 0px;
 }
 
-#urlbar > toolbarbutton:not([disabled]):active:hover {
+#urlbar > toolbarbutton:not([disabled]):active:hover,
+#urlbar-reload-button:not(:hover) {
+  -moz-border-start-style: none;
   -moz-padding-start: 4px;
-  -moz-border-start: none;
+}
+
+#urlbar > toolbarbutton:not([disabled]):active:hover {
 }
 
 #urlbar-go-button {
@@ -1617,7 +1623,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tab-icon-image {
   width: 16px;
   height: 16px;
-  list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
   -moz-image-region: auto;
   -moz-margin-end: 3px;
 }
@@ -1645,7 +1651,25 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   outline: 1px dotted;
 }
 
-/* Tab DnD indicator */
+/* Tab drag and drop */
+.tab-drag-panel {
+  border: 0 !important;
+}
+
+.tab-drag-label {
+  margin: 0 !important;
+  padding: 5px;
+  border: 1px solid #8050B0;
+}
+
+.tab-drag-panel:not([target]) > .tab-drag-label {
+  display: none;
+}
+
+.tab-drag-preview {
+  border: 1px solid #9C9CFF;
+}
+
 .tab-drop-indicator {
   list-style-image: url("chrome://browser/skin/tabbrowser/tabDragIndicator.png");
   margin-bottom: -11px;
@@ -1758,8 +1782,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 /* All tabs menupopup */
 .alltabs-item > .menu-iconic-left > .menu-iconic-icon {
-  list-style-image: url("chrome://global/skin/icons/folder-item.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
   -moz-image-region: auto;
 }
 
@@ -2291,4 +2314,33 @@ panel[dimmed="true"] {
 
 #content {
   background-color: transparent !important;
+}
+
+/* Highlighter */
+
+.highlighter-veil {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#highlighter-close-button {
+  list-style-image: url("chrome://browser/skin/KUI-close.png");
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+#highlighter-close-button:-moz-locale-dir(rtl)  {
+  right: auto;
+  left: 12px;
+}
+
+highlighter-veil-transparentbox {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
+  outline: 1px dashed rgba(255,255,255,0.5);
+  outline-offset: -1px;
+}
+
+#highlighter-veil-transparentbox[locked] {
+  box-shadow: 0 0 0 1px black;
+  outline-color: white;
 }
