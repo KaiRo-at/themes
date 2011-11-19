@@ -1,1 +1,29 @@
 @import url("chrome://global/content/aboutMemory.css");
+
+/* nicer colors for EarlyBlue */
+
+.mrValue {
+  color: #666699;
+}
+
+.mrPerc {
+  color: #808080;
+}
+
+.mrName {
+  color: #000000;
+}
+
+.mrStar {
+  color: #6666CC;
+}
+
+h2.tree {
+  background-color: #666699;
+  color: #CCD0DD;
+  padding: 1px;
+}
+
+h2.tree:hover {
+  background-color: #6699FF;
+}

@@ -13,3 +13,18 @@
 .mrName {
   color: #9C9CFF;
 }
+
+.mrStar {
+  color: #E7ADE7;
+}
+
+h2.tree {
+  background-color: #9C9CFF;
+  color: #000000;
+  border-radius: 3px;
+  padding: 1px;
+}
+
+h2.tree:hover {
+  background-color: #FFCF00;
+}
