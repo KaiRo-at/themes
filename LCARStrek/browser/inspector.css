@@ -3,24 +3,24 @@
  *
  * Copyright (c) 2007, Parakey Inc.
  * All rights reserved.
- * 
+ *
  * Redistribution and use of this software in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- * 
+ *
  * * Redistributions of source code must retain the above
  *   copyright notice, this list of conditions and the
  *   following disclaimer.
- * 
+ *
  * * Redistributions in binary form must reproduce the above
  *   copyright notice, this list of conditions and the
  *   following disclaimer in the documentation and/or other
  *   materials provided with the distribution.
- * 
+ *
  * * Neither the name of Parakey Inc. nor the names of its
  *   contributors may be used to endorse or promote products
  *   derived from this software without specific prior
  *   written permission of Parakey Inc.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
  * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
  * FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
@@ -89,7 +89,7 @@ code {
 .objectLink-function,
 .objectBox-stackTrace,
 .objectLink-profile {
-  font-family: Menlo, Andale Mono, monospace;
+  font-family: monospace;
 }
 
 .objectLink-textNode {
@@ -105,7 +105,7 @@ code {
 .selectorTag,
 .selectorId,
 .selectorClass {
-  font-family: Menlo, Andale Mono, monospace;
+  font-family: monospace;
   font-weight: normal;
 }
 
@@ -134,7 +134,7 @@ code {
 }
 
 .selectorValue {
-  font-family: Menlo, Andale Mono, monospace;
+  font-family: monospace;
   font-style: italic;
   color: #555555;
 }
@@ -146,7 +146,7 @@ code {
 
 .nodeBox {
   position: relative;
-  font-family: Menlo, Andale Mono, monospace;
+  font-family: monospace;
   padding-left: 13px;
   -moz-user-select: -moz-none;
 }
@@ -203,8 +203,10 @@ code {
 
 .docType {
   position: absolute;
+  /* position DOCTYPE element above/outside the "nodeBox" that contains it */
+  /* Note: to be fixed in Bug #688439 */
   top: -16px;
-  font-family: Menlo, Andale Mono, monospace;
+  font-family: monospace;
   padding-left: 8px;
   color: #999;
   white-space: nowrap;
@@ -212,7 +214,9 @@ code {
 }
 
 .htmlNodeBox {
-  top: 16px;
+  /* make room for DOCTYPE element to be rendered above/outside "nodeBox" */
+  /* Note: to be fixed in Bug #688439 */
+  margin-top: 16px;
 }
 
 .nodeWhiteSpace {
@@ -350,3 +354,25 @@ code {
   background-image: url("chrome://global/skin/tree/twisty-open.png") !important;
 }
 
+.editingAttributeValue {
+  background-color: #008484;
+}
+
+#attribute-editor {
+  visibility: hidden;
+  position: absolute;
+  z-index: 5000;
+  background-color: #000000;
+  border: 1px solid #9C9CFF;
+}
+
+#attribute-editor.editing {
+  visibility: visible;
+}
+
+#attribute-editor-input {
+  border: none;
+  padding: 2px 5px;
+  font-family: monospace;
+  font-size: 11px;
+}

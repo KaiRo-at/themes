@@ -1696,10 +1696,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
 }
 
-.tab-close-button:focus {
-  outline: none !important;
-}
-
 /* Tab scrollbox arrow, tabstrip new tab and all-tabs buttons */
 
 @media all and (-moz-touch-enabled) {
@@ -2340,7 +2336,16 @@ highlighter-veil-transparentbox {
   outline-offset: -1px;
 }
 
-#highlighter-veil-transparentbox[locked] {
+#highlighter-veil-container[locked] > #highlighter-veil-middlebox > #highlighter-veil-transparentbox {
   box-shadow: 0 0 0 1px black;
   outline-color: white;
+}
+
+/*
+ * need a "bumpy" background image for this!
+ */
+#inspector-horizontal-splitter {
+  background: none !important;
+  -moz-appearance: none;
+  cursor: n-resize;
 }

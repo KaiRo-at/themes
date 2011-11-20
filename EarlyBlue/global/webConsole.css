@@ -134,7 +134,7 @@
 .hud-output-node,
 .jsterm-input-node,
 .jsterm-complete-node {
-  font: 12px Consolas, Lucida Console, monospace;
+  font: 12px monospace;
 }
 
 .hud-output-node {
