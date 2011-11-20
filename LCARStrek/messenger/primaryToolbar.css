@@ -210,21 +210,6 @@ toolbarpaletteitem > #button-delete {
   -moz-image-region: rect(84px 75px 105px 50px);
 }
 
-#button-print {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
-  -moz-image-region: rect(0px 25px 21px 0px);
-}
-
-#button-print:not([disabled="true"]):hover,
-#button-print:not([disabled="true"]):hover:active,
-#button-print[open="true"] {
-  -moz-image-region: rect(0px 75px 21px 50px);
-}
-
-#button-print[disabled="true"] {
-  -moz-image-region: rect(0px 50px 21px 25px);
-}
-
 #button-stop {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
   -moz-image-region: rect(21px 25px 42px 0px);
@@ -471,21 +456,6 @@ toolbar[iconsize="small"] > #button-junk[disabled="true"] {
 toolbar[iconsize="small"] > #button-junk:not([disabled="true"]):hover
 toolbar[iconsize="small"] > #button-junk:not([disabled="true"]):hover:active {
   -moz-image-region: rect(192px 48px 208px 32px);
-}
-
-toolbar[iconsize="small"] > #button-print,
-toolbar[iconsize="small"] > toolbarpaletteitem > #button-print {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
-  -moz-image-region: rect(0 16px 16px 0);
-}
-
-toolbar[iconsize="small"] > #button-print[disabled="true"] {
-  -moz-image-region: rect(0 32px 16px 16px);
-}
-
-toolbar[iconsize="small"] > #button-print:not([disabled="true"]):hover,
-toolbar[iconsize="small"] > #button-print:not([disabled="true"]):hover:active {
-  -moz-image-region: rect(0 48px 16px 32px);
 }
 
 toolbar[iconsize="small"] > #button-stop,

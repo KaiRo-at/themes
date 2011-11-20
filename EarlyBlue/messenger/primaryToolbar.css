@@ -146,15 +146,6 @@ toolbarpaletteitem > #button-delete {
   -moz-image-region: rect(84px 50px 105px 25px);
 }
 
-#button-print {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
-  -moz-image-region: rect(0px 25px 21px 0px);
-}
-
-#button-print[disabled="true"] {
-  -moz-image-region: rect(0px 50px 21px 25px);
-}
-
 #button-stop {
   list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
   -moz-image-region: rect(21px 25px 42px 0px);
@@ -322,16 +313,6 @@ toolbar[iconsize="small"] > toolbarpaletteitem > #button-junk {
 
 toolbar[iconsize="small"] > #button-junk[disabled="true"] {
   -moz-image-region: rect(192px 32px 208px 16px);
-}
-
-toolbar[iconsize="small"] > #button-print,
-toolbar[iconsize="small"] > toolbarpaletteitem > #button-print {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
-  -moz-image-region: rect(0 16px 16px 0);
-}
-
-toolbar[iconsize="small"] > #button-print[disabled="true"] {
-  -moz-image-region: rect(0 32px 16px 16px);
 }
 
 toolbar[iconsize="small"] > #button-stop,

@@ -118,3 +118,23 @@ treecols:-moz-lwtheme {
   color: #000000;
   background-color: #CCD0DD;
 }
+
+/* ::::: toolbar print button ::::: */
+#print-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+  -moz-image-region: rect(0px 25px 21px 0px);
+}
+
+#print-button[disabled="true"] {
+  -moz-image-region: rect(0px 50px 21px 25px);
+}
+
+toolbar[iconsize="small"] > toolbarpaletteitem > #print-button,
+toolbar[iconsize="small"] > #print-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons-small.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+toolbar[iconsize="small"] > #print-button[disabled="true"] {
+  -moz-image-region: rect(0 32px 16px 16px) !important;
+}
