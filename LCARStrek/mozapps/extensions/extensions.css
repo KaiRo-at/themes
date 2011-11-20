@@ -800,6 +800,16 @@
   max-height: 300px;
 }
 
+#detail-screenshot[loading] {
+  background-image: url("chrome://communicator/skin/brand/throbber-anim.gif");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+#detail-screenshot[loading="error"] {
+  background-image: url("chrome://global/skin/icons/alert-error.gif");
+}
+
 #detail-desc-container {
   margin-bottom: 2em;
 }
