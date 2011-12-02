@@ -429,7 +429,7 @@ toolbar[mode="icons"] #search-button > .button-box > .button-text {
   background-color: #33FF33;
 }
 
-#security-button > .statusbarpanel-text {
+#security-button > .statusbarpanel-contentbox > .statusbarpanel-text {
   margin: 0px;
   color: #000000;
 }
