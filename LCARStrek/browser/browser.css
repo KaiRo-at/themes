@@ -1145,7 +1145,6 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 #urlbar {
   width: 7em;
   min-width: 7em;
-  -moz-padding-end: 2px;
 }
 
 #urlbar:-moz-lwtheme,
@@ -1404,7 +1403,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 #urlbar > toolbarbutton:not([disabled]):active:hover,
 #urlbar-reload-button:not(:hover) {
   -moz-border-start-style: none;
-  -moz-padding-start: 4px;
+  -moz-padding-start: 3px;
 }
 
 #urlbar > toolbarbutton:not([disabled]):active:hover {
