@@ -1178,12 +1178,16 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 }
 
 .urlbar-icon {
-  padding: 3px 3px;
+  padding: 2px;
 }
 
 .searchbar-engine-button,
 .search-go-container {
-  padding: 2px 2px;
+  padding: 2px;
+}
+
+.search-go-container > .search-go-button {
+  padding: 0;
 }
 
 .urlbar-icon:-moz-system-metric(touch-enabled) {
