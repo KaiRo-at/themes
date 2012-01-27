@@ -30,7 +30,7 @@
   border: none;
 }
 
-.searchbar-engine-button["open=true"] {
+.searchbar-engine-button[open="true"] {
   background-color: #FF9F00;
 }
 

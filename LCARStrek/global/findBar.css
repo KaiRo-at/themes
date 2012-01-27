@@ -9,8 +9,8 @@
 }
 
 findbar {
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid transparent;
+  border-top: 3px solid #000000;
+  border-bottom: none;
   min-width: 1px;
 }
 
