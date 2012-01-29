@@ -101,6 +101,68 @@
   -moz-image-region: rect(0px 50px 21px 25px);
 }
 
+/* ::::: small primary toolbar buttons ::::: */
+
+toolbar[iconsize="small"] > #button-newcard,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-newcard {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons-small.png");
+  -moz-image-region: rect(32px 16px 48px 0);
+}
+
+toolbar[iconsize="small"] > #button-newcard[disabled] {
+  -moz-image-region: rect(32px 32px 48px 16px);
+}
+
+toolbar[iconsize="small"] > #button-newlist,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-newlist {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons-small.png");
+  -moz-image-region: rect(48px 16px 64px 0);
+}
+
+toolbar[iconsize="small"] > #button-newlist[disabled] {
+  -moz-image-region: rect(48px 32px 64px 16px);
+}
+
+toolbar[iconsize="small"] > #button-editcard,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-editcard {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons-small.png");
+  -moz-image-region: rect(16px 16px 32px 0);
+}
+
+toolbar[iconsize="small"] > #button-editcard[disabled] {
+  -moz-image-region: rect(16px 32px 32px 16px);
+}
+
+toolbar[iconsize="small"] > #button-newmessage,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-newmessage {
+  list-style-image: url("chrome://messenger/skin/icons/messengericons-small.png");
+  -moz-image-region: rect(80px 16px 96px 0);
+}
+
+toolbar[iconsize="small"] > #button-newmessage[disabled="true"] {
+  -moz-image-region: rect(80px 32px 96px 16px);
+}
+
+toolbar[iconsize="small"] > #button-newim,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-newim {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons-small.png");
+  -moz-image-region: rect(64px 16px 80px 0);
+}
+
+toolbar[iconsize="small"] > #button-newim[disabled] {
+  -moz-image-region: rect(64px 32px 80px 16px);
+}
+
+toolbar[iconsize="small"] > #button-abdelete,
+toolbar[iconsize="small"] > toolbarpaletteitem > #button-abdelete {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addressbookicons-small.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+toolbar[iconsize="small"] > #button-abdelete[disabled] {
+  -moz-image-region: rect(0 32px 16px 16px);
+}
+
 /* CardView styles - used in the Card View Pane */
 
 #CardViewOuterBox {
