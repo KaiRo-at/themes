@@ -1,6 +1,6 @@
 wizard {
   width: 55em;
-  height: 42em;
+  height: 45em;
   padding: 0;
   background-color: #000000;
 }
@@ -15,7 +15,7 @@ wizardpage {
   -moz-box-pack: center;
   -moz-box-align: center;
   margin: 0;
-  padding: 0 8em;
+  padding: 0 6em;
   background-color: #000000;
 }
 
@@ -104,9 +104,13 @@ wizardpage {
   width: 0.5em;
 }
 
-#add-device-throbber > image,
+#pairDeviceThrobber > image,
 #login-throbber > image {
   list-style-image: url("chrome://global/skin/icons/loading.gif");
+}
+
+#captchaFeedback {
+  visibility: hidden;
 }
 
 #successPageIcon {

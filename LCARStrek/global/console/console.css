@@ -101,7 +101,7 @@
 /* ..... message rows ..... */
 
 .console-row[type="message"] {
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 /* ..... selected state ..... */

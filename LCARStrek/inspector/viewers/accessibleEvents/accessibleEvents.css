@@ -42,7 +42,7 @@ treechildren::-moz-tree-checkbox(checked) {
 }
 
 #welHandlerEditor {
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 #welGrippyButton {

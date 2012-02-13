@@ -31,7 +31,7 @@
 
 #eula {
   -moz-appearance: none;
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   color: #000000;
   border: 1px solid #9999CC;
   margin: 1em 0;

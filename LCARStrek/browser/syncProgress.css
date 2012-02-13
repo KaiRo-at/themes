@@ -11,15 +11,15 @@
  * for the specific language governing rights and limitations under the
  * License.
  *
- * The Original Code is mozilla.org code.
+ * The Original Code is Firefox Sync.
  *
  * The Initial Developer of the Original Code is
- * Mozilla Corporation.
- * Portions created by the Initial Developer are Copyright (C) 2009
+ * the Mozilla Foundation.
+ * Portions created by the Initial Developer are Copyright (C) 2011
  * the Initial Developer. All Rights Reserved.
  *
  * Contributor(s):
- *   Alexander Surkov <surkov.alexander.com> (original author)
+ *   Allison Naaktgeboren <ally@mozilla.com>
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -34,20 +34,46 @@
  * the terms of any one of the MPL, the GPL or the LGPL.
  *
  * ***** END LICENSE BLOCK ***** */
+@import url("chrome://global/skin/inContentUI.css");
 
-@import url("chrome://inspector/skin");
-
-treechildren::-moz-tree-checkbox(checked) {
-  list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+:root {
+  height: 100%;
+  width: 100%;
+  padding: 0;
 }
 
-#welHandlerEditor {
-  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
+body {
+  margin: 0;
+  padding: 0 2em;
 }
 
-#welGrippyButton {
-  cursor: default;
+#floatingBox {
+  margin: 4em auto;
+  max-width: 40em;
+  min-width: 23em;
+  padding: 1em 1.5em;
+  position: relative;
+  text-align: center;
 }
 
-#welSplitter {
+#successLogo {
+  margin: 1em 2em;
+}
+
+#loadingText {
+  margin: 2em 6em;
+}
+
+#progressBar {
+  margin: 2em 10em;
+}
+
+#uploadProgressBar{
+  width: 100%;
+}
+
+#bottomRow {
+  margin-top: 2em;
+  padding: 0;
+  text-align: end;
 }

@@ -89,7 +89,7 @@ code {
 .objectLink-function,
 .objectBox-stackTrace,
 .objectLink-profile {
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 .objectLink-textNode {
@@ -105,7 +105,7 @@ code {
 .selectorTag,
 .selectorId,
 .selectorClass {
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   font-weight: normal;
 }
 
@@ -134,7 +134,7 @@ code {
 }
 
 .selectorValue {
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   font-style: italic;
   color: #555555;
 }
@@ -146,7 +146,7 @@ code {
 
 .nodeBox {
   position: relative;
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   padding-left: 13px;
   -moz-user-select: -moz-none;
 }
@@ -206,7 +206,7 @@ code {
   /* position DOCTYPE element above/outside the "nodeBox" that contains it */
   /* Note: to be fixed in Bug #688439 */
   top: -16px;
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   padding-left: 8px;
   color: #999;
   white-space: nowrap;
@@ -373,6 +373,6 @@ code {
 #attribute-editor-input {
   border: none;
   padding: 2px 5px;
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   font-size: 11px;
 }
