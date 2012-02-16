@@ -29,6 +29,7 @@
  *   Jim Mathies (jmathies@mozilla.com)
  *   Drew Willcoxon (adw@mozilla.com)
  *   Paul Rouget (paul@mozilla.com)
+ *   Rob Campbell (rcampbell@mozilla.com)
  *
  * Alternatively, the contents of this file may be used under the terms of
  * either the GNU General Public License Version 2 or later (the "GPL"), or
@@ -2402,6 +2403,13 @@ panel[dimmed="true"] {
   border-width: 0;
 }
 
+#addon-bar[customizing] > #status-bar {
+  opacity: .5;
+/*  background-image: -moz-repeating-linear-gradient(-45deg,
+                                                   rgba(255,255,255,.3), rgba(255,255,255,.3) 5px,
+                                                   rgba(0,0,0,.3) 5px, rgba(0,0,0,.3) 10px);*/
+}
+
 /* Remove all borders from statusbarpanel children of
    the statusbar.
 #status-bar > statusbarpanel {
@@ -2613,7 +2621,6 @@ highlighter-veil-transparentbox {
   /* The content of the button can be larger than the button */
   overflow: hidden;
   min-height: 25px;
-
   margin: 0 -11px 0 0;
   padding: 0 9px;
 }
