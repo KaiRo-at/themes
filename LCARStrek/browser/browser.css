@@ -1349,7 +1349,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button + #urlbar-container > #urlbar > #identity-box {
-  border-radius: 0;
+/*   border-radius: 0; */
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
