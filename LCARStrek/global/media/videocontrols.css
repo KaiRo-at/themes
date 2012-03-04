@@ -38,10 +38,10 @@
 .playButton:hover {
   background-image: url("chrome://global/skin/media/pauseButton-hover.png");
 }
-.playButton[paused="true"] {
+.playButton[paused] {
   background-image: url("chrome://global/skin/media/playButton.png");
 }
-.playButton[paused="true"]:hover {
+.playButton[paused]:hover {
   background-image: url("chrome://global/skin/media/playButton-hover.png");
 }
 
@@ -51,11 +51,37 @@
 .muteButton:hover {
   background-image: url("chrome://global/skin/media/muteButton-hover.png");
 }
-.muteButton[muted="true"] {
+.muteButton[muted] {
   background-image: url("chrome://global/skin/media/unmuteButton.png");
 }
-.muteButton[muted="true"]:hover {
+.muteButton[muted]:hover {
   background-image: url("chrome://global/skin/media/unmuteButton-hover.png");
+}
+
+.fullscreenButton {
+  background-color: transparent;
+  list-style-image: url("chrome://global/skin/media/fullscreenButton.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  -moz-appearance: none;
+  margin: 0;
+  padding: 0;
+  min-height: 28px;
+  min-width: 28px;
+  border: none;
+}
+
+.fullscreenButton:hover {
+  background-color: rgba(255,207,0,0.75);
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+.fullscreenButton[fullscreened] {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.fullscreenButton[fullscreened]:hover {
+  background-color: rgba(255,207,0,0.75);
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
 }
 
 .volumeStack {
@@ -264,4 +290,18 @@ html|table {
 }
 .statusOverlay[fadeout] {
   opacity: 0;
+}
+
+/* Error description formatting */
+.errorLabel {
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  font-size: 11px;
+  color: #E7ADE7;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  padding: 0 10px;
+  text-align: center;
 }

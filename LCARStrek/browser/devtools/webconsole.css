@@ -62,7 +62,7 @@
 }
 
 .hud-msg-node {
-  list-style-image: url("chrome://global/skin/icons/webconsole.png");
+  list-style-image: url("chrome://browser/skin/devtools/webconsole.png");
   -moz-image-region: rect(0, 1px, 0, 0);
 }
 
@@ -155,7 +155,7 @@
 
 .webconsole-filter-button > .toolbarbutton-menubutton-button {
   -moz-box-orient: horizontal;
-  list-style-image: url("chrome://global/skin/icons/webconsole.png");
+  list-style-image: url("chrome://browser/skin/devtools/webconsole.png");
 }
 
 .webconsole-filter-button > .toolbarbutton-menubutton-button,
@@ -217,7 +217,7 @@
 }
 
 /* Web Developer styles */
-.webconsole-filter-button[category="webdev"] {
+.webconsole-filter-button[category="logging"] {
   -moz-image-region: rect(24px, 8px, 32px, 0);
 }
 
