@@ -1443,8 +1443,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 /* page proxy icon */
 
-#page-proxy-favicon,
-#urlbar-throbber {
+#page-proxy-favicon {
   width: 16px;
   height: 16px;
 }
@@ -1461,10 +1460,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #page-proxy-favicon[pageproxystate="invalid"] {
   opacity: 0.5;
-}
-
-#urlbar-throbber {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
 }
 
 /* autocomplete */
@@ -2480,7 +2475,7 @@ panel[dimmed="true"] {
 /* Highlighter */
 
 .highlighter-veil {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(25, 25, 25, 0.5);
 }
 
 #highlighter-closebutton {
