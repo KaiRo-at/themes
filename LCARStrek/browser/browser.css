@@ -415,7 +415,7 @@ menubar {
 
 /* ::::: bookmark buttons ::::: */
 
-.bookmark-item > .toolbarbutton-icon {
+.bookmark-item:not(#bookmarks-menu-button) > .toolbarbutton-icon {
   width: 16px;
   height: 16px;
 }
@@ -1665,10 +1665,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .panel-promo-box {
-  margin: 5px -6px -6px -6px;
+  margin: 5px -6px -6px;
   padding: 5px;
-  background-color: #000000;
-  color: #FF9F00;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   border-top: 1px solid #9C9CFF;
