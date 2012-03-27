@@ -415,7 +415,8 @@ menubar {
 
 /* ::::: bookmark buttons ::::: */
 
-.bookmark-item:not(#bookmarks-menu-button) > .toolbarbutton-icon {
+/*.bookmark-item:not(#bookmarks-menu-button) > .toolbarbutton-icon */
+.bookmark-item > .toolbarbutton-icon {
   width: 16px;
   height: 16px;
 }
