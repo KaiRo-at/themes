@@ -1184,6 +1184,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #urlbar {
   width: 7em;
   min-width: 7em;
+  /* make color as light as possible to deal with dark non-domain parts */
+  color: #FFBFFF;
 }
 
 #urlbar:-moz-lwtheme,
@@ -1321,7 +1323,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
   background: transparent;
 }
 
-#urlbar-search-splitter + #urlbar-container > #urlbar ,
+#urlbar-search-splitter + #urlbar-container > #urlbar,
 #urlbar-search-splitter + #search-container > #searchbar > .searchbar-textbox {
   -moz-margin-start: 0;
 }

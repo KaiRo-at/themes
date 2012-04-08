@@ -277,6 +277,8 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   border-radius: 5px;
   margin: 0;
   -moz-margin-start: 3px;
+  /* make color as light as possible to deal with dark non-domain parts */
+  color: #FFBFFF;
 }
 
 .urlbar-security-level {
