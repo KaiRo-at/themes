@@ -46,7 +46,6 @@
 .toolbarbutton-1,
 .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   min-width: 36px;
-  min-height: 36px;
   -moz-box-orient: vertical;
 }
 

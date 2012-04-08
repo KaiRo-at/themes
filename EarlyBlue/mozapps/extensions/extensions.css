@@ -449,7 +449,7 @@
 }
 
 .addon[active="false"] .icon {
-/*  filter: url("chrome://mozapps/skin/extensions/extensions.svg#greyscale"); */
+  filter: url("chrome://mozapps/skin/extensions/extensions.svg#greyscale");
 }
 
 .addon-view[type="theme"] .icon {
@@ -596,7 +596,7 @@
 }
 
 .addon[active="false"] {
-  /* background-color: rgba(135, 135, 135, 0.1); */
+  background-color: #DDDDDD;
 }
 
 .addon-view[active="false"],
@@ -643,11 +643,11 @@
 }
 
 .addon[active="false"][selected] {
-  color: #000000;
+  color: #AAAAAA;
 }
 
 .addon[active="false"][selected] .name-container {
-  color: #222233;
+  color: #DDDDDD;
 }
 
 

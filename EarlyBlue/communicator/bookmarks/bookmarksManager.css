@@ -12,3 +12,16 @@
   padding: 2px 0;
   -moz-padding-end: 3px;
 }
+
+#placesMenu {
+  border-bottom: none;
+}
+
+#placesMenu > menu {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+#searchFilter {
+  margin: 0;
+}

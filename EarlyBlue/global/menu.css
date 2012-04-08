@@ -73,8 +73,8 @@ menuitem[_moz-menuactive="true"][disabled="true"],
 }
 
 menubar > menu {
-  padding: 2px 0px;
-  -moz-padding-start: 3px;
+  padding: 2px 1px;
+  -moz-padding-start: 2px;
   margin: 0px 2px;
   -moz-margin-start: 0px;
   border: 1px solid #CCD0DD;
@@ -135,8 +135,12 @@ menulist > menupopup > menu {
   color: inherit;
 }
 
+.menu-iconic-left {
+  -moz-margin-end: 3px !important;
+}
+
 .menu-text {
-  -moz-margin-start: 18px !important;
+  -moz-margin-start: 19px !important;
   font-weight: inherit;
 }
 
