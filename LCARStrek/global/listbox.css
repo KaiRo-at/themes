@@ -139,16 +139,3 @@ listheader[sortable="true"]:hover:active {
   min-height: 12px;
   background: #000000 no-repeat 50% 50%;
 }
-
-.listcell-check[checked="true"] {
-  background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
-}
-
-.listcell-check[disabled="true"] {
-  border-color: #8050B0;
-  background-image: url("chrome://global/skin/checkbox/cbox-disabled.gif");
-}
-
-.listcell-check[disabled="true"][checked="true"] {
-  background-image: url("chrome://global/skin/checkbox/cbox-check-disabled.gif");
-}
