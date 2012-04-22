@@ -158,15 +158,22 @@
   list-style-image: url("chrome://browser/skin/devtools/webconsole.png");
 }
 
-.webconsole-filter-button > .toolbarbutton-menubutton-button,
-.webconsole-filter-button > .toolbarbutton-menubutton-button:hover:active {
-  -moz-padding-start: 6px;
-  -moz-padding-end: 3px;
+.webconsole-filter-button:hover:active > .toolbarbutton-menubutton-button,
+.webconsole-filter-button[open="true"] > .toolbarbutton-menubutton-button {
 }
 
 .webconsole-filter-button {
   -moz-margin-start: 3px;
-  -moz-margin-end: 3px;
+  padding: 0 !important;
+}
+
+.webconsole-filter-button menuitem {
+  -moz-image-region: auto;
+}
+
+.hud-filter-box {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* Network styles */
@@ -254,18 +261,14 @@
 
 .webconsole-close-button {
   border: none;
-  padding: 3px;
-  list-style-image: url("chrome://global/skin/icons/close.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-  -moz-appearance: none;
+  padding-top: 4px;
+  padding-bottom: 5px;
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
-.webconsole-close-button:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
+.webconsole-close-button:hover,
 .webconsole-close-button:hover:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
 }
 
 /* JSTerm Styles */
@@ -281,13 +284,13 @@
 }
 
 .jsterm-output-node {
-  width: 100%; 
-  height: 400px; 
-  color: white; 
-  background-color: black; 
-  overflow: auto; 
-  overflow-x: auto; 
-  position: absolute; 
+  width: 100%;
+  height: 400px;
+  color: white;
+  background-color: black;
+  overflow: auto;
+  overflow-x: auto;
+  position: absolute;
   -moz-box-direction: reverse;
 }
 
@@ -319,7 +322,6 @@
 }
 
 .hud-console-filter-toolbar {
-  padding: 1px 2px;
   -moz-box-align: center;
 }
 
@@ -332,4 +334,8 @@
   height: 100%;
   width: 100%;
   background-color: black;
+}
+
+.hud-splitter {
+  border: 0;
 }
