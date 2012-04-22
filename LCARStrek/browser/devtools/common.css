@@ -41,11 +41,6 @@
 }
 
 .devtools-toolbarbutton {
-  min-height: 25px;
-}
-
-#highlighter-closebutton {
-  min-height: 25px;
 }
 
 .devtools-toolbarbutton > .toolbarbutton-icon {

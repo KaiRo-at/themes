@@ -2640,6 +2640,12 @@ highlighter-veil-transparentbox {
   /*color: #8d99a6; */
 }
 
+/* fit height of other buttons to breadcrumbs */
+#inspector-toolbar .devtools-toolbarbutton,
+#highlighter-closebutton {
+  min-height: 25px;
+}
+
 /* Highlighter toolbar - breadcrumbs - LTR */
 
 .inspector-breadcrumbs-button:-moz-locale-dir(ltr):first-of-type {
