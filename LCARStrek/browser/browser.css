@@ -431,9 +431,7 @@ menubar {
 }
 
 #wrapper-personal-bookmarks[place="palette"] > .toolbarpaletteitem-box {
-  width: 16px;
-  height: 16px;
-  background: url("chrome://communicator/skin/bookmarks/bookmarksToolbar.png") no-repeat;
+  background: url("chrome://communicator/skin/bookmarks/bookmarksToolbar.png") no-repeat center;
 }
 
 .bookmarks-toolbar-customize {
@@ -1449,12 +1447,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #page-proxy-favicon {
   width: 16px;
   height: 16px;
-}
-
-#page-proxy-stack {
-  width: 24px;
-  height: 18px;
-  padding: 1px 4px;
+  /* margin: 1px 4px; */
 }
 
 #page-proxy-favicon:not([src]) {
@@ -2518,25 +2511,17 @@ highlighter-veil-transparentbox {
   -moz-margin-start: 2px;
 }
 
-/* Highlighter - toolbar resizers */
-
-.inspector-resizer {
-  -moz-appearance: none;
-  cursor: n-resize;
+#devtools-sidebar-box {
+  background-color: #000000;
 }
+
+/* Highlighter - toolbar resizer */
 
 #inspector-top-resizer {
+  -moz-appearance: none;
+  cursor: n-resize;
   background: none;
   height: 4px;
-}
-
-#inspector-end-resizer {
-  width: 12px;
-  height: 8px;
-  border-width: 1px 1px 0;
-  border-style: solid;
-  border-color: #008484;
-  margin: 7px 7px 8px;
 }
 
 /* Highlighter - Node Infobar */
@@ -2623,6 +2608,10 @@ highlighter-veil-transparentbox {
 
 #inspector-breadcrumbs {
   padding: 0 6px;
+}
+
+#inspector-breadcrumbs > .scrollbutton-up,
+#inspector-breadcrumbs > .scrollbutton-down {
 }
 
 .inspector-breadcrumbs-button {
