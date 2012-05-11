@@ -114,7 +114,7 @@
   /* margin left/right: make bar 8px wide (control width = 28, minus 2 * 10 margin) */
   margin: 0px 10px;
   background-color: rgba(0,0,0,0.5);
-  border-radius: 4px 4px;
+  border-radius: 2.5px;
 }
 
 .durationBox {
@@ -139,7 +139,7 @@
   /* margin left/right: 1/2 of scrubber thumb width, for overhang. */
   margin: 10px 22px;
   background-color: rgba(0,0,0,0.75);
-  border-radius: 4px 4px;
+  border-radius: 2.5px;
 }
 
 .bufferBar, .progressBar {
@@ -160,13 +160,13 @@
    * compositing gives it a different visual appearance.
    */
   background-color: rgba(255,159,0,0.75);
-  border-radius: 4px 4px;
+  border-radius: 2.5px;
   -moz-appearance: none;
 }
 
 .progressBar .progress-bar {
   background-color: #008484;
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 2.5px;
   -moz-appearance: none;
 }
 
