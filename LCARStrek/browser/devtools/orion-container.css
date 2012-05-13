@@ -4,7 +4,7 @@
 
 .viewTooltip {
   display: none; /* TODO: add tooltips support, see bug 721752 */
-  font-family: monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   font-size: 13px;
   background-color: #9C9CFF;
   color: #000000;

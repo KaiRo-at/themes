@@ -66,6 +66,9 @@
 .helplink:visited {
   text-decoration: none;
 }
+link:hover {
+  text-decoration: underline;
+}
 
 .helplink {
   display: block;
@@ -85,6 +88,7 @@
 .rulelink {
   color: -moz-dialogtext;
   padding: 0;
+  cursor: pointer;
 }
 
 .expander {
@@ -200,7 +204,13 @@
 
 .ruleview-rule-source {
   background-color: #000000;
+  color: #9C9CFF;
   padding: 2px 5px;
+  cursor: pointer;
+}
+
+.ruleview-rule-source:hover {
+  text-decoration: underline;
 }
 
 .ruleview-code {

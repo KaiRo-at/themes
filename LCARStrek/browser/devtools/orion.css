@@ -3,8 +3,8 @@
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 .viewContainer {
-  background: #cddae5; /* This will be seen as the continuation of the ruler */
-  font-family: monospace;
+  background: #000000; /* This will be seen as the continuation of the ruler */
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   font-size: inherit; /* inherit browser's default monospace font size */
 }
 

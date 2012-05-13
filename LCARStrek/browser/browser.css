@@ -483,6 +483,10 @@ menuitem.bookmark-item {
   -moz-image-region: auto;
 }
 
+.bookmark-item[container][livemark] .bookmark-item[visited] {
+  /* nothing yet */
+}
+
 .bookmark-item[container][query] {
   list-style-image: url("chrome://communicator/skin/bookmarks/query.png");
   -moz-image-region: auto;
@@ -2528,21 +2532,17 @@ highlighter-veil-transparentbox {
 
 /* Highlighter - Node Infobar - text */
 
-#highlighter-nodeinfobar-tagname {
+html|*#highlighter-nodeinfobar-tagname {
   color: #FFCF00;
 }
 
-#highlighter-nodeinfobar-id {
+html|*#highlighter-nodeinfobar-id {
   color: #9C9CFF;
 }
 
-.highlighter-nodeinfobar-class {
-  color: #FF9F00;
-}
-
 /* Highlighter - Node Infobar - box & arrow */
-
-#highlighter-nodeinfobar {
+.highlighter-nodeinfobar {
+  color: #FF9F00;
   border: 1px solid rgba(156, 156, 255, .5);
   border-radius: 3px;
   padding: 8px 16px;
