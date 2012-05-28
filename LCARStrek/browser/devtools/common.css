@@ -46,6 +46,10 @@
 .devtools-toolbarbutton > .toolbarbutton-icon {
 }
 
+.devtools-toolbarbutton:not([label]) {
+  min-width: 20px;
+}
+
 .devtools-toolbarbutton:not([checked]):hover:active {
 }
 
@@ -100,7 +104,6 @@
 
 /* Splitters */
 
-#devtools-side-splitter,
-#inspector-tree-splitter {
+#devtools-side-splitter {
   border: none;
 }

@@ -50,26 +50,25 @@
  *  Steven Roussey (AppCenter Inc, Network54)
  */
 
-/* XXX: THIS IS TOO EXPERIMENTAL TO BE LCARStrek-themed!!!! */
-
 html {
-  background-color: -moz-dialog;
+  background-color: #000000;
 }
 
 body {
   margin: 0;
   overflow: auto;
-  font-family: Lucida Grande, sans-serif;
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   font-size: 11px;
+  /*padding-top: 5px;*/
 }
 
 h1 {
   font-size: 17px;
-  border-bottom: 1px solid threedlightshadow;
+  border-bottom: 1px solid #9C9CFF;
 }
 
 a {
-  color: #0000ff;
+  color: #9C9CFF;
 }
 
 pre {
@@ -99,7 +98,7 @@ code {
 .objectLink-styleRule,
 .objectLink-element,
 .objectLink-textNode {
-  color: #000088;
+  color: #9C9CFF;
 }
 
 .selectorTag,
@@ -110,33 +109,33 @@ code {
 }
 
 .selectorTag {
-  color: #0000FF;
+  color: #008484;
 }
 
 .selectorId {
-  color: DarkBlue;
+  color: #9C9CFF;
 }
 
 .selectorClass {
-  color: red;
+  color: #FF0000;
 }
 
 .selectorHidden > .selectorTag {
-  color: #5F82D9;
+  color: #004444;
 }
 
 .selectorHidden > .selectorId {
-  color: #888888;
+  color: #6060AA;
 }
 
 .selectorHidden > .selectorClass {
-  color: #D86060;
+  color: #AA0000;
 }
 
 .selectorValue {
   font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   font-style: italic;
-  color: #555555;
+  color: #E7ADE7;
 }
 
 .panelNode-html {
@@ -174,7 +173,7 @@ code {
   border: 2px solid transparent;
   border-radius: 3px;
   padding: 0 2px;
-  color: #000088;
+  color: #9C9CFF;
 }
 
 .nodeCloseLabel {
@@ -183,7 +182,7 @@ code {
 
 .nodeTag {
   cursor: pointer;
-  color: blue;
+  color: #9C9CFF;
 }
 
 .nodeValue {
@@ -198,7 +197,7 @@ code {
 }
 
 .nodeText {
-  color: #333333;
+  color: #8050B0;
 }
 
 .docType {
@@ -208,7 +207,7 @@ code {
   top: -16px;
   font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   padding-left: 8px;
-  color: #999;
+  color: #E7ADE7;
   white-space: nowrap;
   font-style: italic;
 }
@@ -220,28 +219,29 @@ code {
 }
 
 .nodeWhiteSpace {
-  border: 1px solid LightGray;
+  border: 1px solid #402858;
   white-space: pre;
   margin-left: 1px;
-  color: gray;
+  color: #8050B0;
 }
 
 .nodeWhiteSpace_Space {
-  border: 1px solid #ddd;
+  border: 1px solid #402858;
 }
 
 .nodeTextEntity {
-  border: 1px solid gray;
+  border: 1px solid #8050B0;
   white-space: pre;
   margin-left: 1px;
 }
 
 .nodeComment {
-  color: DarkGreen;
+  color: #008484;
 }
 
 .nodeBox.highlightOpen > .nodeLabel {
-  background-color: #EEEEEE;
+  background-color: #FFCF00;
+  color: #000000;
 }
 
 .nodeBox.highlightOpen > .nodeCloseLabel,
@@ -253,9 +253,9 @@ code {
 
 .nodeBox.selected > .nodeLabel > .nodeLabelBox,
 .nodeBox.selected > .nodeLabel {
-  border-color: Highlight;
-  background-color: Highlight;
-  color: HighlightText !important;
+  border-color: #9C9CFF;
+  background-color: 008484;
+  color: #FFCF00 !important;
 }
 
 .nodeBox.selected > .nodeLabel > .nodeLabelBox,
@@ -266,8 +266,8 @@ code {
 }
 
 .nodeBox.highlighted > .nodeLabel {
-  border-color: Highlight !important;
-  background-color: cyan !important;
+  border-color: #9C9CFF !important;
+  background-color: #FFCF00 !important;
   color: #000000 !important;
 }
 
@@ -282,23 +282,23 @@ code {
 .nodeBox.nodeHidden .nodeCloseLabel,
 .nodeBox.nodeHidden .nodeLabel > .nodeLabelBox > .nodeText,
 .nodeBox.nodeHidden .nodeText {
-  color: #888888;
+  color: #8050B0;
 }
 
 .nodeBox.nodeHidden .nodeLabel > .nodeLabelBox > .nodeTag,
 .nodeBox.nodeHidden .nodeCloseLabel > .nodeCloseLabelBox > .nodeTag {
-  color: #5F82D9;
+  color: #E7ADE7;
 }
 
 .nodeBox.nodeHidden .nodeLabel > .nodeLabelBox > .nodeAttr > .nodeValue {
-  color: #D86060;
+  color: #E7ADE7;
 }
 
 .nodeBox.nodeHidden.selected > .nodeLabel > .nodeLabelBox,
 .nodeBox.nodeHidden.selected > .nodeLabel > .nodeLabelBox > .nodeTag,
 .nodeBox.nodeHidden.selected > .nodeLabel > .nodeLabelBox > .nodeAttr > .nodeValue,
 .nodeBox.nodeHidden.selected > .nodeLabel > .nodeLabelBox > .nodeText {
-  color: SkyBlue !important;
+  color: #8050B0 !important;
 }
 
 .nodeBox.mutated > .nodeLabel,
@@ -306,7 +306,7 @@ code {
 .nodeValue.mutated,
 .nodeText.mutated,
 .nodeBox.mutated > .nodeText {
-  background-color: #EFFF79;
+  background-color: #794900;
   color: #FF0000 !important;
 }
 
@@ -315,8 +315,8 @@ code {
 .nodeBox.selected > .nodeLabel > .nodeLabelBox > .nodeAttr.mutated > .nodeValue,
 .nodeBox.selected > .nodeLabel > .nodeLabelBox > .nodeAttr > .nodeValue.mutated,
 .nodeBox.selected > .nodeLabel > .nodeLabelBox > .nodeText.mutated {
-  background-color: #EFFF79;
-  border-color: #EFFF79;
+  background-color: #794900;
+  border-color: #6060AA;
   color: #FF0000 !important;
 }
 
@@ -330,13 +330,13 @@ code {
 
 .nodeBox.selected > .nodeLabel > .nodeLabelBox,
 .nodeBox.selected > .nodeLabel {
-  border-color: #3875d7;
-  background-color: #3875d7;
-  color: #FFFFFF !important;
+  border-color: #9C9CFF;
+  background-color: #008484;
+  color: #FFCF00 !important;
 }
 
 .nodeBox.highlighted > .nodeLabel {
-  border-color: #3875d7 !important;
+  border-color: #008484 !important;
 }
 
 /* Twisties */
@@ -345,13 +345,13 @@ code {
 {
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("chrome://global/skin/tree/twisty-clsd.png") !important;
+  background-image: url("chrome://global/skin/tree/twisty-closed.gif") !important;
 }
 
 .nodeBox.highlightOpen > .nodeLabel > .twisty,
 .nodeBox.open > .nodeLabel > .twisty
 {
-  background-image: url("chrome://global/skin/tree/twisty-open.png") !important;
+  background-image: url("chrome://global/skin/tree/twisty-open.gif") !important;
 }
 
 .editingAttributeValue {

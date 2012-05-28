@@ -91,32 +91,30 @@ body[dir="rtl"] #errorPageContainer {
   -moz-margin-start: 80px;
 }
 
-#technicalContent > h2, #expertContent > h2 {
+.expander > button {
   -moz-padding-start: 20px;
+  -moz-margin-start: -20px;
+  background: url("chrome://global/skin/tree/twisty-open-selected.gif") left center no-repeat;
+  border: none;
+  font: inherit;
+  color: inherit;
   cursor: pointer;
-  background-image: url("chrome://global/skin/tree/twisty-open-selected.gif");
-  background-position: 5px center;
-  background-repeat: no-repeat;
 }
 
-#technicalContent > h2:hover,
-#technicalContent > h2:hover:active,
-#expertContent > h2:hover,
-#expertContent > h2:hover:active {
+.expander > button:hover,
+.expander > button:hover:active {
   background-color: #FFCF00;
+  color: #000000;
 }
 
-#technicalContent[collapsed] > h2,
-#expertContent[collapsed] > h2 {
+body[dir="rtl"] .expander > button {
+  background-position: right center;
+}
+
+.expander[collapsed] > button {
   background-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
 }
 
-#technicalContent[collapsed] > p,
-#expertContent[collapsed] > div {
-  display: none;
-}
-
-#technicalContentText {
-  overflow: auto;
-  white-space: pre-wrap;
+body[dir="rtl"] .expander[collapsed] > button {
+  background-image: url("chrome://global/skin/tree/twisty-closed-rtl-selected.gif");
 }
