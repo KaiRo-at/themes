@@ -291,6 +291,53 @@ a {
 }
 
 /**
+ * Toolbar Controls
+ */
+
+#resume {
+  list-style-image: url("chrome://browser/skin/devtools/debugger-pause.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#resume[checked=true],
+#resume:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#step-over {
+  list-style-image: url("chrome://browser/skin/devtools/debugger-step-over.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#step-over:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#step-in {
+  list-style-image: url("chrome://browser/skin/devtools/debugger-step-in.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#step-in:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#step-out {
+  list-style-image: url("chrome://browser/skin/devtools/debugger-step-out.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+#step-out:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#debugger-controls > toolbarbutton {
+}
+
+#debugger-controls > toolbarbutton:last-of-type {
+}
+
+#debugger-controls {
+}
+
+/**
  * Display helpers
  */
 

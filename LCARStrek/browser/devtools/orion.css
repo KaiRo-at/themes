@@ -5,7 +5,8 @@
 .viewContainer {
   background: #000000; /* This will be seen as the continuation of the ruler */
   font-family: "Liberation Mono", Consolas, "Courier New", monospace;
-  font-size: inherit; /* inherit browser's default monospace font size */
+  /* font-size: inherit; * inherit browser's default monospace font size */
+  font-size: 11px; /* use typical LCARStrek font size */
 }
 
 .view {
