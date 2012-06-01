@@ -2508,12 +2508,22 @@ highlighter-veil-transparentbox {
 
 #inspector-inspect-toolbutton {
   list-style-image: url("chrome://browser/skin/devtools/inspect-button.png");
-  -moz-image-region: rect(0px 16px 16px 0px);
+  -moz-image-region: rect(0 16px 16px 0);
 }
 
-#inspector-inspect-toolbutton[checked],
+#inspector-inspect-toolbutton[checked=true],
 #inspector-inspect-toolbutton:hover {
-  -moz-image-region: rect(0px 32px 16px 16px);
+  -moz-image-region: rect(0 32px 16px 16px);
+}
+
+#inspector-option-toolbarbutton {
+  list-style-image: url("chrome://browser/skin/devtools/inspector-option-icon.png");
+  -moz-image-region: rect(0 16px 16px 0);
+}
+
+#inspector-option-toolbarbutton[open],
+#inspector-option-toolbarbutton:hover {
+  -moz-image-region: rect(0 32px 16px 16px);
 }
 
 #inspector-toolbar {
@@ -2549,7 +2559,7 @@ html|*#highlighter-nodeinfobar-id {
 }
 
 /* Highlighter - Node Infobar - box & arrow */
-.highlighter-nodeinfobar {
+#highlighter-nodeinfobar {
   color: #FF9F00;
   border: 1px solid rgba(156, 156, 255, .5);
   border-radius: 3px;
@@ -2655,7 +2665,8 @@ html|*#highlighter-nodeinfobar-id {
 
 /* fit height of other buttons to breadcrumbs */
 #inspector-toolbar .devtools-toolbarbutton,
-#highlighter-closebutton {
+#highlighter-closebutton,
+#inspector-option-toolbarbutton {
   min-height: 25px;
 }
 
@@ -2784,6 +2795,16 @@ html|*#highlighter-nodeinfobar-id {
 }
 
 /* Highlighter toolbar - HTML Tree */
+
+#inspector-treepanel-toolbutton {
+  list-style-image: url("chrome://browser/skin/devtools/treepanel-button.png");
+  -moz-image-region: rect(0 18px 16px 0);
+}
+
+#inspector-treepanel-toolbutton[checked],
+#inspector-treepanel-toolbutton:hover {
+  -moz-image-region: rect(0 36px 16px 18px);
+}
 
 #inspector-tree-splitter {
   border: none;
