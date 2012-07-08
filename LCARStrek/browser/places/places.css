@@ -28,10 +28,11 @@ treechildren::-moz-tree-image(title) {
 
 treechildren::-moz-tree-image(title, livemarkItem) {
   list-style-image: url("chrome://communicator/skin/bookmarks/livemark-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
 treechildren::-moz-tree-image(title, livemarkItem, visited) {
-  /* nothing yet */
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 treechildren::-moz-tree-image(title, separator) {

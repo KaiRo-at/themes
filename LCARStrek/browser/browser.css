@@ -480,11 +480,11 @@ menuitem.bookmark-item {
 
 .bookmark-item[container][livemark] .bookmark-item {
   list-style-image: url("chrome://communicator/skin/bookmarks/livemark-item.png");
-  -moz-image-region: auto;
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
 .bookmark-item[container][livemark] .bookmark-item[visited] {
-  /* nothing yet */
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 .bookmark-item[container][query] {

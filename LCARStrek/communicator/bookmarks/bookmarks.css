@@ -99,6 +99,12 @@ treechildren::-moz-tree-image(title, container, livemark) {
 .bookmark-item[container][livemark] .bookmark-item,
 treechildren::-moz-tree-image(title, livemarkItem) {
   list-style-image: url("chrome://communicator/skin/bookmarks/livemark-item.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.bookmark-item[container][livemark] .bookmark-item[visited],
+treechildren::-moz-tree-image(title, livemarkItem, visited) {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 treechildren::-moz-tree-image(container, OrganizerQuery_AllBookmarks) {
