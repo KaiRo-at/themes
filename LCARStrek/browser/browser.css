@@ -117,9 +117,9 @@ menubar {
   visibility: visible;
 }
 
-#navigator-toolbox[tabsontop="true"] > #nav-bar,
-#navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"] + toolbar,
-#navigator-toolbox[tabsontop="true"]:not([customizing]) > #nav-bar[collapsed="true"] + #customToolbars + #PersonalToolbar {
+#nav-bar[tabsontop="true"],
+#nav-bar[tabsontop="true"][collapsed="true"]:not([customizing]) + toolbar,
+#nav-bar[tabsontop="true"][collapsed="true"]:not([customizing]) + #customToolbars + #PersonalToolbar {
   /* background-image: -moz-linear-gradient(@toolbarHighlight@, rgba(255,255,255,0)); */
 }
 
@@ -709,7 +709,9 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   border-bottom-left-radius: 0;
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #back-button {
   border-radius: 10000px;
   width: 30px;
   height: 30px;
@@ -721,20 +723,32 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   -moz-image-region: rect(54px, 20px, 74px, 0);
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button:not([disabled="true"]):hover,
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button[open="true"] {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #back-button:not([disabled="true"]):hover,
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #back-button[open="true"] {
   -moz-image-region: rect(54px, 40px, 74px, 20px);
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button[disabled="true"] {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #back-button[disabled="true"] {
   -moz-image-region: rect(54px, 60px, 74px, 40px);
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button:not([disabled="true"]):not([open="true"]):not(:active):hover {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #back-button:not([disabled="true"]):not([open="true"]):not(:active):hover {
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button:not([disabled="true"]):hover:active,
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #back-button[open="true"] {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #back-button:not([disabled="true"]):hover:active,
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #back-button[open="true"] {
 }
 
 #navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar[currentset*="unified-back-forward-button"],
@@ -748,7 +762,9 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 /*  padding-top: 5px; */
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #forward-button {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #forward-button {
   /*mask: url(keyhole-forward-mask.svg#mask); XXX: this regresses twinopen */
   mask: url("chrome://browser/content/browser.xul#winstripe-keyhole-forward-mask");
   -moz-margin-start: -6px !important;
@@ -758,17 +774,23 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   margin-bottom: 2px;
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #forward-button:-moz-locale-dir(ltr) {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #forward-button:-moz-locale-dir(ltr) {
   border-top-right-radius: 11px;
   border-bottom-right-radius: 11px;
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #forward-button:-moz-locale-dir(rtl) {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #forward-button:-moz-locale-dir(rtl) {
   border-top-left-radius: 11px;
   border-bottom-left-radius: 11px;
 }
 
-#navigator-toolbox[iconsize="large"][mode="icons"] > #nav-bar #forward-button:not([disabled="true"]):not(:active):hover {
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
+    :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
+    #unified-back-forward-button > #forward-button:not([disabled="true"]):not(:active):hover {
   /*mask: url(keyhole-forward-mask.svg#mask-hover);*/
   mask: url("chrome://browser/content/browser.xul#winstripe-keyhole-forward-mask-hover");
 }
@@ -1073,27 +1095,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #zoom-in-button {
   -moz-image-region: rect(0, 306px, 18px, 288px);
-}
-
-#nav-bar #zoom-out-button {
-  -moz-margin-end: 0;
-}
-
-#nav-bar #zoom-in-button {
-  -moz-border-start: none;
-  -moz-margin-start: 0;
-}
-
-#nav-bar #zoom-out-button:-moz-locale-dir(ltr),
-#nav-bar #zoom-in-button:-moz-locale-dir(rtl) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-#nav-bar #zoom-out-button:-moz-locale-dir(rtl),
-#nav-bar #zoom-in-button:-moz-locale-dir(ltr) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 #zoom-out-button:not([disabled="true"]):hover {
@@ -2110,7 +2111,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 .popup-notification-icon[popupid="addon-install-cancelled"],
 .popup-notification-icon[popupid="addon-install-blocked"],
 .popup-notification-icon[popupid="addon-install-failed"],
-.popup-notification-icon[popupid="addon-install-complete"] {
+.popup-notification-icon[popupid="addon-install-complete"],
+.popup-notification-icon[popupid="click-to-play-plugins"] {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
   width: 32px;
   height: 32px;
