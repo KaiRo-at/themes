@@ -11,6 +11,11 @@
 .devtools-toolbarbutton {
 }
 
+.devtools-toolbarbutton:-moz-focusring {
+  outline: 1px dotted #008484;
+  outline-offset: -4px;
+}
+
 .devtools-toolbarbutton > .toolbarbutton-icon {
 }
 

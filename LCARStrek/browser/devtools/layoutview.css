@@ -1,0 +1,58 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+body {
+  background: url("layout-background.png"), -moz-radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
+  color: #FF9F00;
+  border-top: 1px solid #9C9CFF;
+  -moz-box-sizing: border-box;
+}
+
+#element-size {
+  color: #FF9F00;
+}
+
+#main {
+  border-color: #FF9F00;
+  border-style: dotted;
+}
+
+#main > .border {
+  color: #000000;
+}
+
+.border > span {
+  background-color: #9C9CFF;
+  border-radius: 2px;
+  padding: 0 4px;
+}
+
+#content {
+  border-color: #FF9F00;
+  border-style: dotted 
+}
+
+#padding {
+  border-color: hsla(240,100%,85%,0.1);
+  border-style: solid;
+}
+
+#borders {
+  border-style: solid;
+  border-color: #9C9CFF;
+}
+
+#togglebutton {
+  background-image: url("layout-buttons.png");
+  width: 16px;
+  height: 16px;
+}
+
+body.open {
+  background: url("layout-background-grid.png"), -moz-radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
+}
+
+body.open > #header > #togglebutton {
+  background-position: -16px 0;
+}

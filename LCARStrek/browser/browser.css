@@ -1247,6 +1247,10 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
   -moz-box-align: stretch;
 }
 
+.urlbar-input-box {
+  -moz-margin-start: 0;
+}
+
 #urlbar-icons {
   -moz-box-align: center;
 }
@@ -1293,14 +1297,13 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
   -moz-margin-end: 3px;
   margin-top: 0;
   margin-bottom: 0;
+  -moz-margin-start: 0;
   color: #8050B0;
 }
 
 /* identity box */
 
 #identity-box {
-  background-color: #000000;
-  color: #FF9F00;
   border-radius: 2px;
 }
 
@@ -1350,25 +1353,24 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   padding-right: 5.01px;
 }
 
-#identity-box:hover {
-  background-color: #9C9CFF;
-  color: #000000;
-}
-
-#identity-box[open="true"],
-#identity-box:hover:active {
-  background-color: #FF9F00;
-  color: #000000;
-}
-
-#identity-box.verifiedDomain {
-  background-color: #FFCF00;
-  color: #000000;
-}
-
 #identity-box.verifiedIdentity {
-  background-color: #008484;
-  color: #000000;
+  color: #008484;
+  -moz-border-end: 1px solid #008484;
+  -moz-margin-end: 3px;
+}
+
+#identity-box.verifiedIdentity:-moz-locale-dir(ltr) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#identity-box.verifiedIdentity:-moz-locale-dir(rtl) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#identity-box.verifiedIdentity:not(:-moz-lwtheme) {
+  background-color: #000000;
 }
 
 #identity-box:-moz-focusring {
@@ -1409,11 +1411,25 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #page-proxy-favicon {
   width: 16px;
   height: 16px;
-  /* margin: 1px 4px; */
+  list-style-image: url("chrome://browser/skin/identity-icons-generic.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
-#page-proxy-favicon:not([src]) {
-  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+.verifiedDomain > #identity-box-inner > #page-proxy-stack > #page-proxy-favicon {
+  list-style-image: url("chrome://browser/skin/identity-icons-https.png");
+}
+
+.verifiedIdentity > #identity-box-inner > #page-proxy-stack > #page-proxy-favicon {
+  list-style-image: url("chrome://browser/skin/identity-icons-https-ev.png");
+}
+
+#identity-box:hover > #identity-box-inner > #page-proxy-stack > #page-proxy-favicon {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+#identity-box:hover:active > #identity-box-inner > #page-proxy-stack > #page-proxy-favicon,
+#identity-box[open=true] > #identity-box-inner > #page-proxy-stack > #page-proxy-favicon {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 #page-proxy-favicon[pageproxystate="invalid"] {
@@ -2068,9 +2084,14 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 .popup-notification-icon[popupid="addon-install-cancelled"],
 .popup-notification-icon[popupid="addon-install-blocked"],
 .popup-notification-icon[popupid="addon-install-failed"],
-.popup-notification-icon[popupid="addon-install-complete"],
-.popup-notification-icon[popupid="click-to-play-plugins"] {
+.popup-notification-icon[popupid="addon-install-complete"] {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
+  width: 32px;
+  height: 32px;
+}
+
+.popup-notification-icon[popupid="click-to-play-plugins"] {
+  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
   width: 32px;
   height: 32px;
 }
@@ -2174,6 +2195,10 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #webapps-notification-icon {
   list-style-image: url("chrome://browser/skin/webapps-16.png");
+}
+
+#plugins-notification-icon {
+  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric-16.png");
 }
 
 #identity-popup-container {
@@ -2507,7 +2532,21 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 
 /* Highlighter - Node Infobar */
 
+#highlighter-nodeinfobar {
+  color: #FF9F00;
+  border: 1px solid rgba(156, 156, 255, .5);
+  border-radius: 3px;
+  background-color: #000000;
+  background-clip: padding-box;
+}
+
 /* Highlighter - Node Infobar - text */
+
+#highlighter-nodeinfobar-text {
+  /* 100% - size of the buttons and margins */
+  max-width: -moz-calc(100% - 2 * (26px + 6px));
+  padding-bottom: 1px;
+}
 
 html|*#highlighter-nodeinfobar-tagname {
   color: #FFCF00;
@@ -2517,15 +2556,46 @@ html|*#highlighter-nodeinfobar-id {
   color: #9C9CFF;
 }
 
-/* Highlighter - Node Infobar - box & arrow */
-#highlighter-nodeinfobar {
+html|*#highlighter-nodeinfobar-pseudo-classes {
   color: #FF9F00;
-  border: 1px solid rgba(156, 156, 255, .5);
-  border-radius: 3px;
-  padding: 8px 16px;
-  background-color: #000000;
-  background-clip: padding-box;
 }
+
+/* Highlighter - Node Infobar - buttons */
+
+.highlighter-nodeinfobar-button {
+  padding: 0;
+  width: 26px;
+  min-height: 26px;
+}
+
+#highlighter-nodeinfobar-inspectbutton {
+  list-style-image: url("chrome://browser/skin/devtools/inspect-button.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+  -moz-margin-start: 0px;
+  -moz-margin-end: 2px;
+}
+
+#highlighter-nodeinfobar-inspectbutton:-moz-locale-dir(rtl) {
+}
+
+#highlighter-nodeinfobar-inspectbutton:hover,
+#highlighter-nodeinfobar-inspectbutton:hover:active/*,
+#highlighter-nodeinfobar-container:not([locked]) >  #highlighter-nodeinfobar >  #highlighter-nodeinfobar-inspectbutton*/ {
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+#highlighter-nodeinfobar-menu {
+}
+
+#highlighter-nodeinfobar-menu:-moz-locale-dir(rtl) {
+}
+
+#highlighter-nodeinfobar-menu > .toolbarbutton-menu-dropmarker {
+  -moz-box-align: center;
+  -moz-margin-start: -1px;
+}
+
+/* Highlighter - Node Infobar - box & arrow */
 
 .highlighter-nodeinfobar-arrow {
   width: 14px;
@@ -2585,11 +2655,64 @@ html|*#highlighter-nodeinfobar-id {
 /* Highlighter toolbar - breadcrumbs */
 
 #inspector-breadcrumbs {
-  padding: 0 6px;
+  -moz-margin-start: 2px;
 }
 
 #inspector-breadcrumbs > .scrollbutton-up,
 #inspector-breadcrumbs > .scrollbutton-down {
+  min-height: 25px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#inspector-breadcrumbs > .scrollbutton-up {
+  -moz-margin-end: 1px;
+}
+
+#inspector-breadcrumbs > .scrollbutton-down {
+  -moz-margin-end: 0;
+}
+
+#inspector-breadcrumbs > .scrollbutton-up:not([disabled]):active:hover,
+#inspector-breadcrumbs > .scrollbutton-down:not([disabled]):active:hover {
+}
+
+#inspector-breadcrumbs > .scrollbutton-up > .toolbarbutton-icon,
+#inspector-breadcrumbs > .scrollbutton-down > .toolbarbutton-icon {
+  /* margin: 0 5px; */
+}
+
+#inspector-breadcrumbs > .scrollbutton-up[disabled] > .toolbarbutton-icon,
+#inspector-breadcrumbs > .scrollbutton-down[disabled] > .toolbarbutton-icon {
+}
+
+#inspector-breadcrumbs > .scrollbutton-up:not([disabled]):active:hover > .toolbarbutton-icon,
+#inspector-breadcrumbs > .scrollbutton-down:not([disabled]):active:hover > .toolbarbutton-icon {
+}
+
+#inspector-breadcrumbs > .scrollbutton-up:-moz-locale-dir(ltr) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#inspector-breadcrumbs > .scrollbutton-down:-moz-locale-dir(ltr) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#inspector-breadcrumbs > .scrollbutton-up:-moz-locale-dir(rtl) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#inspector-breadcrumbs > .scrollbutton-down:-moz-locale-dir(rtl) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#inspector-breadcrumbs > .scrollbutton-up > .toolbarbutton-icon:-moz-locale-dir(rtl),
+#inspector-breadcrumbs > .scrollbutton-down > .toolbarbutton-icon:-moz-locale-dir(ltr) {
+/*  -moz-transform: scaleX(-1); */
 }
 
 .inspector-breadcrumbs-button {
@@ -2597,12 +2720,16 @@ html|*#highlighter-nodeinfobar-id {
   border-width: 2px 13px !important;
   outline: none;
   /* color: hsl(210,30%,85%); */
-  max-width: 85px;
+  width: 85px; /* Can't use max-width. See bug 723132 */
   /* The content of the button can be larger than the button */
   overflow: hidden;
   min-height: 25px;
   margin: 0 -11px 0 0;
   padding: 0 9px;
+}
+
+.inspector-breadcrumbs-button:-moz-focusring > label {
+  border-bottom: 1px dotted #008484;
 }
 
 .inspector-breadcrumbs-button[checked] > .inspector-breadcrumbs-tag {
@@ -2636,7 +2763,6 @@ html|*#highlighter-nodeinfobar-id {
 /* Highlighter toolbar - breadcrumbs - LTR */
 
 .inspector-breadcrumbs-button:-moz-locale-dir(ltr):first-of-type {
-  margin-left: 0;
 }
 
 .inspector-breadcrumbs-button {
@@ -2679,6 +2805,9 @@ html|*#highlighter-nodeinfobar-id {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end.png") 2 13 2 13 stretch;
 }
 
+#inspector-breadcrumbs[overflows] > .inspector-breadcrumbs-button:-moz-locale-dir(ltr):last-of-type {
+}
+
 .inspector-breadcrumbs-button[siblings-menu-open]:last-of-type:not([checked]),
 .inspector-breadcrumbs-button:last-of-type:not([checked]):hover:active {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/ltr-end-pressed.png") 2 13 2 13 stretch;
@@ -2696,7 +2825,6 @@ html|*#highlighter-nodeinfobar-id {
 /* Highlighter toolbar - breadcrumbs - RTL */
 
 .inspector-breadcrumbs-button:-moz-locale-dir(rtl):first-of-type {
-  margin-right: 0;
 }
 
 .inspector-breadcrumbs-button:-moz-locale-dir(rtl) {
@@ -2739,6 +2867,9 @@ html|*#highlighter-nodeinfobar-id {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end.png") 2 13 2 13 stretch;
 }
 
+#inspector-breadcrumbs[overflows] > .inspector-breadcrumbs-button:last-of-type:-moz-locale-dir(rtl) {
+}
+
 .inspector-breadcrumbs-button[siblings-menu-open]:last-of-type:not([checked]):-moz-locale-dir(rtl),
 .inspector-breadcrumbs-button:last-of-type:not([checked]):hover:active:-moz-locale-dir(rtl) {
   -moz-border-image: url("chrome://browser/skin/devtools/breadcrumbs/rtl-end-pressed.png") 2 13 2 13 stretch;
@@ -2763,6 +2894,16 @@ html|*#highlighter-nodeinfobar-id {
 #inspector-treepanel-toolbutton[checked],
 #inspector-treepanel-toolbutton:hover {
   -moz-image-region: rect(0 36px 16px 18px);
+}
+
+#inspector-breadcrumbs > .scrollbutton-down:-moz-locale-dir(rtl),
+#inspector-treepanel-toolbutton:-moz-locale-dir(ltr) {
+/*  border-radius: 3px 0 0 3px;*/
+}
+
+#inspector-breadcrumbs > .scrollbutton-down:-moz-locale-dir(ltr),
+#inspector-treepanel-toolbutton:-moz-locale-dir(rtl) {
+/*  border-radius: 0 3px 3px 0;*/
 }
 
 #inspector-tree-splitter {
