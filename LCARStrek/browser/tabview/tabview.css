@@ -25,10 +25,12 @@ body {
 .tab canvas,
 .cached-thumb {
   border: none;
+  border-radius: 3px;
 }
 
 .thumb {
   background-color: white;
+  border-radius: 3px;
 }
 
 .favicon {
@@ -69,6 +71,8 @@ html[dir=rtl] .favicon {
   border-radius: 3px;
   background-image: -moz-image-rect(url("chrome://browser/skin/tabview/close.png"), 0, 16, 16, 0);
   background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.35);
+  background-position: center center;
 }
 
 .close:hover {
@@ -86,7 +90,7 @@ html[dir=rtl] .close {
   right: 6px;
   width: 16px;
   height: 16px;
-  background: url(chrome://global/skin/icons/resizer.png) no-repeat;
+  background: url("chrome://global/skin/icons/resizer.png") no-repeat;
   -moz-transition-property: opacity;
   -moz-transition-duration: 0.5s;
   -moz-transition-timing-function: ease-out;
@@ -137,12 +141,12 @@ html[dir=rtl] .expander {
 }
 
 .tab.focus {
-  box-shadow:
-    0 1px 0 #008484 inset,
-    0 -1px 1px #008484 inset,
-    1px 0 1px #008484 inset,
-    -1px 0 1px #008484 inset,
-    0 0 5.5px #008484;
+  background-color: #008484;
+  border-color: #008484;
+}
+
+.tab.focus > .favicon {
+  background-color: #008484;
 }
 
 /* Tab: Zooming
@@ -175,16 +179,15 @@ html[dir=rtl] .expander {
 }
 
 .groupItem.activeGroupItem {
+  background-color: rgba(0, 132, 132, 0.2);
   border: 1px solid #008484;
 }
 
 .groupItem .close {
   z-index: 10;
-  top: 0px;
-  right: 0px;
-  width: 22px;
-  height: 22px;
-  background-position: bottom left;
+  top: 3px;
+  right: 3px;
+  padding: 2px;
 }
 
 html[dir=rtl] .groupItem .close {
@@ -356,6 +359,7 @@ input.name {
   margin-bottom: 0;
   -moz-margin-start: 3px;
   padding: 1px;
+  border-radius: 3px;
 }
 
 html[dir=rtl] input.name {
@@ -379,7 +383,7 @@ input.name:focus {
 input.name:-moz-placeholder {
   font-style: italic !important;
   color: transparent;
-  background-image: url(chrome://browser/skin/tabview/edit-light.png);
+  background-image: url("chrome://browser/skin/tabview/edit-light.png");
   background-repeat: no-repeat;
   -moz-padding-start: 20px;
 }
@@ -413,19 +417,19 @@ html[dir=rtl] .title-shield {
 .stackExpander {
   cursor: pointer;
   bottom: 8px;
-  background-image: -moz-image-rect(url(chrome://browser/skin/tabview/stack-expander.png), 0, 48, 24, 24);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/stack-expander.png"), 0, 48, 24, 24);
   width: 24px;
   height: 24px;
 }
 
 .stackExpander:hover {
-  background-image: -moz-image-rect(url(chrome://browser/skin/tabview/stack-expander.png), 0, 24, 24, 0);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/stack-expander.png"), 0, 24, 24, 0);
 }
 
 /* Resizable
 ----------------------------------*/
 .resizer {
-  background-image: url(chrome://global/skin/icons/resizer.png);
+  background-image: url("chrome://global/skin/icons/resizer.png");
   width: 16px;
   height: 16px;
   bottom: 0px;
@@ -462,30 +466,37 @@ html[dir=rtl] .iq-resizable-se {
 /* Exit button
 +----------------------------------*/
 #exit-button {
-  width: 18px;
-  height: 18px;
-  -moz-margin-end: 4px;
-  margin-top: 2px;
-  background-image: -moz-image-rect(url(chrome://browser/skin/tabview/tabview.png), 0, 90, 18, 72);
+  width: 24px;
+  height: 24px;
+  -moz-margin-end: 2px;
+  margin-bottom: 2px;
+  background-color: transparent;
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 90, 18, 72);
   background-attachment: scroll;
   background-repeat: no-repeat;
+  background-position: center center;
   border: none;
+  border-radius: 3px;
 }
 
 #exit-button[groups="0"] {
-  background-image: -moz-image-rect(url(chrome://browser/skin/tabview/tabview.png), 0, 18, 18, 0);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 18, 18, 0);
 }
 
 #exit-button[groups="1"] {
-  background-image: -moz-image-rect(url(chrome://browser/skin/tabview/tabview.png), 0, 36, 18, 18);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 36, 18, 18);
 }
 
 #exit-button[groups="2"] {
-  background-image: -moz-image-rect(url(chrome://browser/skin/tabview/tabview.png), 0, 54, 18, 36);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 54, 18, 36);
 }
 
 #exit-button[groups="3"] {
-  background-image: -moz-image-rect(url(chrome://browser/skin/tabview/tabview.png), 0, 72, 18, 54);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 72, 18, 54);
+}
+
+#exit-button:hover {
+  background-color: #FFCF00;
 }
 
 /* Search
@@ -525,12 +536,21 @@ html[dir=rtl] .iq-resizable-se {
 }
 
 #actions #searchbutton{
-  background: transparent url(chrome://browser/skin/tabview/search.png) no-repeat;
+  background-color: transparent;
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/search.png"), 0, 20, 20, 0);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 3px;
   border: none;
-  width: 20px;
-  height: 20px;
-  margin-top: 3px;
-  -moz-margin-end: 1px;
+  width: 24px;
+  height: 24px;
+  -moz-margin-end: 2px;
+  margin-bottom: 2px;
+}
+
+#actions #searchbutton:hover{
+  background-color: #FFCF00;
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/search.png"), 0, 40, 20, 20);
 }
 
 .notMainMatch{
