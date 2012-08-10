@@ -23,6 +23,7 @@
 }
 
 #addon-container {
+  overflow: visible; /* bug 761489 */
   max-width: 600px;
   margin: 20px;
   padding: 30px 90px;
@@ -51,7 +52,7 @@
 }
 
 .addon-info[type="dictionary"] #icon {
-  list-style-image: url("chrome://mozapps/skin/plugins/dictionaryGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/dictionaryGeneric.png");
 }
 
 #name {
