@@ -1211,7 +1211,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button + #urlbar-container > #urlbar:-moz-locale-dir(rtl) {
-  /* let winstripe-urlbar-back-button-mask clip the urlbar's right side for RTL */
+  /* let winstripe-urlbar-back-button-clip-path clip the urlbar's right side for RTL */
   -moz-transform: scaleX(-1);
 }
 
@@ -1292,6 +1292,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 
 #identity-box {
   border-radius: 2px;
+  font-size: .9em;
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
@@ -1491,6 +1492,12 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
   list-style-image: url("chrome://browser/skin/actionicon-tab.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+  padding: 0 3px;
+}
+
+richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-box > .ac-action-icon {
+  -moz-image-region: rect(16px, 16px, 32px, 0);
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment) {
@@ -1924,7 +1931,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   list-style-image: url("chrome://global/skin/icons/loading.gif");
 }
 
-.alltabs-item[tabIsVisible] {
+.alltabs-item[tabIsVisible]:not([_moz-menuactive="true"]) {
   background-color: #402800;
 }
 
@@ -2179,6 +2186,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 .notification-anchor-icon {
   width: 16px;
   height: 16px;
+  margin: 0 2px;
 }
 
 .notification-anchor-icon:-moz-focusring {
@@ -2481,15 +2489,6 @@ panel[dimmed="true"] {
   background-color: rgba(25, 25, 25, 0.5);
 }
 
-#highlighter-closebutton {
-  list-style-image: url("chrome://global/skin/icons/close-button.gif");
-}
-
-#highlighter-closebutton:hover,
-#highlighter-closebutton:hover:active {
-  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
-}
-
 highlighter-veil-transparentbox {
   box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
   outline: 1px dashed rgba(255,255,255,0.5);
@@ -2648,7 +2647,6 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 #full-screen-warning-message {
   background-color: #000000;
   color: #FF9F00;
-  font-size: 32px;
   border-radius: 8px;
   margin-top: 30px;
   padding: 30px 50px;
@@ -2656,13 +2654,20 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 }
 
 #full-screen-warning-container[obscure-browser] {
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0,0,0,0.3);
 }
 
-#full-screen-warning-container[stop-obscuring-browser] {
-  -moz-transition-property: background-color;
-  -moz-transition-duration: 500ms;
-  background-color: rgba(0,0,0,0);
+.full-screen-description {
+  font-size: 150%;
+}
+
+#full-screen-domain-text {
+  font-size: 300%;
+}
+
+.full-screen-approval-button,
+#full-screen-remember-decision {
+  font-size: 120%;
 }
 
 /* Highlighter toolbar - breadcrumbs */
@@ -2739,6 +2744,10 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
   min-height: 25px;
   margin: 0 -11px 0 0;
   padding: 0 9px;
+}
+
+.inspector-breadcrumbs-button:-moz-focusring > .button-box {
+  border-width: 0;
 }
 
 .inspector-breadcrumbs-button:-moz-focusring > label {
@@ -2919,9 +2928,75 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 /*  border-radius: 0 3px 3px 0;*/
 }
 
-#inspector-tree-splitter {
+.gcli-panel-inner-arrowcontent {
+  padding: 0;
+}
+
+.gclitoolbar-input-node,
+.gclitoolbar-complete-node,
+.gclitoolbar-prompt {
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
+}
+
+.gclitoolbar-input-node {
+  background-color: transparent;
+  -moz-appearance: none;
   border: none;
-  min-height: 3px;
-  height: 3px;
-  position: relative;
+  padding: 0 0 0 22px;
+}
+
+.gclitoolbar-complete-node {
+  background-color: transparent;
+  color: transparent;
+  height: 100%;
+  line-height: 100%;
+  padding: 7px 0 0 27px;
+  margin: 0;
+}
+
+.gclitoolbar-prompt {
+  color: #E7ADE7;
+  font-size: 150%;
+  font-weight: bold;
+  line-height: 100%;
+  padding-top: 1px;
+  padding-left: 4px;
+}
+
+.gcli-in-incomplete,
+.gcli-in-error,
+.gcli-in-ontab,
+.gcli-in-todo,
+.gcli-in-closebrace,
+.gcli-in-param,
+.gcli-in-valid {
+  margin: 0;
+  padding: 0;
+}
+
+.gcli-in-incomplete {
+  border-bottom: 2px dotted #8050B0;
+}
+
+.gcli-in-error {
+  border-bottom: 2px dotted #FF0000;
+}
+
+.gcli-in-ontab {
+  color: #9C9CFF;
+}
+
+.gcli-in-todo {
+  color: #795900;
+}
+
+.gcli-in-closebrace {
+  color: #8050B0;
+}
+
+/* Highlight toolbar - Option menu */
+
+#inspector-option-toolbarbutton:-moz-focusring {
+  outline: 1px dotted #008484;
+  outline-offset: -2px;
 }

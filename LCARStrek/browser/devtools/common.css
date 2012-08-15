@@ -8,9 +8,11 @@
 .devtools-toolbar {
 }
 
+.devtools-menulist,
 .devtools-toolbarbutton {
 }
 
+devtools-menulist:-moz-focusring,
 .devtools-toolbarbutton:-moz-focusring {
   outline: 1px dotted #008484;
   outline-offset: -4px;
@@ -26,10 +28,21 @@
 .devtools-toolbarbutton:not([checked]):hover:active {
 }
 
+.devtools-menulist[open=true],
 .devtools-toolbarbutton[checked] {
 }
 
 .devtools-toolbarbutton[checked]:hover:active {
+}
+
+.devtools-menulist > .menulist-label-box {
+  text-align: center;
+}
+
+.devtools-menulist > .menulist-dropmarker {
+}
+
+.devtools-menulist:focus:not([open="true"]):not(.menulist-compact) > .menulist-label-box {
 }
 
 /* Search input */
@@ -44,15 +57,15 @@
   background-color: transparent;
   background-image: url(magnifying-glass.png), -moz-linear-gradient(hsla(210,16%,76%,.15), hsla(210,16%,76%,.35));
   background-repeat: no-repeat;
-  background-position: 4px 3px, top left, top left;
+  background-position: 4px center, top left, top left;
   padding-top: 0;
   padding-bottom: 0;
   -moz-padding-start: 18px;
   -moz-padding-end: 12px;
-  color: hsl(210,30%,85%);
   -moz-transition-property: background-color, border-color, box-shadow;
   -moz-transition-duration: 150ms;
   -moz-transition-timing-function: ease;
+  color: inherit;
 }
 
 .devtools-searchinput[focused] {
@@ -75,7 +88,32 @@
 }
 */
 
-/* Splitters */
+/* Close button */
+
+.devtools-closebutton {
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+  min-width: 16px;
+  width: 16px;
+}
+
+.devtools-closebutton > .toolbarbutton-text {
+  display: none;
+}
+
+.devtools-closebutton:hover,
+.devtools-closebutton:hover:active {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+}
+
+/* Splitter */
+
+.devtools-horizontal-splitter {
+  border: none;
+  min-height: 3px;
+  height: 3px;
+  margin-bottom: -3px;
+  position: relative;
+}
 
 #devtools-side-splitter {
   border: none;
