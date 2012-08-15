@@ -193,7 +193,7 @@ toolbar[mode="text"] .toolbarbutton-text {
 }
 
 :root:-moz-lwtheme-darktext {
-  text-shadow: 1px 1px 2px #FFCF00;
+  text-shadow: 0 -0.5px 1.5px #FFCF00;
 }
 
 :root:-moz-lwtheme-brighttext {
