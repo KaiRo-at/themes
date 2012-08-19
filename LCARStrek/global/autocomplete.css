@@ -114,6 +114,7 @@ panel[type="autocomplete-richlistbox"],
 /* ::::: richlistbox autocomplete ::::: */
 
 .autocomplete-richlistbox {
+  border: none;
   margin: 0;
 }
 
@@ -139,8 +140,8 @@ panel[type="autocomplete-richlistbox"],
   height: 16px;
   margin-top: 0;
   margin-bottom: -3px;
-  -moz-margin-start: 3px;
-  -moz-margin-end: 5px;
+  -moz-margin-start: 0;
+  -moz-margin-end: 3px;
 }
 
 .ac-type-icon {

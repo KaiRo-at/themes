@@ -17,11 +17,15 @@ window {
  */
 
 #dbg-content {
-  /* padding: 6px; */
+  padding: 0;
 }
 
 .devtools-side-splitter {
   border: none;
+}
+
+#scripts {
+  max-width: 350px;
 }
 
 /**
@@ -30,7 +34,6 @@ window {
 
 .list-item {
   padding: 2px;
-/*  font: -moz-list; */
 }
 
 .list-item.selected {
@@ -56,11 +59,12 @@ window {
 }
 
 .dbg-stackframe-name {
+  -moz-padding-end: 4px;
   font-weight: 600;
 }
 
 /**
- * Properties elements
+ * Properties view
  */
 
 #variables {
@@ -68,7 +72,7 @@ window {
 }
 
 /**
- * Generic element details container
+ * Property element details container
  */
 
 .details {
@@ -80,16 +84,17 @@ window {
  */
 
 .scope > .title {
-  margin-top: 1px;
-  -moz-padding-start: 2px;
   background: #E7ADE7;
   border-radius: 5px;
   color: #000000;
 }
 
+.scope > .title > .arrow {
+  margin-top: -2px;
+}
+
 .scope > .title > .name {
   padding-top: 2px;
-  padding-bottom: 2px;
 }
 
 .scope > .details {
@@ -106,7 +111,6 @@ window {
   -moz-margin-end: 1px;
   margin-top: 2px;
   border-bottom: 1px dotted #008484;
-  border-radius: 8px;
   -moz-transition: background 1s ease-in-out;
   background: #000000;
 }
@@ -143,7 +147,37 @@ window {
 }
 
 /**
- * Property colors
+ * Non enumerable, configurable and writable variables and properties.
+ */
+
+.property[proto] > .title > .key,
+.variable[non-enumerable] > .title > .name,
+.property[non-enumerable] > .title > .key {
+  opacity: 0.5;
+}
+
+.variable[non-configurable] > .title > .name,
+.property[non-configurable] > .title > .key {
+  border-bottom: 1px dashed #9C9CFF;
+}
+
+.variable[non-writable] > .title > .name,
+.property[non-writable] > .title > .key {
+  border-bottom: 1px dashed #FF0000;
+}
+
+.variable[non-writable] > .title:after,
+.property[non-writable] > .title:after {
+  content: " ";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("chrome://browser/skin/identity-icons-https.png") no-repeat;
+  opacity: 0.5;
+}
+
+/**
+ * Property values colors
  */
 
 .token-undefined {
@@ -205,7 +239,7 @@ window {
  * Animations
  */
 
-.details[open] {
+.details[open][animated] {
   -moz-animation-duration: 0.25s;
   -moz-animation-name: showblock;
 }
@@ -229,7 +263,7 @@ window {
  */
 
 #resume {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-pause.png");
+  list-style-image: url("chrome://browser/skin/devtools/debugger-play.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 

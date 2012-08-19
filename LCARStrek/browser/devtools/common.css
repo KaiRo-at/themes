@@ -25,14 +25,14 @@ devtools-menulist:-moz-focusring,
   min-width: 20px;
 }
 
-.devtools-toolbarbutton:not([checked]):hover:active {
+.devtools-toolbarbutton:not([checked=true]):hover:active {
 }
 
 .devtools-menulist[open=true],
-.devtools-toolbarbutton[checked] {
+.devtools-toolbarbutton[checked=true] {
 }
 
-.devtools-toolbarbutton[checked]:hover:active {
+.devtools-toolbarbutton[checked=true]:hover:active {
 }
 
 .devtools-menulist > .menulist-label-box {
@@ -43,6 +43,12 @@ devtools-menulist:-moz-focusring,
 }
 
 .devtools-menulist:focus:not([open="true"]):not(.menulist-compact) > .menulist-label-box {
+}
+
+/* LCARStrek checkbox colors don't work well against toolbar background */
+.devtools-toolbar > checkbox {
+  background-color: #000000;
+  padding: 2px;
 }
 
 /* Search input */
@@ -105,16 +111,18 @@ devtools-menulist:-moz-focusring,
   list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
 }
 
-/* Splitter */
+/* Splitters */
 
 .devtools-horizontal-splitter {
   border: none;
   min-height: 3px;
   height: 3px;
-  margin-bottom: -3px;
   position: relative;
 }
 
 #devtools-side-splitter {
-  border: none;
+  border: 0;
+  min-width: 0;
+  width: 3px;
+  position: relative;
 }

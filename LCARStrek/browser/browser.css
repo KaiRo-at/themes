@@ -1344,18 +1344,18 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   padding-right: 2.01px;
 }
 
-#identity-box.verifiedIdentity {
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
   color: #008484;
   -moz-border-end: 1px solid #008484;
   -moz-margin-end: 3px;
 }
 
-#identity-box.verifiedIdentity:-moz-locale-dir(ltr) {
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:-moz-locale-dir(ltr) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-#identity-box.verifiedIdentity:-moz-locale-dir(rtl) {
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:-moz-locale-dir(rtl) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -1445,7 +1445,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 
 #page-proxy-favicon[pageproxystate="invalid"] {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 /* autocomplete */
@@ -2522,9 +2522,25 @@ highlighter-veil-transparentbox {
   -moz-image-region: rect(0 32px 16px 16px);
 }
 
-#inspector-toolbar {
+#inspector-toolbar,
+#developer-toolbar {
   border-top: 3px solid #000000;
   border-bottom: none;
+}
+
+#developer-toolbar .toolbar-holder {
+  background-color: #8050B0;
+  color: #FFCF00;
+}
+
+#developer-toolbar .toolbar-holder {
+  background-color: #8050B0;
+  color: #FFCF00;
+}
+
+#developer-toolbar .toolbar-startcap,
+#developer-toolbar .toolbar-endcap{
+  background-color: #6000CF;
 }
 
 #inspector-tools {
@@ -2928,41 +2944,64 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 /*  border-radius: 0 3px 3px 0;*/
 }
 
-.gcli-panel-inner-arrowcontent {
+/* Highlight toolbar - Option menu */
+
+#inspector-option-toolbarbutton:-moz-focusring {
+  outline: 1px dotted #008484;
+  outline-offset: -2px;
+}
+
+html|*#gcli-tooltip-frame,
+html|*#gcli-output-frame {
   padding: 0;
+  border-width: 0;
+  background-color: transparent;
+}
+
+#gcli-output,
+#gcli-tooltip {
+  border-width: 0;
+  background-color: transparent;
+  margin-bottom: -2px;
 }
 
 .gclitoolbar-input-node,
 .gclitoolbar-complete-node,
 .gclitoolbar-prompt {
-  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
+  margin: 1px 3px;
+  -moz-box-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 4px;
+  background-color: transparent;
+  border-radius: 3px;
+  text-shadow: none;
 }
 
 .gclitoolbar-input-node {
-  background-color: transparent;
-  -moz-appearance: none;
-  border: none;
-  padding: 0 0 0 22px;
+  padding-left: 20px;
+}
+
+.gclitoolbar-input-node:not([focused="true"]) {
+  border-color: transparent;
 }
 
 .gclitoolbar-complete-node {
+  padding-left: 21px;
   background-color: transparent;
   color: transparent;
-  height: 100%;
-  line-height: 100%;
-  padding: 7px 0 0 27px;
-  margin: 0;
 }
 
 .gclitoolbar-prompt {
-  color: #E7ADE7;
+  padding-left: 4px;
+  padding-bottom: 2px;
   font-size: 150%;
   font-weight: bold;
-  line-height: 100%;
-  padding-top: 1px;
-  padding-left: 4px;
+  color: #E7ADE7;
+  background-color: #000000;
 }
 
+.gclitoolbar-prompt-label,
 .gcli-in-incomplete,
 .gcli-in-error,
 .gcli-in-ontab,
@@ -2994,9 +3033,49 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
   color: #8050B0;
 }
 
-/* Highlight toolbar - Option menu */
+/* Responsive Mode */
 
-#inspector-option-toolbarbutton:-moz-focusring {
-  outline: 1px dotted #008484;
-  outline-offset: -2px;
+vbox[anonid=browserContainer][responsivemode] {
+  background: #392900 url("chrome://browser/skin/devtools/responsive-background.png");
+  box-shadow: 0 0 7px #9C9CFF inset;
+  padding: 0 20px 20px 20px;
+}
+
+stack[anonid=browserStack][responsivemode] {
+  box-shadow: 0 0 7px #9C9CFF;
+}
+
+.devtools-responsiveui-toolbar {
+  background: transparent;
+  margin: 10px 0;
+  padding: 0;
+  box-shadow: none;
+  border-bottom-width: 0;
+}
+
+.devtools-responsiveui-toolbar > menulist,
+.devtools-responsiveui-toolbar > toolbarbutton {
+  min-width: 22px;
+  border-radius: 0;
+}
+
+.devtools-responsiveui-toolbar:-moz-locale-dir(ltr) > *:first-child,
+.devtools-responsiveui-toolbar:-moz-locale-dir(rtl) > *:last-child {
+  margin-left: 0;
+}
+
+.devtools-responsiveui-resizebar {
+  width: 7px;
+  height: 24px;
+  cursor: ew-resize;
+  -moz-transform: translate(12px, -12px);
+  background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer.png");
+}
+
+.devtools-responsiveui-resizehandle {
+  width: 16px;
+  height: 16px;
+  cursor: se-resize;
+  -moz-transform: translate(12px, 12px);
+  background-image: url("chrome://browser/skin/devtools/responsive-se-resizer.png");
 }

@@ -175,7 +175,7 @@ link:hover {
 }
 
 .ruleview-ruleclose {
-  width: -moz-min-content;
+  cursor: text;
   padding-right: 20px;
 }
 
@@ -212,13 +212,13 @@ link:hover {
 
 .ruleview-propertyname {
   padding: 1px 0;
-  cursor: text;
   color: #9C9CFF;
-  text-decoration: inherit;
 }
 
+.ruleview-namecontainer,
+.ruleview-propertycontainer,
+.ruleview-propertyname,
 .ruleview-propertyvalue {
-  cursor: text;
   text-decoration: inherit;
 }
 
@@ -246,4 +246,14 @@ link:hover {
 
 .ruleview-property[dirty] {
   border-left-color: #008484;
+}
+
+.ruleview-namecontainer > .ruleview-propertyname,
+.ruleview-propertycontainer > .ruleview-propertyvalue {
+  border-bottom: 1px dotted transparent;
+}
+
+.ruleview-namecontainer:hover > .ruleview-propertyname,
+.ruleview-propertycontainer:hover > .ruleview-propertyvalue {
+  border-bottom-color: #9C9CFF;
 }
