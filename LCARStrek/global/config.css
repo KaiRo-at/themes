@@ -9,6 +9,10 @@
 @import url("chrome://global/skin/");
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+#config {
+  padding: 0;
+}
+
 /* ::::: warning screen ::::: */
 
 #warningScreen
@@ -76,11 +80,19 @@
 
 #configTree
 {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 3px;
 }
 
 #filterRow
 {
-  margin-top: 5px;
+}
+
+#filterRow > label
+{
+  -moz-margin-start: 0;
+}
+
+#textbox
+{
+  -moz-margin-end: 0;
 }
