@@ -193,6 +193,7 @@ menulist > menupopup > menu > .menu-iconic-left {
 
 menuitem[checked="true"] { /* [type="checkbox"] */
   list-style-image: url("chrome://global/skin/menu/menu-check.gif");
+  -moz-image-region: auto;
 }
 
 menuitem[checked="true"][_moz-menuactive="true"] {
@@ -207,6 +208,7 @@ menuitem[checked="true"][disabled="true"] {
 
 menuitem[checked="true"][type="radio"] {
   list-style-image: url("chrome://global/skin/menu/menu-radio.gif");
+  -moz-image-region: auto;
 }
 
 menuitem[checked="true"][type="radio"][_moz-menuactive="true"] {
