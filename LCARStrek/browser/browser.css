@@ -3093,3 +3093,258 @@ stack[anonid=browserStack][responsivemode] {
 .web-console-splitter {
   border: none;
 }
+
+
+/* social toolbar button */
+.social-statusarea-container {
+  -moz-appearance: none;
+  border-radius: 3px;
+  background-color: #000000;
+}
+
+.social-statusarea-container:hover {
+  background-color: #FFCF00;
+}
+
+#social-toolbar-button[open="true"] > .social-statusarea-container {
+  background-color: #FF9F00;
+}
+
+/* favicon for the service */
+#social-provider-image {
+  min-width: 20px;
+  min-height: 20px;
+  padding: 2px 5px;
+  margin: 0;
+  background: transparent;
+  list-style-image: url("chrome://browser/skin/social/social.png");
+}
+
+#social-provider-image > .button-box > .box-inherit > .button-icon {
+  max-height: 16px;
+  max-width: 16px;
+}
+
+#social-provider-image > .button-box {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+}
+
+#social-provider-image > .button-box > .button-menu-dropmarker {
+  display: none;
+}
+
+/* hbox that hold notification icons */
+#social-status-iconbox {
+  margin: 0;
+  padding: 0;
+}
+
+/* hbox that surrounds an image and its counter */
+.social-notification-icon-container {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+/* notification counter box */
+.social-notification-icon-counter {
+  background-color: #000000;
+  border: 1px solid #9C9CFF;
+  padding-right: 1px;
+  padding-left: 1px;
+  color: #FF9F00;
+  font-size: 9px;
+  font-weight: bold;
+  position: absolute;
+  right: -3px;
+  top: -4px;
+  z-index: 1;
+  text-align: center;
+}
+
+/* notification image */
+.social-notification-icon-image {
+  padding: 2px;
+  margin: 0;
+  min-width: 20px;
+  max-width: 32px;
+  max-height: 20px;
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+}
+
+#social-sidebar-splitter {
+  border: 0;
+}
+
+/* social toolbar provider menu */
+#social-statusarea-popup {
+  margin-top: 0;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+#social-statusarea-user {
+  border-bottom: 1px solid #9C9CFF;
+  background-color: #000000;
+  color: #FF9F00;
+  position: relative;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+}
+
+#social-statusarea-user-portrait {
+  width: 32px;
+  height: 32px;
+  border-radius: 2px;
+  margin: 10px;
+  list-style-image: url("chrome://browser/skin/social/social.png");
+}
+
+#social-statusarea-username {
+  background: transparent;
+  border: none;
+  color: #9C9CFF;
+  cursor: pointer;
+  min-width: 0;
+  margin: 0 6px;
+}
+#social-statusarea-username:hover {
+  text-decoration: underline;
+}
+
+#social-notification-panel {
+  min-height: 100px;
+  min-width: 100px;
+  max-height: 600px;
+  max-width: 400px;
+}
+
+
+.chat-status-icon {
+  max-height: 16px;
+  max-width: 16px;
+  padding: 0;
+}
+
+.chat-toolbarbutton {
+  -moz-appearance: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.chat-toolbarbutton > .toolbarbutton-text {
+  display: none;
+}
+
+.chat-close-button {
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+  padding: 2px 4px;
+}
+
+.chat-close-button:hover,
+.chat-close-button:hover:active {
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+}
+
+
+.chat-toggle-button {
+  /* XXX get a real image for this */
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp.gif");
+}
+
+.chat-toggle-button:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp-hover.gif");
+}
+
+.chat-toggle-button[minimized="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp.png");
+}
+
+.chat-toggle-button[minimized="true"]:hover {
+  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-hover.png");
+}
+
+.chat-title {
+  font-weight: bold;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+}
+
+.chat-titlebar {
+  background-color: #9C9CFF;
+  color: #000000;
+  height: 20px;
+  min-height: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 2px;
+  border: none;
+  border-bottom: 1px solid #008484;
+}
+
+.chat-titlebar[minimized="true"] {
+  border-bottom: none;
+}
+
+.chat-frame {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.chatbar-button {
+  /* XXX get a real image for this */
+  list-style-image: url("chrome://browser/skin/social/social.png");
+  background-color: #000000;
+  border: none;
+  margin: 0;
+  padding: 2px;
+  height: 21px;
+  width: 21px;
+  border-top: 1px solid #008484;
+  -moz-border-end: 1px solid #008484;
+}
+
+.chatbar-button > .button-box > .box-inherit > .button-icon {
+  max-height: 16px;
+  max-width: 16px;
+  padding: 2px;
+}
+
+.chatbar-button[open="true"],
+.chatbar-button:hover,
+.chatbar-button:active:hover {
+}
+
+/* toolbarbutton-icon */
+.chatbar-button > .toolbarbutton-text,
+.chatbar-button > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+.chatbar-innerbox {
+  background: transparent;
+  margin: -200px -1px 0 -1px;
+  overflow: hidden;
+}
+
+chatbar > chatbox {
+  height: 200px;
+  width: 200px;
+  background-color: #000000;
+  border: 1px solid #9C9CFF;
+  border-bottom: none;
+}
+
+chatbar > chatbox[minimized="true"] {
+  width: 100px;
+  height: 20px;
+  border-bottom: none;
+}
+
+chatbar > chatbox + chatbox {
+  -moz-margin-start: -1px;
+}
