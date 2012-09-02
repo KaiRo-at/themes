@@ -118,3 +118,15 @@ listheader[sortable="true"]:hover:active {
   min-height: 12px;
   background: #000000 no-repeat 50% 50%;
 }
+
+.listcell-check[checked="true"] {
+  background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}
+
+listitem[type="checkbox"]:hover .listcell-check {
+  border-color: #FFCF00;
+}
+
+listitem[type="checkbox"]:hover .listcell-label {
+  color: #FFCF00;
+}
