@@ -89,6 +89,10 @@ tabpanels {
   text-shadow: none;
 }
 
+.alltabs-item[tabIsScrolled] {
+  font-style: italic;
+}
+
 #tabbar-toolbar {
   border-bottom-style: none;
   min-height: 0;

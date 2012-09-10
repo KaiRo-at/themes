@@ -59,12 +59,10 @@ tabbrowser > tabbox > tabpanels {
   opacity: .8;
 }
 
-.toolbarbutton-text {
+.tabs-newbutton > .toolbarbutton-text,
+.tabs-alltabs-button > .toolbarbutton-text,
+.tabs-closebutton > .toolbarbutton-text {
   display: none;
-}
-
-.toolbarbutton-icon {
-  margin: 0px !important; /* needs to override communicator.css */
 }
 
 /* ::::: Tab scrollbox arrow, and all-tabs buttons ::::: */
@@ -87,6 +85,10 @@ tabbrowser > tabbox > tabpanels {
 
 .alltabs-item[busy] {
   list-style-image: url("chrome://communicator/skin/icons/loading.gif");
+}
+
+.alltabs-item[tabIsScrolled] {
+  font-style: italic;
 }
 
 /* ::::: close & new tab buttons ::::: */

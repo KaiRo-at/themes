@@ -97,6 +97,10 @@ tabpanels {
   text-shadow: none;
 }
 
+.alltabs-item[tabIsScrolled] {
+  font-style: italic;
+}
+
 #tabbar-toolbar {
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
   border-top-style: none;
