@@ -11,7 +11,7 @@ window {
 }
 
 .hud-box.animated {
-  -moz-transition: height 100ms;
+  transition: height 100ms;
 }
 
 .hud-outer-wrapper {

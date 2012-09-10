@@ -643,7 +643,7 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 #back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,
 #forward-button:-moz-locale-dir(rtl),
 #forward-button:-moz-locale-dir(rtl) > .toolbarbutton-text {
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 #nav-bar #back-button {
@@ -776,7 +776,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button:not([switchingtabs]) > #forward-button {
-  -moz-transition: opacity 150ms ease-out;
+  transition: opacity 150ms ease-out;
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
@@ -1168,7 +1168,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button:not([switchingtabs]) + #urlbar-container > #urlbar {
-  -moz-transition: margin-left 150ms ease-out;
+  transition: margin-left 150ms ease-out;
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
@@ -1195,7 +1195,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button[forwarddisabled]:hover:not([switchingtabs]) + #urlbar-container > #urlbar {
   /* delay the hiding of the forward button when hovered to avoid accidental clicks on the url bar */
-  -moz-transition-delay: 100s;
+  transition-delay: 100s;
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
@@ -1212,7 +1212,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button + #urlbar-container > #urlbar:-moz-locale-dir(rtl) {
   /* let winstripe-urlbar-back-button-clip-path clip the urlbar's right side for RTL */
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
@@ -1313,21 +1313,21 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button[forwarddisabled] + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(ltr) {
   padding-left: 2px;
-  -moz-transition: padding-left;
+  transition: padding-left;
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button[forwarddisabled] + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(rtl) {
   padding-right: 2px;
-  -moz-transition: padding-right;
+  transition: padding-right;
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button[forwarddisabled]:hover:not([switchingtabs]) + #urlbar-container > #urlbar > #notification-popup-box[hidden] + #identity-box {
   /* forward button hiding is delayed when hovered */
-  -moz-transition-delay: 100s;
+  transition-delay: 100s;
 }
 
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
@@ -1563,7 +1563,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 #go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,
 #urlbar-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 #urlbar-go-button:hover,
@@ -1824,7 +1824,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 }
 
 .tab-close-button:-moz-system-metric(touch-enabled) {
-  -moz-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .tab-close-button:hover,
@@ -1965,7 +1965,7 @@ toolbarbutton.chevron:hover {
 
 toolbarbutton.chevron:-moz-locale-dir(rtl) > .toolbarbutton-icon,
 toolbarbutton.chevron:-moz-locale-dir(rtl):hover > .toolbarbutton-icon {
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 toolbarbutton.chevron > .toolbarbutton-text,
@@ -2180,7 +2180,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #notification-popup-box:-moz-locale-dir(rtl),
 .notification-anchor-icon:-moz-locale-dir(rtl) {
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .notification-anchor-icon {
@@ -2629,7 +2629,7 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
   width: 14px;
   height: 14px;
   -moz-margin-start: -moz-calc(50% - 7px);
-  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
   border: 1px solid transparent;
   background-clip: padding-box;
   background-repeat: no-repeat;
@@ -2746,7 +2746,7 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 
 #inspector-breadcrumbs > .scrollbutton-up > .toolbarbutton-icon:-moz-locale-dir(rtl),
 #inspector-breadcrumbs > .scrollbutton-down > .toolbarbutton-icon:-moz-locale-dir(ltr) {
-/*  -moz-transform: scaleX(-1); */
+/*  transform: scaleX(-1); */
 }
 
 .inspector-breadcrumbs-button {
@@ -3069,7 +3069,7 @@ stack[anonid=browserStack][responsivemode] {
   width: 7px;
   height: 24px;
   cursor: ew-resize;
-  -moz-transform: translate(12px, -12px);
+  transform: translate(12px, -12px);
   background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer.png");
 }
 
@@ -3077,7 +3077,7 @@ stack[anonid=browserStack][responsivemode] {
   width: 16px;
   height: 16px;
   cursor: se-resize;
-  -moz-transform: translate(12px, 12px);
+  transform: translate(12px, 12px);
   background-image: url("chrome://browser/skin/devtools/responsive-se-resizer.png");
 }
 

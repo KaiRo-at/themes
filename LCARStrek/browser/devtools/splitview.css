@@ -103,11 +103,11 @@
   border-style: solid;
   border-color: #9C9CFF;*/
   margin: 5px 0;
-  -moz-transform: translateX(-22px); /* account for startcap as well */
+  transform: translateX(-22px); /* account for startcap as well */
 }
 
 .splitview-landscape-resizer:-moz-locale-dir(rtl) {
-  -moz-transform: translateX(22px);
+  transform: translateX(22px);
 }
 
 .splitview-portrait-resizer {

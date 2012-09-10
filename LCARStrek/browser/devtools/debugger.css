@@ -111,17 +111,17 @@ window {
   -moz-margin-end: 1px;
   margin-top: 2px;
   border-bottom: 1px dotted #008484;
-  -moz-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;
   background: #000000;
 }
 
 .variable[changed] {
-  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   background: #FFCF00;
 }
 
 .variable[added] {
-  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   background: #008484;
 }
 
@@ -247,14 +247,14 @@ window {
 @-moz-keyframes showblock {
   from {
     opacity: 0;
-    -moz-transform-origin: top;
-    -moz-transform: scaleY(0);
+    transform-origin: top;
+    transform: scaleY(0);
   }
 
   to {
     opacity: 1;
-    -moz-transform-origin: top;
-    -moz-transform: scaleY(1);
+    transform-origin: top;
+    transform: scaleY(1);
   }
 }
 

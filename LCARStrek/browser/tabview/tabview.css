@@ -91,23 +91,23 @@ html[dir=rtl] .close {
   width: 16px;
   height: 16px;
   background: url("chrome://global/skin/icons/resizer.png") no-repeat;
-  -moz-transition-property: opacity;
-  -moz-transition-duration: 0.5s;
-  -moz-transition-timing-function: ease-out;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
   opacity: 0.2;
 }
 
 html[dir=rtl] .expander {
   right: auto;
   left: 6px;
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .expander:hover,
 .appTabIcon:hover {
-  -moz-transition-property: opacity;
-  -moz-transition-duration: 0.5s;
-  -moz-transition-timing-function: ease-out;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
   opacity: 1.0;
 }
 
@@ -440,7 +440,7 @@ html[dir=rtl] .title-shield {
 html[dir=rtl] .resizer {
   right: auto;
   left: 0;
-  -moz-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .iq-resizable-handle {
