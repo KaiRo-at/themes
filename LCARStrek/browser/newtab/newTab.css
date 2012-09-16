@@ -49,7 +49,7 @@
   -moz-margin-end: 0;
 }
 
-.newtab-cell:hover:not(:empty) {
+.newtab-cell:hover:not(:empty):not([dragged]) {
   border-color: #FFCF00;
 }
 

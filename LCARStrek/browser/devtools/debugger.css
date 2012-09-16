@@ -29,11 +29,23 @@ window {
 }
 
 /**
+ * This hardcoded width likely due to a toolkit Windows specific bug.
+ * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
+ */
+#scripts-search {
+  width: 200px;
+}
+
+/**
  * Lists and headers
  */
 
 .list-item {
   padding: 2px;
+}
+
+.list-item:not(.selected):not(.empty):hover {
+  /* background: #cddae5; */
 }
 
 .list-item.selected {
@@ -43,6 +55,7 @@ window {
 
 .list-item.empty {
   color: #8050B0;
+  /* padding: 4px; */
 }
 
 /**
@@ -61,6 +74,22 @@ window {
 .dbg-stackframe-name {
   -moz-padding-end: 4px;
   font-weight: 600;
+}
+
+/**
+ * Breakpoints view
+ */
+
+#breakpoints {
+  background-color: #000000;
+}
+
+.dbg-breakpoint-info {
+  font-weight: 600;
+}
+
+.dbg-breakpoint-text {
+  font: 12px "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 /**
@@ -174,6 +203,16 @@ window {
   height: 16px;
   background: url("chrome://browser/skin/identity-icons-https.png") no-repeat;
   opacity: 0.5;
+}
+
+#element-tooltip > label {
+  margin: 0 2px 0 2px;
+}
+
+#element-tooltip > label[non-enumerable],
+#element-tooltip > label[non-configurable],
+#element-tooltip > label[non-writable]{
+  text-decoration: line-through;
 }
 
 /**

@@ -33,7 +33,7 @@
 }
 
 #downloadsHistory {
-  background: inherit;
+  background: transparent;
   color: #9C9CFF;
   cursor: pointer;
 }
