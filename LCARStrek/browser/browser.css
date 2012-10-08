@@ -3187,85 +3187,64 @@ stack[anonid=browserStack][responsivemode] {
   border: none;
 }
 
+/* Social toolbar item */
 
-/* social toolbar button */
-.social-statusarea-container {
-  -moz-appearance: none;
-  border-radius: 3px;
-  background-color: #000000;
-}
-
-.social-statusarea-container:hover {
-  background-color: #FFCF00;
-}
-
-#social-toolbar-button[open="true"] > .social-statusarea-container {
-  background-color: #FF9F00;
-}
-
-/* favicon for the service */
-#social-provider-image {
-  min-width: 20px;
-  min-height: 20px;
-  padding: 2px 5px;
-  margin: 0;
-  background: transparent;
-  list-style-image: url("chrome://browser/skin/social/social.png");
-}
-
-#social-provider-image > .button-box > .box-inherit > .button-icon {
-  max-height: 16px;
-  max-width: 16px;
-}
-
-#social-provider-image > .button-box {
-  padding: 0;
-  margin: 0;
-  background: transparent;
-  border: none;
-}
-
-#social-provider-image > .button-box > .button-menu-dropmarker {
+#social-provider-button > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 
-/* hbox that hold notification icons */
-#social-status-iconbox {
-  margin: 0;
-  padding: 0;
+#social-toolbar-item > .toolbarbutton-1 {
 }
 
-/* hbox that surrounds an image and its counter */
-.social-notification-icon-container {
-  padding: 0;
-  margin: 0;
-  position: relative;
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1 {
 }
 
-/* notification counter box */
-.social-notification-icon-counter {
-  background-color: #000000;
-  border: 1px solid #9C9CFF;
-  padding-right: 1px;
-  padding-left: 1px;
-  color: #FF9F00;
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1:first-child {
+}
+
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1:last-child {
+}
+
+.social-notification-icon-hbox {
+  pointer-events: none;
+}
+
+.social-notification-icon-stack > image {
+  max-height: 20px;
+}
+
+.social-notification-icon-label {
+  text-align: end;
   font-size: 9px;
   font-weight: bold;
-  position: absolute;
-  right: -3px;
-  top: -4px;
-  z-index: 1;
-  text-align: center;
+  padding: 0 1px;
+  color: #FF9F00;
+  background-color: #000000;
+  border: 1px solid #9C9CFF;
+  border-radius: 2px;
 }
 
-/* notification image */
+.social-notification-icon-label[value=""] {
+  display: none;
+}
+
 .social-notification-icon-image {
-  padding: 2px;
-  margin: 0;
-  min-width: 20px;
-  max-width: 32px;
-  max-height: 20px;
-  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+  width: 16px;
+  height: 16px;
+}
+
+#social-notification-icon-mentions {
+  background-color: #000000;
+  border-radius: 3px;
+  -moz-margin-start: 2px;
+}
+
+#social-notification-icon-mentions:hover {
+  background-color: #FFCF00;
+}
+
+#social-notification-icon-mentions[open="true"] {
+  background-color: #FF9F00;
 }
 
 #social-sidebar-splitter {
@@ -3285,6 +3264,7 @@ stack[anonid=browserStack][responsivemode] {
   color: #FF9F00;
   position: relative;
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  cursor: pointer;
 }
 
 #social-statusarea-user-portrait {
@@ -3292,18 +3272,17 @@ stack[anonid=browserStack][responsivemode] {
   height: 32px;
   border-radius: 2px;
   margin: 10px;
-  list-style-image: url("chrome://browser/skin/social/social.png");
 }
 
-#social-statusarea-username {
+#social-statusarea-user > vbox > .link {
   background: transparent;
   border: none;
   color: #9C9CFF;
-  cursor: pointer;
   min-width: 0;
   margin: 0 6px;
+  list-style-image: none;
 }
-#social-statusarea-username:hover {
+#social-statusarea-user:hover > vbox > .link {
   text-decoration: underline;
 }
 
@@ -3314,6 +3293,14 @@ stack[anonid=browserStack][responsivemode] {
   max-width: 400px;
 }
 
+.social-panel > .panel-arrowcontainer > .panel-arrowcontent {
+  padding: 0;
+}
+
+#social-notification-box,
+.social-panel-frame {
+  border-radius: inherit;
+}
 
 .chat-status-icon {
   max-height: 16px;
@@ -3334,36 +3321,19 @@ stack[anonid=browserStack][responsivemode] {
 }
 
 .chat-close-button {
-  list-style-image: url("chrome://global/skin/icons/close-button.gif");
-  padding: 2px 4px;
+  list-style-image: url('chrome://browser/skin/social/chat-close.png');
+  -moz-image-region: rect(0, 14px, 14px, 0);
 }
 
 .chat-close-button:hover,
 .chat-close-button:hover:active {
-  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
-}
-
-
-.chat-toggle-button {
-  /* XXX get a real image for this */
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp.gif");
-}
-
-.chat-toggle-button:hover {
-  list-style-image: url("chrome://global/skin/arrow/arrow-down-sharp-hover.gif");
-}
-
-.chat-toggle-button[minimized="true"] {
-  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp.png");
-}
-
-.chat-toggle-button[minimized="true"]:hover {
-  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-hover.png");
+  -moz-image-region: rect(14px, 14px, 28px, 0);
 }
 
 .chat-title {
   font-weight: bold;
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  cursor: inherit;
 }
 
 .chat-titlebar {
@@ -3374,12 +3344,22 @@ stack[anonid=browserStack][responsivemode] {
   width: 100%;
   margin: 0;
   padding: 2px;
+  -moz-padding-start: 6px;
   border: none;
   border-bottom: 1px solid #008484;
+  cursor: pointer;
 }
 
 .chat-titlebar[minimized="true"] {
   border-bottom: none;
+}
+
+.chat-titlebar[selected] {
+  background-color: #008484;
+}
+
+.chat-titlebar[activity] {
+  background-color: #E7ADE7;
 }
 
 .chat-frame {
@@ -3418,6 +3398,14 @@ stack[anonid=browserStack][responsivemode] {
   display: none;
 }
 
+.chatbar-button[activity] {
+  background-color: #E7ADE7;
+}
+
+.chatbar-button > menupopup > menuitem[activity] {
+  font-weight: bold;
+}
+
 .chatbar-innerbox {
   background: transparent;
   margin: -200px -1px 0 -1px;
@@ -3440,4 +3428,113 @@ chatbar > chatbox[minimized="true"] {
 
 chatbar > chatbox + chatbox {
   -moz-margin-start: -1px;
+}
+
+.click-to-play-plugins-notification-content {
+  margin: -10px;
+  border-radius: 4px;
+}
+
+.click-to-play-plugins-notification-icon-box {
+  background: #000000;
+  -moz-border-end: 1px solid #9C9CFF;
+  padding-top: 16px;
+  -moz-padding-end: 16px;
+  -moz-padding-start: 24px;
+}
+
+.click-to-play-plugins-notification-icon-box:-moz-locale-dir(ltr) {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.click-to-play-plugins-notification-icon-box:-moz-locale-dir(rtl) {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.click-to-play-plugins-notification-separator {
+  -moz-border-start: 1px solid #9C9CFF;
+  border-top: 1px solid #9C9CFF;
+}
+
+.click-to-play-plugins-notification-description-box {
+  border-bottom: 1px solid #9C9CFF;
+  -moz-border-start: 1px solid #9C9CFF;
+  padding-top: 12px;
+  -moz-padding-end: 11px;
+  padding-bottom: 9px;
+  -moz-padding-start: 10px;
+}
+
+.click-to-play-plugins-notification-center-box {
+  border-top: 1px solid #9C9CFF;
+  border-bottom: 1px solid #9C9CFF;
+  -moz-border-start: 1px solid #9C9CFF;
+  background-color: #000000;
+}
+
+.click-to-play-plugins-notification-button-container {
+  border-top: 1px solid #9C9CFF;
+  -moz-border-start: 1px solid #9C9CFF;
+  margin: 0px;
+  padding: 16px;
+}
+
+.center-item-box {
+  padding: 12px 16px 0px 16px;
+}
+
+.center-item-box[padbottom="true"] {
+  padding-bottom: 12px;
+}
+
+.center-item-icon {
+  background-image: url("chrome://mozapps/skin/plugins/pluginGeneric-16.png");
+  background-repeat: no-repeat;
+  height: 16px;
+  width: 16px;
+  margin-bottom: 4px;
+}
+
+.center-item-box[warn="true"] {
+  background-color: #FFCF00;
+  color: #000000;
+  padding: 8px 16px 6px 16px;
+}
+
+.center-item-box[padbottom="true"][warn="true"] {
+  padding-bottom: 4px;
+}
+
+.center-item-box[showseparator="true"] {
+  border-top: 1px solid #9C9CFF;
+}
+
+.center-item-box[warn="false"] > .center-item-warning {
+  display: none;
+}
+
+.center-item-warning > .text-link {
+  color: #6868AA;
+}
+
+.center-item-warning > .text-link[href=""] {
+  display: none;
+}
+
+.center-item-warning-icon {
+  background-image: url("chrome://mozapps/skin/extensions/alerticon-info-negative.png");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 15px;
+  margin-bottom: 4px;
+}
+
+.center-item-warning-description {
+  color: #828282;
+}
+
+.center-item-button {
+  min-width: 0;
 }
