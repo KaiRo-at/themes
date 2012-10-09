@@ -5,14 +5,14 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>EarlyBlue@kairo.at</em:id>
-    <em:version>2.13</em:version>
+    <em:version>2.14</em:version>
 
     <!-- SeaMonkey -->
     <em:targetApplication>
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
-        <em:minVersion>2.13</em:minVersion>
-        <em:maxVersion>2.15a1</em:maxVersion>
+        <em:minVersion>2.14</em:minVersion>
+        <em:maxVersion>2.16a1</em:maxVersion>
       </Description>
     </em:targetApplication>
 
