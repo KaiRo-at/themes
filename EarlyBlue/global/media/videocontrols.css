@@ -77,8 +77,8 @@
   -moz-appearance: none;
   background: url("chrome://global/skin/media/volumeThumb.png") no-repeat center;
   border: none !important;
-  min-width: 16px;
-  min-height: 11px;
+  min-width: 20px;
+  min-height: 10px;
 }
 
 .volumeBackgroundBar {

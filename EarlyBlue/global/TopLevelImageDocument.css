@@ -4,10 +4,11 @@
 
 @media not print {
   body {
+    color: #FFFFFF;
     background-color: #222;
   }
 
-  .decoded {
+  img.decoded {
     background-color: #fff;
     color: #222;
   }
