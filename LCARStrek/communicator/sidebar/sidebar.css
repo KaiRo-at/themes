@@ -35,6 +35,7 @@
   background-color: #6000CF;
   padding: 0px 2px;
   -moz-padding-start: 4px;
+  height: auto;
 }
 
 .sidebar-header-text {

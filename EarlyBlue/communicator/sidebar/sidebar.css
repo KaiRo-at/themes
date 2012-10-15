@@ -19,12 +19,13 @@
   color: #CCD0DD;
   background-color: #666699;
   -moz-padding-start: 4px;
+  height: auto;
 }
 
 #sidebar-panel-picker {
   color: inherit;
 }
-  
+
 .sidebar-header-text {
   font-weight: bold;
 }
