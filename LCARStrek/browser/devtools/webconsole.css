@@ -6,14 +6,6 @@ window {
   padding: 0;
 }
 
-.hud-box {
-  border-bottom: 3px solid #000000;
-}
-
-.hud-box.animated {
-  transition: height 100ms;
-}
-
 .hud-outer-wrapper {
   width: 100%; 
   height: 100%;
@@ -30,7 +22,7 @@ window {
   color: #8050B0;
   margin-top: 0;
   margin-bottom: 0;
-  font: 12px "Liberation Mono", Consolas, "Courier New", monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 .hud-msg-node {
@@ -61,7 +53,7 @@ window {
   -moz-margin-start: 3px;
   -moz-margin-end: 6px;
   white-space: pre-wrap;
-  font: 12px "Liberation Mono", Consolas, "Courier New", monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 .webconsole-msg-body-piece {
@@ -81,7 +73,7 @@ window {
   background-color: #FF0000;
   border-radius: 40px;
   /* font: message-box; */
-  font-size: 10px;
+  font-size: 0.9em;
   font-weight: 600;
 }
 
@@ -106,7 +98,7 @@ window {
 
 .jsterm-input-node,
 .jsterm-complete-node {
-  font: 12px "Liberation Mono", Consolas, "Courier New", monospace;
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 .hud-output-node {
@@ -121,22 +113,21 @@ window {
   display: none;
 }
 
-.webconsole-clear-console-button > .toolbarbutton-icon {
-  display: none;
+/* WebConsole colored drops */
+
+.webconsole-filter-button[checked=true] {
+  /* color: white !important; */
 }
 
-.webconsole-filter-button > .toolbarbutton-menubutton-button {
-  -moz-box-orient: horizontal;
-  list-style-image: url("chrome://browser/skin/devtools/webconsole.png");
-}
-
-.webconsole-filter-button:hover:active > .toolbarbutton-menubutton-button,
-.webconsole-filter-button[open="true"] > .toolbarbutton-menubutton-button {
-}
-
-.webconsole-filter-button {
-  -moz-margin-start: 3px;
-  padding: 0 !important;
+.webconsole-filter-button > .toolbarbutton-menubutton-button:before {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-left: 5px;
+  border-width: 1px;
+  border-style: solid;
 }
 
 .webconsole-filter-button menuitem {
@@ -149,8 +140,9 @@ window {
 }
 
 /* Network styles */
-.webconsole-filter-button[category="net"] {
-  -moz-image-region: rect(0, 8px, 8px, 0);
+.webconsole-filter-button[category="net"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#796400, #000000);
+  border-color: #FFCF00;
 }
 
 .webconsole-msg-network > .webconsole-msg-icon-container {
@@ -162,8 +154,9 @@ window {
 }
 
 /* CSS styles */
-.webconsole-filter-button[category="css"] {
-  -moz-image-region: rect(8px, 8px, 16px, 0);
+.webconsole-filter-button[category="css"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#484879, #000000);
+  border-color: #9C9CFF;
 }
 
 .webconsole-msg-cssparser > .webconsole-msg-icon-container {
@@ -179,8 +172,9 @@ window {
 }
 
 /* JS styles */
-.webconsole-filter-button[category="js"] {
-  -moz-image-region: rect(16px, 8px, 24px, 0);
+webconsole-filter-button[category="js"] > .toolbarbutton-menubutton-button:before {
+   background-image: linear-gradient(#794900, #000000);
+   border-color: #FF9F00;
 }
 
 .webconsole-msg-exception > .webconsole-msg-icon-container {
@@ -196,8 +190,9 @@ window {
 }
 
 /* Web Developer styles */
-.webconsole-filter-button[category="logging"] {
-  -moz-image-region: rect(24px, 8px, 32px, 0);
+.webconsole-filter-button[category="logging"] > .toolbarbutton-menubutton-button:before {
+   background-image: linear-gradient(#402858, #000000);
+   border-color: #8050B0;
 }
 
 .webconsole-msg-console > .webconsole-msg-icon-container {
@@ -239,7 +234,7 @@ webconsole-mixed-content {
 .webconsole-msg-output {
   -moz-image-region: rect(24px, 48px, 32px, 40px);
 }
-
+/*
 .webconsole-close-button {
   border: none;
   padding-top: 4px;
@@ -251,33 +246,8 @@ webconsole-mixed-content {
 .webconsole-close-button:hover:active {
   list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
 }
-
+*/
 /* JSTerm Styles */
-
-.jsterm-wrapper-node {
-  font-family: "Liberation Mono", Consolas, "Courier New", monospace; 
-  font-size: 1em;
-  background-color: #000; 
-  border: 1px solid #333; 
-  padding: 0.1em;
-  width: 100%;
-  height: 400px;
-}
-
-.jsterm-output-node {
-  width: 100%;
-  height: 400px;
-  color: white;
-  background-color: black;
-  overflow: auto;
-  overflow-x: auto;
-  position: absolute;
-  -moz-box-direction: reverse;
-}
-
-.jsterm-scroll-to-node {
-  height: 1px; width: 1px; position: relative; top: 92%; display: block;
-}
 
 .jsterm-input-node,
 .jsterm-complete-node {
@@ -298,25 +268,13 @@ webconsole-mixed-content {
   color: #8050B0;
 }
 
-.jsterm-output-line {
-  font-size: 1em;
-}
+/* Filter */
 
-.hud-console-filter-toolbar {
-  -moz-box-align: center;
-}
+/*
+ * This hardcoded width likely due to a toolkit Windows specific bug.
+ * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
+ */
 
-.web-console-panel {
-  -moz-appearance: none;
-  background-color: black;
-}
-
-.web-console-panel > .hud-box {
-  height: 100%;
-  width: 100%;
-  background-color: black;
-}
-
-.hud-splitter {
-  border: 0;
+.hud-filter-box {
+  width: 200px;
 }

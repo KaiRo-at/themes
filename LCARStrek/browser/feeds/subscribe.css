@@ -50,7 +50,7 @@ html {
   background: url("chrome://communicator/skin/icons/audioFeedIcon.png") 0% 10% no-repeat #FFCF00;
 }
 
-#feedHeader[dir="rtl"] {
+#feedHeader:-moz-dir(rtl) {
   background-position: 100% 10%;
 }
 

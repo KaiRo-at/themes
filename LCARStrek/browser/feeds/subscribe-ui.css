@@ -24,6 +24,6 @@
   list-style-image: url("chrome://browser/skin/preferences/application.png");
 }
 
-#feedHeader[dir="rtl"] .handlersMenuList > menupopup {
+.handlersMenuList > menupopup:-moz-dir(rtl) {
   direction: rtl;
 }

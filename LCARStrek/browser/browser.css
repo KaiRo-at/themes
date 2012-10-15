@@ -1891,7 +1891,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   }
 
   .tab-content {
-    min-height: -moz-calc(6.8mozmm - 7px); /* subtract borders from the desired height */
+    min-height: calc(6.8mozmm - 7px); /* subtract borders from the desired height */
   }
 }
 
@@ -2419,29 +2419,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   outline: 1px dotted #008484;
 }
 
-/* Inspector / Highlighter */
-
-#highlighter-panel {
-  -moz-window-shadow: none;
-  background: #000000;
-  border: none;
-}
-
-listitem.style-selector {
-  background-color: #9C9CFF;
-  color: #000000;
-}
-
-listitem.style-section {
-  background-color: #E7ADE7;
-  color: #000000;
-  font-weight: bold;
-}
-
-panel[dimmed="true"] {
-  opacity: 0.5;
-}
-
 /* Add-on bar */
 
 #addon-bar {
@@ -2616,7 +2593,7 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 
 #highlighter-nodeinfobar-text {
   /* 100% - size of the buttons and margins */
-  max-width: -moz-calc(100% - 2 * (26px + 6px));
+  max-width: calc(100% - 2 * (26px + 6px));
   padding-bottom: 1px;
 }
 
@@ -2672,7 +2649,7 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 .highlighter-nodeinfobar-arrow {
   width: 14px;
   height: 14px;
-  -moz-margin-start: -moz-calc(50% - 7px);
+  -moz-margin-start: calc(50% - 7px);
   transform: rotate(-45deg);
   border: 1px solid transparent;
   background-clip: padding-box;
@@ -3125,6 +3102,20 @@ stack[anonid=browserStack][responsivemode] {
   background-image: url("chrome://browser/skin/devtools/responsive-se-resizer.png");
 }
 
+/* Web Console */
+
+.web-console-frame {
+  /* border-bottom: 3px solid #000000; */
+}
+
+.web-console-frame[animated] {
+  transition: height 100ms;
+}
+
+.web-console-splitter {
+  border: none;
+}
+
 /* Developer Toolbar */
 
 .developer-toolbar-button {
@@ -3134,6 +3125,7 @@ stack[anonid=browserStack][responsivemode] {
   list-style-image: url("chrome://browser/skin/devtools/tools-icons-small.png");
 }
 
+.developer-toolbar-button[open=true],
 .developer-toolbar-button:active:hover,
 .developer-toolbar-button[checked=true] {
 }
@@ -3162,6 +3154,7 @@ stack[anonid=browserStack][responsivemode] {
 }
 
 #developer-toolbar-other-tools > .toolbarbutton-menu-dropmarker {
+  display: none;
 }
 
 /* Error counter */
@@ -3172,19 +3165,7 @@ stack[anonid=browserStack][responsivemode] {
   text-shadow: none;
   background-color: #FF0000;
   border-radius: 1px;
-}
-
-/* Web Console */
-
-.web-console-frame {
-}
-
-.web-console-frame[animated] {
-  transition: height 100ms;
-}
-
-.web-console-splitter {
-  border: none;
+  -moz-margin-end: 5px;
 }
 
 /* Social toolbar item */
@@ -3284,13 +3265,6 @@ stack[anonid=browserStack][responsivemode] {
 }
 #social-statusarea-user:hover > vbox > .link {
   text-decoration: underline;
-}
-
-#social-notification-panel {
-  min-height: 100px;
-  min-width: 100px;
-  max-height: 600px;
-  max-width: 400px;
 }
 
 .social-panel > .panel-arrowcontainer > .panel-arrowcontent {

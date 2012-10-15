@@ -42,7 +42,7 @@ h2 {
   background-origin: content-box;
 }
 
-body[dir="rtl"] #errorPageContainer {
+#errorPageContainer:-moz-dir(rtl) {
   background-position: right 0;
 }
 
@@ -70,7 +70,7 @@ body[dir="rtl"] #errorPageContainer {
   color: #000000;
 }
 
-body[dir="rtl"] .expander > button {
+.expander > button:-moz-dir(rtl) {
   background-position: right center;
 }
 
@@ -78,6 +78,6 @@ body[dir="rtl"] .expander > button {
   background-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
 }
 
-body[dir="rtl"] .expander[collapsed] > button {
+.expander[collapsed] > button:-moz-dir(rtl) {
   background-image: url("chrome://global/skin/tree/twisty-closed-rtl-selected.gif");
 }
