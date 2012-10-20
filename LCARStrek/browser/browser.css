@@ -1136,7 +1136,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #urlbar {
   width: 7em;
-  min-width: 7em;
   /* make color as light as possible to deal with dark non-domain parts */
   color: #FFBFFF;
 }
@@ -1236,6 +1235,7 @@ html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
 
 .urlbar-input-box {
   -moz-margin-start: 0;
+  min-width: 4em;
 }
 
 #urlbar-icons {
@@ -1636,11 +1636,11 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   text-decoration: underline;
 }
 
-#editSharePopupText {
+#unsharePopupText {
   height: 48px;
 }
 
-#editSharePopupBottomButtons {
+#unsharePopupBottomButtons {
   margin-top: 1em;
 }
 
@@ -2149,9 +2149,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="click-to-play-plugins"] {
-  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
-  width: 32px;
-  height: 32px;
+  list-style-image: url("chrome://mozapps/skin/plugins/pluginBlocked-64.png");
 }
 
 .addon-progress-description {
@@ -2506,19 +2504,14 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 /* Highlighter */
 
-.highlighter-veil {
-  background-color: rgba(25, 25, 25, 0.5);
-}
-
-highlighter-veil-transparentbox {
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.5);
-  outline: 1px dashed rgba(255,255,255,0.5);
-  outline-offset: -1px;
-}
-
-#highlighter-veil-container[locked] > #highlighter-veil-middlebox > #highlighter-veil-transparentbox {
+#highlighter-outline {
   box-shadow: 0 0 0 1px black;
-  outline-color: white;
+  outline: 1px dashed white;
+}
+
+#highlighter-outline[locked]  {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
+  outline-color: rgba(255,255,255,0.7);
 }
 
 /* Highlighter toolbar */
@@ -2530,16 +2523,6 @@ highlighter-veil-transparentbox {
 
 #inspector-inspect-toolbutton[checked=true],
 #inspector-inspect-toolbutton:hover {
-  -moz-image-region: rect(0 32px 16px 16px);
-}
-
-#inspector-option-toolbarbutton {
-  list-style-image: url("chrome://browser/skin/devtools/inspector-option-icon.png");
-  -moz-image-region: rect(0 16px 16px 0);
-}
-
-#inspector-option-toolbarbutton[open],
-#inspector-option-toolbarbutton:hover {
   -moz-image-region: rect(0 32px 16px 16px);
 }
 
@@ -3112,10 +3095,6 @@ stack[anonid=browserStack][responsivemode] {
   transition: height 100ms;
 }
 
-.web-console-splitter {
-  border: none;
-}
-
 /* Developer Toolbar */
 
 .developer-toolbar-button {
@@ -3314,7 +3293,7 @@ stack[anonid=browserStack][responsivemode] {
   background-color: #9C9CFF;
   color: #000000;
   height: 20px;
-  min-height: 20px;
+  min-height: 16px;
   width: 100%;
   margin: 0;
   padding: 2px;
@@ -3366,7 +3345,6 @@ stack[anonid=browserStack][responsivemode] {
 .chatbar-button:active:hover {
 }
 
-/* toolbarbutton-icon */
 .chatbar-button > .toolbarbutton-text,
 .chatbar-button > .toolbarbutton-menu-dropmarker {
   display: none;
@@ -3382,26 +3360,26 @@ stack[anonid=browserStack][responsivemode] {
 
 .chatbar-innerbox {
   background: transparent;
-  margin: -200px -1px 0 -1px;
+  margin: -285px -1px 0 -1px;
   overflow: hidden;
 }
 
+chatbar {
+  -moz-margin-end: 20px;
+}
+
 chatbar > chatbox {
-  height: 200px;
-  width: 200px;
+  height: 285px;
+  width: 260px;
+  -moz-margin-start: 4px;
   background-color: #000000;
   border: 1px solid #9C9CFF;
   border-bottom: none;
 }
 
-chatbar > chatbox[minimized="true"] {
-  width: 100px;
+chatbox[minimized="true"] {
+  width: 160px;
   height: 20px;
-  border-bottom: none;
-}
-
-chatbar > chatbox + chatbox {
-  -moz-margin-start: -1px;
 }
 
 .click-to-play-plugins-notification-content {

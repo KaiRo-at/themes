@@ -12,10 +12,13 @@
 .devtools-toolbarbutton {
 }
 
+.devtools-toolbarbutton > .toolbarbutton-menubutton-button {
+  /*-moz-box-orient: horizontal;*/
+}
+
 devtools-menulist:-moz-focusring,
 .devtools-toolbarbutton:-moz-focusring {
   outline: 1px dotted #008484;
-  outline-offset: -4px;
 }
 
 .devtools-toolbarbutton > .toolbarbutton-icon {
@@ -29,6 +32,10 @@ devtools-menulist:-moz-focusring,
 }
 
 .devtools-menulist[open=true],
+.devtools-toolbarbutton[open=true],
+.devtools-toolbarbutton[checked=true] {
+}
+
 .devtools-toolbarbutton[checked=true] {
 }
 
@@ -49,6 +56,24 @@ devtools-menulist:-moz-focusring,
 .devtools-toolbar > checkbox {
   background-color: #000000;
   padding: 2px;
+}
+
+.devtools-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-button {
+}
+
+.devtools-toolbarbutton[type=menu-button]:-moz-locale-dir(rtl) > .toolbarbutton-menubutton-button {
+}
+
+.devtools-toolbarbutton[type=menu-button] {
+  padding: 0 1px;
+  -moz-box-align: stretch;
+}
+
+.devtools-toolbarbutton[type=menu] > .toolbarbutton-menu-dropmarker,
+.devtools-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-dropmarker {
+  -moz-appearance: none !important;
+  list-style-image: url("chrome://browser/skin/devtools/dropmarker.png");
+  -moz-box-align: center;
 }
 
 /* Search input */
@@ -82,7 +107,7 @@ devtools-menulist:-moz-focusring,
 }
 
 .devtools-searchinput:-moz-locale-dir(rtl) {
-  background-position: calc(100% - 4px) 3px, top left, top left;
+  background-position: calc(100% - 4px) center, top left, top left;
 }
 
 .devtools-searchinput > .textbox-input-box > .textbox-search-icons {
