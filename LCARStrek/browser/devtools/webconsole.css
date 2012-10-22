@@ -141,12 +141,12 @@ window {
 
 /* Network styles */
 .webconsole-filter-button[category="net"] > .toolbarbutton-menubutton-button:before {
-  background-image: linear-gradient(#796400, #000000);
+  background-image: linear-gradient(#BF9B00, #7F6700);
   border-color: #FFCF00;
 }
 
 .webconsole-msg-network > .webconsole-msg-icon-container {
-  -moz-border-start: solid #000 6px;
+  -moz-border-start: solid #FFCF00 6px;
 }
 
 .webconsole-msg-network.webconsole-msg-error {
@@ -155,12 +155,12 @@ window {
 
 /* CSS styles */
 .webconsole-filter-button[category="css"] > .toolbarbutton-menubutton-button:before {
-  background-image: linear-gradient(#484879, #000000);
+  background-image: linear-gradient(#7575BF, #4E4E7F);
   border-color: #9C9CFF;
 }
 
 .webconsole-msg-cssparser > .webconsole-msg-icon-container {
-  -moz-border-start: solid #00b6f0 6px;
+  -moz-border-start: solid #9C9CFF 6px;
 }
 
 .webconsole-msg-cssparser.webconsole-msg-error {
@@ -172,13 +172,13 @@ window {
 }
 
 /* JS styles */
-webconsole-filter-button[category="js"] > .toolbarbutton-menubutton-button:before {
-   background-image: linear-gradient(#794900, #000000);
+.webconsole-filter-button[category="js"] > .toolbarbutton-menubutton-button:before {
+   background-image: linear-gradient(#BF7700, #7F4F00);
    border-color: #FF9F00;
 }
 
 .webconsole-msg-exception > .webconsole-msg-icon-container {
-  -moz-border-start: solid #fb9500 6px;
+  -moz-border-start: solid #FF9F00 6px;
 }
 
 .webconsole-msg-exception.webconsole-msg-error {
@@ -191,12 +191,12 @@ webconsole-filter-button[category="js"] > .toolbarbutton-menubutton-button:befor
 
 /* Web Developer styles */
 .webconsole-filter-button[category="logging"] > .toolbarbutton-menubutton-button:before {
-   background-image: linear-gradient(#402858, #000000);
+   background-image: linear-gradient(#5F3B83, #3F2756);
    border-color: #8050B0;
 }
 
 .webconsole-msg-console > .webconsole-msg-icon-container {
-  -moz-border-start: solid #cbcbcb 6px;
+  -moz-border-start: solid #8050B0 6px;
 }
 
 .webconsole-msg-console.webconsole-msg-error,

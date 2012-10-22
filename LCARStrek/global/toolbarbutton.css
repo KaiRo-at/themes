@@ -132,6 +132,12 @@ toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
   background-color: #000000;
 }
 
+toolbarbutton[type="menu-button"][checked="true"] > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"][checked="true"] > .toolbarbutton-menubutton-dropmarker {
+  background-color: #008484;
+  color: #FFCF00;
+}
+
 .toolbarbutton-menubutton-button[disabled="true"],
 .toolbarbutton-menubutton-dropmarker[disabled="true"] {
   background-color: #000000 !important;
@@ -139,7 +145,9 @@ toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
 }
 
 toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-button,
-toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker {
+toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][checked="true"]:hover > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"][checked="true"]:hover > .toolbarbutton-menubutton-dropmarker {
   background-color: #FFCF00;
   color: #000000;
 }
@@ -147,7 +155,9 @@ toolbarbutton[type="menu-button"]:hover > .toolbarbutton-menubutton-dropmarker {
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-button,
 toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-button,
-toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker,
+toolbarbutton[type="menu-button"][checked="true"]:hover:active > .toolbarbutton-menubutton-button,
+toolbarbutton[type="menu-button"][checked="true"]:hover:active > .toolbarbutton-menubutton-dropmarker {
   background-color: #FF9F00;
   color: #000000;
 }
