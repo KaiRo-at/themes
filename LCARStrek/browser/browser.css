@@ -3223,7 +3223,6 @@ stack[anonid=browserStack][responsivemode] {
   background-color: #000000;
   color: #FF9F00;
   position: relative;
-  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   cursor: pointer;
 }
 
@@ -3234,7 +3233,8 @@ stack[anonid=browserStack][responsivemode] {
   margin: 10px;
 }
 
-#social-statusarea-user > vbox > .link {
+#social-statusarea-user > vbox > #social-statusarea-notloggedin,
+#social-statusarea-user > vbox > #social-statusarea-username {
   background: transparent;
   border: none;
   color: #9C9CFF;
@@ -3242,7 +3242,9 @@ stack[anonid=browserStack][responsivemode] {
   margin: 0 6px;
   list-style-image: none;
 }
-#social-statusarea-user:hover > vbox > .link {
+
+#social-statusarea-user[_moz-menuactive] > vbox > #social-statusarea-notloggedin,
+#social-statusarea-user[_moz-menuactive] > vbox > #social-statusarea-username {
   text-decoration: underline;
 }
 
@@ -3250,7 +3252,6 @@ stack[anonid=browserStack][responsivemode] {
   padding: 0;
 }
 
-#social-notification-box,
 .social-panel-frame {
   border-radius: inherit;
 }
@@ -3286,6 +3287,7 @@ stack[anonid=browserStack][responsivemode] {
 .chat-title {
   font-weight: bold;
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  text-shadow: none;
   cursor: inherit;
 }
 
@@ -3340,9 +3342,16 @@ stack[anonid=browserStack][responsivemode] {
   padding: 2px;
 }
 
-.chatbar-button[open="true"],
-.chatbar-button:hover,
-.chatbar-button:active:hover {
+.chatbar-button > .toolbarbutton-icon {
+  opacity: .6;
+  -moz-margin-end: 0;
+}
+.chatbar-button:hover > .toolbarbutton-icon,
+.chatbar-button[open="true"] > .toolbarbutton-icon {
+  opacity: 1;
+}
+
+.chatbar-button[open="true"] {
 }
 
 .chatbar-button > .toolbarbutton-text,
@@ -3350,7 +3359,7 @@ stack[anonid=browserStack][responsivemode] {
   display: none;
 }
 
-.chatbar-button[activity] {
+.chatbar-button[activity]:not([open="true"]) {
   background-color: #E7ADE7;
 }
 
@@ -3360,7 +3369,7 @@ stack[anonid=browserStack][responsivemode] {
 
 .chatbar-innerbox {
   background: transparent;
-  margin: -285px -1px 0 -1px;
+  margin: -285px 0 0;
   overflow: hidden;
 }
 
@@ -3375,6 +3384,8 @@ chatbar > chatbox {
   background-color: #000000;
   border: 1px solid #9C9CFF;
   border-bottom: none;
+  border-top-left-radius: 2.5px;
+  border-top-right-radius: 2.5px;
 }
 
 chatbox[minimized="true"] {
