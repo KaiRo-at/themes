@@ -1602,8 +1602,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 /* social recommending panel */
 
 #share-button {
-  width: 16px;
-  height: 16px;
+  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
 #socialUserPortrait {
@@ -3189,8 +3188,7 @@ stack[anonid=browserStack][responsivemode] {
 }
 
 .social-notification-icon-image {
-  width: 16px;
-  height: 16px;
+  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
 #social-notification-icon-mentions {
@@ -3336,10 +3334,11 @@ stack[anonid=browserStack][responsivemode] {
   -moz-border-end: 1px solid #008484;
 }
 
-.chatbar-button > .button-box > .box-inherit > .button-icon {
+.chatbar-button > menupopup > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+  width: auto;
+  height: auto;
   max-height: 16px;
   max-width: 16px;
-  padding: 2px;
 }
 
 .chatbar-button > .toolbarbutton-icon {
