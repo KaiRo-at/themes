@@ -19,11 +19,11 @@
   border: none;
   padding: 2px;
   min-width: 0;
-  list-style-image: url("chrome://communicator/skin/brand/throbber-single.gif");
+  list-style-image: url("chrome://communicator/skin/brand/throbber-single.png");
 }
 
 #navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://communicator/skin/brand/throbber-anim.gif");
+  list-style-image: url("chrome://communicator/skin/brand/throbber-anim.png");
 }
 
 window[chromehidden~="toolbar"] #navigator-throbber,
@@ -33,12 +33,12 @@ toolbar[mode="text"] #navigator-throbber,
 toolbar[mode="icons"] #navigator-throbber,
 toolbar[iconsize="small"] #navigator-throbber {
   padding: 1px;
-  list-style-image: url("chrome://communicator/skin/brand/throbber16-single.gif");
+  list-style-image: url("chrome://communicator/skin/brand/throbber16-single.png");
 }
 
 window[chromehidden~="toolbar"] #navigator-throbber[busy="true"],
 toolbar[mode="text"] #navigator-throbber[busy="true"],
 toolbar[mode="icons"] #navigator-throbber[busy="true"],
 toolbar[iconsize="small"] #navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.gif");
+  list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.png");
 }

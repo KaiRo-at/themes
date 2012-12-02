@@ -232,7 +232,7 @@
 }
 
 .statusIcon[type="throbber"] {
-  background: url("chrome://communicator/skin/brand/throbber-anim.gif") no-repeat center;
+  background: url("chrome://communicator/skin/brand/throbber-anim.png") no-repeat center;
 }
 /*
 .statusIcon[type="throbber"][stalled] {

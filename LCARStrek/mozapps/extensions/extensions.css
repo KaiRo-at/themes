@@ -780,7 +780,7 @@
 }
 
 #detail-screenshot[loading] {
-  background-image: url("chrome://communicator/skin/brand/throbber-anim.gif");
+  background-image: url("chrome://communicator/skin/brand/throbber-anim.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
