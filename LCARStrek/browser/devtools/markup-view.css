@@ -61,11 +61,11 @@ li.container {
   height: 14px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("chrome://global/skin/tree/twisty-clsd.png");
+  background-image: url("chrome://global/skin/tree/twisty-closed.gif");
 }
 
 .expander[expanded] {
-  background-image: url("chrome://global/skin/tree/twisty-open.png");
+  background-image: url("chrome://global/skin/tree/twisty-open.gif");
 }
 
 .styleinspector-propertyeditor {

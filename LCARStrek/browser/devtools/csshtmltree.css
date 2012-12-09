@@ -7,12 +7,6 @@
   color: #FF9F00;
 }
 
-.property-header {
-  padding: 5px 0;
-  white-space: nowrap;
-  vertical-align: text-top;
-}
-
 /* Take away these two :visited rules to get a core dumper     */
 /* See https://bugzilla.mozilla.org/show_bug.cgi?id=575675#c30 */
 .link,
@@ -54,12 +48,12 @@ link:hover {
   height: 9px;
   -moz-margin-start: 5px;
   -moz-margin-end: 5px;
-  background: url("chrome://global/skin/tree/twisty-closed.png") center center no-repeat;
+  background: url("chrome://global/skin/tree/twisty-closed.gif") center center no-repeat;
   vertical-align: middle;
 }
 
 .expander[open] {
-  background-image: url("chrome://global/skin/tree/twisty-open.png");
+  background-image: url("chrome://global/skin/tree/twisty-open.gif");
 }
 
 .match {
@@ -71,16 +65,20 @@ link:hover {
   visibility: visible;
 }
 
+.expander-container {
+  vertical-align: text-top;
+}
+
 .property-name {
-  font-size: 12px;
+  padding: 2px 0;
   color: #FF9F00;
   width: 220px;
 }
+
 .property-value {
   padding: 0;
-  font-size: 10px;
+  -moz-padding-end: 6px;
   color: #8050B0;
-  vertical-align: text-top;
   width: 100%;
 }
 
@@ -283,4 +281,8 @@ link:hover {
 .ruleview-namecontainer:hover > .ruleview-propertyname,
 .ruleview-propertycontainer:hover > .ruleview-propertyvalue {
   border-bottom-color: #9C9CFF;
+}
+
+.ruleview-selector-separator, .ruleview-selector-unmatched {
+  color: #8050B0;
 }

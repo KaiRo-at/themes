@@ -1834,10 +1834,6 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
 }
 
-#tabbrowser-tabs[positionpinnedtabs] > .tabbrowser-tab[pinned] {
-  min-height: 16px; /* corresponds to the max. height of non-textual tab contents, i.e. the favicon */
-}
-
 .tab-throbber[pinned],
 .tab-icon-image[pinned] {
   -moz-margin-start: 2px;
@@ -2196,6 +2192,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://browser/skin/webapps-64.png");
 }
 
+.popup-notification-icon[popupid="webRTC-shareDevices"] {
+  list-style-image: url("chrome://browser/skin/webRTC-shareDevice-64.png");
+}
+
 /* Notification icon box */
 #notification-popup-box {
   position: relative;
@@ -2261,6 +2261,10 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #plugins-notification-icon {
   list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric-16.png");
+}
+
+#webRTC-notification-icon {
+  list-style-image: url("chrome://browser/skin/webRTC-shareDevice-16.png");
 }
 
 #identity-popup-container {
@@ -2990,6 +2994,12 @@ html|*#gcli-output-frame {
   border-color: transparent;
 }
 
+.gclitoolbar-input-node > .textbox-input-box > html|*.textbox-input::-moz-selection {
+  background-color: #008484;
+  color: #000000;
+  text-shadow: none;
+}
+
 .gclitoolbar-complete-node {
   padding-left: 21px;
   background-color: transparent;
@@ -3039,13 +3049,12 @@ html|*#gcli-output-frame {
 
 /* Responsive Mode */
 
-vbox[anonid=browserContainer][responsivemode] {
-  background: #392900 url("chrome://browser/skin/devtools/responsive-background.png");
-  box-shadow: 0 0 7px #9C9CFF inset;
+.browserContainer[responsivemode] {
+  background: #221500 url("chrome://browser/skin/devtools/responsive-background.png");
   padding: 0 20px 20px 20px;
 }
 
-stack[anonid=browserStack][responsivemode] {
+.browserStack[responsivemode] {
   box-shadow: 0 0 7px #9C9CFF;
 }
 

@@ -16,7 +16,7 @@
 }
 
 .readonly > .view {
-  background: #000000;
+  background: #000000; /* super light green */
 }
 
 .ruler {
@@ -106,16 +106,10 @@
   outline: 1px solid #008484;
 }
 
-.token_singleline_comment {
-  color: #33CC33; /* green */
-}
-
-.token_multiline_comment {
-  color: #33CC33; /* green */
-}
-
+.token_singleline_comment,
+.token_multiline_comment,
 .token_doc_comment {
-  color: #33CC33; /* green */
+  color: #33CC33;  /* grey */
 }
 
 .token_doc_html_markup {
@@ -132,7 +126,7 @@
 }
 
 .token_string {
-  color: #9C9CFF; /* blue */
+  color: #9C9CFF; /* green */
   font-style: italic;
 }
 
@@ -156,34 +150,33 @@
 
 .line_caret,
 .annotationLine.currentLine { /* Current line */
-  background: #402800; /* lighter than the background */
+  background: #402800;
 }
 
 .readonly .line_caret,
 .readonly .annotationLine.currentLine {
-  background: #402800; /* a bit darker than the background */
+  background: #402800;
 }
 
 /* Styling for html syntax highlighting */
 .entity-name-tag {
-  color: #E7ADE7; /* purple */
+  color: #E7ADE7; /* blue */
 }
 
 .entity-other-attribute-name {
-  color: #E7ADE7; /* purple */
+  color: #E7ADE7; /* blue */
 }
 
 .punctuation-definition-comment {
-  color: #33CC33; /* green */
+  color: #33CC33; /* grey */
 }
 
 .comment {
-  color: #33CC33; /* green */
+  color: #33CC33; /* grey */
 }
 
 .string-quoted {
-  color: #9C9CFF; /* blue */
-  font-style: italic;
+  color: #9C9CFF; /* orange */
 }
 
 .invalid {

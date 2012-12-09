@@ -9,7 +9,7 @@ window {
 }
 
 #body {
-  /* background: #000000; */
+  background-color: #000000;
 }
 
 /**
@@ -121,6 +121,25 @@ window {
 .dbg-results-container .line-contents > .string[match=true][focused] {
   transition-duration: 0.1s;
   transform: scale(1.75, 1.75);
+}
+
+#scripts-search-panel .description {
+  margin-top: -6px;
+  margin-bottom: 8px;
+  -moz-margin-start: 0;
+  -moz-margin-end: 0;
+}
+
+#scripts-search-panel button.operator {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  font: 9pt "Liberation Mono", Consolas, "Courier New", monospace;
+}
+
+#scripts-search-panel label.operator {
+  -moz-padding-start: 6px;
+  padding-bottom: 1px;
 }
 
 /**
