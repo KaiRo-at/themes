@@ -149,3 +149,12 @@ devtools-menulist:-moz-focusring,
   width: 3px;
   position: relative;
 }
+
+#profiler-chrome {
+  /* HACK for profiler in the dev toolbox in FF 20+. */
+  margin: -3px;
+}
+
+#profiler-chrome > box > box > .devtools-toolbar {
+  border-bottom: none;
+}

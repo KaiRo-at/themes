@@ -1,0 +1,95 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+window {
+  padding: 0;
+}
+
+#toolbox-tabs {
+  margin: 0;
+}
+
+#toolbox-dock-bottom {
+  list-style-image: url("chrome://browser/skin/devtools/dock-bottom.png");
+}
+
+#toolbox-dock-side {
+  list-style-image: url("chrome://browser/skin/devtools/dock-side.png");
+}
+
+#toolbox-dock-window {
+  list-style-image: url("chrome://browser/skin/devtools/dock-window.png");
+}
+
+#command-button-responsive {
+  list-style-image: url("chrome://browser/skin/devtools/command-responsivemode.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#command-button-responsive:hover,
+#command-button-responsive:hover:active,
+#command-button-responsive[checked=true] {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#command-button-tilt {
+  list-style-image: url("chrome://browser/skin/devtools/command-tilt.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#command-button-tilt:hover,
+#command-button-tilt:hover:active,
+#command-button-tilt[checked=true] {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#command-button-scratchpad {
+  list-style-image: url("chrome://browser/skin/devtools/command-scratchpad.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#command-button-scratchpad:hover,
+#command-button-scratchpad:hover:active {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+
+/* Tabs */
+
+.devtools-tabbar {
+}
+
+#toolbox-tabs {
+  background-color: #000000;
+  color: #FFCF00;
+}
+
+.devtools-tab {
+  min-width: 78px;
+  min-height: 22px;
+  border-radius: 3px 3px 0 0;
+  margin: 0;
+  -moz-margin-end: 3px;
+  -moz-padding-start: 5px;
+}
+
+.devtools-tab[selected=true] {
+  background-color: #008484;
+  color: #000000;
+}
+
+.devtools-tab:hover,
+.devtools-tab:hover:active {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
+.devtools-tab:hover > .radio-label-center-box > .radio-label-box,
+.devtools-tab:hover:active > .radio-label-center-box > .radio-label-box {
+  color: #000000;
+}
+
+.devtools-tab > .radio-label-box {
+  -moz-margin-start: 0px
+}

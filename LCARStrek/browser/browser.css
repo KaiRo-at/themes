@@ -3144,6 +3144,10 @@ html|*#gcli-output-frame {
   display: none;
 }
 
+#developer-toolbar-toolbox-button {
+  -moz-image-region: rect(64px, 16px, 80px, 0);
+}
+
 /* Error counter */
 
 #developer-toolbar-webconsole[error-count]:before {
