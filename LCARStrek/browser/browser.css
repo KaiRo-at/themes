@@ -3412,10 +3412,13 @@ chatbox[minimized="true"] {
 
 .click-to-play-plugins-notification-icon-box {
   background: #000000;
-  -moz-border-end: 1px solid #9C9CFF;
+  -moz-border-end: 1px solid #FF9F00;
   padding-top: 16px;
   -moz-padding-end: 16px;
   -moz-padding-start: 24px;
+  -moz-margin-start: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .click-to-play-plugins-notification-icon-box:-moz-locale-dir(ltr) {
@@ -3429,13 +3432,13 @@ chatbox[minimized="true"] {
 }
 
 .click-to-play-plugins-notification-separator {
-  -moz-border-start: 1px solid #9C9CFF;
-  border-top: 1px solid #9C9CFF;
+  /*-moz-border-start: 1px solid #9C9CFF;
+  border-top: 1px solid #9C9CFF;*/
 }
 
 .click-to-play-plugins-notification-description-box {
-  border-bottom: 1px solid #9C9CFF;
-  -moz-border-start: 1px solid #9C9CFF;
+  /*border-bottom: 1px solid #9C9CFF;
+  -moz-border-start: 1px solid #9C9CFF;*/
   padding-top: 12px;
   -moz-padding-end: 11px;
   padding-bottom: 9px;
@@ -3443,15 +3446,16 @@ chatbox[minimized="true"] {
 }
 
 .click-to-play-plugins-notification-center-box {
-  border-top: 1px solid #9C9CFF;
-  border-bottom: 1px solid #9C9CFF;
-  -moz-border-start: 1px solid #9C9CFF;
+  border-top: 1px solid #FF9F00;
+  border-bottom: 1px solid #FF9F00;
+  /*-moz-border-start: 1px solid #9C9CFF;*/
   background-color: #000000;
+  -moz-margin-end: 4px;
 }
 
 .click-to-play-plugins-notification-button-container {
-  border-top: 1px solid #9C9CFF;
-  -moz-border-start: 1px solid #9C9CFF;
+  /*border-top: 1px solid #9C9CFF;
+  -moz-border-start: 1px solid #9C9CFF;*/
   margin: 0px;
   padding: 16px;
 }
