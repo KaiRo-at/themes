@@ -9,22 +9,22 @@
 /* :::::::::: button :::::::::: */
 
 button {
-  border-radius: 3px;
+  border-radius: 300px;
   margin: 1px 2px;
   min-width: 6.3em;
   border: none;
-  background-color: #000000;
-  color: #FFCF00;
+  background-color: #C09070;
+  color: #000000;
   text-shadow: none;
 }
 
 .button-box {
-  border-radius: 3px;
+  border-radius: 300px;
   border: 1px solid transparent;
   padding-top: 1px;
   padding-bottom: 2px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 4px;
+  -moz-padding-start: .5em;
+  -moz-padding-end: calc(.5em + 1px);
 }
 
 .button-icon {
@@ -45,25 +45,12 @@ button:-moz-focusring > .button-box {
 
 /* .......... default state .......... */
 
+button[default="true"] {
+  background-color: #A06060;
+}
+
 button[default="true"] > .button-box {
   font-weight: bold;
-  list-style-image: url("chrome://global/skin/icons/return.gif");
-  -moz-box-direction: reverse;
-}
-
-button[default="true"] > .button-box > .button-icon {
-  -moz-margin-end: 0px;
-  -moz-margin-start: 2px;
-}
-
-button[default="true"]:hover > .button-box,
-button[default="true"]:hover:active > .button-box {
-  list-style-image: url("chrome://global/skin/icons/return-hover.gif");
-}
-
-button[default="true"][disabled="true"] > .button-box {
-  font-weight: bold;
-  list-style-image: url("chrome://global/skin/icons/return-disabled.gif") !important;
 }
 
 /* .......... active/open/checked state .......... */
@@ -92,8 +79,8 @@ button[open="true"] > .button-box,
 button[checked="true"] > .button-box {
   padding-top: 2px;
   padding-bottom: 1px;
-  -moz-padding-start: 4px;
-  -moz-padding-end: 3px;
+  -moz-padding-start: calc(.5em + 1px);
+  -moz-padding-end: .5em;
 }
 
 /* .......... disabled state .......... */
@@ -101,15 +88,15 @@ button[checked="true"] > .button-box {
 button[disabled="true"],
 button[disabled="true"]:hover:active {
   border: none;
-  background-color: #000000 !important;
-  color: #8050B0 !important;
+  background-color: #8050B0 !important;
+  color: #000000 !important;
 }
 
 button[disabled="true"] > .button-box {
   padding-top: 1px !important;
   padding-bottom: 2px !important;
-  -moz-padding-start: 3px !important;
-  -moz-padding-end: 4px !important;
+  -moz-padding-start: .5em !important;
+  -moz-padding-end: calc(.5em + 1px) !important;
 }
 
 /* ::::: menu/menu-button buttons ::::: */
@@ -127,8 +114,8 @@ button[type="menu-button"]:hover:active > .button-menubutton-button > .button-bo
 button[type="menu-button"][open="true"] > .button-menubutton-button > .button-box {
   padding-top: 2px;
   padding-bottom: 1px;
-  -moz-padding-start: 4px;
-  -moz-padding-end: 3px;
+  -moz-padding-start: calc(.5em + 1px);
+  -moz-padding-end: .5em;
 }
 
 button[type="menu-button"]:hover > .button-menubutton-button,
