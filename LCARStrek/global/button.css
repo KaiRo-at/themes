@@ -166,3 +166,37 @@ button::-moz-focus-inner {
   padding: 0px;
   border: 0px none;
 }
+
+/* ::::: toolbar buttons (sync look with toolbarbutton) ::::: */
+
+/* The #throbber-box rules are only needed for the SeaMonkey editor,
+ * the toolbaritem ones for buttons in customizable toolbars. */
+toolbaritem > button,
+#throbber-box > button {
+  border-radius: 3px;
+  background-color: #000000;
+  color: #FFCF00;
+}
+
+toolbaritem > button > .button-box,
+#throbber-box > button > .button-box {
+  border-radius: 3px;
+  -moz-padding-start: 0;
+  -moz-padding-end: 1px;
+}
+
+toolbaritem > button > button:hover:active > .button-box,
+toolbaritem > button > button[open="true"] > .button-box,
+toolbaritem > button > button[checked="true"] > .button-box,
+#throbber-box > button:hover:active > .button-box,
+#throbber-box > button > button[open="true"] > .button-box,
+#throbber-box > button > button[checked="true"] > .button-box {
+  -moz-padding-start: 1px;
+  -moz-padding-end: 0;
+}
+
+toolbaritem > button > button[disabled="true"] > .button-box,
+#throbber-box > button[disabled="true"] > .button-box {
+  -moz-padding-start: 0 !important;
+  -moz-padding-end: 1px !important;
+}
