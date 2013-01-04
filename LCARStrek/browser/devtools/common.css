@@ -137,14 +137,12 @@ devtools-menulist:-moz-focusring,
 /* Splitters */
 
 .devtools-horizontal-splitter {
-  border: none;
   min-height: 3px;
   height: 3px;
   position: relative;
 }
 
 #devtools-side-splitter {
-  border: 0;
   min-width: 0;
   width: 3px;
   position: relative;

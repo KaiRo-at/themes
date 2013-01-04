@@ -3,11 +3,6 @@
   padding-bottom: 5px;
 }
 
-#placesList-splitter,
-#detailsDeck-splitter {
-  border: none;
-}
-
 /* Info box */
 #detailsDeck {
   margin: 5px;

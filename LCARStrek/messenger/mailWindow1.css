@@ -22,14 +22,6 @@
   height: 0px;
 }
 
-#threadpane-splitter {
-  border: none;
-}
-
-#folderpane-splitter {
-  border: none;
-}
-
 #locationIcon {
   list-style-image: none;
 }

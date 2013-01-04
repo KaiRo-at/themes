@@ -14,13 +14,6 @@
 
 #sidebar-panels-splitter[state="collapsed"] {
   margin-bottom: 0px;
-  border-left: none;
-  border-right: none;
-}
-
-#sidebar-splitter {
-  border-top: none;
-  border-bottom: none;
 }
 
 #sidebar-splitter[state="collapsed"] {

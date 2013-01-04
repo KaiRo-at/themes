@@ -104,10 +104,6 @@
 #placesView {
 }
 
-#placesView > splitter {
-  border: none;
-}
-
 #placesList {
   border: none;
 }

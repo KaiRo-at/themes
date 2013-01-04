@@ -268,10 +268,6 @@ html|p {
 
 /* ::::: border adjustments ::::: */
 
-#results-splitter {
-  border: none;
-}
-
 #abResultsTree {
 /*  border-left: 1px solid ThreeDShadow; */
 }

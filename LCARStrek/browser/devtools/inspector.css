@@ -6,10 +6,6 @@ window {
   border-top: none;
 }
 
-.devtools-side-splitter {
-  border: none;
-}
-
 /*
 #inspector-inspect-toolbutton {
   list-style-image: url("chrome://browser/skin/devtools/inspect-button.png");
