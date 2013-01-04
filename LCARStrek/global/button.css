@@ -88,7 +88,7 @@ button[checked="true"] > .button-box {
 button[disabled="true"],
 button[disabled="true"]:hover:active {
   border: none;
-  background-color: #8050B0 !important;
+  background-color: #402858 !important;
   color: #000000 !important;
 }
 
