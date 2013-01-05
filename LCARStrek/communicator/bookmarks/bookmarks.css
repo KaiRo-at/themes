@@ -124,3 +124,20 @@ treechildren::-moz-tree-cell-text(Name, separator, selected, focus),
 treechildren::-moz-tree-cell-text(title, separator, selected, focus) {
   /* color: #FFCF00; */
 }
+
+/* sidebar panel */
+
+#bookmarksPanel,
+#history-panel {
+  padding: 0;
+}
+
+#sidebar-search-container > #search-box,
+#history-panel > hbox > #search-box {
+  margin: 0;
+}
+
+#sidebar-search-container > #search-box,
+#history-panel > hbox {
+  margin-bottom: 3px;
+}

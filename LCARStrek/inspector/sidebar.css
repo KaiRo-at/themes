@@ -4,6 +4,10 @@
 
 @import url("chrome://inspector/skin");
 
+window {
+  padding: 0;
+}
+
 tabpanels {
   padding: 0px;
 }

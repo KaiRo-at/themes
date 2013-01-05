@@ -16,18 +16,39 @@
   margin-bottom: 0px;
 }
 
-#sidebar-splitter[state="collapsed"] {
+#sidebar-splitter {
   -moz-margin-start: 0px;
+}
+
+#sidebar-splitter:not([state="collapsed"]) {
+  border-radius: 0 5px 0 0;
+}
+
+/* Get lower rounded corner right to connect to splitter. */
+#sidebar-panels-splitter-box {
+  background-color: #9C9CFF
+}
+
+#sidebar-panels {
+  background-color: #000000;
+  border-radius: 0 5px 0 0;
+  -moz-padding-end: 3px;
+}
+
+#sidebar-splitter:not([state="collapsed"]):-moz-locale-dir(rtl),
+#sidebar-panels:-moz-locale-dir(rtl) {
+  border-radius: 5px 0 0 0;
 }
 
 /* ::::: sidebar header ::::: */
 
 .sidebarheader-main {
   border: none;
-  color: #FF9F00;
-  background-color: #6000CF;
+  color: #000000;
+  background-color: #9C9CFF;
   padding: 0px 2px;
-  -moz-padding-start: 4px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 8px;
   height: auto;
 }
 
@@ -41,6 +62,7 @@
   -moz-binding: url("chrome://global/content/bindings/toolbarbutton.xml#toolbarbutton-image");
   padding: 3px;
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
+  border-radius: 0;
 }
 
 #sidebar-close-button:hover,
@@ -52,6 +74,7 @@
 
 #sidebar-panel-picker {
   padding: 3px 1px;
+  border-radius: 0;
 }
 
 /* ::::: sidebar panel ::::: */
@@ -86,13 +109,14 @@
   -moz-binding: url("chrome://communicator/skin/sidebar/sidebarBindings.xml#sbtab");
   cursor: pointer;
   border-top: 3px solid black;
+  border-radius: 5px;
 }
 
 .box-texttab > hbox {
-  border-radius: 5px;
+  border-radius: 300px;
   -moz-box-align: stretch;
-  padding: 2px 0px;
-  background-color: #FF9F00;
+  padding: 2px 3px;
+  background-color: #C09070;
   color: #000000;
 }
 

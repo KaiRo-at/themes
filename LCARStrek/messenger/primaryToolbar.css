@@ -452,10 +452,13 @@ toolbar[iconsize="small"] > #sync-button[status=active] {
 
 /* ::::: message notification bar style rules ::::: */
 
+#msgNotificationBar:not([collapsed="true"]) > .msgNotificationBar {
+  margin-bottom: 3px;
+}
+
 .msgNotificationBar {
   border-radius: 7px;
   padding: 3px;
-  margin-bottom: 3px;
   background-color: #FF9F00;
   color: #000000;
 }

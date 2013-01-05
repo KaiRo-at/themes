@@ -13,3 +13,16 @@ treechildren::-moz-tree-image(GeneratedName, MailList) {
   -moz-padding-end: 2px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/ablist.gif");
 }
+
+#addressbook-panel {
+  padding: 0;
+}
+
+#addressbookList,
+#searchInput {
+  margin: 0;
+}
+
+#results_box > hbox {
+  margin-bottom: 3px;
+}
