@@ -77,6 +77,14 @@ tab:first-of-type[selected="true"] {
 }
 */
 
+tab[disabled="true"] {
+  background-color: #402858 !important;
+  color: #000000 !important;
+}
+.tab-text[disabled="true"] {
+  color: #000000 !important;
+}
+
 /* ::::: tab-bottom ::::::::::
    :: Tabs that are attached to the bottom of a panel, but not necessarily
    :: a tabpanels.
