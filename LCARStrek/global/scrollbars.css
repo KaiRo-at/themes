@@ -15,13 +15,14 @@ scrollbar {
   -moz-binding: url("chrome://global/content/bindings/scrollbar.xml#scrollbar");
   cursor: default;
   background-color: #000000;
+  border-radius: 50%;
 }
 
 /* ::::: slider ::::: */
 
 slider {
   height: 13px;
-  background-color: #794900;
+  background-color: #202024;
 }
 
 slider[orient="vertical"] {
@@ -42,7 +43,7 @@ scrollbarbutton {
 /* ::::: thumb ::::: */
 
 thumb {
-  background-color: #9C9CFF;
+  background-color: #A09090;
   background-image: url("chrome://global/skin/scrollbar/thumb-vert-grip.gif");
 }
 
@@ -71,7 +72,7 @@ thumb[orient="horizontal"][disabled="true"] {
 /* ::::: scrollbar button ::::: */
 
 scrollbarbutton {
-  background-color: #FF9F00;
+  background-color: #C09070;
 }
 
 scrollbarbutton:hover:active,
@@ -91,7 +92,7 @@ scrollbarbutton:hover:active {
 }
 
 scrollbarbutton[disabled="true"] {
-  background-color: #8050B0 !important;
+  background-color: #402858 !important;
 }
 
 /* XXX - scrollbar.xml always grabs the OS settings and we don't want that */
