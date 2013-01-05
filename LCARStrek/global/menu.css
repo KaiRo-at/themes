@@ -15,9 +15,8 @@ menuitem,
 .splitmenu-menuitem {
   -moz-box-align: center;
   max-width: 42em;
-  color: #000000;
   background-color: #000000;
-  color: #FF9F00;
+  color: #C09070;
   list-style-image: none;
 }
 
