@@ -958,12 +958,12 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(0, 180px, 18px, 162px);
 }
 
-#print-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 162px, 36px, 144px);
+#new-tab-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 180px, 36px, 162px);
 }
 
-#print-button[disabled="true"] {
-  -moz-image-region: rect(36px, 162px, 54px, 144px);
+#new-tab-button[disabled="true"] {
+  -moz-image-region: rect(36px, 180px, 54px, 162px);
 }
 
 /* new window button */
@@ -1777,6 +1777,23 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   margin-top: 0px;
 }
 
+.tabbrowser-tab{
+  padding: 1px 4px 2px;
+}
+
+.tabbrowser-tab:first-of-type {
+  -moz-margin-start: 2px;
+}
+
+.tabs-newtab-button {
+  border-radius: 8px 8px 0px 0px;
+  -moz-margin-start: 0;
+}
+
+.tabs-newtab-button:not(:hover) {
+  background-color: #C09070;
+}
+
 .tabbrowser-tab:hover,
 .tabs-newtab-button:hover {
 }
@@ -1855,6 +1872,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 .tab-close-button {
   border: none;
   padding: 0px;
+  margin-top: 1px;
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 

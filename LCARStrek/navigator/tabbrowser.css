@@ -32,6 +32,7 @@ tabpanels {
 
 .tabbrowser-tab {
   margin-top: 0px;
+  padding: 1px 4px 2px;
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmark-item.gif");
 }
 
@@ -41,6 +42,10 @@ tabpanels {
 
 .tabbrowser-tab[busy]:hover {
   list-style-image: url("chrome://global/skin/icons/loading-hover.gif");
+}
+
+.tabbrowser-tab:first-of-type {
+  -moz-margin-start: 2px;
 }
 
 tabbrowser > tabbox > tabpanels {

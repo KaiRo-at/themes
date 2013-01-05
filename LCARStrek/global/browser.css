@@ -9,12 +9,6 @@
  */
 
 .tabbrowser-tabs {
-  /* XXX: Firefox rules - look into those when we support FF
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#tabbrowser-tabs") !important;
-  padding-top: 0px;
-  background: -moz-dialog url("chrome://global/skin/icons/tabbrowser-tabs-bkgnd.png") !important;
-  -moz-padding-start: 0px;
-  */
 }
 
 .tabbrowser-tabs[overflow="true"] {
@@ -26,14 +20,7 @@
  */
 
 .tabbrowser-tab {
-  /* XXX: Firefox rules - look into those when we support FF
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#tabbrowser-tab") !important;
-  background: transparent !important;
-  margin: 0px 0px 1px !important;
-  padding: 0px !important;
-  border: none !important;
-  height: 22px !important;
-  */
+  padding: 1px 4px 2px;
 }
 
 .tabbrowser-tab[busy] > .tab-image-middle > .tab-icon > .tab-icon-image {
@@ -49,10 +36,6 @@
   -moz-margin-end: 3px;
   width: 16px;
   height: 16px;
-  /* XXX: Firefox rules - look into those when we support FF
-  list-style-image: url("chrome://global/skin/icons/folder-item.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-  */
 }
 
 .tabs-bottom {
@@ -123,13 +106,10 @@ tabpanels {
  * Tab Scrollbox Arrow Buttons
  */
 
-/* XXX: Firefox rules - look into those when we support FF */
-
 /**
  * All Tabs Button
  */
 
-/* XXX: Firefox rules - look into those when we support FF
 .tabs-alltabs-box {
 }
 
@@ -138,17 +118,12 @@ tabpanels {
 
 .tabs-alltabs-box-animate {
 }
-*/
 
 /**
  * All Tabs Menupopup 
  */
 
 .alltabs-item > .menu-iconic-left > .menu-iconic-icon {
-  /* XXX: Firefox rules - look into those when we support FF
-  list-style-image: url("chrome://global/skin/icons/folder-item.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-  */
 }
 
 .alltabs-item[selected="true"] {
