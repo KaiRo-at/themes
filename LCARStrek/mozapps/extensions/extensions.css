@@ -1047,7 +1047,7 @@ button.button-link {
   background: transparent;
   border: none;
   text-decoration: underline;
-  color: blue;
+  color: #3333FF;
   cursor: pointer;
   min-width: 0;
   margin: 0 6px;

@@ -40,12 +40,12 @@ treechildren::-moz-tree-row {
 
 treechildren::-moz-tree-row(selected) {
   background-color: #008484;
-  color: #FFCF00;
+  color: #000000;
 }
 
 treechildren::-moz-tree-row(selected, focus) {
   background-color: #008484;
-  color: #FFCF00;
+  color: #000000;
 }
 
 treechildren::-moz-tree-row(current, focus) {

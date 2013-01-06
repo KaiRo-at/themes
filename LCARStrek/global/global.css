@@ -310,7 +310,7 @@ description {
 }
 
 .text-link {
-  color: blue;
+  color: #3333FF;
   text-decoration: underline;
   cursor: pointer;
 }

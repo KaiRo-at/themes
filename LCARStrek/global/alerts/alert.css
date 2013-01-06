@@ -55,7 +55,7 @@ label {
 }
 
 .alertText[clickable="true"] {
-  color: blue;
+  color: #3333FF;
   text-decoration: underline;
 }
 

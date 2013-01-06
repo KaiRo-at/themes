@@ -22,13 +22,18 @@ body {
 }
 
 #aboutLogoContainer {
-  border: 1px solid #E7ADE7;
+  border: 1px solid #3333FF;
+  border-radius: 5px;
   width: 300px;
   margin-bottom: 2em;
 }
 
 img {
   border: 0;
+}
+
+#vendorURL {
+  text-decoration: none;
 }
 
 #version {
@@ -58,4 +63,8 @@ th, td {
 .columns {
   -moz-column-width: 20em;
   -moz-column-gap: 3em;
+}
+
+a:link {
+  color: #3333FF;
 }

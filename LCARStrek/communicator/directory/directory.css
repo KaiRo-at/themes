@@ -62,7 +62,7 @@ treechildren::-moz-tree-cell-text(symbolic-link) {
 }
 
 div.server { 
-  color: blue;
+  color: #3333FF;
   display: block; 
   font-size: 10pt;
   font-family: sans-serif;

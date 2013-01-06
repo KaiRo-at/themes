@@ -1830,7 +1830,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   background-color: #E7ADE7;
 }
 .tabbrowser-tab[pinned][titlechanged]:not([selected="true"]):hover {
-  background-color: #0000FF;
+  background-color: #3333FF;
   color: #000000;
 }
 

@@ -10,13 +10,56 @@ window.dialog {
   padding: 0;
 }
 
+/* Make nice LCARS border */
+.dialog-content-box {
+  background-color: #A09090;
+  border-radius: 5px 0 0 0;
+}
+
+.dialog-content-box:-moz-locale-dir(rtl) {
+  border-radius: 0 5px 0 0;
+}
+
+#header {
+  background-color: #9C9CFF;
+  color: #000000;
+  border: none;
+  -moz-border-start: 3px solid #000000;
+  border-radius: 0;
+  -moz-margin-start: 37px;
+}
+
+.wizard-box {
+  background-color: #000000;
+  border-radius: 5px 0 0 0;
+  -moz-margin-start: 5px;
+}
+
+.wizard-box:-moz-locale-dir(rtl) {
+  border-radius: 0 5px 0 0;
+}
+
+.dialog-button-box {
+  -moz-border-start: 5px solid #8050B0; /* match wizard-box margin */
+  -moz-padding-start: 2px;
+  margin-top: 3px;
+}
+
 treechildren::-moz-tree-image {
   -moz-margin-end: 2px;
-  list-style-image: url("chrome://communicator/skin/profile/profileicon-large.gif");
+  list-style-image: url("chrome://communicator/skin/profile/profile.png");
+  -moz-image-region: rect(0, 10px, 12px, 0);
+}
+
+treechildren::-moz-tree-image(selected) {
+  -moz-margin-end: 2px;
+  list-style-image: url("chrome://communicator/skin/profile/profile.png");
+  -moz-image-region: rect(0, 20px, 12px, 10px);
 }
 
 treechildren::-moz-tree-image(rowMigrate-no) {
   list-style-image: url("chrome://communicator/skin/profile/migrate.gif");
+  -moz-image-region: auto;
 }
 
 /* profile selection dialog */

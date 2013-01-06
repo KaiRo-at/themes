@@ -247,7 +247,7 @@ toolbar[iconsize="small"] > #button-abdelete:not([disabled="true"]):hover:active
 }
 
 .CardViewLink {
-  color: blue;
+  color: #3333FF;
   text-decoration: underline;
   cursor: pointer;
 }
