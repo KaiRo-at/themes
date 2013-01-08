@@ -73,6 +73,7 @@ thumb[orient="horizontal"][disabled="true"] {
 
 scrollbarbutton {
   background-color: #C09070;
+  margin: 0px;
 }
 
 scrollbarbutton:hover:active,
@@ -115,14 +116,13 @@ scrollcorner {
 scrollbarbutton[type="increment"] {
   background-image: url("chrome://global/skin/scrollbar/arrow-right.png");
   border-radius: 0 50% 50% 0;
-  margin: 0px;
-  -moz-margin-start: 3px;
+  -moz-border-start: 3px solid #000000;
 }
 
 scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
   background-image: url("chrome://global/skin/scrollbar/arrow-down.png");
   border-radius: 0 0 50% 50%;
-  margin: 3px 0px 0px;
+  border-top: 3px solid #000000;
 }
 
 /* ..... decrement .... */
@@ -130,14 +130,13 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
 scrollbarbutton[type="decrement"] {
   background-image: url("chrome://global/skin/scrollbar/arrow-left.png");
   border-radius: 50% 0 0 50%;
-  margin: 0px;
-  -moz-margin-end: 3px;
+  -moz-border-end: 3px solid #000000;
 }
 
 scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
   background-image: url("chrome://global/skin/scrollbar/arrow-up.png");
   border-radius: 50% 50% 0 0;
-  margin: 0px 0px 3px;
+  border-bottom: 3px solid #000000;
 }
 
 /* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
