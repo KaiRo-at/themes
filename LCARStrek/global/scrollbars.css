@@ -40,6 +40,15 @@ scrollbarbutton {
   min-height: 13px;
 }
 
+scrollbar:not([orient="vertical"]) > scrollbarbutton {
+  min-width: 16px;
+}
+
+scrollbar[orient="vertical"] > scrollbarbutton {
+  min-height: 16px;
+}
+
+
 /* ::::: thumb ::::: */
 
 thumb {
@@ -73,15 +82,11 @@ thumb[orient="horizontal"][disabled="true"] {
 
 scrollbarbutton {
   background-color: #C09070;
-  margin: 0px;
 }
 
 scrollbarbutton:hover:active,
 scrollbarbutton[active="true"] {
-  padding-top: 2px;
-  padding-bottom: 0px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+  background-position: calc(50% + 1px) calc(50% + 1px);
 }
 
 scrollbarbutton:hover {
@@ -89,7 +94,7 @@ scrollbarbutton:hover {
 }
 
 scrollbarbutton:hover:active {
-  background-color: #FF0000;
+  background-color: #FF9F00;
 }
 
 scrollbarbutton[disabled="true"] {
@@ -115,13 +120,14 @@ scrollcorner {
 
 scrollbarbutton[type="increment"] {
   background-image: url("chrome://global/skin/scrollbar/arrow-right.png");
-  border-radius: 0 50% 50% 0;
+  border-radius: 0 300px 300px 0;
   -moz-border-start: 3px solid #000000;
 }
 
 scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
   background-image: url("chrome://global/skin/scrollbar/arrow-down.png");
-  border-radius: 0 0 50% 50%;
+  border-radius: 0 0 300px 300px;
+  -moz-border-start: none;
   border-top: 3px solid #000000;
 }
 
@@ -129,13 +135,14 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
 
 scrollbarbutton[type="decrement"] {
   background-image: url("chrome://global/skin/scrollbar/arrow-left.png");
-  border-radius: 50% 0 0 50%;
+  border-radius: 300px 0 0 300px;
   -moz-border-end: 3px solid #000000;
 }
 
 scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
   background-image: url("chrome://global/skin/scrollbar/arrow-up.png");
-  border-radius: 50% 50% 0 0;
+  border-radius: 300px 300px 0 0;
+  -moz-border-end: none;
   border-bottom: 3px solid #000000;
 }
 
