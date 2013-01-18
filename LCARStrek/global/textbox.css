@@ -35,9 +35,10 @@ html|*.textbox-textarea {
   font: inherit;
 }
 
-html|*.textbox-input:-moz-placeholder,
-html|*.textbox-textarea:-moz-placeholder {
-  color: #6000CF;
+html|*.textbox-input::-moz-placeholder,
+html|*.textbox-textarea::-moz-placeholder {
+  color: #8050B0;
+  opacity: 1.0;
 }
 
 .textbox-input-box menupopup {

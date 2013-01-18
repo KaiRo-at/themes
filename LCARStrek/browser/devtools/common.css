@@ -112,7 +112,7 @@ devtools-menulist:-moz-focusring,
   display: none;
 }
 
-.devtools-searchinput > .textbox-input-box > .textbox-input:-moz-placeholder {
+.devtools-searchinput > .textbox-input-box > .textbox-input::-moz-placeholder {
   color: hsl(208,10%,66%);
 }
 */

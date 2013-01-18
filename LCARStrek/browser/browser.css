@@ -1214,8 +1214,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   transform: scaleX(-1);
 }
 
-html|*.urlbar-input:-moz-lwtheme:-moz-placeholder,
-.searchbar-textbox:-moz-lwtheme > .autocomplete-textbox-container > .textbox-input-box > html|*.textbox-input:-moz-placeholder {
+html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
+.searchbar-textbox:-moz-lwtheme > .autocomplete-textbox-container > .textbox-input-box > html|*.textbox-input::-moz-placeholder {
   color: #E7ADE7;
 }
 
