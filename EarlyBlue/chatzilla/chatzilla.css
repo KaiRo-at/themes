@@ -224,15 +224,11 @@ progressmeter[mode="undetermined"] {
   min-width: 20px;
 }
 
-#security-button:not([level="high"]):not([level="low"]):not([level="broken"]) {
+#security-button:not([level="high"]):not([level="broken"]) {
   display: none;
 }
 
 #security-button[level="high"] > image {
-  list-style-image: url("chrome://communicator/skin/icons/lock-secure.gif");
-}
-
-#security-button[level="low"] > image {
   list-style-image: url("chrome://communicator/skin/icons/lock-secure.gif");
 }
 
