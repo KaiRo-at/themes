@@ -4,18 +4,6 @@
 
 /*** Panel and outer controls ***/
 
-#downloadsHistory,
-#downloadsHistory:-moz-focusring > .button-box {
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-
-#downloadsPanel:not([hasdownloads]) > #downloadsHistory,
-#downloadsPanel:not([hasdownloads]) > #downloadsHistory:-moz-focusring > .button-box  {
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
-
 #downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent {
   /* Avoid that the arrow overlaps the selection on first item */
   padding-top: 5px;
@@ -60,7 +48,7 @@ richlistitem[type="download"]:first-child {
 #downloadsListBox:-moz-focusring > richlistitem[type="download"][selected] {
   outline: 1px #008484 dotted;
   outline-offset: -1px;
-  -moz-outline-radius: 3px;
+  /*-moz-outline-radius: 3px;*/
 }
 
 .downloadTypeIcon {
@@ -136,13 +124,7 @@ richlistitem[type="download"][state="1"]:hover {
 
 /*** Status and progress indicator ***/
 
-#downloads-indicator {
-  width: 35px;
-}
-
 #downloads-indicator-anchor {
-  min-width: 18px;
-  min-height: 18px;
   /* Makes the outermost stack element positioned, so that its contents are
      rendered over the main browser window in the Z order.  This is required by
      the animated event notification. */
@@ -154,6 +136,8 @@ richlistitem[type="download"][state="1"]:hover {
 #downloads-indicator-icon {
   background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
                               0, 108, 18, 90) center no-repeat;
+  min-width: 18px;
+  min-height: 18px;
 }
 
 #downloads-indicator:hover > #downloads-indicator-anchor > #downloads-indicator-icon,

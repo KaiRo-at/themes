@@ -16,11 +16,7 @@ window {
  * Debugger content
  */
 
-#dbg-content {
-  padding: 0;
-}
-
-#scripts {
+#chrome-globals, #sources {
   min-width: 150px;
 }
 
@@ -28,7 +24,7 @@ window {
  * This hardcoded width likely due to a toolkit Windows specific bug.
  * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
  */
-#scripts-search {
+#searchbox {
   width: 200px;
 }
 
@@ -55,16 +51,15 @@ window {
 }
 
 /**
- * Scripts searching
+ * Sources searching
  */
 
 #globalsearch {
   background-color: #000000;
-  min-height: 50px;
   max-height: 150px;
 }
 
-.dbg-script-results:not(:last-child) {
+.dbg-source-results:not(:last-child) {
   border-bottom: 1px dotted #9C9CFF;
 }
 
@@ -72,22 +67,23 @@ window {
   -moz-padding-start: 6px;
 }
 
-.dbg-results-header .script-url {
+.dbg-results-header .location {
   font-weight: 600;
 }
 
 .dbg-results-header .match-count {
   -moz-padding-start: 6px;
-  color: 8050B0;
+  color: #8050B0;
 }
 
 .dbg-results-container .line-number {
   background: #000000;
-  min-width: 35px;
+  min-width: 40px;
   -moz-padding-end: 4px;
   -moz-border-end: 1px dotted #9C9CFF;
   text-align: end;
   font: 8pt monospace;
+  color: #FF9F00;
 }
 
 .dbg-results-container .line-contents {
@@ -110,8 +106,7 @@ window {
   border: 1px solid #9C9CFF;
   border-radius: 4px;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-  transform: scale(1, 1);
+  transition: transform 0.25s ease-in-out;
 }
 
 .dbg-results-container .line-contents > .string[match=true][focused] {
@@ -119,27 +114,24 @@ window {
   transform: scale(1.75, 1.75);
 }
 
-#scripts-search-panel .description {
-  margin-top: -6px;
-  margin-bottom: 8px;
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+#searchbox-panel .description {
+  margin: -6px 0 8px;
 }
 
-#scripts-search-panel button.operator {
+#searchbox-panel button.operator {
   min-width: 0;
   margin: 0;
   padding: 0;
   font: 9pt "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
-#scripts-search-panel label.operator {
+#searchbox-panel label.operator {
   -moz-padding-start: 6px;
   padding-bottom: 1px;
 }
 
 /**
- * Stack frames and breakpoints panel
+ * Stack frames and breakpoints pane
  */
 
 #stackframes\+breakpoints {
@@ -148,7 +140,7 @@ window {
 }
 
 #stackframes\+breakpoints[animated] {
-  -moz-transition: margin 0.25s ease-in-out;
+  transition: margin 0.25s ease-in-out;
 }
 
 /**
@@ -186,7 +178,7 @@ window {
 }
 
 /**
- * Properties view
+ * Variables view
  */
 
 #variables {
@@ -195,15 +187,7 @@ window {
 }
 
 #variables[animated] {
-  -moz-transition: margin 0.25s ease-in-out;
-}
-
-/**
- * Property element details container
- */
-
-.details {
-  -moz-margin-start: 10px;
+  transition: margin 0.25s ease-in-out;
 }
 
 /**
@@ -216,17 +200,13 @@ window {
   color: #000000;
 }
 
-.scope > .title > .arrow {
-  margin-top: -2px;
-}
-
-.scope > .title > .name {
-  padding-top: 2px;
-}
-
 .scope > .details {
   -moz-margin-start: 2px;
   -moz-margin-end: 2px;
+}
+
+.scope > .details.nonenum:not(:empty) {
+  border-top: 1px solid #9C9CFF;
 }
 
 /**
@@ -236,7 +216,6 @@ window {
 .variable {
   -moz-margin-start: 1px;
   -moz-margin-end: 1px;
-  margin-top: 2px;
   transition: background 1s ease-in-out;
   background: #000000;
 }
@@ -255,49 +234,64 @@ window {
   background: #FFCF00;
 }
 
-.variable[added] {
-  transition-duration: 0.4s;
-  background: #008484;
-}
-
-.variable > .title > .arrow {
-  margin-top: -2px;
-}
-
 .variable > .title > .name {
   color: #FF9F00;
   font-weight: 600;
+}
+
+.variable > .title > .value {
+  -moz-padding-start: 6px;
+}
+
+.variable:not([non-header]) > .details {
+  -moz-margin-start: 10px;
 }
 
 /**
  * Property element
  */
 
-.property > .title > .arrow {
-  margin-top: -2px;
+.property {
+  transition: background 1s ease-in-out;
+  background: #000000;
+  border-radius: 8px;
 }
 
-.property > .title > .key {
+.property[changed] {
+  transition-duration: 0.4s;
+  background: rgba(255, 207, 0, 0.8);
+}
+
+.property > .title > .name {
   color: #E7ADE7;
+}
+
+.property > .title > .value {
+  -moz-padding-start: 6px;
+}
+
+.property:not([non-header]) > .details {
+  -moz-margin-start: 10px;
 }
 
 /**
  * Non enumerable, configurable and writable variables and properties.
  */
 
-.property[proto] > .title > .key,
-.variable[non-enumerable] > .title > .name,
-.property[non-enumerable] > .title > .key {
+.variable[proto] > .title > .name,
+.property[proto] > .title > .name,
+.variable[non-enumerable]:not([self]):not([exception]) > .title > .name,
+.property[non-enumerable]:not([self]):not([exception]) > .title > .name {
   opacity: 0.5;
 }
 
 .variable[non-configurable] > .title > .name,
-.property[non-configurable] > .title > .key {
+.property[non-configurable] > .title > .name {
   border-bottom: 1px dashed #9C9CFF;
 }
 
-.variable[non-writable] > .title > .name,
-.property[non-writable] > .title > .key {
+.variable[non-configurable][non-writable] > .title > .name,
+.property[non-configurable][non-writable] > .title > .name {
   border-bottom: 1px dashed #FF0000;
 }
 
@@ -311,47 +305,74 @@ window {
   opacity: 0.5;
 }
 
-#element-tooltip > label {
+/*
+@media (min-resolution: 2dppx) {
+  .variable[non-writable] > .title:after,
+  .property[non-writable] > .title:after {
+    background-image: url("chrome://browser/skin/identity-icons-https@2x.png");
+    background-size: 32px;
+  }
+}
+*/
+
+.variable[exception] > .title > .name,
+.property[exception] > .title > .name {
+  color: #FF0000;
+}
+
+.variable > tooltip > label,
+.property > tooltip > label {
   margin: 0 2px 0 2px;
 }
 
-#element-tooltip > label[non-enumerable],
-#element-tooltip > label[non-configurable],
-#element-tooltip > label[non-writable]{
+.variable[non-enumerable] > tooltip > label[value="enumerable"],
+.property[non-enumerable] > tooltip > label[value="enumerable"],
+.variable[non-configurable] > tooltip > label[value="configurable"],
+.property[non-configurable] > tooltip > label[value="configurable"],
+.variable[non-writable] > tooltip > label[value="writable"],
+.property[non-writable] > tooltip > label[value="writable"] {
   text-decoration: line-through;
 }
 
 /**
- * Property values colors
+ * Variables and properties searching
+ */
+
+#variables .devtools-searchinput {
+  min-height: 24px;
+}
+
+.variable[non-match],
+.property[non-match] {
+  border: none;
+  margin: 0;
+}
+
+/**
+ * Token value colors
  */
 
 .token-undefined {
-  -moz-padding-start: 6px;
   color: #8050B0;
 }
 
 .token-null {
-  -moz-padding-start: 6px;
   color: #008484;
 }
 
 .token-boolean {
-  -moz-padding-start: 6px;
   color: #FFCF00;
 }
 
 .token-number {
-  -moz-padding-start: 6px;
   color: #E7ADE7;
 }
 
 .token-string {
-  -moz-padding-start: 6px;
   color: #9C9CFF;
 }
 
 .token-other {
-  -moz-padding-start: 6px;
   color: #FF9F00;
 }
 
@@ -380,12 +401,16 @@ window {
   background-image: url("chrome://global/skin/tree/twisty-open-selected.gif");
 }
 
+.arrow[invisible] {
+  visibility: hidden;
+}
+
 /**
  * Animations
  */
 
-.details[open][animated],
-.dbg-results-container[open][animated] {
+#variables .details[open][animated],
+#globalsearch .dbg-results-container[open][animated] {
   animation-duration: 0.25s;
   animation-name: showblock;
 }
@@ -413,7 +438,7 @@ window {
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
-#toggle-panes:not([stackframesAndBreakpointsHidden]):not([variablesHidden]) {
+#toggle-panes:not([panesHidden]) {
   list-style-image: url("chrome://browser/skin/devtools/debugger-collapse.png");
 }
 

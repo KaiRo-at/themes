@@ -1243,7 +1243,7 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 }
 
 .urlbar-icon {
-  padding: 2px;
+  padding: 0 2px;
 }
 
 .searchbar-engine-button,
@@ -3262,18 +3262,16 @@ html|*#gcli-output-frame {
   margin: 10px;
 }
 
-#social-statusarea-user > vbox > #social-statusarea-notloggedin,
-#social-statusarea-user > vbox > #social-statusarea-username {
+#social-statusarea-user > vbox > .link {
   background: transparent;
   border: none;
-  color: #9C9CFF;
+  color: #3333FF;
   min-width: 0;
   margin: 0 6px;
   list-style-image: none;
 }
 
-#social-statusarea-user[_moz-menuactive] > vbox > #social-statusarea-notloggedin,
-#social-statusarea-user[_moz-menuactive] > vbox > #social-statusarea-username {
+#social-statusarea-user[_moz-menuactive] > vbox > .link {
   text-decoration: underline;
 }
 
