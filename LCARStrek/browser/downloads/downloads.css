@@ -164,6 +164,7 @@ richlistitem[type="download"][state="1"]:hover {
 }
 
 #downloads-indicator:hover > #downloads-indicator-anchor > #downloads-indicator-icon,
+#downloads-indicator[open="true"] > #downloads-indicator-anchor > #downloads-indicator-icon,
 #downloads-indicator[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
   background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
                               18, 108, 36, 90) center no-repeat;
