@@ -144,11 +144,25 @@ window {
 }
 
 /**
+ * Variables and watch expressions pane
+ */
+
+#variables\+expressions {
+  background-color: #000000;
+  min-width: 50px;
+}
+
+#variables\+expressions[animated] {
+  transition: margin 0.25s ease-in-out;
+}
+
+/**
  * Stack frames view
  */
 
 #stackframes {
   /* background-color: white; */
+  min-height: 10px;
 }
 
 .dbg-stackframe {
@@ -157,8 +171,11 @@ window {
 }
 
 .dbg-stackframe-name {
-  -moz-padding-end: 4px;
   font-weight: 600;
+}
+
+.dbg-stackframe-details {
+  -moz-padding-start: 4px;
 }
 
 /**
@@ -167,6 +184,16 @@ window {
 
 #breakpoints {
   background-color: #000000;
+  min-height: 10px;
+}
+
+#breakpoints > vbox:not(:empty) {
+  min-height: 10px;
+  max-height: 200px;
+}
+
+.dbg-breakpoint:not(:last-child) {
+  border-bottom: 1px solid #008484;
 }
 
 .dbg-breakpoint-info {
@@ -177,17 +204,54 @@ window {
   font: 12px "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
+#conditional-breakpoint-panel .description {
+  margin: -6px 0 8px 0;
+}
+
+#conditional-breakpoint-panel textbox {
+  margin: 0 0 -2px 0;
+}
+
+/**
+ * Watch expressions view
+ */
+
+#expressions {
+  background-color: #000000;
+  min-height: 10px;
+}
+
+.dbg-expression {
+  height: 20px;
+  -moz-padding-start: 8px;
+}
+
+.dbg-expression-arrow {
+  width: 10px;
+  height: auto;
+  background: url("chrome://browser/skin/devtools/commandline.png") 0px 4px no-repeat;
+}
+
+.dbg-expression-input {
+  font: 9pt monospace;
+}
+
+.dbg-expression-delete {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
 /**
  * Variables view
  */
 
 #variables {
 /*  background-color: white; */
-  min-width: 50px;
+  min-height: 10px;
 }
 
-#variables[animated] {
-  transition: margin 0.25s ease-in-out;
+.dbg-variables-delete:not(:hover) {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+  opacity: 0.5;
 }
 
 /**
@@ -216,22 +280,14 @@ window {
 .variable {
   -moz-margin-start: 1px;
   -moz-margin-end: 1px;
-  transition: background 1s ease-in-out;
+  border-bottom: 1px solid #008484;
   background: #000000;
-}
-
-.variable:not(:last-child) {
-  border-bottom: 1px dotted #008484;
-  border-radius: 8px;
-}
-
-.variable:last-child {
-  margin-bottom: 2px;
+  transition: background 1s ease-in-out;
 }
 
 .variable[changed] {
-  transition-duration: 0.4s;
   background: #FFCF00;
+  transition-duration: 0.4s;
 }
 
 .variable > .title > .name {
@@ -241,6 +297,7 @@ window {
 
 .variable > .title > .value {
   -moz-padding-start: 6px;
+  -moz-padding-end: 4px;
 }
 
 .variable:not([non-header]) > .details {
@@ -268,6 +325,7 @@ window {
 
 .property > .title > .value {
   -moz-padding-start: 6px;
+  -moz-padding-end: 4px;
 }
 
 .property:not([non-header]) > .details {
@@ -332,6 +390,20 @@ window {
 .variable[non-writable] > tooltip > label[value="writable"],
 .property[non-writable] > tooltip > label[value="writable"] {
   text-decoration: line-through;
+}
+
+/**
+ * Variables and properties editing
+ */
+
+#variables .element-value-input {
+  -moz-margin-start: 5px !important;
+}
+
+#variables .element-name-input {
+  -moz-margin-start: -1px !important;
+  color: #E7ADE7;
+  font-weight: 600;
 }
 
 /**
@@ -403,30 +475,6 @@ window {
 
 .arrow[invisible] {
   visibility: hidden;
-}
-
-/**
- * Animations
- */
-
-#variables .details[open][animated],
-#globalsearch .dbg-results-container[open][animated] {
-  animation-duration: 0.25s;
-  animation-name: showblock;
-}
-
-@keyframes showblock {
-  from {
-    opacity: 0;
-    transform-origin: top;
-    transform: scaleY(0);
-  }
-
-  to {
-    opacity: 1;
-    transform-origin: top;
-    transform: scaleY(1);
-  }
 }
 
 /**

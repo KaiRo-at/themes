@@ -2281,6 +2281,23 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric-16.png");
 }
 
+#blocked-plugins-notification-icon {
+  list-style-image: url("chrome://mozapps/skin/plugins/notifyPluginBlocked.png");
+}
+
+#blocked-plugins-notification-icon[showing] {
+  animation: pluginBlockedNotification 500ms ease 0s 5 alternate both;
+}
+
+@keyframes pluginBlockedNotification {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #webRTC-notification-icon {
   list-style-image: url("chrome://browser/skin/webRTC-shareDevice-16.png");
 }
@@ -3241,13 +3258,13 @@ html|*#gcli-output-frame {
 }
 
 /* social toolbar provider menu */
-#social-statusarea-popup {
+.social-statusarea-popup {
   margin-top: 0;
   margin-left: -12px;
   margin-right: -12px;
 }
 
-#social-statusarea-user {
+.social-statusarea-user {
   border-bottom: 1px solid #9C9CFF;
   background-color: #000000;
   color: #FF9F00;
@@ -3255,14 +3272,14 @@ html|*#gcli-output-frame {
   cursor: pointer;
 }
 
-#social-statusarea-user-portrait {
+.social-statusarea-user-portrait {
   width: 32px;
   height: 32px;
   border-radius: 2px;
   margin: 10px;
 }
 
-#social-statusarea-user > vbox > .link {
+.social-statusarea-loggedInStatus {
   background: transparent;
   border: none;
   color: #3333FF;
@@ -3271,7 +3288,7 @@ html|*#gcli-output-frame {
   list-style-image: none;
 }
 
-#social-statusarea-user[_moz-menuactive] > vbox > .link {
+#social-statusarea-user[_moz-menuactive] > vbox > .social-statusarea-loggedInStatus {
   text-decoration: underline;
 }
 
