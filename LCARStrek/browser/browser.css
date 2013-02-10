@@ -897,6 +897,10 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(36px, 108px, 54px, 90px);
 }
 
+#downloads-button > .toolbarbutton-icon {
+  margin: 0;
+}
+
 /* history sidebar button */
 
 #history-button {

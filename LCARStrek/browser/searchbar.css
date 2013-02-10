@@ -28,6 +28,11 @@
   -moz-box-align: center;
   background: none;
   border: none;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.searchbar-engine-button:-moz-locale-dir(rtl) {
+  border-radius: 0px 3px 3px 0px;
 }
 
 .searchbar-engine-button[open="true"] {
