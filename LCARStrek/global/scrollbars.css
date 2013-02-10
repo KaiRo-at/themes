@@ -22,7 +22,7 @@ scrollbar {
 
 slider {
   height: 13px;
-  background-color: #202024;
+  background-color: #404048; /* #202024;*/
 }
 
 slider[orient="vertical"] {

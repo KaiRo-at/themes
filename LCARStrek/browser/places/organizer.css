@@ -64,6 +64,7 @@
 
 #placesMenu > .toolbar-box > .toolbar-holder {
   background-color: transparent;
+  -moz-padding-end: 0;
 }
 
 /* organize, view and maintenance buttons icons */
@@ -115,4 +116,21 @@
 
 #infoBoxExpanderLabel {
   -moz-padding-start: 2px;
+}
+
+/**
+ * Downloads pane
+ */
+
+#clearDownloadsButton > .toolbarbutton-icon {
+  display: none;
+}
+
+#clearDownloadsButton {
+  padding: 0;
+  border: none;
+  height: 24px; /* match back/forward buttons */
+  border-radius: 0;
+  -moz-padding-start: 5px;
+  -moz-padding-end: 5px;
 }
