@@ -8,10 +8,15 @@
 
 .searchbar-textbox > .autocomplete-textbox-container {
   border-radius: 3px 0 0 3px;
-  padding: 2px;
+  -mozpadding-end: 2px;
 }
 
 /* ::::: searchbar-engine-button ::::: */
+
+.searchbar-engine-button {
+  padding: 2px !important;
+  border-radius: 3px 0px 0px 3px;
+}
 
 .toolbarbutton-icon {
   height: 16px;

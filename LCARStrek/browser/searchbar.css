@@ -35,6 +35,10 @@
   border-radius: 0px 3px 3px 0px;
 }
 
+.searchbar-engine-button:hover {
+  background-color: #FFCF00;
+}
+
 .searchbar-engine-button[open="true"] {
   background-color: #FF9F00;
 }
@@ -48,6 +52,7 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
 }
 
+.searchbar-engine-button:hover > .searchbar-dropmarker-image,
 .searchbar-engine-button[open="true"] > .searchbar-dropmarker-image {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
