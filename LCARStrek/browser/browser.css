@@ -1773,7 +1773,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 #main-window[disablechrome] #TabsToolbar,
 #TabsToolbar[tabsontop="false"] {
-  border-bottom: 1px solid #FF9F00;
+  border-bottom: 1px solid #008484;
 }
 
 .tabbrowser-tab,
@@ -1943,6 +1943,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   width: 26px;
 }
 
+.tabs-newtab-button,
 .tabs-newtab-button:hover,
 #TabsToolbar > #new-tab-button:hover {
   -moz-image-region: rect(0, 32px, 18px, 16px);
@@ -2796,17 +2797,34 @@ html|*#highlighter-nodeinfobar-pseudo-classes {
 }
 
 .inspector-breadcrumbs-button {
-  /*background-color: transparent;*/
+  background-color: #000000;
+  border-radius: 0;
   border-style: solid;
   border-width: 2px 13px;
   outline: none;
-  /* color: hsl(210,30%,85%); */
+  color: #FF9F00;
   width: 85px; /* Can't use max-width. See bug 723132 */
   /* The content of the button can be larger than the button */
   overflow: hidden;
   min-height: 25px;
   margin: 0 -11px 0 0;
   padding: 0 9px;
+}
+
+.inspector-breadcrumbs-button:hover {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
+.inspector-breadcrumbs-button[checked]:not(:hover) {
+  background-color: #008484;
+  color: #000000;
+}
+
+.inspector-breadcrumbs-button[siblings-menu-open],
+.inspector-breadcrumbs-button:active {
+  background-color: #FF9F00;
+  color: #000000;
 }
 
 .inspector-breadcrumbs-button:-moz-focusring > .button-box {

@@ -5,7 +5,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 .tabbrowser-strip {
-  border-bottom: 1px solid #FF9F00;
+  border-bottom: 1px solid #008484;
 }
 
 .tabmail-strip {
@@ -37,11 +37,7 @@ tabpanels {
 }
 
 .tabbrowser-tab[busy] {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
-}
-
-.tabbrowser-tab[busy]:hover {
-  list-style-image: url("chrome://global/skin/icons/loading-hover.gif");
+  list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.png");
 }
 
 .tabbrowser-tab:first-of-type {

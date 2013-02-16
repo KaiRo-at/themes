@@ -209,24 +209,24 @@ scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
 
   html|div scrollbarbutton[type="increment"] {
     -moz-appearance: scrollbarbutton-right;
-    background-image: url("chrome://global/skin/arrow/arrow-rit.gif")
+    background-image: url("chrome://global/skin/scrollbar/arrow-right.png")
   }
 
   html|div scrollbar[orient="vertical"] > scrollbarbutton[type="increment"] {
     -moz-appearance: scrollbarbutton-down;
-    background-image: url("chrome://global/skin/arrow/arrow-dn.gif")
+    background-image: url("chrome://global/skin/scrollbar/arrow-down.png")
   }
 
   /* ..... decrement .... */
 
   html|div scrollbarbutton[type="decrement"] {
     -moz-appearance: scrollbarbutton-left;
-     background-image: url("chrome://global/skin/arrow/arrow-lft.gif")
+     background-image: url("chrome://global/skin/scrollbar/arrow-left.png")
   }
 
   html|div scrollbar[orient="vertical"] > scrollbarbutton[type="decrement"] {
     -moz-appearance: scrollbarbutton-up;
-     background-image: url("chrome://global/skin/arrow/arrow-up.gif")
+     background-image: url("chrome://global/skin/scrollbar/arrow-up.png")
   }
 
 }

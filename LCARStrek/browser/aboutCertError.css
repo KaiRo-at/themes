@@ -25,7 +25,7 @@ h2 {
   font-size: 130%;
   background-color: #9C9CFF;
   color: #000000;
-  border-radius: 8px;
+  border-radius: 10px;
   -moz-padding-start: 10px;
 }
 
@@ -54,16 +54,30 @@ h2 {
   -moz-margin-start: 80px;
 }
 
+#getMeOutOfHereButton,
+#exceptionDialogButton {
+  border-radius: 10px;
+  background: #C09070;
+  color: #000000;
+  border: none;
+  padding: 0 .5em;
+}
+
 .expander > button {
-  -moz-padding-start: 20px;
-  -moz-margin-start: -20px;
-  background: url("chrome://global/skin/tree/twisty-open-selected.gif") left center no-repeat;
+  -moz-padding-start: 22px;
+  -moz-margin-start: -22px;
+  border-radius: 10px;
+  background: url("chrome://global/skin/tree/twisty-open-selected.gif") 3px center no-repeat;
   border: none;
   font: inherit;
   color: inherit;
   cursor: pointer;
 }
 
+#getMeOutOfHereButton:hover,
+#exceptionDialogButton:hover,
+.expander:hover,
+.expander:hover > button,
 .expander > button:hover,
 .expander > button:hover:active {
   background-color: #FFCF00;

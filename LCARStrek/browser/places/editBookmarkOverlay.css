@@ -32,19 +32,17 @@
 }
 
 .expander-up {
-  list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-up-hover.gif");
 }
 
 .expander-down {
-  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
-}
-
-.expander-down:hover:active {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
 
+.expander-down:hover:active {
+}
+
 .expander-up:hover:active {
-  list-style-image: url("chrome://global/skin/arrow/arrow-up-hover.gif");
 }
 
 #editBookmarkPanelContent {

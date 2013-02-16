@@ -128,7 +128,7 @@ groupbox.collapsable caption .caption-icon {
   background-position: center;
   -moz-margin-start: 2px;
   -moz-margin-end: 2px;
-  background-image: url("chrome://global/skin/tree/twisty-open.gif");
+  background-image: url("chrome://global/skin/tree/twisty-open-selected.gif");
 }
 
 groupbox.collapsable[closed="true"] {
@@ -137,13 +137,35 @@ groupbox.collapsable[closed="true"] {
   -moz-appearance: none;
 }
 
-groupbox.collapsable[closed="true"] caption .caption-icon { 
-  background-image: url("chrome://global/skin/tree/twisty-closed.gif");
+groupbox.collapsable[closed="true"] > caption > .caption-icon { 
+  background-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
 }
 
-groupbox tree { 
-  margin: 0 3px;
+groupbox.collapsable > caption:hover { 
+  background-color: #FFCF00;
+}
+
+groupbox.treebox { 
+  padding: 0;
+}
+
+groupbox.treebox > tree { 
+  margin: 2px;
+  margin-top: 0;
   border: none;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+groupbox.treebox > tree > treecols > treecol { 
+  border: none;
+  border-bottom: 1px solid #FF9F00;
+  background-color: #A09090;
+  border-radius: 0;
+}
+
+groupbox.treebox > tree > treechildren::-moz-tree-cell {
+  padding: 0 3px;
 }
 
 #securityBox description { 

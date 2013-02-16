@@ -12,14 +12,38 @@ window {
 
 #toolbox-dock-bottom {
   list-style-image: url("chrome://browser/skin/devtools/dock-bottom.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#toolbox-dock-bottom:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 #toolbox-dock-side {
   list-style-image: url("chrome://browser/skin/devtools/dock-side.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#toolbox-dock-side:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 #toolbox-dock-window {
   list-style-image: url("chrome://browser/skin/devtools/dock-window.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#toolbox-dock-window:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#toolbox-close {
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#toolbox-close:hover {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 #command-button-responsive {
