@@ -1436,9 +1436,9 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   background-color: #FF9F00;
 }
 
-#identity-box.verifiedIdentity:hover,
-#identity-box.verifiedIdentity:hover:active,
-#identity-box.verifiedIdentity[open=true] {
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:hover,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:hover:active,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity[open=true] {
   background-color: #008484;
   color: #000000;
 }
