@@ -482,7 +482,7 @@ menuitem.bookmark-item {
 /* ::::: primary toolbar buttons ::::: */
 
 .toolbarbutton-1 {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
+  list-style-image: url("chrome://browser/skin/FxToolbar.png");
 }
 
 .toolbarbutton-1:not([type="menu-button"]) {
@@ -822,7 +822,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 /* home button */
 
 #home-button.bookmark-item {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
+  list-style-image: url("chrome://browser/skin/FxToolbar.png");
 }
 #home-button {
   -moz-image-region: rect(0, 90px, 18px, 72px);
@@ -919,12 +919,12 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #bookmarks-button,
 #bookmarks-menu-button {
-  list-style-image: url("chrome://browser/skin/Toolbar.png") !important; /* for making the palette work */
+  list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 144px, 18px, 126px);
 }
 
 #bookmarks-menu-button.bookmark-item {
-  /* list-style-image: url("chrome://browser/skin/Toolbar.png"); */
+  /* list-style-image: url("chrome://browser/skin/FxToolbar.png"); */
 }
 
 #bookmarks-menu-button.toolbarbutton-1 {
@@ -1070,7 +1070,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 /* sync button */
 
 #sync-button:not([status]) {
-  list-style-image: url("chrome://browser/skin/Toolbar.png") !important; /* for making the palette work */
+  list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 324px, 18px, 306px);
 }
 
@@ -2312,7 +2312,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 
 #download-monitor {
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
+  list-style-image: url("chrome://browser/skin/FxToolbar.png");
   -moz-image-region: rect(0, 108px, 18px, 90px);
 }
 
