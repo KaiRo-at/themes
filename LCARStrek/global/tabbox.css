@@ -35,11 +35,12 @@ tabpanels {
 tab {
   border-radius: 8px 8px 0px 0px;
   margin-top: 2px;
-  -moz-margin-end: 2px;
+  -moz-border-end: 2px solid transparent;
   border-bottom: none;
   padding: 2px 4px 1px;
   background-color: #C09070;
   color: #000000;
+  background-clip: padding-box;
 }
 
 .tab-text {
