@@ -1,0 +1,4 @@
+toolbar.chromeclass-menubar {
+  -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
+  border-bottom: none;
+}
