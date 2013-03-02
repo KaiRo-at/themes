@@ -17,6 +17,13 @@
   -moz-box-orient: vertical;
 }
 
+statusbarpanel > .toolbarbutton-1,
+statusbarpanel > .toolbarbutton-1 > .toolbarbutton-menubutton-button {
+  min-width: 16px;
+  min-height: 16px;
+  -moz-box-orient: vertical;
+}
+
 .toolbarbutton-1[type="menu-button"] {
   -moz-box-orient: horizontal;
 }

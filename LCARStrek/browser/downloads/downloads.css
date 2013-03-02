@@ -144,7 +144,7 @@ richlistitem[type="download"]:first-child {
 
 /*** Highlighted list items ***/
 
-#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"]:hover {
+#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"]:hover {
   border-radius: 3px;
   background-color: #794900;
   color: #FFCF00;
@@ -203,6 +203,7 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
 #downloads-indicator[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
   background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
                               18, 108, 36, 90) center no-repeat;
+  color: #000000;
 }
 
 #downloads-indicator-icon:-moz-lwtheme-brighttext {
@@ -228,9 +229,11 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
 }
 
 #downloads-indicator:not([counter]):hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
+#downloads-indicator[open="true"]:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
 #downloads-indicator:not([counter])[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
   background: -moz-image-rect(url("chrome://browser/skin/Toolbar.png"),
                               18, 108, 36, 90) center no-repeat;
+  background-size: 12px;
 }
 
 /*** Download notifications ***/
@@ -291,6 +294,11 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadRetry:acti
 /*  color: white;
   text-shadow: 0 0 1px rgba(0,0,0,.7),
                0 1px 1.5px rgba(0,0,0,.5);*/
+}
+
+#downloads-indicator[counter]:hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
+#downloads-indicator[counter][open="true"] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+  color: #000000;
 }
 
 #downloads-indicator-progress {
