@@ -60,21 +60,19 @@ menubar[xpfe="false"] {
 /* ::::: directional button icons ::::: */
 
 .up {
-  list-style-image:url("chrome://global/skin/arrow/arrow-up.gif");
+  list-style-image:url("chrome://global/skin/arrow/arrow-up-hover.gif");
   min-width: 0px;
 }
 
 .up[disabled="true"] {
-  list-style-image:url("chrome://global/skin/arrow/arrow-up-disabled.gif");
 }
 
 .down {
   min-width: 0px;
-  list-style-image:url("chrome://global/skin/arrow/arrow-down.gif");
+  list-style-image:url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
 
 .down[disabled="true"] {
-  list-style-image:url("chrome://global/skin/arrow/arrow-down-disabled.gif");
 }
 
 .sidebarTree {
