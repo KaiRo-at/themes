@@ -6,8 +6,14 @@ window {
   padding: 0;
 }
 
-#toolbox-tabs {
-  margin: 0;
+#toolbox-controls {
+  margin: 0 2px;
+}
+
+#toolbox-controls > toolbarbutton,
+#toolbox-dock-buttons > toolbarbutton {
+  min-width: 16px;
+  padding: 1px 3px;
 }
 
 #toolbox-dock-bottom {
@@ -29,7 +35,7 @@ window {
 }
 
 #toolbox-dock-window {
-  list-style-image: url("chrome://browser/skin/devtools/dock-window.png");
+  list-style-image: url("chrome://browser/skin/devtools/undock.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
@@ -44,6 +50,35 @@ window {
 
 #toolbox-close:hover {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#toolbox-dock-window,
+#toolbox-dock-bottom,
+#toolbox-dock-side,
+#toolbox-close {
+}
+
+#toolbox-dock-window:hover,
+#toolbox-dock-bottom:hover,
+#toolbox-dock-side:hover,
+#toolbox-close:hover {
+}
+
+#toolbox-controls-separator {
+  -moz-margin-start: 4px;
+}
+
+
+/* Command buttons */
+
+.command-button {
+  padding: 1px 4px;
+  min-width: 16px;
+}
+
+.command-button:hover {
+}
+.command-button:hover:active {
 }
 
 #command-button-responsive {
@@ -85,24 +120,35 @@ window {
 }
 
 #toolbox-tabs {
+  margin: 0;
   background-color: #000000;
   color: #FFCF00;
 }
 
 .devtools-tab {
-  min-width: 78px;
-  min-height: 22px;
-  border-radius: 8px 8px 0 0;
+  min-width: 88px;
+  /* min-height: 22px; */
+  color: #000000;
   margin: 0;
   -moz-margin-end: 3px;
-  -moz-padding-start: 5px;
   background-color: #C09070;
-  color: #000000;
+  border-radius: 8px 8px 0 0;
 }
 
-.devtools-tab[selected=true] {
-  background-color: #008484;
-  color: #000000;
+.devtools-tab > .radio-label-center-box > .radio-label-box {
+  padding: 0 6px;
+  border-radius: 8px 8px 0 0;
+}
+
+.devtools-tab > .radio-label-center-box > .radio-label-box > .radio-icon {
+  -moz-margin-end: 6px;
+}
+
+.devtools-tab:hover > .radio-label-center-box > .radio-label-box > .radio-icon {
+}
+
+.devtools-tab:active > .radio-label-center-box > .radio-label-box > .radio-icon,
+.devtools-tab[selected=true] > .radio-label-center-box > .radio-label-box > .radio-icon {
 }
 
 .devtools-tab:hover,
@@ -116,6 +162,7 @@ window {
   color: #000000;
 }
 
-.devtools-tab > .radio-label-box {
-  -moz-margin-start: 0px
+.devtools-tab[selected=true] {
+  background-color: #008484;
+  color: #000000;
 }

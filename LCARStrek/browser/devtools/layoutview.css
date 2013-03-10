@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 body {
-  background: url("layout-background.png"), -moz-radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
+  background: url("layout-background-grid.png"), -moz-radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
   color: #FF9F00;
   border-top: 1px solid #9C9CFF;
   -moz-box-sizing: border-box;
@@ -41,18 +41,4 @@ body {
 #borders {
   border-style: solid;
   border-color: #9C9CFF;
-}
-
-#togglebutton {
-  background-image: url("layout-buttons.png");
-  width: 16px;
-  height: 16px;
-}
-
-body.open {
-  background: url("layout-background-grid.png"), -moz-radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
-}
-
-body.open > #header > #togglebutton {
-  background-position: -16px 0;
 }

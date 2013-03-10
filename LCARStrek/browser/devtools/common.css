@@ -3,6 +3,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* Font for code */
+.devtools-monospace {
+  font: 12px "Liberation Mono", Consolas, "Courier New", monospace;
+}
+
 /* Toolbar and Toolbar items */
 
 .devtools-toolbar {
@@ -26,6 +31,10 @@ devtools-menulist:-moz-focusring,
 
 .devtools-toolbarbutton:not([label]) {
   min-width: 20px;
+}
+
+.devtools-toolbarbutton:not([label]) > .toolbarbutton-text {
+  display: none;
 }
 
 .devtools-toolbarbutton:not([checked=true]):hover:active {
@@ -86,9 +95,10 @@ devtools-menulist:-moz-focusring,
   -moz-box-align: center;
 }
 
-/* Search input */
+/* Text input */
 
 /*
+.devtools-textinput,
 .devtools-searchinput {
   -moz-appearance: none;
   margin: 0 3px;
@@ -96,17 +106,22 @@ devtools-menulist:-moz-focusring,
   box-shadow: inset 0 1px 0 hsla(211,68%,6%,.05), 0 0 0 1px hsla(210,40%,83%,.1);
   border-radius: 2px;
   background-color: transparent;
-  background-image: url(magnifying-glass.png), -moz-linear-gradient(hsla(210,16%,76%,.15), hsla(210,16%,76%,.35));
+  background-image: -moz-linear-gradient(hsla(210,16%,76%,.15), hsla(210,16%,76%,.35));
+  padding: 3px;
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+  color: inherit;
+}
+
+.devtools-searchinput {
+  background-image: url(magnifying-glass.png), linear-gradient(hsla(210,16%,76%,.15), hsla(210,16%,76%,.35));
   background-repeat: no-repeat;
   background-position: 4px center, top left, top left;
   padding-top: 0;
   padding-bottom: 0;
   -moz-padding-start: 18px;
   -moz-padding-end: 12px;
-  transition-property: background-color, border-color, box-shadow;
-  transition-duration: 150ms;
-  transition-timing-function: ease;
-  color: inherit;
 }
 
 .devtools-searchinput[focused] {
@@ -159,6 +174,111 @@ devtools-menulist:-moz-focusring,
   width: 3px;
   position: relative;
 }
+
+/* In-tools sidebar */
+
+.devtools-sidebar-tabs {
+}
+
+.devtools-sidebar-tabs > tabpanels {
+  padding: 0;
+  border: 0;
+}
+
+.devtools-sidebar-tabs > tabs {
+  position: static;
+  overflow: hidden;
+}
+
+.devtools-sidebar-tabs > tabs > .tabs-right,
+.devtools-sidebar-tabs > tabs > .tabs-left {
+  display: none;
+}
+
+.devtools-sidebar-tabs > tabs > tab {
+  min-width: 78px;
+  text-align: center;
+  -moz-box-flex: 1;
+  position: static;
+}
+
+.devtools-sidebar-tabs > tabs > tab:-moz-focusring {
+  position: static;
+}
+
+.devtools-sidebar-tabs > tabs > tab:last-of-type {
+  -moz-border-end-width: 0;
+}
+
+.devtools-sidebar-tabs > tabs > tab:first-of-type {
+  -moz-margin-start: 0;
+}
+
+.devtools-sidebar-tabs > tabs > tab {
+}
+
+.devtools-sidebar-tabs:-moz-locale-dir(rtl) > tabs > tab {
+}
+
+.devtools-sidebar-tabs > tabs > tab {
+}
+
+.devtools-sidebar-tabs > tabs > tab:hover {
+}
+
+.devtools-sidebar-tabs > tabs > tab:hover:active {
+}
+
+.devtools-sidebar-tabs > tabs > tab[selected=true] + tab {
+}
+
+.devtools-sidebar-tabs > tabs > tab[selected=true] + tab:hover {
+}
+
+.devtools-sidebar-tabs > tabs > tab[selected=true] + tab:hover:active {
+}
+
+.devtools-sidebar-tabs > tabs > tab[selected=true] {
+}
+
+.devtools-sidebar-tabs > tabs > tab[selected=true]:hover {
+}
+
+.devtools-sidebar-tabs > tabs > tab[selected=true]:hover:active {
+}
+
+/* Theme */
+
+.devtools-theme-background {
+  background-color: #000000;
+  color: #FF9F00;
+}
+
+.devtools-theme-comment {
+  color: #A09090; /* original: grey */
+}
+
+.devtools-theme-keyword {
+  color: #8050B0; /* original: purple */
+}
+
+.devtools-theme-string {
+  color: #E7ADE7; /* original: green */
+}
+
+.devtools-theme-tagname {
+  color: #FFCF00; /* original: dark blue */
+}
+
+.devtools-theme-attrname {
+  color: #9C9CFF; /* original: blue */
+}
+
+.devtools-theme-attrvalue {
+  color: #C09070; /* original: orange */
+}
+
+/* LCARStrek-specific adaptions */
 
 #profiler-chrome {
   /* HACK for profiler in the dev toolbox in FF 20+. */
