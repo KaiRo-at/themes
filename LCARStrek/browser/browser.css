@@ -792,8 +792,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   background-color: transparent;
 }
 
-/* stop button */
-
 #stop-button {
   -moz-image-region: rect(0, 54px, 18px, 36px);
 }
@@ -806,8 +804,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(36px, 54px, 54px, 36px);
 }
 
-/* reload button */
-
 #reload-button {
   -moz-image-region: rect(0, 72px, 18px, 54px);
 }
@@ -819,8 +815,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #reload-button[disabled="true"] {
   -moz-image-region: rect(36px, 72px, 54px, 54px);
 }
-
-/* home button */
 
 #home-button.bookmark-item {
   list-style-image: url("chrome://browser/skin/FxToolbar.png");
@@ -837,7 +831,204 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(36px, 90px, 54px, 72px);
 }
 
-/* tabview button */
+#downloads-button {
+  -moz-image-region: rect(0, 108px, 18px, 90px);
+}
+
+#downloads-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 108px, 36px, 90px);
+}
+
+#downloads-button[disabled="true"] {
+  -moz-image-region: rect(36px, 108px, 54px, 90px);
+}
+
+#downloads-button > .toolbarbutton-icon {
+  margin: 0;
+}
+
+#history-button {
+  -moz-image-region: rect(0, 126px, 18px, 108px);
+}
+
+#history-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 126px, 36px, 108px);
+}
+
+#history-button[disabled="true"] {
+  -moz-image-region: rect(36px, 126px, 54px, 108px);
+}
+
+#bookmarks-button,
+#bookmarks-menu-button {
+  list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
+  -moz-image-region: rect(0, 144px, 18px, 126px);
+}
+
+#bookmarks-menu-button.bookmark-item {
+  /* list-style-image: url("chrome://browser/skin/FxToolbar.png"); */
+}
+
+#bookmarks-menu-button.toolbarbutton-1 {
+  -moz-box-orient: horizontal;
+}
+
+#bookmarks-button:not([disabled="true"]):hover,
+#bookmarks-menu-button[open="true"],
+#bookmarks-menu-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 144px, 36px, 126px);
+}
+
+#bookmarks-button[disabled="true"],
+#bookmarks-menu-button[disabled="true"] {
+  -moz-image-region: rect(36px, 144px, 54px, 126px);
+}
+
+#print-button {
+  -moz-image-region: rect(0, 162px, 18px, 144px);
+}
+
+#print-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 162px, 36px, 144px);
+}
+
+#print-button[disabled="true"] {
+  -moz-image-region: rect(36px, 162px, 54px, 144px);
+}
+
+#new-tab-button {
+  -moz-image-region: rect(0, 180px, 18px, 162px);
+}
+
+#new-tab-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 180px, 36px, 162px);
+}
+
+#new-tab-button[disabled="true"] {
+  -moz-image-region: rect(36px, 180px, 54px, 162px);
+}
+
+#new-window-button {
+  -moz-image-region: rect(0, 198px, 18px, 180px);
+}
+
+#new-window-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 198px, 36px, 180px);
+}
+
+#new-window-button[disabled="true"] {
+  -moz-image-region: rect(36px, 198px, 54px, 180px);
+}
+
+#cut-button {
+  -moz-image-region: rect(0, 216px, 18px, 198px);
+}
+
+#cut-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 216px, 36px, 198px);
+}
+
+#cut-button[disabled="true"] {
+  -moz-image-region: rect(36px, 216px, 54px, 198px);
+}
+
+#copy-button {
+  -moz-image-region: rect(0, 234px, 18px, 216px);
+}
+
+#copy-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 234px, 36px, 216px);
+}
+
+#copy-button[disabled="true"] {
+  -moz-image-region: rect(36px, 234px, 54px, 216px);
+}
+
+#paste-button {
+  -moz-image-region: rect(0, 252px, 18px, 234px);
+}
+
+#paste-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 252px, 36px, 234px);
+}
+
+#paste-button[disabled="true"] {
+  -moz-image-region: rect(36px, 252px, 54px, 234px);
+}
+
+#fullscreen-button {
+  -moz-image-region: rect(0, 270px, 18px, 252px);
+}
+
+#fullscreen-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 270px, 36px, 252px);
+}
+
+#fullscreen-button[disabled="true"] {
+  -moz-image-region: rect(36px, 270px, 54px, 252px);
+}
+
+#zoom-out-button {
+  -moz-image-region: rect(0, 288px, 18px, 270px);
+  -moz-margin-end: 0;
+}
+
+#zoom-in-button {
+  -moz-image-region: rect(0, 306px, 18px, 288px);
+}
+
+#zoom-out-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 288px, 36px, 270px);
+}
+
+#zoom-out-button[disabled="true"] {
+  -moz-image-region: rect(36px, 288px, 54px, 270px);
+}
+
+#zoom-in-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(18px, 306px, 36px, 288px);
+}
+
+#zoom-in-button[disabled="true"] {
+  -moz-image-region: rect(36px, 306px, 54px, 288px);
+}
+
+#sync-button:not([status]) {
+  list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
+  -moz-image-region: rect(0, 324px, 18px, 306px);
+}
+
+#sync-button[status="active"] {
+  list-style-image: url("chrome://browser/skin/sync-throbber.png");
+  -moz-image-region: rect(0, 18px, 18px, 0);
+}
+
+#sync-button[disabled="true"] {
+  -moz-image-region: rect(36px, 324px, 54px, 306px);
+}
+
+#feed-button {
+  -moz-image-region: rect(0, 342px, 18px, 324px);
+}
+
+#feed-button[disabled="true"] {
+  -moz-image-region: rect(36px, 342px, 54px, 324px);
+}
+
+#webrtc-status-button {
+  -moz-image-region: rect(0, 360px, 18px, 342px);
+}
+
+#webrtc-status-button:not([disabled="true"]):hover,
+#webrtc-status-button[open="true"] {
+  -moz-image-region: rect(18px, 360px, 36px, 342px);
+}
+
+#webrtc-status-button[disabled="true"] {
+  -moz-image-region: rect(36px, 360px, 54px, 342px);
+}
+
+/* tabview button & menu item */
 
 #tabview-button,
 #menu_tabview {
@@ -882,217 +1073,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #menu_tabview[groups="3"] {
   -moz-image-region: rect(1px, 71px, 17px, 55px);
-}
-
-/* download manager button */
-
-#downloads-button {
-  -moz-image-region: rect(0, 108px, 18px, 90px);
-}
-
-#downloads-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 108px, 36px, 90px);
-}
-
-#downloads-button[disabled="true"] {
-  -moz-image-region: rect(36px, 108px, 54px, 90px);
-}
-
-#downloads-button > .toolbarbutton-icon {
-  margin: 0;
-}
-
-/* history sidebar button */
-
-#webrtc-status-button /* temporary placeholder (bug 824825) */,
-#history-button {
-  -moz-image-region: rect(0, 126px, 18px, 108px);
-}
-
-#history-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 126px, 36px, 108px);
-}
-
-#history-button[disabled="true"] {
-  -moz-image-region: rect(36px, 126px, 54px, 108px);
-}
-
-/* bookmark sidebar & menu buttons */
-
-#bookmarks-button,
-#bookmarks-menu-button {
-  list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
-  -moz-image-region: rect(0, 144px, 18px, 126px);
-}
-
-#bookmarks-menu-button.bookmark-item {
-  /* list-style-image: url("chrome://browser/skin/FxToolbar.png"); */
-}
-
-#bookmarks-menu-button.toolbarbutton-1 {
-  -moz-box-orient: horizontal;
-}
-
-#bookmarks-button:not([disabled="true"]):hover,
-#bookmarks-menu-button[open="true"],
-#bookmarks-menu-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 144px, 36px, 126px);
-}
-
-#bookmarks-button[disabled="true"],
-#bookmarks-menu-button[disabled="true"] {
-  -moz-image-region: rect(36px, 144px, 54px, 126px);
-}
-
-/* print button */
-
-#print-button {
-  -moz-image-region: rect(0, 162px, 18px, 144px);
-}
-
-#print-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 162px, 36px, 144px);
-}
-
-#print-button[disabled="true"] {
-  -moz-image-region: rect(36px, 162px, 54px, 144px);
-}
-
-/* toolbar new tab button */
-
-#new-tab-button {
-  -moz-image-region: rect(0, 180px, 18px, 162px);
-}
-
-#new-tab-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 180px, 36px, 162px);
-}
-
-#new-tab-button[disabled="true"] {
-  -moz-image-region: rect(36px, 180px, 54px, 162px);
-}
-
-/* new window button */
-
-#new-window-button {
-  -moz-image-region: rect(0, 198px, 18px, 180px);
-}
-
-#new-window-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 198px, 36px, 180px);
-}
-
-#new-window-button[disabled="true"] {
-  -moz-image-region: rect(36px, 198px, 54px, 180px);
-}
-
-/* cut button */
-
-#cut-button {
-  -moz-image-region: rect(0, 216px, 18px, 198px);
-}
-
-#cut-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 216px, 36px, 198px);
-}
-
-#cut-button[disabled="true"] {
-  -moz-image-region: rect(36px, 216px, 54px, 198px);
-}
-
-/* copy button */
-
-#copy-button {
-  -moz-image-region: rect(0, 234px, 18px, 216px);
-}
-
-#copy-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 234px, 36px, 216px);
-}
-
-#copy-button[disabled="true"] {
-  -moz-image-region: rect(36px, 234px, 54px, 216px);
-}
-
-/* paste button */
-
-#paste-button {
-  -moz-image-region: rect(0, 252px, 18px, 234px);
-}
-
-#paste-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 252px, 36px, 234px);
-}
-
-#paste-button[disabled="true"] {
-  -moz-image-region: rect(36px, 252px, 54px, 234px);
-}
-
-/* fullscreen button */
-
-#fullscreen-button {
-  -moz-image-region: rect(0, 270px, 18px, 252px);
-}
-
-#fullscreen-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 270px, 36px, 252px);
-}
-
-#fullscreen-button[disabled="true"] {
-  -moz-image-region: rect(36px, 270px, 54px, 252px);
-}
-
-/* zoom controls */
-
-#zoom-out-button {
-  -moz-image-region: rect(0, 288px, 18px, 270px);
-  -moz-margin-end: 0;
-}
-
-#zoom-in-button {
-  -moz-image-region: rect(0, 306px, 18px, 288px);
-}
-
-#zoom-out-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 288px, 36px, 270px);
-}
-
-#zoom-out-button[disabled="true"] {
-  -moz-image-region: rect(36px, 288px, 54px, 270px);
-}
-
-#zoom-in-button:not([disabled="true"]):hover {
-  -moz-image-region: rect(18px, 306px, 36px, 288px);
-}
-
-#zoom-in-button[disabled="true"] {
-  -moz-image-region: rect(36px, 306px, 54px, 288px);
-}
-
-/* sync button */
-
-#sync-button:not([status]) {
-  list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
-  -moz-image-region: rect(0, 324px, 18px, 306px);
-}
-
-#sync-button[status="active"] {
-  list-style-image: url("chrome://browser/skin/sync-throbber.png");
-  -moz-image-region: rect(0, 18px, 18px, 0);
-}
-
-#sync-button[disabled="true"] {
-  -moz-image-region: rect(36px, 324px, 54px, 306px);
-}
-
-/* feed button */
-
-#feed-button {
-  -moz-image-region: rect(0, 342px, 18px, 324px);
-}
-
-#feed-button[disabled="true"] {
-  -moz-image-region: rect(36px, 342px, 54px, 324px);
 }
 
 /* ::::: fullscreen window controls ::::: */
@@ -1259,11 +1239,6 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 
 .search-go-container > .search-go-button {
   padding: 0;
-}
-
-.urlbar-icon:-moz-system-metric(touch-enabled) {
-  -moz-margin-end: 1px !important;
-  padding: 0 3px !important;
 }
 
 .urlbar-icon:hover {
@@ -1882,10 +1857,6 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
 }
 
-.tab-close-button:-moz-system-metric(touch-enabled) {
-  transform: scale(1.2);
-}
-
 .tab-close-button:hover,
 .tab-close-button:hover[selected="true"] {
   list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
@@ -1897,22 +1868,6 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 }
 
 /* Tab scrollbox arrow, tabstrip new tab and all-tabs buttons */
-
-@media (-moz-touch-enabled) {
-  .tabbrowser-arrowscrollbox > .scrollbutton-up,
-  .tabbrowser-arrowscrollbox > .scrollbutton-down,
-  #TabsToolbar .toolbarbutton-1 {
-    min-width: 8.1mozmm;
-  }
-
-  .tabs-newtab-button {
-    min-width: 10mozmm;
-  }
-
-  .tab-content {
-    min-height: calc(6.8mozmm - 7px); /* subtract borders from the desired height */
-  }
-}
 
 .tabbrowser-arrowscrollbox > .scrollbutton-up,
 .tabbrowser-arrowscrollbox > .scrollbutton-down {
@@ -2293,6 +2248,13 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   list-style-image: url("chrome://mozapps/skin/plugins/notifyPluginBlocked.png");
 }
 
+#notification-popup-box[hidden] {
+  /* Override display:none to make the pluginBlockedNotification animation work
+     when showing the notification repeatedly. */
+  display: -moz-box;
+  visibility: collapse;
+}
+
 #blocked-plugins-notification-icon[showing] {
   animation: pluginBlockedNotification 500ms ease 0s 5 alternate both;
 }
@@ -2306,9 +2268,12 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   }
 }
 
-#webRTC-sharingDevices-notification-icon,
 #webRTC-shareDevices-notification-icon {
   list-style-image: url("chrome://browser/skin/webRTC-shareDevice-16.png");
+}
+
+#webRTC-sharingDevices-notification-icon {
+  list-style-image: url("chrome://browser/skin/webRTC-sharingDevice-16.png");
 }
 
 #identity-popup-container {
@@ -2865,6 +2830,10 @@ html|*#gcli-output-frame {
   display: none;
 }
 
+#developer-toolbar-toolbox-button > .toolbarbutton-icon {
+  -moz-margin-end: 0;
+}
+
 .developer-toolbar-button {
   min-width: 78px;
   min-height: 21px;
@@ -2905,28 +2874,27 @@ html|*#gcli-output-frame {
   display: none;
 }
 
-#social-toolbar-item > .toolbarbutton-1 {
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1,
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .social-notification-container > .toolbarbutton-1 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1 {
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1:first-child {
+.social-notification-container {
+  /* position:relative on .toolbarbutton-1 does not get position:absolute
+     to work as expected on .toolbarbutton-1 generated content. Placing a
+     simple container outside of .toolbarbutton-1 and setting position:relative
+     on the simple container however will work. */
+  position: relative;
 }
 
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #social-toolbar-item > .toolbarbutton-1:last-child {
-}
-
-.social-notification-icon-hbox {
-  pointer-events: none;
-}
-
-.social-notification-icon-stack > image {
-  max-height: 20px;
-}
-
-.social-notification-icon-label {
-  text-align: end;
+.social-notification-container > .toolbarbutton-1[badge]:not([badge=""])::after {
+  /* The |content| property is set in the content stylesheet. */
   font-size: 9px;
   font-weight: bold;
   padding: 0 1px;
@@ -2934,14 +2902,18 @@ html|*#gcli-output-frame {
   background-color: #000000;
   border: 1px solid #9C9CFF;
   border-radius: 2px;
+  position: absolute;
+  top: 2px;
+  right: 2px;
 }
 
-.social-notification-icon-label[value=""] {
-  display: none;
+#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > *|* > .social-notification-container > .toolbarbutton-1[badge]:not([badge=""])::after {
+  top: 7px;
 }
 
-.social-notification-icon-image {
-  -moz-image-region: rect(0, 16px, 16px, 0);
+.social-notification-container > .toolbarbutton-1[badge]:not([badge=""]):-moz-locale-dir(rtl)::after {
+  left: 2px;
+  right: auto;
 }
 
 #social-notification-icon-mentions {
@@ -3266,6 +3238,8 @@ chatbox[minimized="true"] {
   background-position: top left;
 }
 
-#main-window[privatebrowsingmode=temporary] #appmenu-button {
+#main-window[privatebrowsingmode=temporary] #appmenu-button > .button-box > .box-inherit > .button-icon {
   list-style-image: url("chrome://browser/skin/privatebrowsing-light.png");
+  width: 20px;
+  height: 16px;
 }
