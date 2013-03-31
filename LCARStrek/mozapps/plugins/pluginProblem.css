@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 @namespace html url(http://www.w3.org/1999/xhtml);
 
 /* These styles affect only the bound element, not other page content. */
@@ -13,15 +17,22 @@
   -moz-user-select: none;
 }
 
+.hoverBox {
+  padding: 5px;
+}
+
 html|a {
   color: #FFCF00;
 }
 
 .icon {
-  min-width: 48px;
-  min-height: 48px;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
   background-position: center;
   background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
 }
 :-moz-type-unsupported .icon,
 :-moz-type-unsupported-platform .icon {
@@ -35,6 +46,16 @@ html|a {
 :-moz-handler-vulnerable-no-update .icon {
   background-image: url("chrome://mozapps/skin/plugins/contentPluginClickToPlay.png");
 }
+
+:-moz-handler-clicktoplay .icon {
+  background-image: url("chrome://mozapps/skin/plugins/contentPluginClickToPlayPlain.png");
+  background-position: 0 0;
+}
+:-moz-handler-clicktoplay .hoverBox:hover .icon,
+:-moz-handler-clicktoplay .hoverBox:hover:active .icon {
+ background-position: -48px 0;
+}
+
 :-moz-handler-disabled .icon {
   background-image: url("chrome://mozapps/skin/plugins/contentPluginDisabled.png");
 }
@@ -56,6 +77,8 @@ html|a {
   cursor: default;
 }
 
+:-moz-handler-clicktoplay .mainBox,
+:-moz-handler-clicktoplay .icon,
 :-moz-handler-clicktoplay .msgClickToPlay,
 :-moz-handler-vulnerable-updatable .msgClickToPlay,
 :-moz-handler-vulnerable-no-update .msgClickToPlay {
@@ -78,6 +101,42 @@ html|a {
   min-height: 19px; /* height of biggest line (with throbber) */
 }
 
+.submitComment {
+  width: 340px;
+  height: 70px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.submitURLOptInBox {
+  text-align: start;
+}
+
+.submitURLOptIn {
+  margin-left: -1px;
+}
+
+.mainBox[chromedir="rtl"] .submitURLOptIn {
+  margin-left: 0;
+  margin-right: -1px;
+}
+
+.submitButtonBox {
+  margin-top: 7px;
+}
+
+.submitButton {
+  float: right;
+}
+
+.mainBox[chromedir="rtl"] .submitButton {
+  float: left;
+}
+
 .msgBottomLinks {
   padding-left: 2px;
   padding-right: 2px;
@@ -89,4 +148,65 @@ html|a {
   min-width: 16px;
   min-height: 16px;
   background: url("chrome://mozapps/skin/plugins/pluginHelp-16.png") no-repeat;
+  cursor: pointer;
+  float: left;
+}
+
+.mainBox[chromedir="rtl"] .helpIcon {
+  float: right;
+}
+
+.closeIcon {
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 4px;
+  right: 4px;
+  border: none;
+  background-color: transparent;
+  background-image: url("chrome://global/skin/icons/close.png");
+  background-repeat: no-repeat;
+}
+
+.closeIcon:-moz-locale-dir(rtl) {
+  right: auto;
+  left: 4px;
+}
+
+.closeIcon:hover,
+.closeIcon:hover:active {
+  background-position: -16px 0;
+}
+
+:-moz-handler-clicktoplay .mainBox {
+  background-image: none;
+  background-color: rgba(0, 0, 0, .2);
+  border: 2px dashed rgba(255, 207, 0, 0.7);
+  border-radius: 3px;
+  color: #8050B0;
+  text-shadow: none;
+  box-shadow: none;
+  transition: background-color 150ms ease;
+}
+
+:-moz-handler-clicktoplay .mainBox:hover,
+:-moz-handler-clicktoplay .mainBox:hover:active {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+:-moz-handler-clicktoplay .mainBox,
+:-moz-handler-clicktoplay html|a {
+  color: #8050B0;
+}
+
+:-moz-handler-clicktoplay .hoverBox:hover,
+:-moz-handler-clicktoplay .hoverBox:hover html|a,
+:-moz-handler-clicktoplay .hoverBox:hover:active,
+:-moz-handler-clicktoplay .hoverBox:hover:active html|a {
+  color: #FFCF00;
+}
+
+:-moz-handler-clicktoplay .closeIcon {
+  background-image: url("chrome://mozapps/skin/plugins/contentPluginClose.png");
 }
