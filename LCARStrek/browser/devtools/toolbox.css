@@ -81,6 +81,17 @@ window {
 .command-button:hover:active {
 }
 
+#command-button-paintflashing {
+  list-style-image: url("chrome://browser/skin/devtools/command-paintflashing.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#command-button-paintflashing:hover,
+#command-button-paintflashing:hover:active,
+#command-button-paintflashing[checked=true] {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
 #command-button-responsive {
   list-style-image: url("chrome://browser/skin/devtools/command-responsivemode.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
@@ -131,6 +142,8 @@ window {
   color: #000000;
   margin: 0;
   -moz-margin-end: 3px;
+  padding: 1px;
+  -moz-padding-start: 3px;
   background-color: #C09070;
   border-radius: 8px 8px 0 0;
 }
