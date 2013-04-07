@@ -180,3 +180,7 @@ toolbar[iconsize="small"] > #print-button:not([disabled="true"]):hover:active {
 .messageImage[value="popup-blocked"] {
   list-style-image: url("chrome://navigator/skin/icons/popup-blocked.gif");
 }
+
+.messageImage[value="blocked-badware-page"] {
+  list-style-image: url("chrome://global/skin/icons/blacklist_favicon.png");
+}
