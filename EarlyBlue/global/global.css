@@ -262,8 +262,11 @@ description {
 
 .text-link {
   color: blue;
-  text-decoration: underline;
   cursor: pointer;
+}
+
+.text-link:hover {
+  text-decoration: underline;
 }
 
 .text-link:-moz-focusring {

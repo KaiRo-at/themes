@@ -6,35 +6,34 @@
   background-color: rgba(102,102,153,0.75);
 }
 
-.playButton, .muteButton {
-  /* Remove the usual button appearance and styling */
+.playButton,
+.muteButton,
+.fullscreenButton {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
   margin: 0px;
   padding: 0px;
   border: none;
   min-height: 28px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-.playButton {
   min-width: 28px;
-  margin-right: -22px; /* 1/2 of scrubber thumb width, for overhang. */
-  position: relative; /* Trick to work around negative margin interfering with clicking on the button. */
-}
-.muteButton {
-  min-width: 33px;
 }
 
 .playButton {
   background-image: url("chrome://global/skin/media/pauseButton.png");
+  margin-right: -22px; /* 1/2 of scrubber thumb width, for overhang. */
+  position: relative; /* Trick to work around negative margin interfering with clicking on the button. */
 }
+
 .playButton[paused] {
   background-image: url("chrome://global/skin/media/playButton.png");
 }
 
 .muteButton {
   background-image: url("chrome://global/skin/media/muteButton.png");
+  min-width: 33px;
 }
+
 .muteButton[muted] {
   background-image: url("chrome://global/skin/media/unmuteButton.png");
 }
@@ -44,12 +43,7 @@
 }
 
 .fullscreenButton {
-  background: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton.png"), 0, 16, 16, 0) no-repeat center;
-  margin: 0;
-  padding: 0;
-  min-height: 28px;
-  min-width: 28px;
-  border: none;
+  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton.png"), 0, 16, 16, 0);
 }
 
 .fullscreenButton[fullscreened] {
@@ -165,7 +159,7 @@
 }
 
 .timeThumb[showhours="true"] {
-  background: url("chrome://global/skin/media/scrubberThumbWide.png") no-repeat center;
+  background-image: url("chrome://global/skin/media/scrubberThumbWide.png");
 }
 
 /*
