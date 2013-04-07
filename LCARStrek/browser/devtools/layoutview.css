@@ -5,7 +5,6 @@
 body {
   background: url("layout-background-grid.png"), -moz-radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
   color: #FF9F00;
-  border-top: 1px solid #9C9CFF;
   -moz-box-sizing: border-box;
 }
 
