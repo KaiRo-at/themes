@@ -201,6 +201,7 @@ devtools-menulist:-moz-focusring,
   text-align: center;
   -moz-box-flex: 1;
   position: static;
+  margin-top: 0;
 }
 
 .devtools-sidebar-tabs > tabs > tab:-moz-focusring {
