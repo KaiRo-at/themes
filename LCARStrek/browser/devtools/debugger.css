@@ -186,7 +186,6 @@ window {
  */
 
 #stackframes\+breakpoints {
-  background-color: #000000;
   min-width: 50px;
 }
 
@@ -199,7 +198,6 @@ window {
  */
 
 #variables\+expressions {
-  background-color: #000000;
   min-width: 50px;
 }
 
@@ -212,7 +210,6 @@ window {
  */
 
 #stackframes {
-  /* background-color: white; */
   min-height: 10px;
 }
 
@@ -234,7 +231,6 @@ window {
  */
 
 #breakpoints {
-  background-color: #000000;
   min-height: 10px;
 }
 
@@ -268,8 +264,8 @@ window {
  */
 
 #expressions {
-  background-color: #000000;
   min-height: 10px;
+  max-height: 125px;
 }
 
 .dbg-expression {
@@ -288,7 +284,20 @@ window {
 }
 
 .dbg-expression-delete {
+  opacity: 0;
+}
+
+.dbg-expression-delete:not(:hover) {
   -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.dbg-expression-delete:hover {
+  opacity: 1;
+}
+
+.dbg-expression:hover > .dbg-expression-delete:not(:hover) {
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
 }
 
 /**
@@ -296,18 +305,47 @@ window {
  */
 
 #variables {
-/*  background-color: white; */
   min-height: 10px;
 }
 
-.dbg-variables-delete:not(:hover) {
+.dbg-variable-delete {
+  opacity: 0;
+}
+
+.dbg-variable-delete:not(:hover) {
   -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.dbg-variable-delete:hover {
+  opacity: 1;
+}
+
+.variable-or-property:hover > .title > .dbg-variable-delete:not(:hover),
+.variable-or-property:focus > .title > .dbg-variable-delete:not(:hover) {
   opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.dbg-variable-edit {
+  background: url("chrome://browser/skin/tabview/edit-light.png") center no-repeat;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+}
+.dbg-variable-throbber {
+  background: url("chrome://global/skin/icons/loading.gif") center no-repeat;
+  width: 16px;
+  height: 16px;
 }
 
 /**
  * Scope element
  */
+
+.scope:focus > .title {
+  background: #008484;
+  color: #000000;
+}
 
 .scope > .title {
   background: #E7ADE7;
@@ -332,7 +370,6 @@ window {
   -moz-margin-start: 1px;
   -moz-margin-end: 1px;
   border-bottom: 1px solid #008484;
-  background: #000000;
   transition: background 1s ease-in-out;
 }
 
@@ -341,14 +378,27 @@ window {
   transition-duration: 0.4s;
 }
 
+.scope:focus > .title {
+  background: #008484;
+  color: #000000;
+  border-radius: 4px;
+}
+
 .variable > .title > .name {
-  color: #FF9F00;
   font-weight: 600;
+}
+
+.variable:not(:focus) > .title > .name {
+  color: #FF9F00;
 }
 
 .variable > .title > .value {
   -moz-padding-start: 6px;
   -moz-padding-end: 4px;
+}
+
+.variable[editable] > .title > .value {
+  cursor: text;
 }
 
 .variable:not([non-header]) > .details {
@@ -361,7 +411,6 @@ window {
 
 .property {
   transition: background 1s ease-in-out;
-  background: #000000;
   border-radius: 8px;
 }
 
@@ -370,13 +419,24 @@ window {
   background: rgba(255, 207, 0, 0.8);
 }
 
-.property > .title > .name {
+.property:focus > .title {
+  background: #008484;
+  color: #000000;
+  border-radius: 4px;
+}
+
+.property:not(:focus) > .title > .name {
   color: #E7ADE7;
 }
 
 .property > .title > .value {
   -moz-padding-start: 6px;
   -moz-padding-end: 4px;
+  cursor: text;
+}
+
+.property[editable] > .title > .value {
+  cursor: text;
 }
 
 .property:not([non-header]) > .details {
@@ -384,7 +444,7 @@ window {
 }
 
 /**
- * Non enumerable, configurable and writable variables and properties.
+ * Non enumerable, configurable and writable variables and properties
  */
 
 .variable[proto] > .title > .name,
@@ -424,8 +484,8 @@ window {
 }
 */
 
-.variable[exception] > .title > .name,
-.property[exception] > .title > .name {
+.variable[exception]:not(:focus) > .title > .name,
+.property[exception]:not(:focus) > .title > .name {
   color: #FF0000;
 }
 
@@ -447,14 +507,20 @@ window {
  * Variables and properties editing
  */
 
-#variables .element-value-input {
-  -moz-margin-start: 5px !important;
+.element-value-input {
+  -moz-margin-start: 4px !important;
 }
 
-#variables .element-name-input {
-  -moz-margin-start: -1px !important;
+.element-name-input {
+  -moz-margin-start: -2px !important;
   color: #E7ADE7;
   font-weight: 600;
+}
+
+.element-value-input,
+.element-name-input {
+  max-width: 30em;
+  border: 1px solid #9C9CFF !important;
 }
 
 /**
@@ -475,27 +541,28 @@ window {
  * Token value colors
  */
 
-.token-undefined {
+.variable-or-property:not(:focus) > .title > .token-undefined {
   color: #8050B0;
 }
 
-.token-null {
+.variable-or-property:not(:focus) > .title > .token-null {
   color: #008484;
 }
 
-.token-boolean {
+.variable-or-property:not(:focus) > .title > .token-boolean {
   color: #FFCF00;
 }
 
-.token-number {
+.variable-or-property:not(:focus) > .title > .token-number {
   color: #E7ADE7;
 }
 
-.token-string {
+.variable-or-property:not(:focus) > .title > .token-string {
+  max-width: 30em;
   color: #9C9CFF;
 }
 
-.token-other {
+.variable-or-property:not(:focus) > .title > .token-other {
   color: #FF9F00;
 }
 
