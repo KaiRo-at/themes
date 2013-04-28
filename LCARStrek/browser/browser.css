@@ -1395,6 +1395,10 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   list-style-image: url("chrome://browser/skin/identity-icons-https-ev.png");
 }
 
+.mixedActiveContent > #page-proxy-favicon[pageproxystate="valid"] {
+  list-style-image: url("chrome://browser/skin/identity-icons-https-mixed-active.png");
+}
+
 #identity-box:hover > #page-proxy-favicon {
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
@@ -2172,6 +2176,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://browser/skin/webapps-64.png");
 }
 
+.popup-notification-icon[popupid="mixed-content-blocked"] {
+  list-style-image: url("chrome://browser/skin/mixed-content-blocked-64.png");
+}
+
 .popup-notification-icon[popupid="webRTC-sharingDevices"],
 .popup-notification-icon[popupid="webRTC-shareDevices"] {
   list-style-image: url("chrome://browser/skin/webRTC-shareDevice-64.png");
@@ -2266,6 +2274,10 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   to {
     opacity: 1;
   }
+}
+
+#mixed-content-blocked-notification-icon {
+  list-style-image: url("chrome://browser/skin/mixed-content-blocked-16.png");
 }
 
 #webRTC-shareDevices-notification-icon {
