@@ -65,6 +65,9 @@ menubar {
   background-color: #8050B0;
   color: #FF9F00;
 }
+#main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar > .tabbrowser-tabs > .tabbrowser-tab {
+  padding-top: 3px;
+}
 
 #main-window[tabsintitlebar] #titlebar:-moz-lwtheme {
   visibility: hidden;
