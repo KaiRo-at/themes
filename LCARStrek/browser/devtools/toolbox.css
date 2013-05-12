@@ -179,3 +179,47 @@ window {
   background-color: #008484;
   color: #000000;
 }
+
+.devtools-tab > spacer {
+  max-width: 0;
+  -moz-box-flex: 0;
+}
+
+.devtools-tab > image {
+  -moz-margin-end: 0;
+  -moz-margin-start: 0;
+}
+
+#toolbox-tab-options {
+  min-width: 20px;
+}
+
+#toolbox-tab-options > image {
+  -moz-margin-end: 3px;
+}
+
+
+#options-panel {
+  /* background-image: url("chrome://browser/skin/newtab/noise.png"); */
+}
+
+.options-vertical-pane {
+  margin: 15px;
+  width: calc(50% - 30px);
+  min-width: 400px;
+  -moz-padding-start: 5px;
+}
+
+.options-vertical-pane > label {
+  padding: 5px 0;
+  font-size: 1.4rem;
+}
+
+.options-groupbox {
+  -moz-margin-start: 15px;
+  padding: 4px;
+}
+
+.options-groupbox > * {
+  padding: 2px;
+}
