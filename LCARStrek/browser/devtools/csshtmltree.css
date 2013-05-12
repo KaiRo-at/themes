@@ -125,7 +125,7 @@ link:hover {
   background-color: #000000;
 }
 
-.onlyuserstyles {
+.includebrowserstyles {
   cursor: pointer;
   font-size: 11px;
 }
