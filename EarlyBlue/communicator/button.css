@@ -134,7 +134,7 @@ toolbar[labelalign="end"] .toolbarbutton-1 > hbox > vbox {
   background-color: #CCCCFF;
 }
 
-/* override winstripe */
+/* override windows */
 
 .toolbarbutton-icon[label]:not([label=""]),
 .toolbarbutton-icon[type="menu"] {
