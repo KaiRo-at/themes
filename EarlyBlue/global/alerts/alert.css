@@ -27,6 +27,10 @@
   width: 255px;
 }
 
+.alertTextBox,
+.alertCloseBox {
+}
+
 .alertBox[orient="horizontal"] > .alertImageBox {
   -moz-margin-end: 8px;
 }
@@ -43,6 +47,7 @@
 #alertImage {
   max-width: 48px;
   max-height: 48px;
+  list-style-image: url("chrome://global/skin/alerts/notification-48.png");
 }
 
 #alertNotification[clickable="true"] {
@@ -75,4 +80,13 @@ label {
   to {
     opacity: 0;
   }
+}
+
+.alertCloseButton {
+  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+  padding: 4px 2px;
+}
+
+.alertCloseButton > .toolbarbutton-text {
+  display: none;
 }
