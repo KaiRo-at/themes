@@ -56,6 +56,10 @@ window:not([windowtype]) {
   font-style: italic;
 }
 
+.splitview-nav.empty > p {
+  padding: 0 10px;
+}
+
 .stylesheet-enabled {
   padding: 8px 0;
   margin: 0 8px;

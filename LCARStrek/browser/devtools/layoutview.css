@@ -2,14 +2,17 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-body {
+.theme-dark .theme-body {
   background: url("layout-background-grid.png"), -moz-radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
-  color: #FF9F00;
-  -moz-box-sizing: border-box;
 }
 
-#element-size {
+.theme-light .theme-body {
+  background: url("layout-background-grid.png"), -moz-radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
+}
+
+.theme-body {
   color: #FF9F00;
+  -moz-box-sizing: border-box;
 }
 
 #main {

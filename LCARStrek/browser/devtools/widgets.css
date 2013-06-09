@@ -622,7 +622,7 @@
 /* Expand/collapse arrow */
 
 .arrow {
-  background: url("chrome://global/skin/tree/twisty-clsd.png") center center no-repeat;
+  background: url("chrome://global/skin/tree/twisty-closed.gif") center center no-repeat;
   width: 9px;
   height: 20px;
   -moz-margin-start: 5px;

@@ -137,8 +137,8 @@ window {
 }
 
 .devtools-tab {
-  min-width: 88px;
-  /* min-height: 22px; */
+  min-width: 32px;
+  max-width: 110px;
   color: #000000;
   margin: 0;
   -moz-margin-end: 3px;
@@ -148,30 +148,21 @@ window {
   border-radius: 8px 8px 0 0;
 }
 
-.devtools-tab > .radio-label-center-box > .radio-label-box {
-  padding: 0 6px;
-  border-radius: 8px 8px 0 0;
+.devtools-tab > image {
+  -moz-margin-end: 0px;
+/*  -moz-margin-start: 8px; */
 }
 
-.devtools-tab > .radio-label-center-box > .radio-label-box > .radio-icon {
-  -moz-margin-end: 6px;
+.devtools-tab:hover > image {
 }
 
-.devtools-tab:hover > .radio-label-center-box > .radio-label-box > .radio-icon {
-}
-
-.devtools-tab:active > .radio-label-center-box > .radio-label-box > .radio-icon,
-.devtools-tab[selected=true] > .radio-label-center-box > .radio-label-box > .radio-icon {
+.devtools-tab:active > image,
+.devtools-tab[selected=true] > image {
 }
 
 .devtools-tab:hover,
 .devtools-tab:hover:active {
   background-color: #FFCF00;
-  color: #000000;
-}
-
-.devtools-tab:hover > .radio-label-center-box > .radio-label-box,
-.devtools-tab:hover:active > .radio-label-center-box > .radio-label-box {
   color: #000000;
 }
 
