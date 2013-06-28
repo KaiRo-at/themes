@@ -12,16 +12,4 @@
     background-color: #FFFFFF;
     color: #221500;
   }
-
-  .overflowing {
-    cursor: -moz-zoom-out;
-  }
-
-  .shrinkToFit {
-    cursor: -moz-zoom-in;
-  }
-
-  .completeRotation {
-    transition: transform 0.3s ease 0s;
-  }
 }
