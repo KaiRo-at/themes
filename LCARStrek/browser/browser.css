@@ -2850,16 +2850,6 @@ html|*#gcli-output-frame {
   display: none;
 }
 
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar #social-toolbar-item {
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
-#navigator-toolbox[iconsize=large][mode=icons] > #nav-bar #social-toolbar-item > .toolbarbutton-1 {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 .toolbarbutton-badge-container {
   margin: 0;
   padding: 0;
@@ -2867,7 +2857,7 @@ html|*#gcli-output-frame {
 }
 
 #navigator-toolbox[iconsize=large][mode=icons] > #nav-bar .toolbarbutton-1 > .toolbarbutton-badge-container {
-  padding: 2px 5px;
+  padding: 2px 2px;
 }
 
 .toolbarbutton-1 > .toolbarbutton-badge-container > .toolbar-icon {
@@ -2928,6 +2918,36 @@ html|*#gcli-output-frame {
 
 #social-sidebar-splitter {
   border: 0;
+}
+
+.popup-notification-icon[popupid="servicesInstall"] {
+  list-style-image: url("chrome://browser/skin/social/services-64.png");
+}
+#servicesInstall-notification-icon {
+  list-style-image: url("chrome://browser/skin/social/services-16.png");
+}
+#social-undoactivation-button,
+#servicesInstall-learnmore-link {
+  -moz-margin-start: 0; /* override default label margin to match description margin */
+}
+
+#socialActivatedNotification .popup-notification-button-container {
+  margin-left: 6px;
+}
+
+.social-activation-icon {
+  width: auto;
+  height: auto;
+  max-height: 64px;
+  max-width: 64px;
+}
+
+#social-activation-message {
+  max-width: 250px;
+}
+
+#social-activation-message > label {
+  margin: 0;
 }
 
 /* social toolbar provider menu */
@@ -3041,8 +3061,7 @@ html|*#gcli-output-frame {
 }
 
 .chatbar-button {
-  /* XXX get a real image for this */
-  list-style-image: url("chrome://browser/skin/social/social.png");
+  list-style-image: url("chrome://browser/skin/social/services-16.png");
   background-color: #000000;
   border: none;
   margin: 0;
@@ -3051,6 +3070,12 @@ html|*#gcli-output-frame {
   width: 21px;
   border-top: 1px solid #008484;
   -moz-border-end: 1px solid #008484;
+}
+
+@media (min-resolution: 2dppx) {
+  .chatbar-button {
+    list-style-image: url("chrome://browser/skin/social/services-16@2x.png");
+  }
 }
 
 .chatbar-button > menupopup > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {

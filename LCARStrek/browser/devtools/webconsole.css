@@ -6,16 +6,6 @@ window {
   padding: 0;
 }
 
-.hud-outer-wrapper {
-  width: 100%; 
-  height: 100%;
-}
-
-.hud-console-wrapper {
-  width: 100%; 
-  overflow: auto; 
-}
-
 /* General output styles */
 
 .webconsole-timestamp {
@@ -104,7 +94,6 @@ window {
 .hud-output-node {
   -moz-appearance: none;
   border-bottom: 1px solid #9C9CFF;
-  border-top: 1px solid #9C9CFF;
   margin: 0;
 }
 
@@ -115,7 +104,7 @@ window {
 
 /* WebConsole colored drops */
 
-.webconsole-filter-button[checked=true] {
+.webconsole-filter-button[checked] {
   /* color: white !important; */
 }
 
@@ -277,4 +266,25 @@ webconsole-mixed-content {
 
 .hud-filter-box {
   width: 200px;
+}
+
+.webconsole-msg-inspector iframe {
+  height: 7em;
+  margin-bottom: 15px;
+  -moz-margin-end: 15px;
+  border-radius: 4px;
+}
+
+#webconsole-sidebar > tabs {
+  height: 0;
+  border: none;
+}
+
+.webconsole-msg-security > .webconsole-msg-icon-container {
+  -moz-border-start: solid #FF0000 6px;
+}
+
+.webconsole-filter-button[category="security"] > .toolbarbutton-menubutton-button:before {
+  background-color: #FF0000;
+  border-color: #FFCF00;
 }

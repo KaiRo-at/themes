@@ -28,8 +28,14 @@
   text-decoration: underline;
 }
 
-.ruleview-rule {
+.ruleview-rule,
+#noResults {
   padding: 2px 4px;
+}
+
+#noResults {
+  font: message-box;
+  color: #8050B0;
 }
 
 .ruleview-rule + .ruleview-rule {

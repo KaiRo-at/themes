@@ -144,6 +144,7 @@ richlistitem[type="download"]:first-child {
 
 /*** Highlighted list items ***/
 
+/* #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover { */
 #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"]:hover {
   border-radius: 3px;
   background-color: #794900;

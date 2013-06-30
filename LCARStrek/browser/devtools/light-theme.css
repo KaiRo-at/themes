@@ -37,19 +37,16 @@
 
 .theme-checkbox {
   display: inline-block;
-  border: 1px solid #FF9F00;
-  width: 6px;
-  height: 6px;
-  padding: 2px;
-  background-color: transparent;
-  background-repeat: no-repeat;
+  border: 0;
+  width: 14px;
+  height: 14px;
+  padding: 0;
   outline: none;
+  background: url("chrome://browser/skin/devtools/checkbox.png") no-repeat;
 }
 
 .theme-checkbox[checked] {
-  background-clip: content-box;
-  background-image: linear-gradient(to bottom right, transparent 48%, #FF9F00 48%, #FF9F00 52%, transparent 52%),
-                    linear-gradient(to bottom left, transparent 48%, #FF9F00 48%, #FF9F00 52%, transparent 52%);
+  background: url("chrome://browser/skin/devtools/checkbox.png") 14px 0;
 }
 
 .theme-selected {
