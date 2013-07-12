@@ -1602,48 +1602,8 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 /* social recommending panel */
 
-#share-button {
+#social-mark-button {
   -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-#socialUserPortrait {
-  width: 48px;
-  height: 48px;
-  list-style-image:url("chrome://global/skin/icons/information-32.png");
-}
-
-#socialUserDisplayName,
-#socialUserPortrait {
-  cursor: pointer;
-}
-
-#socialUserDisplayName {
-  border: none;
-  background-color: transparent;
-  margin-top: 0;
-  padding-top: 0;
-  font-size: 130%;
-  font-weight: bold;
-  list-style-image:url("chrome://global/skin/icons/information-32.png");
-}
-
-#socialUserDisplayName > .button-box {
-  -moz-padding-start: 0;
-  padding-top: 0;
-  border-top-width: 0;
-}
-
-#socialUserDisplayName:hover {
-  color: #9C9CFF;
-  text-decoration: underline;
-}
-
-#unsharePopupText {
-  height: 48px;
-}
-
-#unsharePopupBottomButtons {
-  margin-top: 1em;
 }
 
 /* star button */
@@ -2137,6 +2097,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://mozapps/skin/plugins/pluginBlocked-64.png");
 }
 
+.popup-notification-icon[popupid="plugins-not-found"] {
+  list-style-image: url("chrome://browser/skin/pluginInstall-64.png");
+}
+
 .popup-notification-icon[popupid="web-notifications"] {
   list-style-image: url("chrome://browser/skin/notification-64.png");
 }
@@ -2173,7 +2137,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="indexedDB-permissions-prompt"],
-.popup-notification-icon[popupid="indexedDB-quota-prompt"] {
+.popup-notification-icon[popupid="indexedDB-quota-prompt"],
+.popup-notification-icon[popupid*="offline-app-requested"] {
   list-style-image: url("chrome://global/skin/icons/alert-question.gif");
 }
 
@@ -2268,6 +2233,10 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #blocked-plugins-notification-icon {
   list-style-image: url("chrome://mozapps/skin/plugins/notifyPluginBlocked.png");
+}
+
+#plugin-install-notification-icon {
+  list-style-image: url("chrome://browser/skin/pluginInstall-16.png");
 }
 
 #notification-popup-box[hidden] {
@@ -2844,6 +2813,7 @@ html|*#gcli-output-frame {
 
 #social-provider-button {
   -moz-image-region: rect(0, 16px, 16px, 0);
+  list-style-image: url("chrome://browser/skin/social/services-16.png");
 }
 
 #social-provider-button > .toolbarbutton-menu-dropmarker {
@@ -3094,6 +3064,7 @@ html|*#gcli-output-frame {
   opacity: 1;
 }
 
+.chatbar-button:hover,
 .chatbar-button[open="true"] {
 }
 
