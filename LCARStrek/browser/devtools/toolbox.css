@@ -150,7 +150,11 @@ window {
 
 .devtools-tab > image {
   -moz-margin-end: 0px;
-/*  -moz-margin-start: 8px; */
+/*  -moz-margin-start: 4px; */
+}
+
+#toolbox-tab-options > image {
+/*  margin: 0 8px; */
 }
 
 .devtools-tab:hover > image {

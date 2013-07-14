@@ -305,11 +305,13 @@
 }
 
 .side-menu-widget-container[with-arrow=true]:-moz-locale-dir(ltr),
-.side-menu-widget-item-or-group[with-arrow=true]:-moz-locale-dir(ltr) {
+.side-menu-widget-group[with-arrow=true]:-moz-locale-dir(ltr),
+.side-menu-widget-item[with-arrow=true]:-moz-locale-dir(ltr) {
 }
 
 .side-menu-widget-container[with-arrow=true]:-moz-locale-dir(rtl),
-.side-menu-widget-item-or-group[with-arrow=true]:-moz-locale-dir(rtl) {
+.side-menu-widget-group[with-arrow=true]:-moz-locale-dir(rtl),
+.side-menu-widget-item[with-arrow=true]:-moz-locale-dir(rtl) {
 }
 
 .side-menu-widget-group-title {
@@ -524,6 +526,10 @@
   border-bottom: 1px dashed #FF0000;
 }
 
+.variable-or-property[safe-getter] > .title > .name {
+  border-bottom: 1px dashed #A09090;
+}
+
 .variable-or-property[non-writable] > .title:after {
   content: " ";
   display: inline-block;
@@ -554,6 +560,10 @@
 .variable-or-property[non-configurable] > tooltip > label[value=configurable],
 .variable-or-property[non-writable] > tooltip > label[value=writable] {
   text-decoration: line-through;
+}
+
+.variable-or-property:not([safe-getter]) > tooltip > label[value=native-getter] {
+  display: none;
 }
 
 /* Variables and properties editing */
