@@ -193,6 +193,11 @@ window {
   -moz-margin-end: 3px;
 }
 
+.devtools-tab:not(.highlighted) > .highlighted-icon,
+.devtools-tab[selected=true] > .highlighted-icon,
+.devtools-tab:not([selected=true]).highlighted > .default-icon {
+  visibility: collapse;
+}
 
 #options-panel {
   /* background-image: url("chrome://browser/skin/newtab/noise.png"); */

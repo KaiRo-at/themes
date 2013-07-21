@@ -261,18 +261,6 @@ devtools-menulist:-moz-focusring,
 .devtools-sidebar-tabs > tabs > tab[selected=true]:hover:active {
 }
 
-/* LCARStrek-specific adaptions */
-
-#profiler-chrome {
-  /* HACK for profiler in the dev toolbox in FF 20+. */
-  margin: -3px;
-}
-
-#profiler-chrome > box > box > .devtools-toolbar {
-  border-bottom: none;
-}
-
-
 /********************** shared/devtools/common.inc.css **********************/
 
 /* Autocomplete Popup */

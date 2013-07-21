@@ -7,7 +7,6 @@ window {
 }
 
 .devtools-toolbar {
-  border-bottom: none;
 }
 
 .profile-name {
@@ -26,4 +25,21 @@ window {
   border-bottom: 1px solid #A09090;
   -moz-padding-end: 8px;
   -moz-box-align: center;
+}
+
+#profiler-start {
+  list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+}
+
+#profiler-start:hover {
+  -moz-image-region: rect(16px,16px,32px,0px);
+}
+
+#profiler-start[checked] {
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+#profiler-start[checked]:hover {
+  -moz-image-region: rect(16px,32px,32px,16px);
 }

@@ -59,6 +59,9 @@ window {
 .requests-menu-header-button > .button-box,
 #requests-menu-status-button > .button-box {
   border-radius: 0;
+  -moz-padding-start: 0;
+  -moz-padding-end: 0;
+  border: 0;
 }
 
 .requests-menu-header-button:hover {
