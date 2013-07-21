@@ -1426,11 +1426,13 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #identity-box:hover {
   background-color: #FFCF00;
+  color: #000000;
 }
 
 #identity-box:hover:active,
 #identity-box[open=true] {
   background-color: #FF9F00;
+  color: #000000;
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:hover,
