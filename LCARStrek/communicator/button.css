@@ -79,8 +79,8 @@ toolbar[mode="text"] .toolbarbutton-1[type="menu-button"]:hover:active > .toolba
 toolbar[mode="text"] .toolbarbutton-1[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding-top: 5px;
   padding-bottom: 7px;
-  -moz-padding-start: 0px;
-  -moz-padding-end: 2px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
 }
 
 toolbar[mode="icons"] .toolbarbutton-1[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
@@ -89,8 +89,8 @@ toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"]:hover:active > .t
 toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding-top: 1px;
   padding-bottom: 12px;
-  -moz-padding-start: 0px;
-  -moz-padding-end: 2px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
 }
 
 toolbar[mode="text"] .toolbarbutton-menubutton-dropmarker[disabled="true"] {
