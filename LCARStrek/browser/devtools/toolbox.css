@@ -6,6 +6,10 @@ window {
   padding: 0;
 }
 
+notification {
+  margin-bottom: 3px;
+}
+
 #toolbox-controls {
   margin: 0 2px;
 }
@@ -13,7 +17,7 @@ window {
 #toolbox-controls > toolbarbutton,
 #toolbox-dock-buttons > toolbarbutton {
   min-width: 16px;
-  padding: 1px 3px;
+/*  padding: 1px 3px; */
 }
 
 #toolbox-dock-bottom {
@@ -72,7 +76,7 @@ window {
 /* Command buttons */
 
 .command-button {
-  padding: 1px 4px;
+/*  padding: 1px 4px; */
   min-width: 16px;
 }
 

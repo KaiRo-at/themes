@@ -25,7 +25,7 @@
      breadcrumbs-widget-items, to match toolbar-buttons style.
      This negative margin compensates the extra row of pixels created
      by the shadow.*/
-  margin: -1px 0;
+/*  margin: -1px 0;*/
 }
 
 /* Preloading hack, LTR */

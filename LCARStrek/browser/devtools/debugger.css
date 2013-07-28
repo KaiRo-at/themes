@@ -47,6 +47,10 @@ window {
 
 /* Stack frames view */
 
+#stackframes {
+  min-height: 25px;
+}
+
 .dbg-stackframe-details {
   -moz-padding-start: 4px;
 }
@@ -315,9 +319,9 @@ window {
 }
 
 #instruments-pane-toggle {
-  background: none;
+/*  background: none;
   box-shadow: none;
-  border: none;
+  border: none; */
   list-style-image: url("chrome://browser/skin/devtools/debugger-collapse.png");
   -moz-image-region: rect(0px,16px,16px,0px);
 }
