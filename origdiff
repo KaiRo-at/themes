@@ -30,7 +30,7 @@ COMM_LOG=$RUN_DIR/theme-suitedefault.$NAME_PRE-$NAME_POST.log
 
 HG_MOZ_DIR=/mnt/mozilla/hg/comm-beta/mozilla
 MOZ_HG_OPTIONS=
-MOZ_DIR=toolkit/themes/windows/
+MOZ_DIR="toolkit/themes/windows/ toolkit/themes/shared/"
 MOZ_TAG_PRE=$TAG_PRE_MOZ
 MOZ_TAG_POST=$TAG_POST_MOZ
 MOZ_NAME_EXTRA=" (toolkit)"
@@ -38,7 +38,7 @@ MOZ_LOG=$RUN_DIR/theme-toolkitwin.$NAME_PRE-$NAME_POST.log
 
 HG_MOZB_DIR=/mnt/mozilla/hg/comm-beta/mozilla
 MOZB_HG_OPTIONS=
-MOZB_DIR=browser/themes/windows/
+MOZB_DIR="browser/themes/windows/ browser/themes/shared/"
 MOZB_TAG_PRE=$TAG_PRE_MOZ
 MOZB_TAG_POST=$TAG_POST_MOZ
 MOZB_NAME_EXTRA=" (browser)"
