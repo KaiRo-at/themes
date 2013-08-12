@@ -287,6 +287,8 @@ webconsole-mixed-content {
   border: none;
 }
 
+/* Security styles */
+
 .webconsole-msg-security > .webconsole-msg-icon-container {
   -moz-border-start: solid #FF0000 6px;
 }
@@ -294,4 +296,12 @@ webconsole-mixed-content {
 .webconsole-filter-button[category="security"] > .toolbarbutton-menubutton-button:before {
   background-color: #FF0000;
   border-color: #FFCF00;
+}
+
+.webconsole-msg-security.webconsole-msg-error {
+  -moz-image-region: rect(32px, 16px, 40px, 8px);
+}
+
+.webconsole-msg-security.webconsole-msg-warn {
+  -moz-image-region: rect(32px, 24px, 40px, 16px);
 }
