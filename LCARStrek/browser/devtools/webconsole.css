@@ -6,13 +6,30 @@ window {
   padding: 0;
 }
 
+.webconsole-timestamp,
+.webconsole-msg-body,
+.jsterm-input-node,
+.jsterm-complete-node {
+  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
+}
+
+/*
+ * This hardcoded width likely due to a toolkit Windows specific bug.
+ * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
+ */
+
+.hud-filter-box {
+  width: 200px;
+}
+
+/* === webconsole.inc.css === */
+
 /* General output styles */
 
 .webconsole-timestamp {
   color: #8050B0;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 .hud-msg-node {
@@ -24,12 +41,6 @@ window {
   margin: 3px 4px;
   width: 8px;
   height: 8px;
-}
-
-.hud-output-node div {
-  -moz-user-select: text;
-  white-space: pre-wrap;
-  -moz-user-focus: normal;
 }
 
 .hud-clickable {
@@ -81,14 +92,18 @@ window {
   text-align: end;
 }
 
+.webconsole-mixed-content {
+  color: #FF0000;
+}
+
+.webconsole-mixed-content-link {
+  color: #3333FF;
+  margin: 0;
+}
+
 .hud-msg-node[selected="true"] > .webconsole-timestamp,
 .hud-msg-node[selected="true"] > .webconsole-location {
   color: inherit;
-}
-
-.jsterm-input-node,
-.jsterm-complete-node {
-  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 .hud-output-node {
@@ -110,6 +125,10 @@ window {
 }
 
 /* WebConsole colored drops */
+
+.webconsole-filter-button {
+  -moz-user-focus: normal;
+}
 
 .webconsole-filter-button[checked] {
   /* color: white !important; */
@@ -208,15 +227,6 @@ window {
   -moz-image-region: rect(24px, 32px, 32px, 24px);
 }
 
-webconsole-mixed-content {
-  color: #FF0000;
-}
-
-.webconsole-mixed-content-link {
-  color: #9C9CFF;
-  margin: 0;
-}
-
 /* Input and output styles */
 .webconsole-msg-input > .webconsole-msg-icon-container,
 .webconsole-msg-output > .webconsole-msg-icon-container {
@@ -230,19 +240,7 @@ webconsole-mixed-content {
 .webconsole-msg-output {
   -moz-image-region: rect(24px, 48px, 32px, 40px);
 }
-/*
-.webconsole-close-button {
-  border: none;
-  padding-top: 4px;
-  padding-bottom: 5px;
-  list-style-image: url("chrome://global/skin/icons/close-button.gif");
-}
 
-.webconsole-close-button:hover,
-.webconsole-close-button:hover:active {
-  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
-}
-*/
 /* JSTerm Styles */
 
 .jsterm-input-node,
@@ -252,7 +250,7 @@ webconsole-mixed-content {
 }
 
 .jsterm-input-node {
-  background: url("chrome://browser/skin/devtools/commandline.png") 4px 3px no-repeat;
+  background: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16) no-repeat;
 }
 
 :-moz-any(.jsterm-input-node,
@@ -262,17 +260,6 @@ webconsole-mixed-content {
 
 .jsterm-complete-node > .textbox-input-box > .textbox-textarea {
   color: #8050B0;
-}
-
-/* Filter */
-
-/*
- * This hardcoded width likely due to a toolkit Windows specific bug.
- * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
- */
-
-.hud-filter-box {
-  width: 200px;
 }
 
 .webconsole-msg-inspector iframe {

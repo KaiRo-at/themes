@@ -47,25 +47,14 @@ notification {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-#toolbox-close {
-  list-style-image: url("chrome://global/skin/icons/close.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-#toolbox-close:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
 #toolbox-dock-window,
 #toolbox-dock-bottom,
-#toolbox-dock-side,
-#toolbox-close {
+#toolbox-dock-side {
 }
 
 #toolbox-dock-window:hover,
 #toolbox-dock-bottom:hover,
-#toolbox-dock-side:hover,
-#toolbox-close:hover {
+#toolbox-dock-side:hover {
 }
 
 #toolbox-controls-separator {
@@ -203,6 +192,16 @@ notification {
   visibility: collapse;
 }
 
+.devtools-tab:not([selected=true]).highlighted {
+  color: #FFCF00;
+}
+
+.devtools-tab:not(.highlighted) > .highlighted-icon,
+.devtools-tab[selected=true] > .highlighted-icon,
+.devtools-tab:not([selected=true]).highlighted > .default-icon {
+  visibility: collapse;
+}
+
 #options-panel {
   /* background-image: url("chrome://browser/skin/newtab/noise.png"); */
 }
@@ -226,4 +225,17 @@ notification {
 
 .options-groupbox > * {
   padding: 2px;
+}
+
+.options-citation-label {
+  font-size: 1rem !important;
+  /* !important is required otherwise font-size will still be 1.4rem */
+  font-style: italic;
+  padding: 4px 0 0; /* To align it with the checkbox */
+  color: #A09090;
+}
+
+.options-citation-label + label {
+  padding: 3px 0 0 !important; /* To align it with the checkbox */
+  font-style: italic;
 }

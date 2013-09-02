@@ -92,22 +92,8 @@
 
 /* Resizers */
 
-.splitview-landscape-resizer {
-  -moz-appearance: none;
-  width: 7px;
-  background-image: linear-gradient(left, #000000 1px, #FFCF00 1px);
-  background-size: 2px 15px;
-  background-clip: padding-box;
-  background-repeat: repeat-x;
-/*  border-width: 1px;
-  border-style: solid;
-  border-color: #9C9CFF;*/
-  margin: 5px 0;
-  transform: translateX(-22px); /* account for startcap as well */
-}
-
-.splitview-landscape-resizer:-moz-locale-dir(rtl) {
-  transform: translateX(22px);
+.splitview-landscape-splitter {
+  /* -moz-border-start-color: transparent; */
 }
 
 .splitview-portrait-resizer {
