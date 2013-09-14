@@ -123,6 +123,10 @@ listheader[sortable="true"]:hover:active {
   background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
 }
 
+listitem[type="checkbox"]:hover .listcell-check[checked="true"] {
+  background-image: url("chrome://global/skin/checkbox/cbox-check-hover.gif");
+}
+
 listitem[type="checkbox"]:hover .listcell-check {
   border-color: #FFCF00;
 }

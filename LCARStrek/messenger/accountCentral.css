@@ -10,12 +10,15 @@
   == Styles for the Messenger Account Central panel.
   ======================================================================= */
 
+page {
+  padding: 0;
+}
+
 #acctCentralGrid {
-  background-color: #000000;
 }
 
 spacer {
-  max-height: .5em;separator {
+  max-height: 3px;
 }
 
 spacer.big {
@@ -25,31 +28,45 @@ spacer.big {
 /* ::::: rows ::::: */
 
 #acctCentralHeaderRow {
-  margin: 5px;
-  background-color: #FF9F00;
-  border-radius: 10px;
+  background-color: #A09090;
+  border-radius: 1000px;
   color: #000000;
   font-weight: bold;
   font-size: 20px;
-  padding-top: 3px;
+}
+
+#acctCentralHeaderRow > label {
+  -moz-margin-start: 30px;
+}
+
+#acctCentralHeaderRow + spacer {
+  max-height: 15px;
 }
 
 .acctCentralRow {
-  -moz-margin-start: 20px;
+  -moz-margin-start: 10px;
 }
 
 .acctCentralRowTitleBox {
-/*  border-bottom: 1px solid #9C9CFF; */
   background-color: #9C9CFF;
   padding-top: 3px;
-  border-radius: 7px;
+  padding-bottom: 3px;
+  border-radius: 1000px;
   color: #000000;
+}
+
+.acctCentralRowTitleBox > description {
+  -moz-margin-start: 30px;
 }
 
 .acctCentralTitleRow {
   -moz-margin-start: 10px;
   font-weight: bold;
   font-size: 15px;
+}
+
+.acctCentralTitleRow+ spacer {
+  max-height: 10px;
 }
 
 .acctCentralText {
@@ -59,17 +76,19 @@ spacer.big {
 /* ::::: links ::::: */
 
 .acctCentralLinkText {
+  margin: 0;
+  -moz-margin-start: 20px;
   cursor: pointer;
-  color: #008484;
-  padding: 0px 5px;
-  border-radius: 3px;
+  background-color: #C09070;
+  color: #000000;
+  padding: 0px 10px;
+  border-radius: 1000px;
   text-decoration: none;
 }
 
 .acctCentralLinkText:hover {
   background-color: #FFCF00;
   color: #000000;
-/*  text-decoration: underline; */
 }
 
 /* ::::: row icons ::::: */

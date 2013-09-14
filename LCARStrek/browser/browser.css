@@ -3267,7 +3267,7 @@ window > chatbox {
  */
 
 #notification-popup[popupid="click-to-play-plugins"] > .panel-arrowcontainer > .panel-arrowcontent {
-  padding: 0px;
+  padding: 6px 1px 2px;
 }
 
 .click-to-play-plugins-notification-content {
@@ -3279,7 +3279,7 @@ window > chatbox {
 }
 
 .plugin-popupnotification-centeritem {
-  border-top: 1px solid #9C9CFF;
+/*  border-top: 1px solid #9C9CFF; */
 }
 
 .center-item-label {
@@ -3296,7 +3296,6 @@ window > chatbox {
 }
 
 .click-to-play-plugins-notification-button-container {
-  border-top: 1px solid #9C9CFF;
 }
 
 .click-to-play-popup-button {
@@ -3304,14 +3303,14 @@ window > chatbox {
 }
 
 .click-to-play-plugins-notification-description-box {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 2px;
-  padding-bottom: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 0;
+  padding-bottom: 3px;
 }
 
 .click-to-play-plugins-outer-description {
-  margin-top: 8px;
+  margin-top: 1px;
 }
 
 .click-to-play-plugins-notification-link,

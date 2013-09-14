@@ -133,6 +133,7 @@ button[type="menu-button"][open="true"] > .button-menubutton-button {
   border: none;
 }
 
+.button-menu-dropmarker,
 button[type="menu-button"]:hover > .button-menubutton-dropmarker,
 button[type="menu-button"]:hover:active > .button-menubutton-dropmarker,
 button[type="menu-button"][open="true"] > .button-menubutton-dropmarker {

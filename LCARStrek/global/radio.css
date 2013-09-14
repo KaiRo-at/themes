@@ -50,6 +50,7 @@ radio[focused="true"] > .radio-label-center-box > .radio-label-box {
 
 radio[disabled="true"] > .radio-spacer-box > .radio-check-box1 {
   background-color: #000000;
+  border: 1px solid #8050B0;
 }
 
 radio[disabled="true"] {
@@ -77,24 +78,25 @@ radio[disabled="true"] {
   list-style-image: none;
 }
 
-radio:hover > .radio-spacer-box > .radio-check-box1,
-radio:hover:active > .radio-spacer-box > .radio-check-box1 {
+radio:not([disabled="true"]):hover > .radio-spacer-box > .radio-check-box1,
+radio:not([disabled="true"]):hover:active > .radio-spacer-box > .radio-check-box1 {
   border: 1px solid #FFCF00;
 }
 
-radio:hover > .radio-label-center-box > .radio-label-box,
-radio:hover:active > .radio-label-center-box > .radio-label-box {
+radio:not([disabled="true"]):hover > .radio-label-center-box > .radio-label-box,
+radio:not([disabled="true"]):hover:active > .radio-label-center-box > .radio-label-box {
   color: #FFCF00;
-}
-
-radio[disabled="true"] > .radio-spacer-box > .radio-check-box1 {
-  border: 1px solid #8050B0 !important;
 }
 
 /* ..... selected state ..... */
 
 radio[selected="true"] > .radio-spacer-box > .radio-check-box1 > .radio-check-box2 {
   list-style-image: url("chrome://global/skin/radio/radio-check.gif");
+}
+
+radio[selected="true"]:hover > .radio-spacer-box > .radio-check-box1 > .radio-check-box2,
+radio[selected="true"]:hover:active > .radio-spacer-box > .radio-check-box1 > .radio-check-box2{
+  list-style-image: url("chrome://global/skin/radio/radio-check-hover.gif");
 }
 
 radio[selected="true"][disabled="true"] > .radio-spacer-box > .radio-check-box1 > .radio-check-box2 {

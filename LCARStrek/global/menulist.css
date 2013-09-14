@@ -62,7 +62,7 @@ menulist:-moz-focusring:not([open="true"]):not(.menulist-compact) > .menulist-la
 menulist[disabled="true"] {
   background-color: #000000;
   color: #8050B0;
-  border: 1px solid #8050B0;
+  border-color: #8050B0;
 }
 
 /* ..... dropmarker ..... */
@@ -70,21 +70,19 @@ menulist[disabled="true"] {
 .menulist-dropmarker {
   border-radius: 0px 3px 3px 0px;
   min-width: 15px;
-  border: none;
-  border-left: 1px solid #9C9CFF;
+  border: none !important;
+  border-left: 1px solid #9C9CFF !important;
 }
 
-.menulist-dropmarker,
-menulist[disabled="true"]:hover:active > .menulist-dropmarker {
+menulist[disabled="true"] > .menulist-dropmarker {
   padding: 1px;
-  border: none;
-  border-left: 1px solid #9C9CFF;
+  border-left: 1px solid #8050B0 !important;
 }
 
-menulist[menuactive="true"] > .menulist-dropmarker,
-menulist[open="true"] > .menulist-dropmarker,
-menulist:hover > .menulist-dropmarker,
-menulist:hover:active > .menulist-dropmarker {
+menulist:not([disabled="true"])[menuactive="true"] > .menulist-dropmarker,
+menulist:not([disabled="true"])[open="true"] > .menulist-dropmarker,
+menulist:not([disabled="true"]):hover > .menulist-dropmarker,
+menulist:not([disabled="true"]):hover:active > .menulist-dropmarker {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
 }
 
