@@ -1341,17 +1341,28 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   padding-right: 2.01px;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
+  color: #9C9CFF;
+  -moz-border-end: 1px solid #9C9CFF;
+}
+
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
   color: #008484;
   -moz-border-end: 1px solid #008484;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
   -moz-margin-end: 3px;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI:-moz-locale-dir(ltr),
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:-moz-locale-dir(ltr) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI:-moz-locale-dir(rtl),
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:-moz-locale-dir(rtl) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1432,6 +1443,13 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #identity-box:hover:active,
 #identity-box[open=true] {
   background-color: #FF9F00;
+  color: #000000;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI:hover,
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI:hover:active,
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI[open=true] {
+  background-color: #9C9CFF;
   color: #000000;
 }
 
