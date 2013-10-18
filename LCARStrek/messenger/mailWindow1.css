@@ -22,6 +22,10 @@
   height: 0px;
 }
 
+#messagepanebox notification {
+  margin-bottom: 3px;
+}
+
 #locationIcon {
   list-style-image: none;
 }
