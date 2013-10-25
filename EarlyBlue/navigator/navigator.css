@@ -292,6 +292,11 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   height: 16px;
 }
 
+.click-to-play-plugins-notification-content {
+  margin: -10px;
+  border-radius: 4px;
+}
+
 .click-to-play-plugins-notification-icon-box {
   background-color: #CCD0DD;
   -moz-border-end: 1px solid #666699;
