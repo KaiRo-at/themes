@@ -1341,16 +1341,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   padding-right: 2.01px;
 }
 
-#urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
-  color: #9C9CFF;
-  -moz-border-end: 1px solid #9C9CFF;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
-  color: #008484;
-  -moz-border-end: 1px solid #008484;
-}
-
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI,
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
   -moz-margin-end: 3px;
@@ -1407,11 +1397,36 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 /* page proxy icon */
 
+/* === BEGIN identity-block.inc.css === */
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
+  /* Default theme does different color per channel, we can't as they do it build-time. */
+  color: #9C9CFF;
+  -moz-border-end: 1px solid #9C9CFF;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
+  color: #008484;
+  -moz-border-end: 1px solid #008484;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
+  background-position: right;
+  background-size: 1px;
+  background-repeat: no-repeat;
+}
+
+/* page proxy icon */
+
 #page-proxy-favicon {
   width: 16px;
   height: 16px;
   list-style-image: url("chrome://browser/skin/identity-icons-generic.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.chromeUI > #page-proxy-favicon[pageproxystate="valid"] {
+  list-style-image: url("chrome://branding/content/identity-icons-brand.png");
 }
 
 .verifiedDomain > #page-proxy-favicon[pageproxystate="valid"] {
@@ -1424,6 +1439,39 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 .mixedActiveContent > #page-proxy-favicon[pageproxystate="valid"] {
   list-style-image: url("chrome://browser/skin/identity-icons-https-mixed-active.png");
+}
+
+.mixedDisplayContent > #page-proxy-favicon[pageproxystate="valid"] {
+  list-style-image: url("chrome://browser/skin/identity-icons-https-mixed-display.png");
+}
+
+.mixedDisplayContentLoadedActiveBlocked > #page-proxy-favicon[pageproxystate="valid"] {
+  list-style-image: url("chrome://browser/skin/identity-icons-https-mixed-display.png");
+}
+
+#page-proxy-favicon[pageproxystate="invalid"] {
+  opacity: 0.3;
+}
+
+#identity-popup.chromeUI > #identity-popup-container > #identity-popup-icon {
+  list-style-image: url("chrome://branding/content/icon64.png");
+}
+
+#identity-popup-brandName {
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+#identity-popup-content-box {
+  max-width: 50ch;
+}
+
+/* === END identity-block.inc.css === */
+
+#page-proxy-favicon {
+  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
 #identity-box:hover > #page-proxy-favicon {
@@ -1458,10 +1506,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity[open=true] {
   background-color: #008484;
   color: #000000;
-}
-
-#page-proxy-favicon[pageproxystate="invalid"] {
-  opacity: 0.3;
 }
 
 /* autocomplete */
@@ -3087,6 +3131,8 @@ html|*#gcli-output-frame {
   border-radius: inherit;
 }
 
+/* === BEGIN chat.inc.css === */
+
 .chat-status-icon {
   max-height: 16px;
   max-width: 16px;
@@ -3108,6 +3154,11 @@ html|*#gcli-output-frame {
 
 .chat-toolbarbutton > .toolbarbutton-icon {
   width: inherit;
+}
+
+.chat-toolbarbutton.notification-anchor-icon > .toolbarbutton-icon {
+  width: inherit;
+  margin-top: -2px;
 }
 
 .chat-close-button {
@@ -3277,6 +3328,8 @@ window > chatbox {
   border: none;
   padding: 0px;
 }
+
+/* === END chat.inc.css === */
 
 /* === BEGIN plugin-doorhanger.inc.css === */
 

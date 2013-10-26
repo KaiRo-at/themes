@@ -2,10 +2,110 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* === file identical to profiler.inc.css === */
+
 window {
   padding: 0;
 }
 
+.profiler-sidebar-empty-notice {
+  max-width: 176px;
+  padding: 10px;
+  background-color: #A09090;
+  color: #000000;
+  font-weight: bold;
+}
+
+.devtools-toolbar {
+/*  min-height: 33px; */
+}
+
+.profiler-sidebar {
+  min-width: 196px;
+}
+
+.profiler-sidebar + .devtools-side-splitter {
+  -moz-border-start-color: transparent;
+}
+
+.profiler-sidebar-item {
+  padding: 3px 5px;
+}
+
+.profiler-sidebar-item, .side-menu-widget-item-contents {
+  cursor: default;
+}
+
+.profiler-sidebar-item > h3 {
+  font-size: 13px;
+  display: block;
+  cursor: pointer;
+}
+
+.profiler-sidebar-item > hbox {
+  margin-top: 2px;
+  color: #A09090;
+}
+
+.profiler-sidebar-item > hbox > a {
+  display: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.profiler-sidebar-item > hbox > a:hover {
+  color: #FFCF00;
+}
+
+[state=completed].selected .profiler-sidebar-item > hbox > a {
+  display: block;
+}
+
+.selected .profiler-sidebar-item > hbox {
+  color: #3A3A5F; /* 37% of #9C9CFF */
+}
+
+#profiler-controls > toolbarbutton {
+/*  margin: 0;
+  box-shadow: none;
+  border-radius: 0;
+  border-width: 0;
+  -moz-border-end-width: 1px;
+  outline-offset: -3px;*/
+}
+
+#profiler-controls > toolbarbutton:last-of-type {
+/*  -moz-border-end-width: 0;*/
+}
+
+#profiler-controls {
+  border-radius: 3px;
+  margin: 0 3px;
+}
+
+#profiler-start {
+  list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+}
+
+#profiler-start:hover {
+  -moz-image-region: rect(16px,16px,32px,0px);
+}
+
+#profiler-start[checked] {
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+#profiler-start[checked]:hover {
+  -moz-image-region: rect(16px,32px,32px,16px);
+}
+
+
+
+
+
+
+/*
 .devtools-toolbar {
 }
 
@@ -27,19 +127,4 @@ window {
   -moz-box-align: center;
 }
 
-#profiler-start {
-  list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch.png");
-  -moz-image-region: rect(0px,16px,16px,0px);
-}
-
-#profiler-start:hover {
-  -moz-image-region: rect(16px,16px,32px,0px);
-}
-
-#profiler-start[checked] {
-  -moz-image-region: rect(0px,32px,16px,16px);
-}
-
-#profiler-start[checked]:hover {
-  -moz-image-region: rect(16px,32px,32px,16px);
-}
+*/
