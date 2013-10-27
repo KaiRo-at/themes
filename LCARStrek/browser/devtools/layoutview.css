@@ -11,7 +11,7 @@
 }
 
 .theme-body {
-  color: #FF9F00;
+  color: #FF9F00 !important;
   -moz-box-sizing: border-box;
 }
 

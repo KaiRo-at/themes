@@ -251,6 +251,7 @@ window {
 
 .jsterm-input-node {
   background: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16) no-repeat;
+  background-position: 0%;
 }
 
 :-moz-any(.jsterm-input-node,
@@ -291,4 +292,17 @@ window {
 
 .webconsole-msg-security.webconsole-msg-warn {
   -moz-image-region: rect(32px, 24px, 40px, 16px);
+}
+
+.navigation-marker {
+  color: #000000;
+  background-color: #A09090;
+  -moz-margin-start: 3px;
+  -moz-margin-end: 6px;
+  font-size: 0.9em;
+}
+
+.navigation-marker .url {
+  background-color: #000000;
+  -moz-padding-end: 6px;
 }

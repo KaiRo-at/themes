@@ -1868,6 +1868,13 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   -moz-padding-start: 0px;
 }
 
+.browserContainer > findbar {
+/*
+  background-color: -moz-dialog;
+  color: -moz-DialogText;
+*/
+}
+
 /* ::::: throbber ::::: */
 
 #navigator-throbber {
@@ -1922,6 +1929,10 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 .tabs-newtab-button:not(:hover) {
   background-color: #C09070;
+}
+
+.tabbrowser-tab[remote] {
+  text-decoration: underline;
 }
 
 .tabbrowser-tab:hover,
@@ -2239,6 +2250,21 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   -moz-margin-end: 0;
 }
 
+#identity-popup > .panel-arrowcontainer > .panel-arrowcontent {
+  padding: 0;
+}
+
+#identity-popup-container {
+  min-width: 280px;
+  padding: 10px;
+}
+
+#identity-popup-button-container {
+/*  background: linear-gradient(to bottom, rgba(0,0,0,0.04) 60%, transparent);*/
+  padding: 10px;
+  margin-top: 5px;
+}
+
 .popup-notification-icon {
   width: 64px;
   height: 64px;
@@ -2411,6 +2437,18 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png");
 }
 
+#plugins-notification-icon,
+#alert-plugins-notification-icon,
+#blocked-plugins-notification-icon {
+/*  -moz-image-region: rect(0, 16px, 16px, 0);*/
+}
+
+#plugins-notification-icon:hover,
+#alert-plugins-notification-icon:hover,
+#blocked-plugins-notification-icon:hover {
+/*  -moz-image-region: rect(0, 32px, 16px, 16px);*/
+}
+
 #plugin-install-notification-icon {
   list-style-image: url("chrome://browser/skin/pluginInstall-16.png");
 }
@@ -2460,10 +2498,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 #pointerLock-cancel {
   margin: 0px;
-}
-
-#identity-popup-container {
-  min-width: 280px;
 }
 
 #download-monitor {
@@ -2818,6 +2852,10 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
 /*  margin: auto 10px; */
 }
 
+#developer-toolbar-toolbox-button > label {
+  display: none;
+}
+
 #developer-toolbar-toolbox-button {
   list-style-image: url("chrome://browser/skin/devtools/toggle-tools.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
@@ -2920,6 +2958,8 @@ html|*#gcli-output-frame {
 
 /* === END commandline.inc.css === */
 
+/* === BEGIN responsivedesign.inc.css === */
+
 /* Responsive Mode */
 
 .browserContainer[responsivemode] {
@@ -2942,20 +2982,66 @@ html|*#gcli-output-frame {
 .devtools-responsiveui-toolbar > menulist,
 .devtools-responsiveui-toolbar > toolbarbutton {
   min-width: 22px;
-  border-radius: 0;
+/*  border-radius: 0; */
 }
 
 .devtools-responsiveui-toolbar:-moz-locale-dir(ltr) > *:first-child,
 .devtools-responsiveui-toolbar:-moz-locale-dir(rtl) > *:last-child {
-  margin-left: 0;
+  margin-left: 3px;
 }
 
-.devtools-responsiveui-resizebar {
+.devtools-responsiveui-close {
+  list-style-image: url("chrome://browser/skin/devtools/close.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+}
+
+.devtools-responsiveui-close:hover {
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+.devtools-responsiveui-rotate {
+  list-style-image: url("chrome://browser/skin/devtools/responsiveui-rotate.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+}
+
+.devtools-responsiveui-rotate:hover {
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+.devtools-responsiveui-touch {
+  list-style-image: url("chrome://browser/skin/devtools/responsiveui-touch.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+}
+
+.devtools-responsiveui-touch:hover,
+.devtools-responsiveui-touch[checked],
+.devtools-responsiveui-touch[checked]:hover {
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+.devtools-responsiveui-screenshot {
+  list-style-image: url("chrome://browser/skin/devtools/responsiveui-screenshot.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+}
+
+.devtools-responsiveui-screenshot:hover {
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+.devtools-responsiveui-resizebarV {
   width: 7px;
   height: 24px;
   cursor: ew-resize;
   transform: translate(12px, -12px);
   background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer.png");
+}
+
+.devtools-responsiveui-resizebarH {
+  width: 24px;
+  height: 7px;
+  cursor: ns-resize;
+  transform: translate(-12px, 12px);
+  background-image: url("chrome://browser/skin/devtools/responsive-horizontal-resizer.png");
 }
 
 .devtools-responsiveui-resizehandle {
@@ -2965,6 +3051,8 @@ html|*#gcli-output-frame {
   transform: translate(12px, 12px);
   background-image: url("chrome://browser/skin/devtools/responsive-se-resizer.png");
 }
+
+/* === END responsivedesign.inc.css === */
 
 /* Error counter */
 
@@ -3263,6 +3351,10 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover {
   }
 }
 
+.chatbar-button > .toolbarbutton-icon {
+  width: 16px;
+}
+
 .chatbar-button > menupopup > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
   width: auto;
   height: auto;
@@ -3346,11 +3438,10 @@ window > chatbox {
 }
 
 .click-to-play-plugins-notification-center-box {
-/*  background-color: rgba(255,255,255,0.3); */
 }
 
-.plugin-popupnotification-centeritem {
-/*  border-top: 1px solid #9C9CFF; */
+.plugin-popupnotification-centeritem:nth-child(odd) {
+/*  background-color: rgba(0,0,0,0.1);*/
 }
 
 .center-item-label {
