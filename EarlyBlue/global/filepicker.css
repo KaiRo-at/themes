@@ -20,10 +20,12 @@
 
 /* ::::: file/directory items ::::: */
 
+treechildren::-moz-tree-image(treecolAutoCompleteValue, directory),
 treechildren::-moz-tree-image(FilenameColumn, directory) {
   list-style-image: url("chrome://global/skin/filepicker/dir-closed.gif");
 }
 
+treechildren::-moz-tree-image(treecolAutoCompleteValue, file),
 treechildren::-moz-tree-image(FilenameColumn, file) {
   list-style-image: url("chrome://global/skin/filepicker/file.gif");
 }

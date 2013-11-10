@@ -25,10 +25,20 @@
   width: 100%;
   height: 100%;
 }
+
 :-moz-handler-vulnerable-updatable .hoverBox:active,
 :-moz-handler-vulnerable-no-update .hoverBox:active,
 :-moz-handler-clicktoplay .hoverBox:active {
   background-color: #CCCCCC;
+}
+
+:-moz-handler-clicktoplay .hoverBox:active .msgTapToPlay,
+:-moz-handler-clicktoplay .hoverBox:active .msgClickToPlay,
+:-moz-handler-vulnerable-updatable .hoverBox:active .msgTapToPlay,
+:-moz-handler-vulnerable-updatable .hoverBox:active .msgClickToPlay,
+:-moz-handler-vulnerable-no-update .hoverBox:active .msgTapToPlay,
+:-moz-handler-vulnerable-no-update .hoverBox:active .msgClickToPlay {
+  color: red;
 }
 
 :-moz-handler-vulnerable-updatable .hoverBox,
@@ -82,6 +92,11 @@ html|a {
   padding-left: 16px; /* width of the background image */
   background: url("chrome://global/skin/icons/loading.gif") no-repeat;
   margin-left: 5px;
+}
+
+.msgTapToPlay,
+.msgClickToPlay {
+  text-decoration: underline;
 }
 
 @media not all and (-moz-touch-enabled) {
