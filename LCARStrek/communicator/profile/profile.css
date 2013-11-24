@@ -6,11 +6,11 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* Make nice LCARS border */
 window.dialog {
   padding: 0;
 }
 
-/* Make nice LCARS border */
 .dialog-content-box {
   background-color: #A09090;
   border-radius: 5px 0 0 0;
@@ -63,31 +63,10 @@ treechildren::-moz-tree-image(rowMigrate-no) {
 }
 
 /* profile selection dialog */
-html#intro {
+#intro {
   width: 17em;
 }
 
-box#managebuttons > button {
+#managebuttons > button {
   min-width: 8em;
-}
-
-/* display area */
-box#contentarea {
-  border-top: 2px solid #9C9CFF;
-  border-bottom: 2px solid #9C9CFF;
-  padding: 7px;
-}
-
-/* top border on status area */
-box#wizardButtons {
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-
-box.selection {
-  margin-top: 4px;
-}
-
-description.error {
-  color: #FF0000;
 }

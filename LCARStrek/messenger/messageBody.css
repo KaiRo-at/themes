@@ -23,7 +23,7 @@
   background-color: #DEDEDE;
 }
 
-div.headerdisplayname {
+.headerdisplayname {
   display: inline;
   font-weight: bold;
   white-space: pre;
@@ -70,20 +70,22 @@ div.headerdisplayname {
   display: none;
 }
 
-span.moz-txt-underscore {
+.moz-txt-underscore {
   text-decoration: underline;
 }
 
-span.moz-txt-formfeed {
+.moz-txt-formfeed {
   display: block;
   height: 100%;
 }
 
 /* ::::: signature ::::: */
 
-.moz-txt-sig,
-.moz-signature {
-  opacity: 0.5;
+@media not print {
+  .moz-txt-sig,
+  .moz-signature {
+    opacity: 0.5;
+  }
 }
 
 /* ::::: vcard ::::: */
@@ -112,12 +114,16 @@ span.moz-txt-formfeed {
 
 /* ::::: attached images ::::: */
 
+.moz-attached-image {
+  image-orientation: from-image;
+}
+
 moz-attached-image[overflowing="true"] {
-  cursor: -moz-zoom-out;
+  cursor: zoom-out;
 }
 
 .moz-attached-image[isshrunk="true"] {
-  cursor: -moz-zoom-in;
+  cursor: zoom-in;
   max-width: 100%;
 }
 

@@ -12,10 +12,6 @@
   min-width: 10em;
 }
 
-.MinWidth15em {
-  min-width: 15em;
-}
-
 .MinWidth20em {
   min-width: 20em;
 }
@@ -213,7 +209,7 @@
 
 /* Don't change width/height of these without changing values in 
   GetOriginalWidth(), EdImageProps.js
-*/    
+*/
 #preview-image-box {
   border: 1px inset #9C9CFF;
   width: 82px;
@@ -243,7 +239,7 @@
 }
 
 /* styles for an attribute tree-table */
-tree.AttributesTree {
+.AttributesTree {
   min-width: 200px;
   min-height: 200px;
 }
