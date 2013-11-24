@@ -301,10 +301,6 @@ window {
   background: rgba(255,159,0,0.1);
 }
 
-.side-menu-widget-item-contents {
-  padding: 0;
-}
-
 /* Network request details */
 
 #details-pane {
@@ -346,7 +342,6 @@ window {
 
 .tabpanel-summary-value {
   -moz-padding-start: 3px;
-  font-family: "Liberation Mono", Consolas, "Courier New", monospace;
 }
 
 /* Headers tabpanel */

@@ -31,8 +31,7 @@ body {
 }
 
 .font {
-  padding: 10px 5px;
-  font-size: 0;
+  padding: 10px 10px;
 }
 
 .theme-dark .font {
@@ -59,7 +58,6 @@ body {
 }
 
 .font-info {
-  font-size: 1rem;
   display: block;
 }
 
