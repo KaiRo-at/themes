@@ -12,8 +12,18 @@ toolbar {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar");
 }
 
+/* Remove selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
+#navigator-toolbox:not([tabsontop]) > toolbar[customizable="true"] {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-browsercustom");
+}
+
 toolbar[type="menubar"][autohide="true"] {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-menubar-autohide");
+}
+
+/* Remove selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
+#navigator-toolbox:not([tabsontop]) > #toolbar-menubar[autohide="true"] {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-menubar-autohide-browsercustom");
 }
 
 menubar {
@@ -39,6 +49,34 @@ menubar {
   background-color: #9C9CFF;
 }
 
+/* We want a 4px gap between the TabsToolbar and the toolbar-menubar when the
+   toolbar-menu is displayed, and a 16px gap when it is not. 1px is taken care
+   of by the (light) outer shadow of the tab, the remaining 3/15 are these margins. */
+#toolbar-menubar:not([autohide="true"]) ~ #TabsToolbar,
+#toolbar-menubar[autohide="true"]:not([inactive]) ~ #TabsToolbar {
+/*  margin-top: 3px;*/
+}
+
+#main-window[tabsintitlebar][sizemode="normal"][chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,
+#main-window[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar {
+/*  margin-top: 15px;*/
+}
+
+/* Remove selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
+#navigator-toolbox:not([tabsontop]) > #toolbar-menubar:not([autohide="true"]) {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
+}
+
+#main-window[tabsintitlebar] #main-menubar > menu:not(:-moz-lwtheme) {
+  /* like menubar */
+  background-color: #6000CF;
+  color: #FF9F00;
+}
+
+#main-window[tabsintitlebar] #main-menubar > menu:not(:-moz-lwtheme):-moz-window-inactive {
+  background-color: #8050B0;
+  color: #FF9F00;
+}
 
 #navigator-toolbox {
 }
@@ -338,9 +376,16 @@ menubar {
   margin-top: 4px;
 }
 
+/* The button box must appear on top of the navigator-toolbox in order for
+ * click and hover mouse events to work properly for the button in the restored
+ * window state. Otherwise, elements in the navigator-toolbox, like the menubar,
+ * can swallow those events. It will also place the buttons above the fog on
+ * themes with Aero Glass.
+ */
 #titlebar-buttonbox {
   margin-top: 5px;
   -moz-margin-end: 3px;
+  z-index: 1;
 }
 
 #main-window[sizemode="maximized"] #titlebar-buttonbox {
@@ -499,6 +544,493 @@ menuitem.bookmark-item {
 
 /* ::::: primary toolbar buttons ::::: */
 
+/* === BEGIN toolbarbuttons.inc.css === */
+
+/* Whole section of this included file: */
+/* Remove |#navigator-toolbox:not([tabsontop])| selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
+#navigator-toolbox:not([tabsontop]) :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button,
+          #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #sync-button, #feed-button,
+          #tabview-button, #webrtc-status-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button,
+          #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button,
+          #PanelUI-menu-button, #characterencoding-button, #email-link-button),
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  list-style-image: url("chrome://browser/skin/ToolbarFx.png");
+}
+
+#navigator-toolbox:not([tabsontop]) #back-button {
+  -moz-image-region: rect(0, 36px, 18px, 18px);
+}
+
+#navigator-toolbox:not([tabsontop]) #back-button:hover:not([disabled="true"]) {
+  -moz-image-region: rect(18px, 36px, 36px, 18px);
+}
+
+#navigator-toolbox:not([tabsontop]) #back-button[disabled="true"] {
+  -moz-image-region: rect(36px, 36px, 54px, 18px);
+}
+
+#navigator-toolbox:not([tabsontop]) #forward-button {
+  -moz-image-region: rect(0, 72px, 18px, 54px);
+}
+
+#navigator-toolbox:not([tabsontop]) #forward-button:hover:not([disabled="true"]) {
+  -moz-image-region: rect(18px, 72px, 36px, 54px);
+}
+
+#navigator-toolbox:not([tabsontop]) #forward-button[disabled="true"] {
+  -moz-image-region: rect(36px, 72px, 54px, 54px);
+}
+
+#navigator-toolbox:not([tabsontop]) #back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,
+#navigator-toolbox:not([tabsontop]) #forward-button:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
+}
+
+#navigator-toolbox:not([tabsontop]) #home-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 126px, 18px, 108px);
+}
+
+#navigator-toolbox:not([tabsontop]) #home-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 126px, 36px, 108px);
+}
+
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 144px, 18px, 126px);
+}
+
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] {
+  -moz-image-region: rect(18px, 144px, 36px, 126px);
+}
+
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][starred] {
+  -moz-image-region: rect(0, 162px, 18px, 144px);
+}
+
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][starred]:hover,
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][starred][open="true"] {
+  -moz-image-region: rect(18px, 162px, 36px, 144px);
+}
+
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  -moz-image-region: rect(0, 630px, 18px, 612px);
+}
+
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker {
+  padding: 1px;
+  -moz-box-align: center;
+}
+
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  -moz-image-region: rect(18px, 630px, 36px, 612px);
+}
+
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
+}
+
+#navigator-toolbox:not([tabsontop]) #history-panelmenu[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 180px, 18px, 162px);
+}
+
+#navigator-toolbox:not([tabsontop]) #history-panelmenu[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([tabsontop]) #history-panelmenu[cui-areatype="toolbar"][open="true"] {
+  -moz-image-region: rect(18px, 180px, 36px, 162px);
+}
+
+#navigator-toolbox:not([tabsontop]) #downloads-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 198px, 18px, 180px);
+}
+
+#navigator-toolbox:not([tabsontop]) #downloads-button[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([tabsontop]) #downloads-button[cui-areatype="toolbar"][open="true"] {
+  -moz-image-region: rect(18px, 198px, 36px, 180px);
+}
+
+#navigator-toolbox:not([tabsontop]) #add-ons-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 216px, 18px, 198px);
+}
+
+#navigator-toolbox:not([tabsontop]) #add-ons-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 216px, 36px, 198px);
+}
+
+#navigator-toolbox:not([tabsontop]) #switch-to-metro-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 648px, 18px, 630px);
+}
+
+#navigator-toolbox:not([tabsontop]) #switch-to-metro-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 648px, 36px, 630px);
+}
+
+#navigator-toolbox:not([tabsontop]) #open-file-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 234px, 18px, 216px);
+}
+
+#navigator-toolbox:not([tabsontop]) #open-file-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 234px, 36px, 216px);
+}
+
+#navigator-toolbox:not([tabsontop]) #save-page-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 252px, 18px, 234px);
+}
+
+#navigator-toolbox:not([tabsontop]) #save-page-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 252px, 36px, 234px);
+}
+
+#navigator-toolbox:not([tabsontop]) #sync-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 270px, 18px, 252px);
+}
+
+#navigator-toolbox:not([tabsontop]) #sync-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 270px, 36px, 252px);
+}
+
+#navigator-toolbox:not([tabsontop]) #feed-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 288px, 18px, 270px);
+}
+
+#navigator-toolbox:not([tabsontop]) #feed-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 288px, 36px, 270px);
+}
+
+#navigator-toolbox:not([tabsontop]) #social-share-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0px, 306px, 18px, 288px);
+}
+
+#navigator-toolbox:not([tabsontop]) #social-share-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 306px, 36px, 288px);
+}
+
+#navigator-toolbox:not([tabsontop]) #email-link-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 306px, 18px, 288px);
+  /* This is temporary until we have an email-link icon (Bug 932235) */
+  transform: scale(-1, -1);
+}
+
+#navigator-toolbox:not([tabsontop]) #email-link-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 306px, 36px, 288px);
+}
+
+#navigator-toolbox:not([tabsontop]) #characterencoding-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 324px, 18px, 306px);
+}
+
+#navigator-toolbox:not([tabsontop]) #characterencoding-button[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([tabsontop]) #characterencoding-button[cui-areatype="toolbar"][open="true"] {
+  -moz-image-region: rect(18px, 324px, 36px, 306px);
+}
+
+#navigator-toolbox:not([tabsontop]) #new-window-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 342px, 18px, 324px);
+}
+
+#navigator-toolbox:not([tabsontop]) #new-window-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 342px, 36px, 324px);
+}
+
+#navigator-toolbox:not([tabsontop]) #new-tab-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 360px, 18px, 342px);
+}
+
+#navigator-toolbox:not([tabsontop]) #new-tab-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 360px, 36px, 342px);
+}
+
+#navigator-toolbox:not([tabsontop]) #privatebrowsing-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 378px, 18px, 360px);
+}
+
+#navigator-toolbox:not([tabsontop]) #privatebrowsing-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 378px, 36px, 360px);
+}
+
+#navigator-toolbox:not([tabsontop]) #find-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 396px, 18px, 378px);
+}
+
+#navigator-toolbox:not([tabsontop]) #find-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 396px, 36px, 378px);
+}
+
+#navigator-toolbox:not([tabsontop]) #print-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 414px, 18px, 396px);
+}
+
+#navigator-toolbox:not([tabsontop]) #print-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 414px, 36px, 396px);
+}
+
+#navigator-toolbox:not([tabsontop]) #fullscreen-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 432px, 18px, 414px);
+}
+
+#navigator-toolbox:not([tabsontop]) #fullscreen-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 432px, 36px, 414px);
+}
+
+#navigator-toolbox:not([tabsontop]) #developer-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 450px, 18px, 432px);
+}
+
+#navigator-toolbox:not([tabsontop]) #developer-button[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([tabsontop]) #developer-button[cui-areatype="toolbar"][open="true"] {
+  -moz-image-region: rect(18px, 450px, 36px, 432px);
+}
+
+#navigator-toolbox:not([tabsontop]) #preferences-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 468px, 18px, 450px);
+}
+
+#navigator-toolbox:not([tabsontop]) #preferences-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 468px, 36px, 450px);
+}
+
+#navigator-toolbox:not([tabsontop]) #PanelUI-menu-button {
+  -moz-image-region: rect(0, 486px, 18px, 468px);
+}
+
+#navigator-toolbox:not([tabsontop]) #PanelUI-menu-button:hover,
+#navigator-toolbox:not([tabsontop]) #PanelUI-menu-button[open="true"] {
+  -moz-image-region: rect(18px, 486px, 36px, 468px);
+}
+
+#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button {
+  -moz-image-region: rect(0, 504px, 18px, 486px);
+}
+
+#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button:hover {
+  -moz-image-region: rect(18px, 504px, 36px, 486px);
+}
+
+#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button {
+  -moz-image-region: rect(0, 522px, 18px, 504px);
+}
+
+#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button:hover {
+  -moz-image-region: rect(18px, 522px, 36px, 504px);
+}
+
+#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button {
+  -moz-image-region: rect(0, 540px, 18px, 522px);
+}
+
+#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button:hover {
+  -moz-image-region: rect(18px, 540px, 36px, 522px);
+}
+
+#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button {
+  -moz-image-region: rect(0, 558px, 18px, 540px);
+}
+
+#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button:hover {
+  -moz-image-region: rect(18px, 558px, 36px, 540px);
+}
+
+#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button {
+  -moz-image-region: rect(0, 576px, 18px, 558px);
+}
+
+#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button:hover {
+  -moz-image-region: rect(18px, 576px, 36px, 558px);
+}
+
+#navigator-toolbox:not([tabsontop]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) {
+  -moz-image-region: rect(0, 594px, 18px, 576px);
+}
+
+#navigator-toolbox:not([tabsontop]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)):hover,
+#navigator-toolbox:not([tabsontop]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem))[open="true"] {
+  -moz-image-region: rect(18px, 594px, 36px, 576px);
+}
+
+#navigator-toolbox:not([tabsontop]) #nav-bar-overflow-button {
+  -moz-image-region: rect(0, 612px, 18px, 594px);
+}
+
+#navigator-toolbox:not([tabsontop]) #nav-bar-overflow-button:hover,
+#navigator-toolbox:not([tabsontop]) #nav-bar-overflow-button[open="true"] {
+  -moz-image-region: rect(18px, 612px, 36px, 594px);
+}
+
+/* === END toolbarbuttons.inc.css === */
+
+/* === BEGIN menupanel.inc.css === */
+
+/* Menu panel and palette styles */
+
+/* Remove |:-moz-any(#customization-palette, #panelUI-contents)| selector when Australis lands - this makes it only apply post-Australis as those elements only exist there */
+:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button,
+          #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #sync-button, #feed-button,
+          #tabview-button, #webrtc-status-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button,
+          #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button,
+          #PanelUI-menu-button, #characterencoding-button, #email-link-button)[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button,
+          #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #sync-button, #feed-button,
+          #tabview-button, #webrtc-status-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button,
+          #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button,
+          #PanelUI-menu-button, #characterencoding-button, #email-link-button) {
+  list-style-image: url("chrome://browser/skin/menuPanel.png");
+}
+
+#home-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #home-button {
+  -moz-image-region: rect(0px, 128px, 32px, 96px);
+}
+
+#bookmarks-menu-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #bookmarks-menu-button {
+  -moz-image-region: rect(0px, 160px, 32px, 128px);
+}
+
+#bookmarks-menu-button[starred][cui-areatype="menu-panel"] {
+  -moz-image-region: rect(0px, 192px, 32px, 160px);
+}
+
+#history-panelmenu[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #history-panelmenu {
+  -moz-image-region: rect(0px, 224px, 32px, 192px);
+}
+
+#downloads-button[cui-areatype="menu-panel"],
+#downloads-indicator[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #downloads-button {
+  -moz-image-region: rect(0px, 256px, 32px, 224px);
+}
+
+#switch-to-metro-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #switch-to-metro-button {
+  -moz-image-region: rect(0px, 800px, 32px, 768px);
+}
+
+#add-ons-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #add-ons-button {
+  -moz-image-region: rect(0px, 288px, 32px, 256px);
+}
+
+#open-file-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #open-file-button {
+  -moz-image-region: rect(0px, 320px, 32px, 288px);
+}
+
+#save-page-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #save-page-button {
+  -moz-image-region: rect(0px, 352px, 32px, 320px);
+}
+
+#sync-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #sync-button {
+  -moz-image-region: rect(0px, 384px, 32px, 352px);
+}
+
+#feed-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #feed-button {
+  -moz-image-region: rect(0px, 416px, 32px, 384px);
+}
+
+#social-share-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #social-share-button {
+  -moz-image-region: rect(0px, 448px, 32px, 416px);
+}
+
+#email-link-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #email-link-button {
+  -moz-image-region: rect(0, 448px, 32px, 416px);
+}
+
+/* This is temporary until we have an email-link icon (Bug 932235) */
+#email-link-button[cui-areatype="menu-panel"] > image,
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #email-link-button > image {
+  transform: scale(-1, -1);
+}
+
+#characterencoding-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #characterencoding-button {
+  -moz-image-region: rect(0px, 480px, 32px, 448px);
+}
+
+#new-window-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #new-window-button {
+  -moz-image-region: rect(0px, 512px, 32px, 480px);
+}
+
+#new-tab-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #new-tab-button {
+  -moz-image-region: rect(0px, 544px, 32px, 512px);
+}
+
+#privatebrowsing-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #privatebrowsing-button {
+  -moz-image-region: rect(0px, 576px, 32px, 544px);
+}
+
+#find-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #find-button {
+  -moz-image-region: rect(0px, 640px, 32px, 608px);
+}
+
+#print-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #print-button {
+  -moz-image-region: rect(0px, 672px, 32px, 640px);
+}
+
+#fullscreen-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #fullscreen-button {
+  -moz-image-region: rect(0px, 704px, 32px, 672px);
+}
+
+#developer-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #developer-button {
+  -moz-image-region: rect(0px, 736px, 32px, 704px);
+}
+
+#preferences-button[cui-areatype="menu-panel"],
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #preferences-button {
+  -moz-image-region: rect(0px, 768px, 32px, 736px);
+}
+
+/* Wide panel control icons */
+
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > toolbarbutton,
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > toolbarbutton,
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #edit-controls > toolbarbutton,
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #zoom-controls > toolbarbutton {
+  list-style-image: url("chrome://browser/skin/menuPanel-small.png");
+}
+
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #cut-button,
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #edit-controls > #cut-button {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #copy-button,
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #edit-controls > #copy-button {
+  -moz-image-region: rect(0px, 48px, 16px, 32px);
+}
+
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #paste-button,
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #edit-controls > #paste-button {
+  -moz-image-region: rect(0px, 64px, 16px, 48px);
+}
+
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #zoom-out-button,
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-out-button {
+  -moz-image-region: rect(0px, 80px, 16px, 64px);
+}
+
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #zoom-in-button,
+:-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button {
+  -moz-image-region: rect(0px, 96px, 16px, 80px);
+}
+
+/* === END menupanel.inc.css === */
+
 .toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/FxToolbar.png");
 }
@@ -572,8 +1104,8 @@ toolbar[mode="text"] .toolbarbutton-1[type="menu-button"]:hover:active > .toolba
 toolbar[mode="text"] .toolbarbutton-1[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding-top: 5px;
   padding-bottom: 7px;
-  -moz-padding-start: 0px;
-  -moz-padding-end: 2px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
 }
 
 toolbar[mode="icons"] .toolbarbutton-1[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropmarker,
@@ -584,8 +1116,8 @@ toolbar[iconsize="small"] .toolbarbutton-1[type="menu-button"][open="true"] > .t
 :-moz-any(#TabsToolbar, #addon-bar) .toolbarbutton-1[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding-top: 1px;
   padding-bottom: 12px;
-  -moz-padding-start: 0px;
-  -moz-padding-end: 2px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
 }
 
 toolbar[mode="text"] .toolbarbutton-menubutton-dropmarker[disabled="true"] {
@@ -684,6 +1216,8 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   border-bottom-left-radius: 0;
 }
 
+/* Remove selector when Australis lands - this makes it only apply post-Australis as back/forward buttons are in the urlbar-container there */
+#urlbar-container > #back-button,
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button > #back-button {
@@ -698,6 +1232,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(54px, 20px, 74px, 0);
 }
 
+/* Remove selector when Australis lands - this makes it only apply post-Australis as back/forward buttons are in the urlbar-container there */
+#urlbar-container > #back-button[open="true"],
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button > #back-button:not([disabled="true"]):hover,
@@ -707,6 +1243,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(54px, 40px, 74px, 20px);
 }
 
+/* Remove selector when Australis lands - this makes it only apply post-Australis as back/forward buttons are in the urlbar-container there */
+#urlbar-container > #back-button[disabled="true"],
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button > #back-button[disabled="true"] {
@@ -737,6 +1275,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 /*  padding-top: 5px; */
 }
 
+/* Remove selector when Australis lands - this makes it only apply post-Australis as back/forward buttons are in the urlbar-container there */
+#urlbar-container > #forward-button,
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button > #forward-button {
@@ -749,6 +1289,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   margin-bottom: 2px;
 }
 
+/* Remove selector when Australis lands - this makes it only apply post-Australis as back/forward buttons are in the urlbar-container there */
+#urlbar-container > #forward-button:-moz-locale-dir(ltr),
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button > #forward-button:-moz-locale-dir(ltr) {
@@ -756,6 +1298,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   border-bottom-right-radius: 11px;
 }
 
+/* Remove selector when Australis lands - this makes it only apply post-Australis as back/forward buttons are in the urlbar-container there */
+#urlbar-container > #forward-button:-moz-locale-dir(rtl),
 window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] >
     :-moz-any(#nav-bar[currentset*="unified-back-forward-button,urlbar-container"],#nav-bar:not([currentset])) >
     #unified-back-forward-button > #forward-button:-moz-locale-dir(rtl) {
@@ -876,8 +1420,9 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(36px, 126px, 54px, 108px);
 }
 
-#bookmarks-button,
-#bookmarks-menu-button {
+/* Remove section when Australis lands - this makes it only apply pre-Australis as tabsontop doesn't exist afterwards */
+#navigator-toolbox[tabsontop] #bookmarks-button,
+#navigator-toolbox[tabsontop] #bookmarks-menu-button {
   list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 144px, 18px, 126px);
 }
@@ -1895,6 +2440,8 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 /* Tabstrip */
 
+/* Remove selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
+#navigator-toolbox:not([tabsontop]) > #TabsToolbar,
 #TabsToolbar {
   min-height: 0;
   padding: 0;
@@ -3484,6 +4031,8 @@ window > chatbox {
   margin: 0;
 }
 
+/* Customization mode */
+
 /* === END plugin-doorhanger.inc.css === */
 
 #main-window[privatebrowsingmode=temporary] #toolbar-menubar {
@@ -3501,3 +4050,202 @@ window > chatbox {
   width: 20px;
   height: 16px;
 }
+
+/* === BEGIN customizeMode.inc.css === */
+
+/* Customization mode */
+#nav-bar[customize-entered] > #nav-bar-customization-target {
+  margin: 1px 3px;
+}
+
+#nav-bar[customize-entered] > #nav-bar-customization-target,
+#PanelUI-contents > .panel-customization-placeholder {
+  outline: 1px dashed transparent;
+}
+
+#main-window[customizing-movingItem] #nav-bar-customization-target,
+#main-window[customizing-movingItem] .panel-customization-placeholder {
+  outline-color: #9C9CFF;
+}
+
+#PanelUI-contents > .panel-customization-placeholder {
+  cursor: auto;
+  outline-offset: -5px;
+}
+
+#main-window[customize-entered] .customization-target {
+  min-width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#customization-container {
+  background-color: #000000;
+}
+
+#customization-palette-container {
+  padding: 25px;
+}
+
+#customization-header {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: #9C9CFF;
+  font-weight: lighter;
+  margin-bottom: 1em;
+}
+
+#customization-panel-container {
+  padding: 15px 25px 25px;
+  background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+}
+
+toolbarpaletteitem {
+  transition: background-color, border-color, box-shadow, border-width;
+  transition-duration: 10ms, 10ms, 10ms, 250ms;
+  transition-timing-function: linear, linear, linear, ease-in-out;
+}
+
+toolbarpaletteitem[mousedown] {
+  outline: 1px solid #008484;
+  cursor: -moz-grabbing;
+  opacity: 0.8;
+}
+
+.panel-customization-placeholder,
+toolbarpaletteitem[place="palette"],
+toolbarpaletteitem[place="panel"] {
+  transition: background-color, border-color, box-shadow, transform;
+  transition-duration: 10ms, 10ms, 10ms, 250ms;
+  transition-timing-function: linear, linear, linear, ease-in-out;
+}
+
+toolbarpaletteitem[notransition][place="palette"],
+toolbarpaletteitem[notransition][place="panel"] {
+  transition: background-color, border-color, box-shadow;
+  transition-duration: 10ms, 10ms, 10ms;
+  transition-timing-function: linear, linear, linear;
+}
+
+toolbarpaletteitem > toolbarbutton > .toolbarbutton-icon {
+  transition: transform 50ms ease-in-out;
+}
+
+toolbarpaletteitem[mousedown] > toolbarbutton > .toolbarbutton-icon {
+  transform: scale(1.1);
+}
+
+/* Override the toolkit styling for items being dragged over. */
+toolbarpaletteitem[place="toolbar"] {
+  border-left-width: 0;
+  border-right-width: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#customization-palette:not([hidden]) {
+  margin-bottom: 25px;
+}
+
+/* Remove |:-moz-any(#customization-palette, #panelUI-contents)| selector when Australis lands - this makes it only apply post-Australis as those elements only exist there */
+#customization-palette > #wrapper-edit-controls,
+:-moz-any(#customization-palette, #panelUI-contents) > #customization-palette > #wrapper-zoom-controls {
+  width: 225px;
+}
+
+#wrapper-edit-controls[place="palette"] > .toolbarpaletteitem-box,
+#wrapper-zoom-controls[place="palette"] > .toolbarpaletteitem-box {
+  width: 225px;
+  max-width: 225px;
+}
+
+#wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton,
+#wrapper-edit-controls[place="palette"] > #edit-controls > separator,
+:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton,
+:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > separator {
+  margin-top: 24px;
+}
+
+#wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton,
+:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 70px;
+  min-width: 70px;
+  max-height: 24px;
+  height: 24px;
+}
+
+#wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton > .toolbarbutton-text,
+:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > #zoom-reset-button > .toolbarbutton-text {
+  display: inline;
+}
+
+#wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton > .toolbarbutton-icon,
+:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton > .toolbarbutton-icon {
+  margin: 0;
+  -moz-margin-start: 5px;
+}
+
+#customization-palette > toolbarpaletteitem > label {
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* === END customizeMode.inc.css === */
+
+#main-window[customizing] {
+  background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
+  background-attachment: fixed;
+}
+
+#main-window:-moz-any([customize-entering],[customize-entered]) #tab-view-deck {
+  padding: 0 2em 2em;
+}
+
+#customization-container {
+  border-left: 1px solid #9C9CFF;
+  border-right: 1px solid #9C9CFF;
+  background-clip: padding-box;
+}
+
+/* End customization mode */
+
+#main-window[privatebrowsingmode=temporary] #TabsToolbar::after {
+  content: "";
+  display: -moz-box;
+  width: 40px;
+  background: url("chrome://browser/skin/privatebrowsing-indicator.png") no-repeat center center;
+}
+
+/* === BEGIN UITour.inc.css === */
+
+/* UI Tour */
+
+html|div#UITourHighlight {
+  border-radius: 20px;
+  border: 2px #9C9CFF solid;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+#UITourTooltip {
+  max-width: 20em;
+}
+
+#UITourTooltipTitle {
+  font-size: 130%;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+#UITourTooltipDescription {
+  max-width: 20em;
+}
+
+/* === END UITour.inc.css === */

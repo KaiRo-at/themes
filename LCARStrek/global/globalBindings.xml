@@ -84,7 +84,46 @@
     </content>
   </binding>
 
+  <binding id="toolbar-browsercustom" extends="chrome://browser/content/customizableui/toolbar.xml#toolbar">
+    <content>
+      <xul:hbox flex="1" class="toolbar-box">
+        <xul:vbox class="toolbar-startcap"/>
+        <xul:hbox flex="1" class="toolbar-holder" align="center"
+                  xbl:inherits="collapsed,last-toolbar,orient=tborient,align=tbalign,pack=tbpack">
+          <children/>
+        </xul:hbox>
+        <xul:vbox class="toolbar-endcap"/>
+      </xul:hbox>
+    </content>
+  </binding>
+
+  <binding id="toolbar-drag-browsercustom" extends="chrome://browser/content/customizableui/toolbar.xml#toolbar-drag">
+    <content>
+      <xul:hbox flex="1" class="toolbar-box">
+        <xul:vbox class="toolbar-startcap"/>
+        <xul:hbox flex="1" class="toolbar-holder" align="center"
+                  xbl:inherits="collapsed,last-toolbar,orient=tborient,align=tbalign,pack=tbpack">
+          <children/>
+        </xul:hbox>
+        <xul:vbox class="toolbar-endcap"/>
+      </xul:hbox>
+    </content>
+  </binding>
+
   <binding id="toolbar-menubar-autohide" extends="chrome://global/content/bindings/toolbar.xml#toolbar-menubar-autohide">
+    <content>
+      <xul:hbox flex="1" class="toolbar-box">
+        <xul:vbox class="toolbar-startcap"/>
+        <xul:hbox flex="1" class="toolbar-holder" align="center"
+                  xbl:inherits="collapsed,last-toolbar,orient=tborient,align=tbalign,pack=tbpack">
+          <children/>
+        </xul:hbox>
+        <xul:vbox class="toolbar-endcap"/>
+      </xul:hbox>
+    </content>
+  </binding>
+
+  <binding id="toolbar-menubar-autohide-browsercustom" extends="chrome://browser/content/customizableui/toolbar.xml#toolbar-menubar-autohide">
     <content>
       <xul:hbox flex="1" class="toolbar-box">
         <xul:vbox class="toolbar-startcap"/>
