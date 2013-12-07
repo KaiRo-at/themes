@@ -1,0 +1,399 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/*****************      GENERAL      *****************/
+
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 0.9rem;
+  color: #FF9F00;
+  background-color: #000000;
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+template {
+  display: none;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  overflow: hidden;
+}
+
+#detail {
+  display: flex;
+  flex-grow: 1;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#meta {
+  background-size: 100%;
+  padding-top: 50px;
+}
+
+#connection-footer {
+  border-width: 0;
+  height: 50px;
+  min-height: 50px;
+}
+
+
+
+/*****************     APP BUTTONS      *****************/
+
+
+
+.app-buttons {
+  display: block;
+  margin-left: 20px;
+  color: #FF9F00;
+}
+
+button {
+  margin: 0;
+  font-size: 11px;
+  padding: 5px 15px;
+  cursor: pointer;
+  background-color: #C09070;
+  text-transform: uppercase;
+  border-radius: 300px;
+  border-width: 1px;
+}
+
+.app-buttons > button {
+  display: none;
+}
+
+.app-buttons > button:not([disabled]):hover {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
+.app-buttons > button[disabled] {
+  background-color: #402858;
+  color: #000000;
+  pointer-events: none;
+}
+
+.app[running="false"] > .app-buttons > .button-start,
+.app[running="true"] > .app-buttons > .button-stop,
+.app[running="true"] > .app-buttons > .button-debug {
+  display: inline-block;
+}
+/*
+.button-debug {
+  color: #3498DB;
+}
+
+.button-debug:hover {
+  background-color: #3498DB;
+  color: #FFF;
+}
+
+.button-debug[disabled] {
+  color: #3498DB;
+}
+
+.button-start {
+  color: #18BC9C
+}
+
+.button-start:hover {
+  background-color: #18BC9C;
+  color: #FFF;
+}
+
+.button-start[disabled] {
+  color: #18BC9C
+}
+
+.button-stop {
+  color: #E74C3C;
+}
+
+.button-stop:hover {
+  background-color: #E74C3C;
+  color: #FFF;
+}
+
+.button-stop[disabled] {
+  color: #E74C3C;
+}
+*/
+
+
+/*****************     PERMISSIONS     *****************/
+
+
+
+
+.permission-table {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.permission-table-body {
+  overflow: auto;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.permission-table-header,
+.permission-table-footer {
+  display: flex;
+  background: #000000;
+  border-top: 1px solid #9C9CFF;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.permission-table-header > div,
+.permission-table-footer > div {
+  z-index: 2;
+  flex-grow: 1;
+  background-color: #000000;
+  color: #FF9F00;
+  border: 0;
+  margin: auto 0;
+  padding: 5px;
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.permission-table-header > div {
+  flex-basis: 20%;
+}
+
+.permission-table-header > div:first-child {
+  text-align: left;
+  padding-left: 10px;
+  flex-basis: 30%;
+}
+
+.permission-table-header {
+  border: 0;
+  border-bottom: 1px solid #9C9CFF;
+/*  box-shadow: 0 1px 4px rgba(0,0,0,0.3);*/
+}
+
+.permission-table-footer {
+/*  box-shadow: 0 -1px 4px rgba(0,0,0,0.3);*/
+}
+
+.permission {
+  display: flex;
+  flex-grow: 1;
+}
+
+.permission:nth-child(odd) {
+  background-color: #404000;
+}
+
+.permission:hover {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
+.permission > div {
+  flex-grow: 1;
+  flex-basis: 20%;
+  text-align: center;
+  padding: 3px;
+  border-right: 1px solid #9C9CFF;
+  border-bottom: 1px solid #9C9CFF;
+}
+
+.permission > div:first-child {
+  text-align: left;
+  padding: 3px 10px;
+  flex-basis: 30%;
+  font-weight: bold;
+}
+
+.permission > div[permission="1"]:before, .allow-label:after {
+  color: #008484;
+  content: '   \2713';
+}
+
+.permission > div[permission="2"]:before, .deny-label:after {
+  color: #FF0000;
+  content: '   \2715';
+}
+
+.permission > div[permission="3"]:before, .prompt-label:after {
+  color: #9C9CFF;
+  content: '   !';
+}
+
+
+
+
+/*****************     SIDEBAR      *****************/
+
+
+
+
+#sidebar {
+  background: #000000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 350px;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.sidebar-item {
+  background-color: #000000;
+  color: #FF9F00;
+  line-height: 120%;
+  cursor: pointer;
+  display: flex;
+  padding: 15px 10px;
+  display: block;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.sidebar-item > * {
+  flex-shrink: 0;
+}
+
+.sidebar-item:hover,
+.sidebar-item.selected:hover {
+  background-color: #FFCF00;
+  color: #000000
+}
+
+.sidebar-item.selected {
+  background-color: #008484;
+  color: #000000;
+}
+
+.help {
+  float: right;
+  padding: 0 5px;
+}
+
+/*****************     HEADER      *****************/
+
+header {
+  padding-top: 140px;
+  color: #9C9CFF;
+  padding: 10px;
+}
+
+
+
+/*****************      APPS       *****************/
+
+
+
+
+.apps {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+
+.app-name {
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.app {
+  padding: 10px 20px;
+  border-bottom: 1px solid #9C9CFF;
+}
+
+.app:hover {
+  background-color: #404000
+}
+
+.app-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+
+
+/*****************      NOT CONNECTED      *****************/
+
+
+
+body:not(.notconnected) > #notConnectedMessage,
+body.notconnected > #content {
+  display: none;
+}
+
+#notConnectedMessage {
+  flex-grow: 1;
+  flex-direction: column;
+  margin: 50px auto;
+}
+
+#notConnectedMessage > span {
+  padding: 20px;
+  border: 1px solid #9C9CFF;
+  border-radius: 5px;
+}
+
+#notConnectedMessage > span:before {
+  content: '';
+  background: url('error.svg') no-repeat;
+  background-size: 18px;
+  height: 24px;
+  width: 24px;
+  position: relative;
+  top: 10px;
+  display: inline-block;
+}
+
+
+
+/*****************      TABS       *****************/
+
+#tabs {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.tabpanel:not(.selected) {
+  display: none;
+}
+
+#tabs-headers {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
