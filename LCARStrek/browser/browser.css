@@ -12,8 +12,8 @@ toolbar {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar");
 }
 
-/* Remove selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
-#navigator-toolbox:not([tabsontop]) > toolbar[customizable="true"] {
+/* Remove selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
+#navigator-toolbox:not([iconsize]) > toolbar[customizable="true"] {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-browsercustom");
 }
 
@@ -21,8 +21,8 @@ toolbar[type="menubar"][autohide="true"] {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-menubar-autohide");
 }
 
-/* Remove selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
-#navigator-toolbox:not([tabsontop]) > #toolbar-menubar[autohide="true"] {
+/* Remove selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
+#navigator-toolbox:not([iconsize]) > #toolbar-menubar[autohide="true"] {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-menubar-autohide-browsercustom");
 }
 
@@ -62,8 +62,8 @@ menubar {
 /*  margin-top: 15px;*/
 }
 
-/* Remove selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
-#navigator-toolbox:not([tabsontop]) > #toolbar-menubar:not([autohide="true"]) {
+/* Remove selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
+#navigator-toolbox:not([iconsize]) > #toolbar-menubar:not([autohide="true"]) {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
 }
 
@@ -547,343 +547,343 @@ menuitem.bookmark-item {
 /* === BEGIN toolbarbuttons.inc.css === */
 
 /* Whole section of this included file: */
-/* Remove |#navigator-toolbox:not([tabsontop])| selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
-#navigator-toolbox:not([tabsontop]) :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button,
+/* Remove |#navigator-toolbox:not([iconsize])| selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
+#navigator-toolbox:not([iconsize]) :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button,
           #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #sync-button, #feed-button,
           #tabview-button, #webrtc-status-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button,
           #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button,
           #PanelUI-menu-button, #characterencoding-button, #email-link-button),
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
 }
 
-#navigator-toolbox:not([tabsontop]) #back-button {
+#navigator-toolbox:not([iconsize]) #back-button {
   -moz-image-region: rect(0, 36px, 18px, 18px);
 }
 
-#navigator-toolbox:not([tabsontop]) #back-button:hover:not([disabled="true"]) {
+#navigator-toolbox:not([iconsize]) #back-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 36px, 36px, 18px);
 }
 
-#navigator-toolbox:not([tabsontop]) #back-button[disabled="true"] {
+#navigator-toolbox:not([iconsize]) #back-button[disabled="true"] {
   -moz-image-region: rect(36px, 36px, 54px, 18px);
 }
 
-#navigator-toolbox:not([tabsontop]) #forward-button {
+#navigator-toolbox:not([iconsize]) #forward-button {
   -moz-image-region: rect(0, 72px, 18px, 54px);
 }
 
-#navigator-toolbox:not([tabsontop]) #forward-button:hover:not([disabled="true"]) {
+#navigator-toolbox:not([iconsize]) #forward-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 72px, 36px, 54px);
 }
 
-#navigator-toolbox:not([tabsontop]) #forward-button[disabled="true"] {
+#navigator-toolbox:not([iconsize]) #forward-button[disabled="true"] {
   -moz-image-region: rect(36px, 72px, 54px, 54px);
 }
 
-#navigator-toolbox:not([tabsontop]) #back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,
-#navigator-toolbox:not([tabsontop]) #forward-button:-moz-locale-dir(rtl) {
+#navigator-toolbox:not([iconsize]) #back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,
+#navigator-toolbox:not([iconsize]) #forward-button:-moz-locale-dir(rtl) {
   transform: scaleX(-1);
 }
 
-#navigator-toolbox:not([tabsontop]) #home-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #home-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 126px, 18px, 108px);
 }
 
-#navigator-toolbox:not([tabsontop]) #home-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #home-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 126px, 36px, 108px);
 }
 
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 144px, 18px, 126px);
 }
 
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover,
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] {
   -moz-image-region: rect(18px, 144px, 36px, 126px);
 }
 
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][starred] {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"][starred] {
   -moz-image-region: rect(0, 162px, 18px, 144px);
 }
 
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][starred]:hover,
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][starred][open="true"] {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"][starred]:hover,
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"][starred][open="true"] {
   -moz-image-region: rect(18px, 162px, 36px, 144px);
 }
 
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   -moz-image-region: rect(0, 630px, 18px, 612px);
 }
 
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker {
   padding: 1px;
   -moz-box-align: center;
 }
 
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   -moz-image-region: rect(18px, 630px, 36px, 612px);
 }
 
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover:active > .toolbarbutton-menubutton-dropmarker,
-#navigator-toolbox:not([tabsontop]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] > .toolbarbutton-menubutton-dropmarker {
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"]:hover:active > .toolbarbutton-menubutton-dropmarker,
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding-top: 2px;
   padding-bottom: 0px;
   -moz-padding-start: 2px;
   -moz-padding-end: 0px;
 }
 
-#navigator-toolbox:not([tabsontop]) #history-panelmenu[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #history-panelmenu[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 180px, 18px, 162px);
 }
 
-#navigator-toolbox:not([tabsontop]) #history-panelmenu[cui-areatype="toolbar"]:hover,
-#navigator-toolbox:not([tabsontop]) #history-panelmenu[cui-areatype="toolbar"][open="true"] {
+#navigator-toolbox:not([iconsize]) #history-panelmenu[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([iconsize]) #history-panelmenu[cui-areatype="toolbar"][open="true"] {
   -moz-image-region: rect(18px, 180px, 36px, 162px);
 }
 
-#navigator-toolbox:not([tabsontop]) #downloads-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #downloads-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 198px, 18px, 180px);
 }
 
-#navigator-toolbox:not([tabsontop]) #downloads-button[cui-areatype="toolbar"]:hover,
-#navigator-toolbox:not([tabsontop]) #downloads-button[cui-areatype="toolbar"][open="true"] {
+#navigator-toolbox:not([iconsize]) #downloads-button[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([iconsize]) #downloads-button[cui-areatype="toolbar"][open="true"] {
   -moz-image-region: rect(18px, 198px, 36px, 180px);
 }
 
-#navigator-toolbox:not([tabsontop]) #add-ons-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #add-ons-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 216px, 18px, 198px);
 }
 
-#navigator-toolbox:not([tabsontop]) #add-ons-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #add-ons-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 216px, 36px, 198px);
 }
 
-#navigator-toolbox:not([tabsontop]) #switch-to-metro-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #switch-to-metro-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 648px, 18px, 630px);
 }
 
-#navigator-toolbox:not([tabsontop]) #switch-to-metro-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #switch-to-metro-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 648px, 36px, 630px);
 }
 
-#navigator-toolbox:not([tabsontop]) #open-file-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #open-file-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 234px, 18px, 216px);
 }
 
-#navigator-toolbox:not([tabsontop]) #open-file-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #open-file-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 234px, 36px, 216px);
 }
 
-#navigator-toolbox:not([tabsontop]) #save-page-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #save-page-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 252px, 18px, 234px);
 }
 
-#navigator-toolbox:not([tabsontop]) #save-page-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #save-page-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 252px, 36px, 234px);
 }
 
-#navigator-toolbox:not([tabsontop]) #sync-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #sync-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 270px, 18px, 252px);
 }
 
-#navigator-toolbox:not([tabsontop]) #sync-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #sync-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 270px, 36px, 252px);
 }
 
-#navigator-toolbox:not([tabsontop]) #feed-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #feed-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 288px, 18px, 270px);
 }
 
-#navigator-toolbox:not([tabsontop]) #feed-button[cui-areatype="toolbar"]:hover:not([disabled="true"]) {
+#navigator-toolbox:not([iconsize]) #feed-button[cui-areatype="toolbar"]:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 288px, 36px, 270px);
 }
 
-#navigator-toolbox:not([tabsontop]) #feed-button[cui-areatype="toolbar"][disabled="true"] {
+#navigator-toolbox:not([iconsize]) #feed-button[cui-areatype="toolbar"][disabled="true"] {
   -moz-image-region: rect(36px, 288px, 54px, 270px);
 }
 
-#navigator-toolbox:not([tabsontop]) #social-share-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #social-share-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0px, 306px, 18px, 288px);
 }
 
-#navigator-toolbox:not([tabsontop]) #social-share-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #social-share-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 306px, 36px, 288px);
 }
 
-#navigator-toolbox:not([tabsontop]) #email-link-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #email-link-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 306px, 18px, 288px);
   /* This is temporary until we have an email-link icon (Bug 932235) */
   transform: scale(-1, -1);
 }
 
-#navigator-toolbox:not([tabsontop]) #email-link-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #email-link-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 306px, 36px, 288px);
 }
 
-#navigator-toolbox:not([tabsontop]) #characterencoding-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #characterencoding-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 324px, 18px, 306px);
 }
 
-#navigator-toolbox:not([tabsontop]) #characterencoding-button[cui-areatype="toolbar"]:hover:not([disabled="true"]),
-#navigator-toolbox:not([tabsontop]) #characterencoding-button[cui-areatype="toolbar"][open="true"] {
+#navigator-toolbox:not([iconsize]) #characterencoding-button[cui-areatype="toolbar"]:hover:not([disabled="true"]),
+#navigator-toolbox:not([iconsize]) #characterencoding-button[cui-areatype="toolbar"][open="true"] {
   -moz-image-region: rect(18px, 324px, 36px, 306px);
 }
 
-#navigator-toolbox:not([tabsontop]) #characterencoding-button[cui-areatype="toolbar"][disabled="true"] {
+#navigator-toolbox:not([iconsize]) #characterencoding-button[cui-areatype="toolbar"][disabled="true"] {
   -moz-image-region: rect(36px, 324px, 54px, 306px);
 }
 
-#navigator-toolbox:not([tabsontop]) #new-window-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #new-window-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 342px, 18px, 324px);
 }
 
-#navigator-toolbox:not([tabsontop]) #new-window-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #new-window-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 342px, 36px, 324px);
 }
 
-#navigator-toolbox:not([tabsontop]) #new-tab-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #new-tab-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 360px, 18px, 342px);
 }
 
-#navigator-toolbox:not([tabsontop]) #new-tab-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #new-tab-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 360px, 36px, 342px);
 }
 
-#navigator-toolbox:not([tabsontop]) #privatebrowsing-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #privatebrowsing-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 378px, 18px, 360px);
 }
 
-#navigator-toolbox:not([tabsontop]) #privatebrowsing-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #privatebrowsing-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 378px, 36px, 360px);
 }
 
-#navigator-toolbox:not([tabsontop]) #find-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #find-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 396px, 18px, 378px);
 }
 
-#navigator-toolbox:not([tabsontop]) #find-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #find-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 396px, 36px, 378px);
 }
 
-#navigator-toolbox:not([tabsontop]) #print-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #print-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 414px, 18px, 396px);
 }
 
-#navigator-toolbox:not([tabsontop]) #print-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #print-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 414px, 36px, 396px);
 }
 
-#navigator-toolbox:not([tabsontop]) #fullscreen-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #fullscreen-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 432px, 18px, 414px);
 }
 
-#navigator-toolbox:not([tabsontop]) #fullscreen-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #fullscreen-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 432px, 36px, 414px);
 }
 
-#navigator-toolbox:not([tabsontop]) #developer-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #developer-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 450px, 18px, 432px);
 }
 
-#navigator-toolbox:not([tabsontop]) #developer-button[cui-areatype="toolbar"]:hover,
-#navigator-toolbox:not([tabsontop]) #developer-button[cui-areatype="toolbar"][open="true"] {
+#navigator-toolbox:not([iconsize]) #developer-button[cui-areatype="toolbar"]:hover,
+#navigator-toolbox:not([iconsize]) #developer-button[cui-areatype="toolbar"][open="true"] {
   -moz-image-region: rect(18px, 450px, 36px, 432px);
 }
 
-#navigator-toolbox:not([tabsontop]) #preferences-button[cui-areatype="toolbar"] {
+#navigator-toolbox:not([iconsize]) #preferences-button[cui-areatype="toolbar"] {
   -moz-image-region: rect(0, 468px, 18px, 450px);
 }
 
-#navigator-toolbox:not([tabsontop]) #preferences-button[cui-areatype="toolbar"]:hover {
+#navigator-toolbox:not([iconsize]) #preferences-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 468px, 36px, 450px);
 }
 
-#navigator-toolbox:not([tabsontop]) #PanelUI-menu-button {
+#navigator-toolbox:not([iconsize]) #PanelUI-menu-button {
   -moz-image-region: rect(0, 486px, 18px, 468px);
 }
 
-#navigator-toolbox:not([tabsontop]) #PanelUI-menu-button:hover,
-#navigator-toolbox:not([tabsontop]) #PanelUI-menu-button[open="true"] {
+#navigator-toolbox:not([iconsize]) #PanelUI-menu-button:hover,
+#navigator-toolbox:not([iconsize]) #PanelUI-menu-button[open="true"] {
   -moz-image-region: rect(18px, 486px, 36px, 468px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button {
   -moz-image-region: rect(0, 504px, 18px, 486px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button:hover:not([disabled="true"]) {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 504px, 36px, 486px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button[disabled="true"] {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button[disabled="true"] {
   -moz-image-region: rect(36px, 504px, 54px, 486px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button {
   -moz-image-region: rect(0, 522px, 18px, 504px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button:hover:not([disabled="true"]) {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 522px, 36px, 504px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button[disabled="true"] {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button[disabled="true"] {
   -moz-image-region: rect(36px, 522px, 54px, 504px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button {
   -moz-image-region: rect(0, 540px, 18px, 522px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button:hover:not([disabled="true"]) {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 540px, 36px, 522px);
 }
 
-#navigator-toolbox:not([tabsontop]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button[disabled="true"] {
+#navigator-toolbox:not([iconsize]) #edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button[disabled="true"] {
   -moz-image-region: rect(36px, 540px, 54px, 522px);
 }
 
-#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button {
+#navigator-toolbox:not([iconsize]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button {
   -moz-image-region: rect(0, 558px, 18px, 540px);
 }
 
-#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button:hover:not([disabled="true"]) {
+#navigator-toolbox:not([iconsize]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 558px, 36px, 540px);
 }
 
-#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button[disabled="true"] {
+#navigator-toolbox:not([iconsize]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button[disabled="true"] {
   -moz-image-region: rect(36px, 558px, 54px, 540px);
 }
 
-#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button {
+#navigator-toolbox:not([iconsize]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button {
   -moz-image-region: rect(0, 576px, 18px, 558px);
 }
 
-#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button:hover:not([disabled="true"]) {
+#navigator-toolbox:not([iconsize]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 576px, 36px, 558px);
 }
 
-#navigator-toolbox:not([tabsontop]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button[disabled="true"] {
+#navigator-toolbox:not([iconsize]) #zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button[disabled="true"] {
   -moz-image-region: rect(36px, 576px, 54px, 558px);
 }
 
-#navigator-toolbox:not([tabsontop]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) {
+#navigator-toolbox:not([iconsize]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) {
   -moz-image-region: rect(0, 594px, 18px, 576px);
 }
 
-#navigator-toolbox:not([tabsontop]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)):hover,
-#navigator-toolbox:not([tabsontop]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem))[open="true"] {
+#navigator-toolbox:not([iconsize]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)):hover,
+#navigator-toolbox:not([iconsize]) #webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem))[open="true"] {
   -moz-image-region: rect(18px, 594px, 36px, 576px);
 }
 
-#navigator-toolbox:not([tabsontop]) #nav-bar-overflow-button {
+#navigator-toolbox:not([iconsize]) #nav-bar-overflow-button {
   -moz-image-region: rect(0, 612px, 18px, 594px);
 }
 
-#navigator-toolbox:not([tabsontop]) #nav-bar-overflow-button:hover,
-#navigator-toolbox:not([tabsontop]) #nav-bar-overflow-button[open="true"] {
+#navigator-toolbox:not([iconsize]) #nav-bar-overflow-button:hover,
+#navigator-toolbox:not([iconsize]) #nav-bar-overflow-button[open="true"] {
   -moz-image-region: rect(18px, 612px, 36px, 594px);
 }
 
@@ -1039,7 +1039,7 @@ menuitem.bookmark-item {
 
 #email-link-button[cui-areatype="menu-panel"]:hover,
 :-moz-any(#customization-palette, #panelUI-contents) > toolbarpaletteitem[place="palette"] > #email-link-button:hover {
-  -moz-image-region: rect(32, 448px, 64px, 416px);
+  -moz-image-region: rect(32px, 448px, 64px, 416px);
 }
 
 /* This is temporary until we have an email-link icon (Bug 932235) */
@@ -1551,55 +1551,55 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   background-color: transparent;
 }
 
-/* A number of buttons use :-moz-any(#palette-box, #navigator-toolbox[tabsontop]) - this makes it only apply pre-Australis as tabsontop and the palette-box don't exist afterwards */
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #stop-button {
+/* A number of buttons use :-moz-any(#palette-box, #navigator-toolbox[iconsize]) - this makes it only apply pre-Australis as iconsize and the palette-box don't exist afterwards */
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #stop-button {
   -moz-image-region: rect(0, 54px, 18px, 36px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #stop-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #stop-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 54px, 36px, 36px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #stop-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #stop-button[disabled="true"] {
   -moz-image-region: rect(36px, 54px, 54px, 36px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #reload-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #reload-button {
   -moz-image-region: rect(0, 72px, 18px, 54px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #reload-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #reload-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 72px, 36px, 54px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #reload-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #reload-button[disabled="true"] {
   -moz-image-region: rect(36px, 72px, 54px, 54px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #home-button.bookmark-item {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #home-button.bookmark-item {
   list-style-image: url("chrome://browser/skin/FxToolbar.png");
 }
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #home-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #home-button {
   -moz-image-region: rect(0, 90px, 18px, 72px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #home-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #home-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 90px, 36px, 72px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #home-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #home-button[disabled="true"] {
   -moz-image-region: rect(36px, 90px, 54px, 72px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #downloads-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #downloads-button {
   -moz-image-region: rect(0, 108px, 18px, 90px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #downloads-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #downloads-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 108px, 36px, 90px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #downloads-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #downloads-button[disabled="true"] {
   -moz-image-region: rect(36px, 108px, 54px, 90px);
 }
 
@@ -1607,20 +1607,20 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   margin: 0;
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #history-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #history-button {
   -moz-image-region: rect(0, 126px, 18px, 108px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #history-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #history-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 126px, 36px, 108px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #history-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #history-button[disabled="true"] {
   -moz-image-region: rect(36px, 126px, 54px, 108px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #bookmarks-button,
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #bookmarks-menu-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-button,
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button {
   list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 144px, 18px, 126px);
 }
@@ -1629,54 +1629,54 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   /* list-style-image: url("chrome://browser/skin/FxToolbar.png"); */
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #bookmarks-menu-button.toolbarbutton-1 {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button.toolbarbutton-1 {
   -moz-box-orient: horizontal;
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #bookmarks-button:not([disabled="true"]):hover,
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #bookmarks-menu-button[open="true"],
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #bookmarks-menu-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-button:not([disabled="true"]):hover,
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button[open="true"],
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 144px, 36px, 126px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #bookmarks-button[disabled="true"],
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #bookmarks-menu-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-button[disabled="true"],
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button[disabled="true"] {
   -moz-image-region: rect(36px, 144px, 54px, 126px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #print-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #print-button {
   -moz-image-region: rect(0, 162px, 18px, 144px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #print-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #print-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 162px, 36px, 144px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #print-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #print-button[disabled="true"] {
   -moz-image-region: rect(36px, 162px, 54px, 144px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #new-tab-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-tab-button {
   -moz-image-region: rect(0, 180px, 18px, 162px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #new-tab-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-tab-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 180px, 36px, 162px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #new-tab-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-tab-button[disabled="true"] {
   -moz-image-region: rect(36px, 180px, 54px, 162px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #new-window-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-window-button {
   -moz-image-region: rect(0, 198px, 18px, 180px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #new-window-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-window-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 198px, 36px, 180px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #new-window-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-window-button[disabled="true"] {
   -moz-image-region: rect(36px, 198px, 54px, 180px);
 }
 
@@ -1716,15 +1716,15 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(36px, 252px, 54px, 234px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #fullscreen-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #fullscreen-button {
   -moz-image-region: rect(0, 270px, 18px, 252px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #fullscreen-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #fullscreen-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 270px, 36px, 252px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #fullscreen-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #fullscreen-button[disabled="true"] {
   -moz-image-region: rect(36px, 270px, 54px, 252px);
 }
 
@@ -1753,38 +1753,38 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   -moz-image-region: rect(36px, 306px, 54px, 288px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #sync-button:not([status]) {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #sync-button:not([status]) {
   list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 324px, 18px, 306px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #sync-button[status="active"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #sync-button[status="active"] {
   list-style-image: url("chrome://browser/skin/sync-throbber.png");
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #sync-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #sync-button[disabled="true"] {
   -moz-image-region: rect(36px, 324px, 54px, 306px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #feed-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #feed-button {
   -moz-image-region: rect(0, 342px, 18px, 324px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #feed-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #feed-button[disabled="true"] {
   -moz-image-region: rect(36px, 342px, 54px, 324px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #webrtc-status-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #webrtc-status-button {
   -moz-image-region: rect(0, 360px, 18px, 342px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #webrtc-status-button:not([disabled="true"]):hover,
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #webrtc-status-button[open="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #webrtc-status-button:not([disabled="true"]):hover,
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #webrtc-status-button[open="true"] {
   -moz-image-region: rect(18px, 360px, 36px, 342px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[tabsontop]) #webrtc-status-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #webrtc-status-button[disabled="true"] {
   -moz-image-region: rect(36px, 360px, 54px, 342px);
 }
 
@@ -1792,7 +1792,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 #tabview-button,
 #menu_tabview {
-  list-style-image: url("chrome://browser/skin/tabview/tabview.png");
+  list-style-image: url("chrome://browser/skin/tabview/tabview.png") !important;
 }
 
 #tabview-button {
@@ -2638,8 +2638,8 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 /* Tabstrip */
 
-/* Remove selector when Australis lands - this makes it only apply post-Australis as tabsontop doesn't exist there */
-#navigator-toolbox:not([tabsontop]) > #TabsToolbar,
+/* Remove selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
+#navigator-toolbox:not([iconsize]) > #TabsToolbar,
 #TabsToolbar {
   min-height: 0;
   padding: 0;
