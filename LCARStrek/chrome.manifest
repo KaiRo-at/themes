@@ -1,5 +1,6 @@
 skin global LCARStrek global/
-override chrome://global/content/global-platform.css chrome://global/content/global-platform-mac.css os=Darwin
+#apparently, override is not allowed in a skin manifest :(
+#override chrome://global/content/global-platform.css chrome://global/content/global-platform-mac.css os=Darwin
 skin mozapps LCARStrek mozapps/
 skin messenger LCARStrek messenger/
 skin messenger-newsblog LCARStrek messenger-newsblog/
