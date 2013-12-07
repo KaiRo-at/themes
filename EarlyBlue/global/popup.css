@@ -28,8 +28,8 @@ panel[type="arrow"] {
 
 .panel-arrowcontainer:not([panelopen]) {
   /* Does not work correctly in Linux right now. - 2012-09-30
+   * Actually, only breaks uncommon Window Managers, but arrowpanels disappear completely. 2013-07-21
   opacity: 0; */
-  opacity: 0.01;
 }
 
 .panel-arrowcontainer:not([panelopen])[side="top"] {
