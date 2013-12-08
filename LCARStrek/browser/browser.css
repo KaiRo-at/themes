@@ -1377,16 +1377,16 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   -moz-margin-end: 0;
 }
 
-/* A number of styles use :-moz-any(#palette-box, #navigator-toolbox[iconsize]) - this makes it only apply pre-Australis as iconsize and the palette-box don't exist afterwards */
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #back-button {
+/* A number of styles use :-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) - this makes it only apply pre-Australis as iconsize and palette-box or addon-bar don't exist afterwards */
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #back-button {
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #back-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #back-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 18px, 36px, 0);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #back-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #back-button[disabled="true"] {
   -moz-image-region: rect(36px, 18px, 54px, 0);
 }
 
@@ -1394,15 +1394,15 @@ toolbar[mode="full"] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
   -moz-margin-start: 0;
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #forward-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #forward-button {
   -moz-image-region: rect(0, 36px, 18px, 18px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #forward-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #forward-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 36px, 36px, 18px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #forward-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #forward-button[disabled="true"] {
   -moz-image-region: rect(36px, 36px, 54px, 18px);
 }
 
@@ -1563,55 +1563,55 @@ window:not([chromehidden~="toolbar"]) #urlbar-container:hover > #forward-button[
   background-color: transparent;
 }
 
-/* A number of buttons use :-moz-any(#palette-box, #navigator-toolbox[iconsize]) - this makes it only apply pre-Australis as iconsize and the palette-box don't exist afterwards */
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #stop-button {
+/* A number of buttons use :-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) - this makes it only apply pre-Australis as iconsize and the palette-box don't exist afterwards */
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #stop-button {
   -moz-image-region: rect(0, 54px, 18px, 36px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #stop-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #stop-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 54px, 36px, 36px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #stop-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #stop-button[disabled="true"] {
   -moz-image-region: rect(36px, 54px, 54px, 36px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #reload-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #reload-button {
   -moz-image-region: rect(0, 72px, 18px, 54px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #reload-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #reload-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 72px, 36px, 54px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #reload-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #reload-button[disabled="true"] {
   -moz-image-region: rect(36px, 72px, 54px, 54px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #home-button.bookmark-item {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #home-button.bookmark-item {
   list-style-image: url("chrome://browser/skin/FxToolbar.png");
 }
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #home-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #home-button {
   -moz-image-region: rect(0, 90px, 18px, 72px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #home-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #home-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 90px, 36px, 72px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #home-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #home-button[disabled="true"] {
   -moz-image-region: rect(36px, 90px, 54px, 72px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #downloads-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #downloads-button {
   -moz-image-region: rect(0, 108px, 18px, 90px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #downloads-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #downloads-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 108px, 36px, 90px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #downloads-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #downloads-button[disabled="true"] {
   -moz-image-region: rect(36px, 108px, 54px, 90px);
 }
 
@@ -1619,20 +1619,20 @@ window:not([chromehidden~="toolbar"]) #urlbar-container:hover > #forward-button[
   margin: 0;
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #history-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #history-button {
   -moz-image-region: rect(0, 126px, 18px, 108px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #history-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #history-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 126px, 36px, 108px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #history-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #history-button[disabled="true"] {
   -moz-image-region: rect(36px, 126px, 54px, 108px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-button,
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #bookmarks-button,
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #bookmarks-menu-button {
   list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 144px, 18px, 126px);
 }
@@ -1641,54 +1641,54 @@ window:not([chromehidden~="toolbar"]) #urlbar-container:hover > #forward-button[
   /* list-style-image: url("chrome://browser/skin/FxToolbar.png"); */
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button.toolbarbutton-1 {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #bookmarks-menu-button.toolbarbutton-1 {
   -moz-box-orient: horizontal;
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-button:not([disabled="true"]):hover,
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button[open="true"],
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #bookmarks-button:not([disabled="true"]):hover,
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #bookmarks-menu-button[open="true"],
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #bookmarks-menu-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 144px, 36px, 126px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-button[disabled="true"],
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #bookmarks-menu-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #bookmarks-button[disabled="true"],
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #bookmarks-menu-button[disabled="true"] {
   -moz-image-region: rect(36px, 144px, 54px, 126px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #print-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #print-button {
   -moz-image-region: rect(0, 162px, 18px, 144px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #print-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #print-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 162px, 36px, 144px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #print-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #print-button[disabled="true"] {
   -moz-image-region: rect(36px, 162px, 54px, 144px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-tab-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #new-tab-button {
   -moz-image-region: rect(0, 180px, 18px, 162px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-tab-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #new-tab-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 180px, 36px, 162px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-tab-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #new-tab-button[disabled="true"] {
   -moz-image-region: rect(36px, 180px, 54px, 162px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-window-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #new-window-button {
   -moz-image-region: rect(0, 198px, 18px, 180px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-window-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #new-window-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 198px, 36px, 180px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #new-window-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #new-window-button[disabled="true"] {
   -moz-image-region: rect(36px, 198px, 54px, 180px);
 }
 
@@ -1728,15 +1728,15 @@ window:not([chromehidden~="toolbar"]) #urlbar-container:hover > #forward-button[
   -moz-image-region: rect(36px, 252px, 54px, 234px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #fullscreen-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #fullscreen-button {
   -moz-image-region: rect(0, 270px, 18px, 252px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #fullscreen-button:not([disabled="true"]):hover {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #fullscreen-button:not([disabled="true"]):hover {
   -moz-image-region: rect(18px, 270px, 36px, 252px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #fullscreen-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #fullscreen-button[disabled="true"] {
   -moz-image-region: rect(36px, 270px, 54px, 252px);
 }
 
@@ -1765,38 +1765,38 @@ window:not([chromehidden~="toolbar"]) #urlbar-container:hover > #forward-button[
   -moz-image-region: rect(36px, 306px, 54px, 288px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #sync-button:not([status]) {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #sync-button:not([status]) {
   list-style-image: url("chrome://browser/skin/FxToolbar.png") !important; /* for making the palette work */
   -moz-image-region: rect(0, 324px, 18px, 306px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #sync-button[status="active"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #sync-button[status="active"] {
   list-style-image: url("chrome://browser/skin/sync-throbber.png");
   -moz-image-region: rect(0, 18px, 18px, 0);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #sync-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #sync-button[disabled="true"] {
   -moz-image-region: rect(36px, 324px, 54px, 306px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #feed-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #feed-button {
   -moz-image-region: rect(0, 342px, 18px, 324px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #feed-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #feed-button[disabled="true"] {
   -moz-image-region: rect(36px, 342px, 54px, 324px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #webrtc-status-button {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #webrtc-status-button {
   -moz-image-region: rect(0, 360px, 18px, 342px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #webrtc-status-button:not([disabled="true"]):hover,
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #webrtc-status-button[open="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #webrtc-status-button:not([disabled="true"]):hover,
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #webrtc-status-button[open="true"] {
   -moz-image-region: rect(18px, 360px, 36px, 342px);
 }
 
-:-moz-any(#palette-box, #navigator-toolbox[iconsize]) #webrtc-status-button[disabled="true"] {
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) #webrtc-status-button[disabled="true"] {
   -moz-image-region: rect(36px, 360px, 54px, 342px);
 }
 
