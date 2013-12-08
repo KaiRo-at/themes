@@ -67,15 +67,9 @@ menubar {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
 }
 
-#main-window[tabsintitlebar] #main-menubar > menu:not(:-moz-lwtheme) {
-  /* like menubar */
-  background-color: #6000CF;
-  color: #FF9F00;
-}
-
-#main-window[tabsintitlebar] #main-menubar > menu:not(:-moz-lwtheme):-moz-window-inactive {
-  background-color: #8050B0;
-  color: #FF9F00;
+#main-window[tabsintitlebar] #toolbar-menubar .toolbar-endcap {
+  /* the titlebar buttons are shown right over the endcap but we have no power over the buttonbox position just for this case, so hide the endcap */
+  display: none;
 }
 
 #navigator-toolbox {
