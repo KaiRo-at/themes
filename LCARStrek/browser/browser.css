@@ -3179,23 +3179,19 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   list-style-image: url("chrome://browser/skin/notification-pluginNormal.png");
 }
 
-#alert-plugins-notification-icon {
+#plugins-notification-icon.plugin-hidden {
   list-style-image: url("chrome://browser/skin/notification-pluginAlert.png");
 }
 
-#blocked-plugins-notification-icon {
+#plugins-notification-icon.plugin-blocked {
   list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png");
 }
 
-#plugins-notification-icon,
-#alert-plugins-notification-icon,
-#blocked-plugins-notification-icon {
+#plugins-notification-icon {
 /*  -moz-image-region: rect(0, 16px, 16px, 0);*/
 }
 
-#plugins-notification-icon:hover,
-#alert-plugins-notification-icon:hover,
-#blocked-plugins-notification-icon:hover {
+#plugins-notification-icon:hover {
 /*  -moz-image-region: rect(0, 32px, 16px, 16px);*/
 }
 
@@ -3210,7 +3206,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   visibility: collapse;
 }
 
-#blocked-plugins-notification-icon[showing] {
+#plugins-notification-icon.plugin-blocked[showing] {
   animation: pluginBlockedNotification 500ms ease 0s 5 alternate both;
 }
 
@@ -4183,10 +4179,6 @@ window > chatbox {
 
 #notification-popup[popupid="click-to-play-plugins"] > .panel-arrowcontainer > .panel-arrowcontent {
   padding: 6px 1px 2px;
-}
-
-.click-to-play-plugins-notification-content {
-  width: 28em;
 }
 
 .click-to-play-plugins-notification-center-box {
