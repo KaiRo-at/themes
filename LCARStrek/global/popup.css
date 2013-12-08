@@ -13,14 +13,22 @@
 menupopup,
 panel {
   border: 1px solid #FF9F00;
-  padding: 1px;
+  padding: 0px;
   min-width: 1px;
   background-color: #000000;
 }
 
+menupopup > menu > menupopup {
+  /* align submenus */
+  margin-top: -1px;
+}
+
+/* ::::: arrow panel ::::: */
+
 panel[type="arrow"] {
   background: transparent;
   border: none;
+  padding: 0;
   transition: opacity 300ms;
 }
 
@@ -70,7 +78,7 @@ panel[type="arrow"][side="right"] {
   background-color: #000000;
   background-clip: padding-box;
   border: 1px solid #FF9F00;
-  margin: 3px;
+  margin: 0px;
 }
 
 .panel-arrow[side="top"],
@@ -82,12 +90,12 @@ panel[type="arrow"][side="right"] {
 }
 
 .panel-arrow[side="top"] {
-  margin-bottom: -5px;
+  margin-bottom: -1px;
 }
 
 .panel-arrow[side="bottom"] {
   transform: scaleY(-1);
-  margin-top: -5px;
+  margin-top: -1px;
 }
 
 .panel-arrow[side="left"],
@@ -99,12 +107,12 @@ panel[type="arrow"][side="right"] {
 }
 
 .panel-arrow[side="left"] {
-  margin-right: -5px;
+  margin-right: -1px;
 }
 
 .panel-arrow[side="right"] {
   transform: scaleX(-1);
-  margin-left: -5px;
+  margin-left: -1px;
 }
 
 /* ::::: tooltip ::::: */
@@ -134,8 +142,4 @@ menulist > menupopup,
   min-width: 0px;
   padding: 0px;
   background-color: #000000;
-}
-
-menupopup > menu > menupopup {
-  margin-top: -2px;
 }
