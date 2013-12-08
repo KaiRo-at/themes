@@ -13,7 +13,7 @@
 menupopup,
 panel {
   border: 1px solid #FF9F00;
-  padding: 0px;
+  padding: 1px;
   min-width: 1px;
   background-color: #000000;
 }
