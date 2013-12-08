@@ -20,7 +20,7 @@ panel {
 
 menupopup > menu > menupopup {
   /* align submenus */
-  margin-top: -1px;
+  margin-top: -2px;
 }
 
 /* ::::: arrow panel ::::: */
