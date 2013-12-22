@@ -4260,6 +4260,18 @@ window > chatbox {
   margin: 0;
 }
 
+.messageImage[value="plugin-hidden"] {
+  list-style-image: url("chrome://browser/skin/notification-pluginNormal.png");
+}
+
+/* Keep any changes to this style in sync with pluginProblem.css */
+notification.pluginVulnerable {
+}
+
+notification.pluginVulnerable .messageImage {
+  list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png");
+}
+
 /* Customization mode */
 
 /* === END plugin-doorhanger.inc.css === */

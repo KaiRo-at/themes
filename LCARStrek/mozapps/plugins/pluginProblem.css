@@ -6,6 +6,7 @@
 
 /* These styles affect only the bound element, not other page content. */
 
+/* Keep any changes to these styles in sync with plugin-doorhanger.inc.css */
 .mainBox {
   text-align: center;
   display: table;
