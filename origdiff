@@ -6,8 +6,8 @@ SCRIPT_DIR=$(pwd)
 
 # ============ vars specific to the versions ==============
 
-NAME_PRE=25
-NAME_POST=26
+NAME_PRE=26
+NAME_POST=27
 
 TAG_PRE_COMM=BETA_26_END
 TAG_POST_COMM=tip #BETA_27_END
