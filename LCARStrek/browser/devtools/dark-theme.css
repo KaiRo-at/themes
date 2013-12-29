@@ -51,6 +51,10 @@
   background-color: rgba(0,0,0,0.5);
 }
 
+.theme-bg-contrast { /* contrast bg color to attract attention on a container */
+  background: #404000;
+}
+
 .theme-link { /* original: blue */
   color: #3333FF;
 }
@@ -95,4 +99,14 @@
 
 .theme-fg-color7 { /* original: Red */
   color: #FF0000;
+}
+
+.theme-fg-contrast { /* To be used for text on theme-bg-contrast */
+  color: #FFCF00;
+}
+
+.ruleview-colorswatch,
+.computedview-colorswatch,
+.markupview-colorswatch {
+/*  box-shadow: 0 0 0 1px rgba(0,0,0,0.5); */
 }

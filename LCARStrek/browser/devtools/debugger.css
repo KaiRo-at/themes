@@ -16,11 +16,16 @@ window {
   min-width: 50px;
 }
 
-#sources-pane + .devtools-side-splitter {
+#sources-and-editor-splitter {
   -moz-border-start-color: transparent;
 }
 
-.side-menu-widget-item-checkbox {
+#pretty-print {
+  min-width: 0;
+  font-weight: bold;
+}
+
+#sources .side-menu-widget-item-checkbox {
   -moz-margin-end: -6px;
   padding: 0;
   opacity: 0;
@@ -29,14 +34,14 @@ window {
 
 /* Only show the checkbox when the source is hovered over, is selected, or if it
  * is not checked. */
-.side-menu-widget-item:hover > .side-menu-widget-item-checkbox,
-.side-menu-widget-item.selected > .side-menu-widget-item-checkbox,
-.side-menu-widget-item-checkbox:not([checked]) {
+#sources .side-menu-widget-item:hover > .side-menu-widget-item-checkbox,
+#sources .side-menu-widget-item.selected > .side-menu-widget-item-checkbox,
+#sources .side-menu-widget-item-checkbox:not([checked]) {
   opacity: 1;
   transition: opacity .15s ease-out 0s;
 }
 
-.side-menu-widget-item-checkbox > .checkbox-check {
+#sources .side-menu-widget-item-checkbox > .checkbox-check {
   -moz-appearance: none;
   background: none;
   background-image: url("itemToggle.png");
@@ -49,26 +54,41 @@ window {
   border: 0;
 }
 
-.side-menu-widget-item-checkbox[checked] > .checkbox-check {
+#sources .side-menu-widget-item-checkbox[checked] > .checkbox-check {
   background-position: 0 0;
 }
 
-.side-menu-widget-item-checkbox:not([checked]) ~ .side-menu-widget-item-contents {
+#sources .side-menu-widget-item-checkbox:not([checked]) ~ .side-menu-widget-item-contents {
   color: #8050B0;
 }
 
-.side-menu-widget-item-checkbox:not([checked]) ~ .side-menu-widget-item-contents > .dbg-breakpoint {
+#sources .side-menu-widget-item-checkbox:not([checked]) ~ .side-menu-widget-item-contents > .dbg-breakpoint {
   display: none;
 }
 
-/* Black box message */
+#sources .side-menu-widget-item.selected > .side-menu-widget-item-checkbox:not([checked]) ~ .side-menu-widget-item-arrow:-moz-locale-dir(ltr) {
+  background-image: none;
+/*  box-shadow: inset -1px 0 0 #222426; */
+}
 
-#black-boxed-message {
+#sources .side-menu-widget-item.selected > .side-menu-widget-item-checkbox:not([checked]) ~ .side-menu-widget-item-arrow:-moz-locale-dir(rtl) {
+  background-image: none;
+/*  box-shadow: inset 1px 0 0 #222426; */
+}
+
+/* Black box message and source progress meter */
+
+#black-boxed-message,
+#source-progress-container {
+  background-color: #A09090;
   /* Prevent the container deck from aquiring the height from this message. */
   min-height: 1px;
-  background-color: #A09090;
-  padding: 25vh 0;
   color: #000000;
+}
+
+#source-progress {
+  min-height: 2em;
+  min-width: 40em;
 }
 
 #black-boxed-message-label,
@@ -150,6 +170,17 @@ window {
   margin: 2px;
 }
 
+/* Instruments pane (watch expressions, variables, event listeners...) */
+
+#instruments-pane > tabs > tab {
+  min-height: 25px !important;
+  padding: 0 !important;
+}
+
+#instruments-pane > tabpanels > tabpanel {
+  background: #000000;
+}
+
 /* Watch expressions view */
 
 #expressions {
@@ -164,11 +195,33 @@ window {
 .dbg-expression-arrow {
   width: 16px;
   height: auto;
-  background: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16);
+  background: -moz-image-rect(url("commandline-icon.png"), 0, 32, 16, 16);
 }
 
 .dbg-expression-input {
   -moz-padding-start: 2px !important;
+}
+
+/* Event listeners view */
+
+.dbg-event-listener {
+  padding: 4px 8px;
+}
+
+.dbg-event-listener-type {
+  font-weight: 600;
+}
+
+.dbg-event-listener-separator {
+  color: #A09090;
+}
+
+.dbg-event-listener-targets {
+  color: #9C9CFF;
+}
+
+.dbg-event-listener-location {
+  color: #E7ADE7;
 }
 
 /* Searchbox and the search operations help panel */
@@ -319,7 +372,7 @@ window {
   transform: scale(1.75, 1.75);
 }
 
-/* Toolbar Controls */
+/* Toolbar controls */
 
 #toggle-panes {
   list-style-image: url("chrome://browser/skin/devtools/debugger-expand.png");
@@ -401,4 +454,24 @@ window {
 #instruments-pane-toggle:hover,
 #instruments-pane-toggle:hover:active {
   -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+/* Horizontal vs. vertical layout */
+
+#vertical-layout-panes-container {
+  min-height: 35vh;
+  max-height: 80vh;
+}
+
+#body[layout=vertical] #instruments-pane {
+  margin: 0 !important;
+  /* To prevent all the margin hacks to hide the sidebar. */
+}
+
+#body[layout=vertical] .side-menu-widget-container {
+  box-shadow: none !important;
+}
+
+#body[layout=vertical] .side-menu-widget-item-arrow {
+  background-image: none !important;
 }

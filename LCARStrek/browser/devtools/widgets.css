@@ -304,33 +304,28 @@
   color: #FF9F00;
 }
 
-.side-menu-widget-container[with-arrow=true]:-moz-locale-dir(ltr),
-.side-menu-widget-group[with-arrow=true]:-moz-locale-dir(ltr),
-.side-menu-widget-item[with-arrow=true]:-moz-locale-dir(ltr) {
+.side-menu-widget-container[with-arrows=true]:-moz-locale-dir(ltr) {
 }
 
-.side-menu-widget-container[with-arrow=true]:-moz-locale-dir(rtl),
-.side-menu-widget-group[with-arrow=true]:-moz-locale-dir(rtl),
-.side-menu-widget-item[with-arrow=true]:-moz-locale-dir(rtl) {
+.side-menu-widget-container[with-arrows=true]:-moz-locale-dir(rtl) {
 }
 
 .side-menu-widget-group-title {
-  background-color: #A09090;
   padding: 4px;
+
+  background-color: #A09090;
   color: #000000;
-  transition-property: background-color;
-  transition-duration: 0.3s;
 }
 
-.side-menu-widget-group:hover > .side-menu-widget-group-title {
-  background-color: #FFCF00;
+.side-menu-widget-group-checkbox {
+  margin: 0;
+  padding: 0;
 }
 
 .side-menu-widget-item {
   border-top: 1px solid #9C9CFF;
   margin-top: -1px;
   margin-bottom: -1px;
-  cursor: pointer;
 }
 
 .side-menu-widget-item:last-of-type {
@@ -359,12 +354,16 @@
 
 .side-menu-widget-item-label {
   padding: 4px 0px;
-  cursor: inherit;
 }
 
 .side-menu-widget-item-arrow {
   -moz-margin-start: -8px;
   width: 8px;
+}
+
+.side-menu-widget-item-checkbox {
+  -moz-margin-start: 4px;
+  -moz-margin-end: -6px;
 }
 
 .side-menu-widget-item-other {
@@ -387,10 +386,11 @@
 }
 
 .side-menu-widget-empty-notice-container {
-  background-color: #000000;
   padding: 12px;
-  color: #A09090;
+
+  background-color: #000000;
   font-weight: 600;
+  color: #A09090;
 }
 
 /* VariablesView */
@@ -499,7 +499,7 @@
 /* Custom configurable/enumerable/writable or frozen/sealed/extensible
  * variables and properties */
 
-.variable-or-property[non-enumerable]:not([self]):not([exception]):not([return]) > .title > .name {
+.variable-or-property[non-enumerable]:not([self]):not([exception]):not([return]):not([scope]) > .title > .name {
   opacity: 0.5;
 }
 
@@ -549,6 +549,10 @@
 
 .variable-or-property[return]:not(:focus) > .title > .name {
   color: #008484;
+}
+
+.variable-or-property[scope]:not(:focus) > .title > .name {
+  color: #9C9CFF;
 }
 
 /* Variables and properties tooltips */
