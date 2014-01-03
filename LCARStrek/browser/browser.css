@@ -3476,6 +3476,8 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   background-color: transparent !important;
 }
 
+/* === BEGIN highlighter.inc.css === */
+
 /* Highlighter */
 
 .highlighter-outline {
@@ -3492,7 +3494,6 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 .highlighter-nodeinfobar {
   color: #FF9F00;
-  border: 1px solid rgba(156, 156, 255, .5);
   border-radius: 3px;
   background-color: #000000;
   background-clip: padding-box;
@@ -3533,9 +3534,6 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
   -moz-margin-end: 2px;
 }
 
-.highlighter-nodeinfobar-inspectbutton:-moz-locale-dir(rtl) {
-}
-
 .highlighter-nodeinfobar-inspectbutton:hover,
 .highlighter-nodeinfobar-inspectbutton:hover:active/*,
 .highlighter-nodeinfobar-container:not([locked]) >  .highlighter-nodeinfobar >  .highlighter-nodeinfobar-inspectbutton*/ {
@@ -3543,9 +3541,6 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
 }
 
 .highlighter-nodeinfobar-menu {
-}
-
-.highlighter-nodeinfobar-menu:-moz-locale-dir(rtl) {
 }
 
 .highlighter-nodeinfobar-menu > .toolbarbutton-menu-dropmarker {
@@ -3560,7 +3555,6 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
   height: 14px;
   -moz-margin-start: calc(50% - 7px);
   transform: rotate(-45deg);
-  border: 1px solid transparent;
   background-clip: padding-box;
   background-repeat: no-repeat;
 }
@@ -3568,27 +3562,20 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
 .highlighter-nodeinfobar-arrow-top {
   margin-bottom: -8px;
   margin-top: 8px;
-  border-right-color: rgba(0, 132, 132, .5);
-  border-top-color: rgba(0, 132, 132, .5);
   background-image: linear-gradient(to bottom left, transparent 50%, rgb(0, 132, 132) 50%);
 }
 
 .highlighter-nodeinfobar-arrow-bottom {
   margin-top: -8px;
   margin-bottom: 8px;
-  border-left-color: rgba(0, 132, 132, .5);
-  border-bottom-color: rgba(0, 132, 132, .5);
   background-image: linear-gradient(to top right, transparent 50%, rgb(0, 132, 132) 50%);
-}
-
-.highlighter-nodeinfobar-container[position="top"] > .highlighter-nodeinfobar,
-.highlighter-nodeinfobar-container[position="overlap"] > .highlighter-nodeinfobar {
-  box-shadow: 0 1px 0 hsla(0, 0%, 100%, .1) inset;
 }
 
 .highlighter-nodeinfobar-container[hide-arrow] > .highlighter-nodeinfobar {
   margin: 7px 0;
 }
+
+/* === END highlighter.inc.css === */
 
 #full-screen-warning-message {
   background-color: #000000;

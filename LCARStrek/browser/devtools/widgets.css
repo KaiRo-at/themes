@@ -304,11 +304,25 @@
   color: #FF9F00;
 }
 
+/* SideMenuWidget container */
+
 .side-menu-widget-container[with-arrows=true]:-moz-locale-dir(ltr) {
 }
 
 .side-menu-widget-container[with-arrows=true]:-moz-locale-dir(rtl) {
 }
+
+.side-menu-widget-container[with-arrows=true] .side-menu-widget-group {
+  /* To allow visibility of the dark margin shadow. */
+/*  -moz-margin-end: 1px; */
+}
+
+.side-menu-widget-container[with-arrows=true] .side-menu-widget-item {
+  /* To compensate for the arrow image's dark margin. */
+/*  -moz-margin-end: -1px; */
+}
+
+/* SideMenuWidget groups */
 
 .side-menu-widget-group-title {
   padding: 4px;
@@ -321,6 +335,8 @@
   margin: 0;
   padding: 0;
 }
+
+/* SideMenuWidget items */
 
 .side-menu-widget-item {
   border-top: 1px solid #9C9CFF;
@@ -351,6 +367,8 @@
   background-image: url("itemArrow-rtl.png"), linear-gradient(to right, #000000, #000000);
   background-position: center left, top left;
 }
+
+/* SideMenuWidget items contents */
 
 .side-menu-widget-item-label {
   padding: 4px 0px;
@@ -384,6 +402,8 @@
 .side-menu-widget-item-other:not(.selected) > label {
   color: #9C9CFF;
 }
+
+/* SideMenuWidget misc */
 
 .side-menu-widget-empty-notice-container {
   padding: 12px;
@@ -555,6 +575,26 @@
   color: #9C9CFF;
 }
 
+/* Aligned values */
+
+.variables-view-container[aligned-values] .title > .separator {
+  -moz-box-flex: 1;
+}
+
+.variables-view-container[aligned-values] .title > .value {
+  width: 70vw;
+}
+
+.variables-view-container[aligned-values] .title > .element-value-input {
+  width: calc(70vw - 10px);
+}
+
+/* Actions first */
+
+.variables-view-container[actions-first] .variables-view-delete {
+  -moz-box-ordinal-group: 0;
+}
+
 /* Variables and properties tooltips */
 
 .variable-or-property > tooltip > label {
@@ -588,10 +628,6 @@
 
 .variables-view-delete:active {
   -moz-image-region: rect(0, 48px, 16px, 32px);
-}
-
-*:not(:hover) .variables-view-delete {
-  display: none;
 }
 
 .variables-view-delete > .toolbarbutton-text {
@@ -664,3 +700,71 @@
 .arrow[invisible] {
   visibility: hidden;
 }
+
+/* === BEGIN manifest-editor.inc.css === */
+
+/* Manifest Editor overrides */
+
+.variables-view-container.manifest-editor {
+  background-color: #000000;
+  padding: 20px 13px;
+}
+
+.manifest-editor .variable-or-property:focus > .title {
+/*  background-color: #EDEDED;
+  color: #000; */
+  border-radius: 4px;
+}
+
+.manifest-editor .variables-view-property > .title > .name {
+/*  color: #27406A; */
+}
+
+.manifest-editor .variable-or-property > .title > label {
+  font-family: monospace;
+}
+
+.manifest-editor .variable-or-property > .title > .token-string {
+/*  color: #54BC6A; */
+  font-weight: bold;
+}
+
+.manifest-editor .variable-or-property > .title > .token-boolean,
+.manifest-editor .variable-or-property > .title > .token-number {
+/*  color: #009BD4; */
+  font-weight: bold;
+}
+
+.manifest-editor .variable-or-property > .title > .token-undefined {
+/*  color: #bbb; */
+}
+
+.manifest-editor .variable-or-property > .title > .token-null {
+/*  color: #999; */
+}
+
+.manifest-editor .variable-or-property > .title > .token-other {
+/*  color: #333; */
+}
+
+.manifest-editor .variables-view-variable {
+  border-bottom: none;
+}
+
+.manifest-editor .variables-view-delete,
+.manifest-editor .variables-view-delete:hover,
+.manifest-editor .variables-view-delete:active {
+  list-style-image: none;
+  -moz-image-region: initial;
+}
+
+.manifest-editor .variables-view-delete::before {
+  width: 12px;
+  height: 12px;
+  content: "";
+  display: inline-block;
+  background-image: url("app-manager/remove.svg");
+  background-size: 12px auto;
+}
+
+/* === END manifest-editor.inc.css === */
