@@ -20,8 +20,11 @@ window {
   -moz-border-start-color: transparent;
 }
 
+#sources-toolbar .devtools-toolbarbutton {
+  min-width: 32px;
+}
+
 #pretty-print {
-  min-width: 0;
   font-weight: bold;
 }
 

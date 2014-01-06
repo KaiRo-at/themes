@@ -3522,6 +3522,7 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
 /* Highlighter - Node Infobar - buttons */
 
 .highlighter-nodeinfobar-button {
+  border-width: 0;
   padding: 0;
   width: 26px;
   min-height: 26px;

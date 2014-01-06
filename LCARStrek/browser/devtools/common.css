@@ -371,6 +371,22 @@ devtools-menulist:-moz-focusring,
   padding: 4px;
 }
 
+.devtools-tooltip-simple-text {
+  background-color: #000000;
+  max-width: 400px;
+  margin: 0 -4px; /* Compensate for the .panel-arrowcontent padding. */
+  padding: 8px 12px;
+  white-space: pre-wrap;
+}
+
+.devtools-tooltip-simple-text:first-child {
+  margin-top: -4px;
+}
+
+.devtools-tooltip-simple-text:last-child {
+  margin-bottom: -4px;
+}
+
 .devtools-tooltip-tiles {
   background-color: #A09090;
   background-image: linear-gradient(45deg, #9C9CFF 25%, transparent 25%, transparent 75%, #9C9CFF 75%, #9C9CFF),

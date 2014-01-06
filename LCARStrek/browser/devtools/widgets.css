@@ -331,11 +331,6 @@
   color: #000000;
 }
 
-.side-menu-widget-group-checkbox {
-  margin: 0;
-  padding: 0;
-}
-
 /* SideMenuWidget items */
 
 .side-menu-widget-item {
@@ -379,11 +374,6 @@
   width: 8px;
 }
 
-.side-menu-widget-item-checkbox {
-  -moz-margin-start: 4px;
-  -moz-margin-end: -6px;
-}
-
 .side-menu-widget-item-other {
   background-color: #000000;
   margin: 0 -4px;
@@ -401,6 +391,19 @@
 
 .side-menu-widget-item-other:not(.selected) > label {
   color: #9C9CFF;
+}
+
+/* SideMenuWidget checkboxes */
+
+.side-menu-widget-group-checkbox {
+  margin: 0;
+  -moz-margin-end: 4px;
+}
+
+.side-menu-widget-item-checkbox {
+  margin: 0;
+  -moz-margin-start: 4px;
+  -moz-margin-end: -4px;
 }
 
 /* SideMenuWidget misc */

@@ -61,10 +61,19 @@
   color: #3333FF;
 }
 
+/*
+ * FIXME: http://bugzil.la/575675 CSS links without :visited set cause assertion
+ * failures in debug builds.
+ */
+.theme-link:visited,
+.cm-s-mozilla .cm-link:visited { /* original: blue */
+  color: #3333FF;
+}
+
 .theme-comment,
 .cm-s-mozilla .cm-meta,
 .cm-s-mozilla .cm-hr,
-.cm-s-mozilla .cm-string { /* original: grey */
+.cm-s-mozilla .cm-comment { /* original: grey */
   color: #A09090;
 }
 
@@ -79,48 +88,45 @@
 }
 
 .theme-fg-color1,
-.cm-s-mozilla .cm-variable-2,
-.cm-s-mozilla .cm-quote,
-.cm-s-mozilla .CodeMirror-matchingbracket { /* original: green */
+.cm-s-mozilla .cm-number { /* original: green */
   color: #008484;
 }
 
 .theme-fg-color2,
 .cm-s-mozilla .cm-attribute,
-.cm-s-mozilla .cm-builtin,
 .cm-s-mozilla .cm-variable,
 .cm-s-mozilla .cm-def,
-.cm-s-mozilla .cm-variable-3,
 .cm-s-mozilla .cm-property,
 .cm-s-mozilla .cm-qualifier { /* original: blue */
   color: #9C9CFF;
 }
 
 .theme-fg-color3,
+.cm-s-mozilla .cm-builtin,
 .cm-s-mozilla .cm-tag,
 .cm-s-mozilla .cm-header { /* original: pink/lavender */
   color: #E7ADE7;
 }
 
-.theme-fg-color4,
-.cm-s-mozilla .cm-comment { /* original: purple/violet */
+.theme-fg-color4 { /* original: purple/violet */
   color: #C09070;
 }
 
 .theme-fg-color5,
 .cm-s-mozilla .cm-bracket,
-.cm-s-mozilla .cm-atom,
 .cm-s-mozilla .cm-keyword { /* original: Yellow */
   color: #FFCF00;
 }
 
-.theme-fg-color6 { /* original: Orange */
+.theme-fg-color6,
+.cm-s-mozilla .cm-string,
+.cm-s-mozilla .cm-string-2 { /* original: Orange */
   color: #FF9F00;
 }
 
 .theme-fg-color7,
-.cm-s-mozilla .CodeMirror-nonmatchingbracket,
-.cm-s-mozilla .cm-string-2,
+.cm-s-mozilla .cm-atom,
+.cm-s-mozilla .cm-quote,
 .cm-s-mozilla .cm-error { /* original: Red */
   color: #FF0000;
 }
@@ -146,9 +152,10 @@
 }
 
 .CodeMirror pre,
+.cm-s-mozilla .cm-variable-2,
+.cm-s-mozilla .cm-variable-3,
 .cm-s-mozilla .cm-operator,
-.cm-s-mozilla .cm-special,
-.cm-s-mozilla .cm-number { /* theme-body color */
+.cm-s-mozilla .cm-special { /* theme-body color */
   color: #FF9F00;
 }
 
@@ -161,13 +168,26 @@
   color: #FFCF00;
 }
 
-.dcm-s-mozilla .CodeMirror-selected { /* selected text (unfocused) */
+.cm-s-mozilla .CodeMirror-selected { /* selected text (unfocused) */
   background: #008484;
   color: #000000;
 }
 
-.CodeMirror-activeline-background { /* selected color with alpha */
-  background: rgba(0, 132, 132, .05);
+.cm-s-mozilla .CodeMirror-activeline-background { /* selected color with alpha */
+  background: rgba(0, 132, 132, .15);
+}
+
+div.cm-s-mozilla span.CodeMirror-matchingbracket { /* highlight brackets */
+  outline: solid 1px rgba(0, 132, 132, .25);
+  color: #FFCF00;
+}
+
+.cm-s-mozilla .CodeMirror-linenumber { /* line number text */
+  color: #A09090;
+}
+
+.cm-s-mozilla .CodeMirror-gutters { /* vertical line next to line numbers */
+  border-right-color: #9C9CFF;
 }
 
 .cm-s-markup-view pre {
