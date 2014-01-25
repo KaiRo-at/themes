@@ -117,6 +117,26 @@ notification {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
+#command-button-pick {
+  list-style-image: url("chrome://browser/skin/devtools/command-pick.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#command-button-pick:hover,
+#command-button-pick:hover:active {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#command-button-splitconsole {
+  list-style-image: url("chrome://browser/skin/devtools/command-console.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+#command-button-splitconsole:hover,
+#command-button-splitconsole:hover:active {
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
 
 /* Tabs */
 
@@ -144,6 +164,8 @@ notification {
 .devtools-tab > image {
   -moz-margin-end: 0px;
 /*  -moz-margin-start: 4px; */
+  max-height: 16px;
+  width: 16px; /* Prevents collapse during theme switching */
 }
 
 #toolbox-tab-options > image {

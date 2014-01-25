@@ -3,6 +3,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import url("toolbox.css"); /* workaround until the move to toolbars.inc.css is done */
+
 /* According to:
  * https://bugzilla.mozilla.org/show_bug.cgi?id=715472#c17
  */
@@ -121,7 +123,7 @@
 .theme-fg-color6,
 .cm-s-mozilla .cm-string,
 .cm-s-mozilla .cm-string-2 { /* original: Orange */
-  color: #FF9F00;
+  color: #E7ADE7;
 }
 
 .theme-fg-color7,
@@ -187,10 +189,13 @@ div.cm-s-mozilla span.CodeMirror-matchingbracket { /* highlight brackets */
 }
 
 .cm-s-mozilla .CodeMirror-gutters { /* vertical line next to line numbers */
-  border-right-color: #9C9CFF;
+  border-right-color: #A09090;
+  background: #402800;
 }
 
 .cm-s-markup-view pre {
   line-height: 1.4em;
   min-height: 1.4em;
 }
+
+/* remove import on top of file when toolbars.inc.css work is done */
