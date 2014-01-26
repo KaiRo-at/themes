@@ -3482,7 +3482,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 
 .highlighter-outline {
   box-shadow: 0 0 0 1px black;
-  outline: 1px dashed white;
+  outline: 1px dashed #A09090;
 }
 
 .highlighter-outline[locked]  {
@@ -3497,6 +3497,11 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   border-radius: 3px;
   background-color: #000000;
   background-clip: padding-box;
+  border: 1px solid #008484;
+  padding: 5px;
+  /* Avoid cases where the infobar is smaller than the arrow, when the text is
+  short */
+  min-width: 75px;
 }
 
 /* Highlighter - Node Infobar - text */
@@ -4482,6 +4487,13 @@ html|div#UITourHighlight {
   border: 2px #9C9CFF solid;
   min-height: 32px;
   min-width: 32px;
+  /* HACK for pre-Australis */
+  display: none;
+}
+
+html|div#UITourHighlight[active] {
+  /* HACK for pre-Australis */
+  display: none;
 }
 
 #UITourTooltip {
