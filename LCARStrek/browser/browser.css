@@ -599,6 +599,12 @@ menuitem.bookmark-item {
   -moz-image-region: rect(18px, 144px, 36px, 126px);
 }
 
+/* When "new tab" page shows up, the menubutton-button (star button) is disabled */
+#navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-button[disabled="true"] {
+  -moz-image-region: rect(36px, 144px, 54px, 126px) !important;
+  background-color: transparent !important;
+}
+
 #navigator-toolbox:not([iconsize]) #bookmarks-menu-button[cui-areatype="toolbar"][starred] {
   -moz-image-region: rect(0, 162px, 18px, 144px);
 }
@@ -2693,11 +2699,12 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 }
 
 .tabbrowser-tab,
-.tabs-newtab-button {
+.tabs-newtab-button,
+#TabsToolbar > #new-tab-button {
   margin-top: 0px;
 }
 
-.tabbrowser-tab{
+.tabbrowser-tab {
   padding: 1px 4px 2px;
 }
 
@@ -2705,12 +2712,14 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   -moz-margin-start: 2px;
 }
 
-.tabs-newtab-button {
+.tabs-newtab-button,
+#TabsToolbar > #new-tab-button {
   border-radius: 8px 8px 0px 0px;
   -moz-margin-start: 0;
 }
 
-.tabs-newtab-button:not(:hover) {
+.tabs-newtab-button:not(:hover),
+#TabsToolbar > #new-tab-button:not(:hover) {
   background-color: #C09070;
 }
 
@@ -2843,8 +2852,11 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   width: 26px;
 }
 
+/* Remove |#navigator-toolbox:not([iconsize])| selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
 .tabs-newtab-button,
 .tabs-newtab-button:hover,
+#navigator-toolbox:not([iconsize]) #TabsToolbar > #new-tab-button,
+#navigator-toolbox:not([iconsize]) #TabsToolbar > #new-tab-button:hover,
 #TabsToolbar > #new-tab-button:hover {
   -moz-image-region: rect(0, 32px, 18px, 16px);
 }
