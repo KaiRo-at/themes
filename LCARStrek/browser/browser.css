@@ -2499,6 +2499,13 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   max-height: 16px;
 }
 
+toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
+  width: auto;
+  height: auto;
+  max-width: 32px;
+  max-height: 24px;
+}
+
 /* fixup corners for share panel */
 .social-panel > .social-panel-frame {
   border-radius: inherit;
@@ -3057,11 +3064,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   width: 16px;
 }
 
-#identity-popup-help-icon:-moz-focusring {
-  outline: 1px dotted;
-  outline-offset: 1px;
-}
-
 #identity-popup-more-info-button {
   margin-top: 6px;
   margin-bottom: 0;
@@ -3539,7 +3541,6 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
 /* Highlighter - Node Infobar - buttons */
 
 .highlighter-nodeinfobar-button {
-  border-width: 0;
   padding: 0;
   width: 26px;
   min-height: 26px;
