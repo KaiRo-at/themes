@@ -224,10 +224,6 @@ notification {
   visibility: collapse;
 }
 
-#options-panel {
-  /* background-image: url("chrome://browser/skin/newtab/noise.png"); */
-}
-
 .options-vertical-pane {
   margin: 5px;
   width: calc(50% - 30px);

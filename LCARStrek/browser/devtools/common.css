@@ -270,6 +270,7 @@ devtools-menulist:-moz-focusring,
   border: 1px solid #FF9F00;
   background-color: #000000;
   border-radius: 3px;
+  overflow-x: hidden;
   max-height: 40rem;
 }
 

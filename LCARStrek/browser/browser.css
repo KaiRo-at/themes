@@ -89,16 +89,16 @@ menubar {
 #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
 }
 
-#main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme) {
+#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme) {
   /* like menubar */
   background-color: #6000CF;
   color: #FF9F00;
 }
-#main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive {
+#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive {
   background-color: #8050B0;
   color: #FF9F00;
 }
-#main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[inactive] ~ #TabsToolbar > .tabbrowser-tabs > .tabbrowser-tab {
+#main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[inactive] ~ #TabsToolbar > .tabbrowser-tabs > .tabbrowser-tab {
   padding-top: 3px;
 }
 
@@ -114,6 +114,9 @@ menubar {
 #nav-bar[tabsontop="true"][collapsed="true"]:not([customizing]) + toolbar,
 #nav-bar[tabsontop="true"][collapsed="true"]:not([customizing]) + #customToolbars + #PersonalToolbar {
   /* background-image: linear-gradient(@toolbarHighlight@, rgba(255,255,255,0)); */
+  /* Position the toolbar above the bottom of background tabs */
+  position: relative;
+  z-index: 1;
 }
 
 #personal-bookmarks {
@@ -125,6 +128,16 @@ menubar {
 }
 
 /* ::::: app menu button ::::: */
+
+/* The app menu button must appear on top of the navigator-toolbox in order
+ * for click and hover mouse events to work properly for the button in the
+ * restored window state. Otherwise, elements in the navigator-toolbox, like the
+ * menubar can swallow these events. It will also place the button above the
+ * fog on themes with Aero Glass.
+ */
+#main-window[tabsintitlebar] #appmenu-button-container {
+  z-index: 1;
+}
 
 #appmenu-button {
   background-color: #FF9F00;
@@ -2705,6 +2718,8 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
   border-bottom: 1px solid #008484;
 }
 
+/* === BEGIN tabs.inc.css === */
+
 .tabbrowser-tab,
 .tabs-newtab-button,
 #TabsToolbar > #new-tab-button {
@@ -2734,37 +2749,14 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
   text-decoration: underline;
 }
 
-.tabbrowser-tab:hover,
-.tabs-newtab-button:hover {
-}
+/* Selected tab */
 
 .tabbrowser-tab[selected="true"] {
 }
 
-#main-window[tabsontop=false]:not([disablechrome]) .tabbrowser-tab[selected=true]:not(:-moz-lwtheme) {
-}
+/* End selected tab */
 
-.tabbrowser-tab:-moz-lwtheme {
-}
-
-.tabbrowser-tab[selected="true"]:-moz-lwtheme {
-}
-
-.tabbrowser-tab:-moz-lwtheme-brighttext:not([selected="true"]),
-.tabs-newtab-button:-moz-lwtheme-brighttext {
-}
-
-.tabbrowser-tab:-moz-lwtheme-brighttext:not([selected="true"]):hover,
-.tabs-newtab-button:-moz-lwtheme-brighttext:hover {
-}
-
-.tabbrowser-tab:-moz-lwtheme-darktext:not([selected="true"]),
-.tabs-newtab-button:-moz-lwtheme-darktext {
-}
-
-.tabbrowser-tab:-moz-lwtheme-darktext:not([selected="true"]):hover,
-.tabs-newtab-button:-moz-lwtheme-darktext:hover {
-}
+/* Pinned tabs */
 
 .tabbrowser-tab[pinned][titlechanged]:not([selected="true"]) {
   background-color: #E7ADE7;
@@ -2773,6 +2765,18 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
   background-color: #3333FF;
   color: #000000;
 }
+
+/* New tab button */
+
+.tabs-newtab-button {
+  width: 28px;
+}
+
+#TabsToolbar > #new-tab-button {
+  width: 26px;
+}
+
+/* === END tabs.inc.css === */
 
 .tab-throbber,
 .tab-icon-image {
@@ -2849,14 +2853,6 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 #TabsToolbar > toolbarpaletteitem > #new-tab-button {
   list-style-image: url("chrome://browser/skin/tabbrowser/newtab.png");
   -moz-image-region: rect(0, 16px, 18px, 0);
-}
-
-.tabs-newtab-button {
-  width: 28px;
-}
-
-#TabsToolbar > #new-tab-button {
-  width: 26px;
 }
 
 /* Remove |#navigator-toolbox:not([iconsize])| selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
@@ -4299,8 +4295,6 @@ notification.pluginVulnerable .messageImage {
   list-style-image: url("chrome://browser/skin/notification-pluginBlocked.png");
 }
 
-/* Customization mode */
-
 /* === END plugin-doorhanger.inc.css === */
 
 #main-window[privatebrowsingmode=temporary] #toolbar-menubar {
@@ -4481,8 +4475,6 @@ toolbarpaletteitem[place="toolbar"] {
   border-right: 1px solid #9C9CFF;
   background-clip: padding-box;
 }
-
-/* End customization mode */
 
 #main-window[privatebrowsingmode=temporary] #TabsToolbar::after {
   content: "";

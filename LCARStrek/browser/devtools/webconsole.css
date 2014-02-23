@@ -113,8 +113,6 @@ a {
 }
 
 #output-wrapper {
-  background: #000000;
-  color: #FF9F00;
   direction: ltr;
   border-bottom: 1px solid #9C9CFF;
   overflow: auto;
@@ -126,6 +124,10 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+#output-container.hideTimestamps > .message > .timestamp {
+  display: none;
 }
 
 .filtered-by-type,
