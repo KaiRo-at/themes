@@ -455,6 +455,7 @@
 }
 
 .variable-or-property > .title > .value {
+  -moz-box-flex: 1;
   -moz-padding-start: 6px;
   -moz-padding-end: 4px;
 }
@@ -478,6 +479,9 @@
 .variables-view-variable {
   -moz-margin-start: 1px;
   -moz-margin-end: 1px;
+}
+
+.variables-view-variable:not(:last-child) {
   border-bottom: 1px solid #A09090;
 }
 
@@ -585,6 +589,7 @@
 }
 
 .variables-view-container[aligned-values] .title > .value {
+  -moz-box-flex: 0;
   width: 70vw;
 }
 
@@ -594,8 +599,13 @@
 
 /* Actions first */
 
-.variables-view-container[actions-first] .variables-view-delete {
+.variables-view-container[actions-first] .variables-view-delete,
+.variables-view-container[actions-first] .variables-view-add-property {
   -moz-box-ordinal-group: 0;
+}
+
+.variables-view-container[actions-first] [invisible] {
+  visibility: hidden;
 }
 
 /* Variables and properties tooltips */
@@ -631,10 +641,6 @@
 
 .variables-view-delete:active {
   -moz-image-region: rect(0, 48px, 16px, 32px);
-}
-
-.variables-view-delete > .toolbarbutton-text {
-  display: none;
 }
 
 .variables-view-edit {
@@ -710,7 +716,7 @@
 
 .variables-view-container.manifest-editor {
   background-color: #000000;
-  padding: 20px 13px;
+  padding: 20px 2px;
 }
 
 .manifest-editor .variable-or-property:focus > .title {
@@ -723,7 +729,8 @@
 /*  color: #27406A; */
 }
 
-.manifest-editor .variable-or-property > .title > label {
+.manifest-editor .variable-or-property > .title > label,
+.manifest-editor textbox {
   font-family: monospace;
 }
 
@@ -756,18 +763,30 @@
 
 .manifest-editor .variables-view-delete,
 .manifest-editor .variables-view-delete:hover,
-.manifest-editor .variables-view-delete:active {
+.manifest-editor .variables-view-delete:active,
+.manifest-editor .variables-view-add-property:hover,
+.manifest-editor .variables-view-add-property:active {
   list-style-image: none;
   -moz-image-region: initial;
 }
 
-.manifest-editor .variables-view-delete::before {
-  width: 12px;
-  height: 12px;
+.manifest-editor .variables-view-delete::before,
+.manifest-editor .variables-view-add-property::before {
+  width: 11px;
+  height: 11px;
   content: "";
   display: inline-block;
+  background-size: 11px auto;
+}
+
+.manifest-editor .variables-view-delete::before {
   background-image: url("app-manager/remove.svg");
   background-size: 12px auto;
+}
+
+.manifest-editor .variables-view-add-property::before {
+  background-image: url("app-manager/add.svg");
+  -moz-margin-end: 2px;
 }
 
 /* === END manifest-editor.inc.css === */

@@ -3778,6 +3778,10 @@ html|*#gcli-output-frame {
 
 .devtools-responsiveui-toolbar {
   background: transparent;
+  /* text color is textColor from dark theme, since no theme is applied to
+   * the responsive toolbar.
+   */
+  color: #FF9F00;
   margin: 10px 0;
   padding: 0;
   box-shadow: none;

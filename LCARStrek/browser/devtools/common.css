@@ -368,10 +368,29 @@ devtools-menulist:-moz-focusring,
   border-radius: 3px;
 }
 
-.devtools-tooltip.devtools-tooltip-panel .panel-arrowcontent {
+.devtools-tooltip .panel-arrowcontent {
   /* If the tooltip uses a <panel> XUL element instead */
   padding: 4px;
 }
+
+.devtools-tooltip .panel-arrowcontainer {
+  /* Reseting the transition used when panels are shown */
+  transition: none;
+  /* Panels slide up/down/left/right when they appear using a transform.
+  Since we want to remove the transition, we don't need to transform anymore
+  plus it can interfeer by causing mouseleave events on the underlying nodes */
+  transform: none;
+}
+
+.devtools-tooltip[clamped-dimensions] {
+  max-height: 400px;
+  max-width: 400px;
+}
+.devtools-tooltip[clamped-dimensions] .panel-arrowcontent {
+  overflow: hidden;
+}
+
+/* Tooltip: Simple Text */
 
 .devtools-tooltip-simple-text {
   background: #000000;
@@ -404,6 +423,14 @@ devtools-menulist:-moz-focusring,
 .devtools-tooltip-simple-text:last-child {
   margin-bottom: -4px;
 }
+
+/* Tooltip: Variables View */
+
+.devtools-tooltip-variables-view-box {
+  margin: -4px; /* Compensate for the .panel-arrowcontent padding. */
+}
+
+/* Tooltip: Tiles */
 
 .devtools-tooltip-tiles {
   background-color: #A09090;

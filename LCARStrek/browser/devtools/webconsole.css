@@ -112,9 +112,13 @@ a {
   color: inherit;
 }
 
+.jsterm-input-container {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
 #output-wrapper {
   direction: ltr;
-  border-bottom: 1px solid #9C9CFF;
   overflow: auto;
 }
 
@@ -297,20 +301,16 @@ a {
 .jsterm-complete-node {
   -moz-padding-start: 16px;
   margin: 3px 0 0 0;
+  background-color: transparent;
 }
 
 .jsterm-input-node {
   background: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16) no-repeat;
-  background-position: 0%;
 }
 
 :-moz-any(.jsterm-input-node,
           .jsterm-complete-node) > .textbox-input-box > .textbox-textarea {
   overflow-x: hidden;
-}
-
-.jsterm-complete-node > .textbox-input-box > .textbox-textarea {
-  color: #8050B0;
 }
 
 .inlined-variables-view .body {
@@ -360,7 +360,42 @@ a {
 }
 
 .navigation-marker .url {
-  background-color: #000000;
   -moz-padding-end: 9px;
   text-decoration: none;
+}
+
+/* Replace these values with CSS variables as available */
+.theme-dark .jsterm-input-container {
+  background-color: #000000; /* tabToolbarBackgroundColor */
+  border-color: #9C9CFF; /* mainBackgroundColor */
+}
+
+.theme-dark .jsterm-input-node {
+  color: #E7ADE7; /* textColor */
+}
+
+.theme-dark .jsterm-complete-node {
+  color: #A09090; /* commentColor */
+}
+
+.theme-dark .navigation-marker .url {
+  background: #000000; /* mainBackgroundColor */
+}
+
+/* Replace these values with CSS variables as available */
+.theme-light .jsterm-input-container {
+  background-color: #000000; /* tabToolbarBackgroundColor */
+  border-color: #9C9CFF; /* mainBackgroundColor */
+}
+
+.theme-light .jsterm-input-node {
+  color: #E7ADE7; /* textColor */
+}
+
+.theme-light .jsterm-complete-node {
+  color: #A09090; /* commentColor */
+}
+
+.theme-light .navigation-marker .url {
+  background: #000000; /* mainBackgroundColor */
 }
