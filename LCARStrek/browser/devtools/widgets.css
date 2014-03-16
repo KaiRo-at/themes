@@ -306,13 +306,15 @@
 
 /* SideMenuWidget container */
 
-.side-menu-widget-container[with-arrows=true]:-moz-locale-dir(ltr) {
+.side-menu-widget-container:-moz-locale-dir(ltr),
+.side-menu-widget-empty-notice-container:-moz-locale-dir(ltr) {
 }
 
-.side-menu-widget-container[with-arrows=true]:-moz-locale-dir(rtl) {
+.side-menu-widget-container:-moz-locale-dir(rtl),
+.side-menu-widget-empty-notice-container:-moz-locale-dir(rtl)[with-arrows=true]:-moz-locale-dir(rtl) {
 }
 
-.side-menu-widget-container[with-arrows=true] .side-menu-widget-group {
+.side-menu-widget-group {
   /* To allow visibility of the dark margin shadow. */
 /*  -moz-margin-end: 1px; */
 }
@@ -418,10 +420,6 @@
 
 /* VariablesView */
 
-.variables-view-container {
-  background: #000000;
-}
-
 .variables-view-empty-notice {
   color: #A09090;
   padding: 2px;
@@ -429,11 +427,6 @@
 
 .variables-view-scope > .title {
   background-color: #A09090;
-  color: #000000;
-}
-
-.variables-view-scope:focus > .title {
-  background-color: #008484;
   color: #000000;
 }
 
@@ -445,25 +438,18 @@
 /* Generic traits applied to both variables and properties */
 
 .variable-or-property {
-  transition: background 1s ease-in-out;
-  color: #FF9F00;
+  transition: background 1s ease-in-out, color 1s ease-in-out;
 }
 
 .variable-or-property[changed] {
-  background: rgba(255, 207, 0, 0.3);
-  transition-duration: 0.4s;
+  color: #000000;
+  transition-duration: .4s;
 }
 
 .variable-or-property > .title > .value {
   -moz-box-flex: 1;
   -moz-padding-start: 6px;
   -moz-padding-end: 4px;
-}
-
-.variable-or-property:focus > .title {
-  background-color: #008484;
-  color: #000000;
-  border-radius: 5px;
 }
 
 .variable-or-property[editable] > .title > .value {
@@ -489,45 +475,16 @@
   font-weight: 600;
 }
 
-.variables-view-variable:not(:focus) > .title > .name {
-  color: #FF9F00;
+.variable-or-property:focus > .title > label {
+  color: inherit !important;
 }
 
-.variables-view-property:not(:focus) > .title > .name {
-  color: #E7ADE7;
-}
-
-/* Token value colors */
-
-.variable-or-property:not(:focus) > .title > .token-undefined {
-  color: #8050B0;
-}
-
-.variable-or-property:not(:focus) > .title > .token-null {
-  color: #008484;
-}
-
-.variable-or-property:not(:focus) > .title > .token-boolean {
-  color: #FFCF00;
-}
-
-.variable-or-property:not(:focus) > .title > .token-number {
-  color: #E7ADE7;
-}
-
-.variable-or-property:not(:focus) > .title > .token-string {
-  color: #9C9CFF;
-}
-
-.variable-or-property:not(:focus) > .title > .token-other {
-  color: #FF9F00;
-}
 
 /* Custom configurable/enumerable/writable or frozen/sealed/extensible
  * variables and properties */
 
 .variable-or-property[non-enumerable]:not([self]):not([exception]):not([return]):not([scope]) > .title > .name {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .variable-or-property[non-configurable] > .title > .name {
@@ -536,6 +493,10 @@
 
 .variable-or-property[non-writable] > .title > .name {
   border-bottom: 1px dashed #FF0000;
+}
+
+.variable-or-property[safe-getter] > .title > .name {
+  border-bottom: 1px dashed #A09090;
 }
 
 .variable-or-property-non-writable-icon {
@@ -562,24 +523,6 @@
 .variable-or-property:not(:focus) > .title > .variable-or-property-sealed-label,
 .variable-or-property:not(:focus) > .title > .variable-or-property-non-extensible-label {
   color: #A09090;
-}
-
-/* Special variables and properties */
-
-.variable-or-property[safe-getter] > .title > .name {
-  border-bottom: 1px dashed #A09090;
-}
-
-.variable-or-property[exception]:not(:focus) > .title > .name {
-  color: #FF0000;
-}
-
-.variable-or-property[return]:not(:focus) > .title > .name {
-  color: #008484;
-}
-
-.variable-or-property[scope]:not(:focus) > .title > .name {
-  color: #9C9CFF;
 }
 
 /* Aligned values */
@@ -664,13 +607,13 @@
 .element-name-input {
   -moz-margin-start: -2px !important;
   -moz-margin-end: 2px !important;
-  color: #E7ADE7;
   font-weight: 600;
 }
 
 .element-value-input,
 .element-name-input {
   border: 1px solid #008484 !important;
+  color: inherit;
 }
 
 /* Variables and properties searching */

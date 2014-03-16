@@ -51,8 +51,9 @@
   background-color: rgba(0,0,0,0.5);
 }
 
-.theme-bg-contrast { /* contrast bg color to attract attention on a container */
-  background: #404000;
+.theme-bg-contrast,
+.variable-or-property[changed] { /* contrast bg color to attract attention on a container */
+  background: #402800;
 }
 
 .theme-link,
@@ -72,7 +73,9 @@
 .theme-comment,
 .cm-s-mozilla .cm-meta,
 .cm-s-mozilla .cm-hr,
-.cm-s-mozilla .cm-comment { /* original: grey */
+.cm-s-mozilla .cm-comment,
+.variable-or-property .token-undefined,
+.variable-or-property .token-null { /* original: grey */
   color: #A09090;
 }
 
@@ -87,7 +90,9 @@
 }
 
 .theme-fg-color1,
-.cm-s-mozilla .cm-number { /* original: green */
+.cm-s-mozilla .cm-number,
+.variable-or-property .token-number,
+.variable-or-property[return] > .title > .name { /* original: green */
   color: #008484;
 }
 
@@ -96,14 +101,18 @@
 .cm-s-mozilla .cm-variable,
 .cm-s-mozilla .cm-def,
 .cm-s-mozilla .cm-property,
-.cm-s-mozilla .cm-qualifier { /* original: blue */
+.cm-s-mozilla .cm-qualifier,
+.variables-view-variable > .title > .name,
+.variable-or-property[scope] > .title > .name { /* original: blue */
   color: #9C9CFF;
 }
 
 .theme-fg-color3,
 .cm-s-mozilla .cm-builtin,
 .cm-s-mozilla .cm-tag,
-.cm-s-mozilla .cm-header { /* original: pink/lavender */
+.cm-s-mozilla .cm-header,
+.variables-view-property > .title > .name,
+.variable-or-property[safe-getter] > .title > .name { /* original: pink/lavender */
   color: #E7ADE7;
 }
 
@@ -119,14 +128,17 @@
 
 .theme-fg-color6,
 .cm-s-mozilla .cm-string,
-.cm-s-mozilla .cm-string-2 { /* original: Orange */
+.cm-s-mozilla .cm-string-2,
+.variable-or-property .token-string { /* original: Orange */
   color: #E7ADE7;
 }
 
 .theme-fg-color7,
 .cm-s-mozilla .cm-atom,
 .cm-s-mozilla .cm-quote,
-.cm-s-mozilla .cm-error { /* original: Red */
+.cm-s-mozilla .cm-error,
+.variable-or-property .token-boolean,
+.variable-or-property[exception] > .title > .name { /* original: Red */
   color: #FF0000;
 }
 
@@ -143,6 +155,12 @@
 .computedview-colorswatch,
 .markupview-colorswatch {
 /*  box-shadow: 0 0 0 1px rgba(0,0,0,0.5); */
+}
+
+.variables-view-scope:focus > .title,
+.variable-or-property:focus > .title {
+  background-color: #008484; /* fg-color2 */
+  color: #000000;
 }
 
 /* CodeMirror specific styles.
@@ -468,6 +486,9 @@ devtools-menulist:-moz-focusring,
 .devtools-sidebar-tabs > tabs > tab {
 }
 
+.devtools-sidebar-tabs > tabs > tab:not(:last-of-type) {
+}
+
 .devtools-sidebar-tabs:-moz-locale-dir(rtl) > tabs > tab {
 }
 
@@ -649,6 +670,12 @@ devtools-menulist:-moz-focusring,
   -moz-padding-start: 3px;
   background-color: #C09070;
   border-radius: 8px 8px 0 0;
+}
+
+.devtools-tab:first-child {
+}
+
+.devtools-tab:last-child {
 }
 
 .devtools-tab > image {

@@ -61,8 +61,7 @@
 
 /* Toolbars */
 
-.devtools-toolbar {
-  height: 26px;
+.splitview-main > .devtools-toolbar {
   background-origin: border-box;
   background-clip: border-box;
 }
@@ -83,7 +82,7 @@
   border-left: 1px solid #008484;
 }
 
-.devtools-toolbarbutton {
+.splitview-main > .devtools-toolbarbutton {
   width: auto;
   min-width: 48px;
   min-height: 0;

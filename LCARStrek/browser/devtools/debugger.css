@@ -12,11 +12,15 @@ window {
   min-width: 50px;
 }
 
+#sources-pane > tabs {
+  -moz-border-end: 1px solid #9C9CFF; /* Match the sources list's dark margin. */
+}
+
 #sources-and-editor-splitter {
   -moz-border-start-color: transparent;
 }
 
-#sources-toolbar .devtools-toolbarbutton {
+#sources-toolbar > #sources-controls > .devtools-toolbarbutton {
   min-width: 32px;
 }
 
@@ -84,10 +88,12 @@ window {
   padding: 2px;
 }
 
+/* .theme-light / .theme-dark */
 .list-widget-item:not(.selected):not(.empty):hover {
 /*  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.85)), Highlight;*/
 }
 
+/* .theme-light / .theme-dark */
 .list-widget-item.selected.light {
 /*  background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.8)), Highlight;
   color: #000;*/
@@ -103,7 +109,11 @@ window {
   /* padding: 4px; */
 }
 
-/* Stack frames view */
+/* Breadcrumbs stack frames view */
+
+.breadcrumbs-widget-item {
+  max-width: none;
+}
 
 #stackframes {
   min-height: 25px;
@@ -113,15 +123,42 @@ window {
   -moz-padding-start: 4px;
 }
 
-.dbg-stackframe-menuitem[checked] {
-  margin-top: 3px;
-  margin-bottom: 3px;
-  outline: 1px solid #008484;
-  font-weight: 600;
+/* Classic stack frames view */
+
+.dbg-classic-stackframe {
+  display: block;
+  padding: 4px;
 }
 
-.dbg-stackframe-menuitem-details {
-  -moz-padding-start: 16px;
+.dbg-classic-stackframe-title {
+  font-weight: 600;
+  color: #9C9CFF;
+}
+
+.dbg-classic-stackframe-details:-moz-locale-dir(ltr) {
+  float: right;
+}
+
+.dbg-classic-stackframe-details:-moz-locale-dir(rtl) {
+  float: left;
+}
+
+.dbg-classic-stackframe-details-url {
+  max-width: 90%;
+  text-align: end;
+  color: #3333FF;
+}
+
+.dbg-classic-stackframe-details-sep {
+  color: #A09090;
+}
+
+.dbg-classic-stackframe-details-line {
+  color: #9C9CFF;
+}
+
+#callstack-list .side-menu-widget-item.selected label {
+  color: #FFCF00;
 }
 
 /* Sources and breakpoints view */
@@ -181,8 +218,9 @@ window {
   padding: 0 !important;
 }
 
-#instruments-pane > tabpanels > tabpanel {
-  background: #000000;
+#instruments-pane .side-menu-widget-container,
+#instruments-pane .side-menu-widget-empty-notice-container {
+/*  box-shadow: none !important; */
 }
 
 /* Watch expressions view */
@@ -204,6 +242,7 @@ window {
 
 .dbg-expression-input {
   -moz-padding-start: 2px !important;
+  color: inherit;
 }
 
 /* Event listeners view */
@@ -226,6 +265,10 @@ window {
 
 .dbg-event-listener-location {
   color: #E7ADE7;
+}
+
+#event-listeners .side-menu-widget-item.selected {
+  background: none !important;
 }
 
 /* Searchbox and the search operations help panel */
@@ -378,6 +421,11 @@ window {
 
 /* Toolbar controls */
 
+.devtools-sidebar-tabs > tabs > tab {
+/*  min-height: 25px !important;
+  padding: 0 !important; */
+}
+
 #toggle-panes {
   list-style-image: url("chrome://browser/skin/devtools/debugger-expand.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
@@ -493,7 +541,12 @@ window {
   /* To prevent all the margin hacks to hide the sidebar. */
 }
 
-#body[layout=vertical] .side-menu-widget-container {
+#body[layout=vertical] #sources-pane > tabs {
+  -moz-border-end: none;
+}
+
+#body[layout=vertical] .side-menu-widget-container,
+#body[layout=vertical] .side-menu-widget-empty-notice-container {
   box-shadow: none !important;
 }
 

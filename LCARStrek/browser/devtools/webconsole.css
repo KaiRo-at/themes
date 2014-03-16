@@ -321,6 +321,7 @@ a {
 .inlined-variables-view iframe {
  display: block;
   flex: 1;
+  margin-top: 5px;
   margin-bottom: 15px;
   -moz-margin-end: 15px;
   border: 1px solid #9C9CFF;
@@ -382,6 +383,10 @@ a {
   background: #000000; /* mainBackgroundColor */
 }
 
+.theme-dark .inlined-variables-view iframe {
+  border-color: #A09090;
+}
+
 /* Replace these values with CSS variables as available */
 .theme-light .jsterm-input-container {
   background-color: #000000; /* tabToolbarBackgroundColor */
@@ -398,4 +403,8 @@ a {
 
 .theme-light .navigation-marker .url {
   background: #000000; /* mainBackgroundColor */
+}
+
+.theme-light .inlined-variables-view iframe {
+  border-color: #A09090;
 }

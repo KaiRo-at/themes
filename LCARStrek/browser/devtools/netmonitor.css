@@ -297,6 +297,10 @@ window {
 
 /* SideMenuWidget */
 
+.side-menu-widget-container {
+  box-shadow: none !important;
+}
+
 .side-menu-widget-item:nth-child(even) {
   background: rgba(255,159,0,0.1);
 }
