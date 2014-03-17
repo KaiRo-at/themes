@@ -4420,17 +4420,69 @@ notification.pluginVulnerable .messageImage {
 /* === BEGIN customizeMode.inc.css === */
 
 /* Customization mode */
-#nav-bar[customize-entered] > #nav-bar-customization-target {
-  margin: 1px 3px;
+
+#main-window:-moz-any([customize-entering],[customize-entered]) #content-deck {
+  margin: 0 1em 1em;
 }
 
-#nav-bar[customize-entered] > #nav-bar-customization-target,
+#main-window:-moz-any([customize-entering],[customize-entered]) #navigator-toolbox {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#main-window:-moz-any([customize-entering],[customize-exiting]) #tab-view-deck {
+  pointer-events: none;
+}
+
+#main-window[customize-entered] .customization-target:not(:-moz-any(#PanelUI-contents, #TabsToolbar, #toolbar-menubar))::before,
 #PanelUI-contents > .panel-customization-placeholder {
+  -moz-outline-radius: 2.5px;
   outline: 1px dashed transparent;
 }
 
-#main-window[customizing-movingItem] #nav-bar-customization-target,
-#main-window[customizing-movingItem] .panel-customization-placeholder {
+#main-window[customize-entered] .customization-target:not(:-moz-any(#PanelUI-contents, #TabsToolbar, #toolbar-menubar))::before {
+  /* Prevent jumping of tabs when switching a window between inactive and active (bug 853415). */
+  -moz-box-ordinal-group: 0;
+  content: "";
+  display: -moz-box;
+  height: 100%;
+  left: 0;
+  outline-offset: -2px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Shift the TabsToolbar outline up 2px since the #nav-bar is shifted up by 1px and the
+   #TabsToolbar::after is a pixel higher to draw the bottom border of the tabstrip so this makes the
+   offset from the bottom effectively the same as other targets (-2px). */
+#main-window[customize-entered] #TabsToolbar.customization-target::before {
+  top: -2px;
+}
+
+/* The parents of the outline pseudo-elements need to be positioned so that the outline is positioned relative to it. */
+#main-window[customize-entered] .customization-target:not(:-moz-any(#PanelUI-contents, #TabsToolbar, #toolbar-menubar)):hover,
+#main-window[customize-entered] .customization-target[customizing-dragovertarget]:not(:-moz-any(#PanelUI-contents, #TabsToolbar, #toolbar-menubar)),
+#main-window[customize-entered] #nav-bar-customization-target.customization-target {
+  position: relative;
+}
+
+/* Most target outlines are shown on hover and drag over but the panel menu uses
+   placeholders instead. */
+#main-window[customize-entered] .customization-target:not(:-moz-any(#PanelUI-contents, #TabsToolbar, #toolbar-menubar)):hover::before,
+#main-window[customize-entered] .customization-target[customizing-dragovertarget]:not(:-moz-any(#PanelUI-contents, #TabsToolbar, #toolbar-menubar))::before,
+/* nav-bar and panel outlines are always shown */
+#nav-bar[showoutline=true] > #nav-bar-customization-target.customization-target::before {
+  outline-color: #A09090;
+}
+
+#nav-bar[showoutline=true] > #nav-bar-customization-target.customization-target::before {
+  transition: outline-color 250ms linear;
+}
+
+#PanelUI-contents[showoutline=true] > .panel-customization-placeholder {
+  transition: outline-color 250ms linear;
   outline-color: #9C9CFF;
 }
 
@@ -4439,7 +4491,7 @@ notification.pluginVulnerable .messageImage {
   outline-offset: -5px;
 }
 
-#main-window[customize-entered] .customization-target {
+#main-window[customizing] .customization-target:not(#PanelUI-contents) {
   min-width: 100px;
   padding-left: 10px;
   padding-right: 10px;
@@ -4449,8 +4501,9 @@ notification.pluginVulnerable .messageImage {
   background-color: #000000;
 }
 
-#customization-palette-container {
-  padding: 25px;
+#customization-palette,
+#customization-empty {
+  padding: 0 15px 15px;
 }
 
 #customization-header {
@@ -4459,10 +4512,51 @@ notification.pluginVulnerable .messageImage {
   color: #9C9CFF;
   font-weight: lighter;
   margin-bottom: 1em;
+  padding: 15px 15px 0;
 }
 
 #customization-panel-container {
-  padding: 15px 25px 25px;
+  padding: 10px 10px 0px;
+}
+
+#customization-footer {
+  /*background-color: rgb(236,236,236);*/
+  border-top: 1px solid #9C9CFF;
+  padding: 15px;
+}
+
+.customizationmode-button {
+  margin: 0;
+}
+
+.customizationmode-button:hover {
+}
+
+.customizationmode-button[disabled="true"] {
+}
+
+#customization-titlebar-visibility-button {
+  list-style-image: url("chrome://browser/skin/customizableui/customize-titleBar-toggle.png");
+  -moz-image-region: rect(0, 24px, 24px, 0);
+  padding: 2px 7px;
+  -moz-margin-end: 10px;
+}
+
+#customization-titlebar-visibility-button > .button-box > .button-text {
+  /* Sadly, button.css thinks its margins are perfect for everyone. */
+  -moz-margin-start: 6px !important;
+}
+
+#customization-titlebar-visibility-button[checked] {
+  -moz-image-region: rect(0, 48px, 24px, 24px);
+  background-color: #008484;
+}
+
+#customization-undo-reset-button {
+  -moz-margin-end: 10px;
+}
+
+#main-window[customize-entered] #customization-panel-container {
   background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
   background-position: left top;
   background-repeat: repeat;
@@ -4470,10 +4564,8 @@ notification.pluginVulnerable .messageImage {
   background-attachment: fixed;
 }
 
-toolbarpaletteitem {
-  transition: background-color, border-color, box-shadow, border-width;
-  transition-duration: 10ms, 10ms, 10ms, 250ms;
-  transition-timing-function: linear, linear, linear, ease-in-out;
+toolbarpaletteitem[place="toolbar"] {
+  transition: border-width 250ms ease-in-out;
 }
 
 toolbarpaletteitem[mousedown] {
@@ -4485,23 +4577,37 @@ toolbarpaletteitem[mousedown] {
 .panel-customization-placeholder,
 toolbarpaletteitem[place="palette"],
 toolbarpaletteitem[place="panel"] {
-  transition: background-color, border-color, box-shadow, transform;
-  transition-duration: 10ms, 10ms, 10ms, 250ms;
-  transition-timing-function: linear, linear, linear, ease-in-out;
+  transition: transform .3s ease-in-out;
 }
 
+#customization-palette {
+  transition: opacity .3s ease-in-out;
+  opacity: 0;
+}
+
+#customization-palette[showing="true"] {
+  opacity: 1;
+}
+
+toolbarpaletteitem[notransition].panel-customization-placeholder,
+toolbarpaletteitem[notransition][place="toolbar"],
 toolbarpaletteitem[notransition][place="palette"],
 toolbarpaletteitem[notransition][place="panel"] {
-  transition: background-color, border-color, box-shadow;
-  transition-duration: 10ms, 10ms, 10ms;
-  transition-timing-function: linear, linear, linear;
+  transition: none;
 }
 
-toolbarpaletteitem > toolbarbutton > .toolbarbutton-icon {
-  transition: transform 50ms ease-in-out;
+toolbarpaletteitem > toolbarbutton > .toolbarbutton-icon,
+toolbarpaletteitem > toolbaritem.panel-wide-item,
+toolbarpaletteitem > toolbarbutton[type="menu-button"] {
+  transition: transform .3s cubic-bezier(.6, 2, .75, 1.5) !important;
 }
 
 toolbarpaletteitem[mousedown] > toolbarbutton > .toolbarbutton-icon {
+  transform: scale(1.3);
+}
+
+toolbarpaletteitem[mousedown] > toolbaritem.panel-wide-item,
+toolbarpaletteitem[mousedown] > toolbarbutton[type="menu-button"] {
   transform: scale(1.1);
 }
 
@@ -4517,44 +4623,42 @@ toolbarpaletteitem[place="toolbar"] {
   margin-bottom: 25px;
 }
 
-/* Remove |:-moz-any(#customization-palette, #panelUI-contents)| selector when Australis lands - this makes it only apply post-Australis as those elements only exist there */
-#customization-palette > #wrapper-edit-controls,
-:-moz-any(#customization-palette, #panelUI-contents) > #customization-palette > #wrapper-zoom-controls {
-  width: 225px;
-}
-
-#wrapper-edit-controls[place="palette"] > .toolbarpaletteitem-box,
-#wrapper-zoom-controls[place="palette"] > .toolbarpaletteitem-box {
-  width: 225px;
-  max-width: 225px;
-}
-
 #wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton,
 #wrapper-edit-controls[place="palette"] > #edit-controls > separator,
-:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton,
-:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > separator {
-  margin-top: 24px;
+#wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton,
+#wrapper-zoom-controls[place="palette"] > #zoom-controls > separator {
+  margin-top: 20px;
 }
 
+/* Remove |:-moz-any(#customization-palette, #panelUI-contents)| selector when Australis lands - this makes it only apply post-Australis as those elements only exist there */
 #wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton,
 :-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton {
   margin-left: 0;
   margin-right: 0;
-  max-width: 70px;
-  min-width: 70px;
+  max-width: 24px;
+  min-width: 24px;
   max-height: 24px;
   height: 24px;
-}
-
-#wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton > .toolbarbutton-text,
-:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > #zoom-reset-button > .toolbarbutton-text {
-  display: inline;
+  padding: 4px;
 }
 
 #wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton > .toolbarbutton-icon,
-:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton > .toolbarbutton-icon {
-  margin: 0;
-  -moz-margin-start: 5px;
+#wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton > .toolbarbutton-icon {
+  width: 16px;
+}
+
+#wrapper-edit-controls > #edit-controls > toolbarbutton > .toolbarbutton-icon {
+  opacity: 1; /* To ensure these buttons always look enabled in customize mode */
+}
+
+:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > #zoom-reset-button,
+:-moz-any(#customization-palette, #panelUI-contents) > #wrapper-zoom-controls[place="palette"] > #zoom-controls > #zoom-reset-button + separator {
+  display: none;
+}
+
+#wrapper-personal-bookmarks:not([place="toolbar"]) > #personal-bookmarks {
+  -moz-box-pack: center;
+  min-height: 48px;
 }
 
 #customization-palette > toolbarpaletteitem > label {
@@ -4564,6 +4668,82 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 /* === END customizeMode.inc.css === */
+
+/* === BEGIN customizeTip.inc.css === */
+
+#customization-tipPanel > .panel-arrowcontainer > .panel-arrowcontent {
+  padding: 0;
+  margin: 0;
+  min-width: 400px;
+  max-width: 1000px;
+  min-height: 200px;
+  border-radius: 3px;
+/*  background-image: linear-gradient(90deg, #a0dfff 0%, #ceeeff 100%);*/
+  border: 1px solid #9C9CFF;
+}
+
+#customization-tipPanel > .panel-arrowcontainer > .panel-arrowcontent:-moz-locale-dir(rtl) {
+/*  background-image: linear-gradient(90deg, #ceeeff 0%, #a0dfff 100%);*/
+}
+
+.customization-tipPanel-infoBox {
+  margin: 20px 25px 25px;
+  width: 25px;
+  background-image: url("chrome://browser/skin/customizableui/info-icon-customizeTip.png");
+  background-repeat: no-repeat;
+}
+
+.customization-tipPanel-content {
+  margin: 25px 0;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.customization-tipPanel-em {
+  margin: 0;
+  font-weight: bold;
+}
+
+.customization-tipPanel-contentImage {
+  margin-top: 25px;
+  list-style-image: url("chrome://browser/skin/customizableui/customize-illustration.png");
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 190px;
+  max-height: 190px;
+  display: -moz-box;
+}
+
+.customization-tipPanel-contentImage:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/customizableui/customize-illustration-rtl.png");
+}
+
+.customization-tipPanel-link {
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #3333FF;
+  margin: 0;
+  cursor: pointer;
+}
+
+.customization-tipPanel-link > .button-box > .button-text {
+  margin: 0 !important;
+}
+
+.customization-tipPanel-closeBox > .close-icon {
+  -moz-appearance: none;
+  border: 0;
+  -moz-margin-end: -25px;
+}
+
+#customization-tipPanel > .panel-arrowcontainer > .panel-arrowbox > .panel-arrow[side="left"],
+#customization-tipPanel > .panel-arrowcontainer > .panel-arrowbox > .panel-arrow[side="right"] {
+  list-style-image: url("chrome://browser/skin/customizableui/panelarrow-customizeTip.png");
+}
+
+/* === END customizeTip.inc.css === */
 
 #main-window[customizing] {
   background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
