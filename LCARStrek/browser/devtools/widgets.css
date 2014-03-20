@@ -367,6 +367,10 @@
 
 /* SideMenuWidget items contents */
 
+.side-menu-widget-item-contents {
+  padding: 2px;
+}
+
 .side-menu-widget-item-label {
   padding: 4px 0px;
 }
@@ -632,7 +636,7 @@
 .arrow {
   background: url("chrome://global/skin/tree/twisty-closed.gif") center center no-repeat;
   width: 9px;
-  height: 20px;
+  height: 16px;
   -moz-margin-start: 5px;
   -moz-margin-end: 5px;
 }
@@ -642,7 +646,7 @@
 }
 
 .arrow[open] {
-  background-image: url("chrome://global/skin/tree/twisty-open.png");
+  background-image: url("chrome://global/skin/tree/twisty-open.gif");
 }
 
 .variables-view-scope > .title > .arrow[open] {

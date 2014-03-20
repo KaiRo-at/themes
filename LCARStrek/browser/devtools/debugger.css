@@ -214,8 +214,8 @@ window {
 /* Instruments pane (watch expressions, variables, event listeners...) */
 
 #instruments-pane > tabs > tab {
-  min-height: 25px !important;
-  padding: 0 !important;
+/*  min-height: 25px !important;
+  padding: 0 !important;*/
 }
 
 #instruments-pane .side-menu-widget-container,
