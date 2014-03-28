@@ -49,11 +49,17 @@ menubar {
   background-color: #9C9CFF;
 }
 
+/* Hides the titlebar-placeholder underneath the window caption buttons when we
+   are not autohiding the menubar. */
+#toolbar-menubar:not([autohide="true"]) + #TabsToolbar > .titlebar-placeholder[type="caption-buttons"] {
+  display: none;
+}
+
 /* We want a 4px gap between the TabsToolbar and the toolbar-menubar when the
    toolbar-menu is displayed, and a 16px gap when it is not. 1px is taken care
    of by the (light) outer shadow of the tab, the remaining 3/15 are these margins. */
-#toolbar-menubar:not([autohide="true"]) ~ #TabsToolbar,
-#toolbar-menubar[autohide="true"]:not([inactive]) ~ #TabsToolbar {
+#toolbar-menubar:not([moz-collapsed=true]):not([autohide="true"]) ~ #TabsToolbar,
+#toolbar-menubar:not([moz-collapsed=true])[autohide="true"]:not([inactive]) ~ #TabsToolbar {
 /*  margin-top: 3px;*/
 }
 
@@ -70,6 +76,13 @@ menubar {
 #main-window[tabsintitlebar] #toolbar-menubar .toolbar-endcap {
   /* the titlebar buttons are shown right over the endcap but we have no power over the buttonbox position just for this case, so hide the endcap */
   display: none;
+}
+
+#main-window[customize-entered][tabsintitlebar]:not([inFullscreen]) #toolbar-menubar[customizing-dragovertarget].customization-target::before,
+#main-window[customize-entered][tabsintitlebar]:not([inFullscreen]) #TabsToolbar[customizing-dragovertarget].customization-target::before,
+#main-window[customize-entered][tabsintitlebar]:not([inFullscreen]) #toolbar-menubar.customization-target:hover::before,
+#main-window[customize-entered][tabsintitlebar]:not([inFullscreen]) #TabsToolbar.customization-target:hover::before {
+  outline-color: #A09090;
 }
 
 #navigator-toolbox {
@@ -462,10 +475,58 @@ menubar {
   background: url("chrome://communicator/skin/bookmarks/bookmarksToolbar.png") no-repeat center;
 }
 
-.bookmarks-toolbar-customize,
 #bookmarks-toolbar-placeholder {
-  max-width: 15em !important;
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmarksToolbar.png") !important;
+}
+
+toolbarpaletteitem[place="palette"] > #personal-bookmarks > #bookmarks-toolbar-placeholder,
+#personal-bookmarks[cui-areatype="menu-panel"] > #bookmarks-toolbar-placeholder {
+  list-style-image: url("chrome://browser/skin/places/bookmarksToolbar-menuPanel.png") !important;
+}
+
+/* ----- BOOKMARK STAR ANIMATION ----- */
+
+@keyframes animation-bookmarkAdded {
+  from { transform: rotate(0deg) translateX(-16px) rotate(0deg) scale(1); opacity: 0; }
+  60%  { transform: rotate(180deg) translateX(-16px) rotate(-180deg) scale(2.2); opacity: 1; }
+  80%  { opacity: 1; }
+  to   { transform: rotate(180deg) translateX(-16px) rotate(-180deg) scale(1); opacity: 0; }
+}
+
+@keyframes animation-bookmarkPulse {
+  from { transform: scale(1); }
+  50%  { transform: scale(1.3); }
+  to   { transform: scale(1); }
+}
+
+#bookmarked-notification-container {
+  min-height: 1px;
+  min-width: 1px;
+  height: 1px;
+  margin-bottom: -1px;
+  z-index: 5;
+  position: relative;
+}
+
+#bookmarked-notification {
+  background-size: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  opacity: 0;
+}
+
+#bookmarked-notification-anchor[notification="finish"] > #bookmarked-notification {
+  background-image: url("chrome://browser/skin/places/bookmarks-notification-finish.png");
+  animation: animation-bookmarkAdded 800ms;
+  animation-timing-function: ease, ease, ease;
+}
+
+#bookmarks-menu-button[notification="finish"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  animation: animation-bookmarkPulse 300ms;
+  animation-delay: 600ms;
+  animation-timing-function: ease-out;
 }
 
 /* ::::: bookmark menus ::::: */
@@ -476,7 +537,7 @@ menuitem.bookmark-item {
   max-width: 32em;
 }
 
-.bookmark-item > .menu-iconic-left {
+.bookmark-item:not(.subviewbutton) > .menu-iconic-left {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -1242,7 +1303,8 @@ menuitem.bookmark-item {
 
 /* === END menupanel.inc.css === */
 
-.toolbarbutton-1 {
+/* the selector makes it only apply pre-Australis as iconsize and palette-box or addon-bar don't exist afterwards */
+:-moz-any(#palette-box, #navigator-toolbox[iconsize], #addon-bar) .toolbarbutton-1 {
   list-style-image: url("chrome://browser/skin/FxToolbar.png");
 }
 
@@ -1274,6 +1336,16 @@ menuitem.bookmark-item {
   padding-bottom: 0px;
   -moz-padding-start: 3px;
   -moz-padding-end: 1px;
+}
+
+/* Help SDK icons fit: */
+toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
+  width: 16px;
+}
+
+#nav-bar toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
+  /* XXXgijs box models strike again: this is 16px + 2 * 7px padding + 2 * 1px border (from the rules above) */
+  width: 32px;
 }
 
 /* ::::: small primary toolbar buttons ::::: */
@@ -2053,6 +2125,9 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   -moz-margin-start: 0;
 }
 
+#urlbar-display-box {
+}
+
 #urlbar-display {
   -moz-border-end: 1px solid #9C9CFF;
   -moz-margin-end: 3px;
@@ -2071,6 +2146,16 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 #identity-box {
   border-radius: 2px;
   font-size: .9em;
+}
+
+#identity-box:-moz-locale-dir(ltr) {
+/*  border-top-left-radius: 1.5px;
+  border-bottom-left-radius: 1.5px;*/
+}
+
+#identity-box:-moz-locale-dir(rtl) {
+/*  border-top-right-radius: 1.5px;
+  border-bottom-right-radius: 1.5px;*/
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
@@ -2701,12 +2786,18 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 /* Tabstrip */
 
-/* Remove selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
-#navigator-toolbox:not([iconsize]) > #TabsToolbar,
-#TabsToolbar {
+/* Remove selector when Australis lands - this makes it only apply pre-Australis as iconsize only exists there */
+#navigator-toolbox[iconsize] > #TabsToolbar {
   min-height: 0;
   padding: 0;
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
+}
+
+/* Remove selector when Australis lands - this makes it only apply post-Australis as iconsize doesn't exist there */
+#navigator-toolbox:not([iconsize]) > #TabsToolbar {
+  min-height: 0;
+  padding: 0;
+  -moz-binding: url("chrome://browser/content/customizableui/toolbar.xml#toolbar");
 }
 
 #TabsToolbar .toolbar-holder {
@@ -2850,7 +2941,8 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 .tabs-newtab-button,
 #TabsToolbar > #new-tab-button,
-#TabsToolbar > toolbarpaletteitem > #new-tab-button {
+#TabsToolbar > toolbarpaletteitem > #new-tab-button,
+#TabsToolbar > toolbarpaletteitem > #new-tab-button[cui-areatype="toolbar"] {
   list-style-image: url("chrome://browser/skin/tabbrowser/newtab.png");
   -moz-image-region: rect(0, 16px, 18px, 0);
 }
@@ -4401,22 +4493,6 @@ notification.pluginVulnerable .messageImage {
 
 /* === END plugin-doorhanger.inc.css === */
 
-#main-window[privatebrowsingmode=temporary] #toolbar-menubar {
-  background-image: url("chrome://browser/skin/privatebrowsing-dark.png");
-  background-position: top right;
-  background-repeat: no-repeat;
-}
-
-#main-window[privatebrowsingmode=temporary] #toolbar-menubar:-moz-locale-dir(rtl) {
-  background-position: top left;
-}
-
-#main-window[privatebrowsingmode=temporary] #appmenu-button > .button-box > .box-inherit > .button-icon {
-  list-style-image: url("chrome://browser/skin/privatebrowsing-light.png");
-  width: 20px;
-  height: 16px;
-}
-
 /* === BEGIN customizeMode.inc.css === */
 
 /* Customization mode */
@@ -4458,7 +4534,7 @@ notification.pluginVulnerable .messageImage {
    #TabsToolbar::after is a pixel higher to draw the bottom border of the tabstrip so this makes the
    offset from the bottom effectively the same as other targets (-2px). */
 #main-window[customize-entered] #TabsToolbar.customization-target::before {
-  top: -2px;
+/*  top: -2px;*/
 }
 
 /* The parents of the outline pseudo-elements need to be positioned so that the outline is positioned relative to it. */
@@ -4493,8 +4569,12 @@ notification.pluginVulnerable .messageImage {
 
 #main-window[customizing] .customization-target:not(#PanelUI-contents) {
   min-width: 100px;
-  padding-left: 10px;
-  padding-right: 10px;
+/*  padding-left: 10px;
+  padding-right: 10px;*/
+}
+
+#main-window:-moz-any([customize-entering],[customize-entered]) #tab-view-deck {
+  padding: 0 2em 2em;
 }
 
 #customization-container {
@@ -4745,19 +4825,41 @@ toolbarpaletteitem[place="toolbar"] {
 
 /* === END customizeTip.inc.css === */
 
-#main-window[customizing] {
+#main-window[customize-entered] {
   background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
   background-attachment: fixed;
-}
-
-#main-window:-moz-any([customize-entering],[customize-entered]) #tab-view-deck {
-  padding: 0 2em 2em;
 }
 
 #customization-container {
   border-left: 1px solid #9C9CFF;
   border-right: 1px solid #9C9CFF;
   background-clip: padding-box;
+}
+
+#customization-tipPanel > .panel-arrowcontainer > .panel-arrowbox > .panel-arrow[side="left"] {
+  margin-right: -2px;
+}
+
+#customization-tipPanel > .panel-arrowcontainer > .panel-arrowbox > .panel-arrow[side="right"] {
+  margin-left: -2px;
+}
+
+/* End customization mode */
+
+#main-window[privatebrowsingmode=temporary] #toolbar-menubar {
+  background-image: url("chrome://browser/skin/privatebrowsing-dark.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+}
+
+#main-window[privatebrowsingmode=temporary] #toolbar-menubar:-moz-locale-dir(rtl) {
+  background-position: top left;
+}
+
+#main-window[privatebrowsingmode=temporary] #appmenu-button > .button-box > .box-inherit > .button-icon {
+  list-style-image: url("chrome://browser/skin/privatebrowsing-light.png");
+  width: 20px;
+  height: 16px;
 }
 
 #main-window[privatebrowsingmode=temporary] #TabsToolbar::after {
