@@ -20,22 +20,37 @@ window {
   -moz-border-start-color: transparent;
 }
 
-#sources-toolbar > #sources-controls > .devtools-toolbarbutton {
+#sources-toolbar > .devtools-toolbarbutton,
+#sources-controls > .devtools-toolbarbutton {
   min-width: 32px;
+}
+
+#black-box {
+  list-style-image: url("debugger-blackbox.png");
 }
 
 #pretty-print {
   font-weight: bold;
 }
 
-#black-box {
-  list-style-image: url("debugger-blackbox.png");
+#toggle-breakpoints {
+  list-style-image: url("debugger-toggleBreakpoints.png");
+}
+
+#sources-toolbar .devtools-toolbarbutton:not([label]) {
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
-#black-box[checked],
-#black-box:hover {
+#sources-toolbar .devtools-toolbarbutton:not([label]):hover {
+  -moz-image-region: rect(16px, 16px, 32px, 0px);
+}
+
+#sources-toolbar .devtools-toolbarbutton:not([label])[checked] {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#sources-toolbar .devtools-toolbarbutton:not([label])[checked]:hover {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
 }
 
 #sources .black-boxed {
