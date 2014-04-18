@@ -481,7 +481,10 @@ menuitem.bookmark-item {
 }
 
 #bookmarks-menu-button[cui-areatype="toolbar"][starred]:hover,
-#bookmarks-menu-button[cui-areatype="toolbar"][starred][open="true"] {
+#bookmarks-menu-button[cui-areatype="toolbar"][starred][open="true"],
+#bookmarks-menu-button[cui-areatype="toolbar"][starred] > .toolbarbutton-menubutton-button[open="true"] {
+  /* When starred and clicked (for edit/delete dialog),
+   * then only the menubutton-button itself is open, but not the whole menubutton. */
   -moz-image-region: rect(18px, 162px, 36px, 144px);
 }
 

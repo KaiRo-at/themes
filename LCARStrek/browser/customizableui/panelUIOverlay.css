@@ -462,13 +462,11 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-quit:not([disabled]):hover {
-/*  background-color: #d94141;
-  outline-color: #c23a3a;*/
+  background-color: #FF0000;
 }
 
 #PanelUI-quit:not([disabled]):hover:active {
-/*  background-color: #ad3434;
-  outline-color: #992e2e;*/
+  background-color: #FF9F00;
 }
 
 #customization-panelHolder #PanelUI-customize {
