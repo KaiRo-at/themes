@@ -20,7 +20,7 @@ toolbar {
 
 menubar,
 toolbar[type="menubar"] {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#grippymenubar");
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#grippytoolbar-menubar");
 }
 
 .toolbar-primary {

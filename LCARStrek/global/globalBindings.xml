@@ -212,7 +212,7 @@
     </content>
   </binding>
 
-  <binding id="grippymenubar" extends="chrome://communicator/content/bindings/toolbar.xml#grippymenubar">
+  <binding id="grippytoolbar-menubar" extends="chrome://communicator/content/bindings/toolbar.xml#grippytoolbar-menubar">
     <resources>
       <stylesheet src="chrome://global/skin/toolbar.css"/>
     </resources>
