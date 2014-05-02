@@ -422,18 +422,27 @@ devtools-menulist:-moz-focusring,
 /* Close button */
 
 .devtools-closebutton {
-  list-style-image: url("chrome://global/skin/icons/close-button.gif");
   min-width: 16px;
   width: 16px;
 }
 
-.devtools-closebutton > .toolbarbutton-text {
-  display: none;
+.devtools-closebutton > image {
+  width: 16px;
+  height: 16px;
+  -moz-appearance: none;
+  background-size: 32px 16px;
+  background-image: url("chrome://browser/skin/devtools/close@2x.png");
+  background-position: 0 center;
+  background-repeat: no-repeat;
 }
 
-.devtools-closebutton:hover,
-.devtools-closebutton:hover:active {
-  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+.devtools-closebutton:hover > image,
+.devtools-closebutton:hover:active > image {
+  background-position: -16px center;
+}
+
+.devtools-closebutton > .toolbarbutton-text {
+  display: none;
 }
 
 /* In-tools sidebar */
@@ -526,31 +535,28 @@ devtools-menulist:-moz-focusring,
 /*  padding: 1px 3px; */
 }
 
-#toolbox-dock-bottom {
-  list-style-image: url("chrome://browser/skin/devtools/dock-bottom.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+#toolbox-dock-buttons > toolbarbutton > image {
+  width: 16px;
+  height: 16px;
+  background-size: 32px 16px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+}
+ 
+#toolbox-dock-buttons > toolbarbutton:hover > image {
+  background-position: -16px center;
+}
+ 
+#toolbox-dock-bottom > image {
+  background-image: url("chrome://browser/skin/devtools/dock-bottom@2x.png");
+}
+ 
+#toolbox-dock-side > image {
+  background-image: url("chrome://browser/skin/devtools/dock-side@2x.png");
 }
 
-#toolbox-dock-bottom:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-#toolbox-dock-side {
-  list-style-image: url("chrome://browser/skin/devtools/dock-side.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-#toolbox-dock-side:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-#toolbox-dock-window {
-  list-style-image: url("chrome://browser/skin/devtools/undock.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-#toolbox-dock-window:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+#toolbox-dock-window > image {
+  background-image: url("chrome://browser/skin/devtools/undock@2x.png");
 }
 
 #toolbox-dock-window,
@@ -579,67 +585,46 @@ devtools-menulist:-moz-focusring,
 .command-button:hover:active {
 }
 
-#command-button-paintflashing {
-  list-style-image: url("chrome://browser/skin/devtools/command-paintflashing.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+.command-button > image {
+  width: 16px;
+  height: 16px;
+  background-size: 32px 16px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
 }
 
-#command-button-paintflashing:hover,
-#command-button-paintflashing:hover:active,
-#command-button-paintflashing[checked=true] {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+.command-button:hover > image,
+.command-button:hover:active > image,
+.command-button[checked=true] > image {
+  background-position: -16px center;
 }
 
-#command-button-responsive {
-  list-style-image: url("chrome://browser/skin/devtools/command-responsivemode.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+#command-button-paintflashing > image {
+  background-image: url("chrome://browser/skin/devtools/command-paintflashing@2x.png");
 }
 
-#command-button-responsive:hover,
-#command-button-responsive:hover:active,
-#command-button-responsive[checked=true] {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+#command-button-responsive > image {
+  background-image: url("chrome://browser/skin/devtools/command-responsivemode@2x.png");
 }
 
-#command-button-tilt {
-  list-style-image: url("chrome://browser/skin/devtools/command-tilt.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+#command-button-tilt > image {
+  background-image: url("chrome://browser/skin/devtools/command-tilt@2x.png");
 }
 
-#command-button-tilt:hover,
-#command-button-tilt:hover:active,
-#command-button-tilt[checked=true] {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+#command-button-scratchpad > image {
+  background-image: url("chrome://browser/skin/devtools/command-scratchpad@2x.png");
 }
 
-#command-button-scratchpad {
-  list-style-image: url("chrome://browser/skin/devtools/command-scratchpad.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+#command-button-pick > image {
+  background-image: url("chrome://browser/skin/devtools/command-pick@2x.png");
 }
 
-#command-button-scratchpad:hover,
-#command-button-scratchpad:hover:active {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+#command-button-splitconsole > image {
+  background-image: url("chrome://browser/skin/devtools/command-console@2x.png");
 }
 
-#command-button-pick {
-  list-style-image: url("chrome://browser/skin/devtools/command-pick.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-#command-button-pick:hover,
-#command-button-pick:hover:active {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-#command-button-splitconsole {
-  list-style-image: url("chrome://browser/skin/devtools/command-console.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-#command-button-splitconsole:hover,
-#command-button-splitconsole:hover:active {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+#command-button-eyedropper > image {
+  background-image: url("chrome://browser/skin/devtools/command-eyedropper@2x.png");
 }
 
 /* Tabs */
