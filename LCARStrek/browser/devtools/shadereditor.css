@@ -8,19 +8,12 @@ window {
   padding: 0;
 }
 
-#body {
-  background-color: #000000;
-}
-
-#content {
-  background-color: #000000;
-}
-
 /* Reload and waiting notices */
 
 .notice-container {
-  background-color: #000000;
   margin-top: -50vh;
+
+  background-color: #000000;
   color: #FF9F00;
 }
 
@@ -85,10 +78,6 @@ window {
 
 .side-menu-widget-item-checkbox[checked] .checkbox-check {
   background-position: 0 0;
-}
-
-.side-menu-widget-item-checkbox:not([checked]) ~ .side-menu-widget-item-contents {
-  color: #8050B0;
 }
 
 /* Shader source editors */

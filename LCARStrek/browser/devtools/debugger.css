@@ -6,14 +6,16 @@ window {
   padding: 0;
 }
 
-/* Sources and breakpoints pane */
+/* === BEGIN debugger.inc.css === */
 
-#sources-pane > tabs {
-  -moz-border-end: 1px solid #9C9CFF; /* Match the sources list's dark margin. */
-}
+/* Sources and breakpoints pane */
 
 #sources-pane[selectedIndex="0"] + #sources-and-editor-splitter {
   border-color: transparent;
+}
+
+#sources-pane > tabs {
+  -moz-border-end: 1px solid #9C9CFF; /* Match the splitter color. */
 }
 
 #sources-toolbar > .devtools-toolbarbutton,
@@ -51,6 +53,10 @@ window {
 
 #sources .black-boxed {
   color: #8050B0;
+}
+
+#sources .selected > .black-boxed {
+  color: #000000;
 }
 
 #sources .black-boxed > .dbg-breakpoint {
@@ -106,36 +112,16 @@ window {
   -moz-image-region: rect(0px,32px,16px,16px);
 }
 
-#start-tracing {
-  padding: 4px;
-  margin: 4px;
-}
-
 #clear-tracer {
   /* Make this button as narrow as the text inside it. */
   min-width: 1px;
-}
-
-#tracer-message {
-  /* Prevent the container deck from aquiring the height from this message. */
-  min-height: 1px;
 }
 
 .trace-name {
   -moz-padding-start: 4px !important;
 }
 
-#tracer-traces > scrollbox {
-  overflow: scroll;
-  /* Hack to enable hardware acceleration */
-  transform: translateZ(0);
-}
-
 /* Tracer dark+light theme */
-
-#tracer-message {
-  color: #FF9F00; /* Light foreground text */
-}
 
 .trace-item {
   color: #FF9F00; /* Light foreground text */
@@ -170,33 +156,6 @@ window {
   color: #A09090; /* highlight grey */
 }
 
-/* ListWidget items */
-
-.list-widget-item {
-  padding: 2px;
-}
-
-/* .theme-light / .theme-dark */
-.list-widget-item:not(.selected):not(.empty):hover {
-/*  background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.85)), Highlight;*/
-}
-
-/* .theme-light / .theme-dark */
-.list-widget-item.selected.light {
-/*  background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.8)), Highlight;
-  color: #000;*/
-}
-
-.list-widget-item.selected {
-  background: #008484;
-  color: #FFCF00;
-}
-
-.list-widget-item.empty {
-  color: #8050B0;
-  /* padding: 4px; */
-}
-
 /* Breadcrumbs stack frames view */
 
 .breadcrumbs-widget-item {
@@ -215,7 +174,7 @@ window {
 
 .dbg-classic-stackframe {
   display: block;
-  padding: 4px;
+  padding: 0 4px;
 }
 
 .dbg-classic-stackframe-title {
@@ -302,7 +261,7 @@ window {
 /* Instruments pane (watch expressions, variables, event listeners...) */
 
 #instruments-pane .side-menu-widget-container,
-#instruments-pane .side-menu-widget-empty-notice-container {
+#instruments-pane .side-menu-widget-empty-text {
 /*  box-shadow: none !important; */
 }
 
@@ -320,18 +279,29 @@ window {
 .dbg-expression-arrow {
   width: 16px;
   height: auto;
+  margin: 2px;
   background: -moz-image-rect(url("commandline-icon.png"), 0, 32, 16, 16);
 }
 
 .dbg-expression-input {
-  -moz-padding-start: 2px !important;
   color: inherit;
+}
+
+.dbg-expression-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.dbg-expression-button {
+  color: #9C9CFF; /* Blue highlight color */
 }
 
 /* Event listeners view */
 
 .dbg-event-listener {
-  padding: 4px 8px;
+  padding: 0 8px;
 }
 
 .dbg-event-listener-type {
@@ -414,19 +384,19 @@ window {
 /*  text-shadow: 0 1px #fff;*/
 }
 
-.results-panel-item-pre {
+.results-panel-item-label-before {
   -moz-margin-end: 5px !important;
   color: #A09090;
   cursor: inherit;
 }
 
-.results-panel-item-name {
+.results-panel-item-label {
   color: #9C9CFF;
   font-weight: 600;
   cursor: inherit;
 }
 
-.results-panel-item-details {
+.results-panel-item-label-below {
   color: #FF9F00;
   cursor: inherit;
 }
@@ -434,10 +404,6 @@ window {
 /* Sources search view */
 
 #globalsearch {
-  min-height: 10px;
-}
-
-#globalsearch > vbox:not(:empty) {
   min-height: 10px;
   max-height: 125px;
 }
@@ -521,14 +487,6 @@ window {
 #toggle-panes:hover,
 #toggle-panes:hover:active {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-#resumption-panel-desc {
-  width: 200px;
-}
-
-#resumption-order-panel {
-  -moz-margin-start: -8px;
 }
 
 #resume {
@@ -629,10 +587,12 @@ window {
 }
 
 #body[layout=vertical] .side-menu-widget-container,
-#body[layout=vertical] .side-menu-widget-empty-notice-container {
+#body[layout=vertical] .side-menu-widget-empty-text {
   box-shadow: none !important;
 }
 
 #body[layout=vertical] .side-menu-widget-item-arrow {
   background-image: none !important;
 }
+
+/* === END debugger.inc.css === */

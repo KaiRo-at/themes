@@ -7,19 +7,17 @@ window {
   padding: 0;
 }
 
-#body {
-  background-color: #000000;
+/* === BEGIN netmonitor.inc.css === */
+
+#requests-menu-empty-notice {
+  margin: 0;
+  padding: 12px;
+  font-size: 110%;
+
+  color: #000000;
 }
 
 /* Network requests table */
-
-#requests-menu-empty-notice {
-  background-color: #A09090;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 110%;
-  color: #000000;
-}
 
 #requests-menu-toolbar {
 }
@@ -41,6 +39,10 @@ window {
 .requests-menu-header:not(:last-child),
 .requests-menu-subitem:not(:last-child) {
   -moz-border-end: 1px solid #9C9CFF;
+}
+
+.requests-menu-header:not(:last-child):-moz-locale-dir(rtl),
+.requests-menu-subitem:not(:last-child):-moz-locale-dir(rtl) {
 }
 
 .requests-menu-header-button,
@@ -177,6 +179,7 @@ window {
 }
 
 .requests-menu-timings-division:not(:first-child) {
+  -moz-border-start: 1px dotted;
   -moz-margin-start: -100px !important; /* Don't affect layout. */
 }
 
@@ -188,12 +191,27 @@ window {
   transform-origin: right center;
 }
 
+.requests-menu-timings-division[division-scale=millisecond] {
+  -moz-border-start-color: #FF9F00 !important; /* Light foreground text */
+}
+
+.requests-menu-timings-division[division-scale=second] {
+  -moz-border-start-color: #E7ADE7 !important; /* Light orange highlight color */
+  font-weight: 600;
+}
+
+.requests-menu-timings-division[division-scale=minute] {
+  -moz-border-start-color: #FF0000 !important; /* Red highlight color */
+  font-weight: 600;
+}
+
 /* Network requests table: waterfall items */
 
 .requests-menu-subitem.requests-menu-waterfall {
   -moz-padding-start: 4px;
   -moz-padding-end: 4px;
   background-repeat: repeat-y; /* Background created on a <canvas> in js. */
+  background-position: -1px center;
   margin-top: -1px; /* Compensate borders. */
   margin-bottom: -1px;
 }
@@ -226,7 +244,8 @@ window {
 
 .requests-menu-timings-cap {
   width: 4px;
-  height: 10px;
+  height: 8px;
+
   border: 1px solid #FFCF00;
 }
 
@@ -260,7 +279,8 @@ window {
 }
 
 .requests-menu-timings-box {
-  height: 10px;
+  height: 8px;
+
   border-top: 1px solid #FFCF00;
   border-bottom: 1px solid #FFCF00;
 }
@@ -297,18 +317,21 @@ window {
 
 /* SideMenuWidget */
 
+.side-menu-widget-item-contents {
+  padding: 0px;
+}
+
 .side-menu-widget-container {
   box-shadow: none !important;
 }
 
-.side-menu-widget-item:nth-child(even) {
+.side-menu-widget-item:not(.selected)[odd] {
   background: rgba(255,159,0,0.1);
 }
 
 /* Network request details */
 
 #details-pane {
-  background-color: #000000;
   max-width: 500px;
 }
 
@@ -341,7 +364,6 @@ window {
   -moz-padding-start: 4px;
   -moz-padding-end: 3px;
   font-weight: 600;
-  color: #9C9CFF;
 }
 
 .tabpanel-summary-value {
@@ -393,6 +415,7 @@ window {
 #timings-tabpanel .requests-menu-timings-box {
   transition: transform 0.2s ease-out;
   min-width: 1px;
+  border: none;
 }
 
 #timings-tabpanel .requests-menu-timings-total {
@@ -431,6 +454,7 @@ window {
   -moz-margin-end: 3px;
   border: none;
   padding: 0px 1.5vw;
+
 /*  color: #fff;*/
 }
 
@@ -465,7 +489,7 @@ window {
   }
 
   .requests-menu-header-button {
-    min-height: 23px; /* Remaining 1px comes from border of the toolbar. */
+    min-height: 24px;
   }
 
   .requests-menu-footer-button,
@@ -516,3 +540,5 @@ window {
        right border and box-shadow of "File" column should be hidden. */
   }
 }
+
+/* === END netmonitor.inc.css === */

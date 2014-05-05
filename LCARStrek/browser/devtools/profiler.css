@@ -28,6 +28,10 @@ window {
   -moz-border-start-color: transparent;
 }
 
+.profiler-sidebar .devtools-toolbar {
+  -moz-border-end: 1px solid #9C9CFF; /* Match the splitter color. */
+}
+
 .profiler-sidebar-item {
   padding: 3px 5px;
 }
@@ -44,7 +48,6 @@ window {
 
 .profiler-sidebar-item > hbox {
   margin-top: 2px;
-  color: #A09090;
 }
 
 .profiler-sidebar-item > hbox > a {

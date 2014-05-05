@@ -11,6 +11,11 @@
   color: #FF9F00;
 }
 
+.theme-sidebar {
+  background: #000000;
+  color: #FF9F00;
+}
+
 ::-moz-selection {
   background-color: #008484;
   color: #FFCF00;
@@ -148,7 +153,8 @@
 }
 
 .theme-toolbar,
-.devtools-toolbar { /* General toolbar styling */
+.devtools-toolbar,
+.devtools-sidebar-tabs > tabs { /* General toolbar styling */
 }
 
 
@@ -297,6 +303,18 @@ div.CodeMirror span.eval-text {
 
 .theme-tooltip-panel .devtools-tooltip-simple-text:last-child {
  border-bottom: 0;
+}
+
+.devtools-horizontal-splitter {
+}
+
+.devtools-side-splitter {
+}
+
+.devtools-textinput,
+.devtools-searchinput {
+  background-color: #000000;
+  color: #E7ADE7;
 }
 
 /* === BEGIN toolbars.inc.css === */
@@ -600,31 +618,61 @@ devtools-menulist:-moz-focusring,
 }
 
 #command-button-paintflashing > image {
-  background-image: url("chrome://browser/skin/devtools/command-paintflashing@2x.png");
+  background-image: url("chrome://browser/skin/devtools/command-paintflashing.png");
 }
 
 #command-button-responsive > image {
-  background-image: url("chrome://browser/skin/devtools/command-responsivemode@2x.png");
+  background-image: url("chrome://browser/skin/devtools/command-responsivemode.png");
 }
 
 #command-button-tilt > image {
-  background-image: url("chrome://browser/skin/devtools/command-tilt@2x.png");
+  background-image: url("chrome://browser/skin/devtools/command-tilt.png");
 }
 
 #command-button-scratchpad > image {
-  background-image: url("chrome://browser/skin/devtools/command-scratchpad@2x.png");
+  background-image: url("chrome://browser/skin/devtools/command-scratchpad.png");
 }
 
 #command-button-pick > image {
-  background-image: url("chrome://browser/skin/devtools/command-pick@2x.png");
+  background-image: url("chrome://browser/skin/devtools/command-pick.png");
 }
 
 #command-button-splitconsole > image {
-  background-image: url("chrome://browser/skin/devtools/command-console@2x.png");
+  background-image: url("chrome://browser/skin/devtools/command-console.png");
 }
 
 #command-button-eyedropper > image {
-  background-image: url("chrome://browser/skin/devtools/command-eyedropper@2x.png");
+  background-image: url("chrome://browser/skin/devtools/command-eyedropper.png");
+}
+
+@media (min-resolution: 2dppx) {
+  #command-button-paintflashing > image {
+    background-image: url("chrome://browser/skin/devtools/command-paintflashing@2x.png");
+  }
+
+  #command-button-responsive > image {
+    background-image: url("chrome://browser/skin/devtools/command-responsivemode@2x.png");
+  }
+
+  #command-button-tilt > image {
+    background-image: url("chrome://browser/skin/devtools/command-tilt@2x.png");
+  }
+
+  #command-button-scratchpad > image {
+    background-image: url("chrome://browser/skin/devtools/command-scratchpad@2x.png");
+  }
+
+  #command-button-pick > image {
+    background-image: url("chrome://browser/skin/devtools/command-pick@2x.png");
+  }
+
+  #command-button-splitconsole > image {
+    background-image: url("chrome://browser/skin/devtools/command-console@2x.png");
+  }
+
+  #command-button-eyedropper > image {
+    background-image: url("chrome://browser/skin/devtools/command-eyedropper@2x.png");
+  }
 }
 
 /* Tabs */

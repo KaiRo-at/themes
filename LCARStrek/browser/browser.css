@@ -818,14 +818,6 @@ toolbarpaletteitem[place="palette"] > #bookmarks-menu-button:hover {
   -moz-image-region: rect(32px, 160px, 64px, 128px);
 }
 
-#bookmarks-menu-button[starred][cui-areatype="menu-panel"] {
-  -moz-image-region: rect(0px, 192px, 32px, 160px);
-}
-
-#bookmarks-menu-button[starred][cui-areatype="menu-panel"]:hover {
-  -moz-image-region: rect(32px, 192px, 64px, 160px);
-}
-
 #history-panelmenu[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #history-panelmenu {
   -moz-image-region: rect(0px, 224px, 32px, 192px);
@@ -1489,7 +1481,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > #forward-button[occlud
 }
 
 #urlbar {
-  width: 7em;
   /* make color as light as possible to deal with dark non-domain parts */
   color: #FFBFFF;
 }
@@ -2257,7 +2248,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 }
 
 #main-window:not([customizing]) #TabsToolbar:not(:-moz-lwtheme) {
- }
+}
 
 #main-window[tabsintitlebar] #TabsToolbar {
   background-color: transparent;
@@ -3046,6 +3037,32 @@ window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlb
   margin-top: .5em;
 }
 
+/* Sync Panel */
+
+.sync-panel-icon {
+  width: 32px;
+  background: url("chrome://browser/content/abouthome/sync.png") top left no-repeat;
+}
+
+.sync-panel-inner {
+  width: 0;
+  padding-left: 10px;
+}
+
+.sync-panel-button-box {
+  margin-top: 1em;
+}
+
+#sync-error-panel-title,
+#sync-start-panel-title {
+  font-weight: bold;
+}
+
+#sync-start-panel-subtitle,
+#sync-error-panel-subtitle {
+  margin: 0;
+}
+
 /* Status panel */
 
 .statuspanel-label {
@@ -3087,11 +3104,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlb
   outline: 1px dashed #A09090;
 }
 
-.highlighter-outline[locked]  {
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
-  outline-color: rgba(255,255,255,0.7);
-}
-
 /* Highlighter - Node Infobar */
 
 .highlighter-nodeinfobar {
@@ -3109,6 +3121,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlb
 /* Highlighter - Node Infobar - text */
 
 .highlighter-nodeinfobar-text {
+  text-align: center;
   /* 100% - size of the buttons and margins */
   max-width: calc(100% - 2 * (26px + 6px));
   padding-bottom: 1px;
@@ -3124,35 +3137,6 @@ html|*.highlighter-nodeinfobar-id {
 
 html|*.highlighter-nodeinfobar-pseudo-classes {
   color: #FF9F00;
-}
-
-/* Highlighter - Node Infobar - buttons */
-
-.highlighter-nodeinfobar-button {
-  padding: 0;
-  width: 26px;
-  min-height: 26px;
-}
-
-.highlighter-nodeinfobar-inspectbutton {
-  list-style-image: url("chrome://browser/skin/devtools/inspect-button.png");
-  -moz-image-region: rect(0px 16px 16px 0px);
-  -moz-margin-start: 0px;
-  -moz-margin-end: 2px;
-}
-
-.highlighter-nodeinfobar-inspectbutton:hover,
-.highlighter-nodeinfobar-inspectbutton:hover:active/*,
-.highlighter-nodeinfobar-container:not([locked]) >  .highlighter-nodeinfobar >  .highlighter-nodeinfobar-inspectbutton*/ {
-  -moz-image-region: rect(0px 32px 16px 16px);
-}
-
-.highlighter-nodeinfobar-menu {
-}
-
-.highlighter-nodeinfobar-menu > .toolbarbutton-menu-dropmarker {
-  -moz-box-align: center;
-  -moz-margin-start: -1px;
 }
 
 /* Highlighter - Node Infobar - box & arrow */
@@ -3731,9 +3715,13 @@ html|*#gcli-output-frame {
 #social-sidebar-button {
   -moz-appearance: none;
   list-style-image: url("chrome://browser/skin/social/gear_default.png");
-  min-width: 16px;
+  border: none;
   padding: 0;
   margin: 2px;
+}
+#social-sidebar-button > .toolbarbutton-icon {
+  min-height: 16px;
+  min-width: 16px;
 }
 #social-sidebar-button:hover,
 #social-sidebar-button:hover:active {
