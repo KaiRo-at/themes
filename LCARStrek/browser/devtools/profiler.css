@@ -68,24 +68,6 @@ window {
   color: #3A3A5F; /* 37% of #9C9CFF */
 }
 
-#profiler-controls > toolbarbutton {
-/*  margin: 0;
-  box-shadow: none;
-  border-radius: 0;
-  border-width: 0;
-  -moz-border-end-width: 1px;
-  outline-offset: -3px;*/
-}
-
-#profiler-controls > toolbarbutton:last-of-type {
-/*  -moz-border-end-width: 0;*/
-}
-
-#profiler-controls {
-  border-radius: 3px;
-  margin: 0 3px;
-}
-
 #profiler-start {
   list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch.png");
   -moz-image-region: rect(0px,16px,16px,0px);

@@ -24,6 +24,7 @@ window:not([windowtype]) {
 }
 
 .stylesheet-rule-count,
+.stylesheet-linked-file,
 .stylesheet-saveButton {
   color: #FF9F00;
 }
@@ -39,6 +40,7 @@ window:not([windowtype]) {
 }
 
 .splitview-active .stylesheet-rule-count,
+.splitview-active .stylesheet-linked-file,
 .splitview-active .stylesheet-saveButton {
   color: #E7ADE7;
 }
@@ -80,8 +82,16 @@ window:not([windowtype]) {
   outline: 0;
 }
 
-.stylesheet-error-message {
-  color: #FF0000;
+.stylesheet-linked-file:not(:empty){
+  -moz-margin-end: 0.4em;
+}
+
+.stylesheet-linked-file:not(:empty):before {
+  -moz-margin-start: 0.4em;
+}
+
+li.linked-file-error .stylesheet-linked-file:after {
+  font-size: 110%;
 }
 
 .stylesheet-more > h3 {

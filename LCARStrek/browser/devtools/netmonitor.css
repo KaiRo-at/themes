@@ -12,9 +12,21 @@ window {
 #requests-menu-empty-notice {
   margin: 0;
   padding: 12px;
-  font-size: 110%;
+  font-size: 120%;
 
-  color: #000000;
+  color: #FF9F00;
+}
+
+#requests-menu-perf-notice-button {
+  min-width: 30px;
+  min-height: 28px;
+  margin: 0;
+  list-style-image: url("profiler-stopwatch.png");
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+#requests-menu-perf-notice-button .button-text {
+  display: none;
 }
 
 /* Network requests table */
@@ -133,8 +145,9 @@ window {
 
 /* Network requests table: status codes */
 
-.requests-menu-status {
+box.requests-menu-status {
   background-color: #A09090;
+  width: 10px;
   -moz-margin-start: 5px;
   -moz-margin-end: 5px;
   border-radius: 20px;
@@ -142,24 +155,45 @@ window {
   transition: background-color 0.5s ease-in-out;
 }
 
-.requests-menu-status[code^="1"] {
-  background-color: #9C9CFF;
+label.requests-menu-status-code {
+  -moz-margin-start: 3px !important;
+  width: 3em;
+  -moz-margin-end: -3em !important;
 }
 
-.requests-menu-status[code^="2"] {
-  background-color: #008484;
+box.requests-menu-status:not([code]) {
+  background-color: #A09090; /* dark grey */
 }
 
-.requests-menu-status[code^="3"] {
-  background-color: #FF9F00;
+box.requests-menu-status[code^="1"] {
+  background-color: #9C9CFF; /* light blue */
 }
 
-.requests-menu-status[code^="4"] {
-  background-color: #FF0000;
+box.requests-menu-status[code^="2"] {
+  background-color: #008484; /* green */
 }
 
-.requests-menu-status[code^="5"] {
-  background-color: #6000CF;
+/* 3xx are triangles */
+box.requests-menu-status[code^="3"] {
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #FF9F00; /* light orange */
+  border-radius: 0;
+}
+
+/* 4xx and 5xx are squares - error codes */
+box.requests-menu-status[code^="4"] {
+  background-color: #FF0000; /* red */
+  border-radius: 0; /* squares */
+}
+
+box.requests-menu-status[code^="5"] {
+  background-color: #6000CF; /* pink? */
+  border-radius: 0;
+  transform: rotate(45deg);
 }
 
 /* Network requests table: waterfall header */
@@ -208,7 +242,7 @@ window {
 /* Network requests table: waterfall items */
 
 .requests-menu-subitem.requests-menu-waterfall {
-  -moz-padding-start: 4px;
+  -moz-padding-start: 0px;
   -moz-padding-end: 4px;
   background-repeat: repeat-y; /* Background created on a <canvas> in js. */
   background-position: -1px center;
@@ -237,82 +271,37 @@ window {
 }
 
 .requests-menu-timings-total {
-  -moz-padding-start: 8px;
+  -moz-padding-start: 4px;
   font-size: 85%;
   font-weight: 600;
 }
 
-.requests-menu-timings-cap {
-  width: 4px;
-  height: 8px;
-
-  border: 1px solid #FFCF00;
-}
-
-.requests-menu-timings-cap.start {
-  -moz-border-end: none;
-}
-
-.requests-menu-timings-cap.end {
-  -moz-border-start: none;
-}
-
-.requests-menu-timings-cap.start:-moz-locale-dir(ltr) {
-  border-radius: 4px 0 0 4px;
-  transform-origin: right center;
-}
-
-.requests-menu-timings-cap.start:-moz-locale-dir(rtl) {
-  -moz-border-start: none;
-  border-radius: 0 4px 4px 0;
-  transform-origin: left center;
-}
-
-.requests-menu-timings-cap.end:-moz-locale-dir(ltr) {
-  border-radius: 0 4px 4px 0;
-  transform-origin: left center;
-}
-
-.requests-menu-timings-cap.end:-moz-locale-dir(rtl) {
-  border-radius: 4px 0 0 4px;
-  transform-origin: right center;
-}
-
 .requests-menu-timings-box {
-  height: 8px;
-
-  border-top: 1px solid #FFCF00;
-  border-bottom: 1px solid #FFCF00;
+  height: 9px;
 }
 
-.requests-menu-timings-box.blocked,
-.requests-menu-timings-cap.blocked {
-  background-color: #FF0000;
+.requests-menu-timings-box.blocked {
+  background-color: #FF0000; /* red */
 }
 
-.requests-menu-timings-box.dns,
-.requests-menu-timings-cap.dns {
-  background-color: #6000CF;
+.requests-menu-timings-box.dns {
+  background-color: #E7ADE7; /* pink */
 }
 
-.requests-menu-timings-box.connect,
-.requests-menu-timings-cap.connect {
-  background-color: #FF9F00;
+.requests-menu-timings-box.connect {
+  background-color: #FF9F00; /* orange */
 }
 
-.requests-menu-timings-box.send,
-.requests-menu-timings-cap.send {
-  background-color: #FFCF00;
+.requests-menu-timings-box.send {
+  background-color: #FFCF00; /* light blue */
 }
 
-.requests-menu-timings-box.wait,
-.requests-menu-timings-cap.wait {
-  background-color: #9C9CFF;
+.requests-menu-timings-box.wait {
+  background-color: #9C9CFF; /* blue grey */
 }
 
-.requests-menu-timings-box.receive,
-.requests-menu-timings-cap.receive {
-  background-color: #A09090;
+.requests-menu-timings-box.receive {
+  background-color: #A09090; /* green */
 }
 
 /* SideMenuWidget */
@@ -356,6 +345,8 @@ window {
   color: #FF9F00;
 }
 
+/* Summary tabpanel */
+
 .tabpanel-summary-container {
   padding: 1px;
 }
@@ -389,10 +380,11 @@ window {
 /* Response tabpanel */
 
 #response-content-info-header {
-  background-color: #A09090;
-  color: #000000;
   margin: 0;
-  padding: 5px 8px;
+  padding: 3px 8px;
+
+  background-color: #FF0000; /* Red highlight */
+  color: #000000; /* Light foreground text */
 }
 
 #response-content-image-box {
@@ -453,7 +445,7 @@ window {
   margin: 0;
   -moz-margin-end: 3px;
   border: none;
-  padding: 0px 1.5vw;
+  padding: 0px 0.75vw;
 
 /*  color: #fff;*/
 }
@@ -482,6 +474,121 @@ window {
   font-weight: 600;
 }
 
+/* Performance analysis buttons */
+
+#requests-menu-network-summary-button {
+  list-style-image: url("profiler-stopwatch.png");
+  -moz-image-region: rect(0px,32px,16px,16px);
+  -moz-padding-end: 0;
+  cursor: pointer;
+}
+
+#requests-menu-network-summary-label {
+  -moz-padding-start: 0;
+  cursor: pointer;
+}
+
+#requests-menu-network-summary-label:hover {
+  text-decoration: underline;
+}
+
+/* Performance analysis view */
+
+#network-statistics-toolbar {
+  /* Make the toolbar invisible, it only hold the back button */
+  -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
+  background-color: #000000;
+}
+
+#network-statistics-back-button {
+  min-width: 4em;
+  min-height: 100vh;
+}
+
+#network-statistics-view-splitter {
+  cursor: default;
+  pointer-events: none;
+}
+
+#network-statistics-charts {
+  min-height: 1px;
+}
+
+.theme-dark #network-statistics-charts {
+  background: #000000; /* Toolbars */
+}
+
+#network-statistics-charts .pie-chart-container {
+  -moz-margin-start: 3vw;
+  -moz-margin-end: 1vw;
+}
+
+#network-statistics-charts .table-chart-container {
+  -moz-margin-start: 1vw;
+  -moz-margin-end: 3vw;
+}
+
+.theme-dark .chart-colored-blob[name=html] {
+  fill: #A09090; /* Blue-Grey highlight */
+  background: #A09090;
+}
+
+.theme-dark .chart-colored-blob[name=css] {
+  fill: #9C9CFF; /* Blue highlight */
+  background: #9C9CFF;
+}
+
+.theme-dark .chart-colored-blob[name=js] {
+  fill: #FFCF00; /* Light Orange highlight */
+  background: #FFCF00;
+}
+
+.theme-dark .chart-colored-blob[name=xhr] {
+  fill: #FF9F00; /* Orange highlight */
+  background: #FF9F00;
+}
+
+.theme-dark .chart-colored-blob[name=fonts] {
+  fill: #6000CF; /* Purple highlight */
+  background: #6000CF;
+}
+
+.theme-dark .chart-colored-blob[name=images] {
+  fill: #E7ADE7; /* Pink highlight */
+  background: #E7ADE7;
+}
+
+.theme-dark .chart-colored-blob[name=media] {
+  fill: #008484; /* Green highlight */
+  background: #008484;
+}
+
+.theme-dark .chart-colored-blob[name=flash] {
+  fill: #FF0000; /* Red highlight */
+  background: #FF0000;
+}
+
+.table-chart-row-label[name=cached] {
+  display: none;
+}
+
+.table-chart-row-label[name=count] {
+  width: 3em;
+  text-align: end;
+}
+
+.table-chart-row-label[name=label] {
+  width: 7em;
+}
+
+.table-chart-row-label[name=size] {
+  width: 7em;
+}
+
+.table-chart-row-label[name=time] {
+  width: 7em;
+}
+
 /* Responsive sidebar */
 @media (max-width: 700px) {
   #requests-menu-toolbar {
@@ -494,7 +601,7 @@ window {
 
   .requests-menu-footer-button,
   .requests-menu-footer-label {
-    padding: 0px 2vw;
+    padding: 0px 1vw;
   }
 
   #details-pane {

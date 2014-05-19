@@ -231,8 +231,16 @@
   color: #FF9F00; /* Foreground (Text) - Light */
 }
 
-.theme-dark .breadcrumbs-widget-item-id {
+.breadcrumbs-widget-item {
+  color: #FF9F00; /* Foreground (Text) - Light */
+}
+
+.breadcrumbs-widget-item-id {
   color: #A09090; /* Foreground (Text) - Grey */
+}
+
+.breadcrumbs-widget-item-classes {
+  color: #FF9F00; /* Content (Text) - Light */
 }
 
 .breadcrumbs-widget-item-pseudo-classes {
@@ -241,13 +249,18 @@
 
 /* SimpleListWidget */
 
-.simple-list-widget-item:not(.selected):hover {
-  background: #FFCF00;
-  color: #FFCF00;
+.simple-list-widget-container {
+  /* Hack: force hardware acceleration */
+  transform: translateZ(1px);
 }
 
 .simple-list-widget-item.selected {
-  background: #008484;
+  background-color: #008484; /* Select Highlight Blue */
+  color: #FFCF00; /* Light foreground text */
+}
+
+.simple-list-widget-item:not(.selected):hover {
+  background-color: #FFCF00;
   color: #FFCF00;
 }
 
@@ -517,7 +530,7 @@
 }
 
 .variable-or-property-non-writable-icon {
-  background: url("chrome://browser/skin/identity-icons-https.png") no-repeat;
+  background: url("chrome://browser/skin/devtools/vview-lock.png") no-repeat;
   width: 16px;
   height: 16px;
   opacity: 0.5;
@@ -525,7 +538,7 @@
 
 @media (min-resolution: 2dppx) {
   .variable-or-property-non-writable-icon > .title:after {
-    background-image: url("chrome://browser/skin/identity-icons-https@2x.png");
+    background-image: url("chrome://browser/skin/devtools/vview-lock@2x.png");
     background-size: 32px;
   }
 }
@@ -560,6 +573,7 @@
 /* Actions first */
 
 .variables-view-container[actions-first] .variables-view-delete,
+.variables-view-container[actions-first] .variables-view-open-inspector,
 .variables-view-container[actions-first] .variables-view-add-property {
   -moz-box-ordinal-group: 0;
 }
@@ -597,22 +611,56 @@
 
 .variables-view-delete {
   list-style-image: url("chrome://browser/skin/devtools/vview-delete.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
+  -moz-image-region: rect(0,16px,16px,0);
 }
 
 .variables-view-delete:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
+  -moz-image-region: rect(0,48px,16px,32px);
 }
 
 .variables-view-delete:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
+  -moz-image-region: rect(0,32px,16px,16px);
+}
+
+.variable-or-property:focus .variables-view-delete {
+/*  -moz-image-region: rect(0,16px,16px,0); */
 }
 
 .variables-view-edit {
-  background: url("chrome://browser/skin/devtools/vview-edit.png") center no-repeat;
-  width: 20px;
-  height: 16px;
+  list-style-image: url("chrome://browser/skin/devtools/vview-edit.png");
+  -moz-image-region: rect(0,16px,16px,0);
   cursor: pointer;
+  padding-left: 2px;
+}
+
+.variables-view-edit:hover {
+ -moz-image-region: rect(0,48px,16px,32px);
+}
+
+.variables-view-edit:active {
+  -moz-image-region: rect(0,32px,16px,16px);
+}
+
+.variable-or-property:focus .variables-view-edit {
+/*  -moz-image-region: rect(0,16px,16px,0); */
+}
+
+.variables-view-open-inspector {
+  list-style-image: url("chrome://browser/skin/devtools/vview-open-inspector.png");
+  -moz-image-region: rect(0,16px,16px,0);
+  cursor: pointer;
+}
+
+.variables-view-open-inspector:hover {
+  -moz-image-region: rect(0,48px,16px,32px);
+}
+
+.variables-view-open-inspector:active {
+  -moz-image-region: rect(0,32px,16px,16px);
+}
+
+.variable-or-property:focus .variables-view-open-inspector {
+/*  -moz-image-region: rect(0,16px,16px,0); */
 }
 
 .variables-view-throbber {
@@ -675,6 +723,118 @@
   visibility: hidden;
 }
 
+/* Charts */
+
+.generic-chart-container {
+  /* Hack: force hardware acceleration */
+  transform: translateZ(1px);
+}
+
+.theme-dark .generic-chart-container {
+  color: #A09090; /* Light foreground text */
+}
+
+.theme-dark .chart-colored-blob {
+  fill: #9C9CFF; /* Light content text */
+  background: #9C9CFF;
+}
+
+/* Charts: Pie */
+
+.pie-chart-slice {
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+.theme-dark .pie-chart-slice {
+  stroke: #A09090;
+}
+
+.theme-dark .pie-chart-slice[largest] {
+  stroke-width: 2px;
+  stroke: #9C9CFF;
+}
+
+.pie-chart-label {
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+.theme-dark .pie-chart-label {
+  fill: #000;
+}
+
+.pie-chart-container[slices="1"] > .pie-chart-slice {
+  stroke-width: 0px;
+}
+
+.pie-chart-slice,
+.pie-chart-label {
+  transition: all 0.1s ease-out;
+}
+
+.pie-chart-slice:not(:hover):not([focused]),
+.pie-chart-slice:not(:hover):not([focused]) + .pie-chart-label {
+  transform: none !important;
+}
+
+/* Charts: Table */
+
+.table-chart-title {
+  padding-bottom: 10px;
+  font-size: 120%;
+  font-weight: 600;
+}
+
+.table-chart-row {
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.table-chart-grid:hover > .table-chart-row {
+  transition: opacity 0.1s ease-in-out;
+}
+
+.table-chart-grid:not(:hover) > .table-chart-row {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.generic-chart-container:hover > .table-chart-grid:hover > .table-chart-row:not(:hover),
+.generic-chart-container:hover ~ .table-chart-container > .table-chart-grid > .table-chart-row:not([focused]) {
+  opacity: 0.4;
+}
+
+.table-chart-row-box {
+  width: 8px;
+  height: 1.5em;
+  -moz-margin-end: 10px;
+}
+
+.table-chart-row-label {
+  width: 8em;
+  -moz-padding-end: 6px;
+  cursor: inherit;
+}
+
+.table-chart-totals {
+  margin-top: 8px;
+  padding-top: 6px;
+}
+
+.table-chart-totals {
+  border-top: 1px solid #A09090; /* Grey foreground text */
+}
+
+.table-chart-summary-label {
+  font-weight: 600;
+  padding: 1px 0px;
+}
+
+.table-chart-summary-label {
+  color: #A09090; /* Light foreground text */
+}
+
 /* === BEGIN manifest-editor.inc.css === */
 
 /* Manifest Editor overrides */
@@ -729,8 +889,10 @@
 .manifest-editor .variables-view-delete,
 .manifest-editor .variables-view-delete:hover,
 .manifest-editor .variables-view-delete:active,
+.manifest-editor .variable-or-property:focus .variables-view-delete,
 .manifest-editor .variables-view-add-property:hover,
-.manifest-editor .variables-view-add-property:active {
+.manifest-editor .variables-view-add-property:active,
+.manifest-editor .variable-or-property:focus .variables-view-add-property {
   list-style-image: none;
   -moz-image-region: initial;
 }
