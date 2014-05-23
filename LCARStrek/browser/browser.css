@@ -415,11 +415,14 @@ menuitem.bookmark-item {
 /* === BEGIN toolbarbuttons.inc.css === */
 
 /* Whole section of this included file: */
-:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button,
-          #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #sync-button, #feed-button,
-          #tabview-button, #webrtc-status-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button,
-          #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button,
-          #PanelUI-menu-button, #characterencoding-button, #email-link-button),
+:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
+          #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
+          #webrtc-status-button, #social-share-button, #open-file-button, #find-button, #developer-button,
+          #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
+          #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
+          #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
+          #copy-button, #paste-button, #e10s-button),
+
 #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
 }
@@ -679,72 +682,72 @@ menuitem.bookmark-item {
   -moz-image-region: rect(18px, 486px, 36px, 468px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #cut-button {
   -moz-image-region: rect(0, 504px, 18px, 486px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button:hover:not([disabled="true"]) {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #cut-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 504px, 36px, 486px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #cut-button[disabled="true"] {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #cut-button[disabled="true"] {
   -moz-image-region: rect(36px, 504px, 54px, 486px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #copy-button {
   -moz-image-region: rect(0, 522px, 18px, 504px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button:hover:not([disabled="true"]) {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #copy-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 522px, 36px, 504px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #copy-button[disabled="true"] {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #copy-button[disabled="true"] {
   -moz-image-region: rect(36px, 522px, 54px, 504px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #paste-button {
   -moz-image-region: rect(0, 540px, 18px, 522px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button:hover:not([disabled="true"]) {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #paste-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 540px, 36px, 522px);
 }
 
-#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #paste-button[disabled="true"] {
+#edit-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #paste-button[disabled="true"] {
   -moz-image-region: rect(36px, 540px, 54px, 522px);
 }
 
-#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button {
+#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #zoom-out-button {
   -moz-image-region: rect(0, 558px, 18px, 540px);
 }
 
-#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button:hover:not([disabled="true"]) {
+#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #zoom-out-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 558px, 36px, 540px);
 }
 
-#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-out-button[disabled="true"] {
+#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #zoom-out-button[disabled="true"] {
   -moz-image-region: rect(36px, 558px, 54px, 540px);
 }
 
-#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button {
+#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #zoom-in-button {
   -moz-image-region: rect(0, 576px, 18px, 558px);
 }
 
-#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button:hover:not([disabled="true"]) {
+#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #zoom-in-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 576px, 36px, 558px);
 }
 
-#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) > #zoom-in-button[disabled="true"] {
+#zoom-controls:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) > #zoom-in-button[disabled="true"] {
   -moz-image-region: rect(36px, 576px, 54px, 558px);
 }
 
-#webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)) {
+#webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])) {
   -moz-image-region: rect(0, 594px, 18px, 576px);
 }
 
-#webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem)):hover,
-#webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem))[open="true"] {
+#webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])):hover,
+#webrtc-status-button:not(:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]))[open="true"] {
   -moz-image-region: rect(18px, 594px, 36px, 576px);
 }
 
@@ -791,6 +794,7 @@ menuitem.bookmark-item {
 
 /* Menu panel and palette styles */
 
+toolbaritem[sdkstylewidget="true"] > toolbarbutton,
 :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button,
           #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #sync-button, #feed-button,
           #tabview-button, #webrtc-status-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button,
@@ -1060,84 +1064,84 @@ toolbaritem[sdkstylewidget="true"] > toolbarbutton {
 
 /* Wide panel control icons */
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > toolbarbutton,
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > toolbarbutton,
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
 toolbarpaletteitem[place="palette"] > #edit-controls > toolbarbutton,
 toolbarpaletteitem[place="palette"] > #zoom-controls > toolbarbutton {
   list-style-image: url("chrome://browser/skin/menuPanel-small.png");
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #cut-button,
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #cut-button,
 toolbarpaletteitem[place="palette"] > #edit-controls > #cut-button {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #cut-button:hover:not([disabled="true"]),
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #cut-button:hover:not([disabled="true"]),
 toolbarpaletteitem[place="palette"] > #edit-controls > #cut-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(16px, 32px, 32px, 16px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #cut-button[disabled="true"],
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #cut-button[disabled="true"],
 toolbarpaletteitem[place="palette"] > #edit-controls > #cut-button[disabled="true"] {
   -moz-image-region: rect(32px, 32px, 48px, 16px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #copy-button,
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #copy-button,
 toolbarpaletteitem[place="palette"] > #edit-controls > #copy-button {
   -moz-image-region: rect(0px, 48px, 16px, 32px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #copy-button:hover:not([disabled="true"]),
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #copy-button:hover:not([disabled="true"]),
 toolbarpaletteitem[place="palette"] > #edit-controls > #copy-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(16px, 48px, 32px, 32px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #copy-button[disabled="true"],
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #copy-button[disabled="true"],
 toolbarpaletteitem[place="palette"] > #edit-controls > #copy-button[disabled="true"] {
   -moz-image-region: rect(32px, 48px, 48px, 32px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #paste-button,
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #paste-button,
 toolbarpaletteitem[place="palette"] > #edit-controls > #paste-button {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #paste-button:hover:not([disabled="true"]),
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #paste-button:hover:not([disabled="true"]),
 toolbarpaletteitem[place="palette"] > #edit-controls > #paste-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(16px, 64px, 32px, 48px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #paste-button[disabled="true"],
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #paste-button[disabled="true"],
 toolbarpaletteitem[place="palette"] > #edit-controls > #paste-button[disabled="true"] {
   -moz-image-region: rect(32px, 64px, 48px, 48px);
 }
 
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #zoom-out-button,
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-out-button,
 toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-out-button {
   -moz-image-region: rect(0px, 80px, 16px, 64px);
 }
 
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #zoom-out-button:hover:not([disabled="true"]),
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-out-button:hover:not([disabled="true"]),
 toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-out-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(16px, 80px, 32px, 64px);
 }
 
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #zoom-out-button[disabled="true"],
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-out-button[disabled="true"],
 toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-out-button[disabled="true"] {
   -moz-image-region: rect(32px, 80px, 48px, 64px);
 }
 
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #zoom-in-button,
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-in-button,
 toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button {
   -moz-image-region: rect(0px, 96px, 16px, 80px);
 }
 
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #zoom-in-button:hover:not([disabled="true"]),
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-in-button:hover:not([disabled="true"]),
 toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(16px, 96px, 32px, 80px);
 }
 
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]),.overflowedItem) > #zoom-in-button[disabled="true"],
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-in-button[disabled="true"],
 toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button[disabled="true"] {
   -moz-image-region: rect(32px, 96px, 48px, 80px);
 }
@@ -4436,26 +4440,60 @@ toolbarpaletteitem[place="toolbar"] {
 
 /* End customization mode */
 
-#main-window[privatebrowsingmode=temporary] #toolbar-menubar {
-  background-image: url("chrome://browser/skin/privatebrowsing-dark.png");
-  background-position: top right;
-  background-repeat: no-repeat;
+/* Private browsing indicators */
+
+/**
+ * Currently, we have two places where we put private browsing indicators on
+ * Windows. When tabsintitlebar is enabled, we draw the indicator in the titlebar.
+ * When tabsintitlebar is disabled, we draw the indicator at the end of the
+ * tabstrip. The titlebar indicator is the fiddliest of the bunch, since we
+ * want the bottom border of the image to line up with the bottom of the window
+ * caption buttons. That's why there's so much special-casing going on in here.
+ */
+.private-browsing-indicator {
+  display: none;
+  pointer-events: none;
 }
 
-#main-window[privatebrowsingmode=temporary] #toolbar-menubar:-moz-locale-dir(rtl) {
-  background-position: top left;
+#private-browsing-indicator-titlebar {
+  display: block;
+  position: absolute;
 }
 
-#main-window[privatebrowsingmode=temporary] #appmenu-button > .button-box > .box-inherit > .button-icon {
-  list-style-image: url("chrome://browser/skin/privatebrowsing-light.png");
-  width: 20px;
-  height: 16px;
+#main-window[privatebrowsingmode=temporary][tabsintitlebar] #private-browsing-indicator-titlebar > .private-browsing-indicator {
+  display: block;
 }
 
-#main-window[privatebrowsingmode=temporary] #private-browsing-indicator {
+#main-window[privatebrowsingmode=temporary]:-moz-any([inFullscreen],:not([tabsintitlebar])) #TabsToolbar > .private-browsing-indicator {
+  display: -moz-box;
+}
+
+#TabsToolbar > .private-browsing-indicator {
+  background: url("chrome://browser/skin/privatebrowsing-mask-tabstrip.png") no-repeat center -3px;
+  -moz-margin-start: 4px;
+  width: 48px;
+}
+
+/* Bug 1008183: We're intentionally using the titlebar asset here for fullscreen
+ * mode, since the tabstrip "mimics" the titlebar in that case with its own
+ * min/max/close window buttons.
+ */
+#private-browsing-indicator-titlebar > .private-browsing-indicator,
+#main-window[inFullscreen] #TabsToolbar > .private-browsing-indicator {
+  background: url("chrome://browser/skin/privatebrowsing-mask-titlebar.png") no-repeat center 0px;
+  -moz-margin-end: 4px;
   width: 40px;
-  background: url("chrome://browser/skin/privatebrowsing-indicator.png") no-repeat center center;
+  height: 20px;
+  position: relative;
 }
+
+/* This one is for Linux */
+#main-window[privatebrowsingmode=temporary] #private-browsing-indicator {
+  background: url("chrome://browser/skin/privatebrowsing-mask-tabstrip.png") center no-repeat;
+  width: 48px;
+}
+
+/* End private browsing indicators */
 
 /* === BEGIN UITour.inc.css === */
 
