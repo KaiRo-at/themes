@@ -363,11 +363,11 @@
   background-position: center left;
 }
 
-.theme-light .side-menu-widget-item.selected > .side-menu-widget-item-arrow:-moz-locale-dir(ltr) {
+.side-menu-widget-item.selected > .side-menu-widget-item-arrow:-moz-locale-dir(ltr) {
   background-image: url("itemArrow-ltr.svg");
 }
 
-.theme-light .side-menu-widget-item.selected > .side-menu-widget-item-arrow:-moz-locale-dir(rtl) {
+.side-menu-widget-item.selected > .side-menu-widget-item-arrow:-moz-locale-dir(rtl) {
   background-image: url("itemArrow-rtl.svg");
 }
 
@@ -730,11 +730,11 @@
   transform: translateZ(1px);
 }
 
-.theme-dark .generic-chart-container {
+.generic-chart-container {
   color: #A09090; /* Light foreground text */
 }
 
-.theme-dark .chart-colored-blob {
+.chart-colored-blob {
   fill: #9C9CFF; /* Light content text */
   background: #9C9CFF;
 }
@@ -746,11 +746,11 @@
   cursor: pointer;
 }
 
-.theme-dark .pie-chart-slice {
+.pie-chart-slice {
   stroke: #A09090;
 }
 
-.theme-dark .pie-chart-slice[largest] {
+.pie-chart-slice[largest] {
   stroke-width: 2px;
   stroke: #9C9CFF;
 }
@@ -761,7 +761,7 @@
   pointer-events: none;
 }
 
-.theme-dark .pie-chart-label {
+.pie-chart-label {
   fill: #000;
 }
 
