@@ -201,6 +201,14 @@ panelview:not([mainview]) .toolbarbutton-text,
   padding-bottom: 0;
 }
 
+.cui-widget-panel > :-moz-any(menu,menuitem):first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.cui-widget-panel > :-moz-any(menu,menuitem):last-child {
+  border-radius: 0 0 4px 4px;
+}
+
 #PanelUI-contents {
   display: block;
   flex: auto;
@@ -606,7 +614,7 @@ panelview .toolbarbutton-1,
 }
 
 .subviewbutton.panel-subview-footer {
-/*  border-radius: 0;*/
+/*  border-radius: 0; */
   border: none;
 }
 
@@ -659,8 +667,8 @@ panelview .toolbarbutton-1,
 }
 
 .cui-widget-panelview .subviewbutton:not(.panel-subview-footer) {
-  margin-left: 4px;
-  margin-right: 4px;
+/*  margin-left: 4px;
+  margin-right: 4px;*/
 }
 
 panelview .toolbarbutton-1,
@@ -775,20 +783,20 @@ menuitem.panel-subview-footer:not([disabled]):-moz-any([open],[checked="true"],:
 
 .PanelUI-subView menuseparator.small-separator,
 .PanelUI-subView toolbarseparator.small-separator {
-  margin-left: 5px;
-  margin-right: 5px;
+/*  margin-left: 5px;
+  margin-right: 5px;*/
 }
 
 .cui-widget-panelview menuseparator.small-separator {
-  margin-left: 10px;
-  margin-right: 10px;
+/*  margin-left: 10px;
+  margin-right: 10px;*/
 }
 
 .subviewbutton > .menu-accel-container {
   -moz-box-pack: start;
   -moz-margin-start: 10px;
   -moz-margin-end: auto;
-/*  color: hsl(0,0%,50%);*/
+  color: #A09090;
 }
 
 #PanelUI-historyItems > toolbarbutton {
