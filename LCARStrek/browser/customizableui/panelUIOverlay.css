@@ -201,11 +201,11 @@ panelview:not([mainview]) .toolbarbutton-text,
   padding-bottom: 0;
 }
 
-.cui-widget-panel > :-moz-any(menu,menuitem):first-child {
+.cui-widget-panel > :-moz-any(menu,menuitem,toolbarbutton):first-child {
   border-radius: 4px 4px 0 0;
 }
 
-.cui-widget-panel > :-moz-any(menu,menuitem):last-child {
+.cui-widget-panel > :-moz-any(menu,menuitem,toolbarbutton):last-child {
   border-radius: 0 0 4px 4px;
 }
 
@@ -429,7 +429,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   display: flex;
   border-top: 1px solid #9C9CFF;
 }
-+
+
 #PanelUI-multiView[viewtype="subview"] #PanelUI-footer-inner {
   position: relative;
 }
@@ -615,7 +615,7 @@ panelview .toolbarbutton-1,
 
 .subviewbutton.panel-subview-footer {
 /*  border-radius: 0; */
-  border: none;
+  margin: 2px 0 0;
 }
 
 .subviewbutton.panel-subview-footer > .menu-text {
@@ -640,7 +640,7 @@ panelview .toolbarbutton-1,
 }
 
 .subviewbutton:not(.panel-subview-footer) {
-/*  margin: 2px 0;*/
+  margin: 0;
 }
 
 .subviewbutton:not(.panel-subview-footer) > .toolbarbutton-text,
