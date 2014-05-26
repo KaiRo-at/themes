@@ -35,7 +35,7 @@
 
 @keyframes moveX {
   /* These values are adjusted for the padding on the panel. */
-  from { margin-left: -15px; } to { margin-left: calc(100% - 49px); }
+  from { margin-left: -9px; } to { margin-left: calc(100% - 55px); }
 }
 @keyframes moveY {
   /* These values are adjusted for the padding and height of the panel. */

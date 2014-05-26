@@ -512,9 +512,7 @@ box.requests-menu-status[code^="5"] {
 
 #network-statistics-charts {
   min-height: 1px;
-}
 
-.theme-dark #network-statistics-charts {
   background: #000000; /* Toolbars */
 }
 
@@ -528,42 +526,42 @@ box.requests-menu-status[code^="5"] {
   -moz-margin-end: 3vw;
 }
 
-.theme-dark .chart-colored-blob[name=html] {
+.chart-colored-blob[name=html] {
   fill: #A09090; /* Blue-Grey highlight */
   background: #A09090;
 }
 
-.theme-dark .chart-colored-blob[name=css] {
+.chart-colored-blob[name=css] {
   fill: #9C9CFF; /* Blue highlight */
   background: #9C9CFF;
 }
 
-.theme-dark .chart-colored-blob[name=js] {
+.chart-colored-blob[name=js] {
   fill: #FFCF00; /* Light Orange highlight */
   background: #FFCF00;
 }
 
-.theme-dark .chart-colored-blob[name=xhr] {
+.chart-colored-blob[name=xhr] {
   fill: #FF9F00; /* Orange highlight */
   background: #FF9F00;
 }
 
-.theme-dark .chart-colored-blob[name=fonts] {
+.chart-colored-blob[name=fonts] {
   fill: #6000CF; /* Purple highlight */
   background: #6000CF;
 }
 
-.theme-dark .chart-colored-blob[name=images] {
+.chart-colored-blob[name=images] {
   fill: #E7ADE7; /* Pink highlight */
   background: #E7ADE7;
 }
 
-.theme-dark .chart-colored-blob[name=media] {
+.chart-colored-blob[name=media] {
   fill: #008484; /* Green highlight */
   background: #008484;
 }
 
-.theme-dark .chart-colored-blob[name=flash] {
+.chart-colored-blob[name=flash] {
   fill: #FF0000; /* Red highlight */
   background: #FF0000;
 }

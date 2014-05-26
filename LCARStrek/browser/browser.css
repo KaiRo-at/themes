@@ -178,7 +178,9 @@ menubar {
  * themes with Aero Glass.
  */
 #titlebar-buttonbox {
-  margin-top: 5px;
+  -moz-appearance: none;
+  margin-top: 6px;
+  margin-top: 4px;
   -moz-margin-end: 3px;
   z-index: 1;
 }
@@ -2527,7 +2529,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 .tabbrowser-arrowscrollbox > .scrollbutton-up:-moz-lwtheme-brighttext,
 .tabbrowser-arrowscrollbox > .scrollbutton-down:-moz-lwtheme-brighttext {
  }
- 
+
 .tabbrowser-arrowscrollbox > .scrollbutton-up[disabled],
 .tabbrowser-arrowscrollbox > .scrollbutton-down[disabled] {
  }
@@ -4250,19 +4252,42 @@ notification.pluginVulnerable .messageImage {
 
 #customization-titlebar-visibility-button {
   list-style-image: url("chrome://browser/skin/customizableui/customize-titleBar-toggle.png");
-  -moz-image-region: rect(0, 24px, 24px, 0);
-  padding: 2px 7px;
+  -moz-image-region: rect(0, 16px, 16px, 0);
+  padding: 0px 5px;
   -moz-margin-end: 10px;
+}
+
+#customization-titlebar-visibility-button:hover {
+  -moz-image-region: rect(16px, 16px, 32px, 0);
+}
+
+#customization-titlebar-visibility-button > .button-box {
+  padding-top: 0;
+  padding-bottom: 1px;
+}
+
+#customization-titlebar-visibility-button:hover:active > .button-box {
+  padding-top: 1px;
+  padding-bottom: 0;
 }
 
 #customization-titlebar-visibility-button > .button-box > .button-text {
   /* Sadly, button.css thinks its margins are perfect for everyone. */
-  -moz-margin-start: 6px !important;
+  -moz-margin-start: 5px !important;
 }
 
 #customization-titlebar-visibility-button[checked] {
-  -moz-image-region: rect(0, 48px, 24px, 24px);
+  -moz-image-region: rect(0, 32px, 16px, 16px);
   background-color: #008484;
+}
+
+#customization-titlebar-visibility-button[checked]:hover {
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+  background-color: #FFCF00;
+}
+
+#customization-titlebar-visibility-button[checked]:hover:active {
+  background-color: #FF9F00;
 }
 
 #customization-undo-reset-button {
