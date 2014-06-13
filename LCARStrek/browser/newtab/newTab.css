@@ -1,3 +1,7 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 :root {
   -moz-appearance: none;
   font-size: 75%;
@@ -6,7 +10,8 @@
 }
 
 /* SCROLLBOX */
-#newtab-scrollbox:not([page-disabled]) {
+#newtab-scrollbox:not([page-disabled]),
+#newtab-scrollbox:not([page-disabled]) #newtab-margin-bottom {
   color: #FF9F00;
   background-color: #000000;
 }
@@ -89,9 +94,13 @@
   margin-bottom: 0;
 }
 
+.newtab-row > .newtab-cell {
+  /* this only applies before Directory Tiles work, row is gone afterwards. */
+  -moz-margin-end: 20px;
+}
+
 /* CELLS */
 .newtab-cell {
-  -moz-margin-end: 20px;
   background-color: rgba(255,159,0,.2);
   border: 1px solid;
   border-color: #9C9CFF;
@@ -103,11 +112,11 @@
   border: 1px dashed;
 }
 
-.newtab-cell:last-child {
+.newtab-row > .newtab-cell:last-child {
   -moz-margin-end: 0;
 }
 
-.newtab-cell:hover:not(:empty):not([dragged]) {
+.newtab-cell:hover:not(:empty):not([dragged]):not([ignorehover]) {
   border-color: #FFCF00;
 }
 
@@ -117,7 +126,7 @@
   transition-property: top, left, opacity, box-shadow, background-color;
 }
 
-.newtab-site:hover,
+.newtab-cell:not([ignorehover]) > .newtab-site:hover,
 .newtab-site[dragged] {
   box-shadow: 0 0 10px rgba(0,132,132,.3);
 }
@@ -135,12 +144,24 @@
   background-size: cover;
 }
 
+.newtab-site[type=affiliate] .newtab-thumbnail,
+.newtab-site[type=organic] .newtab-thumbnail,
+.newtab-site[type=sponsored] .newtab-thumbnail {
+  background-position: center center;
+  background-size: auto;
+}
+
 /* TITLES */
 .newtab-title {
   padding: 0 8px;
   background-color: rgba(255,159,0,.8);
   color: #000000;
   line-height: 24px;
+  bottom: 0 !important;
+}
+
+.newtab-site[type=sponsored] .newtab-title {
+  -moz-padding-end: 24px;
 }
 
 /* CONTROLS */
@@ -182,4 +203,16 @@
 
 .newtab-control-block:active {
   background-position: -192px 0;
+}
+
+.newtab-control-sponsored {
+  background-position: -249px -1px;
+}
+
+.newtab-control-sponsored:hover {
+  background-position: -265px -1px;
+}
+
+.newtab-control-sponsored[panelShown] {
+  background-position: -281px -1px;
 }

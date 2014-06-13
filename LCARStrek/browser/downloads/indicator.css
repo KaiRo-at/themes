@@ -20,8 +20,8 @@
 /*** Main indicator icon ***/
 
 #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/FxToolbar.png"),
-                              0, 108, 18, 90) center no-repeat;
+  background: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"),
+                              0, 198, 18, 180) center no-repeat;
   min-width: 18px;
   min-height: 18px;
 }
@@ -29,8 +29,8 @@
 #downloads-button:hover > #downloads-indicator-anchor > #downloads-indicator-icon,
 #downloads-button[open="true"] > #downloads-indicator-anchor > #downloads-indicator-icon,
 #downloads-button[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/FxToolbar.png"),
-                              18, 108, 36, 90) center no-repeat;
+  background: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"),
+                              18, 198, 36, 180) center no-repeat;
   color: #000000;
 }
 
@@ -52,8 +52,8 @@
    equivalent to -moz-any([progress], [paused]). */
 
 #downloads-button:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(url("chrome://browser/skin/FxToolbar.png"),
-                              0, 108, 18, 90) center no-repeat;
+  background: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"),
+                              0, 198, 18, 180) center no-repeat;
   background-size: 12px;
 }
 
@@ -64,8 +64,8 @@
 #downloads-button:not([counter]):hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
 #downloads-button[open="true"]:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
 #downloads-button:not([counter])[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(url("chrome://browser/skin/FxToolbar.png"),
-                              18, 108, 36, 90) center no-repeat;
+  background: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"),
+                              18, 198, 36, 180) center no-repeat;
   background-size: 12px;
 }
 

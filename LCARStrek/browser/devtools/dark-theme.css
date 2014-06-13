@@ -710,7 +710,8 @@ devtools-menulist:-moz-focusring,
 }
 
 #toolbox-tabs {
-  margin: 0;
+  margin: 0 2px;
+  -moz-padding-start: 3px;
   background-color: #000000;
   color: #FFCF00;
 }
@@ -770,6 +771,11 @@ devtools-menulist:-moz-focusring,
 .devtools-tab > image {
   -moz-margin-end: 0;
   -moz-margin-start: 0;
+}
+
+#toolbox-option-container {
+  background-color: #000000;
+  -moz-padding-start: 3px;
 }
 
 #toolbox-tab-options {

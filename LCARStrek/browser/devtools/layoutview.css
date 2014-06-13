@@ -2,11 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-.theme-dark .theme-body {
-  background: url("layout-background-grid.png"), radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
-}
-
-.theme-light .theme-body {
+.theme-body {
   background: url("layout-background-grid.png"), radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
 }
 
@@ -16,31 +12,28 @@
 }
 
 #main {
-  border-color: #FF9F00;
+  border-color: #A09090;
   border-style: dotted;
 }
 
-#main > .border {
+#main > .margin,
+#main > .padding {
   color: #000000;
 }
 
+#main > .border {
+}
+
 .border > span {
-  background-color: #9C9CFF;
-  border-radius: 2px;
-  padding: 0 4px;
 }
 
 #content {
-  border-color: #FF9F00;
-  border-style: dotted 
 }
 
 #padding {
-  border-color: hsla(240,100%,85%,0.1);
+  border-color: #9C9CFF;
   border-style: solid;
 }
 
 #borders {
-  border-style: solid;
-  border-color: #9C9CFF;
 }

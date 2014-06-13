@@ -21,7 +21,8 @@
 /* BreacrumbsWidget */
 
 .breadcrumbs-widget-container {
-  -moz-margin-end: 3px;
+  -moz-margin-start: 2px;
+  -moz-margin-start: 2px;
   max-height: 25px; /* Set max-height for proper sizing on linux */
   height: 25px; /* Set height to prevent starting small waiting for content */
   /* A fake 1px-shadow is included in the border-images of the
@@ -129,12 +130,12 @@
 
 #breadcrumb-separator-before,
 #breadcrumb-separator-after:after {
-  background: #9C9CFF; /* Select Highlight Blue */
+  background: #008484; /* Select Highlight Blue */
 }
 
 #breadcrumb-separator-after,
 #breadcrumb-separator-before:after {
-  background: #9C9CFF; /* Toolbars */
+  background: #000000; /* Toolbars */
 }
 
 /* This chevron arrow cannot be replicated easily in CSS, so we are using
@@ -164,6 +165,7 @@
   margin: 0;
   padding: 0 8px 0 20px;
   border: none;
+  border-radius: 0;
   outline: none;
   color: #FF9F00;
 }
@@ -185,15 +187,21 @@
 }
 
 .breadcrumbs-widget-item:not([checked]) {
-  background: -moz-element(#breadcrumb-separator-normal) no-repeat center left;
- }
- 
+  background-image: -moz-element(#breadcrumb-separator-normal);
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
 .breadcrumbs-widget-item[checked] + .breadcrumbs-widget-item {
-  background: -moz-element(#breadcrumb-separator-after) no-repeat 0 0;
+  background-image: -moz-element(#breadcrumb-separator-after);
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .breadcrumbs-widget-item[checked] {
-  background: -moz-element(#breadcrumb-separator-before) no-repeat 0 0;
+  background-image: -moz-element(#breadcrumb-separator-before);
+  background-repeat: no-repeat;
+  background-position: 0 0;
   background-color: #008484; /* Select Highlight Blue */
 }
 
@@ -231,8 +239,15 @@
   color: #FF9F00; /* Foreground (Text) - Light */
 }
 
+.breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-id,
+.breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-tag,
+.breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-pseudo-classes,
+.breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-classes {
+  color: #000000 !important;
+}
+
 .breadcrumbs-widget-item {
-  color: #FF9F00; /* Foreground (Text) - Light */
+  color: #FFCF00; /* Foreground (Text) - Light */
 }
 
 .breadcrumbs-widget-item-id {

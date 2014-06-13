@@ -1388,15 +1388,18 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > #forward-button:not([o
   border-radius: 10000px 0 0 10000px;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container:not([switchingtabs]) > #forward-button {
+window:not([chromehidden~="toolbar"]) #urlbar-container:not([switchingtabs]) > #forward-button,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not([switchingtabs]) > #forward-button {
   transition: opacity 150ms ease-out;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container:not(:hover) > #forward-button[disabled=true] {
+window:not([chromehidden~="toolbar"]) #urlbar-container:not(:hover) > #forward-button[disabled=true],
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-button[disabled=true] {
   opacity: 0;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container > #forward-button[occluded-by-urlbar] {
+window:not([chromehidden~="toolbar"]) #urlbar-container > #forward-button[occluded-by-urlbar],
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[occluded-by-urlbar] {
   visibility: hidden;
 }
 
@@ -1584,53 +1587,64 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > #forward-button[occlud
 /*  background-color: white;*/
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper {
+window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
   padding-left: 22px;
   -moz-margin-start: -22px;
   position: relative;
   pointer-events: none;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar {
+window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar {
 /*  -moz-border-start: none;
   margin-left: 0; */
   pointer-events: all;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container:not([switchingtabs]) > #urlbar-wrapper > #urlbar {
+window:not([chromehidden~="toolbar"]) #urlbar-container:not([switchingtabs]) > #urlbar-wrapper > #urlbar,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not([switchingtabs]) > #urlbar {
   transition: margin-left 150ms ease-out;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar:-moz-locale-dir(ltr) {
+window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar:-moz-locale-dir(ltr),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(ltr) {
 /*  border-top-left-radius: 0;
   border-bottom-left-radius: 0; */
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar:-moz-locale-dir(rtl) {
+window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar:-moz-locale-dir(rtl),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(rtl) {
 /*  border-top-right-radius: 0;
   border-bottom-right-radius: 0; */
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper {
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] {
 /*  clip-path: url("chrome://browser/content/browser.xul#urlbar-back-button-clip-path");*/
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper > #urlbar {
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper > #urlbar,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] > #urlbar {
   margin-left: -22px;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:hover:not([switchingtabs]) > #urlbar-wrapper > #urlbar {
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:hover:not([switchingtabs]) > #urlbar-wrapper > #urlbar,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled]:hover:not([switchingtabs]) > #urlbar {
   /* delay the hiding of the forward button when hovered to avoid accidental clicks on the url bar */
   transition-delay: 100s;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not(:hover) > #urlbar-wrapper > #urlbar {
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not(:hover) > #urlbar-wrapper > #urlbar,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled]:not(:hover) > #urlbar {
   /* when not hovered anymore, trigger a new transition to hide the forward button immediately */
   margin-left: -22.01px;
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper:-moz-locale-dir(rtl),
-window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar:-moz-locale-dir(rtl) {
+window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar:-moz-locale-dir(rtl),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(rtl) {
   /* let windows-urlbar-back-button-mask clip the urlbar's right side for RTL */
   transform: scaleX(-1);
 }
@@ -1727,7 +1741,8 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   border-radius: 0;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar > #identity-box {
+window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar > #identity-box,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box {
 /*   border-radius: 0; */
   -moz-padding-start: 2px;
   -moz-padding-end: 2px;
@@ -1735,30 +1750,40 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #url
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper > #urlbar >
+    #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(ltr),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] > #urlbar >
     #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(ltr) {
   padding-left: 2px;
   transition: padding-left;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper > #urlbar > 
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper > #urlbar >
+    #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(rtl),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] > #urlbar >
     #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(rtl) {
   padding-right: 2px;
   transition: padding-right;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:hover:not([switchingtabs]) > #urlbar-wrapper > #urlbar > 
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:hover:not([switchingtabs]) > #urlbar-wrapper > #urlbar >
+    #notification-popup-box[hidden] + #identity-box,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled]:hover:not([switchingtabs]) > #urlbar >
     #notification-popup-box[hidden] + #identity-box {
   /* forward button hiding is delayed when hovered */
   transition-delay: 100s;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not(:hover) > #urlbar-wrapper > #urlbar > 
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not(:hover) > #urlbar-wrapper > #urlbar >
+    #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(ltr),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled]:not(:hover) > #urlbar >
     #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(ltr) {
   /* when not hovered anymore, trigger a new non-delayed transition to react to the forward button hiding */
   padding-left: 2.01px;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not(:hover) > #urlbar-wrapper > #urlbar > 
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not(:hover) > #urlbar-wrapper > #urlbar >
+    #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(rtl),
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled]:not(:hover) > #urlbar >
     #notification-popup-box[hidden] + #identity-box:-moz-locale-dir(rtl) {
   /* when not hovered anymore, trigger a new non-delayed transition to react to the forward button hiding */
   padding-right: 2.01px;
@@ -1899,7 +1924,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled]:not(:ho
   -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar > #identity-box > #page-proxy-favicon {
+window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar > #identity-box > #page-proxy-favicon,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box > #page-proxy-favicon {
 /*  -moz-margin-end: 1px;*/
 }
 
@@ -2063,7 +2089,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   -moz-image-region: rect(0, 42px, 14px, 28px);
 }
 
-#urlbar-go-button:hover,
+#urlbar-go-button:hover {
   -moz-image-region: rect(14px, 42px, 28px, 28px);
 }
 
@@ -2914,7 +2940,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   border-right-width: 8px;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper > #urlbar > #notification-popup-box {
+window:not([chromehidden~="toolbar"]) #urlbar-container[forwarddisabled] > #urlbar-wrapper > #urlbar > #notification-popup-box,
+window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] > #urlbar > #notification-popup-box {
 /*  padding-left: 5px; */
 }
 
@@ -4723,3 +4750,108 @@ toolbarpaletteitem[place="toolbar"] {
 #UITourTooltipButtons {
   margin: 24px -4px -4px;
 }
+
+/* === BEGIN contextmenu.inc.css === */
+
+menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
+}
+
+#context-navigation > .menuitem-iconic {
+  -moz-box-flex: 1;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+}
+
+#context-navigation > .menuitem-iconic[disabled="true"] {
+  background-color: transparent;
+}
+
+#context-navigation > .menuitem-iconic > .menu-iconic-left {
+  -moz-appearance: none;
+}
+
+#context-navigation > #context-back > .menu-iconic-left {
+  list-style-image: url("chrome://browser/skin/ToolbarFx.png");
+  -moz-image-region: rect(0, 54px, 18px, 36px);
+}
+
+#context-navigation > #context-back:not([disabled="true"]):hover > .menu-iconic-left {
+  -moz-image-region: rect(18px, 54px, 36px, 36px);
+}
+
+#context-navigation > #context-back[disabled="true"] > .menu-iconic-left {
+  -moz-image-region: rect(36px, 54px, 54px, 36px);
+}
+
+#context-navigation > #context-forward > .menu-iconic-left {
+  list-style-image: url("chrome://browser/skin/ToolbarFx.png");
+  -moz-image-region: rect(0, 72px, 18px, 54px);
+}
+
+#context-navigation > #context-forward:not([disabled="true"]):hover > .menu-iconic-left {
+  -moz-image-region: rect(18px, 72px, 36px, 54px);
+}
+
+#context-navigation > #context-forward[disabled="true"] > .menu-iconic-left {
+  -moz-image-region: rect(36px, 72px, 54px, 54px);
+}
+
+#context-navigation > #context-reload > .menu-iconic-left {
+  list-style-image: url("chrome://browser/skin/reload-stop-go.png");
+  -moz-image-region: rect(0, 14px, 14px, 0);
+}
+
+#context-navigation > #context-reload:not([disabled="true"]):hover > .menu-iconic-left {
+  -moz-image-region: rect(14px, 14px, 28px, 0);
+}
+
+#context-navigation > #context-reload[disabled="true"] > .menu-iconic-left {
+  -moz-image-region: rect(28px, 14px, 42px, 0);
+}
+
+#context-navigation > #context-stop > .menu-iconic-left {
+  list-style-image: url("chrome://browser/skin/reload-stop-go.png");
+  -moz-image-region: rect(0, 28px, 14px, 14px);
+}
+
+#context-navigation > #context-stop:not([disabled="true"]):hover > .menu-iconic-left {
+  -moz-image-region: rect(14px, 28px, 28px, 14px);
+}
+
+#context-navigation > #context-stop[disabled="true"] > .menu-iconic-left {
+  -moz-image-region: rect(28px, 28px, 42px, 14px);
+}
+
+#context-navigation > #context-bookmarkpage > .menu-iconic-left {
+  list-style-image: url("chrome://browser/skin/ToolbarFx.png");
+  -moz-image-region: rect(0, 144px, 18px, 126px);
+}
+
+#context-navigation > #context-bookmarkpage:not([disabled="true"]):hover > .menu-iconic-left {
+  -moz-image-region: rect(18px, 144px, 36px, 126px);
+}
+
+#context-navigation > #context-bookmarkpage[disabled="true"] > .menu-iconic-left {
+  -moz-image-region: rect(36px, 144px, 54px, 126px);
+}
+
+#context-back:-moz-locale-dir(rtl),
+#context-forward:-moz-locale-dir(rtl),
+#context-reload:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
+}
+
+#context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+  width: 18px;
+  height: 18px;
+  margin: 7px;
+}
+
+#context-navigation > #context-reload > .menu-iconic-left > .menu-iconic-icon,
+#context-navigation > #context-stop > .menu-iconic-left > .menu-iconic-icon {
+  width: 14px;
+  height: 14px;
+  margin: 9px;
+}
+
+/* === END contextmenu.inc.css === */
