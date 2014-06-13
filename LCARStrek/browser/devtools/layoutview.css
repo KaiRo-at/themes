@@ -8,7 +8,7 @@
 
 .theme-body {
   color: #FF9F00 !important;
-  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #main {
