@@ -449,7 +449,7 @@ devtools-menulist:-moz-focusring,
 }
 
 @media (min-resolution: 2dppx) {
-  .theme-dark .devtools-searchinput {
+  .devtools-searchinput {
     background-image: url("magnifying-glass@2x.png");
   }
 }

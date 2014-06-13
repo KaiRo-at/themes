@@ -10,16 +10,6 @@ window {
   border-top: none;
 }
 
-#inspector-inspect-toolbutton {
-  list-style-image: url("chrome://browser/skin/devtools/inspect-button.png");
-  -moz-image-region: rect(0 16px 16px 0);
-}
-
-#inspector-inspect-toolbutton[checked=true],
-#inspector-inspect-toolbutton:hover {
-  -moz-image-region: rect(0 32px 16px 16px);
-}
-
 /* Highlighter toolbar - breadcrumbs */
 
 #inspector-breadcrumbs {

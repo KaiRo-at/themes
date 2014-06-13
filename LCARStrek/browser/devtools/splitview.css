@@ -16,28 +16,26 @@
 
 .splitview-nav {
   -moz-appearance: none;
+  list-style-image: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   margin: 0;
   border-right: #9C9CFF;
 }
 
 .splitview-nav > li {
-  color: white;
-  background-clip: padding-box;
-  border-bottom: 1px solid #008484;
+  /* To compensate for the top and bottom borders */
+  margin-top: 0;
+  margin-bottom: -1px;
   -moz-padding-end: 8px;
   -moz-box-align: center;
-}
-
-.splitview-nav {
-  list-style-image: none;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.splitview-nav > li {
   outline: 0;
   vertical-align: bottom;
+/*  color: white;
+  background-clip: padding-box;*/
+
+  border-bottom: 1px solid #008484;
 }
 
 .placeholder {
@@ -46,17 +44,19 @@
 }
 
 .splitview-nav > li.splitview-active {
-  background-image: url("itemArrow-ltr.png");
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: center right, top right, top left;
-  background-size: auto, 1px 100%, auto;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: auto;
   border-bottom: 1px solid #008484;
+
+  background-image: url("itemArrow-ltr.svg");
 }
 
 .splitview-nav > li.splitview-active:-moz-locale-dir(rtl) {
-  background-image: url("itemArrow-rtl.png");
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: center left, top left, top right;
+  background-repeat: no-repeat;
+  background-position: center left;
+
+  background-image: url("itemArrow-rtl.svg");
 }
 
 /* Toolbars */
