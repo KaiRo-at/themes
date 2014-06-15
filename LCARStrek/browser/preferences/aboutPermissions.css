@@ -95,6 +95,12 @@
 .pref-icon[type="fullscreen"] {
   list-style-image: url("chrome://global/skin/icons/alert-question.gif");
 }
+.pref-icon[type="camera"] {
+  list-style-image: url("chrome://global/skin/icons/alert-question.gif");
+}
+.pref-icon[type="microphone"] {
+  list-style-image: url("chrome://global/skin/icons/alert-question.gif");
+}
 
 .pref-title {
   font-size: 125%;

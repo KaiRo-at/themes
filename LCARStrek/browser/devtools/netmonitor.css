@@ -125,12 +125,30 @@ window {
   font-weight: 600;
 }
 
+.requests-menu-icon-and-file {
+  width: 20vw;
+  min-width: 4em;
+}
+
+.requests-menu-icon {
+  background: #FFCF00;
+  width: calc(1em + 4px);
+  height: calc(1em + 4px);
+  margin: -4px 0px;
+  -moz-margin-end: 4px;
+}
+
+.requests-menu-icon {
+  outline: 1px solid #A09090;
+}
+
 .requests-menu-file {
-  width: 16em;
+  text-align: start;
 }
 
 .requests-menu-domain {
-  width: 16em;
+  width: 14vw;
+  min-width: 10em;
 }
 
 .requests-menu-type {
@@ -246,8 +264,6 @@ box.requests-menu-status[code^="5"] {
   -moz-padding-end: 4px;
   background-repeat: repeat-y; /* Background created on a <canvas> in js. */
   background-position: -1px center;
-  margin-top: -1px; /* Compensate borders. */
-  margin-bottom: -1px;
 }
 
 .requests-menu-subitem.requests-menu-waterfall:-moz-locale-dir(rtl) {
@@ -319,10 +335,6 @@ box.requests-menu-status[code^="5"] {
 }
 
 /* Network request details */
-
-#details-pane {
-  max-width: 500px;
-}
 
 #details-pane-toggle {
   list-style-image: url("chrome://browser/skin/devtools/debugger-collapse.png");
@@ -398,6 +410,17 @@ box.requests-menu-status[code^="5"] {
   margin-bottom: 10px;
 }
 
+/* Preview tabpanel */
+
+#preview-tabpanel {
+  background: #fff;
+}
+
+#response-preview {
+  display: -moz-box;
+  -moz-box-flex: 1;
+}
+
 /* Timings tabpanel */
 
 #timings-tabpanel .tabpanel-summary-label {
@@ -445,7 +468,7 @@ box.requests-menu-status[code^="5"] {
   margin: 0;
   -moz-margin-end: 3px;
   border: none;
-  padding: 0px 0.75vw;
+  padding: 0px 1vw;
 
 /*  color: #fff;*/
 }
@@ -597,13 +620,7 @@ box.requests-menu-status[code^="5"] {
     min-height: 24px;
   }
 
-  .requests-menu-footer-button,
-  .requests-menu-footer-label {
-    padding: 0px 1vw;
-  }
-
   #details-pane {
-    max-width: none;
     margin: 0 !important;
     /* To prevent all the margin hacks to hide the sidebar. */
   }
@@ -612,7 +629,7 @@ box.requests-menu-status[code^="5"] {
     width: 16vw;
   }
 
-  .requests-menu-file,
+  .requests-menu-icon-and-file,
   .requests-menu-domain {
     width: 30vw;
   }
@@ -638,7 +655,7 @@ box.requests-menu-status[code^="5"] {
        right border and box-shadow of "Domain" column should be hidden. */
   }
 
-  #network-table[domain-overflows] .requests-menu-file {
+  #network-table[domain-overflows] .requests-menu-icon-and-file {
     border-width: 0 !important;
     box-shadow: none !important;
     /* The "Domain" header is not visible anymore, and thus the

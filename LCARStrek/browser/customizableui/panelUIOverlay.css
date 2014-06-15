@@ -75,6 +75,10 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
   -moz-box-flex: 1;
 }
 
+.subviewbutton:not(:-moz-any([image],[targetURI],.cui-withicon)) > .toolbarbutton-text {
+  -moz-margin-start: 0;
+}
+
 .panel-subview-body {
   overflow-y: auto;
   overflow-x: hidden;
@@ -189,7 +193,6 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
 panelview:not([mainview]) .toolbarbutton-text,
 .cui-widget-panel toolbarbutton > .toolbarbutton-text {
   text-align: start;
-  -moz-padding-start: 8px;
   display: -moz-box;
 }
 
@@ -677,28 +680,28 @@ panelview .toolbarbutton-1,
 }
 
 /*
-panelview .toolbarbutton-1:not(:-moz-any([disabled],[checked="true"],[open],:active)):-moz-any(:hover,[_moz-menuactive]),
-toolbarbutton.subviewbutton:not(:-moz-any([disabled],[checked="true"],[open],:active)):-moz-any(:hover,[_moz-menuactive]),
-menu.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive],
-menuitem.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive],
-.widget-overflow-list .toolbarbutton-1:not(:-moz-any([disabled],[checked="true"],[open],:active)):-moz-any(:hover,[_moz-menuactive]),
+panelview .toolbarbutton-1:not(:-moz-any([disabled],[open],[checked="true"],:active)):hover,
+toolbarbutton.subviewbutton:not(:-moz-any([disabled],[open],[checked="true"],:active)):hover,
+menu.subviewbutton:not(:-moz-any([disabled],[checked="true"],:active))[_moz-menuactive],
+menuitem.subviewbutton:not(:-moz-any([disabled],[checked="true"],:active))[_moz-menuactive],
+.widget-overflow-list .toolbarbutton-1:not(:-moz-any([disabled],[open],[checked="true"],:active)):hover,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])
     > toolbarbutton:not(:-moz-any([disabled],[checked="true"],[open],:active)):hover {
   background-color: hsla(210,4%,10%,.08);
   border-color: hsla(210,4%,10%,.11);
 }
 
-.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]):not(:-moz-any([disabled],[checked="true"],[open],:active)):-moz-any(:hover,[_moz-menuactive]) {
+.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]):not(:-moz-any([disabled],[open],[checked="true"],:active)):hover {
   border-color: hsla(210,4%,10%,.11);
 }
 
-panelview .toolbarbutton-1:not([disabled]):-moz-any([open],[checked="true"],:hover:active,[_moz-menuactive]:active)),
-toolbarbutton.subviewbutton:not([disabled]):-moz-any([open],[checked="true"],:hover:active,[_moz-menuactive]:active)),
-menu.subviewbutton:not([disabled])[_moz-menuactive]:active,
-menuitem.subviewbutton:not([disabled])[_moz-menuactive]:active,
-.widget-overflow-list .toolbarbutton-1:not([disabled]):-moz-any([open],[checked="true"],:hover:active,[_moz-menuactive]:active)),
+panelview .toolbarbutton-1:not([disabled]):-moz-any([open],[checked="true"],:hover:active),
+toolbarbutton.subviewbutton:not([disabled]):-moz-any([open],[checked="true"],:hover:active),
+menu.subviewbutton:not([disabled]):-moz-any([checked="true"],[_moz-menuactive]:active),
+menuitem.subviewbutton:not([disabled]):-moz-any([checked="true"],[_moz-menuactive]:active),
+.widget-overflow-list .toolbarbutton-1:not([disabled]):-moz-any([open],[checked="true"],:hover:active),
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])
-    > toolbarbutton:not([disabled]):-moz-any([open],[checked="true"],:hover:active,[_moz-menuactive]:active)) {
+    > toolbarbutton:not([disabled]):-moz-any([open],[checked="true"],:hover:active) {
   background-color: hsla(210,4%,10%,.12);
   border-color: hsla(210,4%,10%,.14);
   box-shadow: 0 1px 0 hsla(210,4%,10%,.03) inset;

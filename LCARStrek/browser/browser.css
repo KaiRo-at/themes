@@ -1251,7 +1251,7 @@ toolbar .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker:-moz-lwtheme-bri
 }
 
 #nav-bar .toolbarbutton-1 > menupopup.cui-widget-panel {
-/*  margin-top: -8px;*/
+  margin-top: -4px;
 }
 
 #nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button {
@@ -2923,6 +2923,11 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://browser/skin/webRTC-shareDevice-64.png");
 }
 
+.popup-notification-icon[popupid="webRTC-sharingMicrophone"],
+.popup-notification-icon[popupid="webRTC-shareMicrophone"] {
+  list-style-image: url("chrome://browser/skin/webRTC-shareMicrophone-64.png");
+}
+
 .popup-notification-icon[popupid="pointerLock"] {
   list-style-image: url("chrome://browser/skin/pointerLock-64.png");
 }
@@ -3050,6 +3055,16 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] > #urlbar
 .webRTC-sharingDevices-notification-icon,
 #webRTC-sharingDevices-notification-icon {
   list-style-image: url("chrome://browser/skin/webRTC-sharingDevice-16.png");
+}
+
+.webRTC-shareMicrophone-notification-icon,
+#webRTC-shareMicrophone-notification-icon {
+  list-style-image: url("chrome://browser/skin/webRTC-shareMicrophone-16.png");
+}
+
+.webRTC-sharingMicrophone-notification-icon,
+#webRTC-sharingMicrophone-notification-icon {
+  list-style-image: url("chrome://browser/skin/webRTC-sharingMicrophone-16.png");
 }
 
 .web-notifications-notification-icon,
@@ -3747,8 +3762,7 @@ html|*#gcli-output-frame {
 #servicesInstall-notification-icon {
   list-style-image: url("chrome://browser/skin/social/services-16.png");
 }
-#social-undoactivation-button,
-#servicesInstall-learnmore-link {
+#social-undoactivation-button {
   -moz-margin-start: 0; /* override default label margin to match description margin */
 }
 
