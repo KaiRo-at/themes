@@ -21,6 +21,7 @@
 #downloadsHistory {
   cursor: pointer;
   margin: 4px !important;
+  color: #3333FF;
 }
 
 #downloadsPanel[keyfocus] > #downloadsFooter > #downloadsHistory:focus {
@@ -30,6 +31,15 @@
 
 #downloadsHistory > .button-box {
   border: none;
+}
+
+#downloadsPanel[hasdownloads] > #downloadsFooter {
+}
+
+#downloadsPanel[hasdownloads] > #downloadsFooter:hover {
+}
+
+#downloadsPanel[hasdownloads] > #downloadsFooter:hover:active {
 }
 
 /*** Downloads Summary and List items ***/
@@ -150,6 +160,9 @@ richlistitem[type="download"]:first-child {
   background-color: #794900;
   color: #FFCF00;
   cursor: pointer;
+}
+
+#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover:active {
 }
 
 /*** Button icons ***/

@@ -21,44 +21,13 @@
   color: #FFCF00;
 }
 
-.theme-twisty {
-  cursor: pointer;
-  width: 14px;
-  height: 14px;
-  background-repeat: no-repeat;
-  background-image: url("chrome://browser/skin/devtools/controls.png");
-  background-position: 0 -14px;
-}
-
-.theme-twisty:-moz-focusring {
-  outline-style: none;
-}
-
-.theme-twisty[open] {
-  background-position: -14px -14px;
-}
-
-.theme-checkbox {
-  display: inline-block;
-  border: 0;
-  width: 14px;
-  height: 14px;
-  padding: 0;
-  outline: none;
-  background-image: url("chrome://browser/skin/devtools/controls.png");
-  background-position: 0 0;
-}
-
-.theme-checkbox[checked] {
-  background-position: -14px 0;
+.theme-bg-darker {
+  background-color: rgba(0,0,0,0.5);
 }
 
 .theme-selected {
   background: #004242;
-}
-
-.theme-bg-darker {
-  background-color: rgba(0,0,0,0.5);
+  color: #FF9F00; /* Light foreground text */
 }
 
 .theme-bg-contrast,
@@ -257,6 +226,46 @@ div.CodeMirror span.eval-text {
   min-height: 1.4em;
 }
 
+/* Twisty and checkbox controls */
+.theme-twisty, .theme-checkbox {
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+  background-image: url("chrome://browser/skin/devtools/controls.png");
+  background-size: 28px 28px;
+}
+
+.theme-twisty {
+  cursor: pointer;
+  background-position: -0px -14px;
+}
+
+.theme-twisty:-moz-focusring {
+  outline-style: none;
+}
+
+.theme-twisty[open] {
+  background-position: -14px -14px;
+}
+
+.theme-checkbox {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  outline: none;
+  background-position: 0 0;
+}
+
+.theme-checkbox[checked] {
+  background-position: -14px 0;
+}
+
+@media (min-resolution: 2dppx) {
+  .theme-twisty, .theme-checkbox {
+    background-image: url("chrome://browser/skin/devtools/controls@2x.png");
+  }
+}
+
 /* XUL panel styling (see browser/devtools/shared/widgets/Tooltip.js) */
 
 .theme-tooltip-panel .panel-arrowcontent {
@@ -304,6 +313,10 @@ div.CodeMirror span.eval-text {
 .theme-tooltip-panel .devtools-tooltip-simple-text {
 /*  color: white; */
   border-bottom: 1px solid #A09090;
+}
+
+.theme-tooltip-panel .devtools-tooltip-font-previewer-text {
+  color: FF9F00;
 }
 
 .theme-tooltip-panel .devtools-tooltip-simple-text:last-child {

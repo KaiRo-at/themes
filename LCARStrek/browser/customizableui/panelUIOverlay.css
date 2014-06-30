@@ -75,10 +75,6 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
   -moz-box-flex: 1;
 }
 
-.subviewbutton:not(:-moz-any([image],[targetURI],.cui-withicon)) > .toolbarbutton-text {
-  -moz-margin-start: 0;
-}
-
 .panel-subview-body {
   overflow-y: auto;
   overflow-x: hidden;
@@ -310,7 +306,7 @@ toolbarbutton[sdk-button="true"][cui-areatype="menu-panel"] > .toolbarbutton-ico
   border-radius: 0 0 2px 0;
 }
 
-.panel-combined-button[disabled] > .toolbarbutton-icon {
+#main-window:not([customizing]) .panel-combined-button[disabled] > .toolbarbutton-icon {
 /*  opacity: .5; */
 }
 
@@ -680,28 +676,28 @@ panelview .toolbarbutton-1,
 }
 
 /*
-panelview .toolbarbutton-1:not(:-moz-any([disabled],[open],[checked="true"],:active)):hover,
-toolbarbutton.subviewbutton:not(:-moz-any([disabled],[open],[checked="true"],:active)):hover,
-menu.subviewbutton:not(:-moz-any([disabled],[checked="true"],:active))[_moz-menuactive],
-menuitem.subviewbutton:not(:-moz-any([disabled],[checked="true"],:active))[_moz-menuactive],
-.widget-overflow-list .toolbarbutton-1:not(:-moz-any([disabled],[open],[checked="true"],:active)):hover,
+panelview .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)):hover,
+toolbarbutton.subviewbutton:not(:-moz-any([disabled],[open],:active)):hover,
+menu.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive],
+menuitem.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive],
+.widget-overflow-list .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)):hover,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])
     > toolbarbutton:not(:-moz-any([disabled],[checked="true"],[open],:active)):hover {
   background-color: hsla(210,4%,10%,.08);
   border-color: hsla(210,4%,10%,.11);
 }
 
-.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]):not(:-moz-any([disabled],[open],[checked="true"],:active)):hover {
+.toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]):not(:-moz-any([disabled],[open],:active)):hover {
   border-color: hsla(210,4%,10%,.11);
 }
 
-panelview .toolbarbutton-1:not([disabled]):-moz-any([open],[checked="true"],:hover:active),
-toolbarbutton.subviewbutton:not([disabled]):-moz-any([open],[checked="true"],:hover:active),
-menu.subviewbutton:not([disabled]):-moz-any([checked="true"],[_moz-menuactive]:active),
-menuitem.subviewbutton:not([disabled]):-moz-any([checked="true"],[_moz-menuactive]:active),
-.widget-overflow-list .toolbarbutton-1:not([disabled]):-moz-any([open],[checked="true"],:hover:active),
+panelview .toolbarbutton-1:not([disabled]):-moz-any([open],:hover:active),
+toolbarbutton.subviewbutton:not([disabled]):-moz-any([open],:hover:active),
+menu.subviewbutton:not([disabled])[_moz-menuactive]:active,
+menuitem.subviewbutton:not([disabled])[_moz-menuactive]:active,
+.widget-overflow-list .toolbarbutton-1:not([disabled]):-moz-any([open],:hover:active),
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])
-    > toolbarbutton:not([disabled]):-moz-any([open],[checked="true"],:hover:active) {
+    > toolbarbutton:not([disabled]):-moz-any([open],:hover:active) {
   background-color: hsla(210,4%,10%,.12);
   border-color: hsla(210,4%,10%,.14);
   box-shadow: 0 1px 0 hsla(210,4%,10%,.03) inset;
@@ -721,8 +717,8 @@ menuitem.panel-subview-footer:not(:-moz-any([disabled],[open],:active)):hover,
   border-top: 1px solid hsla(210,4%,10%,.12);
 }
 
-menuitem.panel-subview-footer:not([disabled]):-moz-any([open],[checked="true"],:hover:active),
-.subviewbutton.panel-subview-footer:not([disabled]):-moz-any([open],[checked="true"],:hover:active) {
+menuitem.panel-subview-footer:not([disabled]):-moz-any([open],:hover:active),
+.subviewbutton.panel-subview-footer:not([disabled]):-moz-any([open],:hover:active) {
   background-color: hsla(210,4%,10%,.15);
   border-top: 1px solid hsla(210,4%,10%,.12);
   box-shadow: 0 1px 0 hsla(210,4%,10%,.05) inset;
@@ -1133,14 +1129,14 @@ toolbarbutton.social-provider-menuitem > .toolbarbutton-icon {
 .subviewbutton:-moz-any([image],[targetURI],.cui-withicon, .restoreallitem, .bookmark-item)[checked="true"] > .toolbarbutton-icon {
   visibility: hidden;
 }
-/*
-menu.subviewbutton > .menu-right {
-  -moz-appearance: none;
-  list-style-image: url("chrome://browser/skin/places/bookmarks-menu-arrow.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
 
-menu[disabled="true"].subviewbutton > .menu-right {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
+menu.subviewbutton > .menu-right {
+  list-style-image: url("chrome://global/skin/menu/menu-arrow.gif");
 }
-*/
+menu.subviewbutton:hover > .menu-right,
+menu.subviewbutton[_moz-menuactive="true"] > .menu-right {
+  list-style-image: url("chrome://global/skin/menu/menu-arrow-hover.gif");
+}
+menu[disabled="true"].subviewbutton > .menu-right {
+  list-style-image: url("chrome://global/skin/menu/menu-arrow-disabled.gif");
+}

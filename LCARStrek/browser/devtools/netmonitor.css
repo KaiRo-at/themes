@@ -111,7 +111,7 @@ window {
 /* Network requests table: specific column dimensions */
 
 .requests-menu-status-and-method {
-  width: 8em;
+  width: 12em;
 }
 
 .requests-menu-status {
@@ -248,12 +248,12 @@ box.requests-menu-status[code^="5"] {
 }
 
 .requests-menu-timings-division[division-scale=second] {
-  -moz-border-start-color: #E7ADE7 !important; /* Light orange highlight color */
+  -moz-border-start-color: #FF9F00 !important; /* Light foreground text */
   font-weight: 600;
 }
 
 .requests-menu-timings-division[division-scale=minute] {
-  -moz-border-start-color: #FF0000 !important; /* Red highlight color */
+  -moz-border-start-color: #FF9F00 !important; /* Light foreground text */
   font-weight: 600;
 }
 
@@ -644,22 +644,6 @@ box.requests-menu-status[code^="5"] {
     box-shadow: none !important;
     /* The "Timeline" header is not visible anymore, and thus the
        right border and box-shadow of "Size" column should be hidden. */
-  }
-}
-
-@media (min-width: 701px) {
-  #network-table[type-overflows] .requests-menu-domain {
-    border-width: 0 !important;
-    box-shadow: none !important;
-    /* The "Type" header is not visible anymore, and thus the
-       right border and box-shadow of "Domain" column should be hidden. */
-  }
-
-  #network-table[domain-overflows] .requests-menu-icon-and-file {
-    border-width: 0 !important;
-    box-shadow: none !important;
-    /* The "Domain" header is not visible anymore, and thus the
-       right border and box-shadow of "File" column should be hidden. */
   }
 }
 
