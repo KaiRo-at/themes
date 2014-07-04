@@ -7,6 +7,7 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
+@namespace svg url("http://www.w3.org/2000/svg");
 
 toolbar {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar");
@@ -2933,6 +2934,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 /* Notification icon box */
+#notification-popup .panel-promo-box {
+/*  margin: 10px -10px -10px; */
+}
+
 #notification-popup-box {
   position: relative;
   background-color: #000000;
@@ -3163,6 +3168,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] > #urlbar
 /* Sync Panel */
 
 .sync-panel-icon {
+  height:32px;
   width: 32px;
   background: url("chrome://browser/content/abouthome/sync.png") top left no-repeat;
 }
@@ -3178,7 +3184,9 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] > #urlbar
 
 #sync-error-panel-title,
 #sync-start-panel-title {
+  font-size: 120%;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 #sync-start-panel-subtitle,
@@ -3220,11 +3228,40 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper[forwarddisabled] > #urlbar
 
 /* === BEGIN highlighter.inc.css === */
 
-/* Highlighter */
+/* Box model highlighter */
+svg|g.box-model-container {
+  opacity: 0.4;
+}
 
-.highlighter-outline {
-  box-shadow: 0 0 0 1px black;
-  outline: 1px dashed #A09090;
+svg|polygon.box-model-content {
+  fill: #008484;
+}
+
+svg|polygon.box-model-padding {
+  fill: #9C9CFF;
+}
+
+svg|polygon.box-model-border {
+  fill: #FFCF00;
+}
+
+svg|polygon.box-model-margin {
+  fill: #A09090;
+}
+
+svg|polygon.box-model-content,
+svg|polygon.box-model-padding,
+svg|polygon.box-model-border,
+svg|polygon.box-model-margin {
+  stroke: none;
+}
+
+svg|line.box-model-guide-top,
+svg|line.box-model-guide-right,
+svg|line.box-model-guide-bottom,
+svg|line.box-model-guide-left {
+  stroke: #E7ADE7;
+  stroke-dasharray: 5 3;
 }
 
 /* Highlighter - Node Infobar */

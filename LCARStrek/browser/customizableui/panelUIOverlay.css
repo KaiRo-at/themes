@@ -5,7 +5,7 @@
 /* === BEGIN panelUIOverlay.inc.css === */
 
 #PanelUI-popup #PanelUI-contents:empty {
-    height: 128px;
+  height: 128px;
 }
 
 #PanelUI-popup #PanelUI-contents:empty::before {
@@ -83,7 +83,7 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
 
 #PanelUI-popup .panel-subview-body {
   margin: -4px;
-  padding: 2px 4px;
+  padding: 4px 4px;
 }
 
 .panel-subview-header,
@@ -596,13 +596,11 @@ panelview .toolbarbutton-1,
 .widget-overflow-list .toolbarbutton-1,
 .panelUI-grid .toolbarbutton-1 > .toolbarbutton-menubutton-button,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton {
-/*  padding: 2px 6px;
+/*  padding: 0 6px;
   background-color: hsla(210,4%,10%,0);
   border-radius: 2px;
   border-style: solid;
   border-color: hsla(210,4%,10%,0);*/
-  transition-property: background-color, border-color;
-  transition-duration: 150ms;
 }
 
 panelview .toolbarbutton-1,
@@ -646,7 +644,7 @@ panelview .toolbarbutton-1,
 /* Bookmark items need a more specific selector. */
 .PanelUI-subView .subviewbutton:not(.panel-subview-footer) > .menu-text,
 .PanelUI-subView .subviewbutton:not(.panel-subview-footer) > .menu-iconic-text {
-/*  font-size: 1.1em;*/
+/*  font: menu;*/
 }
 
 .PanelUI-subView .subviewbutton[shortcut]::after {
@@ -725,7 +723,7 @@ menuitem.panel-subview-footer:not([disabled]):-moz-any([open],:hover:active),
 }
 
 #BMB_bookmarksPopup .subviewbutton {
-  font: inherit;
+  font: menu;
   font-weight: normal;
 }
 
@@ -745,10 +743,6 @@ menuitem.panel-subview-footer:not([disabled]):-moz-any([open],:hover:active),
   padding-bottom: 0px;
 }
 
-#BMB_bookmarksPopup menupopup {
-  padding-top: 2px;
-}
-
 #BMB_bookmarksPopup menupopup > .bookmarks-actions-menuseparator {
   / Hide bottom separator as the styled footer includes a top border serving the same purpose.
    * We can't just use display: none here, otherwise scrollbox.xml will flip out and sometimes
@@ -761,6 +755,20 @@ menuitem.panel-subview-footer:not([disabled]):-moz-any([open],:hover:active),
   min-height: 1px;
   margin: -1px 0 0;
   border: none;
+}
+
+/ Popups with only one item don't have a footer /
+menupopup[placespopup=true][singleitempopup=true] > hbox > .popup-internal-box > .arrowscrollbox-scrollbox > .scrollbox-innerbox,
+/ These popups never have a footer /
+#BMB_bookmarksToolbarPopup > hbox > .popup-internal-box > .arrowscrollbox-scrollbox > .scrollbox-innerbox,
+#BMB_unsortedBookmarksPopup > hbox > .popup-internal-box > .arrowscrollbox-scrollbox > .scrollbox-innerbox {
+  / And so they need some bottom padding: /
+  padding-bottom: 4px;
+}
+
+/ Disabled (empty) item is always alone and never has an icon, so fix its left padding /
+#BMB_bookmarksPopup menupopup[emptyplacesresult] .bookmark-item.subviewbutton {
+  padding-left: 6px;
 }
 */
 
@@ -1013,12 +1021,11 @@ toolbarbutton[overflowedItem=true] {
   background-image: url("chrome://global/skin/menu/menu-check-hover.gif");
 }
 
-.PanelUI-subView .menu-iconic-left {
-  -moz-appearance: none;
+.subbiewbutton > .menu-iconic-left {
   -moz-margin-end: 3px;
 }
  
-.PanelUI-subView menuitem[checked="true"] > .menu-iconic-left {
+menuitem[checked="true"].subviewbutton > .menu-iconic-left {
   visibility: hidden;
 }
 
