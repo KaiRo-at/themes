@@ -1605,12 +1605,17 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper {
   padding-left: 22px;
   -moz-margin-start: -22px;
   position: relative;
-/*  pointer-events: none;*/
+  pointer-events: none;
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #urlbar {
 /*  -moz-border-start: none;
   margin-left: 0; */
+  pointer-events: all;
+}
+
+/* The next rule is a workaround to deal with the above rules in post-31 */
+window:not([chromehidden~="toolbar"]) #urlbar-container > #urlbar-wrapper > #forward-button {
   pointer-events: all;
 }
 
