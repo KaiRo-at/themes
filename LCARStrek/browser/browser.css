@@ -62,8 +62,8 @@ menubar {
 /*  margin-top: 3px;*/
 }
 
-#main-window[tabsintitlebar][sizemode="normal"][chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,
-#main-window[tabsintitlebar][sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar {
+#main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen])[chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,
+#main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen]) #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar {
 /*  margin-top: 15px;*/
 }
 
@@ -125,13 +125,6 @@ menubar {
   #main-window[tabsintitlebar] #titlebar-content:-moz-lwtheme {
     -moz-binding: url("chrome://global/content/bindings/general.xml#windowdragbox");
     visibility: visible;
-  }
-
-/* Make the menu inherit the toolbar's color. On non-compositor (Aero Basic, XP modern, classic)
- * this is defined above, but only for tabsintitlebar. Otherwise (Aero Glass, Windows 8),
- * this is hardcoded to black in browser-aero.css, even without tabsintitlebar. */
-  #main-window[tabsintitlebar] #main-menubar > menu:not(:-moz-lwtheme) {
-/*    color: inherit; */
   }
 
 #nav-bar {
@@ -1332,6 +1325,7 @@ toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
 window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-any([disabled=true],:not([open]):not([disabled=true]):not(:active)) > .toolbarbutton-icon {
 }
 
+#nav-bar .toolbarbutton-1:not([disabled=true]) > .toolbarbutton-menubutton-button[open] + .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
 #nav-bar .toolbarbutton-1:not([disabled=true]):-moz-any(:hover,[open]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 #nav-bar .toolbarbutton-1:not([disabled=true]):-moz-any(:hover,[open]) > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
 #nav-bar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
@@ -1341,7 +1335,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > #forward-button:not([o
 #nav-bar .toolbarbutton-1:not([buttonover]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker:not([disabled=true]) > .dropmarker-icon {
 }
 
-#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled=true]):hover:active > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-menubutton-button:not([disabled=true]):-moz-any(:hover:active, [open]) > .toolbarbutton-icon,
 #nav-bar .toolbarbutton-1[open] > .toolbarbutton-menubutton-dropmarker:not([disabled=true]) > .dropmarker-icon,
 #nav-bar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
 #nav-bar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-text,
@@ -2479,16 +2473,6 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 /* End selected tab */
 
-/* Background tabs */
-
-/* Decrease the height of the hoverable region of background tabs whenever the tabs are at the top
-   of the window (e.g. no menubar, tabs in titlebar, etc.) to make it easier to drag the window by
-   the titlebar. We don't need this in fullscreen since window dragging is not an issue there. */
-#main-window[tabsintitlebar]:not([sizemode="maximized"]):not([inFullscreen]) #toolbar-menubar:-moz-any([autohide="true"][inactive], :not([autohide])) + #TabsToolbar .tab-background-middle:not([selected=true]) {
-}
-
-/* End background tabs */
-
 /* Tab pointer-events */
 /*
 .tabbrowser-tab {
@@ -2519,6 +2503,16 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 }
 
 /* === END tabs.inc.css === */
+
+/* Background tabs:
+ *
+ * Decrease the height of the hoverable region of background tabs whenever the tabs are at the top
+ * of the window (e.g. no menubar, tabs in titlebar, etc.) to make it easier to drag the window by
+ * the titlebar. We don't need this in fullscreen since window dragging is not an issue there.
+ */
+#main-window[tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar .tab-background-middle:not([selected=true]) {
+/*  clip-path: url(chrome://browser/content/browser.xul#tab-hover-clip-path);*/
+}
 
 /* Tab DnD indicator */
 .tab-drop-indicator {
