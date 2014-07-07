@@ -77,7 +77,7 @@ th:hover > a {
   text-decoration: underline;
 }
 
-tbody > tr:hover {
+body > table > tbody > tr:hover {
   outline: 1px solid #808080;
   outline-radius: .3em;
 }

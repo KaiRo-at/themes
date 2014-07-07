@@ -79,7 +79,7 @@ th:hover > a {
   color: #000000;
 }
 
-tbody > tr:hover {
+body > table > tbody > tr:hover {
   outline: 1px solid #008484;
   -moz-outline-radius: .3em;
 }
