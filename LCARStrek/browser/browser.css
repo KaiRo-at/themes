@@ -1371,9 +1371,9 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button:not([ope
 }
 
 #forward-button {
-  -moz-margin-start: -6px !important;
-  padding-left: 7px;
-  padding-right: 3px;
+  -moz-margin-start: -4px !important;
+  padding-left: 4px;
+  padding-right: 2px;
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 0 10000px 10000px 0;
@@ -1384,12 +1384,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button:not([ope
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not([switchingtabs]) > #forward-button {
-  transition: margin-left,opacity 150ms ease-out;
+  transition: margin-left 150ms ease-out;
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled] {
-  margin-left: -30px !important;
-  opacity: 0;
+  margin-left: -27px !important;
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper:hover:not([switchingtabs]) > #forward-button[disabled] {
@@ -1399,8 +1398,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:hover:not([switchingtabs])
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-button[disabled] {
   /* when not hovered anymore, trigger a new transition to hide the forward button immediately */
-  margin-left: -30.01px !important;
-  opacity: 0;
+  margin-left: -27.01px !important;
 }
 
 #back-button {
@@ -1560,7 +1558,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 #urlbar,
 .searchbar-textbox {
   border-radius: 5px;
-  margin: 0;
+  margin: 2px 0;
   -moz-margin-start: 3px;
 }
 
@@ -1603,7 +1601,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper {
 /*  clip-path: url("chrome://browser/content/browser.xul#urlbar-back-button-clip-path");*/
-  -moz-margin-start: -5px;
+/*  -moz-margin-start: -5px; */
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl),
@@ -2396,6 +2394,10 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 }
 
 .tab-label {
+  /* this needs to add up to the 16px of the icon image */
+  height: 12px;
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
 }
 
 .tab-close-button {
