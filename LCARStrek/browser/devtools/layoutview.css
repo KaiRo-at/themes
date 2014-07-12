@@ -3,11 +3,6 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 .theme-sidebar {
-  background: url("layout-background-grid.png"), radial-gradient(50% 70%, circle cover, #000000 0%, #000000 100%);
-}
-
-.theme-sidebar {
-  color: #FF9F00;
   box-sizing: border-box;
 }
 
