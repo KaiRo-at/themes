@@ -35,3 +35,16 @@
   background-color: #A09090;
   border-color: #A09090;
 }
+
+.editable {
+  border-bottom: 1px dashed transparent;
+}
+
+.editable:hover {
+  border-bottom-color: #E7ADE7;
+}
+
+.styleinspector-propertyeditor {
+  border: 1px solid #008484;
+  padding: 0;
+}
