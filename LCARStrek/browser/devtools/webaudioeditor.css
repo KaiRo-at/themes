@@ -1,0 +1,148 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Reload and waiting notices */
+.notice-container {
+  margin-top: -50vh;
+}
+
+.notice-container {
+  background-color: #000000; /* Toolbars */
+  color: #A09090; /* Light foreground text */
+}
+
+#reload-notice {
+  font-size: 120%;
+}
+
+#waiting-notice {
+  font-size: 110%;
+}
+
+#waiting-notice::before {
+  display: inline-block;
+  content: "";
+  background: url("chrome://global/skin/icons/loading.gif") center no-repeat;
+  width: 16px;
+  height: 16px;
+  -moz-margin-end: 6px;
+}
+
+/* Context Graph */
+svg {
+  overflow: hidden;
+  -moz-box-flex: 1;
+}
+
+/* Edges in graph */
+.edgePath path {
+  stroke-width: 1px;
+  fill: none;
+}
+
+.edgePath path {
+  stroke: #9C9CFF; /* Grey foreground text */
+}
+
+/* Audio Nodes */
+.nodes rect {
+  stroke-width: 1px;
+  cursor: pointer;
+}
+
+.nodes rect {
+  stroke: #9C9CFF; /* Tab toolbar */
+  fill: #000000; /* Toolbars */
+}
+
+.nodes g.selected rect {
+  fill: #008484; /* Select Highlight Blue */
+}
+
+/* Text in nodes */
+text {
+  cursor: pointer;
+  font-weight: 300;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serf;
+  font-size: 14px;
+}
+
+text {
+  fill: #A09090; /* Grey foreground text */
+}
+g.selected text {
+/*  fill: #f0f1f2; / Toolbars */
+}
+
+/**
+ * Inspector Styles
+ */
+
+.web-audio-inspector .error {
+  background-image: url("alerticon-warning.png");
+  background-size: 13px 12px;
+  -moz-appearance: none;
+  opacity: 0;
+  transition: opacity .5s ease-out 0s;
+}
+
+#inspector-pane-toggle {
+  background: none;
+  box-shadow: none;
+  border: none;
+  list-style-image: url("debugger-collapse.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+}
+
+#inspector-pane-toggle > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+}
+
+#inspector-pane-toggle[pane-collapsed] {
+  list-style-image: url("debugger-expand.png");
+}
+
+#inspector-pane-toggle:active {
+  -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #inspector-pane-toggle {
+    list-style-image: url("debugger-collapse@2x.png");
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  #inspector-pane-toggle[pane-collapsed] {
+    list-style-image: url("debugger-expand@2x.png");
+  }
+
+  #inspector-pane-toggle:active {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
+
+  .web-audio-inspector .error {
+    background-image: url("alerticon-warning@2x.png");
+  }
+}
+
+/**
+ * Responsive Styles
+ * `.devtools-responsive-container` takes care of most of
+ * the changing of host types.
+ */
+@media (max-width: 700px) {
+  /**
+   * Override the inspector toggle so it's always open
+   * in the portrait view, with the toggle button hidden.
+   */
+  #inspector-pane-toggle {
+    display: none;
+  }
+
+  #web-audio-inspector {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+}

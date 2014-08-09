@@ -1,0 +1,43 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#canvas {
+  image-rendering: -moz-crisp-edges;
+  cursor: none;
+  border: 3px solid #A09090;
+  border-radius: 50%;
+}
+
+#canvas-overflow {
+  overflow: hidden;
+  width: 96px;
+  height: 96px;
+}
+
+#color-preview {
+  width: 16px;
+  height: 16px;
+  border: solid 1px #9C9CFF;
+  margin: 3px;
+}
+
+#color-value-box {
+  background-color: #000000;
+  border-radius: 1px;
+  width: 150px;
+}
+
+#color-value {
+  padding: 0.3em;
+}
+
+#color-value.highlight {
+  font-family: inherit;
+}
+
+window {
+  /* inexplicably, otherwise background shows up on Linux */
+  border: 1px solid transparent;
+  background-color: transparent;
+}
