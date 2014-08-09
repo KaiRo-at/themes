@@ -41,10 +41,18 @@
 }
 
 #record-snapshot {
+  list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch-tbutton.svg");
+}
+
+#record-snapshot:hover {
   list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch.svg");
 }
 
 #record-snapshot[checked] {
+  list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch-checked-tbutton.svg");
+}
+
+#record-snapshot[checked]:hover {
   list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch-checked.svg");
 }
 

@@ -33,31 +33,35 @@ a {
 .message {
   display: flex;
   flex: 0 0 auto;
-  -moz-margin-start: 6px;
-  -moz-margin-end: 8px;
-  width: calc(100% - 6px - 8px);
+  padding: 0 7px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .message > .timestamp {
   flex: 0 0 auto;
   color: #8050B0;
-  margin: 4px 0;
+  margin: 4px 6px 0 0;
+}
+
+.message > .indent {
+  flex: 0 0 auto;
 }
 
 .message > .icon {
   background: -moz-image-rect(url("chrome://browser/skin/devtools/webconsole.png"), 0, 1, 0, 0) no-repeat;
-  background-position: center 0.5em;
+  background-position: center;
   flex: 0 0 auto;
-  margin: 0 6px;
+  margin: 3px 6px 0 0;
   padding: 0 4px;
   width: 8px;
+  height: 1em;
+  align-self: flex-start;
 }
 
-.message > .body {
+.message > .message-body-wrapper {
   flex: 1 1 100%;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  margin-top: 4px;
+  margin: 3px;
 }
 
 /* The red bubble that shows the number of times a message is repeated */
@@ -80,13 +84,12 @@ a {
 }
 
 .message-location {
-  -moz-margin-start: 6px;
   display: flex;
   flex: 0 0 auto;
   align-self: flex-start;
   justify-content: flex-end;
   width: 10em;
-  margin-top: 4px;
+  margin-top: 3px;
   color: #3333FF;
   text-decoration: none;
   white-space: nowrap;
@@ -113,6 +116,25 @@ a {
   color: inherit;
 }
 
+.message-flex-body {
+  display: flex;
+}
+
+.message-body {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.message-flex-body > .message-body {
+  display: block;
+  flex: 1 1 auto;
+  vertical-align: middle;
+}
+
+.message-flex-body > .message-location {
+  margin-top: 0;
+}
+
 .jsterm-input-container {
   border-top-width: 1px;
   border-top-style: solid;
@@ -131,8 +153,18 @@ a {
   align-items: flex-start;
 }
 
+#output-container.hideTimestamps > .message {
+  -moz-padding-start: 0;
+  -moz-margin-start: 7px;
+  width: calc(100% - 7px);
+}
+
 #output-container.hideTimestamps > .message > .timestamp {
   display: none;
+}
+
+#output-container.hideTimestamps > .message > .indent {
+  background-color: #000000; /* .theme-body */
 }
 
 .filtered-by-type,
@@ -183,15 +215,23 @@ a {
   border-color: #FFCF00;
 }
 
-.message[category=network] > .icon {
-  -moz-border-start: solid #FFCF00 6px;
+.message[severity=error] {
+  background-color: #FF0000;
+}
+
+.console-string {
+  color: #FF0000;
+}
+
+.message[category=network] > .indent {
+  -moz-border-end: solid #FF0000 6px;
 }
 
 .message[category=network][severity=error] > .icon {
   background-image: -moz-image-rect(url("chrome://browser/skin/devtools/webconsole.png"), 0, 16, 8, 8);
 }
 
-.message[category=network] > .body {
+.message[category=network] > .message-body {
   display: flex;
 }
 
@@ -229,8 +269,8 @@ a {
   border-color: #9C9CFF;
 }
 
-.message[category=cssparser] > .icon {
-  -moz-border-start: solid #9C9CFF 6px;
+.message[category=cssparser] > .indent {
+  -moz-border-end: solid #9C9CFF 6px;
 }
 
 .message[category=cssparser][severity=error] > .icon {
@@ -247,8 +287,8 @@ a {
    border-color: #FF9F00;
 }
 
-.message[category=exception] > .icon {
-  -moz-border-start: solid #FF9F00 6px;
+.message[category=exception] > .indent {
+  -moz-border-end: solid #FF9F00 6px;
 }
 
 .message[category=exception][severity=error] > .icon {
@@ -265,8 +305,8 @@ a {
    border-color: #8050B0;
 }
 
-.message[category=console] > .icon {
-  -moz-border-start: solid #8050B0 6px;
+.message[category=console] > .indent {
+  -moz-border-end: solid #8050B0 6px;
 }
 
 .message[category=console][severity=error] > .icon,
@@ -283,9 +323,9 @@ a {
 }
 
 /* Input and output styles */
-.message[category=input] > .icon,
-.message[category=output] > .icon {
-  -moz-border-start: solid #A09090 6px;
+.message[category=input] > .indent,
+.message[category=output] > .indent {
+  -moz-border-end: solid #A09090 6px;
 }
 
 .message[category=input] > .icon {
@@ -314,7 +354,7 @@ a {
   overflow-x: hidden;
 }
 
-.inlined-variables-view .body {
+.inlined-variables-view .message-body {
   display: flex;
   flex-direction: column;
 }
@@ -340,8 +380,8 @@ a {
 
 /* Security styles */
 
-.message[category=security] > .icon {
-  -moz-border-start: solid #FF0000 6px;
+.message[category=security] > .indent {
+  -moz-border-end: solid #FF0000 6px;
 }
 
 .webconsole-filter-button[category="security"] > .toolbarbutton-menubutton-button:before {
@@ -370,25 +410,29 @@ a {
   text-decoration: none;
 }
 
-.consoleTrace .body > div {
-  display: flex;
-  margin-bottom: 5px;
-}
-
-.consoleTrace .title {
-  display: block;
-  flex: 1 1 auto;
-}
-
 .stacktrace {
+  display: none;
   list-style: none;
   padding: 0 1em 0 1.5em;
-  margin: 0;
+  margin: 5px 0 0 0;
   max-height: 10em;
   overflow-y: auto;
-
   border: 1px solid #A09090;
   border-radius: 3px;
+}
+ 
+.message[severity=error] .stacktrace {
+  background-color: #000000;
+}
+
+.message[open] .stacktrace {
+  display: block;
+}
+
+.message .theme-twisty {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px 0 0;
 }
 
 .stacktrace li {

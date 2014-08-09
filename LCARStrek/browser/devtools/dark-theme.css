@@ -128,7 +128,8 @@
 
 .theme-toolbar,
 .devtools-toolbar,
-.devtools-sidebar-tabs > tabs { /* General toolbar styling */
+.devtools-sidebar-tabs > tabs,
+.CodeMirror-dialog { /* General toolbar styling */
 }
 
 
@@ -385,15 +386,14 @@ devtools-menulist:-moz-focusring,
 }
 
 .devtools-option-toolbarbutton {
-  list-style-image: url("chrome://browser/skin/devtools/option-icon.png");
-  -moz-image-region: rect(0px 16px 16px 0px);
+  list-style-image: url("chrome://browser/skin/devtools/tool-options-tbutton.svg");
 /*  background: none;
   border: none; */
 }
 
 .devtools-option-toolbarbutton:hover,
 .devtools-option-toolbarbutton[open=true] {
-  -moz-image-region: rect(0px 32px 16px 16px);
+  list-style-image: url("chrome://browser/skin/devtools/tool-options.svg");
 }
 
 .devtools-menulist > .menulist-label-box {
@@ -663,6 +663,10 @@ devtools-menulist:-moz-focusring,
   background-image: url("chrome://browser/skin/devtools/command-paintflashing.png");
 }
 
+#command-button-screenshot > image {
+  background-image: url("chrome://browser/skin/devtools/command-screenshot.png");
+}
+
 #command-button-responsive > image {
   background-image: url("chrome://browser/skin/devtools/command-responsivemode.png");
 }
@@ -690,6 +694,10 @@ devtools-menulist:-moz-focusring,
 @media (min-resolution: 2dppx) {
   #command-button-paintflashing > image {
     background-image: url("chrome://browser/skin/devtools/command-paintflashing@2x.png");
+  }
+
+  #command-button-screenshot > image {
+    background-image: url("chrome://browser/skin/devtools/command-screenshot@2x.png");
   }
 
   #command-button-responsive > image {

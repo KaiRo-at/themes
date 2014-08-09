@@ -115,7 +115,7 @@
 }
 
 .ruleview-property {
-  border-left: 2px solid transparent;
+  border-left: 3px solid transparent;
   clear: right;
 }
 
@@ -124,7 +124,7 @@
 }
 
 .ruleview-property[dirty] {
-  border-left-color: #9C9CFF;
+  border-left-color: #9C9CFF; /* Green */
 }
 
 .ruleview-namecontainer > .ruleview-propertyname,

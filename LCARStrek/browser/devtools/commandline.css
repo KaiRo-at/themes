@@ -120,13 +120,14 @@
   color: #FF9F00;
 }
 
-.gcli-menu-option:hover,
-.gcli-menu-highlight.gcli-menu-option:hover {
+.gcli-menu-name:hover,
+.gcli-menu-desc:hover {
   background-color: #FFCF00;
   color: #000000;
 }
 
-.gcli-menu-highlight {
+.gcli-menu-highlight,
+.gcli-menu-highlight:hover {
   background-color: #795900;
 }
 
