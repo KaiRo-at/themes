@@ -11,8 +11,22 @@
   src: url("chrome://browser/content/fonts/ClearSans-Regular.woff") format('woff');
 }
 
+#dialogBox,
+dialog,
+window,
+prefwindow,
+.windowDialog,
 page {
   background-color: #000000;
+}
+
+* {
+  -moz-user-select: text;
+}
+
+treecol {
+  /* override the * rule to let the treecol be sortable */
+  -moz-user-select: none;
 }
 
 caption {
@@ -38,7 +52,7 @@ prefpane {
   font-family: "Clear Sans", sans-serif;
   font-size: 1.25rem;
   line-height: 22px;
-  color: #000000;
+  color: #FF9F00;
 }
 
 prefpane > .content-box {
@@ -106,6 +120,51 @@ menulist > .menulist-label-box {
 }
 
 button[type="menu"] > .button-box > .button-menu-dropmarker {
+}
+/*
+.help-button {
+  min-width: 30px;
+  border-radius: 2px;
+  border: 1px solid #C1C1C1;
+  background-color: #FFCB00;
+  background-image: none;
+  box-shadow: none;
+}
+
+.help-button:not([disabled="true"]):hover {
+  background-color: #F4C200;
+  background-image: none;
+}
+
+.help-button:not([disabled="true"]):hover:active {
+  background-color: #EABA00;
+  background-image: none;
+}
+
+.close-icon > .button-box,
+.help-button > .button-box {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+*/
+.help-button > .button-box > .button-icon {
+  width: 26px;
+  height: 26px;
+  background-image: url("chrome://browser/skin/preferences/in-content/help-glyph.png");
+  background-position: center;
+}
+
+@media (min-resolution: 2dppx) {
+  .help-button > .button-box > .button-icon {
+    background-size: 26px 26px;
+    background-image: url("chrome://browser/skin/preferences/in-content/help-glyph@2x.png");
+  }
+}
+
+.help-button > .button-box > .button-text {
+  display: none;
 }
 
 .spinbuttons-button {
@@ -578,6 +637,70 @@ description > html|a {
   margin-top: 8px;
   margin-bottom: 8px;
 }
+
+
+/**
+ * Sub-dialog
+ */
+
+#dialogOverlay {
+  background-color: rgba(0,0,0,0.75);
+  visibility: hidden;
+}
+
+#dialogBox {
+  border: 1px solid #9C9CFF;
+  display: -moz-box;
+  margin: 0;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+#dialogBox[resizable="true"] {
+  resize: both;
+  overflow: hidden;
+  min-height: 30em;
+  min-width: 66ch;
+}
+
+.close-icon {
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
+  height: 18px;
+  padding: 0;
+  min-width: 18px;
+}
+
+#dialogBox > .groupbox-body {
+  -moz-appearance: none;
+  padding: 0;
+}
+
+#dialogFrame {
+  -moz-box-flex: 1;
+  /* Default dialog dimensions */
+  height: 30em;
+  width: 66ch;
+}
+
+/* needs to be removed with bug 1035625 */
+:-moz-any(dialog, window, prefwindow) resizer {
+  display: none;
+}
+
+tree:not(#rejectsTree) {
+  min-height: 15em;
+}
+
+:-moz-any(dialog, window, prefwindow) groupbox {
+  -moz-margin-start: 8px;
+  -moz-margin-end: 8px;
+}
+
+/**
+ * End sub-dialog
+ */
 
 /* === END shared/in-content/preferences.css === */
 
