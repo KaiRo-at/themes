@@ -117,7 +117,8 @@ findbar[position="top"][hidden] {
   display: none;
 }
 
-.findbar-find-status {
+.findbar-find-status,
+.found-matches {
   color: #A09090;
   margin: 0 !important;
   -moz-margin-start: 12px !important;

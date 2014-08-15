@@ -40,6 +40,11 @@
   margin-bottom: 8px;
 }
 
+#alertNotification[clickable="true"]:hover .alertTextBox,
+#alertNotification[clickable="true"]:hover .alertCloseBox {
+/*  background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.3));*/
+}
+
 .alertTitle {
   font-weight: bold;
   font-size: 110%;
@@ -57,15 +62,6 @@
 
 label {
   cursor: inherit;
-}
-
-.alertText[clickable="true"] {
-  color: #3333FF;
-  text-decoration: underline;
-}
-
-.alertText[clickable="true"]:hover:active {
-  color: red;
 }
 
 @keyframes alert-animation {
