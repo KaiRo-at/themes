@@ -366,6 +366,7 @@ toolbaritem[cui-areatype="menu-panel"][sdkstylewidget="true"]:not(.panel-wide-it
 .panelUI-grid .toolbarbutton-1 > .toolbarbutton-badge-container,
 .customization-palette .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
 .customization-palette .toolbarbutton-1 > .toolbarbutton-icon,
+.customization-palette .toolbarbutton-1 > .toolbarbutton-badge-container,
 .panelUI-grid #bookmarks-toolbar-placeholder > .toolbarbutton-icon,
 .customization-palette #bookmarks-toolbar-placeholder > .toolbarbutton-icon,
 .panel-customization-placeholder-child > .toolbarbutton-icon {
@@ -509,11 +510,11 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-fxa-status {
-  list-style-image: url("chrome://browser/skin/sync-horizontalbar.png");
+  list-style-image: url("chrome://browser/skin/syncFx-horizontalbar.png");
 }
 
 #PanelUI-fxa-status[status="active"] {
-  list-style-image: url("chrome://browser/skin/syncProgress-horizontalbar.png");
+  list-style-image: url("chrome://browser/skin/syncFxProgress-horizontalbar.png");
 }
 
 #PanelUI-customize {
