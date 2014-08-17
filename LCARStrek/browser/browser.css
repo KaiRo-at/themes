@@ -114,6 +114,10 @@ menubar {
     color: #FF9F00;
   }
 
+  #main-window[tabsintitlebar] #main-menubar > menu:not(:-moz-lwtheme) {
+    /*color: inherit;*/
+  }
+
   #TabsToolbar:-moz-lwtheme {
     /*background: linear-gradient(to top, @toolbarShadowColor@ 2px, transparent 2px);*/
   }

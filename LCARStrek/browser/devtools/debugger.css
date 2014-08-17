@@ -27,12 +27,24 @@ window {
   list-style-image: url("debugger-blackbox.png");
 }
 
+@media (min-resolution: 2dppx) {
+  #black-box {
+    list-style-image: url(debugger-blackbox@2x.png);
+  }
+}
+
 #pretty-print {
   font-weight: bold;
 }
 
 #toggle-breakpoints {
   list-style-image: url("debugger-toggleBreakpoints.png");
+}
+
+@media (min-resolution: 2dppx) {
+  #toggle-breakpoints {
+    list-style-image: url(debugger-toggleBreakpoints@2x.png);
+  }
 }
 
 #sources-toolbar .devtools-toolbarbutton:not([label]) {
@@ -49,6 +61,24 @@ window {
 
 #sources-toolbar .devtools-toolbarbutton:not([label])[checked]:hover {
   -moz-image-region: rect(16px, 32px, 32px, 16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #sources-toolbar .devtools-toolbarbutton:not([label]) {
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  #sources-toolbar .devtools-toolbarbutton:not([label]):hover {
+    -moz-image-region: rect(32px,32px,64px,0px);
+  }
+
+  #sources-toolbar .devtools-toolbarbutton:not([label])[checked] {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
+
+  #sources-toolbar .devtools-toolbarbutton:not([label])[checked]:hover {
+    -moz-image-region: rect(32px,64px,64px,32px);
+  }
 }
 
 #sources .black-boxed {
@@ -110,6 +140,18 @@ window {
 #trace:hover,
 #trace[checked] {
   -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #trace {
+    list-style-image: url(tracer-icon@2x.png);
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  #trace:hover,
+  #trace[checked] {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
 }
 
 #clear-tracer {
@@ -277,10 +319,19 @@ window {
 }
 
 .dbg-expression-arrow {
+  background-image: url("commandline-icon.png");
+  background-position: 16px;
+  background-repeat: no-repeat;
+  background-size: 32px 16px;
   width: 16px;
-  height: auto;
+  height: 16px;
   margin: 2px;
-  background: -moz-image-rect(url("commandline-icon.png"), 0, 32, 16, 16);
+}
+
+@media (min-resolution: 2dppx) {
+  .dbg-expression-arrow {
+    background-image: url(commandline-icon@2x.png);
+  }
 }
 
 .dbg-expression-input {
@@ -290,11 +341,9 @@ window {
 .dbg-expression-button {
   border: none;
   background: none;
-  cursor: pointer;
   text-decoration: underline;
-}
+  cursor: pointer;
 
-.dbg-expression-button {
   color: #9C9CFF; /* Blue highlight color */
 }
 
@@ -475,7 +524,7 @@ window {
 /* Toolbar controls */
 
 .devtools-sidebar-tabs > tabs > tab {
-/*  min-height: 25px !important;
+/*  min-height: 24px !important;
   padding: 0 !important; */
 }
 
@@ -491,6 +540,12 @@ window {
 #toggle-panes:hover,
 #toggle-panes:hover:active {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+#debugger-toolbar .devtools-toolbarbutton:not([label]) > .toolbarbutton-icon,
+#sources-toolbar .devtools-toolbarbutton:not([label]) > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
 }
 
 #resume {
@@ -511,6 +566,26 @@ window {
 
 #resume[checked=true]:hover {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #resume {
+    list-style-image: url(debugger-pause@2x.png);
+    -moz-image-region: rect(0px, 32px, 32px, 0px);
+  }
+
+  #resume:hover {
+    -moz-image-region: rect(0px, 64px, 32px, 32px);
+  }
+
+  #resume[checked=true] {
+    list-style-image: url(debugger-play@2x.png);
+    -moz-image-region: rect(0px, 32px, 32px, 0);
+  }
+
+  #resume[checked=true]:hover {
+    -moz-image-region: rect(0px, 64px, 32px, 32px);
+  }
 }
 
 #resume ~ toolbarbutton {
@@ -545,6 +620,35 @@ window {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
+@media (min-resolution: 2dppx) {
+  #step-over {
+    list-style-image: url(debugger-step-over@2x.png);
+    -moz-image-region: rect(0px, 32px, 32px, 0);
+  }
+
+  #step-over:hover {
+    -moz-image-region: rect(0px, 64px, 32px, 32px);
+  }
+
+  #step-in {
+    list-style-image: url(debugger-step-in@2x.png);
+    -moz-image-region: rect(0px, 32px, 32px, 0);
+  }
+
+  #step-in:hover {
+    -moz-image-region: rect(0px, 64px, 32px, 32px);
+  }
+
+  #step-out {
+    list-style-image: url(debugger-step-out@2x.png);
+    -moz-image-region: rect(0px, 32px, 32px, 0);
+  }
+
+  #step-out:hover {
+    -moz-image-region: rect(0px, 64px, 32px, 32px);
+  }
+}
+
 #instruments-pane-toggle {
 /*  background: none;
   box-shadow: none;
@@ -557,9 +661,23 @@ window {
   list-style-image: url("chrome://browser/skin/devtools/debugger-expand.png");
 }
 
-#instruments-pane-toggle:hover,
-#instruments-pane-toggle:hover:active {
+#instruments-pane-toggle:hover {
   -moz-image-region: rect(0px,32px,16px,16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #instruments-pane-toggle {
+    list-style-image: url(debugger-collapse@2x.png);
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  #instruments-pane-toggle[pane-collapsed] {
+    list-style-image: url(debugger-expand@2x.png);
+  }
+
+  #instruments-pane-toggle:hover {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
 }
 
 /* Horizontal vs. vertical layout */

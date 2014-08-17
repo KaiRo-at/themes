@@ -213,6 +213,12 @@ button[type="menu"] > menupopup > menu[_moz-menuactive="true"],
 button[type="menu"] > menupopup > menuitem[_moz-menuactive="true"] {
 }
 
+menulist > menupopup > menu[selected="true"],
+menulist > menupopup > menuitem[selected="true"],
+button[type="menu"] > menupopup > menu[selected="true"],
+button[type="menu"] > menupopup > menuitem[selected="true"] {
+}
+
 menulist > menupopup menuseparator,
 button[type="menu"] > menupopup menuseparator {
 }
@@ -251,13 +257,6 @@ html|a.inline-link {
 .checkbox-check[checked] {
 }
 
-checkbox:hover::before,
-checkbox[checked]::before {
-}
-
-checkbox[checked]::before {
-}
-
 radio {
 }
 
@@ -265,13 +264,6 @@ radio {
 }
 
 .radio-check[selected] {
-}
-
-radio:hover::before,
-radio[selected]::before {
-}
-
-radio[selected]::before {
 }
 
 /* Category List */
