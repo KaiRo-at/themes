@@ -74,8 +74,11 @@ menubar {
 /*  margin-top: 15px;*/
 }
 
-#toolbar-menubar:not([autohide="true"]) {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
+@supports ( not(-moz-appearance: -moz-mac-unified-toolbar) ) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  #toolbar-menubar:not([autohide="true"]) {
+    -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
+  }
 }
 
 #main-window[tabsintitlebar] #toolbar-menubar .toolbar-endcap {
@@ -103,7 +106,9 @@ menubar {
 #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
 }
 
-/* indent due to non-applicable aero rule */
+@supports ( not(-moz-appearance: -moz-mac-unified-toolbar) ) {
+  /* this is a usable workaround to detect we're not on Mac OS */
+  /* indent also due to non-applicable aero rule */
   #toolbar-menubar {
     background-color: transparent !important;
   }
@@ -137,6 +142,17 @@ menubar {
     -moz-binding: url("chrome://global/content/bindings/general.xml#windowdragbox");
     visibility: visible;
   }
+}
+
+@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  #titlebar-buttonbox > .titlebar-button {
+    display: none;
+  }
+  #titlebar-buttonbox {
+    margin-top: 1px;
+  }
+}
 
 #nav-bar {
   /* Position the toolbar above the bottom of background tabs */
