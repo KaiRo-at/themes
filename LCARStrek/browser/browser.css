@@ -17,6 +17,13 @@ toolbar[customizable="true"] {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-browsercustom");
 }
 
+@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  toolbar[customizable="true"]:not([nowindowdrag="true"]) {
+    -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
+  }
+}
+
 toolbar[type="menubar"][autohide="true"] {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-menubar-autohide");
 }
@@ -96,11 +103,6 @@ menubar {
 #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
 }
 
-@supports ( -moz-appearance:-moz-mac-unified-toolbar ){
-  #navigator-toolbox {
-    background-color: rebeccapurple;
-  }
-}
 /* indent due to non-applicable aero rule */
   #toolbar-menubar {
     background-color: transparent !important;
