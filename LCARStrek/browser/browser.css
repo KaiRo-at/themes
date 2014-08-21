@@ -96,6 +96,11 @@ menubar {
 #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
 }
 
+@supports ( -moz-appearance:-moz-mac-unified-toolbar ){
+  #navigator-toolbox {
+    background-color: rebeccapurple;
+  }
+}
 /* indent due to non-applicable aero rule */
   #toolbar-menubar {
     background-color: transparent !important;
@@ -1657,8 +1662,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar {
-  -moz-border-start: none;
-/*  margin-left: 0;*/
+/*  -moz-border-start: none;
+  margin-left: 0;*/
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar:-moz-locale-dir(ltr) {
