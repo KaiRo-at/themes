@@ -18,7 +18,7 @@ toolbar[customizable="true"] {
 }
 
 @supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* this is a usable workaround to detect we're on Mac OS */
+  /* This is a usable workaround to detect we're on Mac OS X. */
   toolbar[customizable="true"]:not([nowindowdrag="true"]) {
     -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
   }
@@ -75,11 +75,11 @@ menubar {
 }
 
 @supports ( not(-moz-appearance: -moz-mac-unified-toolbar) ) {
-  /* this is a usable workaround to detect we're not on Mac OS */
+  /* This is a usable workaround to detect we're not on Mac OS X. */
   #toolbar-menubar:not([autohide="true"]) {
     -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
   }
-  #main-window[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+  #main-window[tabsintitlebar]:not([inFullscreen="true"]) #TabsToolbar {
     padding-left: 60px;
   }
 }
@@ -110,7 +110,7 @@ menubar {
 }
 
 @supports ( not(-moz-appearance: -moz-mac-unified-toolbar) ) {
-  /* this is a usable workaround to detect we're not on Mac OS */
+  /* This is a usable workaround to detect we're not on Mac OS X. */
   /* indent also due to non-applicable aero rule */
   #toolbar-menubar {
     background-color: transparent !important;
@@ -148,7 +148,7 @@ menubar {
 }
 
 @supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* this is a usable workaround to detect we're on Mac OS */
+  /* This is a usable workaround to detect we're on Mac OS X. */
   #titlebar-buttonbox > .titlebar-button {
     display: none;
   }
@@ -193,10 +193,10 @@ menubar {
 }
 
 @supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* this is a usable workaround to detect we're on Mac OS */
+  /* This is a usable workaround to detect we're on Mac OS X. */
   #main-window[sizemode="normal"] > #titlebar {
-    margin-top: 4px;
-    margin-bottom: 0;
+    margin-top: 19px;
+    /* There is a margin-bottom set to -23 by code. */
   }
 }
 
@@ -257,7 +257,7 @@ menubar {
 }
 
 @supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* this is a usable workaround to detect we're on Mac OS */
+  /* This is a usable workaround to detect we're on Mac OS X. */
   #titlebar-fullscreen-button {
     -moz-appearance: none;
     list-style-image: url("chrome://browser/skin/icons/mac-fullscreen-icon.png");
