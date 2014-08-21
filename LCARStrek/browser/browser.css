@@ -75,9 +75,12 @@ menubar {
 }
 
 @supports ( not(-moz-appearance: -moz-mac-unified-toolbar) ) {
-  /* this is a usable workaround to detect we're on Mac OS */
+  /* this is a usable workaround to detect we're not on Mac OS */
   #toolbar-menubar:not([autohide="true"]) {
     -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
+  }
+  #main-window[tabsintitlebar]:not([inFullscreen]) #TabsToolbar {
+    padding-left: 60px;
   }
 }
 
@@ -149,9 +152,6 @@ menubar {
   #titlebar-buttonbox > .titlebar-button {
     display: none;
   }
-  #titlebar-buttonbox {
-    margin-top: 1px;
-  }
 }
 
 #nav-bar {
@@ -190,6 +190,14 @@ menubar {
 
 #main-window[sizemode="maximized"] > #titlebar {
   margin-top: 4px;
+}
+
+@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  #main-window[sizemode="normal"] > #titlebar {
+    margin-top: 4px;
+    margin-bottom: 0;
+  }
 }
 
 /* The button box must appear on top of the navigator-toolbox in order for
@@ -247,6 +255,31 @@ menubar {
 #titlebar-close:hover {
   list-style-image: url("chrome://navigator/skin/icons/win-close-hover.gif");
 }
+
+@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  #titlebar-fullscreen-button {
+    -moz-appearance: none;
+    list-style-image: url("chrome://browser/skin/icons/mac-fullscreen-icon.png");
+    -moz-image-region: rect(0px, 16px, 16px, 0px);
+  }
+
+  #titlebar-fullscreen-button:hover {
+    -moz-image-region: rect(0px, 32px, 16px, 16px);
+  }
+
+  @media (min-resolution: 2dppx) {
+    #titlebar-fullscreen-button {
+      list-style-image: url("chrome://browser/skin/icons/mac-fullscreen-icon@2x.png");
+      -moz-image-region: rect(0px, 32px, 32px, 0px);
+    }
+
+    #titlebar-fullscreen-button:hover {
+      -moz-image-region: rect(0px, 64px, 32px, 32px);
+    }
+  }
+}
+
 
 /* ::::: bookmark buttons ::::: */
 
