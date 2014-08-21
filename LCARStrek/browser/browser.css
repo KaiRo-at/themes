@@ -79,6 +79,10 @@ menubar {
   #toolbar-menubar:not([autohide="true"]) {
     -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
   }
+}
+
+@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
+  /* This is a usable workaround to detect we're on Mac OS X. */
   #main-window[tabsintitlebar]:not([inFullscreen="true"]) #TabsToolbar {
     padding-left: 60px;
   }
@@ -194,7 +198,8 @@ menubar {
 
 @supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
   /* This is a usable workaround to detect we're on Mac OS X. */
-  #main-window[sizemode="normal"] > #titlebar {
+  #main-window[sizemode="normal"] > #titlebar,
+  #main-window[sizemode="maximized"] > #titlebar {
     margin-top: 19px;
     /* There is a margin-bottom set to -23 by code. */
   }
