@@ -18,6 +18,7 @@ menuitem,
   background-color: #000000;
   color: #FF9F00;
   list-style-image: none;
+  -moz-image-region: auto;
 }
 
 menuitem[default="true"] {
@@ -192,7 +193,6 @@ menulist > menupopup > menu > .menu-iconic-left {
 
 menuitem[checked="true"] { /* [type="checkbox"] */
   list-style-image: url("chrome://global/skin/menu/menu-check.gif");
-  -moz-image-region: auto;
 }
 
 menuitem[checked="true"][_moz-menuactive="true"] {
@@ -207,7 +207,6 @@ menuitem[checked="true"][disabled="true"] {
 
 menuitem[checked="true"][type="radio"] {
   list-style-image: url("chrome://global/skin/menu/menu-radio.gif");
-  -moz-image-region: auto;
 }
 
 menuitem[checked="true"][type="radio"][_moz-menuactive="true"] {

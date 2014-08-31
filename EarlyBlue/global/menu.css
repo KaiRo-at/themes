@@ -17,6 +17,7 @@ menuitem,
   max-width: 42em;
   color: #000000;
   list-style-image: none;
+  -moz-image-region: auto;
 }
 
 menuitem[default="true"] {
