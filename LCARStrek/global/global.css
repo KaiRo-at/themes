@@ -58,25 +58,10 @@ toolbaritem > menubar {
 
 /* HACK TEST ONLY: try several mac supports rules! */
 
-@media (not -moz-mac-graphite-theme) and (not -moz-mac-lion-theme) and (not -moz-mac-yosemite-theme) {
+@media (-moz-mac-graphite-theme: 0) and (-moz-mac-lion-theme: 0) and (-moz-mac-yosemite-theme: 0) {
   /* this is a usable workaround to detect we're on Mac OS */
   toolbox {
     border: 1px solid blue !important;
-  }
-}
-
-@media not all and (-moz-mac-graphite-theme) and (-moz-mac-lion-theme) and (-moz-mac-yosemite-theme) {
-  /* this is a usable workaround to detect we're on Mac OS */
-  tab {
-    background-color: lightblue !important;
-  }
-}
-
-
-@media not (-moz-mac-graphite-theme, -moz-mac-lion-theme, -moz-mac-yosemite-theme) {
-  /* this is a usable workaround to detect we're on Mac OS */
-  toolbar {
-    border: 1px solid green !important;
   }
 }
 
