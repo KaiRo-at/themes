@@ -17,8 +17,8 @@ toolbar[customizable="true"] {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-browsercustom");
 }
 
-@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* This is a usable workaround to detect we're on Mac OS X. */
+@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme), (-moz-mac-yosemite-theme) {
+  /* This is a hackish workaround to cover most of Mac OS until bug 1060941 gets fixed. */
   toolbar[customizable="true"]:not([nowindowdrag="true"]) {
     -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
   }
@@ -74,15 +74,15 @@ menubar {
 /*  margin-top: 15px;*/
 }
 
-@supports ( not(-moz-appearance: -moz-mac-unified-toolbar) ) {
-  /* This is a usable workaround to detect we're not on Mac OS X. */
+@media (-moz-mac-graphite-theme: 0) and (-moz-mac-lion-theme: 0) {
+  /* This is a hackish workaround to exclude most of Mac OS until bug 1060941 gets fixed. */
   #toolbar-menubar:not([autohide="true"]) {
     -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
   }
 }
 
-@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* This is a usable workaround to detect we're on Mac OS X. */
+@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme) {
+  /* This is a hackish workaround to cover most of Mac OS until bug 1060941 gets fixed. */
   #main-window[tabsintitlebar]:not([inFullscreen="true"]) #TabsToolbar {
     padding-left: 60px;
   }
@@ -113,9 +113,9 @@ menubar {
 #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
 }
 
-@supports ( not(-moz-appearance: -moz-mac-unified-toolbar) ) {
-  /* This is a usable workaround to detect we're not on Mac OS X. */
-  /* indent also due to non-applicable aero rule */
+@media (-moz-mac-graphite-theme: 0) and (-moz-mac-lion-theme: 0) {
+  /* This is a hackish workaround to exclude most of Mac OS until bug 1060941 gets fixed. */
+  /* Indent also due to non-applicable aero rule in original Windows theme. */
   #toolbar-menubar {
     background-color: transparent !important;
   }
@@ -151,8 +151,8 @@ menubar {
   }
 }
 
-@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* This is a usable workaround to detect we're on Mac OS X. */
+@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme) {
+  /* This is a hackish workaround to cover most of Mac OS until bug 1060941 gets fixed. */
   #titlebar-buttonbox > .titlebar-button {
     display: none;
   }
@@ -196,8 +196,8 @@ menubar {
   margin-top: 4px;
 }
 
-@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* This is a usable workaround to detect we're on Mac OS X. */
+@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme) {
+  /* This is a hackish workaround to cover most of Mac OS until bug 1060941 gets fixed. */
   #main-window[sizemode="normal"] > #titlebar,
   #main-window[sizemode="maximized"] > #titlebar {
     margin-top: 19px;
@@ -261,8 +261,8 @@ menubar {
   list-style-image: url("chrome://navigator/skin/icons/win-close-hover.gif");
 }
 
-@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
-  /* This is a usable workaround to detect we're on Mac OS X. */
+@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme) {
+  /* This is a hackish workaround to cover most of Mac OS until bug 1060941 gets fixed. */
   #titlebar-fullscreen-button {
     -moz-appearance: none;
     list-style-image: url("chrome://browser/skin/icons/mac-fullscreen-icon.png");

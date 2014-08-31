@@ -48,20 +48,11 @@ toolbaritem > menubar {
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#menubar");
 }
 
-@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme), (-moz-mac-yosemite-theme) {
+@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme) {
   /* This is a hackish workaround to cover most of Mac OS until bug 1060941 gets fixed. */
   toolbar.chromeclass-menubar {
     -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
     border-bottom: none;
-  }
-}
-
-/* HACK TEST ONLY: try several mac supports rules! */
-
-@media (-moz-mac-graphite-theme: 0) and (-moz-mac-lion-theme: 0) and (-moz-mac-yosemite-theme: 0) {
-  /* this is a usable workaround to detect we're on Mac OS */
-  toolbox {
-    border: 1px solid blue !important;
   }
 }
 
