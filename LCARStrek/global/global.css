@@ -56,6 +56,22 @@ toolbaritem > menubar {
   }
 }
 
+/* HACK TEST ONLY: try several mac supports rules! */
+
+@supports ( :-moz-system-metric(mac-graphite-theme) ) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  window {
+    background-color:red !important;
+  }
+}
+
+@supports ( color: -moz-mac-accentface ) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  toolbar {
+    border: 1px solid green !important;
+  }
+}
+
 /* ::::: root elements ::::: */
 
 window,
