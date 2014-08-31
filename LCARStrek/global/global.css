@@ -48,7 +48,7 @@ toolbaritem > menubar {
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#menubar");
 }
 
-@supports ( -moz-appearance: -moz-mac-unified-toolbar ) {
+@supports ( :-moz-system-metric(mac-graphite-theme) ) {
   /* this is a usable workaround to detect we're on Mac OS */
   toolbar.chromeclass-menubar {
     -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
