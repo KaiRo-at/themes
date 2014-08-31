@@ -48,8 +48,8 @@ toolbaritem > menubar {
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#menubar");
 }
 
-@supports ( :-moz-system-metric(mac-graphite-theme) ) {
-  /* this is a usable workaround to detect we're on Mac OS */
+@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme), (-moz-mac-yosemite-theme) {
+  /* This is a hackish workaround to cover most of Mac OS until bug 1060941 gets fixed. */
   toolbar.chromeclass-menubar {
     -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
     border-bottom: none;
@@ -58,14 +58,29 @@ toolbaritem > menubar {
 
 /* HACK TEST ONLY: try several mac supports rules! */
 
-@supports ( :-moz-system-metric(mac-graphite-theme) ) {
+@media (-moz-mac-graphite-theme), (-moz-mac-lion-theme), (-moz-mac-yosemite-theme) {
   /* this is a usable workaround to detect we're on Mac OS */
   window {
     background-color:red !important;
   }
 }
 
-@supports ( color: -moz-mac-accentface ) {
+@media not (-moz-mac-graphite-theme), not (-moz-mac-lion-theme), not (-moz-mac-yosemite-theme) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  toolbox {
+    border: 1px solid blue !important;
+  }
+}
+
+@media not all and (-moz-mac-graphite-theme), not all and (-moz-mac-lion-theme), not all and (-moz-mac-yosemite-theme) {
+  /* this is a usable workaround to detect we're on Mac OS */
+  tab {
+    background-color: lightblue !important;
+  }
+}
+
+
+@media not (-moz-mac-graphite-theme, -moz-mac-lion-theme, -moz-mac-yosemite-theme) {
   /* this is a usable workaround to detect we're on Mac OS */
   toolbar {
     border: 1px solid green !important;
