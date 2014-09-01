@@ -49,8 +49,6 @@ notification {
 /* Dark and light theme */
 
 .devtools-autocomplete-popup {
-  border: 1px solid #FF9F00;
-  background-color: #000000;
   border-radius: 3px;
   overflow-x: hidden;
   max-height: 40rem;
@@ -96,7 +94,14 @@ notification {
   text-align: right;
 }
 
-/* Rest of the light theme */
+/* Rest of the dark and light theme */
+
+.devtools-autocomplete-popup,
+.CodeMirror-hints,
+.CodeMirror-Tern-tooltip {
+  border: 1px solid #FF9F00;
+  background-color: #000000;
+}
 
 .devtools-autocomplete-popup.light-theme {
 }
