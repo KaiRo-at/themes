@@ -64,9 +64,8 @@ window {
 }
 
 .side-menu-widget-item-checkbox .checkbox-check {
-  -moz-appearance: none;
-  background: none;
   background-image: url("itemToggle.png");
+  background-color: transparent;
   background-repeat: no-repeat;
   background-clip: content-box;
   background-size: 32px 16px;
@@ -74,6 +73,12 @@ window {
   width: 16px;
   height: 16px;
   border: 0;
+}
+
+@media (min-resolution: 2dppx) {
+  .side-menu-widget-item-checkbox .checkbox-check {
+    background-image: url("itemToggle@2x.png");
+  }
 }
 
 .side-menu-widget-item-checkbox[checked] .checkbox-check {

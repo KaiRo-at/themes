@@ -100,6 +100,15 @@
   background-color: #9C9CFF;
 }
 
+.cm-s-mozilla .cm-unused-line {
+  text-decoration: line-through;
+  -moz-text-decoration-color: #8050B0;
+}
+
+.cm-s-mozilla .cm-executed-line {
+  background-color: #404000;
+}
+
 .theme-fg-color3,
 .cm-s-mozilla .cm-builtin,
 .cm-s-mozilla .cm-tag,
@@ -341,10 +350,6 @@ div.CodeMirror span.eval-text {
 .theme-tooltip-panel .devtools-tooltip-simple-text {
 /*  color: white; */
   border-bottom: 1px solid #A09090;
-}
-
-.theme-tooltip-panel .devtools-tooltip-font-previewer-text {
-  color: FF9F00;
 }
 
 .theme-tooltip-panel .devtools-tooltip-simple-text:last-child {
@@ -622,10 +627,6 @@ devtools-menulist:-moz-focusring,
  * Rules that apply to the global toolbox like command buttons,
  * devtools tabs, docking buttons, etc. */
 
-#toolbox-controls {
-  margin: 0 2px;
-}
-
 #toolbox-controls > toolbarbutton,
 #toolbox-dock-buttons > toolbarbutton {
   min-width: 16px;
@@ -667,7 +668,11 @@ devtools-menulist:-moz-focusring,
 }
 
 #toolbox-controls-separator {
-  -moz-margin-start: 4px;
+  width: 2px;
+}
+
+#toolbox-controls-separator[invisible] {
+  visibility: hidden;
 }
 
 /* Command buttons */
@@ -786,21 +791,11 @@ devtools-menulist:-moz-focusring,
   border-radius: 8px 8px 0 0;
 }
 
-.devtools-tab:first-child {
-}
-
-.devtools-tab:last-child {
-}
-
 .devtools-tab > image {
   -moz-margin-end: 0px;
 /*  -moz-margin-start: 4px; */
   max-height: 16px;
   width: 16px; /* Prevents collapse during theme switching */
-}
-
-#toolbox-tab-options > image {
-/*  margin: 0 8px; */
 }
 
 .devtools-tab:hover > image {
@@ -858,6 +853,20 @@ devtools-menulist:-moz-focusring,
 .devtools-tab[selected] > .highlighted-icon,
 .devtools-tab:not([selected])[highlighted] > .default-icon {
   visibility: collapse;
+}
+
+/* The options tab is special - it doesn't have the same parent
+   as the other tabs (toolbox-option-container vs toolbox-tabs) */
+#toolbox-option-container .devtools-tab:not([selected]) {
+/*  background-color: transparent;*/
+}
+#toolbox-option-container .devtools-tab {
+/*  border-color: transparent;
+  border-width: 0;
+  -moz-padding-start: 1px;*/
+}
+#toolbox-tab-options > image {
+/*  margin: 0 8px;*/
 }
 
 .hidden-labels-box:not(.visible) > label,

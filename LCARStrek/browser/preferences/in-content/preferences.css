@@ -34,7 +34,7 @@ caption {
   margin: 0;
 }
 
-.caption-text {
+caption > label {
   font-size: 1.3rem;
   font-weight: bold;
   line-height: 22px;
@@ -270,7 +270,6 @@ radio {
 
 #categories {
   background-color: #A09090;
-/*  -moz-border-end: 1px solid #FF9F00; */
   padding-top: 39px;
   margin: 0;
   border-radius: 1em 0 0 0;
@@ -280,9 +279,10 @@ radio {
   background-color: #000000;
   color: #FFCF00;
   -moz-border-end-width: 0;
-  -moz-padding-start: 14px;
+  -moz-padding-start: 15px;
   -moz-padding-end: 21px;
   min-height: 40px;
+  transition: background-color 150ms;
 }
 
 .category:hover {
@@ -486,12 +486,17 @@ filefield {
 
 /* Applications Pane Styles */
 
-#applications-content {
+#applicationsContent {
   -moz-margin-start: 60px;
-  padding: 15px;
+  padding: 15px 0;
+}
+
+#filter {
+  -moz-margin-start: 0;
 }
 
 #handlersView {
+  -moz-margin-start: 0;
   font-size: 1.25rem;
   line-height: 22px;
   border: none; /*1px solid #9C9CFF;*/
@@ -585,14 +590,7 @@ description > html|a {
   cursor: pointer;
 }
 
-/* Content Pane */
-
-#defaultFontSize {
-  min-width: 5.5em;
-}
-
-/* Sync Pane */
-
+#offlineAppsList,
 #syncEnginesList {
 /*  -moz-appearance: none;
   color: #737980;
@@ -602,8 +600,6 @@ description > html|a {
   background-color: #F1F1F1;*/
 }
 
-/* Advanced Pane */
-
 #advancedPrefs {
   padding-bottom: 0; /* no padding needed in inContent prefs */
 }
@@ -611,15 +607,6 @@ description > html|a {
 #encryptionPanel {
   margin-top: 15px;
   -moz-margin-start: 60px;
-}
-
-#offlineAppsList {
-/*  -moz-appearance: none;
-  color: #737980;
-  padding: 2px;
-  border: 1px solid rgba(23,50,77,0.4);
-  border-radius: 5px;
-  background-color: #F1F1F1;*/
 }
 
 #telemetryLearnMore,

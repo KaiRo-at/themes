@@ -113,13 +113,12 @@ menubar {
 #navigator-toolbox > toolbar:not(:-moz-lwtheme) {
 }
 
+#navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(:-moz-lwtheme) {
+}
+
 @media (-moz-mac-graphite-theme: 0) and (-moz-mac-lion-theme: 0) {
   /* This is a hackish workaround to exclude most of Mac OS until bug 1060941 gets fixed. */
   /* Indent also due to non-applicable aero rule in original Windows theme. */
-  #toolbar-menubar {
-    background-color: transparent !important;
-  }
-
   #main-window[tabsintitlebar]:not([inFullscreen]) #toolbar-menubar:not(:-moz-lwtheme),
   #main-window[tabsintitlebar]:not([inFullscreen]) #TabsToolbar:not(:-moz-lwtheme) {
     /* like menubar */
@@ -135,10 +134,6 @@ menubar {
 
   #main-window[tabsintitlebar] #main-menubar > menu:not(:-moz-lwtheme) {
     /*color: inherit;*/
-  }
-
-  #TabsToolbar:-moz-lwtheme {
-    /*background: linear-gradient(to top, @toolbarShadowColor@ 2px, transparent 2px);*/
   }
 
   #main-window[tabsintitlebar] #titlebar:-moz-lwtheme {
@@ -2454,13 +2449,6 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
   border-bottom: 1px solid #008484;
 }
 
-#main-window:not([customizing]) #TabsToolbar:not(:-moz-lwtheme) {
-}
-
-#main-window[tabsintitlebar] #TabsToolbar {
-  background-color: transparent;
-}
-
 /* === BEGIN tabs.inc.css === */
 
 .tabbrowser-tab,
@@ -2519,7 +2507,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
 }
 
-.tab-throbber {
+.tab-throbber[busy] {
   list-style-image: url("chrome://communicator/skin/brand/throbber16-anim-connect.png");
 }
 
@@ -3050,7 +3038,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 
 .notification-anchor-icon:-moz-focusring {
   outline: 1px dotted #008484;
-/*  outline-offset: -3px; */
 }
 
 .default-notification-icon,
@@ -5055,3 +5042,10 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 }
 
 /* === END contextmenu.inc.css === */
+
+#context-navigation {
+}
+
+#context-sep-navigation {
+/*  margin-top: -4px; */
+}

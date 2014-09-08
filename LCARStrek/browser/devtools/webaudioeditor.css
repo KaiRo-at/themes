@@ -39,9 +39,7 @@ svg {
 .edgePath path {
   stroke-width: 1px;
   fill: none;
-}
 
-.edgePath path {
   stroke: #9C9CFF; /* Grey foreground text */
 }
 

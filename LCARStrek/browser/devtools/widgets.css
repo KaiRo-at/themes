@@ -561,18 +561,6 @@
   opacity: 0.6;
 }
 
-.variable-or-property[non-configurable]:not([pseudo-item]) > .title > .name {
-  border-bottom: 1px dashed #9C9CFF;
-}
-
-.variable-or-property[non-writable]:not([pseudo-item]) > .title > .name {
-  border-bottom: 1px dashed #FF0000;
-}
-
-.variable-or-property[safe-getter]:not([pseudo-item]) > .title > .name {
-  border-bottom: 1px dashed #A09090;
-}
-
 .variable-or-property-non-writable-icon {
   background: url("chrome://browser/skin/devtools/vview-lock.png") no-repeat;
   background-size: cover;
@@ -806,6 +794,153 @@
   visibility: hidden;
 }
 
+/* Canvas graphs */
+
+.graph-widget-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.graph-widget-canvas[input=hovering-background] {
+  cursor: text;
+}
+
+.graph-widget-canvas[input=hovering-region] {
+  cursor: pointer;
+}
+
+.graph-widget-canvas[input=hovering-selection-start-boundary],
+.graph-widget-canvas[input=hovering-selection-end-boundary],
+.graph-widget-canvas[input=adjusting-selection-boundary] {
+  cursor: col-resize;
+}
+
+.graph-widget-canvas[input=hovering-selection-contents] {
+  cursor: grab;
+}
+
+.graph-widget-canvas[input=dragging-selection-contents] {
+  cursor: grabbing;
+}
+
+.graph-widget-canvas ~ * {
+  pointer-events: none;
+}
+
+/* Line graph widget */
+
+.line-graph-widget-container {
+  position: relative;
+}
+
+.line-graph-widget-canvas {
+  background: #0088cc;
+}
+
+.line-graph-widget-gutter {
+  position: absolute;
+  background: #000000;
+  width: 10px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-right: 1px solid #9C9CFF;
+}
+
+.line-graph-widget-gutter-line {
+  position: absolute;
+  width: 100%;
+  border-top: 1px solid;
+  transform: translateY(-1px);
+}
+
+.line-graph-widget-gutter-line[type=maximum] {
+  border-color: #008484;
+}
+
+.line-graph-widget-gutter-line[type=minimum] {
+  border-color: #FF0000;
+}
+
+.line-graph-widget-gutter-line[type=average] {
+  border-color: #FF9F00;
+}
+
+.line-graph-widget-tooltip {
+  position: absolute;
+  background: #404000;
+  border-radius: 2px;
+  line-height: 15px;
+  -moz-padding-start: 6px;
+  -moz-padding-end: 6px;
+  transform: translateY(-50%);
+  font-size: 80%;
+  z-index: 1;
+}
+
+.line-graph-widget-tooltip::before {
+  content: "";
+  position: absolute;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  top: calc(50% - 3px);
+}
+
+.line-graph-widget-tooltip[arrow=start]::before {
+  -moz-border-end: 3px solid #9C9CFF;
+  left: -3px;
+}
+
+.line-graph-widget-tooltip[arrow=end]::before {
+  -moz-border-start: 3px solid #9C9CFF;
+  right: -3px;
+}
+
+.line-graph-widget-tooltip[type=maximum] {
+  left: calc(10px + 6px);
+}
+
+.line-graph-widget-tooltip[type=minimum] {
+  left: calc(10px + 6px);
+}
+
+.line-graph-widget-tooltip[type=average] {
+  right: 6px;
+}
+
+.line-graph-widget-tooltip > [text=info] {
+  color: #A09090;
+}
+
+.line-graph-widget-tooltip > [text=value] {
+  -moz-margin-start: 3px;
+}
+
+.line-graph-widget-tooltip > [text=metric] {
+  -moz-margin-start: 1px;
+  color: #9C9CFF;
+}
+
+.line-graph-widget-tooltip > [text=value],
+.line-graph-widget-tooltip > [text=metric] {
+/*  text-shadow: 1px  0px rgba(255,255,255,0.6),
+              -1px  0px rgba(255,255,255,0.6),
+               0px -1px rgba(255,255,255,0.6),
+               0px  1px rgba(255,255,255,0.6);*/
+}
+
+.line-graph-widget-tooltip[type=maximum] > [text=value] {
+  color: #008484;
+}
+
+.line-graph-widget-tooltip[type=minimum] > [text=value] {
+  color: #FF0000;
+}
+
+.line-graph-widget-tooltip[type=average] > [text=value] {
+  color: #FF9F00;
+}
+
 /* Charts */
 
 .generic-chart-container {
@@ -916,6 +1051,334 @@
 
 .table-chart-summary-label {
   color: #A09090; /* Light foreground text */
+}
+
+/* Table Widget */
+
+/* Table body */
+
+.table-widget-body > .devtools-side-splitter {
+  border: none;
+}
+
+.table-widget-body {
+  overflow: auto;
+}
+
+.table-widget-body {
+  background: #000000; /* Background-Sidebar */
+}
+
+.table-widget-body:-moz-locale-dir(ltr) {
+/*  box-shadow: inset -1px 0 0 @smw_marginDark@;*/
+}
+
+.table-widget-body:-moz-locale-dir(rtl) {
+/*  box-shadow: inset 1px 0 0 @smw_marginDark@;*/
+}
+
+.table-widget-body:-moz-locale-dir(ltr) {
+/*  box-shadow: inset -1px 0 0 @smw_marginLight@;*/
+}
+
+.table-widget-body:-moz-locale-dir(rtl) {
+/*  box-shadow: inset 1px 0 0 @smw_marginLight@;*/
+}
+
+/* Column Headers */
+
+.table-widget-column-header,
+.table-widget-cell {
+  -moz-border-end: 1px solid #A09090;
+}
+
+/* Table widget column header colors are taken from netmonitor.inc.css to match
+   the look of both the tables. This needs to be updated along with netmonitor
+   header colors in bug 951714 */
+
+.table-widget-column-header {
+  background: rgba(0,0,0,0);
+  position: sticky;
+  top: 0;
+  min-height: 32px;
+  width: 100%;
+  border: none;
+  padding: 8px 0 0 !important;
+  color: inherit;
+  text-align: center;
+  font-weight: inherit !important;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.table-widget-column-header:hover {
+  background: #FFCF00;
+}
+
+.table-widget-column-header:hover:active {
+  background: #FF9F00;
+}
+
+.table-widget-column-header:not(:active)[sorted] {
+  background: #008484;
+}
+
+.table-widget-column-header:not(:active)[sorted=ascending] {
+  background-image: radial-gradient(farthest-side at center top, hsla(0,0%,0%,.7), hsla(0,0%,0%,0.3));
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+}
+
+.table-widget-column-header:not(:active)[sorted=descending] {
+  background-image: radial-gradient(farthest-side at center bottom, hsla(0,0%,0%,.7), hsla(0,0%,0%,0.3));
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+/* Cells */
+
+.table-widget-cell {
+  width: 100%;
+  margin: -1px 0 !important;
+  padding: 3px 4px;
+  background-clip: padding-box;
+  min-width: 100px;
+  -moz-user-focus: normal;
+}
+
+.table-widget-cell {
+  border-top: 1px solid #A09090;
+  border-bottom: 1px solid #A09090;
+  color: #FF9F00; /* Light foreground text */
+}
+
+.theme-dark:not(.filtering) .table-widget-cell:nth-child(odd):not(.theme-selected),
+.theme-light:not(.filtering) .table-widget-cell:nth-child(odd):not(.theme-selected),
+.table-widget-cell:not(.theme-selected)[odd] {
+  background: #404000;
+}
+
+.table-widget-cell:last-of-type {
+/*  box-shadow: inset 0 -1px 0 @smw_itemDarkTopBorder@;*/
+}
+
+.table-widget-cell.flash-out {
+  animation: flash-out 0.5s ease-in;
+}
+
+@keyframes flash-out {
+  to {
+    background: #795900;
+  }
+}
+
+/* Empty text and initial text */
+
+.table-widget-empty-text {
+  display: none;
+  text-align: center;
+  font-size: large;
+  margin-top: -20px !important;
+}
+
+.table-widget-body:empty + .table-widget-empty-text:not([value=""]),
+.table-widget-body[empty] + .table-widget-empty-text:not([value=""]) {
+  display: block;
+}
+
+/* Tree Widget */
+
+.tree-widget-container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  overflow: hidden;
+  -moz-margin-end: 40px;
+}
+
+.tree-widget-container:-moz-focusring,
+.tree-widget-container *:-moz-focusring {
+  outline-style: none;
+}
+
+.tree-widget-empty-text {
+  padding: 10px 20px;
+  font-size: medium;
+  background: transparent;
+}
+
+/* Tree Item */
+
+.tree-widget-container .tree-widget-item {
+  padding: 2px 0px 4px;
+  /* OSX has line-height 14px by default, which causes weird alignment issues
+   * because of 20px high icons. thus making line-height consistent with that of
+   * windows.
+   */
+  line-height: 17px !important;
+  display: inline-block;
+  width: 100%;
+  word-break: keep-all; /* To prevent long urls like http://foo.com/bar from
+                           breaking in multiple lines */
+}
+
+.tree-widget-container .tree-widget-children {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tree-widget-item[level="1"] {
+  font-weight: 800;
+}
+
+/* Twisties */
+.tree-widget-item:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin: 3px 2px -3px;
+  background-repeat: no-repeat;
+  background-image: url("chrome://browser/skin/devtools/controls.png");
+  background-size: 56px 28px;
+  cursor: pointer;
+  background-position: -28px -14px;
+}
+
+.tree-widget-item:-moz-locale-dir(rtl):before {
+  float: right;
+  transform: scaleX(-1);
+}
+
+.theme-light .tree-widget-item:before {
+  background-position: 0 -14px;
+}
+
+.tree-widget-item[empty]:before {
+  background: transparent;
+}
+
+.tree-widget-item[expanded]:before {
+  background-position: -42px -14px;
+}
+
+.theme-light .tree-widget-item[expanded]:before {
+  background-position: -14px -14px;
+}
+
+.tree-widget-item + ul {
+  overflow: hidden;
+  animation: collapse-tree-item 0.2s;
+  max-height: 0;
+}
+
+.tree-widget-item[expanded] + ul {
+  animation: expand-tree-item 0.3s;
+  max-height: unset;
+}
+
+@keyframes collapse-tree-item {
+  from {
+    max-height: 300px;
+  }
+  to {
+    max-height: 0;
+  }
+}
+
+@keyframes expand-tree-item {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 500px;
+  }
+}
+
+@media (min-resolution: 2dppx) {
+  .tree-widget-item:before {
+    background-image: url("chrome://browser/skin/devtools/controls@2x.png");
+  }
+}
+
+/* Indentation of child items in the tree */
+
+/* For level > 6 */
+.tree-widget-item[level] + ul > li > .tree-widget-item {
+  -moz-padding-start: 98px;
+}
+
+/* First level */
+.tree-widget-item[level="1"] + ul > li > .tree-widget-item {
+  -moz-padding-start: 14px;
+}
+
+/* Second level */
+.tree-widget-item[level="2"] + ul > li > .tree-widget-item {
+  -moz-padding-start: 28px;
+}
+
+/* Third level */
+.tree-widget-item[level="3"] + ul > li > .tree-widget-item {
+  -moz-padding-start: 42px;
+}
+
+/* Fourth level */
+.tree-widget-item[level="4"] + ul > li > .tree-widget-item {
+  -moz-padding-start: 56px;
+}
+
+/* Fifth level */
+.tree-widget-item[level="5"] + ul > li > .tree-widget-item {
+  -moz-padding-start: 70px;
+}
+
+/* Sixth level */
+.tree-widget-item[level="6"] + ul > li > .tree-widget-item {
+  -moz-padding-start: 84px;
+}
+
+/* Custom icons for certain tree items indicating the type of the item */
+
+.tree-widget-item[type]:after {
+  content: "";
+  float: left;
+  width: 16px;
+  height: 17px;
+  -moz-margin-end: 4px;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  filter: url('filters.svg#invert');
+  background-position: 0 0;
+  background-size: auto 20px;
+}
+
+.tree-widget-item:-moz-locale-dir(rtl):after {
+  float: right;
+}
+
+.theme-dark .tree-widget-item[type]:after {
+  filter: url('filters.svg#invert-white');
+}
+
+.tree-widget-item[type="dir"]:after {
+  background-image: url("chrome://browser/skin/devtools/filetype-dir-close.svg");
+  background-position: 2px 0;
+  background-size: auto 16px;
+  width: 20px;
+}
+
+.tree-widget-item[type="dir"][expanded]:not([empty]):after {
+  background-image: url("chrome://browser/skin/devtools/filetype-dir-open.svg");
+}
+
+.tree-widget-item[type="url"]:after {
+  background-image: url("chrome://browser/skin/devtools/filetype-globe.svg");
+  background-size: auto 18px;
+  width: 18px;
 }
 
 /* === BEGIN manifest-editor.inc.css === */
