@@ -316,6 +316,9 @@ header {
 
 
 
+.browser-tabs.hidden {
+  display: none;
+}
 
 .apps, .browser-tabs {
   display: flex;

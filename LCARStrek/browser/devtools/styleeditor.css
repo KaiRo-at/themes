@@ -149,6 +149,11 @@ window:not([windowtype]) {
   background-position: -24px 8px;
 }
 
+#style-editor-options {
+  width: 20px;
+  overflow: hidden;
+}
+
 .splitview-nav > li > .stylesheet-enabled:focus,
 .splitview-nav > li:hover > .stylesheet-enabled {
   outline: 0;

@@ -683,6 +683,9 @@ tree:not(#rejectsTree) {
 
 /* === END shared/in-content/preferences.css === */
 
+caption {
+}
+
 .indent-small {
   -moz-margin-start: 10px;
 }

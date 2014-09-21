@@ -3169,38 +3169,19 @@ notification[value="translation"] .messageImage {
   }
 }
 
-notification[value="translation"] {
-  min-height: 40px;
-}
-
 notification[value="translation"] button,
 notification[value="translation"] menulist {
   min-width: 0;
-/*  min-height: 30px;
-  -moz-padding-end: 1ch; */
-}
-
-notification[value="translation"] button > .button-box,
-notification[value="translation"] button[type="menu"] > .button-box > .button-menu-dropmarker {
-  padding: 0;
-/*  -moz-margin-start: 3ch; */
-}
-
-notification[value="translation"] button:not([type="menu"]) > .button-box {
-/*  -moz-margin-end: 3ch; */
-}
-
-notification[value="translation"] button,
-notification[value="translation"] menulist,
-notification[value="translation"] menulist > .menulist-label-box {
-/*  -moz-margin-start: 1ch;
-  -moz-margin-end: 1ch; */
 }
 
 notification[value="translation"] menulist > .menulist-dropmarker {
 }
 
 /* === END infobar.inc.css === */
+
+notification[value="translation"] {
+  min-height: 40px;
+}
 
 .translate-notification-icon,
 #translate-notification-icon {
@@ -3531,6 +3512,12 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
   display: none;
 }
 
+.developer-toolbar-button > .toolbarbutton-icon,
+#developer-toolbar-closebutton > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
+}
+
 #developer-toolbar-toolbox-button {
   list-style-image: url("chrome://browser/skin/devtools/toggle-tools.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
@@ -3544,6 +3531,19 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
 #developer-toolbar-toolbox-button:hover:active,
 #developer-toolbar-toolbox-button[checked=true] {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #developer-toolbar-toolbox-button {
+    list-style-image: url("chrome://browser/skin/devtools/toggle-tools@2x.png");
+    -moz-image-region: rect(0px, 32px, 32px, 0px);
+  }
+
+  #developer-toolbar-toolbox-button:hover,
+  #developer-toolbar-toolbox-button:hover:active,
+  #developer-toolbar-toolbox-button[checked=true] {
+    -moz-image-region: rect(0px, 64px, 32px, 32px);
+  }
 }
 
 #developer-toolbar-closebutton {
@@ -3563,6 +3563,18 @@ html|*.highlighter-nodeinfobar-pseudo-classes {
 #developer-toolbar-closebutton:hover,
 #developer-toolbar-closebutton:hover:active {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+@media (min-resolution: 2dppx) {
+  #developer-toolbar-closebutton {
+    list-style-image: url("chrome://browser/skin/devtools/close@2x.png");
+    -moz-image-region: rect(0px, 32px, 32px, 0px);
+  }
+
+  #developer-toolbar-closebutton:hover,
+  #developer-toolbar-closebutton:hover:active {
+    -moz-image-region: rect(0px, 64px, 32px, 32px);
+  }
 }
 
 /* GCLI */
@@ -3591,17 +3603,36 @@ html|*#gcli-output-frame {
 }
 
 .gclitoolbar-input-node {
-  padding-left: 20px;
 /*  line-height: 32px;
   outline-style: none; */
-  background-image: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 16, 16, 0);
   background-repeat: no-repeat;
   background-color: rgba(0, 0, 0, .75);
 }
 
 .gclitoolbar-input-node[focused="true"] {
-  background-image: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16);
   background-color: #000000;
+}
+
+.gclitoolbar-input-node::before {
+  content: "";
+  display: inline-block;
+  -moz-box-ordinal-group: 0;
+  width: 16px;
+  height: 16px;
+  margin: 0 2px;
+  background-image: url("chrome://browser/skin/devtools/commandline-icon.png");
+  background-position: 0 center;
+  background-size: 32px 16px;
+}
+
+.gclitoolbar-input-node[focused="true"]::before {
+  background-position: -16px center;
+}
+
+@media (min-resolution: 2dppx) {
+  .gclitoolbar-input-node::before {
+    background-image: url("chrome://browser/skin/devtools/commandline-icon@2x.png");
+  }
 }
 
 .gclitoolbar-input-node:not([focused="true"]) {
@@ -3660,7 +3691,7 @@ html|*#gcli-output-frame {
 /* Responsive Mode */
 
 .browserContainer[responsivemode] {
-  background: #221500 url("chrome://browser/skin/devtools/responsive-background.png");
+  background-color: #221500;
   padding: 0 20px 20px 20px;
 }
 
@@ -3686,6 +3717,11 @@ html|*#gcli-output-frame {
   min-width: 32px;
 /*  min-height: 22px;*/
 /*  margin: 0 3px; */
+}
+
+.devtools-responsiveui-toolbarbutton > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .devtools-responsiveui-toolbarbutton > .toolbarbutton-menubutton-button {
@@ -3735,7 +3771,7 @@ html|*#gcli-output-frame {
 .devtools-responsiveui-menulist > .menulist-dropmarker {
 /*  display: -moz-box;
   background-color: transparent;
-  list-style-image: url("chrome://browser/skin/devtools/dropmarker.png");
+  list-style-image: url("chrome://browser/skin/devtools/dropmarker.svg");
   -moz-box-align: center;
   border-width: 0;
   min-width: 16px;*/
@@ -3759,7 +3795,7 @@ html|*#gcli-output-frame {
 
 .devtools-responsiveui-toolbarbutton[type=menu] > .toolbarbutton-menu-dropmarker,
 .devtools-responsiveui-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-dropmarker {
-/*  list-style-image: url("chrome://browser/skin/devtools/dropmarker.png");
+/*  list-style-image: url("chrome://browser/skin/devtools/dropmarker.svg");
   -moz-box-align: center;
   padding: 0 3px;*/
 }
@@ -3787,6 +3823,24 @@ html|*#gcli-output-frame {
   -moz-image-region: rect(0px,32px,16px,16px);
 }
 
+@media (min-resolution: 2dppx) {
+  .devtools-responsiveui-close {
+    list-style-image: url("chrome://browser/skin/devtools/close@2x.png");
+  }
+
+  .devtools-responsiveui-close:hover {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
+
+  .devtools-responsiveui-rotate {
+    list-style-image: url("chrome://browser/skin/devtools/responsiveui-rotate@2x.png");
+  }
+
+  .devtools-responsiveui-rotate:hover {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
+}
+
 .devtools-responsiveui-touch {
   list-style-image: url("chrome://browser/skin/devtools/responsiveui-touch.png");
   -moz-image-region: rect(0px,16px,16px,0px);
@@ -3798,6 +3852,19 @@ html|*#gcli-output-frame {
   -moz-image-region: rect(0px,32px,16px,16px);
 }
 
+@media (min-resolution: 2dppx) {
+  .devtools-responsiveui-touch {
+    list-style-image: url("chrome://browser/skin/devtools/responsiveui-touch@2x.png");
+    -moz-image-region: rect(0px,32px,32px,0px);
+  }
+
+  .devtools-responsiveui-touch:hover,
+  .devtools-responsiveui-touch[checked],
+  .devtools-responsiveui-touch[checked]:hover {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
+}
+
 .devtools-responsiveui-screenshot {
   list-style-image: url("chrome://browser/skin/devtools/responsiveui-screenshot.png");
   -moz-image-region: rect(0px,16px,16px,0px);
@@ -3807,11 +3874,22 @@ html|*#gcli-output-frame {
   -moz-image-region: rect(0px,32px,16px,16px);
 }
 
+@media (min-resolution: 2dppx) {
+  .devtools-responsiveui-screenshot {
+    list-style-image: url("chrome://browser/skin/devtools/responsiveui-screenshot@2x.png");
+  }
+
+  .devtools-responsiveui-screenshot:hover {
+    -moz-image-region: rect(0px,64px,32px,32px);
+  }
+}
+
 .devtools-responsiveui-resizebarV {
   width: 7px;
   height: 24px;
   cursor: ew-resize;
   transform: translate(12px, -12px);
+  background-size: cover;
   background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer.png");
 }
 
@@ -3820,6 +3898,7 @@ html|*#gcli-output-frame {
   height: 7px;
   cursor: ns-resize;
   transform: translate(-12px, 12px);
+  background-size: cover;
   background-image: url("chrome://browser/skin/devtools/responsive-horizontal-resizer.png");
 }
 
@@ -3828,7 +3907,22 @@ html|*#gcli-output-frame {
   height: 16px;
   cursor: se-resize;
   transform: translate(12px, 12px);
+  background-size: cover;
   background-image: url("chrome://browser/skin/devtools/responsive-se-resizer.png");
+}
+
+@media (min-resolution: 2dppx) {
+  .devtools-responsiveui-resizebarV {
+    background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer@2x.png");
+  }
+
+  .devtools-responsiveui-resizebarH {
+    background-image: url("chrome://browser/skin/devtools/responsive-horizontal-resizer@2x.png");
+  }
+
+  .devtools-responsiveui-resizehandle {
+    background-image: url("chrome://browser/skin/devtools/responsive-se-resizer@2x.png");
+  }
 }
 
 /* === END responsivedesign.inc.css === */
