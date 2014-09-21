@@ -671,6 +671,7 @@ devtools-menulist:-moz-focusring,
   width: 2px;
 }
 
+#toolbox-buttons:empty + #toolbox-controls-separator,
 #toolbox-controls-separator[invisible] {
   visibility: hidden;
 }

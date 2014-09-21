@@ -2546,6 +2546,29 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
 }
 
+/* Tab Overflow */
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]),
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]) {
+}
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:-moz-locale-dir(rtl),
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:-moz-locale-dir(ltr) {
+}
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]) {
+}
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]) {
+}
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator[collapsed],
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator[collapsed] {
+}
+
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator,
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
+}
+
 .tab-background-start[selected=true]::after,
 .tab-background-start[selected=true]::before,
 .tab-background-start,
@@ -3158,14 +3181,25 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 /* === BEGIN infobar.inc.css === */
 
 notification[value="translation"] .messageImage {
-  list-style-image: url(chrome://browser/skin/translation-16.png);
+  list-style-image: url("chrome://browser/skin/translation-16.png");
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
 @media (min-resolution: 1.25dppx) {
   notification[value="translation"] .messageImage {
-    list-style-image: url(chrome://browser/skin/translation-16@2x.png);
+    list-style-image: url("chrome://browser/skin/translation-16@2x.png");
     -moz-image-region: rect(0, 64px, 32px, 32px);
+  }
+}
+
+notification[value="translation"][state="translating"] .messageImage {
+  list-style-image: url("chrome://browser/skin/translating-16.png");
+  -moz-image-region: auto;
+}
+
+@media (min-resolution: 1.25dppx) {
+  notification[value="translation"][state="translating"] .messageImage {
+    list-style-image: url("chrome://browser/skin/translating-16@2x.png");
   }
 }
 
@@ -3175,6 +3209,24 @@ notification[value="translation"] menulist {
 }
 
 notification[value="translation"] menulist > .menulist-dropmarker {
+}
+
+.translation-menupopup arrowscrollbox {
+  padding-bottom: 0;
+}
+
+.translation-attribution {
+  cursor: pointer;
+  -moz-box-align: end;
+  font-size: small;
+}
+
+.translation-attribution > label {
+  margin-bottom: 0;
+}
+
+.translation-attribution > image {
+  width: 70px;
 }
 
 /* === END infobar.inc.css === */
@@ -3412,6 +3464,13 @@ html|*.highlighter-nodeinfobar-id {
 
 html|*.highlighter-nodeinfobar-pseudo-classes {
   color: #FF9F00;
+}
+
+html|*.highlighter-nodeinfobar-dimensions {
+  color: #A09090;
+  -moz-border-start: 1px solid #9C9CFF;
+  -moz-margin-start: 6px;
+  -moz-padding-start: 6px;
 }
 
 /* Highlighter - Node Infobar - box & arrow */
@@ -4516,6 +4575,7 @@ notification.pluginVulnerable .messageImage {
 
 #customization-container {
   background-color: #000000;
+  color: #FF9F00;
 }
 
 #customization-palette,
@@ -4543,11 +4603,11 @@ notification.pluginVulnerable .messageImage {
 
 #customization-footer {
   border-top: 1px solid #9C9CFF;
-  padding: 15px;
+  padding: 10px;
 }
 
 .customizationmode-button {
-  margin: 0;
+  margin: 5px;
 }
 
 .customizationmode-button:hover {
@@ -4556,11 +4616,15 @@ notification.pluginVulnerable .messageImage {
 .customizationmode-button[disabled="true"] {
 }
 
+.customizationmode-button > .box-inherit > .box-inherit > .button-icon,
+.customizationmode-button > .button-box > .button-icon {
+/*  height: 24px;*/
+}
+
 #customization-titlebar-visibility-button {
   list-style-image: url("chrome://browser/skin/customizableui/customize-titleBar-toggle.png");
   -moz-image-region: rect(0, 16px, 16px, 0);
   padding: 0px 5px;
-  -moz-margin-end: 10px;
 }
 
 #customization-titlebar-visibility-button:hover {
@@ -4582,6 +4646,10 @@ notification.pluginVulnerable .messageImage {
   -moz-margin-start: 5px !important;
 }
 
+#customization-titlebar-visibility-button > .button-box > .button-icon {
+  vertical-align: middle;
+}
+
 #customization-titlebar-visibility-button[checked] {
   -moz-image-region: rect(0, 32px, 16px, 16px);
   background-color: #008484;
@@ -4594,10 +4662,6 @@ notification.pluginVulnerable .messageImage {
 
 #customization-titlebar-visibility-button[checked]:hover:active {
   background-color: #FF9F00;
-}
-
-#customization-undo-reset-button {
-  -moz-margin-end: 10px;
 }
 
 #main-window[customize-entered] #customization-panel-container {
@@ -4800,9 +4864,25 @@ toolbarpaletteitem[place="toolbar"] {
   transform: perspective(0.01px);
 }
 
-#main-window[customize-entered] {
+#main-window[customize-entered] > #tab-view-deck {
   background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
   background-attachment: fixed;
+}
+
+#main-window[customization-lwtheme] > #tab-view-deck:-moz-lwtheme {
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  /* The image will get set from CustomizeMode.jsm */
+  background-image: none;
+  background-color: transparent;
+}
+
+#main-window[customization-lwtheme]:-moz-lwtheme {
+  background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: left top;
 }
 
 #main-window[customize-entered] #browser-bottombox,
@@ -5051,68 +5131,83 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
   -moz-appearance: none;
 }
 
-#context-navigation > #context-back > .menu-iconic-left {
+#context-back > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#back"); */
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
   -moz-image-region: rect(0, 54px, 18px, 36px);
 }
 
-#context-navigation > #context-back:not([disabled="true"]):hover > .menu-iconic-left {
+#context-back:not([disabled="true"]):hover > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#back-active"); */
   -moz-image-region: rect(18px, 54px, 36px, 36px);
 }
 
-#context-navigation > #context-back[disabled="true"] > .menu-iconic-left {
+#context-back[disabled="true"] > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#back-disabled"); */
   -moz-image-region: rect(36px, 54px, 54px, 36px);
 }
 
-#context-navigation > #context-forward > .menu-iconic-left {
+#context-forward > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#forward"); */
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
   -moz-image-region: rect(0, 72px, 18px, 54px);
 }
 
-#context-navigation > #context-forward:not([disabled="true"]):hover > .menu-iconic-left {
+#context-forward:not([disabled="true"]):hover > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#forward-active"); */
   -moz-image-region: rect(18px, 72px, 36px, 54px);
 }
 
-#context-navigation > #context-forward[disabled="true"] > .menu-iconic-left {
+#context-forward[disabled="true"] > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#forward-disabled"); */
   -moz-image-region: rect(36px, 72px, 54px, 54px);
 }
 
-#context-navigation > #context-reload > .menu-iconic-left {
+#context-reload > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#reload"); */
   list-style-image: url("chrome://browser/skin/reload-stop-go.png");
   -moz-image-region: rect(0, 14px, 14px, 0);
 }
 
-#context-navigation > #context-reload:not([disabled="true"]):hover > .menu-iconic-left {
+#context-reload:not([disabled="true"]):hover > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#reload-active"); */
   -moz-image-region: rect(14px, 14px, 28px, 0);
 }
 
-#context-navigation > #context-reload[disabled="true"] > .menu-iconic-left {
+#context-reload[disabled="true"] > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#reload-disabled"); */
   -moz-image-region: rect(28px, 14px, 42px, 0);
 }
 
-#context-navigation > #context-stop > .menu-iconic-left {
+#context-stop > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#stop"); */
   list-style-image: url("chrome://browser/skin/reload-stop-go.png");
   -moz-image-region: rect(0, 28px, 14px, 14px);
 }
 
-#context-navigation > #context-stop:not([disabled="true"]):hover > .menu-iconic-left {
+#context-stop:not([disabled="true"]):hover > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#stop-active"); */
   -moz-image-region: rect(14px, 28px, 28px, 14px);
 }
 
-#context-navigation > #context-stop[disabled="true"] > .menu-iconic-left {
+#context-stop[disabled="true"] > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#stop-disabled"); */
   -moz-image-region: rect(28px, 28px, 42px, 14px);
 }
 
-#context-navigation > #context-bookmarkpage > .menu-iconic-left {
+#context-bookmarkpage > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#bookmark"); */
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
   -moz-image-region: rect(0, 144px, 18px, 126px);
 }
 
-#context-navigation > #context-bookmarkpage:not([disabled="true"]):hover > .menu-iconic-left {
+#context-bookmarkpage:not([disabled="true"]):hover > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#bookmark-active"); */
   -moz-image-region: rect(18px, 144px, 36px, 126px);
 }
 
-#context-navigation > #context-bookmarkpage[disabled="true"] > .menu-iconic-left {
+#context-bookmarkpage[disabled="true"] > .menu-iconic-left {
+  /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#bookmark-disabled"); */
   -moz-image-region: rect(36px, 144px, 54px, 126px);
 }
 
@@ -5123,8 +5218,8 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 }
 
 #context-navigation > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
-  width: 18px;
-  height: 18px;
+  width: 18px; /*16px;*/
+  height: 18px; /*16px;*/
   margin: 7px;
 }
 
