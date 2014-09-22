@@ -3009,8 +3009,14 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://global/skin/icons/webapps-64.png");
 }
 
-.popup-notification-icon[popupid="mixed-content-blocked"] {
-  list-style-image: url("chrome://browser/skin/mixed-content-blocked-64.png");
+.popup-notification-icon[popupid="mixed-content-blocked"],
+.popup-notification-icon[popupid="bad-content"] {
+  list-style-image: url("chrome://browser/skin/bad-content-blocked-64.png");
+}
+
+.popup-notification-icon[popupid="bad-content"][mixedblockdisabled],
+.popup-notification-icon[popupid="bad-content"][trackingblockdisabled] {
+  list-style-image: url(chrome://browser/skin/bad-content-unblocked-64.png);
 }
 
 .popup-notification-icon[popupid="webRTC-sharingDevices"],
@@ -3140,8 +3146,15 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 }
 
 .mixed-content-blocked-notification-icon,
-#mixed-content-blocked-notification-icon {
-  list-style-image: url("chrome://browser/skin/mixed-content-blocked-16.png");
+#mixed-content-blocked-notification-icon,
+.bad-content-blocked-notification-icon,
+#bad-content-blocked-notification-icon {
+  list-style-image: url("chrome://browser/skin/bad-content-blocked-16.png");
+}
+
+.bad-content-unblocked-notification-icon,
+#bad-content-unblocked-notification-icon {
+  list-style-image: url(chrome://browser/skin/bad-content-unblocked-16.png);
 }
 
 .webRTC-shareDevices-notification-icon,
@@ -4486,6 +4499,27 @@ notification.pluginVulnerable .messageImage {
 }
 
 /* === END plugin-doorhanger.inc.css === */
+
+/* === BEGIN badcontent-doorhanger.inc.css === */
+
+.popup-notification-item-title[popupid="bad-content"] {
+  font-weight: bold;
+}
+
+.popup-notification-item-message[popupid="bad-content"] {
+  width: 17em;
+}
+
+.popup-notification-item-message-critical[popupid="bad-content"] {
+  color: #FF0000;
+  font-style: italic;
+}
+
+.popup-notification-footer[popupid="bad-content"] {
+  padding-top: 1em;
+}
+
+/* === END badcontent-doorhanger.inc.css === */
 
 /* === BEGIN customizeMode.inc.css === */
 
