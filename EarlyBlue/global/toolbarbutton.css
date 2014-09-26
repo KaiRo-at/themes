@@ -26,7 +26,7 @@ toolbarbutton {
 }
 
 .toolbarbutton-text {
-  margin: 0px !important;
+  margin: 0px !important; /* !important for overriding global.css */
   padding: 0px;
   text-align: center;
 }

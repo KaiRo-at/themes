@@ -85,10 +85,6 @@ label {
   padding: 4px 2px;
 }
 
-.alertCloseButton > .toolbarbutton-text {
-  display: none;
-}
-
 .alertCloseButton:hover,
 .alertCloseButton:hover:active {
   -moz-image-region: rect(0, 32px, 16px, 16px);

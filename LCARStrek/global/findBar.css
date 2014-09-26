@@ -99,10 +99,6 @@ findbar[position="top"][hidden] {
 .findbar-find-next > .toolbarbutton-icon {
 }
 
-.findbar-find-previous > .toolbarbutton-text,
-.findbar-find-next > .toolbarbutton-text {
-}
-
 .findbar-find-previous[disabled="true"] > .toolbarbutton-icon,
 .findbar-find-next[disabled="true"] > .toolbarbutton-icon {
 }

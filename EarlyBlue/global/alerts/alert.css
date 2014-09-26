@@ -82,7 +82,3 @@ label {
   list-style-image: url("chrome://global/skin/icons/close-button.gif");
   padding: 4px 2px;
 }
-
-.alertCloseButton > .toolbarbutton-text {
-  display: none;
-}
