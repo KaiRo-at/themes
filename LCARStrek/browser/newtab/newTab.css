@@ -10,10 +10,13 @@
 }
 
 /* SCROLLBOX */
-#newtab-scrollbox:not([page-disabled]),
-#newtab-scrollbox:not([page-disabled]) #newtab-margin-bottom {
+#newtab-scrollbox:not([page-disabled]) {
   color: #FF9F00;
   background-color: #000000;
+}
+
+#newtab-scrollbox:not([page-disabled]) #newtab-margin-bottom {
+  background: inherit;
 }
 
 /* UNDO */
@@ -64,10 +67,6 @@
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
-#newtab-undo-close-button > .toolbarbutton-text {
-  display: none;
-}
-
 #newtab-undo-close-button:-moz-focusring {
   outline: 1px dotted;
 }
@@ -83,6 +82,23 @@
 
 #newtab-toggle[page-disabled] {
   background-position: -232px 0;
+}
+
+/* CUSTOMIZE */
+#newtab-customize-button,
+.newtab-customize {
+  background-color: transparent;
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 0, 32, 32, 0);
+  background-size: 28px;
+  border: none;
+  border-radius: 3px;
+  height: 28px;
+  width: 28px;
+}
+
+#newtab-customize-button:-moz-any(:hover, :active, [active]) {
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 0, 64, 32, 32);
+  background-color: #FFCF00;
 }
 
 /* ROWS */
@@ -109,7 +125,8 @@
 }
 
 .newtab-cell:empty {
-  border: 1px dashed;
+  outline: 2px dashed #A09090;
+  -moz-outline-radius: 2px;
 }
 
 .newtab-row > .newtab-cell:last-child {
@@ -136,15 +153,26 @@
   background-color: #002121;
 }
 
+/* LINKS */
+.newtab-link {
+  border-radius: 3px;
+}
+
 /* THUMBNAILS */
 .newtab-thumbnail {
   background-origin: padding-box;
   background-clip: padding-box;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: opacity 100ms ease-out;
+}
+
+.newtab-site:hover .newtab-thumbnail.enhanced-content {
+  opacity: 0;
 }
 
 .newtab-site[type=affiliate] .newtab-thumbnail,
+.newtab-site[type=enhanced] .newtab-thumbnail,
 .newtab-site[type=organic] .newtab-thumbnail,
 .newtab-site[type=sponsored] .newtab-thumbnail {
   background-position: center center;
@@ -152,6 +180,7 @@
 }
 
 /* TITLES */
+.newtab-sponsored,
 .newtab-title {
   padding: 0 8px;
   background-color: rgba(255,159,0,.8);
@@ -164,55 +193,61 @@
   -moz-padding-end: 24px;
 }
 
+.newtab-site:hover .newtab-title {
+  background-color: #FFCF00;
+}
+
+.newtab-site[pinned] .newtab-title {
+  padding: 0 15px;
+}
+
+.newtab-site[pinned] .newtab-title::before {
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 7, 278, 28, 266);
+  background-size: 10px;
+  content: "";
+  height: 17px;
+  left: 0;
+  position: absolute;
+  width: 10px;
+}
+
+.newtab-site[pinned] .newtab-title:-moz-locale-dir(rtl)::before {
+  left: auto;
+  right: 0;
+}
+
 /* CONTROLS */
 .newtab-control {
-  width: 24px;
-  height: 24px;
-  padding: 1px 2px 3px;
+  background-color: transparent;
+  background-size: 24px;
   border: none;
-  background: transparent url("chrome://browser/skin/newtab/controls.png");
+  height: 24px;
+  width: 24px;
 }
 
-.newtab-control-pin:hover {
-  background-position: -24px 0;
+.newtab-control-pin,
+.newtab-site[pinned] .newtab-control-pin:hover:active {
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 0, 96, 32, 64);
 }
 
-.newtab-control-pin:active {
-  background-position: -48px 0;
+.newtab-control-pin:hover,
+.newtab-site[pinned] .newtab-control-pin:hover {
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 0, 128, 32, 96);
 }
 
-.newtab-control-pin[pinned] {
-  background-position: -72px 0;
-}
-
-.newtab-control-pin[pinned]:hover {
-  background-position: -96px 0;
-}
-
-.newtab-control-pin[pinned]:active {
-  background-position: -120px 0;
+.newtab-control-pin:hover:active,
+.newtab-site[pinned] .newtab-control-pin {
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 0, 160, 32, 128);
 }
 
 .newtab-control-block {
-  background-position: -144px 0;
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 0, 192, 32, 160);
 }
 
 .newtab-control-block:hover {
-  background-position: -168px 0;
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 0, 224, 32, 192);
 }
 
-.newtab-control-block:active {
-  background-position: -192px 0;
-}
-
-.newtab-control-sponsored {
-  background-position: -249px -1px;
-}
-
-.newtab-control-sponsored:hover {
-  background-position: -265px -1px;
-}
-
-.newtab-control-sponsored[panelShown] {
-  background-position: -281px -1px;
+.newtab-control-block:hover:active {
+  background-image: -moz-image-rect(url("chrome://browser/skin/newtab/controls.svg"), 0, 256, 32, 224);
 }

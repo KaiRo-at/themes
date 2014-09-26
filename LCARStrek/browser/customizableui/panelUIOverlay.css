@@ -116,6 +116,8 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
 
 .panel-subview-header,
 .subviewbutton.panel-subview-footer {
+  box-sizing: border-box;
+/*  min-height: 41px; */
   padding: 3px;
 }
 
@@ -477,8 +479,9 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 #PanelUI-customize,
 #PanelUI-quit {
   margin: 0;
-  padding: 10px 0;
-  min-height: 2em;
+  padding: 11px 0;
+  box-sizing: border-box;
+  min-height: 40px;
   box-shadow: none;
   border: none;
   border-radius: 0;

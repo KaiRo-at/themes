@@ -2400,7 +2400,6 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 .panel-promo-closebutton > .toolbarbutton-text {
   padding: 0;
-  margin: 0;
 }
 
 /* ::::: content area ::::: */
@@ -3511,6 +3510,26 @@ html|*.highlighter-nodeinfobar-dimensions {
 
 .highlighter-nodeinfobar-container[hide-arrow] > .highlighter-nodeinfobar {
   margin: 7px 0;
+}
+
+/* Css transform highlighter */
+
+svg|polygon.css-transform-transformed {
+  fill: #9C9CFF;
+  opacity: 0.8;
+}
+
+svg|polygon.css-transform-untransformed {
+  fill: #A09090;
+  opacity: 0.8;
+}
+
+svg|polygon.css-transform-transformed,
+svg|polygon.css-transform-untransformed,
+svg|line.css-transform-line {
+  stroke: #E7ADE7;
+  stroke-dasharray: 5 3;
+  stroke-width: 2;
 }
 
 /* === END highlighter.inc.css === */

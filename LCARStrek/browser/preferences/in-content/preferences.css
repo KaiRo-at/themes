@@ -290,6 +290,11 @@ radio {
   color: #000000;
 }
 
+#categories[keyboard-navigation="true"]:-moz-focusring > .category[current] {
+  border-top: 1px dotted #000000;
+  border-bottom: 1px dotted #000000;
+}
+
 .category-name {
   line-height: 22px;
   font-size: 1.25rem;
@@ -498,6 +503,7 @@ filefield {
   overflow-y: auto;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  height: 500px;
 }
 
 #handersView > listheader > treecol {

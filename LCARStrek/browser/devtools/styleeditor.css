@@ -107,20 +107,23 @@ window:not([windowtype]) {
 }
 
 .stylesheet-sidebar {
-  width: 230px;
-}
+  width: 237px;
+  -moz-border-start: 1px solid;
 
-.stylesheet-sidebar {
-  border-left: 1px solid #9C9CFF;
+  border-color: #9C9CFF; /* Splitters */
 }
 
 .media-rule-label {
-  border-bottom: 1px solid #A09090;
+  border-bottom: 1px solid #A09090; /* Grey */
 }
 
 .media-rule-label {
   padding: 4px;
   cursor: pointer;
+}
+
+.media-rule-line {
+  -moz-padding-start: 4px;
 }
 
 .media-condition-unmatched {

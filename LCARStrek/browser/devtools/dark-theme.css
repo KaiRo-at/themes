@@ -285,6 +285,10 @@ div.CodeMirror span.eval-text {
   background-position: -14px -14px;
 }
 
+.theme-twisty[invisible] {
+  visibility: hidden;
+}
+
 .theme-checkbox {
   display: inline-block;
   border: 0;
@@ -380,6 +384,11 @@ div.CodeMirror span.eval-text {
 
 /* === BEGIN toolbars.inc.css === */
 
+/* Toolbars */
+.devtools-toolbar,
+.devtools-sidebar-tabs > tabs {
+}
+
 .devtools-toolbar {
 }
 
@@ -389,15 +398,23 @@ div.CodeMirror span.eval-text {
   padding: 2px;
 }
 
-devtools-menulist:-moz-focusring,
+/* Toolbar buttons */
+.devtools-menulist,
+.devtools-toolbarbutton {
+}
+
+.devtools-menulist:-moz-focusring,
 .devtools-toolbarbutton:-moz-focusring {
   outline: 1px dotted #008484;
 }
 
-.devtools-toolbarbutton > .toolbarbutton-icon {
+.devtools-toolbarbutton[standalone] {
+}
+.devtools-toolbarbutton[label][standalone] {
 }
 
-.devtools-toolbarbutton:not([label]) {
+.devtools-toolbarbutton:not([label]),
+.devtools-toolbarbutton[text-as-image] {
   min-width: 20px;
 }
 
@@ -405,26 +422,61 @@ devtools-menulist:-moz-focusring,
   display: none;
 }
 
+.devtools-toolbar .devtools-toolbarbutton {
+}
+
+.devtools-toolbarbutton > .toolbarbutton-icon {
+}
+
 .devtools-toolbarbutton > .toolbarbutton-menubutton-button {
   /*-moz-box-orient: horizontal;*/
+}
+
+.devtools-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-button {
+}
+
+.devtools-toolbarbutton[type=menu-button] {
+}
+
+.devtools-menulist > .menulist-dropmarker {
+}
+
+.devtools-toolbarbutton[type=menu] > .toolbarbutton-menu-dropmarker,
+.devtools-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-dropmarker {
 }
 
 .devtools-menulist,
 .devtools-toolbarbutton {
 }
 
-.devtools-toolbarbutton:not([checked]):hover:active {
+/* Text-only buttons */
+.devtools-toolbarbutton[label]:not([text-as-image]):not([type=menu-button]) {
+/*  background-color: rgba(0, 0, 0, .2); / Splitter */
 }
 
-.devtools-menulist[open=true],
-.devtools-toolbarbutton[open=true],
-.devtools-toolbarbutton[checked] {
+/* Button States */
+.devtools-toolbarbutton:hover,
+.devtools-toolbarbutton[label]:not([text-as-image]):not([type=menu-button]):hover {
+/*  background: rgba(0, 0, 0, .3); / Splitters */
 }
 
-.devtools-toolbarbutton[checked] {
+.devtools-toolbarbutton:hover:active,
+.devtools-toolbarbutton[label]:not([text-as-image]):not([type=menu-button]):hover:active {
+/*  background: rgba(0, 0, 0, .4); / Splitters */
 }
 
-.devtools-toolbarbutton[checked]:hover:active {
+/* Menu type buttons and checked states */
+.theme-dark .devtools-menulist[open=true],
+.theme-dark .devtools-toolbarbutton[open=true],
+.theme-dark .devtools-toolbarbutton[open=true]:hover,
+.theme-dark .devtools-toolbarbutton[open=true]:hover:active,
+.theme-dark .devtools-toolbarbutton[checked=true],
+.theme-dark .devtools-toolbarbutton[checked=true]:hover {
+/*  background: rgba(29, 79, 115, .7); /*Select highlight blue /
+  color: #f5f7fa; */
+}
+
+.devtools-toolbarbutton[checked=true]:hover {
 }
 
 .devtools-option-toolbarbutton {
@@ -438,43 +490,17 @@ devtools-menulist:-moz-focusring,
   list-style-image: url("chrome://browser/skin/devtools/tool-options.svg");
 }
 
-.devtools-menulist > .menulist-label-box {
-  text-align: center;
-}
-
-.devtools-menulist > .menulist-dropmarker {
-}
-
-.devtools-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-button {
-}
-
-.devtools-toolbarbutton[type=menu-button]:-moz-locale-dir(rtl) > .toolbarbutton-menubutton-button {
-}
-
-.devtools-toolbarbutton[type=menu-button] {
-  padding: 0 1px;
-  -moz-box-align: stretch;
-}
-
-.devtools-toolbarbutton[type=menu] > .toolbarbutton-menu-dropmarker,
-.devtools-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-dropmarker {
-  -moz-box-align: center;
-}
-
 /* Toolbar button groups */
 .devtools-toolbarbutton-group > .devtools-toolbarbutton {
 }
 
-.devtools-toolbarbutton-group > .devtools-toolbarbutton:last-of-type {
+.devtools-toolbarbutton-group > .devtools-toolbarbutton:last-child {
 }
 
-.devtools-toolbarbutton-group {
-/*
-  margin: 0 2px;
-  -moz-padding-end: 2px;
-  border-left: 3px solid #000000;
-  border-right: 3px solid #000000;
-*/
+.devtools-toolbarbutton-group + .devtools-toolbarbutton {
+}
+
+.devtools-separator + .devtools-toolbarbutton {
 }
 
 /* Text input */
@@ -491,8 +517,9 @@ devtools-menulist:-moz-focusring,
 }
 
 .devtools-searchinput {
-/*  padding-top: 3px;
-  padding-bottom: 3px;*/
+/*  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 0;*/
   -moz-padding-start: 22px;
   -moz-padding-end: 12px;
   background-position: 8px center;
@@ -667,13 +694,18 @@ devtools-menulist:-moz-focusring,
 #toolbox-dock-side:hover {
 }
 
-#toolbox-controls-separator {
+.devtools-separator {
+  margin: 0 2px;
   width: 2px;
 }
 
-#toolbox-buttons:empty + #toolbox-controls-separator,
-#toolbox-controls-separator[invisible] {
+#toolbox-buttons:empty + .devtools-separator,
+.devtools-separator[invisible] {
   visibility: hidden;
+}
+
+#toolbox-controls-separator {
+  margin: 0;
 }
 
 /* Command buttons */

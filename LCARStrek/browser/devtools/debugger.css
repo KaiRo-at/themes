@@ -541,11 +541,6 @@ window {
 
 /* Toolbar controls */
 
-.devtools-sidebar-tabs > tabs > tab {
-/*  min-height: 24px !important;
-  padding: 0 !important; */
-}
-
 #toggle-panes {
   list-style-image: url("chrome://browser/skin/devtools/debugger-expand.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
