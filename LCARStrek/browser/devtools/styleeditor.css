@@ -107,8 +107,8 @@ window:not([windowtype]) {
 }
 
 .stylesheet-sidebar {
-  width: 237px;
-  -moz-border-start: 1px solid;
+  max-width: 400px;
+  min-width: 100px;
 
   border-color: #9C9CFF; /* Splitters */
 }
@@ -150,11 +150,6 @@ window:not([windowtype]) {
 
 .disabled > .stylesheet-enabled {
   background-position: -24px 8px;
-}
-
-#style-editor-options {
-  width: 20px;
-  overflow: hidden;
 }
 
 .splitview-nav > li > .stylesheet-enabled:focus,

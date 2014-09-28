@@ -175,7 +175,8 @@
 }
 
 .ruleview-colorswatch,
-.computedview-colorswatch {
+.computedview-colorswatch,
+.ruleview-bezierswatch {
 /*  box-shadow: 0 0 0 1px #818181; */
 }
 
@@ -392,15 +393,22 @@ div.CodeMirror span.eval-text {
 .devtools-toolbar {
 }
 
-/* LCARStrek checkbox colors don't work well against toolbar background */
-.devtools-toolbar > checkbox {
+.devtools-toolbar checkbox {
+  /* LCARStrek checkbox colors don't work well against toolbar background */
   background-color: #000000;
   padding: 2px;
+}
+.devtools-toolbar checkbox .checkbox-check {
+}
+.devtools-toolbar checkbox .checkbox-label-box {
+}
+.devtools-toolbar checkbox .checkbox-label-box .checkbox-label {
 }
 
 /* Toolbar buttons */
 .devtools-menulist,
 .devtools-toolbarbutton {
+/*  transition: background 0.05s ease-in-out; */
 }
 
 .devtools-menulist:-moz-focusring,
@@ -418,6 +426,12 @@ div.CodeMirror span.eval-text {
   min-width: 20px;
 }
 
+#toolbox-buttons .devtools-toolbarbutton[text-as-image] {
+  -moz-padding-start: 5px;
+  -moz-padding-end: 5px;
+  min-width: inherit;
+}
+
 .devtools-toolbarbutton:not([label]) > .toolbarbutton-text {
   display: none;
 }
@@ -428,14 +442,14 @@ div.CodeMirror span.eval-text {
 .devtools-toolbarbutton > .toolbarbutton-icon {
 }
 
-.devtools-toolbarbutton > .toolbarbutton-menubutton-button {
-  /*-moz-box-orient: horizontal;*/
-}
-
 .devtools-toolbarbutton[type=menu-button] > .toolbarbutton-menubutton-button {
+/*  -moz-box-orient: horizontal; */
 }
 
 .devtools-toolbarbutton[type=menu-button] {
+}
+
+.devtools-toolbarbutton > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
 }
 
 .devtools-menulist > .menulist-dropmarker {
@@ -450,29 +464,39 @@ div.CodeMirror span.eval-text {
 }
 
 /* Text-only buttons */
-.devtools-toolbarbutton[label]:not([text-as-image]):not([type=menu-button]) {
+.devtools-toolbarbutton[label]:not([text-as-image]):not([type=menu-button]),
+#toolbox-buttons .devtools-toolbarbutton[text-as-image] {
 /*  background-color: rgba(0, 0, 0, .2); / Splitter */
 }
 
 /* Button States */
 .devtools-toolbarbutton:hover,
+#toolbox-buttons .devtools-toolbarbutton[text-as-image]:hover,
 .devtools-toolbarbutton[label]:not([text-as-image]):not([type=menu-button]):hover {
 /*  background: rgba(0, 0, 0, .3); / Splitters */
 }
 
 .devtools-toolbarbutton:hover:active,
+#toolbox-buttons .devtools-toolbarbutton[text-as-image]:hover:active,
 .devtools-toolbarbutton[label]:not([text-as-image]):not([type=menu-button]):hover:active {
 /*  background: rgba(0, 0, 0, .4); / Splitters */
 }
 
 /* Menu type buttons and checked states */
-.theme-dark .devtools-menulist[open=true],
-.theme-dark .devtools-toolbarbutton[open=true],
-.theme-dark .devtools-toolbarbutton[open=true]:hover,
-.theme-dark .devtools-toolbarbutton[open=true]:hover:active,
-.theme-dark .devtools-toolbarbutton[checked=true],
-.theme-dark .devtools-toolbarbutton[checked=true]:hover {
-/*  background: rgba(29, 79, 115, .7); /*Select highlight blue /
+.devtools-toolbarbutton[checked=true],
+#toolbox-buttons .devtools-toolbarbutton[text-as-image][checked] {
+/*  background: rgba(29, 79, 115, .7); / Select highlight blue /
+  color: #f5f7fa;*/
+}
+
+.devtools-menulist[open=true],
+.devtools-toolbarbutton[open=true],
+.devtools-toolbarbutton[open=true]:hover,
+.devtools-toolbarbutton[open=true]:hover:active,
+.devtools-toolbarbutton[checked=true],
+.devtools-toolbarbutton[checked=true]:hover,
+#toolbox-buttons .devtools-toolbarbutton[text-as-image][checked] {
+/*  background: rgba(29, 79, 115, .8); / Select highlight blue /
   color: #f5f7fa; */
 }
 

@@ -599,6 +599,26 @@ description > html|a {
   background-color: #F1F1F1;*/
 }
 
+#weavePrefsDeck {
+  -moz-margin-start: 60px;
+}
+
+#noFxaAccount {
+  /* Overriding the margins from the base preferences.css theme file.
+     These overrides can be simplified by fixing bug 1027174 */
+  margin: 0;
+}
+
+#weavePrefsDeck > vbox > label,
+#weavePrefsDeck > vbox > groupbox,
+#weavePrefsDeck > vbox > description,
+#weavePrefsDeck > vbox > #pairDevice > label,
+#weavePrefsDeck > #needsUpdate > hbox > #loginError,
+#weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP) > label {
+  /* no margin-start for elements at the begin of a line */
+  -moz-margin-start: 0;
+}
+
 #advancedPrefs {
   padding-bottom: 0; /* no padding needed in inContent prefs */
 }
@@ -641,6 +661,10 @@ description > html|a {
   min-width: 66ch;
 }
 
+#dialogTitle {
+  -moz-margin-start: 5px !important;
+}
+
 .close-icon {
   background-color: transparent !important;
   border: none;
@@ -658,7 +682,7 @@ description > html|a {
 #dialogFrame {
   -moz-box-flex: 1;
   /* Default dialog dimensions */
-  height: 30em;
+  height: 20em;
   width: 66ch;
 }
 

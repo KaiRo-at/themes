@@ -116,6 +116,18 @@ menubar {
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(:-moz-lwtheme) {
 }
 
+#navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(#nav-bar):not(#addon-bar) {
+  overflow: -moz-hidden-unscrollable;
+  max-height: 4em;
+  transition: min-height 170ms ease-out, max-height 170ms ease-out;
+}
+
+#navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(#nav-bar):not(#addon-bar)[collapsed=true] {
+  min-height: 0.1px;
+  max-height: 0;
+  transition: min-height 170ms ease-out, max-height 170ms ease-out, visibility 170ms linear;
+}
+
 @media (-moz-mac-graphite-theme: 0) and (-moz-mac-lion-theme: 0) {
   /* This is a hackish workaround to exclude most of Mac OS until bug 1060941 gets fixed. */
   /* Indent also due to non-applicable aero rule in original Windows theme. */
@@ -1611,7 +1623,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   margin: 0;
 }
 
-/* tabview button & menu item */
+/* tabview menu item */
 
 #menu_tabview {
   list-style-image: url("chrome://browser/skin/tabview/tabview.png");
@@ -1632,6 +1644,20 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 
 #menu_tabview[groups="3"] {
   -moz-image-region: rect(1px, 71px, 17px, 55px);
+}
+
+/* undo close tab menu item */
+#alltabs_undoCloseTab {
+  list-style-image: url(chrome://browser/skin/undoCloseTab.png);
+}
+
+@media (min-resolution: 1.25dppx) {
+  #alltabs_undoCloseTab {
+    list-style-image: url(chrome://browser/skin/undoCloseTab@2x.png);
+  }
+  #alltabs_undoCloseTab > .toolbarbutton-icon {
+    width: 16px;
+  }
 }
 
 /* zoom control text (reset) button special case: */
@@ -3028,6 +3054,11 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://browser/skin/webRTC-shareMicrophone-64.png");
 }
 
+.popup-notification-icon[popupid="webRTC-sharingScreen"],
+.popup-notification-icon[popupid="webRTC-shareScreen"] {
+  list-style-image: url(chrome://browser/skin/webRTC-shareScreen-64.png);
+}
+
 .popup-notification-icon[popupid="pointerLock"] {
   list-style-image: url("chrome://browser/skin/pointerLock-64.png");
 }
@@ -3174,6 +3205,16 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 .webRTC-sharingMicrophone-notification-icon,
 #webRTC-sharingMicrophone-notification-icon {
   list-style-image: url("chrome://browser/skin/webRTC-sharingMicrophone-16.png");
+}
+
+.webRTC-shareScreen-notification-icon,
+#webRTC-shareScreen-notification-icon {
+  list-style-image: url(chrome://browser/skin/webRTC-shareScreen-16.png);
+}
+
+.webRTC-sharingScreen-notification-icon,
+#webRTC-sharingScreen-notification-icon {
+  list-style-image: url(chrome://browser/skin/webRTC-sharingScreen-16.png);
 }
 
 .web-notifications-notification-icon,
@@ -3441,6 +3482,7 @@ svg|line.box-model-guide-bottom,
 svg|line.box-model-guide-left {
   stroke: #E7ADE7;
   stroke-dasharray: 5 3;
+  shape-rendering: crispEdges;
 }
 
 /* Highlighter - Node Infobar */

@@ -225,6 +225,10 @@ a {
   border-color: #FFCF00;
 }
 
+.message:hover {
+  background-color: #404000;
+}
+
 .message[severity=error] {
   background-color: #FF0000;
 }

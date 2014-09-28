@@ -208,6 +208,12 @@
   color: #000000;
 }
 
+.breadcrumbs-widget-item > .button-box {
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .breadcrumbs-widget-item:not([checked]) {
   background-image: -moz-element(#breadcrumb-separator-normal);
   background-repeat: no-repeat;
@@ -796,10 +802,6 @@
   cursor: grabbing;
 }
 
-.graph-widget-canvas ~ * {
-  pointer-events: none;
-}
-
 /* Line graph widget */
 
 .line-graph-widget-canvas {
@@ -814,6 +816,7 @@
   top: 0;
   left: 0;
   border-right: 1px solid #9C9CFF;
+  pointer-events: none;
 }
 
 .line-graph-widget-gutter-line {
@@ -845,6 +848,7 @@
   transform: translateY(-50%);
   font-size: 80%;
   z-index: 1;
+  pointer-events: none;
 }
 
 .line-graph-widget-tooltip::before {
@@ -922,6 +926,7 @@
   left: 8px;
   color: #A09090;
   font-size: 80%;
+  pointer-events: none;
 }
 
 .bar-graph-widget-legend-item {
@@ -941,6 +946,7 @@
   border: 1px solid #9C9CFF;
   border-radius: 1px;
   -moz-margin-end: 4px;
+  pointer-events: none;
 }
 
 .bar-graph-widget-legend-item > [view="label"] {
