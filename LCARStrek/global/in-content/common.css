@@ -6,13 +6,13 @@
 
 @namespace html "http://www.w3.org/1999/xhtml";
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
-/*
+
 html|body,
 xul|page {
-  font: message-box;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   -moz-appearance: none;
-  background-color: #f1f1f1;
-  color: #424e5a;
+  background-color: #000000;
+  color: #FF9F00;
 }
 
 html|body {
@@ -30,15 +30,11 @@ html|h1 {
 }
 
 xul|caption {
-  -moz-appearance: none;
-  margin: 0;
 }
 
 xul|caption > xul|label {
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 22px;
-  margin: 0 !important;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 *|*.main-content {
@@ -49,7 +45,7 @@ xul|caption > xul|label {
 xul|prefpane > xul|*.content-box {
   overflow: visible;
 }
-*/
+
 /* groupboxes */
 /*
 xul|groupbox {
@@ -118,13 +114,16 @@ xul|*.tab-text {
 }
 */
 /* html buttons */
-/*
+
 html|button {
-  padding: 3px;
+  border-radius: 300px;
+  border: none;
+  background-color: #C09070;
+  color: #000000;
   / * override forms.css * /
   font: inherit;
 }
-*/
+
 /* xul buttons and menulists */
 /*
 *|button,
@@ -143,19 +142,21 @@ xul|menulist {
   border-radius: 2px;
   background-color: #fbfbfb;
 }
-
+*/
 html|button:enabled:hover,
 xul|button:not([disabled="true"]):hover,
 xul|colorpicker[type="button"]:not([disabled="true"]):hover,
 xul|menulist:not([disabled="true"]):hover {
-  background-color: #ebebeb;
+  background-color: #FFCF00;
+  color: #000000;
 }
 
 html|button:enabled:hover:active,
 xul|button:not([disabled="true"]):hover:active,
 xul|colorpicker[type="button"]:not([disabled="true"]):hover:active,
 xul|menulist[open="true"]:not([disabled="true"]) {
-  background-color: #dadada;
+  background-color: #FF9F00;
+  color: #000000;
 }
 
 html|button:disabled,
@@ -163,9 +164,10 @@ xul|button[disabled="true"],
 xul|colorpicker[type="button"][disabled="true"],
 xul|menulist[disabled="true"] {
   cursor: not-allowed;
-  opacity: 0.5;
+  background-color: #402858;
+  color: #000000;
 }
-
+/*
 xul|colorpicker[type="button"] {
   padding: 6px;
   width: 50px;

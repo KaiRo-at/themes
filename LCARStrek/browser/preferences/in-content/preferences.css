@@ -25,19 +25,13 @@ treecol {
 }
 
 caption {
-  -moz-appearance: none;
-  margin: 0;
 }
 
 caption > label {
-  font-size: 1.3rem;
-  font-weight: bold;
-  line-height: 22px;
-  margin: 0 !important;
 }
 
 .main-content {
-  padding: 40px 48px 48px;
+  padding: 10px 20px 0px;
   overflow: auto;
 }
 
@@ -51,6 +45,7 @@ prefpane {
 }
 
 prefpane > .content-box {
+  max-width: 800px;
   overflow: visible;
 }
 
