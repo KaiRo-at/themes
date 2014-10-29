@@ -489,7 +489,7 @@ menuitem.bookmark-item {
           #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button),
+          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button),
 
 #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
@@ -660,8 +660,13 @@ menuitem.bookmark-item {
   -moz-image-region: rect(0px, 306px, 18px, 288px);
 }
 
-#social-share-button[cui-areatype="toolbar"]:hover {
+#social-share-button[cui-areatype="toolbar"]:hover:not([disabled="true"]),
+#social-share-button[cui-areatype="toolbar"][open="true"] {
   -moz-image-region: rect(18px, 306px, 36px, 288px);
+}
+
+#social-share-button[cui-areatype="toolbar"][disabled="true"] {
+  -moz-image-region: rect(36px, 306px, 54px, 288px);
 }
 
 #characterencoding-button[cui-areatype="toolbar"] {
@@ -848,8 +853,12 @@ menuitem.bookmark-item {
   -moz-image-region: rect(0, 666px, 18px, 648px);
 }
 
-#email-button[cui-areatype="toolbar"]:hover {
+#email-button[cui-areatype="toolbar"]:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 666px, 36px, 648px);
+}
+
+#email-button[cui-areatype="toolbar"][disabled="true"] {
+  -moz-image-region: rect(36px, 666px, 54px, 648px);
 }
 
 #sidebar-button[cui-areatype="toolbar"] {
@@ -858,6 +867,27 @@ menuitem.bookmark-item {
 
 #sidebar-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 684px, 36px, 666px);
+}
+
+#panic-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 702px, 18px, 684px);
+}
+
+#panic-button[cui-areatype="toolbar"]:hover,
+#panic-button[cui-areatype="toolbar"][open] {
+  -moz-image-region: rect(18px, 702px, 36px, 684px);
+}
+
+#panic-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
+  transform: scaleX(-1);
+}
+
+#web-apps-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 720px, 18px, 702px);
+}
+
+#web-apps-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 720px, 36px, 702px);
 }
 
 #loop-call-button > .toolbarbutton-badge-container {
@@ -902,14 +932,14 @@ toolbaritem[sdkstylewidget="true"] > toolbarbutton,
           #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button)[cui-areatype="menu-panel"],
+          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button)[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
           #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
           #social-share-button, #open-file-button, #find-button, #developer-button,
           #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button) {
+          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button) {
   list-style-image: url("chrome://browser/skin/menuPanelFx.png"); /* avoid aero overrides with changed filename */
 }
 
@@ -1026,9 +1056,14 @@ toolbarpaletteitem[place="palette"] > #social-share-button {
   -moz-image-region: rect(0px, 448px, 32px, 416px);
 }
 
-#social-share-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #social-share-button:hover {
+#social-share-button[cui-areatype="menu-panel"]:hover:not([disabled="true"]),
+toolbarpaletteitem[place="palette"] > #social-share-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(32px, 448px, 64px, 416px);
+}
+
+#social-share-button[cui-areatype="menu-panel"][disabled="true"],
+toolbarpaletteitem[place="palette"] > #social-share-button[disabled="true"] {
+  -moz-image-region: rect(64px, 448px, 96px, 416px);
 }
 
 #characterencoding-button[cui-areatype="menu-panel"],
@@ -1159,9 +1194,14 @@ toolbarpaletteitem[place="palette"] > #email-link-button {
   -moz-image-region: rect(0, 800px, 32px, 768px);
 }
 
-#email-link-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #email-link-button:hover {
+#email-link-button[cui-areatype="menu-panel"]:hover:not([disabled="true"]),
+toolbarpaletteitem[place="palette"] > #email-link-button:hover:not([disabled="true"]) {
   -moz-image-region: rect(32px, 800px, 64px, 768px);
+}
+
+#email-link-button[cui-areatype="menu-panel"][disabled="true"],
+toolbarpaletteitem[place="palette"] > #email-link-button[disabled="true"] {
+  -moz-image-region: rect(64px, 800px, 96px, 768px);
 }
 
 #sidebar-button[cui-areatype="menu-panel"],
@@ -1170,12 +1210,30 @@ toolbarpaletteitem[place="palette"] > #sidebar-button {
 }
 
 #sidebar-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #sidebar-button:hover {
+toolbarpaletteitem[place="palette"] > #sidebar-button:hover,
+#sidebar-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
   -moz-image-region: rect(32px, 864px, 64px, 832px);
 }
 
-#sidebar-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
-  -moz-image-region: rect(32px, 864px, 64px, 832px);
+#panic-button[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #panic-button {
+  -moz-image-region: rect(0, 896px, 32px, 864px);
+}
+
+#panic-button[cui-areatype="menu-panel"]:hover,
+toolbarpaletteitem[place="palette"] > #panic-button:hover,
+#panic-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
+  -moz-image-region: rect(32px, 896px, 64px, 864px);
+}
+
+#web-apps-button[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #web-apps-button {
+  -moz-image-region: rect(0, 928px, 32px, 896px);
+}
+
+#web-apps-button[cui-areatype="menu-panel"]:hover,
+toolbarpaletteitem[place="palette"] > #web-apps-button:hover {
+  -moz-image-region: rect(32px, 928px, 64px, 896px);
 }
 
 toolbaritem[sdkstylewidget="true"] > toolbarbutton {
