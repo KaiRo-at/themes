@@ -43,7 +43,7 @@ wizard[branded="true"] .wizard-header-icon {
 .wizard-buttons-box-2 {
   margin: 10px;
 }
-
+/*
 .wizard-button[dlgtype="finish"],
 .wizard-button[dlgtype="next"] {
   -moz-margin-start: 0px !important;
@@ -52,3 +52,4 @@ wizard[branded="true"] .wizard-header-icon {
 .wizard-button[dlgtype="back"] {
   -moz-margin-end: 0px !important;
 }
+*/
