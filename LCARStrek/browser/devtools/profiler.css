@@ -8,72 +8,344 @@ window {
   padding: 0;
 }
 
-.profiler-sidebar-empty-notice {
-  max-width: 176px;
-  padding: 10px;
-  background-color: #A09090;
-  color: #000000;
-  font-weight: bold;
+/* Reload and waiting notices */
+
+.notice-container {
+  margin-top: -50vh;
+  font-size: 120%;
 }
 
-.devtools-toolbar {
-/*  min-height: 33px; */
+.notice-container {
+  background: #000000; /* Toolbars */
+  color: #FF9F00; /* Light foreground text */
 }
 
-.profiler-sidebar {
-  min-width: 196px;
+#empty-notice button,
+#recording-notice button {
+  min-width: 30px;
+  min-height: 28px;
+  margin: 0;
+  list-style-image: url("profiler-stopwatch.svg");
 }
 
-.profiler-sidebar + .devtools-side-splitter {
-  -moz-border-start-color: transparent;
+#empty-notice button[checked],
+#recording-notice button[checked] {
+  list-style-image: url("profiler-stopwatch-checked.svg");
 }
 
-.profiler-sidebar .devtools-toolbar {
-  -moz-border-end: 1px solid #9C9CFF; /* Match the splitter color. */
-}
-
-.profiler-sidebar-item {
-  padding: 3px 5px;
-}
-
-.profiler-sidebar-item, .side-menu-widget-item-contents {
-  cursor: default;
-}
-
-.profiler-sidebar-item > h3 {
-  font-size: 13px;
-  display: block;
-  cursor: pointer;
-}
-
-.profiler-sidebar-item > hbox {
-  margin-top: 2px;
-}
-
-.profiler-sidebar-item > hbox > a {
+#empty-notice button .button-text,
+#recording-notice button .button-text {
   display: none;
+}
+
+#loading-notice {
+  font-size: 250%;
+  color: #9C9CFF;
+}
+
+/* Recordings pane */
+
+#recordings-pane > tabs,
+#recordings-pane .devtools-toolbar {
+  -moz-border-end-width: 1px;
+}
+
+#recordings-pane > tabs,
+#recordings-pane .devtools-toolbar {
+  -moz-border-end-color: #9C9CFF; /* Splitters */
+}
+
+#record-button {
+  list-style-image: url("profiler-stopwatch.svg");
+}
+
+#record-button[checked] {
+  list-style-image: url("profiler-stopwatch-checked.svg");
+}
+
+#record-button[locked] {
+  pointer-events: none;
+}
+
+/* Recording items */
+
+.recording-item {
+  padding: 4px;
+}
+
+.recording-item-title {
+  font-size: 110%;
+}
+
+.recording-item-footer {
+  padding-top: 4px;
+  font-size: 90%;
+}
+
+.recording-item-save {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.profiler-sidebar-item > hbox > a:hover {
-  color: #FFCF00;
+.recording-item-duration,
+.recording-item-save {
+  color: #FF9F00; /* Foreground (Text) - Grey */
 }
 
-[state=completed].selected .profiler-sidebar-item > hbox > a {
-  display: block;
+#recordings-list .selected label {
+  /* Text inside a selected item should not be custom colored. */
+  color: inherit !important;
 }
 
-.selected .profiler-sidebar-item > hbox {
-  color: #3A3A5F; /* 37% of #9C9CFF */
+/* Profile pane */
+
+#profile-content tabs {
+  -moz-box-align: stretch;
+  height: 24px;
+  font: inherit;
 }
 
-#profiler-start {
-  list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch-tbutton.svg");
+#profile-content tab {
+  -moz-box-flex: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  text-shadow: none;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  transition-property: opacity, transform;
 }
 
-#profiler-start:hover,
-#profiler-start[checked],
-#profiler-start[checked]:hover {
-  list-style-image: url("chrome://browser/skin/devtools/profiler-stopwatch.svg");
+.theme-dark #profile-content tab {
+  color: #8fa1b2; /* Body Text */
+}
+
+.theme-light #profile-content tab {
+  color: #18191a; /* Body Text */
+}
+
+#profile-content tab:not([selected]) {
+  cursor: pointer;
+}
+
+#profile-content tab[covered] {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+#profile-content tab {
+  -moz-appearance: none;
+  -moz-border-end: 1px solid #9C9CFF; /* Splitters */
+}
+
+#profile-content tab:hover {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
+#profile-content tab[selected] {
+  background-color: #008484; /* Select Highlight Blue */
+  color: #000000; /* Light foreground text */
+}
+
+#profile-content tabpanel {
+  -moz-box-orient: vertical;
+  transform: translateZ(1px); /* Make sure the tabpanel appears above the tab */
+}
+
+#profile-newtab-button {
+  -moz-appearance: none;
+  background-color: transparent;
+  background-position: 4px 2px;
+  background-size: 54px 20px;
+  min-width: 26px;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+#profile-newtab-button {
+  background-color: #C09070;
+}
+
+#profile-newtab-button {
+  background-image: url("newtab.png");
+}
+
+@media (min-resolution: 2dppx) {
+  #profile-newtab-button {
+    background-image: url("newtab@2x.png");
+  }
+}
+
+/* Profile call tree */
+
+.call-tree-headers-container {
+  border-top: 1px solid #A09090;
+}
+
+.call-tree-cells-container {
+  /* Hack: force hardware acceleration */
+  transform: translateZ(1px);
+  overflow: auto;
+}
+
+.call-tree-cells-container[categories-hidden] .call-tree-category {
+  display: none;
+}
+
+.call-tree-header[type="duration"],
+.call-tree-cell[type="duration"],
+.call-tree-header[type="self-duration"],
+.call-tree-cell[type="self-duration"] {
+  width: 9em;
+}
+
+.call-tree-header[type="percentage"],
+.call-tree-cell[type="percentage"],
+.call-tree-header[type="self-percentage"],
+.call-tree-cell[type="self-percentage"] {
+  width: 6em;
+}
+
+.call-tree-header[type="samples"],
+.call-tree-cell[type="samples"] {
+  width: 5em;
+}
+
+.call-tree-header[type="function"],
+.call-tree-cell[type="function"] {
+  -moz-box-flex: 1;
+}
+
+.call-tree-header,
+.call-tree-cell {
+  -moz-box-align: center;
+  overflow: hidden;
+  padding: 1px 4px;
+}
+
+.call-tree-header:not(:last-child),
+.call-tree-cell:not(:last-child) {
+  -moz-border-end: 1px solid;
+}
+
+.call-tree-header,
+.call-tree-cell {
+  -moz-border-end-color: #9C9CFF;
+  color: #FF9F00; /* Body Text */
+}
+
+.call-tree-header:not(:last-child) {
+  text-align: center;
+}
+
+.call-tree-cell:not(:last-child) {
+  text-align: end;
+}
+
+.call-tree-header {
+  background-color: #A09090; /* Tab Toolbar */
+  color: #000000;
+}
+
+.call-tree-item:last-child:not(:focus) {
+  border-bottom: #9C9CFF;
+}
+
+.call-tree-item:nth-child(2n) {
+  background-color: #392900;
+}
+
+.call-tree-item:hover {
+  background-color: #392900;
+}
+
+.call-tree-item:focus {
+  background-color: #008484; /* Select Highlight Blue */
+  color: #000000;
+}
+
+.call-tree-item:focus label {
+  color: #000000 !important; /* Light foreground text */
+}
+
+.call-tree-item:focus .call-tree-cell {
+  -moz-border-end-color: #9C9CFF;
+}
+
+.call-tree-item:not([origin="content"]) .call-tree-name,
+.call-tree-item:not([origin="content"]) .call-tree-url,
+.call-tree-item:not([origin="content"]) .call-tree-line {
+  /* Style chrome and non-JS nodes differently. */
+  opacity: 0.6;
+}
+
+.call-tree-url {
+  -moz-margin-start: 4px !important;
+  cursor: pointer;
+}
+
+.call-tree-url:hover {
+  text-decoration: underline;
+}
+
+.call-tree-url {
+  color: #9C9CFF;
+}
+
+.call-tree-line {
+  color: #A09090;
+}
+
+.call-tree-host {
+  -moz-margin-start: 8px !important;
+  font-size: 90%;
+}
+
+.call-tree-host {
+  color: #E7ADE7;
+}
+
+.call-tree-url[value=""],
+.call-tree-line[value=""],
+.call-tree-host[value=""] {
+  display: none;
+}
+
+.call-tree-zoom {
+  -moz-appearance: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 11px;
+  min-width: 11px;
+  -moz-margin-start: 8px !important;
+  cursor: zoom-in;
+  opacity: 0;
+}
+
+.call-tree-zoom {
+  background-image: url("magnifying-glass.png");
+}
+
+@media (min-resolution: 2dppx) {
+  .call-tree-zoom {
+    background-image: url("magnifying-glass@2x.png");
+  }
+}
+
+.call-tree-item:hover .call-tree-zoom {
+  transition: opacity 0.3s ease-in;
+  opacity: 1;
+}
+
+.call-tree-item:hover .call-tree-zoom:hover {
+  opacity: 0;
+}
+
+.call-tree-category {
+  transform: scale(0.75);
+  transform-origin: center right;
 }

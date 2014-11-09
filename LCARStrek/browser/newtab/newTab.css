@@ -71,19 +71,6 @@
   outline: 1px dotted;
 }
 
-/* TOGGLE */
-#newtab-toggle {
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  border: none;
-  background: -216px 0 transparent url("chrome://browser/skin/newtab/controls.png");
-}
-
-#newtab-toggle[page-disabled] {
-  background-position: -232px 0;
-}
-
 /* CUSTOMIZE */
 #newtab-customize-button,
 .newtab-customize {
@@ -101,27 +88,12 @@
   background-color: #FFCF00;
 }
 
-/* ROWS */
-.newtab-row {
-  margin-bottom: 20px;
-}
-
-.newtab-row:last-child {
-  margin-bottom: 0;
-}
-
-.newtab-row > .newtab-cell {
-  /* this only applies before Directory Tiles work, row is gone afterwards. */
-  -moz-margin-end: 20px;
-}
-
 /* CELLS */
 .newtab-cell {
   background-color: rgba(255,159,0,.2);
   border: 1px solid;
   border-color: #9C9CFF;
   border-radius: 1px;
-  transition: border-color 100ms ease-out;
 }
 
 .newtab-cell:empty {
@@ -129,16 +101,9 @@
   -moz-outline-radius: 2px;
 }
 
-.newtab-row > .newtab-cell:last-child {
-  -moz-margin-end: 0;
-}
-
-.newtab-cell:hover:not(:empty):not([dragged]):not([ignorehover]) {
-  border-color: #FFCF00;
-}
-
 /* SITES */
 .newtab-site {
+  border-radius: inherit;
   text-decoration: none;
   transition-property: top, left, opacity, box-shadow, background-color;
 }

@@ -383,14 +383,14 @@ radio {
 /* header */
 
 .header {
+  border-bottom: 1px solid #A09090;
   margin-bottom: 15px;
+  padding-bottom: 15px;
 }
 
-.header-icon {
-  width: 40px;
-  max-height: 40px;
-  -moz-margin-end: 20px;
-  list-style-image: url("chrome://browser/skin/preferences/in-content/header.png");
+#header-advanced {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .header-name {
@@ -398,68 +398,6 @@ radio {
   font-weight: normal;
   line-height: 40px;
   margin: 0;
-}
-
-#header-general > .header-icon {
-  -moz-image-region: rect(0, 40px, 40px, 0);
-}
-
-#header-content > .header-icon {
-  -moz-image-region: rect(0, 80px, 40px, 40px);
-}
-
-#header-application > .header-icon {
-  -moz-image-region: rect(0, 120px, 40px, 80px);
-}
-
-#header-privacy > .header-icon {
-  -moz-image-region: rect(0, 160px, 40px, 120px);
-}
-
-#header-security > .header-icon {
-  -moz-image-region: rect(0, 200px, 40px, 160px);
-}
-
-#header-sync > .header-icon {
-  -moz-image-region: rect(0, 240px, 40px, 200px);
-}
-
-#header-advanced > .header-icon {
-  -moz-image-region: rect(0, 280px, 40px, 240px);
-}
-
-@media (min-resolution: 2dppx) {
-  .header-icon {
-    list-style-image: url("chrome://browser/skin/preferences/in-content/header@2x.png");
-  }
-
-  #header-general > .header-icon {
-    -moz-image-region: rect(0, 80px, 80px, 0);
-  }
-
-  #header-content > .header-icon {
-    -moz-image-region: rect(0, 160px, 80px, 80px);
-  }
-
-  #header-application > .header-icon {
-    -moz-image-region: rect(0, 240px, 80px, 160px);
-  }
-
-  #header-privacy > .header-icon {
-    -moz-image-region: rect(0, 320px, 80px, 240px);
-  }
-
-  #header-security > .header-icon {
-    -moz-image-region: rect(0, 400px, 80px, 320px);
-  }
-
-  #header-sync > .header-icon {
-    -moz-image-region: rect(0, 480px, 80px, 400px);
-  }
-
-  #header-advanced > .header-icon {
-    -moz-image-region: rect(0, 560px, 80px, 480px);
-  }
 }
 
 .indent {
@@ -494,7 +432,6 @@ filefield {
 /* Applications Pane Styles */
 
 #applicationsContent {
-  -moz-margin-start: 60px;
   padding: 15px 0;
 }
 
@@ -618,10 +555,6 @@ description > html|a {
   background-color: #F1F1F1;*/
 }
 
-#weavePrefsDeck {
-  -moz-margin-start: 60px;
-}
-
 #noFxaAccount {
   /* Overriding the margins from the base preferences.css theme file.
      These overrides can be simplified by fixing bug 1027174 */
@@ -644,7 +577,6 @@ description > html|a {
 
 #encryptionPanel {
   margin-top: 15px;
-  -moz-margin-start: 60px;
 }
 
 #telemetryLearnMore,
@@ -680,10 +612,6 @@ description > html|a {
   min-width: 66ch;
 }
 
-#dialogTitle {
-  -moz-margin-start: 5px !important;
-}
-
 .close-icon {
   background-color: transparent !important;
   border: none;
@@ -691,6 +619,12 @@ description > html|a {
   height: 18px;
   padding: 0;
   min-width: 18px;
+}
+
+#dialogBox > .groupbox-title > caption {
+  margin: 0;
+  border-radius: 1000px;
+  background-color: #A09090;
 }
 
 #dialogBox > .groupbox-body {
@@ -701,7 +635,7 @@ description > html|a {
 #dialogFrame {
   -moz-box-flex: 1;
   /* Default dialog dimensions */
-  height: 20em;
+  height: 30em;
   width: 66ch;
 }
 
