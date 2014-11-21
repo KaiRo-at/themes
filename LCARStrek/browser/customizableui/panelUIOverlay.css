@@ -240,7 +240,7 @@ panelview:not([mainview]) .toolbarbutton-text,
 
 #PanelUI-contents {
   display: block;
-  flex: 1 0 auto;
+  flex: 1 0 main-size;
   margin-left: auto;
   margin-right: auto;
   max-width: 22.35em;
@@ -868,13 +868,13 @@ toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button 
 
 toolbarbutton[panel-multiview-anchor="true"] {
   background-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted.png");
-  background-position: right 5px center;
+  background-position: right calc((22.35em / 3 - 0.1px) / 2 - 38px + 2px) center;
   background-repeat: no-repeat;
 }
 
 toolbarbutton[panel-multiview-anchor="true"]:-moz-locale-dir(rtl) {
   background-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png");
-  background-position: left 5px center;
+  background-position: left calc((22.35em / 3 - 0.1px) / 2 - 38px + 2px) center;
 }
 
 toolbarpaletteitem[place="palette"] > .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
@@ -1290,6 +1290,10 @@ menuitem[type="checkbox"].subviewbutton {
   height: 18px;
 }
 
+menu.subviewbutton > .menu-right:-moz-locale-dir(rtl) {
+/*  transform: scaleX(-1); */
+}
+
 .widget-overflow-list .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   padding: 0 6px;
 }
@@ -1300,10 +1304,6 @@ menuitem[type="checkbox"].subviewbutton {
 
 .subviewbutton:-moz-any([image],[targetURI],.cui-withicon, .restoreallitem, .bookmark-item) > .toolbarbutton-text {
   -moz-padding-start: 0;
-}
-
-.subviewbutton.bookmark-item > .toolbarbutton-icon {
-  -moz-margin-start: 3px;
 }
 
 /* subviewbutton entries for social sidebars have images that come from external

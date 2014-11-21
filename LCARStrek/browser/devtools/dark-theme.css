@@ -634,10 +634,6 @@ div.CodeMirror span.eval-text {
   -moz-border-end-width: 0;
 }
 
-.devtools-sidebar-tabs > tabs > tab:first-of-type {
-  -moz-margin-start: 0;
-}
-
 .devtools-sidebar-tabs > tabs > tab {
 }
 
@@ -665,12 +661,7 @@ div.CodeMirror span.eval-text {
 .devtools-sidebar-tabs > tabs > tab[selected] + tab:hover:active {
 }
 
-.devtools-sidebar-tabs > tabs > tab[selected] {
-}
-
-.devtools-sidebar-tabs > tabs > tab[selected]:hover {
-}
-
+.devtools-sidebar-tabs > tabs > tab[selected],
 .devtools-sidebar-tabs > tabs > tab[selected]:hover:active {
 }
 

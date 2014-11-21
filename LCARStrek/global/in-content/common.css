@@ -217,7 +217,7 @@ xul|*.help-button > xul|*.button-box {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
-
+*/
 xul|*.help-button > xul|*.button-box > xul|*.button-icon {
   width: 26px;
   height: 26px;
@@ -235,7 +235,7 @@ xul|*.help-button > xul|*.button-box > xul|*.button-icon {
 xul|*.help-button > xul|*.button-box > xul|*.button-text {
   display: none;
 }
-
+/*
 xul|*.spinbuttons-button {
   -moz-margin-start: 10px !important;
   -moz-margin-end: 2px !important;
@@ -531,11 +531,11 @@ xul|*#categories[keyboard-navigation="true"]:-moz-focusring > xul|*.category[cur
 }
 */
 /* header */
-/*
+
 *|*.header {
-  border-bottom: 1px solid #c8c8c8;
+/*  border-bottom: 1px solid #A09090;
   margin-bottom: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 15px; */
 }
 
 *|*.header-name {
@@ -544,7 +544,7 @@ xul|*#categories[keyboard-navigation="true"]:-moz-focusring > xul|*.category[cur
   line-height: 40px;
   margin: 0;
 }
-*/
+
 /* File fields */
 /*
 xul|filefield {

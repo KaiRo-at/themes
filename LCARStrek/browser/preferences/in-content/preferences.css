@@ -10,24 +10,8 @@
 dialog,
 window,
 prefwindow,
-.windowDialog,
-page {
+.windowDialog {
   background-color: #000000;
-}
-
-* {
-  -moz-user-select: text;
-}
-
-treecol {
-  /* override the * rule to let the treecol be sortable */
-  -moz-user-select: none;
-}
-
-caption {
-}
-
-caption > label {
 }
 
 .main-content {
@@ -54,218 +38,6 @@ prefpane {
   font-size: 1.25rem;
   line-height: 22px;
   color: #FF9F00;
-}
-
-prefpane > .content-box {
-  max-width: 800px;
-  overflow: visible;
-}
-
-/* groupboxes */
-
-groupbox {
-}
-
-groupbox label {
-}
-
-/* tabpanels and tabs */
-
-tabpanels {
-}
-
-tabs {
-}
-
-.tabs-left,
-.tabs-right {
-}
-
-tab {
-}
-
-tab[selected] {
-}
-
-.tab-text {
-}
-
-tab:not([selected]):hover > .tab-middle > .tab-text {
-}
-
-tab:not([selected]):hover:active > .tab-middle > .tab-text {
-}
-
-tab[selected] > .tab-middle > .tab-text {
-}
-
-/* buttons and menulists */
-
-button,
-menulist {
-}
-
-button:not([disabled]):hover,
-menulist:not([disabled]):hover {
-}
-
-button:not([disabled]):hover:active,
-menulist[open="true"]:not([disabled]) {
-}
-
-button[disabled],
-menulist[disabled] {
-}
-
-button > .button-box,
-menulist > .menulist-label-box {
-}
-
-button[type="menu"] > .button-box > .button-menu-dropmarker {
-}
-/*
-.help-button {
-  min-width: 30px;
-  border-radius: 2px;
-  border: 1px solid #C1C1C1;
-  background-color: #FFCB00;
-  background-image: none;
-  box-shadow: none;
-}
-
-.help-button:not([disabled="true"]):hover {
-  background-color: #F4C200;
-  background-image: none;
-}
-
-.help-button:not([disabled="true"]):hover:active {
-  background-color: #EABA00;
-  background-image: none;
-}
-
-.close-icon > .button-box,
-.help-button > .button-box {
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-}
-*/
-.help-button > .button-box > .button-icon {
-  width: 26px;
-  height: 26px;
-  background-image: url("chrome://browser/skin/preferences/in-content/help-glyph.png");
-  background-position: center;
-}
-
-@media (min-resolution: 2dppx) {
-  .help-button > .button-box > .button-icon {
-    background-size: 26px 26px;
-    background-image: url("chrome://browser/skin/preferences/in-content/help-glyph@2x.png");
-  }
-}
-
-.help-button > .button-box > .button-text {
-  display: none;
-}
-
-.spinbuttons-button {
-}
-
-.spinbuttons-up {
-}
-
-.spinbuttons-down  {
-}
-
-.spinbuttons-button > .button-box {
-}
-
-.spinbuttons-up > .button-box > .button-icon {
-}
-
-.spinbuttons-up[disabled] > .button-box > .button-icon {
-}
-
-.spinbuttons-down > .button-box > .button-icon {
-}
-
-.spinbuttons-down[disabled] > .button-box > .button-icon {
-}
-
-menulist:not([editable="true"]) > .menulist-dropmarker {
-}
-
-menulist[disabled]:not([editable="true"]) > .menulist-dropmarker {
-}
-
-menulist > menupopup,
-button[type="menu"] > menupopup {
-}
-
-menulist > menupopup menu,
-menulist > menupopup menuitem,
-button[type="menu"] > menupopup menu,
-button[type="menu"] > menupopup menuitem {
-}
-
-menulist > menupopup > menu[_moz-menuactive="true"],
-menulist > menupopup > menuitem[_moz-menuactive="true"],
-button[type="menu"] > menupopup > menu[_moz-menuactive="true"],
-button[type="menu"] > menupopup > menuitem[_moz-menuactive="true"] {
-}
-
-menulist > menupopup > menu[selected="true"],
-menulist > menupopup > menuitem[selected="true"],
-button[type="menu"] > menupopup > menu[selected="true"],
-button[type="menu"] > menupopup > menuitem[selected="true"] {
-}
-
-menulist > menupopup menuseparator,
-button[type="menu"] > menupopup menuseparator {
-}
-
-/* textboxes */
-
-textbox {
-}
-
-textbox[focused] {
-}
-
-textbox[disabled] {
-}
-
-/* Links */
-
-.text-link,
-.inline-link,
-html|a.inline-link {
-}
-
-.text-link:hover,
-.inline-link:hover {
-}
-
-.text-link:hover:active,
-.inline-link:hover:active {
-}
-
-/* Checkboxes and radio buttons */
-
-.checkbox-check {
-}
-
-.checkbox-check[checked] {
-}
-
-radio {
-}
-
-.radio-check {
-}
-
-.radio-check[selected] {
 }
 
 /* Category List */
@@ -382,22 +154,9 @@ radio {
 
 /* header */
 
-.header {
-  border-bottom: 1px solid #A09090;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-}
-
 #header-advanced {
   border-bottom: none;
   padding-bottom: 0;
-}
-
-.header-name {
-  font-size: 2.5rem;
-  font-weight: normal;
-  line-height: 40px;
-  margin: 0;
 }
 
 .indent {
@@ -406,28 +165,10 @@ radio {
 }
 
 /* General Pane */
-/*
-filefield {
-  -moz-appearance: none;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-}
 
-.fileFieldContentBox {
-  background-color: transparent;
+#isNotDefaultLabel {
+  font-weight: bold;
 }
-
-.fileFieldIcon {
-  -moz-margin-start: 10px;
-  -moz-margin-end: 0;
-}
-
-.fileFieldLabel {
-  -moz-margin-start: -26px;
-  -moz-padding-start: 36px;
-}
-*/
 
 /* Applications Pane Styles */
 
@@ -637,11 +378,6 @@ description > html|a {
   /* Default dialog dimensions */
   height: 30em;
   width: 66ch;
-}
-
-/* needs to be removed with bug 1035625 */
-:-moz-any(dialog, window, prefwindow) resizer {
-  display: none;
 }
 
 tree:not(#rejectsTree) {

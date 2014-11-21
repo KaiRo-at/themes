@@ -91,7 +91,7 @@ notification {
 }
 
 .devtools-autocomplete-listbox > richlistitem > .autocomplete-count {
-  text-align: right;
+  text-align: end;
 }
 
 /* Rest of the dark and light theme */

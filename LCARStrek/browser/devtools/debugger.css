@@ -187,6 +187,10 @@ window {
   color: #FF9F00; /* Light foreground text */
 }
 
+.trace-item.black-boxed {
+  color: #A09090;
+}
+
 .trace-item.selected-matching {
   background-color: #004242; /* Select highlight blue at 40% alpha */
 }

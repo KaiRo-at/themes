@@ -192,7 +192,7 @@ button {
 }
 
 .permission-table-header > div:first-child {
-  text-align: left;
+  text-align: start;
   padding-left: 10px;
   flex-basis: 30%;
 }
@@ -231,7 +231,7 @@ button {
 }
 
 .permission > div:first-child {
-  text-align: left;
+  text-align: start;
   padding: 3px 10px;
   flex-basis: 30%;
   font-weight: bold;
@@ -278,7 +278,7 @@ button {
   display: flex;
   padding: 15px 10px;
   display: block;
-  text-align: left;
+  text-align: start;
   flex-grow: 1;
 }
 

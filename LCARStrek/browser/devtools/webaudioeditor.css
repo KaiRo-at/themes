@@ -40,7 +40,26 @@ svg {
   stroke-width: 1px;
   fill: none;
 
-  stroke: #9C9CFF; /* Grey foreground text */
+  stroke: #A09090; /* Grey foreground text */
+}
+
+/* AudioParam connection edges */
+g.edgePath.param-connection {
+  stroke-dasharray: 5,5;
+}
+
+.edgePath.param-connection path {
+  stroke: #A09090; /* Grey foreground text */
+}
+
+/* Labels in AudioParam connection should have background that match
+ * the main background so there's whitespace around the label, on top of the
+ * dotted lines. */
+g.edgeLabel rect {
+  fill: #000000;
+}
+g.edgeLabel tspan {
+  fill: #9C9CFF; /* Grey foreground text */
 }
 
 /* Audio Nodes */
@@ -76,6 +95,10 @@ g.selected text {
 /**
  * Inspector Styles
  */
+
+#web-audio-inspector-title {
+  margin: 6px;
+}
 
 .web-audio-inspector .error {
   background-image: url("alerticon-warning.png");
