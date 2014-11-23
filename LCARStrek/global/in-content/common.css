@@ -379,30 +379,30 @@ xul|textbox[disabled="true"] {
 }
 */
 /* Links */
-/*
+
 html|a,
 xul|*.text-link,
 xul|*.inline-link {
-  font-size: 1.25rem;
-  line-height: 22px;
-  color: #0095dd;
+/*  font-size: 1.25rem;
+  line-height: 22px;*/
+  color: #3333FF;
   text-decoration: none;
 }
 
 html|a:hover,
 xul|*.text-link:hover,
 xul|*.inline-link:hover {
-  color: #4cb1ff;
-  text-decoration: none;
+  color: #FFCF00;
+  text-decoration: underline;
 }
 
 html|a:hover:active,
 xul|*.text-link:hover:active,
 xul|*.inline-link:hover:active {
-  color: #ff9500;
-  text-decoration: none;
+  color: #FF9F00;
+  text-decoration: underline;
 }
-*/
+
 /* Checkboxes and radio buttons */
 /*
 xul|checkbox {
@@ -620,10 +620,9 @@ xul|*.radio-icon,
 xul|*.checkbox-icon {
   -moz-margin-end: 0;
 }
-
+*/
 html|a:-moz-focusring,
 xul|*.text-link:-moz-focusring,
 xul|*.inline-link:-moz-focusring {
-  border: 1px dotted -moz-DialogText;
+  border: 1px dotted #3333FF;
 }
-*/

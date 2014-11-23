@@ -192,12 +192,6 @@ prefpane {
   height: 500px;
 }
 
-#handlersView > listheader {
-  border: none;
-  background: transparent;
-  padding: 0;
-}
-
 #handlersView > listheader > treecol {
 }
 
@@ -205,6 +199,12 @@ prefpane {
   border-left: 1px solid #9C9CFF;
   border-right: 1px solid #9C9CFF;
   border-bottom: 1px solid #9C9CFF;
+}
+
+#handlersView > listheader {
+  background: transparent;
+  border: 0;
+  padding: 0;
 }
 
 #typeColumn,
@@ -307,7 +307,8 @@ description > html|a {
 #weavePrefsDeck > vbox > description,
 #weavePrefsDeck > vbox > #pairDevice > label,
 #weavePrefsDeck > #needsUpdate > hbox > #loginError,
-#weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP) > label {
+#weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP-normal) > label,
+#weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP-small) > label {
   /* no margin-start for elements at the begin of a line */
   -moz-margin-start: 0;
 }

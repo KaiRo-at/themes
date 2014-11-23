@@ -1247,10 +1247,6 @@ menuitem[checked="true"].subviewbutton > .menu-iconic-left {
 /*  padding-top: 4px;*/
 }
 
-#BMB_bookmarksPopup .menu-text {
-/*  color: #000;*/
-}
-
 /* bookmark panel separator */
 #BMB_bookmarksPopup menuseparator {
   padding-top: 0;
