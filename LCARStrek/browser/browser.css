@@ -899,6 +899,7 @@ menuitem.bookmark-item {
   -moz-image-region: rect(0, 90px, 18px, 72px);
 }
 
+#loop-call-button[state="disabled"] > .toolbarbutton-badge-container,
 #loop-call-button[disabled="true"] > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 36px, 18px, 18px);
 }
@@ -1255,6 +1256,7 @@ toolbarpaletteitem[place="palette"] > #loop-call-button > .toolbarbutton-badge-c
   -moz-image-region: rect(0, 160px, 32px, 128px);
 }
 
+#loop-call-button[cui-areatype="menu-panel"][state="disabled"] > .toolbarbutton-badge-container,
 #loop-call-button[cui-areatype="menu-panel"][disabled="true"] > .toolbarbutton-badge-container {
   -moz-image-region: rect(0, 64px, 32px, 32px);
 }
@@ -3083,7 +3085,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://global/skin/icons/webapps-64.png");
 }
 
-.popup-notification-icon[popupid="mixed-content-blocked"],
 .popup-notification-icon[popupid="bad-content"] {
   list-style-image: url("chrome://browser/skin/bad-content-blocked-64.png");
 }
@@ -3224,8 +3225,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
   }
 }
 
-.mixed-content-blocked-notification-icon,
-#mixed-content-blocked-notification-icon,
 .bad-content-blocked-notification-icon,
 #bad-content-blocked-notification-icon {
   list-style-image: url("chrome://browser/skin/bad-content-blocked-16.png");
@@ -4106,6 +4105,105 @@ html|*#gcli-output-frame {
   background-image: url("chrome://browser/skin/devtools/responsive-se-resizer.png");
 }
 
+/* FxOS custom mode with additional buttons and phone look'n feel */
+
+/* Hide devtools manual resizer */
+.browserStack[responsivemode].fxos-mode .devtools-responsiveui-resizehandle,
+.browserStack[responsivemode].fxos-mode .devtools-responsiveui-resizebarH,
+.browserStack[responsivemode].fxos-mode .devtools-responsiveui-resizebarV {
+  display: none;
+}
+
+/* Gives responsive mode a phone look'n feel */
+.browserStack[responsivemode].fxos-mode {
+  padding: 60px 15px 0;
+
+  border-radius: 25px / 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 1px solid #FFFFFF;
+  border-bottom-width: 0;
+
+  background-color: #353535;
+
+  box-shadow: 0 3px 0.7px 1px #777777, 0 5px rgba(0, 0, 0, 0.4) inset;
+
+  background-image: linear-gradient(to right, #111 11%, #333 56%);
+  min-width: 320px;
+}
+
+.devtools-responsiveui-hardware-buttons {
+  -moz-appearance: none;
+  padding: 20px;
+
+  border: 1px solid #FFFFFF;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-width: 0;
+
+  box-shadow: 0 3px 0.7px 1px #777777, 0 -7px rgba(0, 0, 0, 0.4) inset;
+
+  background-image: linear-gradient(to right, #111 11%, #333 56%);
+}
+
+.devtools-responsiveui-home-button {
+  width: 40px;
+  height: 30px;
+  list-style-image: url("chrome://browser/skin/devtools/responsiveui-home.png");
+}
+
+.devtools-responsiveui-sleep-button {
+  -moz-appearance: none;
+  /* compensate browserStack top padding */
+  margin-top: -67px;
+  margin-right: 10px;
+
+  min-width: 10px;
+  width: 50px;
+  height: 5px;
+
+  border: 1px solid #444;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  border-bottom-color: transparent;
+
+  background-image: linear-gradient(to top, #111 11%, #333 56%);
+}
+
+.devtools-responsiveui-sleep-button:hover:active {
+  background-image: linear-gradient(to top, #aaa 11%, #ddd 56%);
+}
+
+.devtools-responsiveui-volume-buttons {
+  margin-left: -29px;
+}
+
+.devtools-responsiveui-volume-up-button,
+.devtools-responsiveui-volume-down-button {
+  -moz-appearance: none;
+  border: 1px solid red;
+  min-width: 8px;
+  height: 40px;
+
+  border: 1px solid #444;
+  border-right-color: transparent;
+
+  background-image: linear-gradient(to right, #111 11%, #333 56%);
+}
+
+.devtools-responsiveui-volume-up-button:hover:active,
+.devtools-responsiveui-volume-down-button:hover:active {
+  background-image: linear-gradient(to right, #aaa 11%, #ddd 56%);
+}
+
+.devtools-responsiveui-volume-up-button {
+  border-top-left-radius: 12px;
+}
+
+.devtools-responsiveui-volume-down-button {
+  border-bottom-left-radius: 12px;
+}
+
 @media (min-resolution: 2dppx) {
   .devtools-responsiveui-resizebarV {
     background-image: url("chrome://browser/skin/devtools/responsive-vertical-resizer@2x.png");
@@ -4741,12 +4839,13 @@ notification.pluginVulnerable .messageImage {
 }
 
 #customization-header {
-  font-size: 1.5em;
-  line-height: 1.5em;
+  font-size: 1.75em;
+  line-height: 1.75em;
   color: #9C9CFF;
-  font-weight: lighter;
-  margin-bottom: 1em;
-  padding: 15px 15px 0;
+  font-weight: 200;
+  margin: 25px 25px 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #A09090;
 }
 
 #customization-panel-container {
@@ -4931,6 +5030,90 @@ toolbarpaletteitem[place="toolbar"] {
   text-align: center;
   margin-left: 0;
   margin-right: 0;
+}
+
+#customization-lwtheme-menu > .panel-arrowcontainer > .panel-arrowcontent {
+  -moz-box-orient: vertical;
+  /* Make the panel padding uniform across all platforms due to the
+     styling of the section headers and footer. */
+  padding: 10px;
+}
+
+.customization-lwtheme-menu-theme > .toolbarbutton-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.customization-lwtheme-menu-theme {
+  -moz-appearance: none;
+  margin: 0 -5px 5px;
+  padding-top: 0;
+  -moz-padding-end: 5px;
+  padding-bottom: 0;
+  -moz-padding-start: 0;
+}
+
+.customization-lwtheme-menu-theme[active="true"] {
+  background-color: #008484;
+}
+
+.customization-lwtheme-menu-theme > .toolbarbutton-icon {
+  margin: 5px;
+}
+
+.customization-lwtheme-menu-theme > .toolbarbutton-text {
+  text-align: start;
+}
+
+#customization-lwtheme-menu-header,
+#customization-lwtheme-menu-recommended {
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+#customization-lwtheme-menu-header,
+#customization-lwtheme-menu-recommended,
+#customization-lwtheme-menu-footer {
+  background-color: #A09090;
+  color: #000000;
+  margin-right: -10px;
+  margin-left: -10px;
+}
+
+#customization-lwtheme-menu-header {
+  margin-top: -10px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+#customization-lwtheme-menu-recommended {
+}
+
+#customization-lwtheme-menu-footer {
+  margin-bottom: -10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.customization-lwtheme-menu-footeritem {
+  -moz-appearance: none;
+  -moz-box-flex: 1;
+  background-color: #C09070;
+  color: #000000;
+  border: 1px solid transparent;
+  padding: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.customization-lwtheme-menu-footeritem:hover {
+  background-color: #FFCF00;
+}
+
+#customization-lwtheme-menu-footer:not(:hover) > .customization-lwtheme-menu-footeritem:first-child {
+}
+
+#customization-lwtheme-menu-footer:hover > .customization-lwtheme-menu-footeritem:first-child {
 }
 
 /* === END customizeMode.inc.css === */

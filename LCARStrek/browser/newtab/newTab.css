@@ -154,10 +154,6 @@
   bottom: 0 !important;
 }
 
-.newtab-site[type=sponsored] .newtab-title {
-  -moz-padding-end: 24px;
-}
-
 .newtab-site:hover .newtab-title {
   background-color: #FFCF00;
 }

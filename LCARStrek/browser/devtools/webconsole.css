@@ -32,24 +32,24 @@ a {
 
 .message {
   display: flex;
-  flex: 0 0 auto;
+  flex: none;
   padding: 0 7px;
   width: 100%;
   box-sizing: border-box;
 }
 
 .message > .timestamp {
-  flex: 0 0 auto;
+  flex: none;
   color: #8050B0;
   margin: 4px 6px 0 0;
 }
 
 .message > .indent {
-  flex: 0 0 auto;
+  flex: none;
 }
 
 .message > .icon {
-  flex: 0 0 auto;
+  flex: none;
   margin: 3px 6px 0 0;
   padding: 0 4px;
   height: 1em;
@@ -78,10 +78,14 @@ a {
   margin: 3px;
 }
 
+.message-body-wrapper .table-widget-body {
+  overflow: visible;
+}
+
 /* The red bubble that shows the number of times a message is repeated */
 .message-repeats {
   -moz-user-select: none;
-  flex: 0 0 auto;
+  flex: none;
   margin: 2px 6px;
   padding: 0 6px;
   height: 1.25em;
@@ -99,7 +103,7 @@ a {
 
 .message-location {
   display: flex;
-  flex: 0 0 auto;
+  flex: none;
   align-self: flex-start;
   justify-content: flex-end;
   width: 10em;
@@ -122,7 +126,7 @@ a {
 }
 
 .message-location > .line-number {
-  flex: 0 0 auto;
+  flex: none;
 }
 
 .hud-msg-node[selected="true"] > .webconsole-timestamp,
@@ -141,7 +145,7 @@ a {
 
 .message-flex-body > .message-body {
   display: block;
-  flex: 1 1 auto;
+  flex: 1 1 main-size;
   vertical-align: middle;
 }
 
@@ -241,6 +245,13 @@ a {
   color: #000000;
 }
 
+.theme-selected .console-string,
+.theme-selected .cm-number,
+.theme-selected .cm-variable,
+.theme-selected .kind-ArrayLike {
+  color: #000000 !important; /* Selection Text Color */
+}
+
 .message[category=network] > .indent {
   -moz-border-end: solid #FF0000 6px;
 }
@@ -254,11 +265,11 @@ a {
 }
 
 .message[category=network] .method {
-  flex: 0 0 auto;
+  flex: none;
 }
 
 .message[category=network]:not(.navigation-marker) .url {
-  flex: 1 1 auto;
+  flex: 1 1 main-size;
   /* Make sure the URL is very small initially, let flex change width as needed. */
   width: 100px;
   min-width: 5em;
@@ -268,7 +279,7 @@ a {
 }
 
 .message[category=network] .status {
-  flex: 0 0 auto;
+  flex: none;
   -moz-margin-start: 6px;
 }
 
@@ -446,7 +457,11 @@ a {
   border: 1px solid #A09090;
   border-radius: 3px;
 }
- 
+
+.consoletable {
+  margin: 5px 0 0 0;
+}
+
 .message[severity=error] .stacktrace {
   background-color: #000000;
 }
@@ -468,7 +483,7 @@ a {
 
 .stacktrace .function {
   display: block;
-  flex: 1 1 auto;
+  flex: 1 1 main-size;
 }
 
 .cm-s-mozilla a[class] {
