@@ -234,7 +234,11 @@ a {
 }
 
 .console-string {
-  color: #FF0000;
+  color: #FF9F00;
+}
+
+.message[severity=error] .console-string {
+  color: #000000;
 }
 
 .message[category=network] > .indent {
