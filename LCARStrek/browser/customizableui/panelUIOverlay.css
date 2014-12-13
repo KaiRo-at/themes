@@ -83,7 +83,6 @@
 
 .panel-subviews {
   padding: 4px;
-  background-color: #000000;
   -moz-margin-start: 38px;
 }
 
@@ -1211,6 +1210,10 @@ menuitem[checked="true"].subviewbutton > .menu-iconic-left {
 }
 
 /* === END panelUIOverlay.inc.css === */
+
+.panel-subviews {
+  background-color: #000000;
+}
 
 #PanelUI-contents #zoom-out-btn {
   padding-left: 12px;

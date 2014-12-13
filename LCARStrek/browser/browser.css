@@ -3330,6 +3330,31 @@ notification[value="translation"] menulist > .menulist-dropmarker {
   width: 70px;
 }
 
+.translation-welcome-panel {
+  width: 305px;
+}
+
+.translation-welcome-logo {
+  height: 32px;
+  width: 32px;
+  list-style-image: url(chrome://browser/skin/translation-16@2x.png);
+  -moz-image-region: rect(0, 64px, 32px, 32px);
+}
+
+.translation-welcome-content {
+  -moz-margin-start: 16px;
+}
+
+.translation-welcome-headline {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.translation-welcome-body {
+  padding: 1em 0;
+  margin: 0 0;
+}
+
 /* === END infobar.inc.css === */
 
 notification[value="translation"] {
@@ -4431,10 +4456,17 @@ html|*#gcli-output-frame {
 .chat-toolbarbutton {
   -moz-appearance: none;
   border: none;
-  padding: 0;
+  padding: 0 3px;
   margin: 0;
   background: none;
-  width: 16px;
+}
+
+.chat-toolbarbutton:hover {
+/*  background-color: rgba(255,255,255,.35);*/
+}
+
+.chat-toolbarbutton:hover:active {
+/*  background-color: rgba(255,255,255,.5);*/
 }
 
 .chat-toolbarbutton > .toolbarbutton-text {
@@ -4442,52 +4474,37 @@ html|*#gcli-output-frame {
 }
 
 .chat-toolbarbutton > .toolbarbutton-icon {
-  width: inherit;
-}
-
-.chat-toolbarbutton.notification-anchor-icon > .toolbarbutton-icon {
-  width: inherit;
-  margin-top: -2px;
+  width: 16px;
+  height: 16px;
 }
 
 .chat-close-button {
-  list-style-image: url('chrome://browser/skin/social/chat-icons.png');
-  -moz-image-region: rect(0, 16px, 16px, 0);
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close");
 }
 
-.chat-close-button:hover,
-.chat-close-button:hover:active {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
+.chat-close-button:-moz-any(:hover,:hover:active) {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close-active");
 }
 
 .chat-minimize-button {
-  list-style-image: url('chrome://browser/skin/social/chat-icons.png');
-  -moz-image-region: rect(16px, 16px, 32px, 0);
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize");
 }
 
-.chat-minimize-button:hover:active,
-.chat-minimize-button:hover {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
+.chat-minimize-button:-moz-any(:hover,:hover:active) {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize-active");
 }
 
 .chat-swap-button {
-  list-style-image: url('chrome://browser/skin/social/chat-icons.png');
-  -moz-image-region: rect(48px, 16px, 64px, 0);
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand");
+  transform: rotate(180deg);
 }
 
-.chat-swap-button:hover:active,
-.chat-swap-button:hover {
-  -moz-image-region: rect(48px, 32px, 64px, 16px);
+.chat-swap-button:-moz-any(:hover,:hover:active) {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand-active");
 }
 
 chatbar > chatbox > .chat-titlebar > .chat-swap-button {
-  list-style-image: url('chrome://browser/skin/social/chat-icons.png');
-  -moz-image-region: rect(32px, 16px, 48px, 0);
-}
-
-chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover:active,
-chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
+  transform: none;
 }
 
 .chat-title {
@@ -4500,12 +4517,11 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover {
 .chat-titlebar {
   background-color: #9C9CFF;
   color: #000000;
-  height: 20px;
-  min-height: 16px;
+  height: 30px;
+  min-height: 30px;
   width: 100%;
   margin: 0;
-  padding: 2px;
-  -moz-padding-start: 6px;
+  padding: 7px 6px;
   border: none;
   border-bottom: 1px solid #008484;
   cursor: pointer;
@@ -4526,6 +4542,18 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button:hover {
 
 .chat-titlebar[activity] {
   background-color: #E7ADE7;
+}
+
+chatbox[dark=true] > .chat-titlebar,
+chatbox[dark=true] > .chat-titlebar[selected] {
+/*  border-bottom: none;
+  background-color: #000;
+  background-image: none;*/
+}
+
+chatbox[dark=true] > .chat-titlebar > hbox > .chat-title {
+/*  font-weight: normal;
+  color: #c1c1c1;*/
 }
 
 .chat-frame {
@@ -5053,6 +5081,10 @@ toolbarpaletteitem[place="toolbar"] {
   -moz-padding-start: 0;
 }
 
+.customization-lwtheme-menu-theme[defaulttheme] {
+  list-style-image: url(chrome://browser/skin/Fxtheme-switcher-icon.png);
+}
+
 .customization-lwtheme-menu-theme[active="true"] {
   background-color: #008484;
 }
@@ -5110,10 +5142,7 @@ toolbarpaletteitem[place="toolbar"] {
   background-color: #FFCF00;
 }
 
-#customization-lwtheme-menu-footer:not(:hover) > .customization-lwtheme-menu-footeritem:first-child {
-}
-
-#customization-lwtheme-menu-footer:hover > .customization-lwtheme-menu-footeritem:first-child {
+.customization-lwtheme-menu-footeritem:first-child {
 }
 
 /* === END customizeMode.inc.css === */
