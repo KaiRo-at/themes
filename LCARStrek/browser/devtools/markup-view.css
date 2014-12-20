@@ -82,3 +82,19 @@
   background: #000000;
   outline: 1px solid transparent;
 }
+
+/* Events */
+.markupview-events {
+  font-size: 8px;
+  font-weight: bold;
+  line-height: 10px;
+  border-radius: 3px;
+  padding: 0px 2px;
+  -moz-margin-start: 5px;
+  -moz-user-select: none;
+}
+
+.markupview-events {
+  background-color: #A09090;
+  color: #000000;
+}
