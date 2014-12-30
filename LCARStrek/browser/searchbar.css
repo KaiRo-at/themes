@@ -94,11 +94,13 @@
   list-style-image: url("chrome://browser/skin/search-indicator.png");
   -moz-image-region: rect(0, 20px, 20px, 0);
   margin: -2px -2px;
+  border-radius: 3px;
 }
 
 .searchbar-search-button:hover,
 .searchbar-search-button:hover:active {
   -moz-image-region: rect(0, 40px, 20px, 20px);
+  background-color: #FFCF00;  
 }
 
 searchbar[oneoffui] .search-go-button {
@@ -148,9 +150,9 @@ searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon
 }
 
 .searchbar-engine-one-off-item {
-  -moz-appearance: none;
   display: inline-block;
   border: none;
+  border-radius: 0;
   min-width: 48px;
   height: 32px;
   margin: 0 0;
@@ -191,11 +193,11 @@ searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon
 }
  
 .addengine-item {
-  -moz-appearance: none;
   border: none;
-  height: 32px;
+/*  height: 32px;*/
   margin: 0 0;
   padding: 0 10px;
+  border-radius: 0;
 }
 
 .addengine-item > .button-box {
@@ -212,6 +214,7 @@ searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon
 }
 
 .addengine-item > .button-box > .button-icon {
+  height: 16px;
   width: 16px;
 }
 
@@ -239,12 +242,12 @@ searchbar[oneoffui] .searchbar-engine-image {
 }
 
 .search-setting-button {
-  -moz-appearance: none;
   border-bottom: none;
   border-left: none;
   border-right: none;
+  border-radius: 0;
   -moz-border-top-colors: none;
-  min-height: 32px;
+/*  min-height: 32px;*/
 }
 
 .search-setting-button:hover {
