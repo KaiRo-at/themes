@@ -98,6 +98,15 @@ prefpane {
   -moz-image-region: rect(24px, 24px, 48px, 0);
 }
 
+#category-search > .category-icon {
+  -moz-image-region: rect(0, 194px, 24px, 168px);
+}
+
+#category-search:hover > .category-icon,
+#category-search[selected] > .category-icon {
+  -moz-image-region: rect(24px, 194px, 48px, 168px);
+}
+
 #category-content > .category-icon {
   -moz-image-region: rect(0, 48px,  24px, 24px)
 }
@@ -419,14 +428,25 @@ caption {
     -moz-image-region: rect(0, 48px, 48px, 0);
   }
 
+  #category-general:hover > .category-icon,
   #category-general[selected] > .category-icon {
     -moz-image-region: rect(48px, 48px, 96px, 0);
+  }
+
+  #category-search > .category-icon {
+    -moz-image-region: rect(0, 384px, 48px, 336px);
+  }
+
+  #category-search:hover > .category-icon,
+  #category-search[selected] > .category-icon {
+    -moz-image-region: rect(48, 384px, 96px, 336px);
   }
 
   #category-content > .category-icon {
     -moz-image-region: rect(0, 96px, 48px, 48px);
   }
 
+  #category-content:hover > .category-icon,
   #category-content[selected] > .category-icon {
     -moz-image-region: rect(48px, 96px, 96px, 48px);
   }
@@ -435,6 +455,7 @@ caption {
     -moz-image-region: rect(0, 144px, 48px, 96px);
   }
 
+  #category-application:hover > .category-icon,
   #category-application[selected] > .category-icon {
     -moz-image-region: rect(48px, 144px, 96px, 96px);
   }
@@ -443,6 +464,7 @@ caption {
     -moz-image-region: rect(0, 192px, 48px, 144px);
   }
 
+  #category-privacy:hover > .category-icon,
   #category-privacy[selected] > .category-icon {
     -moz-image-region: rect(48px, 192px, 96px, 144px);
   }
@@ -451,6 +473,7 @@ caption {
     -moz-image-region: rect(0, 240px, 48px, 192px);
   }
 
+  #category-security:hover > .category-icon,
   #category-security[selected] > .category-icon {
     -moz-image-region: rect(48px, 240px, 96px, 192px);
   }
@@ -459,6 +482,7 @@ caption {
     -moz-image-region: rect(0, 288px, 48px, 240px);
   }
 
+  #category-sync:hover > .category-icon,
   #category-sync[selected] > .category-icon {
     -moz-image-region: rect(48px, 288px, 96px, 240px);
   }
@@ -467,6 +491,7 @@ caption {
     -moz-image-region: rect(0, 336px, 48px, 288px);
   }
 
+  #category-advanced:hover > .category-icon,
   #category-advanced[selected] > .category-icon {
     -moz-image-region: rect(48px, 336px, 96px, 288px);
   }

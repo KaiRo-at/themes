@@ -27,6 +27,14 @@ radio[pane=paneTabs]:not([selected="true"]):hover {
   -moz-image-region: rect(32px, 64px, 64px, 32px);
 }
 
+#BrowserPreferences radio[pane=paneSearch] {
+  list-style-image: url("chrome://browser/skin/search-pref.png");
+}
+
+#BrowserPreferences radio[pane=paneSearch]:not([selected="true"]):hover {
+  list-style-image: url("chrome://browser/skin/search-pref-hover.png");
+}
+
 radio[pane=paneContent] {
   -moz-image-region: rect(0, 96px,  32px, 64px);
 }
