@@ -218,7 +218,8 @@ menubar {
  * can swallow those events. It will also place the buttons above the fog on
  * themes with Aero Glass.
  */
-#titlebar-buttonbox {
+#titlebar-buttonbox,
+#main-window[sizemode="maximized"] #titlebar-buttonbox {
   -moz-appearance: none;
   margin-top: 6px;
   margin-top: 4px;
