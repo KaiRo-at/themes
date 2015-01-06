@@ -5125,6 +5125,7 @@ toolbarpaletteitem[place="toolbar"] {
   border-radius: 3px;
 /*  background-image: linear-gradient(90deg, #a0dfff 0%, #ceeeff 100%);*/
   border: 1px solid #9C9CFF;
+  color: #FF9F00;
 }
 
 #customization-tipPanel > .panel-arrowcontainer > .panel-arrowcontent:-moz-locale-dir(rtl) {
