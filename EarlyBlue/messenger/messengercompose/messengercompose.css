@@ -193,6 +193,43 @@ treechildren::-moz-tree-image(subscribed-news) {
   list-style-image: url("chrome://messenger/skin/icons/folder-newsgroup.png");
 }
 
+/* ::::: compact menulists ::::: */
+
+.menulist-compact {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0px;
+  border: 1px outset #CCD0DD;
+  color: #000000;
+  list-style-image: url("chrome://global/skin/arrow/arrow-down.gif");
+}
+
+.menulist-compact > .menulist-label-box {
+  border: 1px solid transparent;
+}
+
+.menulist-compact > .menulist-label-box > .menulist-label {
+  margin: 0 3px !important;
+  text-align: end;
+}
+
+.menulist-compact > .menulist-label-box > .menulist-icon {
+  -moz-margin-start: 2px;
+}
+
+.menulist-compact[open="true"] {
+  border: 1px inset #CCD0DD;
+  /* color: ThreeDHighlight; */
+}
+
+.menulist-compact[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
+}
+
+.menulist-compact:-moz-focusring:not([open="true"]) > .menulist-label-box {
+  border: 1px dotted #999999;
+}
+
 /* ::::: lightweight themes ::::: */
 
 #MsgHeadersToolbar:-moz-lwtheme,
