@@ -8,6 +8,13 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* ::::: Variables ::::: */
+.panel-arrowcontent {
+  --panel-arrowcontent-background: #000000;
+  --panel-arrowcontent-color: #FF9F00;
+  --panel-arrowcontent-border: 1px solid #FF9F00;
+}
+
 /* ::::: menupopup ::::: */
 
 menupopup,
@@ -46,9 +53,10 @@ panel[type="arrow"][side="right"] {
 .panel-arrowcontent {
   border-radius: 6px;
   padding: 6px;
-  background-color: #000000;
+  color: var(--panel-arrowcontent-color);
+  background: var(--panel-arrowcontent-background);
   background-clip: padding-box;
-  border: 1px solid #FF9F00;
+  border: var(--panel-arrowcontent-border);
   margin: 0px;
 }
 
@@ -107,8 +115,7 @@ tooltip[titletip="true"] {
 
 /* rules for popups associated with menulists */
 
-menulist > menupopup,
-.menulist-menupopup {
+menulist > menupopup {
   border: 1px solid #FF9F00;
   min-width: 0px;
   padding: 0px;
