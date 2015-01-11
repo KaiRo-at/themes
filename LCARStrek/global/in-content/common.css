@@ -120,7 +120,7 @@ html|button {
   border: none;
   background-color: #C09070;
   color: #000000;
-  / * override forms.css * /
+  /* override forms.css */
   font: inherit;
 }
 
