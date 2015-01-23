@@ -31,8 +31,8 @@ p {
   display: none;
 }
 
-.crashDumpAvaible #report-box {
-  display: block
+.crashDumpAvailable #report-box {
+  display: block;
 }
 
 #button-box {

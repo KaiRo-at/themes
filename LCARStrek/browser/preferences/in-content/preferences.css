@@ -40,6 +40,16 @@ prefpane {
   color: #FF9F00;
 }
 
+* {
+  -moz-user-select: text;
+}
+
+button,
+treecol {
+  /* override the * rule */
+  -moz-user-select: none;
+}
+
 /* Category List */
 
 #categories {

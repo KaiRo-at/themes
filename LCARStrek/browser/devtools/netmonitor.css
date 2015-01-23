@@ -420,6 +420,15 @@ box.requests-menu-status[code^="5"] {
 /*  min-height: 20px;*/
 }
 
+#toggle-raw-headers {
+  margin-top: -10px;
+  -moz-margin-end: 6px;
+}
+
+.raw-response-textarea {
+  height: 50vh;
+}
+
 /* Response tabpanel */
 
 #response-content-info-header {

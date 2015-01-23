@@ -1895,7 +1895,7 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 #urlbar-display-box {
 }
 
-#urlbar-display {
+.urlbar-display {
   -moz-border-end: 1px solid #9C9CFF;
   -moz-margin-end: 3px;
   margin-top: 0;
@@ -2162,12 +2162,18 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 .ac-result-type-keyword,
-.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
-  list-style-image: url("chrome://global/skin/icons/Search-glass.png");
-  -moz-image-region: rect(0px 32px 16px 16px);
+.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage),
+richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-site-icon {
+  list-style-image: url("chrome://global/skin/icons/autocomplete-search.svg#search-icon");
   width: 16px;
   height: 16px;
 }
+
+  .ac-result-type-keyword[selected="true"],
+  .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
+  richlistitem[type~="action"][actiontype="searchengine"][selected="true"] > .ac-title-box > .ac-site-icon {
+    list-style-image: url("chrome://global/skin/icons/autocomplete-search.svg#search-icon-inverted");
+  }
 
 .ac-result-type-tag,
 .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
@@ -3048,10 +3054,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://mozapps/skin/plugins/pluginBlocked-64.png");
 }
 
-.popup-notification-icon[popupid="plugins-not-found"] {
-  list-style-image: url("chrome://browser/skin/pluginInstall-64.png");
-}
-
 .popup-notification-icon[popupid="web-notifications"] {
   list-style-image: url("chrome://browser/skin/notification-64.png");
 }
@@ -3218,10 +3220,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 
 #plugins-notification-icon:hover {
 /*  -moz-image-region: rect(0, 32px, 16px, 16px);*/
-}
-
-#plugin-install-notification-icon {
-  list-style-image: url("chrome://browser/skin/pluginInstall-16.png");
 }
 
 #notification-popup-box[hidden] {
@@ -4724,6 +4722,11 @@ notification.pluginVulnerable .messageImage {
 
 .popup-notification-item-message[popupid="bad-content"] {
   width: 17em;
+}
+
+.popup-notification-item-message[popupid="bad-content"][mixedblockdisabled]:not(.popup-notification-item-message-critical),
+.popup-notification-item-message[popupid="bad-content"][trackingblockdisabled]:not(.popup-notification-item-message-critical) {
+  color: #8050B0;
 }
 
 .popup-notification-item-message-critical[popupid="bad-content"] {
