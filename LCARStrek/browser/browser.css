@@ -36,6 +36,10 @@ menubar {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#menubar");
 }
 
+:root {
+  --verified-identity-box-backgroundcolor: #000000;
+}
+
 #menubar-items {
   -moz-box-orient: vertical; /* for flex hack */
 }
@@ -490,7 +494,7 @@ menuitem.bookmark-item {
           #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button),
+          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button),
 
 #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
@@ -929,11 +933,25 @@ menuitem.bookmark-item {
   -moz-image-region: rect(0, 108px, 18px, 90px);
 }
 
+#webide-button[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 738px, 18px, 720px);
+}
+
+#webide-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 738px, 36px, 720px);
+}
+
 /* === END toolbarbuttons.inc.css === */
 
 /* === BEGIN menupanel.inc.css === */
 
 /* Menu panel and palette styles */
+
+:root {
+   /* avoid aero overrides with changed filenames */
+  --menupanel-list-style-image: url(chrome://browser/skin/menuPanelFx.png);
+  --menupanel-small-list-style-image: url(chrome://browser/skin/menuPanelFx-small.png);
+}
 
 toolbaritem[sdkstylewidget="true"] > toolbarbutton,
 :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
@@ -942,15 +960,15 @@ toolbaritem[sdkstylewidget="true"] > toolbarbutton,
           #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button)[cui-areatype="menu-panel"],
+          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button)[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
           #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
           #social-share-button, #open-file-button, #find-button, #developer-button,
           #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button) {
-  list-style-image: url("chrome://browser/skin/menuPanelFx.png"); /* avoid aero overrides with changed filename */
+          #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button) {
+  list-style-image: var(--menupanel-list-style-image);
 }
 
 #home-button[cui-areatype="menu-panel"],
@@ -1246,6 +1264,16 @@ toolbarpaletteitem[place="palette"] > #web-apps-button:hover {
   -moz-image-region: rect(32px, 928px, 64px, 896px);
 }
 
+#webide-button[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #webide-button {
+  -moz-image-region: rect(0px, 960px, 32px, 928px);
+}
+
+#webide-button[cui-areatype="menu-panel"]:hover,
+toolbarpaletteitem[place="palette"] > #webide-button:hover {
+  -moz-image-region: rect(32px, 960px, 64px, 928px);
+}
+
 toolbaritem[sdkstylewidget="true"] > toolbarbutton {
   -moz-image-region: rect(0, 832px, 32px, 800px);
 }
@@ -1302,7 +1330,7 @@ toolbarpaletteitem[place="palette"] > #loop-button > .toolbarbutton-badge-contai
 #zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
 toolbarpaletteitem[place="palette"] > #edit-controls > toolbarbutton,
 toolbarpaletteitem[place="palette"] > #zoom-controls > toolbarbutton {
-  list-style-image: url("chrome://browser/skin/menuPanelFx-small.png"); /* avoid aero overrides with changed filename */
+  list-style-image: var(--menupanel-small-list-style-image);
 }
 
 #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #cut-button,
@@ -1378,6 +1406,11 @@ toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button:hover:not
 #zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-in-button[disabled="true"],
 toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button[disabled="true"] {
   -moz-image-region: rect(32px, 96px, 48px, 80px);
+}
+
+#add-share-provider {
+  list-style-image: var(--menupanel-small-list-style-image);
+  -moz-image-region: rect(0px, 96px, 16px, 80px);
 }
 
 /* === END menupanel.inc.css === */
@@ -1987,7 +2020,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 }
 
 #identity-box.verifiedIdentity:not(:-moz-lwtheme) {
-  background-color: #000000;
+  var(--verified-identity-box-backgroundcolor);
 }
 
 #identity-box:-moz-focusring {
@@ -2028,15 +2061,20 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 
 /* === BEGIN identity-block.inc.css === */
 
-#urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
+:root {
+  --identity-box-verified-color: #008484;
   /* Default theme does different color per channel, we can't as they do it build-time. */
-  color: #9C9CFF;
-  -moz-border-end: 1px solid #9C9CFF;
+  --identity-box-chrome-color: #9C9CFF;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
+  color: var(--identity-box-chrome-color);
+  -moz-border-end: 1px solid var(--identity-box-chrome-color);
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
-  color: #008484;
-  -moz-border-end: 1px solid #008484;
+  color: var(--identity-box-verified-color);
+  -moz-border-end: 1px solid var(--identity-box-verified-color);
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI,
@@ -2875,7 +2913,11 @@ toolbarbutton.chevron {
 toolbarbutton.chevron:hover {
   list-style-image: url("chrome://global/skin/toolbar/chevron-hover.gif") !important;
 }
-
+/*
+toolbar[brighttext] toolbarbutton.chevron {
+  list-style-image: url("chrome://global/skin/toolbar/chevron-inverted.png") !important;
+}
+*/
 toolbarbutton.chevron:-moz-locale-dir(rtl) > .toolbarbutton-icon,
 toolbarbutton.chevron:-moz-locale-dir(rtl):hover > .toolbarbutton-icon {
   transform: scaleX(-1);
@@ -4865,6 +4907,21 @@ notification.pluginVulnerable .messageImage {
 }
 
 .customizationmode-button:hover {
+}
+
+#customization-titlebar-visibility-button[checked],
+#customization-devedition-theme-button[checked] {
+  background-color: #008484;
+}
+
+#customization-titlebar-visibility-button[checked]:hover,
+#customization-devedition-theme-button[checked]:hover {
+  background-color: #FFCF00;
+}
+
+#customization-titlebar-visibility-button[checked]:hover:active,
+#customization-devedition-theme-button[checked]:hover:active {
+  background-color: #FF9F00;
 }
 
 .customizationmode-button[disabled="true"] {

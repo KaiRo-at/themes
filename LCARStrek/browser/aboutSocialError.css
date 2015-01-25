@@ -4,6 +4,7 @@ body {
   margin-top: 2em;
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   font-size: 100%;
+  min-height: 200px;
 }
 
 p {
@@ -20,7 +21,7 @@ p {
 }
 
 #main-error-msg {
-  color: #FF9F00;
+  color: #4b4b4b;
   font-weight: bold;
 }
 
@@ -55,7 +56,6 @@ p {
 button {
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   font-size: 0.6875em;
-  -moz-appearance: none;
   -moz-user-select: none;
   width: 100%;
   margin: 2px 0;
@@ -66,10 +66,23 @@ button {
   background-clip: padding-box;
   border: none;
   border-radius: 3px;
+
+  transition-property: background-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+
 }
 
-button:hover,
-button:hover:active {
+button:hover {
   background-color: #FFCF00;
   color: #000000;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+button:hover:active {
+  background-color: #FF9F00;
+  color: #000000;
+  transition-duration: 10ms;
+  transition-timing-function: linear;
 }
