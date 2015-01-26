@@ -632,5 +632,6 @@ xul|*.checkbox-icon {
 html|a:-moz-focusring,
 xul|*.text-link:-moz-focusring,
 xul|*.inline-link:-moz-focusring {
-  border: 1px dotted #3333FF;
+  /* Don't specify the outline-color, we should always use initial value. */
+  outline: 1px dotted;
 }

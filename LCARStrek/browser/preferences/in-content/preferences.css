@@ -109,12 +109,12 @@ treecol {
 }
 
 #category-search > .category-icon {
-  -moz-image-region: rect(0, 194px, 24px, 168px);
+  -moz-image-region: rect(0, 192px, 24px, 168px);
 }
 
 #category-search:hover > .category-icon,
 #category-search[selected] > .category-icon {
-  -moz-image-region: rect(24px, 194px, 48px, 168px);
+  -moz-image-region: rect(24px, 192px, 48px, 168px);
 }
 
 #category-content > .category-icon {
