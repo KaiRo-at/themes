@@ -475,7 +475,7 @@ input.name:focus::-moz-placeholder {
   -moz-margin-end: 2px;
   margin-bottom: 2px;
   background-color: transparent;
-  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 90, 18, 72);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabviewFx.png"), 0, 90, 18, 72);
   background-attachment: scroll;
   background-repeat: no-repeat;
   background-position: center center;
@@ -484,19 +484,19 @@ input.name:focus::-moz-placeholder {
 }
 
 #exit-button[groups="0"] {
-  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 18, 18, 0);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabviewFx.png"), 0, 18, 18, 0);
 }
 
 #exit-button[groups="1"] {
-  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 36, 18, 18);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabviewFx.png"), 0, 36, 18, 18);
 }
 
 #exit-button[groups="2"] {
-  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 54, 18, 36);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabviewFx.png"), 0, 54, 18, 36);
 }
 
 #exit-button[groups="3"] {
-  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabview.png"), 0, 72, 18, 54);
+  background-image: -moz-image-rect(url("chrome://browser/skin/tabview/tabviewFx.png"), 0, 72, 18, 54);
 }
 
 #exit-button:hover {

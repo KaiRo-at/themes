@@ -109,8 +109,8 @@ window {
   width: 16px;
   height: 16px;
   background-image: url("debugger-blackbox.png");
-  background-position: 0 0;
-  background-size: 32px 16px;
+  background-position: -16px -16px;
+  background-size: 32px 32px;
   background-repeat: no-repeat;
   -moz-margin-end: 5px;
 }

@@ -44,8 +44,8 @@
 }
 
 /* User agent styles are not editable, display them differently */
-.theme-dark .ruleview-rule[uneditable=true] {
-  background: #A09090; /* Tab Toolbar */
+.ruleview-rule[uneditable=true] {
+  background: #282425; /* Tab Toolbar */
 }
 
 .ruleview-rule[uneditable=true] :focus {

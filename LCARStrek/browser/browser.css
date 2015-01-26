@@ -318,6 +318,8 @@ toolbarbutton.bookmark-item[open="true"] {
 #personal-bookmarks[cui-areatype="toolbar"] > #bookmarks-toolbar-placeholder > .toolbarbutton-icon {
   width: 16px;
   height: 16px;
+  -moz-margin-start: 1px;
+  -moz-margin-end: 2px;
 }
 
 /* Force the display of the label for bookmarks */
@@ -1729,7 +1731,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 /* tabview menu item */
 
 #menu_tabview {
-  list-style-image: url("chrome://browser/skin/tabview/tabview.png");
+  list-style-image: url("chrome://browser/skin/tabview/tabviewFx.png");
   -moz-image-region: rect(1px, 89px, 17px, 73px);
 }
 
@@ -2272,7 +2274,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   padding: 0 2px;
   background-origin: border-box;
   border: none;
-  list-style-image: url("chrome://browser/skin/reload-stop-go.png");
+  list-style-image: url("chrome://browser/skin/reload-stop-goFX.png");
   -moz-border-start: 1px solid #9C9CFF;
 }
 
@@ -2843,7 +2845,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 #TabsToolbar > #new-tab-button,
 #TabsToolbar > toolbarpaletteitem > #new-tab-button,
 #TabsToolbar > toolbarpaletteitem > #new-tab-button[cui-areatype="toolbar"] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/newtab.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/newtabFx.png");
   -moz-image-region: rect(0, 16px, 18px, 0);
 }
 
@@ -5610,7 +5612,7 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 
 #context-reload > .menu-iconic-left {
   /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#reload"); */
-  list-style-image: url("chrome://browser/skin/reload-stop-go.png");
+  list-style-image: url("chrome://browser/skin/reload-stop-goFX.png");
   -moz-image-region: rect(0, 14px, 14px, 0);
 }
 
@@ -5626,7 +5628,7 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 
 #context-stop > .menu-iconic-left {
   /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#stop"); */
-  list-style-image: url("chrome://browser/skin/reload-stop-go.png");
+  list-style-image: url("chrome://browser/skin/reload-stop-goFX.png");
   -moz-image-region: rect(0, 28px, 14px, 14px);
 }
 
