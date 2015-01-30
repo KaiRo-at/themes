@@ -109,7 +109,7 @@
 }
 
 searchbar[oneoffui] .search-go-button {
-  list-style-image: url("chrome://browser/skin/reload-stop-goFX.png");
+  list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
   -moz-image-region: rect(0, 42px, 14px, 28px);
 }
 

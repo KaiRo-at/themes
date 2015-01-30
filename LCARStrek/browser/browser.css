@@ -2274,7 +2274,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   padding: 0 2px;
   background-origin: border-box;
   border: none;
-  list-style-image: url("chrome://browser/skin/reload-stop-goFX.png");
+  list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
   -moz-border-start: 1px solid #9C9CFF;
 }
 
@@ -5612,7 +5612,7 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 
 #context-reload > .menu-iconic-left {
   /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#reload"); */
-  list-style-image: url("chrome://browser/skin/reload-stop-goFX.png");
+  list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
   -moz-image-region: rect(0, 14px, 14px, 0);
 }
 
@@ -5628,7 +5628,7 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 
 #context-stop > .menu-iconic-left {
   /* list-style-image: url("chrome://browser/skin/content-contextmenu.svg#stop"); */
-  list-style-image: url("chrome://browser/skin/reload-stop-goFX.png");
+  list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
   -moz-image-region: rect(0, 28px, 14px, 14px);
 }
 
