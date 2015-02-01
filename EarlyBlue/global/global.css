@@ -59,6 +59,7 @@ window.dialog {
   list-style-image: url("chrome://global/skin/icons/alert-message.gif");
 }
 
+.alert-dialog #info\.icon,
 .alert-icon {
   list-style-image: url("chrome://global/skin/icons/alert-exclam.gif");
 }

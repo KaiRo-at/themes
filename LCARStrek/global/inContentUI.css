@@ -20,6 +20,13 @@ html|html {
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
+/* Use the new in-content colors for #contentAreaDownloadsView. After landing
+   of bug 989469 the colors can be moved to *|*:root */
+*|*#contentAreaDownloadsView {
+  background: #000000;
+  color: #FF9F00;
+}
+
 /* Content */
 *|*.main-content {
   /* Needed to allow the radius to clip the inner content, see bug 595656 */

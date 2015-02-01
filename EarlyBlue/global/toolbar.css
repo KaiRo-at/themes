@@ -34,9 +34,8 @@ toolbaritem > menubar {
 menubar:-moz-lwtheme,
 toolbox:-moz-lwtheme,
 toolbar:-moz-lwtheme {
-  -moz-appearance: none;
   background: none;
-  border-style: none;
+  border-color: transparent;
 }
 
 /* ::::: toolbar decorations ::::: */

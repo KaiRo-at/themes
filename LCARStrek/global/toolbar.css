@@ -98,7 +98,6 @@ toolbar > menubar {
 menubar:-moz-lwtheme,
 toolbox:-moz-lwtheme,
 toolbar:-moz-lwtheme {
-  -moz-appearance: none;
   background: none;
   border-color: transparent;
 }

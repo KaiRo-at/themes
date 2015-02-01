@@ -117,6 +117,16 @@
   background-clip: content-box;
 }
 
+.controlBar[fullscreen-unavailable] > .volumeStack {
+  /* This value is duplicated in the videocontrols.xml adjustControlSize function. */
+  -moz-margin-end: 8px;
+}
+
+.volumeControl .scale-thumb {
+  min-width: 0;
+  opacity: 0;
+}
+
 .durationBox {
   -moz-box-pack: center;
 }
