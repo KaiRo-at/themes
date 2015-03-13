@@ -6,14 +6,6 @@
 
 @namespace html "http://www.w3.org/1999/xhtml";
 
-#dialogBox,
-dialog,
-window,
-prefwindow,
-.windowDialog {
-  background-color: #000000;
-}
-
 .main-content {
   padding: 1.5em 0 0; /* That padding needs to match the upper stripe. */
   overflow: auto;
@@ -28,7 +20,7 @@ prefwindow,
   background-repeat: no-repeat;
 }
 
-prefpane {
+#mainPrefPane {
   padding: 10px 20px 0px;
   border-radius: 1em 0 0 0;
   background-color: #000000;
@@ -370,7 +362,7 @@ description > html|a {
 }
 
 /**
- * Sub-dialog
+ * Dialog
  */
 
 #dialogOverlay {
@@ -379,7 +371,11 @@ description > html|a {
 }
 
 #dialogBox {
+  background-color: #000000;
+  color: #FF9F00;
+  /* font-size: 14px; */
   border: 1px solid #9C9CFF;
+  border-radius: 10px;
   display: -moz-box;
   margin: 0;
   padding-right: 6px;
@@ -389,8 +385,13 @@ description > html|a {
 #dialogBox[resizable="true"] {
   resize: both;
   overflow: hidden;
-  min-height: 30em;
+  min-height: 20em;
   min-width: 66ch;
+}
+
+.titlebar {
+  -moz-margin-start: 0;
+  -moz-margin-end: 0;
 }
 
 .close-icon {
@@ -416,21 +417,12 @@ description > html|a {
 #dialogFrame {
   -moz-box-flex: 1;
   /* Default dialog dimensions */
-  height: 30em;
+  height: 20em;
   width: 66ch;
 }
 
-tree:not(#rejectsTree) {
-  min-height: 15em;
-}
-
-:-moz-any(dialog, window, prefwindow) groupbox {
-  -moz-margin-start: 8px;
-  -moz-margin-end: 8px;
-}
-
 /**
- * End sub-dialog
+ * End Dialog
  */
 
 /* === END shared/in-content/preferences.css === */
