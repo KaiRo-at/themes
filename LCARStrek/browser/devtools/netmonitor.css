@@ -13,8 +13,6 @@ window {
   margin: 0;
   padding: 12px;
   font-size: 120%;
-
-  color: #FF9F00;
 }
 
 #notice-perf-message {
@@ -252,16 +250,16 @@ box.requests-menu-status[code^="5"] {
 }
 
 .requests-menu-timings-division[division-scale=millisecond] {
-  -moz-border-start-color: #FF9F00 !important; /* Light foreground text */
+  -moz-border-start-color: var(--theme-body-color) !important;
 }
 
 .requests-menu-timings-division[division-scale=second] {
-  -moz-border-start-color: #FF9F00 !important; /* Light foreground text */
+  -moz-border-start-color: var(--theme-body-color) !important;
   font-weight: 600;
 }
 
 .requests-menu-timings-division[division-scale=minute] {
-  -moz-border-start-color: #FF9F00 !important; /* Light foreground text */
+  -moz-border-start-color: var(--theme-body-color) !important;
   font-weight: 600;
 }
 
@@ -384,8 +382,8 @@ box.requests-menu-status[code^="5"] {
 /* Network request details tabpanels */
 
 .tabpanel-content {
-  background-color: #000000;
-  color: #FF9F00;
+  background-color: var(--theme-toolbar-background);
+  color: var(--theme-body-color);
 }
 
 /* Summary tabpanel */
@@ -434,9 +432,8 @@ box.requests-menu-status[code^="5"] {
 #response-content-info-header {
   margin: 0;
   padding: 3px 8px;
-
-  background-color: #FF0000; /* Red highlight */
-  color: #000000; /* Light foreground text */
+  background-color: var(--theme-highlight-red);
+  color: var(--theme-selection-color);
 }
 
 #response-content-image-box {
@@ -500,6 +497,7 @@ box.requests-menu-status[code^="5"] {
 #requests-menu-footer {
   border-top: 1px solid #9C9CFF;
   padding-top: 3px;
+  background-color: var(--theme-toolbar-background);
 }
 
 .requests-menu-footer-button,
@@ -509,8 +507,7 @@ box.requests-menu-status[code^="5"] {
   -moz-margin-end: 3px;
   border: none;
   padding: 0px 1vw;
-
-/*  color: #fff;*/
+/*  color: var(--theme-body-color);*/
 }
 
 .requests-menu-footer-spacer {
@@ -574,8 +571,7 @@ box.requests-menu-status[code^="5"] {
 
 #network-statistics-charts {
   min-height: 1px;
-
-  background: #000000; /* Toolbars */
+  background-color: var(--theme-toolbar-background);
 }
 
 #network-statistics-charts .pie-chart-container {
@@ -589,43 +585,43 @@ box.requests-menu-status[code^="5"] {
 }
 
 .chart-colored-blob[name=html] {
-  fill: #A09090; /* Blue-Grey highlight */
-  background: #A09090;
+  fill: var(--theme-highlight-bluegrey);
+  background: var(--theme-highlight-bluegrey);
 }
 
 .chart-colored-blob[name=css] {
-  fill: #9C9CFF; /* Blue highlight */
-  background: #9C9CFF;
+  fill: var(--theme-highlight-blue);
+  background: var(--theme-highlight-blue);
 }
 
 .chart-colored-blob[name=js] {
-  fill: #FFCF00; /* Light Orange highlight */
-  background: #FFCF00;
+  fill: var(--theme-highlight-lightorange);
+  background: var(--theme-highlight-lightorange);
 }
 
 .chart-colored-blob[name=xhr] {
-  fill: #FF9F00; /* Orange highlight */
-  background: #FF9F00;
+  fill: var(--theme-highlight-orange);
+  background: var(--theme-highlight-orange);
 }
 
 .chart-colored-blob[name=fonts] {
-  fill: #6000CF; /* Purple highlight */
-  background: #6000CF;
+  fill: var(--theme-highlight-darkpurple);
+  background: var(--theme-highlight-darkpurple);
 }
 
 .chart-colored-blob[name=images] {
-  fill: #E7ADE7; /* Pink highlight */
-  background: #E7ADE7;
+  fill: var(--theme-highlight-pink);
+  background: var(--theme-highlight-pink);
 }
 
 .chart-colored-blob[name=media] {
-  fill: #008484; /* Green highlight */
-  background: #008484;
+  fill: var(--theme-highlight-green);
+  background: var(--theme-highlight-green);
 }
 
 .chart-colored-blob[name=flash] {
-  fill: #FF0000; /* Red highlight */
-  background: #FF0000;
+  fill: var(--theme-highlight-red);
+  background: var(--theme-highlight-red);
 }
 
 .table-chart-row-label[name=cached] {

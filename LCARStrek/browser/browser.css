@@ -2761,6 +2761,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 .tabs-newtab-button {
   width: 28px;
+  /* width: calc(36px + @tabCurveWidth@); */
 }
 
 /* === END tabs.inc.css === */

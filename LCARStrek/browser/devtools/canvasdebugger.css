@@ -7,9 +7,8 @@
 .notice-container {
   margin-top: -50vh;
   font-size: 120%;
-
-  background-color: #000000; /* Toolbars */
-  color: #FF9F00; /* Light foreground text */
+  background-color: var(--theme-toolbar-background);
+  color: var(--theme-body-color);
 }
 
 #empty-notice > button {
@@ -81,6 +80,11 @@
 .snapshot-item-calls {
   padding-top: 4px;
   font-size: 80%;
+}
+
+.snapshot-item-calls,
+.snapshot-item-save {
+  color: var(--theme-body-color);
 }
 
 .snapshot-item-save {
@@ -237,9 +241,9 @@
 }
 
 .call-item-gutter {
-  background-color: #A09090;
-  color: #000000;
-  border-color: #000;
+  background-color: var(--theme-contrastsidebar-background);
+  color: var(--theme-contrastsidebar-color);
+  border-color: var(--theme-contrastsidebar-bordercolor);
 }
 
 .call-item-index {
@@ -247,11 +251,11 @@
 }
 
 .call-item-context {
-  color: #FFCF00; /* Highlight Orange */
+  color: var(--theme-highlight-lightorange);
 }
 
 .call-item-name {
-  color: #9C9CFF; /* Highlight Blue */
+  color: var(--theme-highlight-blue);
 }
 
 .call-item-location {
@@ -259,10 +263,11 @@
   -moz-padding-end: 6px;
   text-align: end;
   cursor: pointer;
+  color: var(--theme-highlight-bluegrey);
 }
 
 .call-item-location:hover {
-  color: #FFCF00; /* Highlight Blue */
+  color: var(--theme-highlight-blue);
 }
 
 .call-item-view:hover .call-item-location,
@@ -272,7 +277,6 @@
 
 .call-item-location {
   border-color: #A09090;
-  color: #9C9CFF; /* Highlight Blue-Grey */
 }
 
 .call-item-stack {
@@ -298,15 +302,15 @@
 }
 
 .call-item-stack-fn-name {
-  color: #A09090; /* Content (Text) - Light */
+  color: var(--theme-content-color2);
 }
 
 .theme-dark .call-item-stack-fn-location {
-  color: #FF9F00; /* Highlight Blue-Grey */
+  color: var(--theme-content-color1);
 }
 
 .theme-dark .call-item-stack-fn-location:hover {
-  color: #9C9CFF; /* Highlight Blue */
+  color: var(--theme-highlight-blue);
 }
 
 #calls-list .selected .call-item-contents > label:not(.call-item-gutter) {
@@ -372,7 +376,7 @@
 
 #snapshot-filmstrip {
   border-top: 1px solid #000;
-  color: #FF9F00; /* Light foreground text */
+  color: var(--theme-body-color);
 }
 
 .filmstrip-thumbnail {
@@ -397,12 +401,12 @@
 }
 
 .filmstrip-thumbnail {
-  -moz-border-end: 1px solid #000;
+  -moz-border-end: 1px solid var(--theme--contrastsidebar-bordercolor)
 }
 
 #snapshot-filmstrip > .filmstrip-thumbnail:hover,
 #snapshot-filmstrip:not(:hover) > .filmstrip-thumbnail[highlighted] {
-  border: 1px solid #9C9CFF; /* Highlight Blue */
+  border: 1px solid var(--theme-highlight-blue);
   margin: 0 0 0 -1px;
   padding: 0;
   opacity: 0.66;

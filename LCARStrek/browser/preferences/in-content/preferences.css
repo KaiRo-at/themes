@@ -389,9 +389,15 @@ description > html|a {
   min-width: 66ch;
 }
 
-.titlebar {
+#dialogBox > .groupbox-title {
   -moz-margin-start: 0;
   -moz-margin-end: 0;
+/*  padding: 3.5px 0;
+  background-color: #F1F1F1; */
+}
+
+#dialogTitle {
+  text-align: center;
 }
 
 .close-icon {

@@ -27,7 +27,7 @@
 .theme-selected ~ .editor .theme-fg-color5,
 .theme-selected ~ .editor .theme-fg-color6,
 .theme-selected ~ .editor .theme-fg-color7 {
-  color: #000000; /* Light foreground text */
+  color: var(--theme-selection-color);
 }
 
 /* In case a node isn't displayed in the page, we fade the syntax highlighting */
@@ -51,11 +51,9 @@
   border-left: 1px solid;
   border-bottom: 1px solid;
   overflow: hidden;
-}
 
-#previewbar {
-  background: #000000; /* Tab Toolbar */
-  border-color: #9C9CFF; /* Splitters */
+  background: var(--theme-toolbar-background);
+  border-color: var(--theme-splitter-color);
 }
 
 #preview {
@@ -92,9 +90,7 @@
   padding: 0px 2px;
   -moz-margin-start: 5px;
   -moz-user-select: none;
-}
-
-.markupview-events {
-  background-color: #A09090;
-  color: #000000;
+  
+  background-color: var(--theme-body-color-alt);
+  color: var(--theme-body-background);
 }

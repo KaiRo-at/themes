@@ -6,19 +6,59 @@
 /* According to:
  * https://bugzilla.mozilla.org/show_bug.cgi?id=715472#c17
  */
+:root {
+  --theme-body-background: #000000;
+  --theme-sidebar-background: #000000;
+  --theme-contrast-background: #402800;
+  --theme-contrast-border: #A09090;
+
+  --theme-tab-toolbar-background: #.252c33;
+  --theme-toolbar-background: #000000;
+  --theme-hover-background: #FFCF00;
+  --theme-hover-color: #000000;
+  --theme-selection-background: #008484;
+  --theme-selection-color: #000000;
+  --theme-selection-background2: #004242;
+  --theme-selection-color2: #FF9F00;
+  --theme-splitter-color: #9C9CFF;
+  --theme-comment: #A09090;
+
+  --theme-contrastsidebar-background: #A09090;
+  --theme-contrastsidebar-color: #000000;
+  --theme-contrastsidebar-bordercolor: #000000;
+
+  --theme-body-color: #FF9F00;
+  --theme-body-color-alt: #A09090;
+  --theme-content-color1: #FF9F00;
+  --theme-content-color2: #A09090;
+  --theme-content-color3: #FF9F00;
+  --theme-content-disabled: #8050B0;
+
+  --theme-text-blue: #3333FF;
+  --theme-highlight-green: #008484;
+  --theme-highlight-blue: #9C9CFF;
+  --theme-highlight-bluegrey: #A09090;
+  --theme-highlight-purple: #C09070;
+  --theme-highlight-darkpurple: #6000CF;
+  --theme-highlight-lightorange: #FFCF00;
+  --theme-highlight-orange: #FF9F00;
+  --theme-highlight-red: #FF0000;
+  --theme-highlight-pink: #E7ADE7;
+}
+
 .theme-body {
-  background: #000000;
-  color: #FF9F00;
+  background: var(--theme-body-background);
+  color: var(--theme-body-color);
 }
 
 .theme-sidebar {
-  background: #000000;
-  color: #FF9F00;
+  background: var(--theme-sidebar-background);
+  color: var(--theme-content-color1);
 }
 
 ::-moz-selection {
-  background-color: #008484;
-  color: #FFCF00;
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 .theme-bg-darker {
@@ -27,18 +67,18 @@
 
 .theme-selected,
 .CodeMirror-hint-active {
-  background: #004242;
-  color: #FF9F00; /* Light foreground text */
+  background-color: var(--theme-selection-background2);
+  color: var(--theme-selection-color2);
 }
 
 .theme-bg-contrast,
-.variable-or-property:not([overridden])[changed] { /* contrast bg color to attract attention on a container */
-  background: #402800; /* Background - Attention */
+.variable-or-property:not([overridden])[changed] {
+  background: var(--theme-contrast-background);
 }
 
 .theme-link,
 .cm-s-mozilla .cm-link { /* original: blue */
-  color: #3333FF;
+  color: var(--theme-text-blue);
 }
 
 /*
@@ -47,8 +87,8 @@
  */
 .theme-link:visited,
 .cm-s-mozilla .cm-link:visited,
-.CodeMirror-Tern-type { /* original: blue */
-  color: #3333FF;
+.CodeMirror-Tern-type {
+  color: var(--theme-text-blue);
 }
 
 .theme-comment,
@@ -56,17 +96,14 @@
 .cm-s-mozilla .cm-hr,
 .cm-s-mozilla .cm-comment,
 .variable-or-property .token-undefined,
-.variable-or-property .token-null { /* original: grey */
-  color: #A09090;
-}
-
+.variable-or-property .token-null,
 .CodeMirror-Tern-completion-unknown:before {
-  background-color: #A09090;
+  color: var(--theme-comment);
 }
 
 .theme-gutter {
   background-color: #000000;
-  color: #FF9F00;
+  color: var(--theme-content-color3);
   border-color: #9C9CFF;
 }
 
@@ -78,8 +115,8 @@
 .cm-s-mozilla .cm-number,
 .variable-or-property .token-number,
 .variable-or-property[return] > .title > .name,
-.variable-or-property[scope] > .title > .name { /* original: green */
-  color: #008484;
+.variable-or-property[scope] > .title > .name {
+  color: var(--theme-highlight-green);
 }
 
 .CodeMirror-Tern-completion-number:before {
@@ -92,8 +129,8 @@
 .cm-s-mozilla .cm-def,
 .cm-s-mozilla .cm-property,
 .cm-s-mozilla .cm-qualifier,
-.variables-view-variable > .title > .name { /* original: blue */
-  color: #9C9CFF;
+.variables-view-variable > .title > .name {
+  color: var(--theme-highlight-blue);
 }
 
 .CodeMirror-Tern-completion-object:before {
@@ -102,7 +139,7 @@
 
 .cm-s-mozilla .cm-unused-line {
   text-decoration: line-through;
-  -moz-text-decoration-color: #8050B0;
+  text-decoration-color: #8050B0;
 }
 
 .cm-s-mozilla .cm-executed-line {
@@ -113,31 +150,31 @@
 .cm-s-mozilla .cm-builtin,
 .cm-s-mozilla .cm-tag,
 .cm-s-mozilla .cm-header,
+.cm-s-mozilla .cm-bracket,
 .variables-view-property > .title > .name,
-.variable-or-property[safe-getter] > .title > .name { /* original: pink/lavender */
-  color: #E7ADE7;
+.variable-or-property[safe-getter] > .title > .name {
+  color: var(--theme-highlight-pink);
 }
 
 .CodeMirror-Tern-completion-array:before {
-  background-color: #E7ADE7;
+  color: var(--theme-highlight-pink); /* var(--theme-highlight-bluegrey) */
 }
 
-.theme-fg-color4 { /* original: purple/violet */
-  color: #C09070;
+.theme-fg-color4 {
+  color: var(--theme-highlight-purple);
 }
 
 .theme-fg-color5,
-.cm-s-mozilla .cm-bracket,
-.cm-s-mozilla .cm-keyword { /* original: Yellow */
-  color: #FFCF00;
+.cm-s-mozilla .cm-keyword {
+  color: var(--theme-highlight-lightorange);
 }
 
 .theme-fg-color6,
 .cm-s-mozilla .cm-string,
 .cm-s-mozilla .cm-string-2,
 .variable-or-property .token-string,
-.CodeMirror-Tern-farg { /* original: Orange */
-  color: #E7ADE7;
+.CodeMirror-Tern-farg {
+  color: var(--theme-highlight-pink); /* -orange? */
 }
 
 .CodeMirror-Tern-completion-string:before,
@@ -151,8 +188,8 @@
 .cm-s-mozilla .cm-error,
 .variable-or-property .token-boolean,
 .variable-or-property .token-domnode,
-.variable-or-property[exception] > .title > .name { /* original: Red */
-  color: #FF0000;
+.variable-or-property[exception] > .title > .name {
+  color: var(--theme-highlight-red);
 }
 
 .CodeMirror-Tern-completion-bool:before {
@@ -167,6 +204,8 @@
 .devtools-toolbar,
 .devtools-sidebar-tabs > tabs,
 .CodeMirror-dialog { /* General toolbar styling */
+/*  color: var(--theme-body-color-alt);
+  background-color: var(--theme-toolbar-background);*/
 }
 
 
@@ -200,8 +239,8 @@
 .cm-s-mozilla .cm-variable-2,
 .cm-s-mozilla .cm-variable-3,
 .cm-s-mozilla .cm-operator,
-.cm-s-mozilla .cm-special { /* theme-body color */
-  color: #FF9F00;
+.cm-s-mozilla .cm-special {
+  color: var(--theme-content-color1);
 }
 
 .cm-s-mozilla .CodeMirror-lines .CodeMirror-cursor {
@@ -251,12 +290,12 @@ div.CodeMirror span.eval-text {
 }
 
 .cm-s-mozilla .CodeMirror-linenumber { /* line number text */
-  color: #A09090;
+  color: var(--theme-content-color2);
 }
 
 .cm-s-mozilla .CodeMirror-gutters { /* vertical line next to line numbers */
-  border-right-color: #A09090;
-  background-color: #402800;
+  border-right-color: var(--theme-contrast-border);
+  background-color: var(--theme-contrast-background);
 }
 
 .cm-s-markup-view pre {
@@ -362,9 +401,12 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-horizontal-splitter {
+/*  border-bottom: 1px solid var(--theme-splitter-color); */
 }
 
 .devtools-side-splitter {
+/*  -moz-border-end: 1px solid var(--theme-splitter-color);
+  border-color: var(--theme-splitter-color); / Needed for responsive container at low width. */
 }
 
 .devtools-textinput,
@@ -380,7 +422,7 @@ div.CodeMirror span.eval-text {
 .CodeMirror-hints,
 .CodeMirror-Tern-tooltip {
   background-color: #000000;
-  color: #FF9F00;
+  color: var(--theme-body-color);
 }
 
 /* === BEGIN toolbars.inc.css === */

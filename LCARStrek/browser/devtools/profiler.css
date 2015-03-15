@@ -13,11 +13,8 @@ window {
 .notice-container {
   margin-top: -50vh;
   font-size: 120%;
-}
-
-.notice-container {
-  background: #000000; /* Toolbars */
-  color: #FF9F00; /* Light foreground text */
+  background-color: var(--theme-toolbar-background);
+  color: var(--theme-body-color);
 }
 
 #empty-notice button,
@@ -52,7 +49,7 @@ window {
 
 #recordings-pane > tabs,
 #recordings-pane .devtools-toolbar {
-  -moz-border-end-color: #9C9CFF; /* Splitters */
+  -moz-border-end-color: var(--theme-splitter-color);
 }
 
 #record-button {
@@ -89,7 +86,7 @@ window {
 
 .recording-item-duration,
 .recording-item-save {
-  color: #FF9F00; /* Foreground (Text) - Grey */
+  color: var(--theme-body-color-alt);
 }
 
 #recordings-list .selected label {
@@ -117,12 +114,8 @@ window {
   transition-property: opacity, transform;
 }
 
-.theme-dark #profile-content tab {
-  color: #8fa1b2; /* Body Text */
-}
-
-.theme-light #profile-content tab {
-  color: #18191a; /* Body Text */
+#profile-content tab {
+  color: var(--theme-body-color);
 }
 
 #profile-content tab:not([selected]) {
@@ -136,17 +129,17 @@ window {
 
 #profile-content tab {
   -moz-appearance: none;
-  -moz-border-end: 1px solid #9C9CFF; /* Splitters */
+  -moz-border-end: 1px solid var(--theme-splitter-color);
 }
 
 #profile-content tab:hover {
-  background-color: #FFCF00;
-  color: #000000;
+  background-color: var(--theme-hover-background);
+  color: var(--theme-hover-color);
 }
 
 #profile-content tab[selected] {
-  background-color: #008484; /* Select Highlight Blue */
-  color: #000000; /* Light foreground text */
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 #profile-content tabpanel {
@@ -182,7 +175,7 @@ window {
 /* Profile call tree */
 
 .call-tree-headers-container {
-  border-top: 1px solid #A09090;
+  border-top: 1px solid var(--theme-splitter-color);
 }
 
 .call-tree-cells-container {
@@ -224,6 +217,7 @@ window {
   -moz-box-align: center;
   overflow: hidden;
   padding: 1px 4px;
+  color: var(--theme-body-color);
 }
 
 .call-tree-header:not(:last-child),
@@ -234,7 +228,6 @@ window {
 .call-tree-header,
 .call-tree-cell {
   -moz-border-end-color: #9C9CFF;
-  color: #FF9F00; /* Body Text */
 }
 
 .call-tree-header:not(:last-child) {
@@ -246,8 +239,8 @@ window {
 }
 
 .call-tree-header {
-  background-color: #A09090; /* Tab Toolbar */
-  color: #000000;
+  background-color: var(--theme-contrastsidebar-background);
+  color: var(--theme-contrastsidebar-color);
 }
 
 .call-tree-item:last-child:not(:focus) {
@@ -263,12 +256,12 @@ window {
 }
 
 .call-tree-item:focus {
-  background-color: #008484; /* Select Highlight Blue */
-  color: #000000;
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 .call-tree-item:focus label {
-  color: #000000 !important; /* Light foreground text */
+  color: var(--theme-selection-color) !important;
 }
 
 .call-tree-item:focus .call-tree-cell {
@@ -292,11 +285,11 @@ window {
 }
 
 .call-tree-url {
-  color: #9C9CFF;
+  color: var(--theme-highlight-blue);
 }
 
 .call-tree-line {
-  color: #A09090;
+  color: var(--theme-content-color2);
 }
 
 .call-tree-host {
@@ -305,7 +298,7 @@ window {
 }
 
 .call-tree-host {
-  color: #E7ADE7;
+  color: var(--theme-highlight-pink);
 }
 
 .call-tree-url[value=""],

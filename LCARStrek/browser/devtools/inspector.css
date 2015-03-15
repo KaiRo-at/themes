@@ -354,11 +354,6 @@ window {
   margin-bottom: 0;
 }
 
-.event-tooltip-attributes-box {
-  background-color: #000000;
-  color: #9C9CFF;
-}
-
 .event-tooltip-attributes-container {
   display: flex;
   flex-shrink: 0;
@@ -373,6 +368,8 @@ window {
   border-radius: 3px;
   padding: 2px;
   -moz-margin-start: 5px;
+  background-color: var(--theme-sidebar-background);
+  color: var(--theme-highlight-blue);
 }
 
 .event-tooltip-attributes {
