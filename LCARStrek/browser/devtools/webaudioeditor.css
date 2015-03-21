@@ -8,8 +8,8 @@
 }
 
 .notice-container {
-  background-color: #000000; /* Toolbars */
-  color: #A09090; /* Light foreground text */
+  background-color: var(--theme-toolbar-background);
+  color: var(--theme-body-color-alt);
 }
 
 #reload-notice {
@@ -56,10 +56,10 @@ g.edgePath.param-connection {
  * the main background so there's whitespace around the label, on top of the
  * dotted lines. */
 g.edgeLabel rect {
-  fill: #000000;
+  fill: var(--theme-body-background);
 }
 g.edgeLabel tspan {
-  fill: #9C9CFF; /* Grey foreground text */
+  fill: var(--theme-Highlight-color-blue);
 }
 
 /* Audio Nodes */
@@ -69,12 +69,12 @@ g.edgeLabel tspan {
 }
 
 .nodes rect {
-  stroke: #9C9CFF; /* Tab toolbar */
-  fill: #000000; /* Toolbars */
+  stroke: var(--theme-splitter-color);
+  fill: var(--theme-toolbar-background);
 }
 
 .nodes g.selected rect {
-  fill: #008484; /* Select Highlight Blue */
+  fill: var(--theme-selection-background);
 }
 
 /* Text in nodes and edges */
@@ -86,10 +86,10 @@ text {
 }
 
 text {
-  fill: #A09090; /* Grey foreground text */
+  fill: var(--theme-body-color-alt);
 }
 g.selected text {
-/*  fill: #f0f1f2; / Toolbars */
+/*  fill: var(--theme-toolbar-background); */
 }
 
 .nodes text {

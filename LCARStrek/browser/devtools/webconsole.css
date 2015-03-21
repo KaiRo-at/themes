@@ -182,7 +182,7 @@ a {
 }
 
 #output-container.hideTimestamps > .message > .indent {
-  background-color: #000000; /* .theme-body */
+  background-color: var(--theme-body-background);
 }
 
 .filtered-by-type,
@@ -238,7 +238,7 @@ a {
 }
 
 .console-string {
-  color: #FF9F00;
+  color: var(--theme-highlight-orange);
 }
 
 .message[severity=error] .console-string {
@@ -515,20 +515,20 @@ a {
 
 /* Replace these values with CSS variables as available */
 .jsterm-input-container {
-  background-color: #000000; /* tabToolbarBackgroundColor */
-  border-color: #9C9CFF; /* mainBackgroundColor */
+  background-color: var(--theme-toolbar-background);
+  border-color: var(--theme-splitter-color);
 }
 
 .jsterm-input-node {
-  color: #E7ADE7; /* textColor */
+  color: var(--theme-highlight-pink);
 }
 
 .jsterm-complete-node {
-  color: #A09090; /* commentColor */
+  color: var(--theme-comment);
 }
 
 .navigation-marker .url {
-  background: #000000; /* mainBackgroundColor */
+  background: var(--theme-body-background);
 }
 
 .inlined-variables-view iframe {

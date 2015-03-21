@@ -4,8 +4,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 .splitview-nav-container {
-  background-color: #000000;
-  color: #FF9F00;
+  background-color: var(--theme-toolbar-background);
+  color: var(--theme-body-color);
 }
 
 .loading .splitview-nav-container {

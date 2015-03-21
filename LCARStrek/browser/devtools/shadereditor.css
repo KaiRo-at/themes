@@ -12,9 +12,8 @@ window {
 
 .notice-container {
   margin-top: -50vh;
-
-  background-color: #000000;
-  color: #FF9F00;
+  background-color: var(--theme-toolbar-background);
+  color: var(--theme-body-color);
 }
 
 #reload-notice {
@@ -84,18 +83,18 @@ window {
 /* Shader source editors */
 
 #editors-splitter {
-  border-color: #000000;
+  border-color: var(--theme-contrastsidebar-bordercolor);
 }
 
 .editor-label {
-  background-color: #A09090;
   padding: 1px 12px;
-  color: #000000;
+  background: var(--theme-contrastsidebar-background);
+  color: var(--theme-contrastsidebar-color);
 }
 
 .editor-label[selected] {
-  background-color: #008484;
-  color: #FFCF00;
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 /* Responsive sidebar */

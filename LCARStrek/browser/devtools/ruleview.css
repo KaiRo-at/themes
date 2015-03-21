@@ -45,7 +45,7 @@
 
 /* User agent styles are not editable, display them differently */
 .ruleview-rule[uneditable=true] {
-  background: #282425; /* Tab Toolbar */
+  background: var(--theme-toolbar-background);
 }
 
 .ruleview-rule[uneditable=true] :focus {
@@ -53,7 +53,7 @@
 }
 
 .ruleview-rule[uneditable=true] .theme-link {
-  color: #336699; /* Blue - Grey */
+  color: var(--theme-text-blue);
 }
 
 .ruleview-rule[uneditable=true] .ruleview-enableproperty {
@@ -199,7 +199,7 @@
 }
 
 .ruleview-property[dirty] {
-  border-left-color: #9C9CFF; /* Green */
+  border-left-color: var(--theme-highlight-green);
 }
 
 .ruleview-namecontainer > .ruleview-propertyname,

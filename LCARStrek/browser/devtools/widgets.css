@@ -120,14 +120,14 @@
 .scrollbutton-down:-moz-locale-dir(rtl) {
   border-right: solid 1px rgba(255, 255, 255, .1);
   border-left: solid 1px transparent;
-  box-shadow: 3px 0px 3px -3px #181d20;
+  box-shadow: 3px 0px 3px -3px var(--theme-sidebar-background);
 }
 
 .scrollbutton-down:-moz-locale-dir(ltr),
 .scrollbutton-up:-moz-locale-dir(rtl) {
   border-right: solid 1px transparent;
   border-left: solid 1px rgba(255, 255, 255, .1);
-  box-shadow: -3px 0px 3px -3px #181d20;
+  box-shadow: -3px 0px 3px -3px var(--theme-sidebar-background);
 }
 
 .scrollbutton-up[disabled],
@@ -162,12 +162,12 @@
 
 #breadcrumb-separator-before,
 #breadcrumb-separator-after:after {
-  background: #008484; /* Select Highlight Blue */
+  background: var(--theme-selection-background);
 }
 
 #breadcrumb-separator-after,
 #breadcrumb-separator-before:after {
-  background: #000000; /* Toolbars */
+  background: var(--theme-toolbar-background);
 }
 
 /* This chevron arrow cannot be replicated easily in CSS, so we are using
@@ -191,7 +191,7 @@
 }
 
 .breadcrumbs-widget-item {
-  background-color: #000000;
+  background-color: var(--theme-toolbar-background);
   min-height: 24px;
   min-width: 65px;
   margin: 0;
@@ -199,17 +199,17 @@
   border: none;
   border-radius: 0;
   outline: none;
-  color: #FF9F00;
+  color: var(--theme-content-color1);
 }
 
 .breadcrumbs-widget-item:hover {
-  background-color: #FFCF00;
-  color: #000000;
+  background-color: var(--theme-hover-background);
+  color: var(--theme-hover-color);
 }
 
 .breadcrumbs-widget-item[checked]:not(:hover) {
-  background-color: #008484;
-  color: #000000;
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 .breadcrumbs-widget-item[siblings-menu-open],
@@ -274,30 +274,30 @@
 .breadcrumbs-widget-item[checked] .breadcrumbs-widget-item-tag,
 .breadcrumbs-widget-item[checked] .breadcrumbs-widget-item-pseudo-classes,
 .breadcrumbs-widget-item[checked] .breadcrumbs-widget-item-classes {
-  color: #FF9F00; /* Foreground (Text) - Light */
+  color: var(--theme-highlight-lightorange);
 }
 
 .breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-id,
 .breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-tag,
 .breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-pseudo-classes,
 .breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-classes {
-  color: #000000 !important;
+  color: var(--theme-hover-color) !important;
 }
 
 .breadcrumbs-widget-item {
-  color: #FFCF00; /* Foreground (Text) - Light */
+  color: var(--theme-highlight-lightorange);
 }
 
 .breadcrumbs-widget-item-id {
-  color: #A09090; /* Foreground (Text) - Grey */
+  color: var(--theme-body-color-alt);
 }
 
 .breadcrumbs-widget-item-classes {
-  color: #FF9F00; /* Content (Text) - Light */
+  color: var(--theme-content-color1);
 }
 
 .breadcrumbs-widget-item-pseudo-classes {
-  color: #FFCF00; /* Light Orange */
+  color: var(--theme-highlight-lightorange);
 }
 
 /* SimpleListWidget */
@@ -308,18 +308,18 @@
 }
 
 .simple-list-widget-item.selected {
-  background-color: #008484; /* Select Highlight Blue */
-  color: #FFCF00; /* Light foreground text */
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 .simple-list-widget-item:not(.selected):hover {
-  background-color: #FFCF00;
-  color: #FFCF00;
+  background-color: var(--theme-hover-background);
+  color: var(--theme-hover-color);
 }
 
 .simple-list-widget-perma-text,
 .simple-list-widget-empty-text {
-  color: #8050B0;
+  color: var(--theme-body-color-alt);
   padding: 4px 8px;
 }
 
@@ -334,7 +334,7 @@
 .fast-list-widget-empty-text {
   padding: 12px;
   font-weight: 600;
-  color: #8050B0;
+  color: var(--theme-body-color-alt);
 }
 
 /* SideMenuWidget */
@@ -344,9 +344,6 @@
 .side-menu-widget-container {
   /* Hack: force hardware acceleration */
   transform: translateZ(1px);
-
-  background-color: #000000;
-  color: #FF9F00;
 }
 
 .side-menu-widget-container:-moz-locale-dir(ltr),
@@ -371,9 +368,8 @@
 
 .side-menu-widget-group-title {
   padding: 4px;
-
-  background-color: #A09090;
-  color: #000000;
+  background-color: var(--theme-contrastsidebar-background);
+  color: var(--theme-contrastsidebar-color);
 }
 
 /* SideMenuWidget items */
@@ -391,8 +387,8 @@
 }
 
 .side-menu-widget-item.selected {
-  background-color: #008484 !important;
-  color: #000000;
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 .side-menu-widget-item-arrow {
@@ -438,13 +434,12 @@
   /* To compensate for the .side-menu-widget-item-contents padding. */
   -moz-margin-start: -4px;
   -moz-margin-end: -8px;
-
-  background-color: #000000;
+  color: var(--theme-selection-color);
 }
 
 .side-menu-widget-item-other.selected {
-  background-color: #008484;
-  color: #000000;
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 .side-menu-widget-item-other:first-of-type {
@@ -475,12 +470,13 @@
 
 /* SideMenuWidget misc */
 
+.theme-dark .side-menu-widget-container,
+.theme-dark .side-menu-widget-empty-text {
+  background-color: var(--theme-toolbar-background);
+}
+
 .side-menu-widget-empty-text {
   padding: 12px;
-
-  background-color: #000000;
-  font-weight: 600;
-  color: #A09090;
 }
 
 /* VariablesView */
@@ -491,14 +487,14 @@
 }
 
 .variables-view-empty-notice {
-  color: #A09090;
+  color: var(--theme-body-color-alt);
   padding: 2px;
 }
 
 .variables-view-scope:focus > .title,
 .theme-dark .variable-or-property:focus > .title {
-  background-color: #008484; /* Selection colors */
-  color: #FFCF00;
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 .variables-view-scope > .title {
@@ -981,12 +977,12 @@
 }
 
 .generic-chart-container {
-  color: #A09090; /* Light foreground text */
+  color: var(--theme-body-color-alt);
 }
 
 .chart-colored-blob {
-  fill: #9C9CFF; /* Light content text */
-  background: #9C9CFF;
+  fill: var(--theme-highlight-blue);
+  background: var(--theme-highlight-blue);
 }
 
 /* Charts: Pie */

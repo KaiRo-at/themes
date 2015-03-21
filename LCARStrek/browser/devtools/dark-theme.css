@@ -437,7 +437,7 @@ div.CodeMirror span.eval-text {
 
 .devtools-toolbar checkbox {
   /* LCARStrek checkbox colors don't work well against toolbar background */
-  background-color: #000000;
+  background-color: var(--theme-toolbar-background);
   padding: 2px;
 }
 .devtools-toolbar checkbox .checkbox-check {
@@ -455,7 +455,7 @@ div.CodeMirror span.eval-text {
 
 .devtools-menulist:-moz-focusring,
 .devtools-toolbarbutton:-moz-focusring {
-  outline: 1px dotted #008484;
+  outline: 1px dotted var(--theme-selection-color);
 }
 
 .devtools-toolbarbutton[standalone] {
@@ -537,7 +537,7 @@ div.CodeMirror span.eval-text {
 .devtools-toolbarbutton[checked=true],
 #toolbox-buttons .devtools-toolbarbutton[text-as-image][checked] {
 /*  background: rgba(29, 79, 115, .7); / Select highlight blue /
-  color: #f5f7fa;*/
+  color: var(--theme-selection-color); */
 }
 
 .devtools-menulist[open=true],
@@ -548,7 +548,7 @@ div.CodeMirror span.eval-text {
 .devtools-toolbarbutton[checked=true]:hover,
 #toolbox-buttons .devtools-toolbarbutton[text-as-image][checked] {
 /*  background: rgba(29, 79, 115, .8); / Select highlight blue /
-  color: #f5f7fa; */
+  color: var(--theme-selection-color); */
 }
 
 .devtools-toolbarbutton[checked=true]:hover {
@@ -620,7 +620,7 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-no-search-result {
-  border-color: #FF0000 !important;
+  border-color: var(--theme-highlight-red) !important;
 }
 
 /* Close button */
@@ -906,13 +906,13 @@ div.CodeMirror span.eval-text {
 
 .devtools-tab:hover,
 .devtools-tab:hover:active {
-  background-color: #FFCF00;
-  color: #000000;
+  background-color: var(--theme-hover-background);
+  color: var(--theme-hover-color);
 }
 
 .devtools-tab[selected] {
-  background-color: #008484;
-  color: #000000;
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
 }
 
 .devtools-tab > spacer {
