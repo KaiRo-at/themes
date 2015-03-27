@@ -11,8 +11,9 @@
   --theme-sidebar-background: #000000;
   --theme-contrast-background: #402800;
   --theme-contrast-border: #A09090;
+  --theme-contrast-background2: #795900;
 
-  --theme-tab-toolbar-background: #.252c33;
+/*  --theme-tab-toolbar-background: #.252c33; */
   --theme-toolbar-background: #000000;
   --theme-hover-background: #FFCF00;
   --theme-hover-color: #000000;

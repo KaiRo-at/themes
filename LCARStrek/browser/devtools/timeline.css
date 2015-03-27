@@ -70,20 +70,13 @@
   pointer-events: none;
 }
 
-.theme-dark .waterfall-marker-container:not([is-spacer]):nth-child(2n) {
-  background-color: rgba(255,255,255,0.03);
+.waterfall-marker-container:not([is-spacer]):nth-child(2n) {
+  background-color: var(--theme-contrast-background);
 }
 
-.theme-light .waterfall-marker-container:not([is-spacer]):nth-child(2n) {
-  background-color: rgba(128,128,128,0.03);
-}
-
-.theme-dark .waterfall-marker-container:hover {
-  background-color: rgba(255,255,255,0.1) !important;
-}
-
-.theme-light .waterfall-marker-container:hover {
-  background-color: rgba(128,128,128,0.1) !important;
+.waterfall-marker-container:hover {
+  background-color: var(--theme-hover-background) !important;
+  color: var(--theme-hover-color) !important;
 }
 
 .waterfall-marker-item {
@@ -147,7 +140,7 @@
 
 .waterfall-marker-container.selected .waterfall-marker-bullet,
 .waterfall-marker-container.selected .waterfall-marker-bar {
-  border-color: initial!important;
+  border-color: initial !important;
 }
 
 #timeline-waterfall-details {

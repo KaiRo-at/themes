@@ -114,7 +114,7 @@ menubar {
   height: 1px;
 }
 
-#navigator-toolbox > toolbar:not(:-moz-lwtheme) {
+#navigator-toolbox > toolbar {
 }
 
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(:-moz-lwtheme) {
