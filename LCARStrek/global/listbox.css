@@ -52,14 +52,26 @@ listbox:focus > listitem[selected="true"] {
 
 listheader {
   -moz-box-align: center;
-  border: 1px solid #FFCF00;
+  border: 1px solid #FF9F00;
+  border-left-top-radius: 3px;
+  border-right-top-radius: 3px;
   background-color: #9C9CFF;
   color: #000000;
-  padding: 0 4px;
+  padding: 0;
+}
+
+listheader > treecol {
+  -moz-border-start: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+listheader > treecol:last-child {
+  -moz-border-end: none;
 }
 
 listheader[sortable="true"]:hover:active {
-  border: 1px solid #FFCF00;
+  border: 1px solid #FF9F00;
   padding-top: 1px;
   padding-bottom: 0px;
   -moz-padding-start: 5px;
@@ -71,7 +83,7 @@ listheader[sortable="true"]:hover:active {
 }
 
 .listheader-label {
-  margin: 0px !important;
+  margin: 0 4px !important;
 }
 
 /* ..... sort direction icon ..... */

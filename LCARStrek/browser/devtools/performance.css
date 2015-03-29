@@ -438,10 +438,6 @@
 
 /* Profile call tree */
 
-.call-tree-headers-container {
-  border-top: 1px solid var(--theme-splitter-color);
-}
-
 .call-tree-cells-container {
   /* Hack: force hardware acceleration */
   transform: translateZ(1px);

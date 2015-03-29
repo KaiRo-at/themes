@@ -402,15 +402,6 @@ div.CodeMirror span.eval-text {
  border-bottom: 0;
 }
 
-.devtools-horizontal-splitter {
-/*  border-bottom: 1px solid var(--theme-splitter-color); */
-}
-
-.devtools-side-splitter {
-/*  -moz-border-end: 1px solid var(--theme-splitter-color);
-  border-color: var(--theme-splitter-color); / Needed for responsive container at low width. */
-}
-
 .devtools-textinput,
 .devtools-searchinput {
   background-color: #000000;
@@ -973,6 +964,15 @@ div.CodeMirror span.eval-text {
 .hidden-labels-box:not(.visible) > label,
 .hidden-labels-box.visible ~ .hidden-labels-box > label:last-child {
   display: none;
+}
+
+.devtools-horizontal-splitter {
+/*  border-bottom: 1px solid var(--theme-splitter-color); */
+}
+
+.devtools-side-splitter {
+/*  -moz-border-end: 1px solid var(--theme-splitter-color);
+  border-color: var(--theme-splitter-color); / Needed for responsive container at low width. */
 }
 
 /* === END toolbars.inc.css === */

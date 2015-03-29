@@ -10,7 +10,12 @@
   background-color: #FF9F00;
   border-color: #A09090;
   border-style: dotted;
-  color: #000000;
+  color: var(--theme-selection-color);
+}
+
+.margin,
+.size {
+  color: var(--theme-selection-color);
 }
 
 #content {

@@ -91,11 +91,11 @@ window {
   color: #8050B0;
 }
 
-#sources .selected > .black-boxed {
+#sources .selected .black-boxed {
   color: #000000;
 }
 
-#sources .black-boxed > .dbg-breakpoint {
+#sources .black-boxed ~ .dbg-breakpoint {
   display: none;
 }
 

@@ -163,6 +163,12 @@ treecol {
   -moz-image-region: rect(24px, 168px, 48px, 144px);
 }
 
+@media (max-width: 800px) {
+  .category-name {
+    display: none;
+  }
+}
+
 /* header */
 
 #header-advanced {
@@ -200,81 +206,8 @@ treecol {
   -moz-margin-start: 0;
 }
 
-#handlersView {
-  -moz-margin-start: 0;
-  font-size: 1.25rem;
-  line-height: 22px;
-  border: none; /*1px solid #9C9CFF;*/
-  margin: 0;
-  overflow-y: auto;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  height: 500px;
-}
-
-#handlersView > listheader > treecol {
-}
-
-#handlersView > scrollbox {
-  border-left: 1px solid #9C9CFF;
-  border-right: 1px solid #9C9CFF;
-  border-bottom: 1px solid #9C9CFF;
-}
-
-#handlersView > listheader {
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-
-#typeColumn,
-#actionColumn {
-  line-height: 20px;
-/*  color: #737980;
-  height: 36px;
-  padding: 0 10px;
-  background-color: #F7F7F7;
-  border: 1px solid #CCCCCC;
-  -moz-border-top-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-*/
-}
-
-#typeColumn:-moz-locale-dir(ltr),
-#actionColumn:-moz-locale-dir(rtl) {
-  border-top-left-radius: 5px;
-}
-
-#typeColumn:-moz-locale-dir(rtl),
-#actionColumn:-moz-locale-dir(ltr) {
-  border-top-right-radius: 5px;
-}
-/*
-#typeColumn:hover,
-#actionColumn:hover {
-  border-color: #737980;
-}
-
-#typeColumn:hover:active,
-#actionColumn:hover:active {
-  padding: 0 10px;
-  border-color: #0096DC;
-}
-*/
-#typeColumn > .treecol-sortdirection[sortDirection=ascending],
-#actionColumn > .treecol-sortdirection[sortDirection=ascending],
-#typeColumn > .treecol-sortdirection[sortDirection=descending],
-#actionColumn > .treecol-sortdirection[sortDirection=descending] {
-}
-
-#typeColumn > .treecol-sortdirection[sortDirection=descending],
-#actionColumn > .treecol-sortdirection[sortDirection=descending] {
-}
-
 #handlersView > richlistitem {
-  min-height: 40px !important;
+  min-height: 36px !important;
 }
 
 .typeIcon {
@@ -288,8 +221,7 @@ treecol {
 }
 
 .actionsMenu {
-  height: 40px;
-  max-height: 40px;
+  min-height: 36px;
 }
 
 .actionsMenu > menupopup > menuitem {
@@ -304,16 +236,6 @@ treecol {
    bug has a solution. */
 description > html|a {
   cursor: pointer;
-}
-
-#offlineAppsList,
-#syncEnginesList {
-/*  -moz-appearance: none;
-  color: #737980;
-  padding: 10px;
-  border: 1px solid rgba(23,50,77,0.4);
-  border-radius: 5px;
-  background-color: #F1F1F1;*/
 }
 
 #noFxaAccount {
