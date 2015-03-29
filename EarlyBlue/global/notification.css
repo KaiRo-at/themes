@@ -1,19 +1,24 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 notification {
-  background-color : #FFFFCC;
   color: #000000;
+  background-color : #FFFFCC;
   text-shadow: none;
 }
 
 notification[type="info"] {
-  background-color: #CCD0DD;
   color: #000000;
+  background-color: #CCD0DD;
 }
 
 notification[type="critical"] {
-  background-color: #FFC0C0;
   color: #000000;
+  background-color: #FFC0C0;
+}
+
+.messageText > .text-link {
+  color: inherit !important;
+  text-decoration: underline;
 }
 
 .messageImage {
