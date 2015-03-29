@@ -230,7 +230,7 @@ a {
 }
 
 .message:hover {
-  background-color: #404000;
+  background-color: var(--theme-contrast-background);
 }
 
 .message[severity=error] {

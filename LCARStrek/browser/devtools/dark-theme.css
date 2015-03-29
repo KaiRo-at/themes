@@ -21,6 +21,7 @@
   --theme-selection-color: #000000;
   --theme-selection-background2: #004242;
   --theme-selection-color2: #FF9F00;
+  --theme-selection-background-semitransparent: rgba(0, 132, 132, .5);
   --theme-splitter-color: #9C9CFF;
   --theme-comment: #A09090;
 
@@ -63,7 +64,7 @@
 }
 
 .theme-bg-darker {
-  background-color: rgba(0,0,0,0.5);
+  background: var(--theme-selection-background-semitransparent);
 }
 
 .theme-selected,
