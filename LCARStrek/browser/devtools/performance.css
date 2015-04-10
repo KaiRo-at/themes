@@ -71,11 +71,13 @@
   list-style-image: url(performance-icons.svg#details-waterfall);
 }
 
+#select-calltree-view,
 #select-js-calltree-view,
 #select-memory-calltree-view {
   list-style-image: url(performance-icons.svg#details-call-tree);
 }
 
+#select-flamegraph-view,
 #select-js-flamegraph-view,
 #select-memory-flamegraph-view {
   list-style-image: url(performance-icons.svg#details-flamegraph);

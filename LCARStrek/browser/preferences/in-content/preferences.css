@@ -196,6 +196,13 @@ treecol {
   font-weight: bold;
 }
 
+/* Content pane */
+#playDRMContentLink {
+  /* Line up with the buttons in the other grid bits: */
+  margin-left: 4px !important;
+  margin-right: 4px !important;
+}
+
 /* Applications Pane Styles */
 
 #applicationsContent {
@@ -259,6 +266,10 @@ description > html|a {
   padding-bottom: 0; /* no padding needed in inContent prefs */
 }
 
+#tabsElement {
+/*  -moz-margin-end: 4px; / add the 4px end-margin of other elements */
+}
+
 #encryptionPanel {
   margin-top: 15px;
 }
@@ -294,6 +305,7 @@ description > html|a {
 
 #dialogBox {
   background-color: #000000;
+  background-clip: content-box;
   color: #FF9F00;
   /* font-size: 14px; */
   border: 1px solid #9C9CFF;
@@ -352,6 +364,28 @@ description > html|a {
 /**
  * End Dialog
  */
+
+/**
+ * Sync migration
+ */
+#sync-migrate-upgrade-description {
+  /* description elts need a min-width to wrap correctly - bug 630864? */
+  min-width: 100px
+}
+
+#sync-migration {
+  border: 1px solid #9C9CFF;
+  background-color: #000000;
+  color: #A09090;
+  text-shadow: none;
+  margin: 5px 0 0 0;
+  animation: fadein 3000ms;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 /* === END shared/in-content/preferences.css === */
 

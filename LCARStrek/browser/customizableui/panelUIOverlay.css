@@ -550,11 +550,17 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-fxa-status {
+  -moz-padding-start: 15px;
   list-style-image: url("chrome://browser/skin/syncFx-horizontalbar.png");
 }
 
 #PanelUI-fxa-status[syncstatus="active"] {
   list-style-image: url("chrome://browser/skin/syncFxProgress-horizontalbar.png");
+}
+
+#PanelUI-fxa-status[fxastatus="migrate-signup"],
+#PanelUI-fxa-status[fxastatus="migrate-verify"] {
+  list-style-image: url(chrome://global/skin/warning-16.png);
 }
 
 #PanelUI-customize {
@@ -609,6 +615,10 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 
 #PanelUI-fxa-status:not([disabled]):hover,
 #PanelUI-fxa-status:not([disabled]):hover:active {
+}
+
+#PanelUI-update-status {
+/*  color: black; */
 }
 
 #PanelUI-update-status[update-status="succeeded"] {
@@ -671,6 +681,7 @@ panelview .toolbarbutton-1,
 .subviewbutton,
 .widget-overflow-list .toolbarbutton-1,
 .panelUI-grid .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+.share-provider-button,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton {
 /*  padding: 0 6px;
   background-color: hsla(210,4%,10%,0);
@@ -682,6 +693,7 @@ panelview .toolbarbutton-1,
 panelview .toolbarbutton-1,
 .subviewbutton,
 .widget-overflow-list .toolbarbutton-1,
+.share-provider-button,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton {
   border-width: 0;
 }
@@ -754,6 +766,7 @@ panelview .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)):hover,
 toolbarbutton.subviewbutton:not(:-moz-any([disabled],[open],:active)):hover,
 menu.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive],
 menuitem.subviewbutton:not(:-moz-any([disabled],:active))[_moz-menuactive],
+.share-provider-button:not(:-moz-any([disabled],[open],:active)):hover,
 .widget-overflow-list .toolbarbutton-1:not(:-moz-any([disabled],[open],:active)):hover,
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])
     > toolbarbutton:not(:-moz-any([disabled],[checked="true"],[open],:active)):hover {
@@ -769,6 +782,7 @@ panelview .toolbarbutton-1:-moz-any(:not([disabled]):-moz-any([open],:hover:acti
 toolbarbutton.subviewbutton:not([disabled]):-moz-any([open],:hover:active),
 menu.subviewbutton:not([disabled])[_moz-menuactive]:active,
 menuitem.subviewbutton:not([disabled])[_moz-menuactive]:active,
+.share-provider-button:not([disabled]):-moz-any([open],:hover:active),
 .widget-overflow-list .toolbarbutton-1:not([disabled]):-moz-any([open],:hover:active),
 .toolbaritem-combined-buttons:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true])
     > toolbarbutton:not([disabled]):-moz-any([open],:hover:active) {
