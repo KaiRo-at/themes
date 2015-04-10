@@ -2347,6 +2347,62 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
+/* === BEGIN readinglist.inc.css === */
+
+/* Reading List button */
+
+#urlbar:not([focused]):not(:hover) #readinglist-addremove-button {
+  opacity: 0;
+  width: 0px;
+}
+
+#readinglist-addremove-button {
+  list-style-image: url("chrome://browser/skin/readinglist/icons.svg#addpage");
+  -moz-image-region: rect(0, 14px, 14px, 0);
+  transition: width 150ms ease-in-out, opacity 150ms ease-in-out 150ms;
+  opacity: 1;
+  width: 20px;
+}
+
+#readinglist-addremove-button:hover {
+  list-style-image: url("chrome://browser/skin/readinglist/icons.svg#addpage-hover");
+}
+
+#readinglist-addremove-button:active {
+  list-style-image: url("chrome://browser/skin/readinglist/icons.svg#addpage-active");
+}
+
+#readinglist-addremove-button[already-added="true"] {
+  list-style-image: url("chrome://browser/skin/readinglist/icons.svg#alreadyadded");
+}
+
+#readinglist-addremove-button[already-added="true"]:hover {
+  list-style-image: url("chrome://browser/skin/readinglist/icons.svg#alreadyadded-hover");
+}
+
+#readinglist-addremove-button[already-added="true"]:active {
+  list-style-image: url("chrome://browser/skin/readinglist/icons.svg#alreadyadded-active");
+}
+
+/* === END readinglist.inc.css === */
+
+/* Reader mode button */
+
+#reader-mode-button {
+  list-style-image: url("chrome://browser/skin/readerMode.svg");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+#reader-mode-button:hover,
+#reader-mode-button[readeractive]:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+#reader-mode-button:hover:active,
+#reader-mode-button[readeractive] {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
+}
+
 /* social share panel */
 
 .social-share-frame {
@@ -2528,8 +2584,22 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 /* ::::: content area ::::: */
 
+#sidebar-box {
+  background-color: #9C9CFF;
+  color: #000000;
+}
+
 #sidebar {
-  background-color: Window;
+  background-color: #000000;
+}
+
+#sidebar-splitter {
+  -moz-margin-start: 0;
+}
+
+#sidebar-header {
+  color: #000000;
+  padding: 2px;
 }
 
 #sidebar-title {
@@ -2546,6 +2616,16 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 #sidebar-header > .close-icon:hover,
 #sidebar-header > .close-icon:hover:active {
   list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+}
+
+#sidebar-splitter:-moz-locale-dir(ltr),
+#sidebar:-moz-locale-dir(ltr) {
+  border-radius: 0 5px 0 0;
+}
+
+#sidebar-splitter:-moz-locale-dir(rtl),
+#sidebar:-moz-locale-dir(rtl) {
+  border-radius: 5px 0 0 0;
 }
 
 .browserContainer > findbar {
@@ -3445,6 +3525,12 @@ notification[value="translation"] {
 #BMB_unsortedBookmarks,
 #panelMenu_unsortedBookmarks {
   list-style-image: url("chrome://communicator/skin/bookmarks/unsortedBookmarks.png");
+  -moz-image-region: auto;
+}
+
+#menu_readingList,
+#BMB_readingList {
+  list-style-image: url("chrome://browser/skin/readinglist/readinglist-icon.svg");
   -moz-image-region: auto;
 }
 
