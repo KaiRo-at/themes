@@ -320,14 +320,14 @@
 }
 
 #header-utils-btn {
-  list-style-image: url("chrome://mozapps/skin/extensions/utilities.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities");
   -moz-margin-end: 16px;
 }
 
 #header-utils-btn:hover,
 #header-utils-btn:hover:active,
 #header-utils-btn[open="true"] {
-  list-style-image: url("chrome://mozapps/skin/extensions/utilities-hover.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities-hover");
 }
 
 #header-utils-btn > .button-box > .button-menu-dropmarker {

@@ -6,93 +6,48 @@
    == Styles for about:config
    ======================================================================= */
 
-@import url("chrome://global/skin/");
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-#config {
-  padding: 0;
+#warningScreen {
+  font-size: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+  -moz-padding-start: calc(48px + 4.6em);
+  -moz-padding-end: 48px;
 }
 
-/* ::::: warning screen ::::: */
-
-#warningScreen
-{
-  background: #000000;
+.title {
+  background-image: url("chrome://global/skin/icons/warning.svg");
 }
 
-#warningBox
-{
-  background: #000000;
-  color: #FF9F00;
-  border: 1px solid #9C9FFF;
-  border-radius: 10px;
-  padding: 3em;
-  -moz-padding-start: 30px;
-  -moz-margin-start: 1em;
-  -moz-margin-end: 1em;
+#warningTitle {
+  font-weight: lighter;
+  line-height: 1.2;
+  color: #9C9CFF;
+  margin: 0;
+  margin-bottom: .5em;
 }
 
-#warningInnerBox
-{
- max-width: 50em;
+#warningText {
+  margin: 1em 0;
 }
 
-#warningTitle
-{
-  margin: 0 0 .6em;
-  font-size: 160%;
-  border-bottom: 1px solid #008484;
-}
-
-#warningText
-{
-  font-size: 110%;
-  -moz-margin-start: 0;
-}
-
-#warningButton
-{
+#warningButton {
   margin-top: 0.6em;
 }
 
-#showWarningNextTime
-{
-  margin-top: 0.6em;
+#filterRow {
+  margin-top: 4px;
+  -moz-margin-start: 4px;
 }
 
-#exclam
-{
-  list-style-image: url("chrome://global/skin/icons/alert-exclam.gif");
-  -moz-margin-end: 3em;
+#configTree {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
-/* ::::: tree rows ::::: */
-
-#configTreeBody::-moz-tree-cell-text(user)
-{
+#configTreeBody::-moz-tree-cell-text(user) {
   font-weight: bold;
 }
 
-#configTreeBody::-moz-tree-cell-text(locked)
-{
+#configTreeBody::-moz-tree-cell-text(locked) {
   font-style: italic;
-}
-
-#configTree
-{
-  margin-top: 3px;
-}
-
-#filterRow
-{
-}
-
-#filterRow > label
-{
-  -moz-margin-start: 0;
-}
-
-#textbox
-{
-  -moz-margin-end: 0;
 }

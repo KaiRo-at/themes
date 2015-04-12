@@ -81,7 +81,7 @@ td {
   overflow: hidden;
 }
 
-#reset-box {
+#action-box {
   background-color: #CCD0DD;
   border: 1px solid #666699;
   color: #000000;
@@ -92,10 +92,15 @@ td {
   -moz-margin-end: 0;
   padding: 16px;
   width: 30%;
-  visibility: hidden;
 }
 
-#reset-box:-moz-dir(rtl) {
+#action-box,
+#reset-box,
+#safe-mode-box {
+  display: none;
+}
+
+#action-box:-moz-dir(rtl) {
   float: left;
 }
 
@@ -103,7 +108,7 @@ td {
   margin-top: 0;
 }
 
-#reset-box > button {
+#action-box > button {
   display: block;
 }
 

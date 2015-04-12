@@ -46,6 +46,7 @@ checkbox:-moz-focusring > .checkbox-label-center-box > .checkbox-label-box {
 
 /* ..... disabled state ..... */
 
+checkbox[disabled="true"] > .checkbox-check,
 checkbox[disabled="true"] > .checkbox-spacer-box > .checkbox-check {
   background-color: #CCD0DD;
 }
@@ -58,21 +59,30 @@ checkbox[disabled="true"] {
 
 .checkbox-check {
   border: 1px inset #CCD0DD;
-  width: 12px;
-  height: 12px;
+  width: 1em;
+  height: 1em;
+  min-width: 12px;
+  min-height: 12px;
   background: transparent 50% 50% no-repeat;
 }
 
+checkbox > .checkbox-check {
+  -moz-margin-end: 4px;
+}
+
+checkbox:hover:active > .checkbox-check,
 checkbox:hover:active > .checkbox-spacer-box > .checkbox-check {
   background-color: #CCD0DD;
 }
 
 /* ..... checked state ..... */
 
+checkbox[checked="true"] > .checkbox-check,
 checkbox[checked="true"] > .checkbox-spacer-box > .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
 }
 
+checkbox[checked="true"][disabled="true"] > .checkbox-check,
 checkbox[checked="true"][disabled="true"] > .checkbox-spacer-box > .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check-disabled.gif") !important
 }
