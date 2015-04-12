@@ -90,3 +90,38 @@ checkbox[checked="true"]:hover:active > .checkbox-spacer-box > .checkbox-check {
 checkbox[checked="true"][disabled="true"] > .checkbox-spacer-box > .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check-disabled.gif") !important;
 }
+
+/* ..... checkbox in groupbox caption ..... */
+
+caption > checkbox {
+  border-radius: 7px;
+  border: 0;
+  margin: 0 -3px;
+  padding: 0 5px;
+}
+
+caption > checkbox:hover {
+  background-color: #FFCF00;
+}
+
+caption > checkbox:hover:active {
+  background-color: #FF9F00;
+}
+
+caption > checkbox:not([disabled="true"]) > .checkbox-label-center-box > .checkbox-label-box,
+caption > checkbox:not([disabled="true"]):hover > .checkbox-label-center-box > .checkbox-label-box,
+caption > checkbox:not([disabled="true"]):hover:active > .checkbox-label-center-box > .checkbox-label-box {
+  color: inherit;
+}
+
+caption > checkbox:not([disabled="true"]) > .checkbox-spacer-box > .checkbox-check,
+caption > checkbox:not([disabled="true"]):hover > .checkbox-spacer-box > .checkbox-check,
+caption > checkbox:not([disabled="true"]):hover:active > .checkbox-spacer-box > .checkbox-check {
+  border-color: #000000;
+}
+
+caption > checkbox[checked="true"] > .checkbox-spacer-box > .checkbox-check,
+caption > checkbox[checked="true"]:hover > .checkbox-spacer-box > .checkbox-check,
+caption > checkbox[checked="true"]:hover:active > .checkbox-spacer-box > .checkbox-check {
+  background-image: url("chrome://global/skin/checkbox/cbox-check-inverted.gif");
+}
