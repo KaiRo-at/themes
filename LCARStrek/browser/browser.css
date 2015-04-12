@@ -334,6 +334,7 @@ toolbarbutton.bookmark-item[open="true"] {
 
 #bookmarks-toolbar-placeholder {
   list-style-image: url("chrome://communicator/skin/bookmarks/bookmarksToolbar.png") !important;
+  -moz-box-orient: horizontal;
 }
 
 toolbarpaletteitem[place="palette"] > #personal-bookmarks > #bookmarks-toolbar-placeholder,
