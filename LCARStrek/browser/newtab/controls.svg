@@ -19,7 +19,7 @@
       }
 
       .glyphShape-style-pin {
-        fill: #FFCF00;
+        fill: #000000;
       }
 
       .glyphShape-style-hover-gear {

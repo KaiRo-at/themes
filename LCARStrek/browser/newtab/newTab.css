@@ -168,7 +168,8 @@
   background-size: 10px;
   content: "";
   height: 17px;
-  left: 0;
+  left: 5px;
+  top: 5px;
   position: absolute;
   width: 10px;
 }
