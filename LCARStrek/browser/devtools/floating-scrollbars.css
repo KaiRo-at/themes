@@ -5,19 +5,19 @@ scrollbar {
   background-color: transparent;
   background-image: none;
   z-index: 2147483647;
-  /*padding: 2px;*/
+  padding: 2px;
 }
 
 scrollbar[orient="vertical"] {
   -moz-margin-start: -10px;
-  min-width: 6px;
-  max-width: 6px;
+  min-width: 3px;
+  max-width: 3px;
 }
 
 scrollbar[orient="horizontal"] {
   margin-top: -10px;
-  min-height: 6px;
-  max-height: 6px;
+  min-height: 3px;
+  max-height: 3px;
 }
 
 scrollbar slider {
@@ -25,11 +25,19 @@ scrollbar slider {
   border-radius: 3px;
 }
 
+scrollbar:not(:hover) slider {
+  background-color: rgba(64, 64, 72, 0.3);
+}
+
 scrollbar thumb {
   border-width: 0px !important;
-/*  background-color: rgba(0,0,0,0.2) !important;*/
+/*  background-color: rgba(0,0,0,0.2) !important; */
   background-image: none;
   border-radius: 3px !important;
+}
+
+scrollbar:not(:hover) thumb {
+  background-color: rgba(160, 144, 144, 0.3) !important;
 }
 
 scrollbar scrollbarbutton, scrollbar gripper {
