@@ -483,6 +483,7 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-toolbar .devtools-toolbarbutton {
+  -moz-margin-start: 2px;
 }
 
 .devtools-toolbarbutton > .toolbarbutton-icon {

@@ -199,6 +199,10 @@ a {
 
 /* WebConsole colored drops */
 
+.hud-console-filter-toolbar toolbarbutton > .toolbarbutton-text {
+  padding: 2px 2px 3px;
+}
+
 .webconsole-filter-button {
   -moz-user-focus: normal;
 }
@@ -209,9 +213,14 @@ a {
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  margin-left: 5px;
+  -moz-margin-start: 2px;
+  -moz-margin-end: 2px;
   border-width: 1px;
   border-style: solid;
+}
+
+.webconsole-filter-button > .toolbarbutton-menubutton-button {
+  -moz-box-orient: horizontal;
 }
 
 .webconsole-filter-button menuitem {
@@ -569,6 +578,7 @@ a {
   .toolbarbutton-text {
     display: -moz-box;
   }
+  /*
   .devtools-toolbarbutton {
     margin-top: 3px;
   }
@@ -576,6 +586,7 @@ a {
   .hud-console-filter-toolbar .devtools-toolbarbutton {
     margin-top: 5px;
   }
+  */
 }
 
 /* === END webconsole.inc.css === */

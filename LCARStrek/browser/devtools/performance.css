@@ -28,6 +28,30 @@
   -moz-padding-end: 8px;
 }
 
+#filter-button {
+  list-style-image: url(timeline-filter.svg#filter);
+  min-width: 24px;
+}
+
+#filter-button[disabled] {
+  list-style-image: url(timeline-filter.svg#filter-disabled);
+}
+
+#filter-button:not([disabled]):hover,
+#filter-button:not([disabled]):hover:active,
+#filter-button[open] {
+  list-style-image: url(timeline-filter.svg#filter-open);
+}
+
+#performance-filter-menupopup > menuitem:before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 0 8px;
+  border-radius: 1px;
+}
+
 /* Recording Notice */
 
 #performance-view .notice-container {
@@ -46,6 +70,12 @@
 /* Overview Panel */
 
 .record-button {
+  list-style-image: url(profiler-stopwatch-tbutton.svg);
+}
+
+#empty-notice > .record-button,
+.record-button:hover,
+.record-button:hover:active {
   list-style-image: url(profiler-stopwatch.svg);
 }
 
@@ -71,16 +101,46 @@
   list-style-image: url(performance-icons.svg#details-waterfall);
 }
 
+#select-waterfall-view:hover,
+#select-waterfall-view:hover:active,
+#select-waterfall-view[checked] {
+  list-style-image: url(performance-icons.svg#details-waterfall-active);
+}
+
 #select-calltree-view,
 #select-js-calltree-view,
 #select-memory-calltree-view {
   list-style-image: url(performance-icons.svg#details-call-tree);
 }
 
+#select-calltree-view:hover,
+#select-calltree-view:hover:active,
+#select-calltree-view[checked],
+#select-js-calltree-view:hover,
+#select-js-calltree-view:hover:active,
+#select-js-calltree-view[checked],
+#select-memory-calltree-view:hover,
+#select-memory-calltree-view:hover:active,
+#select-memory-calltree-view[checked] {
+  list-style-image: url(performance-icons.svg#details-call-tree-active);
+}
+
 #select-flamegraph-view,
 #select-js-flamegraph-view,
 #select-memory-flamegraph-view {
   list-style-image: url(performance-icons.svg#details-flamegraph);
+}
+
+#select-flamegraph-view:hover,
+#select-flamegraph-view:hover:active,
+#select-flamegraph-view[checked],
+#select-js-flamegraph-view:hover,
+#select-js-flamegraph-view:hover:active,
+#select-js-flamegraph-view[checked],
+#select-memory-flamegraph-view:hover,
+#select-memory-flamegraph-view:hover:active,
+#select-memory-flamegraph-view[checked] {
+  list-style-image: url(performance-icons.svg#details-flamegraph-active);
 }
 
 /* Profile call tree */
