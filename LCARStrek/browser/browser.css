@@ -2655,6 +2655,11 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 /* === BEGIN tabs.inc.css === */
 
+:root {
+  /* --tab-toolbar-navbar-overlap: 1px; */
+  /* --tab-min-height: 31px; */
+}
+
 .tabbrowser-tab,
 .tabs-newtab-button,
 #TabsToolbar > #new-tab-button {

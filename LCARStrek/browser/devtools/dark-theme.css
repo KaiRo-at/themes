@@ -206,7 +206,8 @@
 
 .theme-toolbar,
 .devtools-toolbar,
-.devtools-sidebar-tabs > tabs,
+.devtools-sidebar-tabs tabs,
+.devtools-sidebar-alltabs,
 .CodeMirror-dialog { /* General toolbar styling */
 /*  color: var(--theme-body-color-alt);
   background-color: var(--theme-toolbar-background);*/
@@ -424,7 +425,8 @@ div.CodeMirror span.eval-text {
 
 /* Toolbars */
 .devtools-toolbar,
-.devtools-sidebar-tabs > tabs {
+.devtools-sidebar-tabs tabs,
+.devtools-sidebar-alltabs {
 }
 
 .devtools-toolbar {
@@ -708,17 +710,28 @@ div.CodeMirror span.eval-text {
   border: 0;
 }
 
-.devtools-sidebar-tabs > tabs {
+.devtools-sidebar-tabs tabs {
   position: static;
   overflow: hidden;
 }
 
-.devtools-sidebar-tabs > tabs > .tabs-right,
-.devtools-sidebar-tabs > tabs > .tabs-left {
+.devtools-sidebar-alltabs {
+/*  margin: 0;
+  border-width: 0 0 1px 0;
+  -moz-border-start-width: 1px;
+  border-style: solid;*/
+}
+
+.devtools-sidebar-alltabs dropmarker {
   display: none;
 }
 
-.devtools-sidebar-tabs > tabs > tab {
+.devtools-sidebar-tabs tabs > .tabs-right,
+.devtools-sidebar-tabs tabs > .tabs-left {
+  display: none;
+}
+
+.devtools-sidebar-tabs tabs > tab {
   min-width: 78px;
   text-align: center;
   -moz-box-flex: 1;
@@ -726,34 +739,34 @@ div.CodeMirror span.eval-text {
   margin-top: 0;
 }
 
-.devtools-sidebar-tabs > tabs > tab:-moz-focusring {
+.devtools-sidebar-tabs tabs > tab:-moz-focusring {
   position: static;
 }
 
-.devtools-sidebar-tabs > tabs > tab:last-of-type {
+.devtools-sidebar-tabs tabs > tab:last-of-type {
   -moz-border-end-width: 0;
 }
 
-.devtools-sidebar-tabs > tabs > tab:first-child {
+.devtools-sidebar-tabs tabs > tab:first-child {
 }
 
-.devtools-sidebar-tabs > tabs > tab:hover {
+.devtools-sidebar-tabs tabs > tab:hover {
 }
 
-.devtools-sidebar-tabs > tabs > tab:hover:active {
+.devtools-sidebar-tabs tabs > tab:hover:active {
 }
 
-.devtools-sidebar-tabs > tabs > tab[selected] + tab {
+.devtools-sidebar-tabs tabs > tab[selected] + tab {
 }
 
-.devtools-sidebar-tabs > tabs > tab[selected] + tab:hover {
+.devtools-sidebar-tabs tabs > tab[selected] + tab:hover {
 }
 
-.devtools-sidebar-tabs > tabs > tab[selected] + tab:hover:active {
+.devtools-sidebar-tabs tabs > tab[selected] + tab:hover:active {
 }
 
-.devtools-sidebar-tabs > tabs > tab[selected],
-.devtools-sidebar-tabs > tabs > tab[selected]:hover:active {
+.devtools-sidebar-tabs tabs > tab[selected],
+.devtools-sidebar-tabs tabs > tab[selected]:hover:active {
 }
 
 /* Toolbox - moved from toolbox.css.

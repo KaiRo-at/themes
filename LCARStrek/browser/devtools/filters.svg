@@ -13,4 +13,15 @@
     <feFuncB type="table" tableValues=".6 0"/>
   </feComponentTransfer>
  </filter>
+
+  <!-- Web Audio Gradients -->
+  <linearGradient id="bypass-light" x1="6%" y1="8%" x2="12%" y2="12%" spreadMethod="repeat">
+    <stop offset="0%" stop-color="#000000"/> <!-- theme-toolbar-background -->
+    <stop offset="50%" stop-color="#FFCF00"/>
+  </linearGradient>
+
+  <linearGradient id="bypass-dark" x1="6%" y1="8%" x2="12%" y2="12%" spreadMethod="repeat">
+    <stop offset="0%" stop-color="#000000"/> <!-- theme-toolbar-background -->
+    <stop offset="50%" stop-color="transparent"/>
+  </linearGradient>
 </svg>
