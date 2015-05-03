@@ -2,6 +2,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+#defaultEngine {
+}
+
 #defaultEngine > .menulist-label-box > .menulist-icon {
   height: 16px;
 }
@@ -12,7 +15,7 @@
 }
 
 #engineList {
-  margin: .5em 6px;
+  margin: .5em 2px;
 }
 /*
 #engineList treechildren::-moz-tree-image(engineShown, checked) {

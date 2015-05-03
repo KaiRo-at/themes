@@ -2,39 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  text-align: center;
-}
-
-#errorPageContainer {
-  background-image: url("chrome://global/skin/icons/alert-exclam.gif");
-  display: -moz-box;
-  width: -moz-available;
-  height: 70%;
-  -moz-box-orient: vertical;
-  text-align: start;
-}
-
-#errorShortDesc > p {
-  margin-top: 0.4em;
-  margin-bottom: 0;
-}
-
-#errorLongContent, #errorTrailerDesc {
-  display: -moz-box;
-  -moz-box-flex: 1;
-  -moz-box-orient: vertical;
-}
-
-#tabList {
-  margin-top: 2.5em;
-  width: 100%;
-  min-height: 12em;
+.title {
+  background-image: url("chrome://browser/skin/session-restore.svg");
 }
 
 treechildren::-moz-tree-image(icon),
@@ -54,6 +23,9 @@ treechildren::-moz-tree-image(container, noicon) {
 treechildren::-moz-tree-image(checked) {
   list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");
 }
+treechildren::-moz-tree-image(checked, selected) {
+  list-style-image: url("chrome://global/skin/checkbox/cbox-check-inverted.gif");
+}
 treechildren::-moz-tree-image(partial) {
   list-style-image: url("chrome://global/skin/checkbox/cbox-check-disabled.gif");
 }
@@ -65,11 +37,4 @@ treechildren::-moz-tree-row(alternate) {
 treechildren::-moz-tree-row(alternate, selected) {
   background-color: #008484;
   color: #000000;
-}
-
-#buttons {
-  width: 100%;
-}
-#buttons > button {
-  margin-top: 2em;
 }

@@ -45,11 +45,17 @@ treecol {
 /* Category List */
 
 #categories {
+  max-height: 100vh;
+
   background-color: #A09090;
   padding-top: 4em;
   margin: 0;
   border-radius: 1em 0 0 0;
   border: none;
+}
+
+#categories > scrollbox {
+  overflow-x: hidden !important;
 }
 
 .category {
@@ -83,6 +89,16 @@ treecol {
   padding-bottom: 2px;
   -moz-padding-start: 9px;
   margin: 0;
+}
+
+/**
+ * We want the last category to always have non-0 getBoundingClientRect().bottom
+ * so we can use the value to figure out the max-height of the list in
+ * preferences.js, so use collapse instead of display: none; if it's hidden
+ */
+#categories > .category[hidden="true"] {
+  display: -moz-box;
+  visibility: collapse;
 }
 
 .category-icon {
@@ -182,6 +198,43 @@ treecol {
 }
 
 /* General Pane */
+
+#startupTable {
+  border-collapse: collapse;
+}
+
+#startupTable > tr > td {
+  padding: 0; /* remove the padding from html.css */
+}
+
+#startupTable > tr:not(:first-child) > td {
+  padding-top: 0.5em; /* add a spacing between the rows */
+}
+
+#startupTable > tr > .label-cell {
+  text-align: end;
+  width: 0; /* make the column as small as possible */
+}
+
+#startupTable > tr > .label-cell > label {
+  white-space: nowrap;
+}
+
+#startupTable > tr > .content-cell > menulist,
+#startupTable > tr > .content-cell > textbox {
+  width: calc(100% - 8px);
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#startupTable > tr > .homepage-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#startupTable > tr > .homepage-buttons > .content-cell-item {
+  flex-grow: 1;
+}
 
 #useFirefoxSync  {
   font-size: 90%;

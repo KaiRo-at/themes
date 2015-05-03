@@ -2658,6 +2658,8 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 :root {
   /* --tab-toolbar-navbar-overlap: 1px; */
   /* --tab-min-height: 31px; */
+  /* --tab-curve-width: 30px; */
+  /* --tab-curve-half-width: 15px; */
 }
 
 .tabbrowser-tab,
@@ -2701,7 +2703,10 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 .tab-content {
 }
 
-.tab-/*throbber*/,
+.tab-content[pinned] {
+}
+
+.tab-throbber,
 .tab-icon-image,
 .tab-close-button {
 }
@@ -2710,10 +2715,24 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 .tab-icon-image {
   height: 16px;
   width: 16px;
+  -moz-margin-end: 3px;
 }
 
 .tab-icon-image {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+}
+
+.tab-icon-overlay {
+  width: 16px;
+  height: 16px;
+ /* margin-top: 10px; */
+  -moz-margin-start: -16px;
+  display: none;
+}
+
+.tab-icon-overlay[crashed] {
+  display: -moz-box;
+  list-style-image: url("chrome://browser/skin/tabbrowser/crashed.svg");
 }
 
 .tab-throbber[busy] {
@@ -2722,11 +2741,6 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 .tab-throbber[progress] {
   list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.png");
-}
-
-.tab-throbber:not([pinned]),
-.tab-icon-image:not([pinned]) {
-  -moz-margin-end: 3px;
 }
 
 .tab-throbber[pinned],
@@ -2835,7 +2849,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 .tabs-newtab-button {
   width: 28px;
-  /* width: calc(36px + @tabCurveWidth@); */
+  /* width: calc(36px + var(--tab-curve-width)); */
 }
 
 /* === END tabs.inc.css === */
@@ -3209,7 +3223,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="indexedDB-permissions-prompt"],
-.popup-notification-icon[popupid="indexedDB-quota-prompt"],
 .popup-notification-icon[popupid*="offline-app-requested"],
 .popup-notification-icon[popupid="offline-app-usage"] {
   list-style-image: url("chrome://global/skin/icons/alert-question.gif");

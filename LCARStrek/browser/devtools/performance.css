@@ -107,15 +107,11 @@
   list-style-image: url(performance-icons.svg#details-waterfall-active);
 }
 
-#select-calltree-view,
 #select-js-calltree-view,
 #select-memory-calltree-view {
   list-style-image: url(performance-icons.svg#details-call-tree);
 }
 
-#select-calltree-view:hover,
-#select-calltree-view:hover:active,
-#select-calltree-view[checked],
 #select-js-calltree-view:hover,
 #select-js-calltree-view:hover:active,
 #select-js-calltree-view[checked],
@@ -125,15 +121,11 @@
   list-style-image: url(performance-icons.svg#details-call-tree-active);
 }
 
-#select-flamegraph-view,
 #select-js-flamegraph-view,
 #select-memory-flamegraph-view {
   list-style-image: url(performance-icons.svg#details-flamegraph);
 }
 
-#select-flamegraph-view:hover,
-#select-flamegraph-view:hover:active,
-#select-flamegraph-view[checked],
 #select-js-flamegraph-view:hover,
 #select-js-flamegraph-view:hover:active,
 #select-js-flamegraph-view[checked],

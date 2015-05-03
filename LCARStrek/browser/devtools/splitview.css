@@ -8,10 +8,13 @@
   color: var(--theme-body-color);
 }
 
-.loading .splitview-nav-container {
-  background-image: url("chrome://global/skin/icons/loading.gif");
-  background-repeat: no-repeat;
-  background-position: center center;
+.splitview-nav-container .devtools-throbber {
+  display: none;
+  text-align: center;
+}
+
+.loading .splitview-nav-container .devtools-throbber {
+  display: block;
 }
 
 .splitview-nav {

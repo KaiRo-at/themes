@@ -121,7 +121,7 @@ textbox[disabled] {
 }
 
 /* General Tab */
-groupbox.collapsable caption .caption-icon { 
+groupbox.collapsable caption .caption-icon {
   width: 9px;
   height: 9px;
   background-repeat: no-repeat;
@@ -137,7 +137,7 @@ groupbox.collapsable[closed="true"] {
   -moz-appearance: none;
 }
 
-groupbox.collapsable[closed="true"] > caption > .caption-icon { 
+groupbox.collapsable[closed="true"] > caption > .caption-icon {
   background-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
 }
 
@@ -145,11 +145,11 @@ groupbox.collapsable > caption:hover {
   background-color: #FFCF00;
 }
 
-groupbox.treebox { 
+groupbox.treebox {
   padding: 0;
 }
 
-groupbox.treebox > tree { 
+groupbox.treebox > tree {
   margin: 2px;
   margin-top: 0;
   border: none;
@@ -157,7 +157,7 @@ groupbox.treebox > tree {
   border-top-left-radius: 0;
 }
 
-groupbox.treebox > tree > treecols > treecol { 
+groupbox.treebox > tree > treecols > treecol {
   border: none;
   border-bottom: 1px solid #FF9F00;
   background-color: #A09090;
@@ -168,7 +168,7 @@ groupbox.treebox > tree > treechildren::-moz-tree-cell {
   padding: 0 3px;
 }
 
-#securityBox description { 
+#securityBox description {
   -moz-margin-start: 10px;
 }
 
@@ -233,7 +233,7 @@ treechildren::-moz-tree-cell-text(broken) {
   -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
 }
 */
-.feedTitle { 
+.feedTitle {
   font-weight: bold;
 }
 
@@ -276,10 +276,14 @@ treechildren::-moz-tree-cell-text(broken) {
 }
  
 #securityPanel .fieldLabel {
-  margin: 2px 10px 3px 10px;
+  margin: 2px 10px 3px;
 }
 
 #securityPanel .fieldValue {
   font-weight: bold;
-  margin: 2px 10px 0px 10px;
+  margin: 2px 10px 0px;
+}
+
+#securityPanel row {
+  -moz-box-align: center;
 }
