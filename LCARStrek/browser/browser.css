@@ -5504,6 +5504,7 @@ toolbarpaletteitem[place="toolbar"] {
 
 notification.heartbeat {
   background-color: #A09090;
+/*  height: 40px;*/
 }
 
 @keyframes pulse-onshow {
@@ -5540,17 +5541,15 @@ notification.heartbeat {
 
 .messageText.heartbeat {
   color: #000000;
-/*  font-weight: normal;
-  font-family: "Lucida Grande", Segoe, Ubuntu;
-  font-size: 14px;
-  line-height: 16px;
-  text-shadow: none; */
+/*  text-shadow: none; */
+  -moz-margin-start: 0px;
 }
 
 .messageImage.heartbeat {
-  width: 36px;
-  height: 36px;
-  -moz-margin-end: 10px;
+  width: 24px;
+  height: 24px;
+  -moz-margin-start: 8px;
+  -moz-margin-end: 8px;
 }
 
 .messageImage.heartbeat.pulse-onshow {
@@ -5567,9 +5566,25 @@ notification.heartbeat {
   animation-timing-function: linear;
 }
 
+/* Learn More link styles */
+.heartbeat > .text-link {
+  color: #3333FF;
+  -moz-margin-start: 0px;
+}
+
+.heartbeat > .text-link:hover {
+  color: #9C9CFF;
+  text-decoration: none;
+}
+
+.heartbeat > .text-link:hover:active {
+  color: #FF9F00;
+}
+
 /* Heartbeat UI Rating Star Classes */
 .heartbeat > #star-rating-container {
   display: -moz-box;
+/*  margin-bottom: 4px;*/
 }
 
 .heartbeat > #star-rating-container > #star5 {
@@ -5591,16 +5606,15 @@ notification.heartbeat {
 .heartbeat > #star-rating-container > .star-x  {
   background: url("chrome://browser/skin/heartbeat-star-off.svg");
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  /* Overrides the -moz-margin-end for all platforms defined in the .plain class */
+  -moz-margin-end: 4px !important;
+  width: 16px;
+  height: 16px;
 }
 
 .heartbeat > #star-rating-container > .star-x:hover,
 .heartbeat > #star-rating-container > .star-x:hover ~ .star-x {
   background: url("chrome://browser/skin/heartbeat-star-lit.svg");
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
 }
 
 /* === END UITour.inc.css === */

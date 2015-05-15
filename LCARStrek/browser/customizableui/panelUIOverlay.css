@@ -81,6 +81,12 @@
 #PanelUI-button:-moz-locale-dir(rtl) {
 }
 
+#PanelUI-menu-button[update-status="succeeded"] .toolbarbutton-badge::after {
+  content: url(chrome://browser/skin/update-badge.svg);
+  background-color: #008484;
+  height: 10px;
+}
+
 .panel-subviews {
   padding: 4px;
   -moz-margin-start: 38px;
