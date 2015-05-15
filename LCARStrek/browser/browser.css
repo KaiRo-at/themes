@@ -2839,12 +2839,6 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
   color: #000000;
 }
 
-/* Handle a case where the last separator in a customized tab bar with a
-   separated new tab button causes the width of the tab to extend and causes
-   jittering with a small tab curve width (Bug 1111091). */
-#TabsToolbar[currentset]:not([currentset*="tabbrowser-tabs,new-tab-button"]) #tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
-}
-
 /* New tab button */
 
 .tabs-newtab-button {
@@ -3524,6 +3518,18 @@ notification[value="translation"] {
 
 .translation-menupopup {
   -moz-appearance: none;
+}
+
+/* Loop/ Hello browser styles */
+
+notification[value="loop-sharing-notification"] .button-menubutton-button {
+  min-width: 0;
+  border: 0;
+  margin: 0;
+}
+
+notification[value="loop-sharing-notification"] .messageImage {
+  list-style-image: url(chrome://browser/skin/webRTC-shareScreen-16.png);
 }
 
 /* Bookmarks roots menu-items */
@@ -4758,6 +4764,17 @@ notification.pluginVulnerable .messageImage {
   list-style-image: url("chrome://browser/skin/drm-icon.svg#chains-pressed");
 }
 
+#eme-notification-icon[firstplay=true] {
+  animation: emeTeachingMoment 0.2s linear 0s 5 normal;
+}
+
+@keyframes emeTeachingMoment {
+  0% {transform: translateX(0); }
+  25% {transform: translateX(3px) }
+  75% {transform: translateX(-3px) }
+  100% { transform: translateX(0); }
+}
+
 /* === BEGIN customizeMode.inc.css === */
 
 /* Customization mode */
@@ -5483,54 +5500,6 @@ toolbarpaletteitem[place="toolbar"] {
   color: #000000;
 }
 
-.SearchHighlight {
-  -moz-margin-end: 6px;
-  font-size: 110%;
-  width: 225px;
-}
-
-.SearchHighlight label,
-.SearchHighlight description {
-  color: #008484;
-  margin: 0 0 8px 0;
-  padding: 0;
-}
-
-.SearchHighlightTitle {
-  font-weight: bold;
-}
-
-.SearchHighlight .dot {
-  width: 7px;
-  height: 7px;
-  background-image: -moz-image-rect(url("chrome://browser/skin/dots.png"), 0, 100%, 100%, 9);
-  background-size: 7px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  -moz-margin-end: 2px;
-}
-
-.SearchHighlight .dot.filled {
-  background-image: -moz-image-rect(url("chrome://browser/skin/dots.png"), 0, 7, 100%, 0);
-}
-
-.SearchHighlight button {
-  margin: 0;
-  /* On some platforms clicking the button will steal focus from the search box
-     causing the popup to close. */
-  -moz-user-focus: ignore;
-}
-
-@media not all and (max-resolution: 1dppx) {
-  .SearchHighlight .dot {
-    background-image: -moz-image-rect(url("chrome://browser/skin/dots@2x.png"), 0, 100%, 100%, 18);
-  }
-
-  .SearchHighlight .dot.filled {
-    background-image: -moz-image-rect(url("chrome://browser/skin/dots@2x.png"), 0, 14, 100%, 0);
-  }
-}
-
 /* Notification overrides for Heartbeat UI */
 
 notification.heartbeat {
@@ -5756,6 +5725,10 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
   width: 14px;
   height: 14px;
   margin: 9px;
+}
+
+#context-media-eme-learnmore {
+  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains");
 }
 
 #context-media-eme-learnmore {

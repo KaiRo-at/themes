@@ -436,6 +436,7 @@ box.requests-menu-status[code^="5"] {
 }
 
 .tabpanel-summary-value {
+  color: inherit;
   -moz-padding-start: 3px;
 }
 
@@ -519,10 +520,6 @@ box.requests-menu-status[code^="5"] {
 
 #security-tabpanel {
   overflow: auto;
-}
-
-#security-error-message {
-  white-space: pre-wrap;
 }
 
 .security-warning-icon {

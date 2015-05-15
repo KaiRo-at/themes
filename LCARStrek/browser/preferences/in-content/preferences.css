@@ -104,79 +104,78 @@ treecol {
 .category-icon {
   width: 24px;
   height: 24px;
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.png");
 }
 
 #category-general > .category-icon {
-  -moz-image-region: rect(0, 24px, 24px, 0);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#general");
 }
 
 #category-general:hover > .category-icon,
 #category-general[selected] > .category-icon {
-  -moz-image-region: rect(24px, 24px, 48px, 0);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#general-active");
 }
 
 #category-search > .category-icon {
-  -moz-image-region: rect(0, 192px, 24px, 168px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#search");
 }
 
 #category-search:hover > .category-icon,
 #category-search[selected] > .category-icon {
-  -moz-image-region: rect(24px, 192px, 48px, 168px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#search-active");
 }
 
 #category-content > .category-icon {
-  -moz-image-region: rect(0, 48px,  24px, 24px)
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#content");
 }
 
 #category-content:hover > .category-icon,
 #category-content[selected] > .category-icon {
-  -moz-image-region: rect(24px, 48px, 48px, 24px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#content-active");
 }
 
 #category-application > .category-icon {
-  -moz-image-region: rect(0, 72px,  24px, 48px)
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#applications");
 }
 
 #category-application:hover > .category-icon,
 #category-application[selected] > .category-icon {
-  -moz-image-region: rect(24px, 72px, 48px, 48px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#applications-active");
 }
 
 #category-privacy > .category-icon {
-  -moz-image-region: rect(0, 96px,  24px, 72px)
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#privacy");
 }
 
 #category-privacy:hover > .category-icon,
 #category-privacy[selected] > .category-icon {
-  -moz-image-region: rect(24px, 96px, 48px, 72px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#privacy-active");
 }
 
 #category-security > .category-icon {
-  -moz-image-region: rect(0, 120px,  24px, 96px)
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#security");
 }
 
 #category-security:hover > .category-icon,
 #category-security[selected] > .category-icon {
-  -moz-image-region: rect(24px, 120px, 48px, 96px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#security-active");
 }
 
 #category-sync > .category-icon {
-  -moz-image-region: rect(0, 144px, 24px, 120px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#sync");
 }
 
 #category-sync:hover > .category-icon,
 #category-sync[selected] > .category-icon {
-  -moz-image-region: rect(24px, 144px, 48px, 120px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#sync-active");
 }
 
 #category-advanced > .category-icon {
-  -moz-image-region: rect(0, 168px, 24px, 144px)
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#advanced");
 }
 
 #category-advanced:hover > .category-icon,
 #category-advanced[selected] > .category-icon {
-  -moz-image-region: rect(24px, 168px, 48px, 144px);
+  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#advanced-active");
 }
 
 @media (max-width: 800px) {
@@ -296,6 +295,20 @@ treecol {
   -moz-margin-end: 8px !important;
 }
 
+/* Collapse the non-active vboxes in decks to use only the height the
+   active vbox needs */
+#historyPane:not([selectedIndex="1"]) > #historyDontRememberPane,
+#historyPane:not([selectedIndex="2"]) > #historyCustomPane,
+#weavePrefsDeck:not([selectedIndex="1"]) > #hasAccount,
+#weavePrefsDeck:not([selectedIndex="2"]) > #needsUpdate,
+#weavePrefsDeck:not([selectedIndex="3"]) > #fxaDeterminingStatus,
+#weavePrefsDeck:not([selectedIndex="4"]) > #noFxaAccount,
+#weavePrefsDeck:not([selectedIndex="5"]) > #hasFxaAccount,
+#fxaLoginStatus:not([selectedIndex="1"]) > #fxaLoginUnverified,
+#fxaLoginStatus:not([selectedIndex="2"]) > #fxaLoginRejected {
+  visibility: collapse;
+}
+
 /* XXX This style is for bug 740213 and should be removed once that
    bug has a solution. */
 description > html|a {
@@ -327,10 +340,6 @@ description > html|a {
 /*  -moz-margin-end: 4px; / add the 4px end-margin of other elements */
 }
 
-#encryptionPanel {
-  margin-top: 15px;
-}
-
 #telemetryLearnMore,
 #FHRLearnMore,
 #crashReporterLearnMore {
@@ -349,6 +358,10 @@ description > html|a {
   #trackingProtectionImage {
     list-style-image: url("chrome://browser/skin/bad-content-blocked-16@2x.png");
   }
+}
+
+#showUpdateHistory {
+  -moz-margin-start: 0;
 }
 
 /**
@@ -418,6 +431,11 @@ description > html|a {
   width: 66ch;
 }
 
+.largeDialogContainer.doScroll {
+  overflow-y: auto;
+  -moz-box-flex: 1;
+}
+
 /**
  * End Dialog
  */
@@ -459,81 +477,5 @@ caption {
   }
 
   checkbox[checked]::before {
-  }
-
-  .category-icon {
-    list-style-image: url("chrome://browser/skin/preferences/in-content/icons@2x.png");
-  }
-
-  #category-general > .category-icon {
-    -moz-image-region: rect(0, 48px, 48px, 0);
-  }
-
-  #category-general:hover > .category-icon,
-  #category-general[selected] > .category-icon {
-    -moz-image-region: rect(48px, 48px, 96px, 0);
-  }
-
-  #category-search > .category-icon {
-    -moz-image-region: rect(0, 384px, 48px, 336px);
-  }
-
-  #category-search:hover > .category-icon,
-  #category-search[selected] > .category-icon {
-    -moz-image-region: rect(48, 384px, 96px, 336px);
-  }
-
-  #category-content > .category-icon {
-    -moz-image-region: rect(0, 96px, 48px, 48px);
-  }
-
-  #category-content:hover > .category-icon,
-  #category-content[selected] > .category-icon {
-    -moz-image-region: rect(48px, 96px, 96px, 48px);
-  }
-
-  #category-application > .category-icon {
-    -moz-image-region: rect(0, 144px, 48px, 96px);
-  }
-
-  #category-application:hover > .category-icon,
-  #category-application[selected] > .category-icon {
-    -moz-image-region: rect(48px, 144px, 96px, 96px);
-  }
-
-  #category-privacy > .category-icon {
-    -moz-image-region: rect(0, 192px, 48px, 144px);
-  }
-
-  #category-privacy:hover > .category-icon,
-  #category-privacy[selected] > .category-icon {
-    -moz-image-region: rect(48px, 192px, 96px, 144px);
-  }
-
-  #category-security > .category-icon {
-    -moz-image-region: rect(0, 240px, 48px, 192px);
-  }
-
-  #category-security:hover > .category-icon,
-  #category-security[selected] > .category-icon {
-    -moz-image-region: rect(48px, 240px, 96px, 192px);
-  }
-
-  #category-sync > .category-icon {
-    -moz-image-region: rect(0, 288px, 48px, 240px);
-  }
-
-  #category-sync:hover > .category-icon,
-  #category-sync[selected] > .category-icon {
-    -moz-image-region: rect(48px, 288px, 96px, 240px);
-  }
-
-  #category-advanced > .category-icon {
-    -moz-image-region: rect(0, 336px, 48px, 288px);
-  }
-
-  #category-advanced:hover > .category-icon,
-  #category-advanced[selected] > .category-icon {
-    -moz-image-region: rect(48px, 336px, 96px, 288px);
   }
 }

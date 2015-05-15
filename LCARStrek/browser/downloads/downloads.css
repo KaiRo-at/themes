@@ -176,9 +176,13 @@ richlistitem[type="download"]:first-child {
 
 /*** Button icons ***/
 
+.downloadButton.downloadConfirmBlock,
 .downloadButton.downloadCancel {
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
+richlistitem[type="download"]:hover > stack > .downloadButton.downloadConfirmBlock,
+richlistitem[type="download"]:hover > stack > .downloadButton.downloadConfirmBlock:hover,
+richlistitem[type="download"]:hover > stack > .downloadButton.downloadConfirmBlock:active,
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel,
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel:hover,
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadCancel:active {
