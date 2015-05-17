@@ -322,6 +322,10 @@ description {
   outline: 1px dotted;
 }
 
+popupnotificationcontent {
+  margin-top: .5em;
+}
+
 /* :::::: autoscroll popup ::::: */
 
 .autoscroller {

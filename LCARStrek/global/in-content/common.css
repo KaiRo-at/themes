@@ -117,7 +117,7 @@ xul|tab:hover {
   background-color: #ebebeb;
 }
 
-xul|tab[selected] {
+xul|tab[visuallyselected] {
   background-color: #ebebeb;
   padding-bottom: 0; / compensate the 4px border /
   border-bottom: 4px solid #ff9500;
@@ -480,6 +480,10 @@ xul|*.checkbox-label-box {
 
 xul|richlistitem > xul|*.checkbox-check {
   margin: 3px 6px;
+}
+
+xul|radio {
+  -moz-margin-start: 0;
 }
 
 xul|*.radio-check {

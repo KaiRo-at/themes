@@ -44,7 +44,7 @@ tab {
   margin: 0 !important;
 }
 
-tab[selected="true"] {
+tab[visuallyselected="true"] {
   font-weight: bold;
   background-color: #EDF1FF;
 }
@@ -59,7 +59,7 @@ tab:-moz-focusring > .tab-middle {
 }
 
 /*
-tab:first-of-type[selected="true"] {
+tab:first-of-type[visuallyselected="true"] {
   -moz-padding-end: 5px;
   -moz-padding-start: 5px;
 }

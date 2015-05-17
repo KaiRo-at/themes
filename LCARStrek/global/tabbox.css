@@ -47,7 +47,7 @@ tab {
   margin: 0 !important;
 }
 
-tab[selected="true"] {
+tab[visuallyselected="true"] {
   font-weight: bold;
   background-color: #008484;
 }
@@ -72,7 +72,7 @@ tab:first-of-type {
   -moz-margin-start: 5px;
 }
 /*
-tab:first-of-type[selected="true"] {
+tab:first-of-type[visuallyselected="true"] {
   -moz-padding-end: 5px;
   -moz-padding-start: 5px;
 }
