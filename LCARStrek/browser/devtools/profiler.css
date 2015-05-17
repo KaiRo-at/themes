@@ -193,8 +193,6 @@ window {
   overflow: auto;
 }
 
-.call-tree-cells-container[allocations-hidden] .call-tree-cell[type="allocations"],
-.call-tree-cells-container[allocations-hidden] .call-tree-cell[type="self-allocations"],
 .call-tree-cells-container[categories-hidden] .call-tree-category {
   display: none;
 }

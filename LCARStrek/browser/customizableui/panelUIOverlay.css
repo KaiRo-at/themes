@@ -1400,12 +1400,14 @@ toolbarbutton.social-provider-menuitem > .toolbarbutton-icon {
 }
 
 menu.subviewbutton > .menu-right {
-  list-style-image: url("chrome://global/skin/menu/menu-arrow.gif");
+  list-style-image: url("chrome://global/skin/menu/menu-arrow.svg#arrow);
+  /* Reset the rect we inherit from the button: */
+  -moz-image-region: auto;
 }
-menu.subviewbutton:hover > .menu-right,
-menu.subviewbutton[_moz-menuactive="true"] > .menu-right {
-  list-style-image: url("chrome://global/skin/menu/menu-arrow-hover.gif");
+menu.subviewbutton:not([disabled="true"]):hover > .menu-right,
+menu.subviewbutton:not([disabled="true"])[_moz-menuactive="true"] > .menu-right {
+  list-style-image: url("chrome://global/skin/menu/menu-arrow.svg#arrow-hover");
 }
 menu[disabled="true"].subviewbutton > .menu-right {
-  list-style-image: url("chrome://global/skin/menu/menu-arrow-disabled.gif");
+  list-style-image: url("chrome://global/skin/menu/menu-arrow.svg#arrow-disabled");
 }
