@@ -656,6 +656,7 @@ menuitem.bookmark-item {
   -moz-image-region: rect(0, 288px, 18px, 270px);
 }
 
+#feed-button[cui-areatype="menu-panel"][panel-multiview-anchor=true],
 #feed-button[cui-areatype="toolbar"]:hover:not([disabled="true"]) {
   -moz-image-region: rect(18px, 288px, 36px, 270px);
 }
@@ -2712,7 +2713,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 }
 
 /* The selected tab should appear above adjacent tabs, .tabs-newtab-button and the highlight of #nav-bar */
-.tabbrowser-tab[selected=true] {
+.tabbrowser-tab[visuallyselected=true] {
 /*  position: relative;
   z-index: 2;*/
 }
@@ -2812,15 +2813,15 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
 }
 
-.tab-background-start[selected=true]::after,
-.tab-background-start[selected=true]::before,
+.tab-background-start[visuallyselected=true]::after,
+.tab-background-start[visuallyselected=true]::before,
 .tab-background-start,
 .tab-background-end,
-.tab-background-end[selected=true]::after,
-.tab-background-end[selected=true]::before {
+.tab-background-end[visuallyselected=true]::after,
+.tab-background-end[visuallyselected=true]::before {
 }
 
-.tabbrowser-tab:not([selected=true]),
+.tabbrowser-tab:not([visuallyselected=true]),
 .tabbrowser-tab:-moz-lwtheme {
 }
 
@@ -2831,7 +2832,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 
 /* Selected tab */
 
-.tabbrowser-tab[selected="true"] {
+.tabbrowser-tab[visuallyselected="true"] {
 }
 
 /* End selected tab */
@@ -2874,7 +2875,7 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
  * of the window (e.g. no menubar, tabs in titlebar, etc.) to make it easier to drag the window by
  * the titlebar. We don't need this in fullscreen since window dragging is not an issue there.
  */
-#main-window[tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar .tab-background-middle:not([selected=true]) {
+#main-window[tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar .tab-background-middle:not([visuallyselected=true]) {
 /*  clip-path: url(chrome://browser/content/browser.xul#tab-hover-clip-path);*/
 }
 
@@ -3188,9 +3189,9 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 .popup-notification-icon[popupid="xpinstall-disabled"],
 .popup-notification-icon[popupid="addon-progress"],
-.popup-notification-icon[popupid="addon-install-cancelled"],
 .popup-notification-icon[popupid="addon-install-blocked"],
 .popup-notification-icon[popupid="addon-install-failed"],
+.popup-notification-icon[popupid="addon-install-confirmation"],
 .popup-notification-icon[popupid="addon-install-complete"] {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
   width: 32px;
@@ -3205,45 +3206,13 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://browser/skin/notification-64.png");
 }
 
-.addon-progress-description {
-  width: 350px;
-  max-width: 350px;
-}
-
-.popup-progress-label,
-.popup-progress-meter {
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
-}
-
-.popup-progress-cancel {
-  -moz-appearance: none;
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  min-height: 0;
-  min-width: 0;
-  list-style-image: url("chrome://mozapps/skin/downloads/downloadButtons.png");
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-.popup-progress-cancel:hover {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-
-.popup-progress-cancel:active {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
-}
-
 .popup-notification-icon[popupid="indexedDB-permissions-prompt"],
 .popup-notification-icon[popupid*="offline-app-requested"],
 .popup-notification-icon[popupid="offline-app-usage"] {
   list-style-image: url("chrome://global/skin/icons/alert-question.gif");
 }
 
-.popup-notification-icon[popupid="password-save"],
-.popup-notification-icon[popupid="password-change"] {
+.popup-notification-icon[popupid="password"] {
   list-style-image: url("chrome://mozapps/skin/passwordmgr/key-64.png");
 }
 
@@ -4979,6 +4948,13 @@ notification.pluginVulnerable .messageImage {
 #customization-titlebar-visibility-button > .button-box > .button-text {
   /* Sadly, button.css thinks its margins are perfect for everyone. */
   -moz-margin-start: 5px !important;
+}
+
+#customization-lwtheme-button > .box-inherit > .box-inherit > .button-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  background-size: contain;
 }
 
 #customization-titlebar-visibility-button > .button-box > .button-icon {

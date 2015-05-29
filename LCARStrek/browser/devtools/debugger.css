@@ -18,6 +18,18 @@ window {
   -moz-border-end-color: var(--theme-splitter-color);
 }
 
+.dbg-breakpoint-condition-thrown-message {
+  display: none;
+  color: var(--theme-highlight-red);
+}
+
+.dbg-breakpoint.dbg-breakpoint-condition-thrown .dbg-breakpoint-condition-thrown-message {
+  display: block;
+  -moz-padding-start: 0;
+}
+
+/* Sources toolbar */
+
 #sources-toolbar > .devtools-toolbarbutton,
 #sources-controls > .devtools-toolbarbutton {
   min-width: 32px;
