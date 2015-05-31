@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import url('chrome://global/skin/in-content/common.css');
+
 :root {
   background-color: #000000;
   color: #FF9F00;
@@ -30,10 +32,14 @@ h1 {
 
 a {
   text-decoration: none;
+  color: #3333FF;
 }
 
-a:hover {
-  background-color: #FFCF00;
+td > a:visited {
+  color: #8050B0;
+}
+
+body > table > tbody > tr:hover a {
   color: #000000;
 }
 
@@ -44,6 +50,13 @@ p {
 #UI_goUp {
   margin-top: 0;
   float: left;
+}
+
+#UI_goUp:hover {
+  background-color: #FFCF00;
+}
+#UI_goUp:hover > a {
+  color: #000000;
 }
 
 #UI_goUp:-moz-dir(rtl) {
@@ -57,6 +70,15 @@ p {
 
 #UI_showHidden:-moz-dir(rtl) {
   float: left;
+}
+
+/* HACK: as the checkbox is inside the label, we need to leave the ugle native checkbox */
+#UI_showHidden > label > input[type="checkbox"] {
+  opacity: 1;
+  position: static;
+}
+#UI_showHidden > label:hover {
+  color: #FFCF00;
 }
 
 table {
@@ -74,14 +96,17 @@ th:first-child {
   text-align: center !important;
 }
 
-th:hover > a {
+th:hover {
   background-color: #FFCF00;
+}
+
+th:hover > a {
   color: #000000;
 }
 
 body > table > tbody > tr:hover {
-  outline: 1px solid #008484;
-  -moz-outline-radius: .3em;
+  background-color: #FFCF00;
+  color: #000000;
 }
 
 /* let 'Size' and 'Last Modified' take only as much space as they need and 'Name' all the rest */
@@ -99,4 +124,8 @@ td:not(:first-child) {
   -moz-margin-start: -20px;
   vertical-align: middle;
   content: url("chrome://global/skin/dirListing/up.png");
+}
+
+#UI_goUp:hover > .up::before {
+  content: url("chrome://global/skin/dirListing/up-hover.png");
 }
