@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="16" height="16" viewBox="0 0 16 16">
+<style>
+use:not(:target) {
+  display: none;
+}
+
+use {
+  fill: #FFCF00;
+}
+
+use[id$="-disabled"] {
+  fill: #8050B0;
+}
+
+use[id$="-active"] {
+  fill: #000000;
+}
+</style>
+<defs>
+  <polygon id="arrow-shape"
+           points="5,3.5 6.5,2 12.375,8 6.5,14 5,12.5 9.375,8" />
+</defs>
+<use id="arrow"              xlink:href="#arrow-shape"/>
+<use id="arrow-disabled"     xlink:href="#arrow-shape"/>
+<use id="arrow-active"       xlink:href="#arrow-shape"/>
+</svg>
