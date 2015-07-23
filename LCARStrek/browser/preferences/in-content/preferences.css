@@ -46,49 +46,10 @@ treecol {
 
 #categories {
   max-height: 100vh;
-
-  background-color: #A09090;
-  padding-top: 4em;
-  margin: 0;
-  border-radius: 1em 0 0 0;
-  border: none;
 }
 
 #categories > scrollbox {
   overflow-x: hidden !important;
-}
-
-.category {
-  background-color: #000000;
-  color: #FFCF00;
-  -moz-border-end-width: 0;
-  -moz-padding-start: 15px;
-  -moz-padding-end: 21px;
-  min-height: 40px;
-  transition: background-color 150ms;
-}
-
-.category:hover {
-  background-color: #FFCF00;
-  color: #000000;
-}
-
-.category[selected] {
-  background-color: #008484;
-  color: #000000;
-}
-
-#categories[keyboard-navigation="true"]:-moz-focusring > .category[current] {
-  border-top: 1px dotted #000000;
-  border-bottom: 1px dotted #000000;
-}
-
-.category-name {
-  line-height: 22px;
-  font-size: 1.25rem;
-  padding-bottom: 2px;
-  -moz-padding-start: 9px;
-  margin: 0;
 }
 
 /**
@@ -99,11 +60,6 @@ treecol {
 #categories > .category[hidden="true"] {
   display: -moz-box;
   visibility: collapse;
-}
-
-.category-icon {
-  width: 24px;
-  height: 24px;
 }
 
 #category-general > .category-icon {

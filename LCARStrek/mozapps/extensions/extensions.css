@@ -2,41 +2,28 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@import url("chrome://global/skin/inContentUI.css");
+@import url("chrome://global/skin/in-content/common.css");
 
 #addons-page {
   padding: 3px;
   margin: 0;
 }
 
-.nav-button {
-  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+.main-content {
+  padding: 0;
 }
 
-#forward-btn {
-  -moz-border-start: none;
+#nav-header {
+  min-height: 39px;
 }
 
-#back-btn:-moz-locale-dir(ltr),
-#forward-btn:-moz-locale-dir(rtl) {
-  -moz-image-region: rect(42px 25px 63px 0px);
+.view-pane > .list > scrollbox {
+  border-radius: 1em 0 0 0;
 }
 
-#back-btn[disabled="true"]:-moz-locale-dir(ltr),
-#forward-btn[disabled="true"]:-moz-locale-dir(rtl) {
-  -moz-image-region: rect(42px 50px 63px 25px);
+#search-list > scrollbox {
+  border-radius: 0;
 }
-
-#back-btn:-moz-locale-dir(rtl),
-#forward-btn:-moz-locale-dir(ltr) {
-  -moz-image-region: rect(63px 25px 84px 0px);
-}
-
-#back-btn[disabled="true"]:-moz-locale-dir(rtl),
-#forward-btn[disabled="true"]:-moz-locale-dir(ltr) {
-  -moz-image-region: rect(63px 50px 84px 25px);
-}
-
 
 /*** global warnings ***/
 
@@ -73,11 +60,6 @@
 }
 
 /*** global informations ***/
-#addons-page .global-info-container {
-  background-color: #9C9CFF;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-}
 
 /* Plugins aren't yet disabled by safemode (bug 342333),
    so don't show that warning when viewing plugins. */
@@ -90,41 +72,38 @@
 
 /*** notification icons ***/
 
-.warning-icon {
-  list-style-image: url("chrome://global/skin/icons/warning-16.png");
+.warning-icon,
+.error-icon,
+.pending-icon,
+.info-icon {
   width: 16px;
   height: 16px;
   margin: 1px 0;
 }
 
+.warning-icon {
+  list-style-image: url("chrome://global/skin/icons/warning-16.png");
+}
+
 .error-icon {
   list-style-image: url("chrome://global/skin/icons/error-16.png");
-  width: 16px;
-  height: 16px;
-  margin: 1px 0;
 }
 
 .pending-icon,
 .info-icon {
   list-style-image: url("chrome://global/skin/icons/information-16.png");
-  width: 16px;
-  height: 16px;
-  margin: 1px 0;
 }
 
 .addon-view[pending="disable"] .pending-icon,
 .addon-view[pending="uninstall"] .pending-icon {
   list-style-image: url("chrome://global/skin/icons/warning-16.png");
-  width: 16px;
-  height: 15px;
-  margin: 3px 0;
 }
-
 
 /*** view alert boxes ***/
 
 .alert-container {
   -moz-box-align: center;
+  -moz-margin-end: 48px;
 }
 
 .alert-spacer-before {
@@ -165,49 +144,20 @@
 /*** category selector ***/
 
 #categories {
-  background-color: #A09090;
-  position: relative;
-  padding-top: 31px;
-  margin: 0px;
-  border: none;
-}
-
-.category {
-  background-color: #000000;
-  color: #FFCF00;
-  min-height: 0;
-  padding: 10px 4px;
-  -moz-box-align: center;
-  overflow: hidden;
-}
-
-.category:not([disabled]):hover {
-  background-color: #FFCF00;
-  color: #000000;
+  padding-top: 0;/*31px;*/
 }
 
 .category[disabled] {
-  border-top: 0;
-  border-bottom: 0;
-  height: 0;
+  min-height: 0;
   opacity: 0;
-  transition-property: height, opacity;
+  transition-property: min-height, opacity;
   transition-duration: 1s, 0.8s;
 }
 
 .category:not([disabled]) {
-  height: 52px;
-  transition-property: height, opacity;
+  min-height: 40px;
+  transition-property: min-height, opacity;
   transition-duration: 1s, 0.8s;
-}
-
-.category[selected] {
-  background-color: #008484;
-  color: #FFCF00;
-}
-
-.category-name {
-  font-size: 150%;
 }
 
 /* Maximize the size of the viewport when the window is small */
@@ -221,20 +171,15 @@
   background-color: #E7ADE7;
   padding: 2px 8px;
   margin: 6px 0;
-  border-radius: 10000px;
+  -moz-margin-start: 6px;
+  border-radius: 100%;
   color: #000000;
   font-weight: bold;
   text-align: center;
 }
 
 .category-badge[value="0"] {
-  visibility: hidden;
-}
-
-.category-icon {
-  width: 32px;
-  height: 32px;
-  -moz-margin-start: 6px;
+  display: none;
 }
 
 #category-search > .category-icon {
@@ -277,15 +222,17 @@
 /*** main content ***/
 
 #addons-page > hbox {
-  /* This applied both to the header and the box surrounding the main content. */
+  /* This applies to the box surrounding all content. */
   background-color: #A09090;
+  border-radius: 1em 0 0 0;
 }
 
 .main-content {
-  background-color: #000000;
   border: none;
-  border-top: 3px solid #000000;
-  -moz-border-start: 3px solid #000000;
+}
+
+#view-port {
+  background-color: #000000;
   border-radius: 1em 0 0 0;
 }
 
@@ -294,23 +241,7 @@
 #header {
   height: 2em;
   padding: 3px;
-  border-radius: 1em 0 0 0;
-}
-
-#header-search {
-  color: #E7ADE7;
-  border: 1px solid #9C9CFF;
-  border-radius: 4px;
-  background-color: #000000;
-  margin: 0;
-}
-
-#header-search .textbox-input::-moz-placeholder {
-  color: #8050B0;
-}
-
-#header-search[focused] {
-  border-color: #008484;
+  background-color: #A09090;
 }
 
 @media (max-width: 600px) {
@@ -340,32 +271,70 @@
 }
 
 .view-header {
+  margin: 0;
+  -moz-margin-end: 48px;
   background-color: #9C9CFF;
   color: #000000;
   border-radius: 8px;
   padding: 0px 1em;
   margin: 3px;
-  min-height: 31px;
 }
 
+.header-button {
+}
+
+.header-button[disabled="true"] > .toolbarbutton-icon {
+}
+
+.header-button:not([disabled="true"]):hover,
+#header-utils-btn:not([disabled="true"]):hover {
+  cursor: pointer;
+}
+
+.header-button > .toolbarbutton-text {
+  display: none;
+}
+
+.nav-button {
+  list-style-image: url("chrome://communicator/skin/icons/communicatoricons.png");
+}
+
+#forward-btn {
+  -moz-border-start: none;
+}
+
+#back-btn:-moz-locale-dir(ltr),
+#forward-btn:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(42px 25px 63px 0px);
+}
+
+#back-btn[disabled="true"]:-moz-locale-dir(ltr),
+#forward-btn[disabled="true"]:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(42px 50px 63px 25px);
+}
+
+#back-btn:-moz-locale-dir(rtl),
+#forward-btn:-moz-locale-dir(ltr) {
+  -moz-image-region: rect(63px 25px 84px 0px);
+}
+
+#back-btn[disabled="true"]:-moz-locale-dir(rtl),
+#forward-btn[disabled="true"]:-moz-locale-dir(ltr) {
+  -moz-image-region: rect(63px 50px 84px 25px);
+}
 
 /*** sorters ***/
 
 .sort-controls {
-  -moz-appearance: none;
   border-right: 3px solid #000000;
 }
 
 .sorter {
-  -moz-appearance: none;
   border: none;
   border-left: 3px solid #000000;
   background-color: transparent;
-  color: #8050B0;
+  color: #000000;
   border-radius: 0;
-  padding: 0 6px;
-  -moz-padding-start: 6px;
-  -moz-padding-end: 3px;
   margin: 0;
   min-width: 12px !important;
   -moz-box-direction: reverse;
@@ -395,7 +364,7 @@
 }
 
 .sorter .button-icon {
-  -moz-margin-start: 4px;
+  -moz-margin-start: 6px;
 }
 
 
@@ -432,12 +401,15 @@
   text-align: justify;
 }
 
+#discover-browser {
+  border-radius: 1em 0px 0px;
+}
 
 /*** list ***/
 
 .list {
   margin: 0;
-  border: none;
+  border-color: transparent;
   background-color: transparent;
 }
 
@@ -445,6 +417,10 @@
   border-bottom: 1px solid #9C9CFF;
   padding: 5px;
   background-origin: border-box;
+}
+
+.addon:not(:only-child):last-child {
+  border-bottom-width: 0;
 }
 
 .details {
@@ -465,6 +441,10 @@
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
   max-width: 48px;
   max-height: 48px;
+}
+
+.content-inner-container {
+  -moz-margin-end: 5px;
 }
 
 .addon[active="false"] .icon {
@@ -504,10 +484,6 @@
   font-weight: bold;
 }
 
-.creator .text-link {
-  /* color: #0066CC; */
-}
-
 .description-container {
   -moz-margin-start: 6px;
   -moz-box-align: center;
@@ -535,7 +511,6 @@
   -moz-box-align: stretch;
 }
 
-.advancedinfo-container,
 .update-info-container {
   -moz-box-align: center;
 }
@@ -618,16 +593,6 @@
   list-style-image: url("chrome://global/skin/arrow/arrow-up.gif");
 }
 
-.addon[active="false"] {
-  background-color: #8050B0;
-  color: #E7ADE7;
-}
-
-.addon-view[active="false"] .name-container {
-  color: #E7ADE7;
-  color: #000000;
-}
-
 .addon-view[notification="warning"] {
   background-color : #FFCF00;
   color: #000000;
@@ -638,6 +603,10 @@
 }
 
 .addon-view[notification="warning"] .name-container {
+  color: #000000;
+}
+
+.addon-view[notification="warning"] .text-link:hover {
   color: #000000;
 }
 
@@ -700,6 +669,16 @@
   color: #FFCF00;
 }
 
+.addon[active="false"] {
+  background-color: #8050B0;
+  color: #E7ADE7;
+}
+
+.addon-view[active="false"] .name-container {
+  color: #E7ADE7;
+  color: #000000;
+}
+
 .addon[active="false"][selected] {
   color: #E7ADE7;
 }
@@ -723,25 +702,7 @@
 #search-filter-label {
   font-weight: bold;
   color: #FFCF00;
-}
-
-.search-filter-radio {
-  padding: 0 6px;
-  margin: 0 3px;
-  border-radius: 10000px;
-}
-
-.search-filter-radio[selected] {
-  background-color: #008484;
-  color: #000000;
-}
-
-.search-filter-radio .radio-check-box1 {
-  display: none;
-}
-
-.search-filter-radio .radio-icon {
-  display: none;
+  -moz-margin-end: 10px;
 }
 
 #search-allresults-link {
@@ -796,8 +757,14 @@
   font-size: 200%;
 }
 
-#detail-screenshot {
+#detail-screenshot-box {
   -moz-margin-end: 2em;
+  padding: 10px;
+/*  background-color: white;*/
+}
+
+
+#detail-screenshot {
   max-width: 300px;
   max-height: 300px;
 }
@@ -876,15 +843,13 @@ setting[first-row="true"] {
 setting {
   border-top: 1px solid #9C9CFF;
   -moz-box-align: center;
-  min-height: 30px;
+  min-height: 35px;
+  font-size: 1.25rem;
+  line-height: 20px;
 }
 
 #detail-controls {
   margin-bottom: 1em;
-}
-
-#detail-view[active="false"]:not([pending]):not([notification]) {
-  /* background-color: foo; */
 }
 
 setting[first-row="true"] {
@@ -914,10 +879,6 @@ setting {
 
 setting[type="radio"] > radiogroup {
   -moz-box-orient: horizontal;
-}
-
-menulist { /* Fixes some styling inconsistencies */
-  margin: 1px 5px 2px 5px;
 }
 
 /*** creator ***/
@@ -953,15 +914,15 @@ menulist { /* Fixes some styling inconsistencies */
 
 .download-progress {
   background-color: #000000;
-  border-radius: 10000px;
+  border-radius: 2px;
   border: 1px solid #FF9F00;
   width: 200px;
-  height: 21px;
-  margin: 0 8px;
+  height: 30px;
+  margin: 2px 4px;
 }
 
-.download-progress[mode="undetermined"] .status-container {
-  padding: 0 2px;
+.download-progress[mode="undetermined"] {
+  border-color: #A09090;
 }
 
 .download-progress .start-cap,
@@ -990,12 +951,12 @@ menulist { /* Fixes some styling inconsistencies */
 
 .download-progress .start-cap:-moz-locale-dir(ltr),
 .download-progress .end-cap:-moz-locale-dir(rtl) {
-  border-radius: 3px 0 0 3px;
+  border-radius: 1px 0 0 1px;
 }
 
 .download-progress .end-cap:-moz-locale-dir(ltr),
 .download-progress .start-cap:-moz-locale-dir(rtl) {
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 1px 1px 0;
 }
 
 .download-progress .cancel {
@@ -1003,8 +964,9 @@ menulist { /* Fixes some styling inconsistencies */
   background-color: #8050B0;
   border: 1px solid #9C9CFF;
   padding: 3px;
-  border-radius: 3px;
   min-width: 0;
+  width: 20px;
+  height: 20px;
   margin: 3px;
 }
 
@@ -1109,4 +1071,25 @@ button.button-link:not([disabled="true"]):active:hover {
 .addon[active="true"] .experiment-bullet,
 #detail-view[active="true"] #detail-experiment-bullet {
   fill: #FFCF00;
+}
+
+/*** info UI for add-ons that have been disabled for being unsigned ***/
+
+#show-disabled-unsigned-extensions:not(:hover) {
+  background-color: #FF0000;
+}
+
+#disabled-unsigned-addons-info {
+  margin-bottom: 2em;
+  -moz-margin-end: 48px;
+}
+
+#disabled-unsigned-addons-heading {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+#signing-dev-info {
+  font-style: italic;
 }
