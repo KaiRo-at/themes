@@ -179,6 +179,14 @@ menubar {
 /*  min-height: 24px; */
 }
 
+#PersonalToolbar > #home-button {
+  -moz-box-orient: horizontal;
+}
+
+#PersonalToolbar > #home-button > .toolbarbutton-text {
+  display: block;
+}
+
 #print-preview-toolbar:not(:-moz-lwtheme) {
   /* -moz-appearance: toolbox; */
 }
@@ -320,6 +328,8 @@ toolbarbutton.bookmark-item[open="true"] {
   height: 16px;
   -moz-margin-start: 1px;
   -moz-margin-end: 2px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 /* Force the display of the label for bookmarks */
