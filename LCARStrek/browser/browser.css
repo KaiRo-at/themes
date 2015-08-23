@@ -504,7 +504,7 @@ menuitem.bookmark-item {
 :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
           #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
           #social-share-button, #open-file-button, #find-button, #developer-button,
-          #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
+          #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
           #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button, #loop-button,
@@ -980,7 +980,7 @@ toolbaritem[sdkstylewidget="true"] > toolbarbutton,
 :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
           #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
           #social-share-button, #open-file-button, #find-button, #developer-button,
-          #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
+          #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
           #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button, #loop-button,
@@ -988,7 +988,7 @@ toolbaritem[sdkstylewidget="true"] > toolbarbutton,
 toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
           #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
           #social-share-button, #open-file-button, #find-button, #developer-button,
-          #preferences-button, #privatebrowsing-button, #save-page-button, #switch-to-metro-button, #add-ons-button,
+          #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
           #copy-button, #paste-button, #e10s-button, #panic-button, #web-apps-button, #webide-button, #loop-button,
@@ -1553,11 +1553,12 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > .toolbarbutton-1:-moz-an
 */
 
 /* Help SDK icons fit: */
-toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
+toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-icon,
+toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-badge-container > .toolbarbutton-icon {
   width: 16px;
 }
 
-#nav-bar toolbarbutton[sdk-button="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
+#nav-bar toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-icon {
   /* XXXgijs box models strike again: this is 16px + 2 * 7px padding + 2 * 1px border (from the rules above) */
   width: 32px;
 }
@@ -2483,13 +2484,6 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   max-height: 16px;
 }
 
-toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
-  width: auto;
-  height: auto;
-  max-width: 32px;
-  max-height: 24px;
-}
-
 /* fixup corners for share panel */
 .social-panel > .social-panel-frame {
   border-radius: inherit;
@@ -2716,10 +2710,6 @@ toolbarbutton[type="socialmark"] > .toolbarbutton-icon {
 .tabs-newtab-button:not(:hover),
 #TabsToolbar > #new-tab-button:not(:hover) {
   background-color: #C09070;
-}
-
-.tabbrowser-tab[remote] {
-  text-decoration: underline;
 }
 
 /* The selected tab should appear above adjacent tabs, .tabs-newtab-button and the highlight of #nav-bar */
@@ -3187,6 +3177,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   margin-top: 5px;
 }
 
+/* === BEGIN notification-icons.inc.css === */
+
 .popup-notification-icon {
   width: 64px;
   height: 64px;
@@ -3195,6 +3187,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 .popup-notification-icon[popupid="geolocation"] {
   list-style-image: url("chrome://browser/skin/Geolocation-64.png");
+}
+
+.popup-notification-icon[popupid="push"] {
+  list-style-image: url(chrome://browser/skin/Push-64.png);
 }
 
 .popup-notification-icon[popupid="xpinstall-disabled"],
@@ -3310,6 +3306,10 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
   list-style-image: url("chrome://browser/skin/Geolocation-16.png");
 }
 
+#push-notification-icon {
+  list-style-image: url(chrome://browser/skin/Push-16.png);
+}
+
 #addons-notification-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric-16.png");
 }
@@ -3419,6 +3419,49 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
   margin: 0px;
 }
 
+.translate-notification-icon,
+#translate-notification-icon {
+  list-style-image: url("chrome://browser/skin/translation-16.png");
+  -moz-image-region: rect(0px, 16px, 16px, 0px);
+}
+
+.translated-notification-icon,
+#translated-notification-icon {
+  list-style-image: url("chrome://browser/skin/translation-16.png");
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+.popup-notification-icon[popupid="servicesInstall"] {
+  list-style-image: url("chrome://browser/skin/social/services-64.png");
+}
+#servicesInstall-notification-icon {
+  list-style-image: url("chrome://browser/skin/social/services-16.png");
+}
+
+/* EME notifications */
+
+.popup-notification-icon[popupid="drmContentPlaying"],
+#eme-notification-icon {
+  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains");
+}
+
+#eme-notification-icon:hover:active {
+  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains-pressed");
+}
+
+#eme-notification-icon[firstplay=true] {
+  animation: emeTeachingMoment 0.2s linear 0s 5 normal;
+}
+
+@keyframes emeTeachingMoment {
+  0% {transform: translateX(0); }
+  25% {transform: translateX(3px) }
+  75% {transform: translateX(-3px) }
+  100% { transform: translateX(0); }
+}
+
+/* === END notification-icons.inc.css === */
+
 /* Translation infobar */
 
 /* === BEGIN infobar.inc.css === */
@@ -3444,6 +3487,10 @@ notification[value="translation"][state="translating"] .messageImage {
   notification[value="translation"][state="translating"] .messageImage {
     list-style-image: url("chrome://browser/skin/translating-16@2x.png");
   }
+}
+
+notification[value="translation"] hbox[anonid="details"] {
+  overflow: hidden;
 }
 
 notification[value="translation"] button,
@@ -3501,18 +3548,6 @@ notification[value="translation"] menulist > .menulist-dropmarker {
 
 notification[value="translation"] {
   min-height: 40px;
-}
-
-.translate-notification-icon,
-#translate-notification-icon {
-  list-style-image: url("chrome://browser/skin/translation-16.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-.translated-notification-icon,
-#translated-notification-icon {
-  list-style-image: url("chrome://browser/skin/translation-16.png");
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
 .translation-menupopup {
@@ -3713,10 +3748,23 @@ notification[value="loop-sharing-notification"] .messageImage {
 
 /* === BEGIN commandline.inc.css === */
 
+/* NOTE: THESE NEED TO STAY IN SYNC WITH LIGHT-THEME.CSS AND DARK-THEME.CSS.
+   We are copy/pasting variables from light-theme and dark-theme,
+   since they aren't loaded in this context (within browser.css). */
+:root #developer-toolbar {
+  --gcli-background-color: #000000; /* --theme-toolbar-background */
+  --gcli-input-background: rgba(0, 0, 0, .75); /* --theme-tab-toolbar-background */
+  --gcli-input-focused-background: #000000; /* --theme-sidebar-background */
+  --gcli-input-color: #FF9F00; /* --theme-body-color-alt */
+  --gcli-border-color: #9C9CFF; /* --theme-splitter-color */
+  --selection-background: #008484; /* --theme-selection-background */
+  --selection-color: #000000; /* --theme-selection-color */
+}
+
 /* Developer toolbar */
 
 #developer-toolbar {
-  border-top: 3px solid #000000;
+  border-top: 3px solid var(--gcli-background-color);
   border-bottom: none;
 }
 
@@ -3848,11 +3896,11 @@ html|*#gcli-output-frame {
 /*  line-height: 32px;
   outline-style: none; */
   background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, .75);
+  background-color: var(--gcli-input-background);
 }
 
 .gclitoolbar-input-node[focused="true"] {
-  background-color: #000000;
+  background-color: var(--gcli-input-focused-background);
 }
 
 .gclitoolbar-input-node::before {
@@ -3882,9 +3930,8 @@ html|*#gcli-output-frame {
 }
 
 .gclitoolbar-input-node > .textbox-input-box > html|*.textbox-input::-moz-selection {
-  background-color: #008484;
-  color: #000000;
-  text-shadow: none;
+  background-color: var(--selection-background);
+  color: var(--selection-color);
 }
 
 .gclitoolbar-complete-node {
@@ -4314,12 +4361,6 @@ html|*#gcli-output-frame {
   border: 0;
 }
 
-.popup-notification-icon[popupid="servicesInstall"] {
-  list-style-image: url("chrome://browser/skin/social/services-64.png");
-}
-#servicesInstall-notification-icon {
-  list-style-image: url("chrome://browser/skin/social/services-16.png");
-}
 #social-undoactivation-button {
   -moz-margin-start: 0; /* override default label margin to match description margin */
 }
@@ -4757,28 +4798,6 @@ notification.pluginVulnerable .messageImage {
 }
 
 /* === END badcontent-doorhanger.inc.css === */
-
-/* EME notifications */
-
-.popup-notification-icon[popupid="drmContentPlaying"],
-#eme-notification-icon {
-  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains");
-}
-
-#eme-notification-icon:hover:active {
-  list-style-image: url("chrome://browser/skin/drm-icon.svg#chains-pressed");
-}
-
-#eme-notification-icon[firstplay=true] {
-  animation: emeTeachingMoment 0.2s linear 0s 5 normal;
-}
-
-@keyframes emeTeachingMoment {
-  0% {transform: translateX(0); }
-  25% {transform: translateX(3px) }
-  75% {transform: translateX(-3px) }
-  100% { transform: translateX(0); }
-}
 
 /* === BEGIN customizeMode.inc.css === */
 

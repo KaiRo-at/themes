@@ -99,13 +99,6 @@ body {
   }
 }
 
-/* Disabled playerWidget when the animation has ended */
-
-.finished {
-  pointer-events: none;
-  opacity: .5;
-}
-
 /* Animation title gutter, contains the name, duration, iteration */
 
 .animation-title {
@@ -185,6 +178,7 @@ body {
 .timeline .rate {
   -moz-appearance: none;
   text-align: center;
+  color: var(--theme-body-color);
   border-right: 1px solid var(--theme-splitter-color);
 }
 

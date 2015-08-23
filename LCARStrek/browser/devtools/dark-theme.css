@@ -3,8 +3,9 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* According to:
- * https://bugzilla.mozilla.org/show_bug.cgi?id=715472#c17
+/* Colors are taken from:
+ * https://developer.mozilla.org/en-US/docs/Tools/DevToolsColors.
+ * Changes should be kept in sync with commandline.css and commandline.inc.css.
  */
 :root {
   --theme-body-background: #000000;
@@ -423,10 +424,18 @@ div.CodeMirror span.eval-text {
 
 /* === BEGIN toolbars.inc.css === */
 
+/* CSS Variables specific to the devtools toolbar that aren't defined by the themes */
+.theme-light,
+.theme-dark {
+  --searchbox-background-color: #000000;
+  --searchbox-border-color: #9C9CFF;
+  --searcbox-no-match-background-color: #400000;
+  --searcbox-no-match-border-color: #FF0000;
+}
+
 /* Toolbars */
 .devtools-toolbar,
-.devtools-sidebar-tabs tabs,
-.devtools-sidebar-alltabs {
+.devtools-sidebar-tabs tabs {
 }
 
 .devtools-toolbar {
@@ -436,6 +445,7 @@ div.CodeMirror span.eval-text {
   /* LCARStrek checkbox colors don't work well against toolbar background */
   background-color: var(--theme-toolbar-background);
   padding: 2px;
+  line-height: -moz-block-height;
 }
 .devtools-toolbar checkbox .checkbox-check {
 }
@@ -647,7 +657,7 @@ div.CodeMirror span.eval-text {
   margin-bottom: 1px;
   padding: 0;*/
   -moz-padding-start: 22px;
-  -moz-padding-end: 12px;
+  -moz-padding-end: 4px;
   background-position: 8px center;
   background-size: 11px 11px;
   background-repeat: no-repeat;
@@ -656,22 +666,80 @@ div.CodeMirror span.eval-text {
   background-image: url("magnifying-glass.png");
 }
 
-@media (min-resolution: 2dppx) {
-  .devtools-searchinput {
-    background-image: url("magnifying-glass@2x.png");
-  }
-}
-
 .devtools-searchinput:-moz-locale-dir(rtl) {
   background-position: calc(100% - 8px) center;
 }
 
-.devtools-searchinput > .textbox-input-box > .textbox-search-icons {
-  display: none;
+.devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-icon {
+  visibility: hidden;
+}
+
+/* Searchbox is a div container element for a search input element */
+.devtools-searchbox {
+  display: -moz-box;
+  -moz-box-flex: 1;
+  position: relative;
+}
+
+.devtools-rule-searchbox {
+  -moz-box-flex: 1;
+  padding-right: 23px;
+  width: 100%;
+  font: inherit;
+}
+
+.devtools-rule-searchbox[filled] {
+  background-color: var(--searchbox-background-color);
+  border-color: var(--searchbox-border-color);
+}
+
+.devtools-style-searchbox-no-match {
+  background-color: var(--searcbox-no-match-background-color) !important;
+  border-color: var(--searcbox-no-match-border-color) !important;
 }
 
 .devtools-no-search-result {
   border-color: var(--theme-highlight-red) !important;
+}
+
+.devtools-searchinput-clear {
+  position: absolute;
+  top: 3.5px;
+  right: 7px;
+  padding: 0;
+  border: 0;
+  width: 16px;
+  height: 16px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
+.devtools-searchinput-clear {
+  background-image: url("chrome://browser/skin/devtools/search-clear.svg");
+}
+
+.devtools-style-searchbox-no-match + .devtools-searchinput-clear {
+  background-image: url("chrome://browser/skin/devtools/search-clear-failed.svg") !important;
+}
+
+.devtools-searchinput-clear:hover {
+  background-position: -16px 0;
+}
+
+.devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-clear {
+  list-style-image: url("chrome://browser/skin/devtools/search-clear.svg");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-clear:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+@media (min-resolution: 2dppx) {
+  .devtools-searchinput {
+    background-image: url("magnifying-glass@2x.png");
+  }
 }
 
 /* Close button */
@@ -716,13 +784,16 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-sidebar-alltabs {
-/*  margin: 0;
+/*  height: 24px;
+  line-height: 24px;
+  padding: 0 4px;
+  margin: 0;
   border-width: 0 0 1px 0;
   -moz-border-start-width: 1px;
   border-style: solid;*/
 }
 
-.devtools-sidebar-alltabs dropmarker {
+.devtools-sidebar-alltabs .toolbarbutton-icon {
   display: none;
 }
 
@@ -801,6 +872,20 @@ div.CodeMirror span.eval-text {
 
 #toolbox-dock-window > image {
   background-image: url("chrome://browser/skin/devtools/undock@2x.png");
+}
+
+#toolbox-dock-bottom-minimize {
+  /* Bug 1177463 - The minimize button is currently hidden until we agree on
+     the UI for it, and until bug 1173849 is fixed too. */
+  display: none;
+}
+
+#toolbox-dock-bottom-minimize > image {
+  background-image: url("chrome://browser/skin/devtools/dock-bottom-minimize@2x.png");
+}
+
+#toolbox-dock-bottom-minimize.minimized > image {
+  background-image: url("chrome://browser/skin/devtools/dock-bottom-maximize@2x.png");
 }
 
 #toolbox-dock-window,
@@ -890,6 +975,10 @@ div.CodeMirror span.eval-text {
   background-image: url("chrome://browser/skin/devtools/command-eyedropper.png");
 }
 
+#command-button-rulers > image {
+  background-image: url("chrome://browser/skin/devtools/command-rulers.png");
+}
+
 @media (min-resolution: 2dppx) {
   #command-button-paintflashing > image {
     background-image: url("chrome://browser/skin/devtools/command-paintflashing@2x.png");
@@ -925,6 +1014,10 @@ div.CodeMirror span.eval-text {
 
   #command-button-eyedropper > image {
     background-image: url("chrome://browser/skin/devtools/command-eyedropper@2x.png");
+  }
+
+  #command-button-rulers > image {
+    background-image: url("chrome://browser/skin/devtools/command-rulers@2x.png");
   }
 }
 
@@ -1004,6 +1097,9 @@ div.CodeMirror span.eval-text {
 .devtools-tab[selected] > .highlighted-icon,
 .devtools-tab:not([selected])[highlighted] > .default-icon {
   visibility: collapse;
+}
+
+.devtools-tab:not([selected])[highlighted] {
 }
 
 .devtools-tab:not([selected])[highlighted] {
