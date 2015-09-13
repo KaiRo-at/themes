@@ -37,6 +37,7 @@
   --theme-content-color1: #FF9F00;
   --theme-content-color2: #A09090;
   --theme-content-color3: #FF9F00;
+  --theme-content-color4: #9C9CFF;
   --theme-content-disabled: #8050B0;
 
   --theme-text-blue: #3333FF;
@@ -49,6 +50,14 @@
   --theme-highlight-orange: #FF9F00;
   --theme-highlight-red: #FF0000;
   --theme-highlight-pink: #E7ADE7;
+
+  /* Colors used in Graphs, like performance tools. Mostly similar to some "highlight-*" colors. */
+  --theme-graphs-green: #008484;
+  --theme-graphs-blue: #9C9CFF;
+  --theme-graphs-purple: #C09070;
+  --theme-graphs-yellow: #FFCF00;
+  --theme-graphs-red: #FF0000;
+  --theme-graphs-grey: #A09090;
 }
 
 .theme-body {
@@ -347,7 +356,7 @@ div.CodeMirror span.eval-text {
   background-position: -14px 0;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   .theme-twisty, .theme-checkbox {
     background-image: url("chrome://browser/skin/devtools/controls@2x.png");
   }
@@ -385,7 +394,7 @@ div.CodeMirror span.eval-text {
   margin-left: -4px;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   .theme-tooltip-panel .panel-arrow[side="top"],
   .theme-tooltip-panel .panel-arrow[side="bottom"] {
     list-style-image: url("chrome://browser/skin/devtools/tooltip/arrow-vertical-dark@2x.png");
@@ -633,7 +642,7 @@ div.CodeMirror span.eval-text {
   background-repeat: no-repeat;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   .devtools-button::before {
     background-size: 32px;
   }
@@ -736,7 +745,7 @@ div.CodeMirror span.eval-text {
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   .devtools-searchinput {
     background-image: url("magnifying-glass@2x.png");
   }
@@ -979,7 +988,7 @@ div.CodeMirror span.eval-text {
   background-image: url("chrome://browser/skin/devtools/command-rulers.png");
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #command-button-paintflashing > image {
     background-image: url("chrome://browser/skin/devtools/command-paintflashing@2x.png");
   }

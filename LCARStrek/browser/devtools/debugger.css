@@ -39,7 +39,7 @@ window {
   list-style-image: url("debugger-blackbox.png");
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #black-box {
     list-style-image: url(debugger-blackbox@2x.png);
   }
@@ -49,7 +49,7 @@ window {
   list-style-image: url(debugger-prettyprint.png);
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #pretty-print {
     list-style-image: url(debugger-prettyprint@2x.png);
   }
@@ -59,7 +59,7 @@ window {
   list-style-image: url("debugger-toggleBreakpoints.png");
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #toggle-breakpoints {
     list-style-image: url(debugger-toggleBreakpoints@2x.png);
   }
@@ -81,7 +81,7 @@ window {
   -moz-image-region: rect(16px, 32px, 32px, 16px);
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #sources-toolbar .devtools-toolbarbutton:not([label]) {
     -moz-image-region: rect(0px,32px,32px,0px);
   }
@@ -133,7 +133,7 @@ window {
   -moz-margin-end: 5px;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #black-boxed-message-button > .button-box > .button-icon {
     background-image: url("debugger-blackbox@2x.png");
   }
@@ -178,7 +178,7 @@ window {
   -moz-image-region: rect(0px,32px,16px,16px);
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #trace {
     list-style-image: url(tracer-icon@2x.png);
     -moz-image-region: rect(0px,32px,32px,0px);
@@ -368,7 +368,7 @@ window {
   margin: 2px;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   .dbg-expression-arrow {
     background-image: url(commandline-icon@2x.png);
   }
@@ -596,7 +596,7 @@ window {
   list-style-image: url("chrome://browser/skin/devtools/debugger-play.png");
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #resume {
     list-style-image: url(debugger-pause@2x.png);
     -moz-image-region: rect(0px, 32px, 32px, 0px);
@@ -643,7 +643,7 @@ window {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #step-over {
     list-style-image: url(debugger-step-over@2x.png);
     -moz-image-region: rect(0px, 32px, 32px, 0);
@@ -688,7 +688,7 @@ window {
   -moz-image-region: rect(0px,32px,16px,16px);
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #instruments-pane-toggle {
     list-style-image: url(debugger-collapse@2x.png);
     -moz-image-region: rect(0px,32px,32px,0px);

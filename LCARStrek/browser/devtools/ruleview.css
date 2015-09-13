@@ -72,7 +72,8 @@
 }
 
 .ruleview-rule[uneditable=true] .ruleview-namecontainer > .ruleview-propertyname,
-.ruleview-rule[uneditable=true] .ruleview-propertycontainer > .ruleview-propertyvalue {
+.ruleview-rule[uneditable=true] .ruleview-propertyvaluecontainer >
+.ruleview-propertyvalue {
   border-bottom-color: transparent;
 }
 
@@ -95,7 +96,7 @@
   height: 12px;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   .ruleview-warning {
     background-image: url("alerticon-warning@2x.png");
   }
@@ -130,7 +131,7 @@
 }
 
 .ruleview-namecontainer,
-.ruleview-propertycontainer,
+.ruleview-propertyvaluecontainer,
 .ruleview-propertyname,
 .ruleview-propertyvalue {
   text-decoration: inherit;
@@ -178,7 +179,7 @@
   background-size: 1em;
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   .ruleview-bezierswatch {
     background: url("chrome://browser/skin/devtools/cubic-bezier-swatch@2x.png");
     background-size: 1em;
@@ -199,7 +200,7 @@
   clear: right;
 }
 
-.ruleview-property  > * {
+.ruleview-propertycontainer > * {
   vertical-align: middle;
 }
 
@@ -212,12 +213,12 @@
 }
 
 .ruleview-namecontainer > .ruleview-propertyname,
-.ruleview-propertycontainer > .ruleview-propertyvalue {
+.ruleview-propertyvaluecontainer > .ruleview-propertyvalue {
   border-bottom: 1px dashed transparent;
 }
 
 .ruleview-namecontainer:hover > .ruleview-propertyname,
-.ruleview-propertycontainer:hover > .ruleview-propertyvalue {
+.ruleview-propertyvaluecontainer:hover > .ruleview-propertyvalue {
   border-bottom-color: #008484;
 }
 

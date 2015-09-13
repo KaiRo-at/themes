@@ -14,10 +14,16 @@ notification {
 
 /* End LCARStrek toolbox rules */
 
+:root {
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  --monospace-font-family: "Liberation Mono", Consolas, "Courier New", monospace;
+  --monospace-font-size: 12px;
+}
 
 /* Font for code */
 .devtools-monospace {
-  font: 12px "Liberation Mono", Consolas, "Courier New", monospace;
+  font-family: var(--monospace-font-family);
+  font-size: var(--monospace-font-size);
 }
 
 /* Splitters */
@@ -286,5 +292,36 @@ notification {
   color: #FFCF00;
 }
 
+/* Links to source code, like displaying `myfile.js:45` */
+
+.devtools-source-link {
+  font-family: var(--monospace-font-family);
+  color: var(--theme-text-blue);
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-self: flex-start;
+  text-decoration: none;
+  font-size: 11px;
+  width: 12em; /* probably should be changed for each tool */
+}
+
+.devtools-source-link:hover {
+  text-decoration: underline;
+}
+
+.devtools-source-link > .filename {
+  text-overflow: ellipsis;
+  text-align: end;
+  overflow: hidden;
+  margin: 2px 0px;
+  cursor: pointer;
+}
+
+.devtools-source-link > .line-number {
+  flex: none;
+  margin: 2px 0px;
+  cursor: pointer;
+}
 
 /* === END common.inc.css === */

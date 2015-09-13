@@ -4799,6 +4799,30 @@ notification.pluginVulnerable .messageImage {
 
 /* === END badcontent-doorhanger.inc.css === */
 
+/* === BEGIN login-doorhanger.inc.css === */
+
+#login-fill-testing {
+  color: #FF0000;
+  font-weight: bold;
+}
+
+#login-fill-list {
+  border: 1px solid #9C9CFF;
+  max-height: 20em;
+}
+
+.login-hostname {
+  margin: 4px;
+  font-weight: bold;
+}
+
+.login-username {
+  margin: 4px;
+  color: #A09090;
+}
+
+/* === END login-doorhanger.inc.css === */
+
 /* === BEGIN customizeMode.inc.css === */
 
 /* Customization mode */

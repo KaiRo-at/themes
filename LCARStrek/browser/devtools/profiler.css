@@ -175,7 +175,7 @@ window {
   background-image: url("newtab.png");
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   #profile-newtab-button {
     background-image: url("newtab@2x.png");
   }
@@ -341,7 +341,7 @@ window {
   background-image: url("magnifying-glass.png");
 }
 
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 1.25dppx) {
   .call-tree-zoom {
     background-image: url("magnifying-glass@2x.png");
   }
