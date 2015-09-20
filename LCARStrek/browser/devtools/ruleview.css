@@ -245,3 +245,25 @@
 .ruleview-selectorhighlighter.highlighted {
   background-position: -16px 0;
 }
+
+#pseudo-class-panel:not([hidden]) {
+  border-bottom: 1px solid var(--theme-splitter-color);
+}
+
+#ruleview-add-rule-button::before {
+  background-image: url("chrome://browser/skin/devtools/add.svg#add");
+  background-size: cover;
+}
+#ruleview-add-rule-button:hover::before {
+  background-image: url("chrome://browser/skin/devtools/add.svg#add-checked");
+}
+
+#pseudo-class-panel-toggle::before {
+  background-image: url("chrome://browser/skin/devtools/pseudo-class.svg#pseudo-class");
+  background-size: cover;
+}
+#pseudo-class-panel-toggle:hover::before,
+#pseudo-class-panel-toggle[checked]::before {
+  background-image: url("chrome://browser/skin/devtools/pseudo-class.svg#pseudo-class-checked");
+  filter: none !important;
+}

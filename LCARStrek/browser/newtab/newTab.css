@@ -252,6 +252,30 @@ body {
 }
 
 /* SEARCH */
+#newtab-search-logo:hover {
+  background-color: #FFCF00;
+  border: none;
+}
+#newtab-search-logo[active] {
+  background-color: #FF9F00;
+  border: none;
+}
+#newtab-search-logo {
+  background-image: url("chrome://browser/skin/magnifier.png");
+}
+#newtab-search-logo.magnifier[active],
+#newtab-search-logo.magnifier:hover {
+  background-image: url("chrome://browser/skin/magnifier-hover.png");
+}
+/* Newer versions only */
+#newtab-search-icon {
+  background-image: url("chrome://browser/skin/search-indicator-magnifying-glass.svg#magnifying-glass");
+}
+#newtab-search-logo.magnifier[active],
+#newtab-search-logo.magnifier:hover {
+  background-image: url("chrome://browser/skin/magnifier-hover.png");
+}
+
 #newtab-search-text {
   border: 1px solid #9C9CFF;
   background-color: #000000;
@@ -266,20 +290,88 @@ body {
 }
 
 #newtab-search-submit {
-  background: url("chrome://browser/skin/search-arrow-go.svg#search-arrow-go") no-repeat scroll center center;
+  background-image: none;
   background-color: #C09070;
+  color: #000000;
+  box-shadow: none;
   border-radius: 0 300px 300px 0;
   border: none;
   -moz-margin-start: 3px;
 }
 #newtab-search-text:focus + #newtab-search-submit,
 #newtab-search-text[autofocus] + #newtab-search-submit {
-  background: url("chrome://browser/skin/search-arrow-go.svg#search-arrow-go") no-repeat scroll center center;
+  background-image: none;
   background-color: #008484;
+  color: #000000;
   box-shadow: none;
 }
 #newtab-search-text + #newtab-search-submit:hover {
-  background: url("chrome://browser/skin/search-arrow-go.svg#search-arrow-go") no-repeat scroll center center;
+  background-image: none;
   background-color: #FFCF00;
+  color: #000000;
   box-shadow: none;
+}
+/* Newer versions only */
+#newtab-search-submit[value=""],
+#newtab-search-text:focus + #newtab-search-submit[value=""],
+#newtab-search-text[autofocus] + #newtab-search-submit[value=""],
+#newtab-search-text + #newtab-search-submit[value=""]:hover {
+  background-image: url("chrome://browser/skin/search-arrow-go.svg#search-arrow-go");
+}
+
+/* CUSTOMIZE */
+#newtab-customize-overlay {
+  background: #A09090;
+}
+
+#newtab-customize-panel,
+#newtab-customize-panel-anchor,
+#newtab-customize-panel-inner-wrapper,
+.newtab-customize-panel-item,
+.newtab-customize-complex-option {
+  background-color: #000000;
+}
+
+#newtab-customize-title {
+  color: #9C9CFF;
+  background-color: #000000;
+}
+
+.newtab-customize-panel-item[selected],
+.newtab-customize-panel-subitem[selected] {
+  color: #FF9F00;
+}
+
+.newtab-customize-panel-item:not([selected]),
+.newtab-customize-panel-subitem:not([selected]) {
+  color: #A09090;
+}
+
+.newtab-customize-panel-subitem > .checkbox {
+  background-color: #000000;
+  border-color: #A09090;
+}
+
+.newtab-customize-panel-subitem[selected] > .checkbox {
+  background-color: #000000;
+  background-image: url("chrome://global/skin/menu/shared-menu-check-active.svg");
+  color: #FF9F00;
+}
+
+.newtab-customize-panel-item:not(:first-child),
+.newtab-search-panel-engine {
+  border-top: 1px solid #A09090;
+}
+
+.newtab-customize-complex-option:hover > .selectable:not([selected]),
+.selectable:hover:not([selected]),
+.newtab-customize-complex-option:hover > .selectable:not([selected]) + .newtab-customize-panel-subitem,
+.newtab-customize-panel-item:hover:not([selected]) {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
+.newtab-customize-complex-option:hover > .selectable:not([selected]),
+.selectable:hover:not([selected]) {
+  background-image: url("chrome://global/skin/menu/shared-menu-check-black.svg");
 }

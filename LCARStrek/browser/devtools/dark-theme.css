@@ -419,6 +419,12 @@ div.CodeMirror span.eval-text {
 .devtools-searchinput {
   background-color: #000000;
   color: #E7ADE7;
+  border: 1px solid #9C9CFF;
+}
+
+.devtools-textinput:focus,
+.devtools-searchinput:focus {
+  border-color: #008484;
 }
 
 .CodeMirror-Tern-fname {
