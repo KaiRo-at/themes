@@ -119,6 +119,10 @@ scrollbarbutton[sbattr="scrollbar-up-bottom"],
 scrollbarbutton[sbattr="scrollbar-down-top"] {
   display: none;
 }
+scrollbarbutton[sbattr="scrollbar-up-top"],
+scrollbarbutton[sbattr="scrollbar-down-bottom"] {
+  display: -moz-box !important;
+}
 
 /* ::::: square at the corner of two scrollbars ::::: */
 
