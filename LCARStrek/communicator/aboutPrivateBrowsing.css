@@ -4,25 +4,50 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* Hide selected items by default and display them based on the page status */
-
-#warningBox:not(.private) .private,
-#warningBox:not(.normal) .normal {
-  display: none;
+#warningScreen {
+  background-color: #000000;
 }
 
-.title {
-  background-size: auto;
+#warningBox {
+  background-color: #000000;
+  color: #FF9F00;
+  border: 1px solid #9C9CFF;
+  border-radius: 10px;
+  padding: 3em;
+  -moz-padding-start: 30px;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#warningInnerBox {
+  max-width: 50em;
+}
+
+#warningTitle {
+  margin: 0 0 .6em 0;
+  font-size: 160%;
+  border-bottom: 1px solid #A09090;
+}
+
+#warningText {
+  font-size: 110%;
+  margin-left: 0;
 }
 
 /* Pick the desired icons depending on the window's context */
 
-.private.title {
+#warningBox.private > #warningBoxIcon {
   background-image: url("chrome://global/skin/icons/information-48.png");
+  width: 48px;
+  height: 48px;
+  -moz-margin-end: 3em;
 }
 
-.normal.title {
+#warningBox.normal > #warningBoxIcon {
   background-image: url("chrome://global/skin/icons/question-48.png");
+  width: 48px;
+  height: 48px;
+  -moz-margin-end: 3em;
 }
 
 #trackWarnBox {
@@ -39,8 +64,14 @@
 
 /* Define additional styles to look similar to the netError/certError pages */
 
+#warningTitle {
+  font-weight: bold;
+}
+
 #warningStatus {
   margin: 0.4em 0 1.2em 0;
+  padding-bottom: 1.2em;
+  border-bottom: 1px solid #A09090;
   font-size: 135%;
 }
 
@@ -48,6 +79,7 @@
   margin: 0.8em 0 1em 0;
 }
 
-#warningStatus > label {
+#warningOuterBox > vbox > label,
+#warningInnerBox > description {
   -moz-margin-start: 0;
 }
