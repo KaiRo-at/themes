@@ -3,15 +3,12 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 html {
-  background-color: #CCD0DD;
-  color: #000000;
-  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  --aboutSupport-table-background: #CCD0DD;
+  background-color: var(--in-content-page-background);
 }
 
 body {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 40px 48px;
 }
 
 .page-subtitle {
@@ -26,22 +23,27 @@ body {
   font-weight: bold;
 }
 
+button {
+  -moz-margin-start: 0;
+  -moz-margin-end: 8px;
+}
+
 table {
-  background-color: #CCD0DD;
-  color: #000000;
+  background-color: var(--aboutSupport-table-background);
+  color: var(--in-content-text-color);
   text-align: start;
   width: 100%;
-  border: 1px solid #9999CC;
+  border: 1px solid var(--in-content-border-color);
   border-spacing: 0px;
 }
 
 th, td {
-  padding: 3px;
+  padding: 4px;
 }
 
-th + th,
-td + td {
-  border-left: 1px dotted #9999CC;
+th:not(:first-child),
+td:not(:first-child) {
+  border-left: 1px dotted var(--in-content-border-color);
 }
 
 thead th {
@@ -50,8 +52,8 @@ thead th {
 
 th {
   text-align: start;
-  background-color: #666699;
-  color: #CCD0DD;
+  background-color: var(--in-content-table-header-background);
+  color: var(--in-content-selected-text);
 }
 
 th.column {
@@ -61,7 +63,12 @@ th.column {
 
 td {
   text-align: start;
-  border-top: 1px dotted #9999CC;
+}
+
+tr:not(:first-child) > td,
+tr:not(:first-child) > th {
+  text-align: start;
+  border-top: 1px dotted var(--in-content-table-border-dark-color);
 }
 
 .prefs-table {
@@ -82,9 +89,9 @@ td {
 }
 
 #action-box {
-  background-color: #CCD0DD;
-  border: 1px solid #666699;
-  color: #000000;
+  background-color: var(--aboutSupport-table-background);
+  border: 1px solid var(--in-content-border-color);
+  color: var(--in-content-text-color);
   float: right;
   margin-top: 2em;
   margin-bottom: 20px;

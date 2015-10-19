@@ -12,6 +12,7 @@
 
 menu,
 menuitem,
+menucaption,
 .splitmenu-menuitem {
   -moz-box-align: center;
   max-width: 42em;
@@ -77,13 +78,15 @@ menuitem.spell-suggestion {
 menupopup > menu,
 popup > menu,
 menupopup > menuitem,
-popup > menuitem {
+popup > menuitem,
+menupopup > menucaption {
   padding: 2px;
 }
 
 /* ::::: menu/menuitems in menulist popups ::::: */
 
 menulist > menupopup > menuitem,
+menulist > menupopup > menucaption,
 menulist > menupopup > menu {
   padding: 1px 5px;
   max-width: none;
@@ -108,6 +111,12 @@ menulist > menupopup > menu {
 .menu-text {
   -moz-margin-start: 19px !important;
   font-weight: inherit;
+}
+
+menucaption > .menu-text,
+menucaption > .menu-iconic-text {
+  font-weight: bold;
+  -moz-padding-start: 0 !important;
 }
 
 .menu-description {
@@ -181,6 +190,7 @@ menulist > menupopup > menu {
 }
 
 menulist > menupopup > menuitem > .menu-iconic-left,
+menulist > menupopup > menucaption > .menu-iconic-left,
 menulist > menupopup > menu > .menu-iconic-left {
   display: none;
 }

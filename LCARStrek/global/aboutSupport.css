@@ -3,29 +3,32 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 html {
-  background-color: #000000;
-  color: #FF9F00;
-  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  --aboutSupport-table-background: #000000;
+  background-color: var(--in-content-page-background);
 }
 
 body {
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 40px 48px;
 }
 
-a:link, a:visited, a:active {
+a:link, a:visited {
   border-radius: 3px;
-  color: #FFCF00;
-  background-color: #000000;
+  color: var(--in-content-link-color);
+  background-color: var(--in-content-page-background);
   text-decoration: none;
   -moz-padding-start: 1px;
   -moz-padding-end: 1px;
 }
 
+/* on hover and active, behave like buttons */
 a:hover {
-  color: #000000;
-  background-color: #FFCF00;
+  color: var(--in-content-selected-text);
+  background-color: var(--in-content-box-background-hover);
+}
+
+a:active {
+  color: var(--in-content-selected-text);
+  background-color: var(--in-content-box-background-active);
 }
 
 .page-subtitle {
@@ -40,13 +43,18 @@ a:hover {
   font-weight: bold;
 }
 
+button {
+  -moz-margin-start: 0;
+  -moz-margin-end: 8px;
+}
+
 table {
-  background-color: #000000;
-  color: #E7ADE7;
+  background-color: var(--aboutSupport-table-background);
+  color: var(--in-content-text-color);
   text-align: start;
   width: 100%;
   border-radius: 10px;
-  border: 1px solid #9C9FFF;
+  border: 1px solid var(--in-content-border-color);
   border-spacing: 0px;
 }
 
@@ -60,7 +68,17 @@ th, td {
 
 th:not(:first-child),
 td:not(:first-child) {
-  border-left: 1px dotted #9C9FFF;
+  border-left: 1px dotted var(--in-content-border-color);
+}
+
+thead th {
+  text-align: center;
+}
+
+th {
+  text-align: start;
+  background-color: var(--in-content-table-header-background);
+  color: var(--in-content-selected-text);
 }
 
 /* adjustments for not painting outside of table border */
@@ -94,16 +112,6 @@ tbody:last-child > tr:last-child > td:last-child {
   border-bottom-right-radius: 9px;
 }
 
-thead th {
-  text-align: center;
-}
-
-th {
-  text-align: start;
-  background-color: #008484;
-  color: #FFCF00;
-}
-
 th.column {
   white-space: nowrap;
   width: 0px;
@@ -113,7 +121,7 @@ tr:not(:first-child) > td,
 tr:not(:first-child) > th,
 tbody:not(:first-child) > tr > td,
 tbody:not(:first-child) > tr > th {
-  border-top: 1px dotted #9C9FFF;
+  border-top: 1px dotted var(--in-content-table-border-dark-color);
 }
 
 td {
@@ -138,9 +146,9 @@ td {
 }
 
 #action-box {
-  background-color: #000000;
-  border: 1px solid #9C9CFF;
-  color: #FF9F00;
+  background-color: var(--aboutSupport-table-background);
+  border: 1px solid var(--in-content-border-color);
+  color: var(--in-content-text-color);
   float: right;
   margin-top: 2em;
   margin-bottom: 20px;

@@ -10,6 +10,7 @@
 
 /* ::::: Variables ::::: */
 .panel-arrowcontent {
+  --panel-arrowcontent-padding: 6px;
   --panel-arrowcontent-background: #000000;
   --panel-arrowcontent-color: #FF9F00;
   --panel-arrowcontent-border: 1px solid #FF9F00;
@@ -52,7 +53,7 @@ panel[type="arrow"][side="right"] {
 
 .panel-arrowcontent {
   border-radius: 6px;
-  padding: 6px;
+  padding: var(--panel-arrowcontent-padding);
   color: var(--panel-arrowcontent-color);
   background: var(--panel-arrowcontent-background);
   background-clip: padding-box;

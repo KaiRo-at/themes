@@ -7,13 +7,54 @@
 @namespace html "http://www.w3.org/1999/xhtml";
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
+*|*:root {
+  --in-content-page-color: #FF9F00;
+  --in-content-page-background: #000000;
+  --in-content-text-color: #FF9F00;
+  --in-content-selected-text: #000000;
+  ---in-content-header-border-color: #c8c8c8;
+  --in-content-button-background: #C09070;
+  --in-content-box-background: #000000;
+  ---in-content-box-background-odd: #f3f6fa;
+  --in-content-box-background-hover: #FFCF00;
+  --in-content-box-background-active: #FF9F00;
+  --in-content-box-background-disabled: #402858;
+  --in-content-box-border-color: #FF9F00;
+  ---in-content-item-hover: rgba(0,149,221,0.25);
+  ---in-content-item-selected: #0095dd;
+  ---in-content-border-highlight: #33FF33;
+  --in-content-border-focus: #FFCF00;
+  --in-content-border-color: #9C9CFF;
+  --in-content-border-disabled: #8050B0;
+  --in-content-category-text: #FFCF00;
+  --in-content-category-border-focus: 1px dotted #000000;
+  --in-content-category-text-selected: #000000;
+  --in-content-categorylist-background: #A09090;
+  --in-content-category-background: #000000;
+  --in-content-category-background-hover: #FFCF00;
+  --in-content-category-background-active: #008484;
+  ---in-content-tab-color: #424f5a;
+  --in-content-link-color: #3333FF;
+  --in-content-link-color-hover: #FFCF00;
+  --in-content-link-color-active: #FF9F00;
+  --in-content-link-color-visited: #6000CF;
+  --in-content-primary-button-background: #A06060;
+  --in-content-primary-button-background-hover: #FFCF00;
+  --in-content-primary-button-background-active: #FF9F00;
+  --in-content-table-border-dark-color: #9C9CFF;
+  --in-content-table-header-background: #A09090;
+  ---in-content-help-button-background: #ffcb00;
+  ---in-content-help-button-background-hover: #f4c200;
+  ---in-content-help-button-background-active: #eaba00;
+  --in-content-disabled-text: #8050B0;
+}
 html|body,
 xul|page,
 xul|window {
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   -moz-appearance: none;
-  background-color: #000000;
-  color: #FF9F00;
+  background-color: var(--in-content-page-background);
+  color: var(--in-content-page-color);
 }
 
 html|body {
@@ -26,14 +67,14 @@ html|h1 {
   font-size: 2.5em;
   font-weight: lighter;
   line-height: 1.2;
-  color: #9C9CFF;
+  color: var(--in-content-text-color);
   margin: 0;
   margin-bottom: .5em;
 }
 
 html|hr {
   border-style: solid none none none;
-  border-color: #9C9CFF;
+  border-color: var(--in-content-border-color);
 }
 
 xul|caption {
@@ -89,9 +130,9 @@ xul|tabpanels {
 
 xul|tabs {
   margin-bottom: 15px;
-  border-top: 1px solid #c1c1c1;
-  border-bottom: 1px solid #c1c1c1;
-  background-color: #fbfbfb;
+  border-top: 1px solid var(--in-content-box-border-color);
+  border-bottom: 1px solid var(--in-content-box-border-color);
+  background-color: var(--in-content-page-background);
 }
 
 xul|*.tabs-left,
@@ -104,20 +145,20 @@ xul|tab {
   margin-top: 0;
   padding: 4px 20px;
   min-height: 44px;
-  color: #424f5a;
-  background-color: #fbfbfb;
+  color: var(--in-content-tab-color);
+  background-color: var(--in-content-page-background);
   border-width: 0;
   transition: background-color 50ms ease 0s;
 }
 
 xul|tab:hover {
-  background-color: #ebebeb;
+  background-color: var(--in-content-box-background-hover);
 }
 
-xul|tab[visuallyselected] {
-  background-color: #ebebeb;
+xul|tab[selected] {
+  background-color: var(--in-content-box-background-hover);
   padding-bottom: 0; / compensate the 4px border /
-  border-bottom: 4px solid #ff9500;
+  border-bottom: 4px solid var(--in-content-border-highlight);
 }
 
 xul|*.tab-text {
@@ -130,8 +171,8 @@ xul|*.tab-text {
 html|button {
   border-radius: 300px;
   border: none;
-  background-color: #C09070;
-  color: #000000;
+  background-color: var(--in-content-button-background);
+  color: var(--in-content-selected-text);
   /* override forms.css */
   font: inherit;
 }
@@ -143,31 +184,30 @@ xul|colorpicker[type="button"],
 xul|menulist {
   -moz-appearance: none;
   height: 30px;
-  color: #333;
-  line-height: 20px;
-  border: 1px solid #c1c1c1;
+  color: var(--in-content-text-color);
+  border: 1px solid var(--in-content-box-border-color);
   -moz-border-top-colors: none !important;
   -moz-border-right-colors: none !important;
   -moz-border-bottom-colors: none !important;
   -moz-border-left-colors: none !important;
   border-radius: 2px;
-  background-color: #fbfbfb;
+  background-color: var(--in-content-page-background);
 }
 */
 html|button:enabled:hover,
 xul|button:not([disabled="true"]):hover,
 xul|colorpicker[type="button"]:not([disabled="true"]):hover,
 xul|menulist:not([disabled="true"]):hover {
-  background-color: #FFCF00;
-  color: #000000;
+  background-color: var(--in-content-box-background-hover);
+  color: var(--in-content-selected-text);
 }
 
 html|button:enabled:hover:active,
 xul|button:not([disabled="true"]):hover:active,
 xul|colorpicker[type="button"]:not([disabled="true"]):hover:active,
 xul|menulist[open="true"]:not([disabled="true"]) {
-  background-color: #FF9F00;
-  color: #000000;
+  background-color: var(--in-content-box-background-active);
+  color: var(--in-content-selected-text);
 }
 
 html|button:disabled,
@@ -175,22 +215,22 @@ xul|button[disabled="true"],
 xul|colorpicker[type="button"][disabled="true"],
 xul|menulist[disabled="true"] {
   cursor: not-allowed;
-  background-color: #402858;
-  color: #000000;
+  background-color: var(--in-content-box-background-disabled);
+  color: var(--in-content-selected-text);
 }
 
 *|button.primary {
-  background-color: #A06060;
+  background-color: var(--in-content-primary-button-background);
 }
 
 html|button.primary:enabled:hover,
 xul|button.primary:not([disabled="true"]):hover {
-  background-color: #FFCF00;
+  background-color: var(--in-content-primary-button-background-hover);
 }
 
 html|button.primary:enabled:hover:active,
 xul|button.primary:not([disabled="true"]):hover:active {
-  background-color: #FF9F00;
+  background-color: var(--in-content-primary-button-background-active);
 }
 /*
 xul|colorpicker[type="button"] {
@@ -316,9 +356,9 @@ xul|menulist[disabled="true"]:not([editable="true"]) > xul|*.menulist-dropmarker
 xul|menulist > xul|menupopup,
 xul|button[type="menu"] > xul|menupopup {
   -moz-appearance: none;
-  border: 1px solid #c1c1c1;
+  border: 1px solid var(--in-content-box-border-color);
   border-radius: 2px;
-  background-color: #fff;
+  background-color: var(--in-content-box-background);
 }
 
 xul|menulist > xul|menupopup xul|menu,
@@ -327,7 +367,7 @@ xul|button[type="menu"] > xul|menupopup xul|menu,
 xul|button[type="menu"] > xul|menupopup xul|menuitem {
   -moz-appearance: none;
   font-size: 1rem;
-  color: #333;
+  color: var(--in-content-text-color);
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   -moz-padding-start: 10px;
@@ -338,16 +378,16 @@ xul|menulist > xul|menupopup > xul|menu:not([disabled="true"])[_moz-menuactive="
 xul|menulist > xul|menupopup > xul|menuitem:not([disabled="true"])[_moz-menuactive="true"],
 xul|button[type="menu"] > xul|menupopup > xul|menu:not([disabled="true"])[_moz-menuactive="true"],
 xul|button[type="menu"] > xul|menupopup > xul|menuitem:not([disabled="true"])[_moz-menuactive="true"] {
-  color: #333;
-  background-color: rgba(0,149,221,0.25);
+  color: var(--in-content-text-color);
+  background-color: var(--in-content-item-hover);
 }
 
 xul|menulist > xul|menupopup > xul|menu:not([disabled="true"])[selected="true"],
 xul|menulist > xul|menupopup > xul|menuitem:not([disabled="true"])[selected="true"],
 xul|button[type="menu"] > xul|menupopup > xul|menu:not([disabled="true"])[selected="true"],
 xul|button[type="menu"] > xul|menupopup > xul|menuitem:not([disabled="true"])[selected="true"] {
-  color: #fff;
-  background-color: #0095dd;
+  color: var(--in-content-selected-text);
+  background-color: var(--in-content-item-selected);
 }
 
 xul|menulist > xul|menupopup > xul|menu[disabled="true"],
@@ -365,7 +405,7 @@ xul|button[type="menu"] > xul|menupopup xul|menuseparator {
   -moz-appearance: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid #c1c1c1;
+  border-top: 1px solid var(--in-content-box-border-color);
   border-bottom: none;
 }
 */
@@ -374,22 +414,22 @@ xul|button[type="menu"] > xul|menupopup xul|menuseparator {
 *|textbox {
   -moz-appearance: none;
   height: 30px;
-  color: #333;
+  color: var(--in-content-text-color);
   line-height: 20px;
   padding-right: 10px;
   padding-left: 10px;
-  border: 1px solid #c1c1c1;
+  border: 1px solid var(--in-content-box-border-color);
   -moz-border-top-colors: none !important;
   -moz-border-right-colors: none !important;
   -moz-border-bottom-colors: none !important;
   -moz-border-left-colors: none !important;
   border-radius: 2px;
-  background-color: #fff;
+  background-color: var(--in-content-box-background);
 }
 
 html|textbox:focus,
 xul|textbox[focused] {
-  border-color: #0095dd;
+  border-color: var(--in-content-border-focus);
 }
 
 html|textbox:disabled,
@@ -402,25 +442,25 @@ xul|textbox[disabled="true"] {
 html|a,
 .text-link,
 .inline-link {
-  color: #3333FF;
+  color: var(--in-content-link-color);
   text-decoration: none;
-}
-
-html|a:visited {
-  color: #6000CF;
 }
 
 html|a:hover,
 .text-link:hover,
 .inline-link:hover {
-  color: #FFCF00;
+  color: var(--in-content-link-color-hover);
   text-decoration: underline;
+}
+
+html|a:visited {
+  color: var(--in-content-link-color-visited);
 }
 
 html|a:hover:active,
 .text-link:hover:active,
 .inline-link:hover:active {
-  color: #FF9F00;
+  color: var(--in-content-link-color-active);
   text-decoration: underline;
 }
 
@@ -452,19 +492,19 @@ html|input[type="checkbox"] + html|label:before {
   width: 23px;
   height: 23px;
   border-radius: 0;
-  border: 1px solid #FF9F00;
+  border: 1px solid var(--in-content-box-border-color);
   -moz-margin-end: 10px;
-  background-color: #000000;
+  background-color: var(--in-content-box-background);
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 /* xul|checkbox:not([disabled="true"]):hover > xul|*.checkbox-check, */
 html|input[type="checkbox"]:not(:disabled) + html|label:hover:before {
-  border-color: #FFCF00;
+  border-color: var(--in-content-border-focus);
 }
 html|input[type="checkbox"]:not(:disabled) + html|label:hover {
-  color: #FFCF00;
+  color: var(--in-content-link-color-hover);
 }
 /*
 xul|*.checkbox-check[checked] {
@@ -485,10 +525,10 @@ html|input[type="checkbox"]:not(:disabled) + html|label:hover:before {
   background-image: url("chrome://global/skin/in-content/check.svg#check-hover");
 }
 html|input[type="checkbox"]:disabled + html|label:before {
-  border-color: #8050B0;
+  border-color: var(--in-content-border-disabled);
 }
 html|input[type="checkbox"]:disabled + html|label {
-  color: #8050B0;
+  color: var(--in-content-disabled-text);
 }
 /*
 xul|*.checkbox-label-box {
@@ -508,7 +548,7 @@ xul|*.radio-check {
   -moz-appearance: none;
   width: 23px;
   height: 23px;
-  border: 1px solid #c1c1c1;
+  border: 1px solid var(--in-content-box-border-color);
   border-radius: 50%;
   -moz-margin-end: 10px;
   background-color: #f1f1f1;
@@ -517,7 +557,7 @@ xul|*.radio-check {
 }
 
 xul|radio:not([disabled="true"]):hover > xul|*.radio-check {
-  border-color: #0095dd;
+  border-color: var(--in-content-border-focus);
 }
 
 xul|*.radio-check[selected] {
@@ -537,7 +577,7 @@ xul|*.radio-label-box {
 /* Category List */
 
 xul|*#categories {
-  background-color: #A09090;
+  background-color: var(--in-content-categorylist-background);
   padding-top: 4em;
   margin: 0;
   border-radius: 1em 0 0 0;
@@ -545,8 +585,8 @@ xul|*#categories {
 }
 
 xul|*.category {
-  background-color: #000000;
-  color: #FFCF00;
+  background-color: var(--in-content-category-background);
+  color: var(--in-content-category-text);
   -moz-border-end-width: 0;
   -moz-padding-start: 15px;
   -moz-padding-end: 21px;
@@ -555,18 +595,18 @@ xul|*.category {
 }
 
 xul|*.category:hover {
-  background-color: #FFCF00;
-  color: #000000;
+  background-color: var(--in-content-category-background-hover);
+  color: var(--in-content-category-text-selected);
 }
 
 xul|*.category[selected] {
-  background-color: #008484;
-  color: #000000;
+  background-color: var(--in-content-category-background-active);
+  color: var(--in-content-category-text-selected);
 }
 
 xul|*#categories[keyboard-navigation="true"]:-moz-focusring > xul|*.category[current] {
-  border-top: 1px dotted #000000;
-  border-bottom: 1px dotted #000000;
+  border-top: var(--in-content-category-border-focus);
+  border-bottom: var(--in-content-category-border-focus);
 }
 
 *|*.category-name {
@@ -587,7 +627,7 @@ xul|*#categories[keyboard-navigation="true"]:-moz-focusring > xul|*.category[cur
 
 *|*.header {
 /*  -moz-margin-end: 4px; / add the 4px end-margin of other elements /
-  border-bottom: 1px solid #A09090;
+  border-bottom: 1px solid var(--in-content-header-border-color);
   margin-bottom: 15px;
   padding-bottom: 15px; */
 }
@@ -650,9 +690,9 @@ xul|richlistbox,
 xul|listbox {
   -moz-appearance: none;
   -moz-margin-start: 0;
-  background-color: #fff;
-  border: 1px solid #c1c1c1;
-  color: #333;
+  background-color: var(--in-content-box-background);
+  border: 1px solid var(--in-content-box-border-color);
+  color: var(--in-content-text-color);
 }
 
 xul|treechildren::-moz-tree-row,
@@ -666,13 +706,13 @@ xul|listbox xul|listitem {
 
 xul|treechildren::-moz-tree-row(hover),
 xul|listbox xul|listitem:hover {
-  background-color: rgba(0,149,221,0.25);
+  background-color: var(--in-content-item-hover);
 }
 
 xul|treechildren::-moz-tree-row(selected),
 xul|listbox xul|listitem[selected="true"] {
-  background-color: #0095dd;
-  color: #fff;
+  background-color: var(--in-content-item-selected);
+  color: var(--in-content-selected-text);
 }
 
 / This is the only way to increase the height of a tree row unfortunately /
@@ -694,20 +734,21 @@ xul|treechildren::-moz-tree-cell-text(selected) {
 xul|tree {
   -moz-appearance: none;
   font-size: 1em;
-  border: 1px solid #c1c1c1;
+  border: 1px solid var(--in-content-box-border-color);
+  background-color: var(--in-content-box-background);
   margin: 0;
 }
 
 xul|tree:-moz-focusring,
 xul|richlistbox:-moz-focusring {
-  border: 1px dotted #0095dd;
+  border: 1px dotted var(--in-content-border-focus);
 }
 
 xul|listheader,
 xul|treecols {
   -moz-appearance: none;
   border: none;
-  border-bottom: 1px solid #c1c1c1;
+  border-bottom: 1px solid var(--in-content-border-color);
   padding: 0;
 }
 
@@ -715,15 +756,15 @@ xul|treecol:not([hideheader="true"]),
 xul|treecolpicker {
   -moz-appearance: none;
   border: none;
-  background-color: #ebebeb;
+  background-color: var(--in-content-box-background-hover);
   color: #808080;
   padding: 5px 10px;
 }
 
 xul|treecol:not([hideheader="true"]):not([sortable="false"]):hover,
 xul|treecolpicker:hover {
-  background-color: #dadada;
-  color: #333;
+  background-color: var(--in-content-box-background-active);
+  color: var(--in-content-text-color);
 }
 
 xul|treecol:not([hideheader="true"]):not(:first-child),
@@ -741,6 +782,20 @@ xul|treecol:not([hideheader="true"]) > xul|*.treecol-sortdirection[sortDirection
 
 xul|treecol:not([hideheader="true"]) > xul|*.treecol-sortdirection[sortDirection="ascending"] {
   transform: scaleY(-1);
+}
+
+/ This is the only way to increase the height of a tree row unfortunately /
+xul|treechildren::-moz-tree-row {
+  min-height: 2em;
+}
+
+/ Color needs to be set on tree cell in order to be applied /
+xul|treechildren::-moz-tree-cell-text {
+  color: var(--in-content-text-color);
+}
+
+xul|treechildren::-moz-tree-cell-text(selected) {
+  color: var(--in-content-selected-text);
 }
 */
 /* === END common.inc.css === */

@@ -368,7 +368,7 @@
 
 .list {
   margin: 0;
-  border: none;
+  border-width: 0 !important;
   background-color: transparent;
 }
 
