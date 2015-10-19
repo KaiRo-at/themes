@@ -8,8 +8,10 @@ scrollbar {
   padding: 2px;
 }
 
+/* Scrollbar code will reset the margin to the correct side depending on
+   where layout actually puts the scrollbar */
 scrollbar[orient="vertical"] {
-  -moz-margin-start: -10px;
+  margin-left: -10px;
   min-width: 3px;
   max-width: 3px;
 }
@@ -41,5 +43,5 @@ scrollbar:not(:hover) thumb {
 }
 
 scrollbar scrollbarbutton, scrollbar gripper {
-  display: none;
+  display: none !important; /* need !important to override forced display in LCARStrek */
 }
