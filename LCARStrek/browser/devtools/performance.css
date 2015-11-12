@@ -117,6 +117,11 @@
   background: var(--theme-selection-background);
 }
 
+.record-button[locked] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 #performance-view .realtime-disabled-message,
 #performance-view .realtime-disabled-on-e10s-message {
   display: none;
@@ -171,10 +176,6 @@
 
 #main-record-button[checked] {
   list-style-image: url(profiler-stopwatch-checked.svg);
-}
-
-#main-record-button[locked] {
-  pointer-events: none;
 }
 
 #main-record-button .button-icon {
@@ -540,13 +541,6 @@ menuitem.marker-color-graphs-blue:before,
   background-color: var(--theme-graphs-blue);
 }
 
-#performance-filter-menupopup > menuitem.highlight-purple:before,
-.marker-details-bullet.highlight-purple,
-.waterfall-marker-bar.highlight-purple,
-.waterfall-marker-bullet.highlight-purple {
-  background-color: var(--theme-highlight-purple);
-}
-
 #waterfall-details > * {
   padding-top: 3px;
 }
@@ -692,8 +686,11 @@ call-tree-item:not([origin="content"]) .call-tree-line {
   opacity: 0.6;
 }
 
+.call-tree-name {
+  -moz-margin-end: 4px !important;
+}
+
 .call-tree-url {
-  -moz-margin-start: 4px !important;
   cursor: pointer;
 }
 
@@ -716,12 +713,6 @@ call-tree-item:not([origin="content"]) .call-tree-line {
 
 .call-tree-host {
   color: ver(--theme-body-color);
-}
-
-.call-tree-url[value=""],
-.call-tree-line[value=""],
-.call-tree-host[value=""] {
-  display: none;
 }
 
 .call-tree-zoom {
