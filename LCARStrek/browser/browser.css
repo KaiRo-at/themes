@@ -3491,6 +3491,12 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 
 /* === END notification-icons.inc.css === */
 
+.popup-notification-body[popupid="addon-progress"],
+.popup-notification-body[popupid="addon-install-confirmation"] {
+  width: 28em;
+  max-width: 28em;
+}
+
 /* Translation infobar */
 
 /* === BEGIN infobar.inc.css === */
