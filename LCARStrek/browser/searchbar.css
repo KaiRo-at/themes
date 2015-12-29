@@ -117,6 +117,7 @@
 searchbar[oneoffui] .search-go-button {
   list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
   -moz-image-region: rect(0, 42px, 14px, 28px);
+  width: 14px;
 }
 
 searchbar[oneoffui] .search-go-button:hover {
@@ -131,6 +132,20 @@ searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon
   transform: scaleX(-1);
 }
 
+@media (min-resolution: 1.1dppx) {
+  searchbar[oneoffui] .search-go-button {
+    list-style-image: url("chrome://browser/skin/reload-stop-go@2x.png");
+    -moz-image-region: rect(0, 84px, 28px, 56px);
+  }
+
+  searchbar[oneoffui] .search-go-button:hover {
+    -moz-image-region: rect(28px, 84px, 56px, 56px);
+  }
+
+  searchbar[oneoffui] .search-go-button:hover:active {
+    -moz-image-region: rect(56px, 84px, 84px, 56px);
+  }
+}
 
 .search-panel-current-engine {
   border-top: none !important;
@@ -181,7 +196,7 @@ searchbar[oneoffui] .search-go-button:-moz-locale-dir(rtl) > .toolbarbutton-icon
 }
 
 .searchbar-engine-one-off-item:not(.last-row) {
-  box-sizing: padding-box;
+  box-sizing: content-box;
   border-bottom: 1px solid #9C9CFF;
 }
 

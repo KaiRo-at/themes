@@ -26,6 +26,11 @@ notification {
   font-size: var(--monospace-font-size);
 }
 
+/* Bottom-docked toolbox minimize transition */
+.devtools-toolbox-bottom-iframe {
+  transition: margin-bottom .1s;
+}
+
 /* Splitters */
 
 .devtools-horizontal-splitter {
@@ -41,6 +46,11 @@ notification {
   margin: 0 3px;
   position: relative;
   cursor: e-resize;
+}
+
+.devtools-horizontal-splitter.disabled,
+.devtools-side-splitter.disabled {
+  pointer-events: none;
 }
 
 /* In-tools sidebar */

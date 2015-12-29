@@ -28,6 +28,7 @@
   --theme-splitter-color: #9C9CFF;
   --theme-comment: #A09090;
 
+  --theme-sidebar-background: #000000;
   --theme-contrastsidebar-background: #A09090;
   --theme-contrastsidebar-color: #000000;
   --theme-contrastsidebar-bordercolor: #000000;
@@ -606,6 +607,7 @@ div.CodeMirror span.eval-text {
 .devtools-button {
   border: 0 solid var(--theme-splitter-color);
   background: var(--theme-toolbar-background);
+  color: var(--theme-body-color);
   margin: 0;
   padding: 0;
   min-width: 32px;
@@ -646,6 +648,11 @@ div.CodeMirror span.eval-text {
   top: 50%;
   margin: -8px 0 0 -8px;
   background-repeat: no-repeat;
+}
+
+.devtools-button[disabled]::before,
+.devtools-button:disabled::before {
+  opacity: 0.5;
 }
 
 @media (min-resolution: 1.25dppx) {
@@ -691,8 +698,8 @@ div.CodeMirror span.eval-text {
 
 /* Searchbox is a div container element for a search input element */
 .devtools-searchbox {
-  display: -moz-box;
-  -moz-box-flex: 1;
+  display: flex;
+  flex: 1;
   position: relative;
 }
 

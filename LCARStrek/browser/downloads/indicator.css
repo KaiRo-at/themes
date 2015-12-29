@@ -19,28 +19,35 @@
 
 /*** Main indicator icon ***/
 
+@media not all and (min-resolution: 1.1dppx) {
+  #downloads-indicator-icon {
+    --downloads-indicator-icon: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"), 0, 198, 18, 180);
+    --downloads-indicator-icon-hover: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"), 18, 198, 36, 180);
+    --downloads-indicator-icon-attention: url("chrome://browser/skin/downloads/download-glow.png");
+  }
+}
+
+
 #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"),
-                              0, 198, 18, 180) center no-repeat;
-  min-width: 18px;
-  min-height: 18px;
+  background: var(--downloads-indicator-icon) center no-repeat;
+  width: 18px;
+  height: 18px;
+  background-size: 18px;
 }
 
 #downloads-button:hover > #downloads-indicator-anchor > #downloads-indicator-icon,
 #downloads-button[open="true"] > #downloads-indicator-anchor > #downloads-indicator-icon,
 #downloads-button[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"),
-                              18, 198, 36, 180) center no-repeat;
+  background-image: var(--downloads-indicator-icon-hover);
   color: #000000;
 }
 
 toolbar[brighttext] #downloads-button:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon {
-/*  background: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"),
-                              0, 108, 18, 90) center no-repeat;*/
+/*  background-image: var(--downloads-indicator-icon-inverted); */
 }
 
 #downloads-button[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background-image: url("chrome://browser/skin/downloads/download-glow.png");
+  background-image: var(--downloads-indicator-icon-attention);
 }
 
 #downloads-button[cui-areatype="menu-panel"][attention] {
@@ -52,20 +59,18 @@ toolbar[brighttext] #downloads-button:not([attention]) > #downloads-indicator-an
    equivalent to -moz-any([progress], [paused]). */
 
 #downloads-button:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"),
-                              0, 198, 18, 180) center no-repeat;
+  background: var(--downloads-indicator-icon) center no-repeat;
   background-size: 12px;
 }
 
 #downloads-button:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background-image: url("chrome://browser/skin/downloads/download-glow.png");
+  background-image: var(--downloads-indicator-icon-attention);
 }
 
 #downloads-button:not([counter]):hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
 #downloads-button[open="true"]:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
 #downloads-button:not([counter])[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"),
-                              18, 198, 36, 180) center no-repeat;
+  background-image: var(--downloads-indicator-icon-hover);
   background-size: 12px;
 }
 
