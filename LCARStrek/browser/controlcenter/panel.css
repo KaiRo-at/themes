@@ -99,7 +99,7 @@
 #identity-popup-security-content,
 #identity-popup-permissions-content,
 #tracking-protection-content {
-  padding: 0.75em 0 1em;
+  padding: 0.5em 0 1em;
   -moz-padding-start: calc(2em + 24px);
   -moz-padding-end: 1em;
   background-repeat: no-repeat;
@@ -114,32 +114,6 @@
   background-position: calc(100% - 1em) 1em;
 }
 
-/* IN-CONTENT-PREF STYLE BUTTONS */
-/*
-.identity-popup-button {
-  -moz-appearance: none;
-  margin: 5px 0;
-  height: 30px;
-  color: #333;
-  line-height: 20px;
-  border: 1px solid #c1c1c1;
-  border-radius: 2px;
-  background-color: #fbfbfb;
-}
-
-.identity-popup-button:not([disabled="true"]):hover {
-  background-color: #ebebeb;
-}
-
-.identity-popup-button:not([disabled="true"]):hover:active {
-  background-color: #dadada;
-}
-
-.identity-popup-button[disabled="true"] {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-*/
 /* EXPAND BUTTON */
 
 .identity-popup-expander {
@@ -161,13 +135,7 @@
 .identity-popup-expander[panel-multiview-anchor] {
   transition: background-color 250ms ease-in;
   background-color: #008484;
-  background-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted.png");
-}
-
-@media (min-resolution: 1.1dppx) {
-  .identity-popup-expander[panel-multiview-anchor] {
-    background-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted@2x.png");
-  }
+  background-image: url("chrome://browser/skin/controlcenter/arrow-subview-back.svg");
 }
 
 .identity-popup-expander > .button-box,
@@ -192,6 +160,12 @@
 
 /* CONTENT */
 
+#identity-popup-security-content > description,
+#identity-popup-security-descriptions > description,
+#identity-popup-securityView-header > description,
+#identity-popup-securityView-body > description,
+#identity-popup-permissions-content > description,
+#tracking-protection-content > label,
 .identity-popup-text {
   white-space: pre-wrap;
   font-size: 110%;
@@ -201,6 +175,20 @@
 .identity-popup-headline {
   margin: 2px 0 4px;
   font-size: 150%;
+}
+.identity-popup-warning-gray {
+  -moz-padding-start: 24px;
+  background: url(chrome://browser/skin/controlcenter/warning-gray.svg) no-repeat 0 50%;
+}
+
+.identity-popup-warning-yellow {
+  -moz-padding-start: 24px;
+  background: url(chrome://browser/skin/controlcenter/warning-yellow.svg) no-repeat 0 50%;
+}
+
+.identity-popup-warning-gray:-moz-locale-dir(rtl),
+.identity-popup-warning-yellow:-moz-locale-dir(rtl) {
+  background-position: 100% 50%;
 }
 
 /* SECURITY */
@@ -249,7 +237,7 @@
 }
 
 #identity-popup-securityView-header {
-  border-bottom: 1px solid #A09090;
+  border-bottom: 1px solid #A09090; /*var(--panel-separator-color);*/
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
@@ -273,14 +261,26 @@
   background-image: url("chrome://browser/skin/controlcenter/tracking-protection.svg");
 }
 
+#tracking-protection-content[state="loaded-tracking-content"],
 #tracking-protection-content[block-disabled]  {
   background-image: url("chrome://browser/skin/controlcenter/tracking-protection-disabled.svg");
 }
 
 #tracking-action-block,
-#tracking-action-unblock {
+#tracking-action-unblock,
+#tracking-action-unblock-private {
   margin: 1em 0 0;
 }
+
+#tracking-protection-content[state] > #tracking-not-detected,
+#tracking-protection-content:not([state="blocked-tracking-content"]) > #tracking-blocked,
+#main-window[privatebrowsingmode] #tracking-action-unblock,
+#main-window:not([privatebrowsingmode]) #tracking-action-unblock-private,
+#tracking-protection-content:not([state="blocked-tracking-content"]) #tracking-action-unblock,
+#tracking-protection-content:not([state="blocked-tracking-content"]) #tracking-action-unblock-private,
+#tracking-protection-content:not([state="loaded-tracking-content"]) > #tracking-loaded,
+#tracking-protection-content:not([state="loaded-tracking-content"]) #tracking-action-block,
+#tracking-protection-content:not([state]) > #tracking-actions,
 
 #tracking-protection-content[block-active] > #tracking-not-detected,
 #tracking-protection-content[block-disabled] > #tracking-not-detected,
@@ -326,79 +326,10 @@
 
 /* === END panel.inc.css === */
 
-/* Popup Icons */
-#identity-popup-icon {
-  height: 64px;
-  width: 64px;
-  padding: 0;
-  list-style-image: url("chrome://browser/skin/identity.png");
-  -moz-image-region: rect(0px, 64px, 64px, 0px);
+.identity-popup-expander:-moz-focusring {
+  padding: 1px;
 }
 
-#identity-popup.verifiedDomain > #identity-popup-container > #identity-popup-icon {
-  -moz-image-region: rect(64px, 64px, 128px, 0px);
-}
-
-#identity-popup.verifiedIdentity > #identity-popup-container > #identity-popup-icon {
-  -moz-image-region: rect(128px, 64px, 192px, 0px);
-}
-
-/* Popup Body Text */
-.identity-popup-description {
-  white-space: pre-wrap;
-  -moz-padding-start: 15px;
-  margin: 2px 0 4px;
-}
-
-.identity-popup-label {
-  white-space: pre-wrap;
-  -moz-padding-start: 15px;
-  margin: 0;
-}
-
-#identity-popup-content-host,
-#identity-popup-content-box.verifiedIdentity > #identity-popup-content-owner {
-  font-size: 1.2em;
-}
-
-#identity-popup-content-host {
-  margin-top: 3px;
-  margin-bottom: 5px;
-  font-weight: bold;
-  max-width: 300px;
-}
-
-#identity-popup-content-owner {
-  margin-top: 4px;
-  margin-bottom: 0 !important;
-  font-weight: bold;
-  max-width: 300px;
-}
-
-.verifiedDomain > #identity-popup-content-owner {
-  font-weight: normal;
-}
-
-#identity-popup-content-verifier {
-  margin: 4px 0 2px;
-}
-
-#identity-popup-content-box.verifiedIdentity > #identity-popup-encryption ,
-#identity-popup-content-box.verifiedDomain > #identity-popup-encryption {
-  margin-top: 10px;
-  -moz-margin-start: -24px;
-}
-
-#identity-popup-content-box.verifiedIdentity > #identity-popup-encryption > vbox > #identity-popup-encryption-icon ,
-#identity-popup-content-box.verifiedDomain > #identity-popup-encryption > vbox > #identity-popup-encryption-icon {
-  list-style-image: url("chrome://browser/skin/Secure24.png");
-}
-
-#identity-popup > .panel-arrowcontainer > .panel-arrowcontent {
-  padding: 0;
-}
-
-#identity-popup-container {
-  min-width: 280px;
-  padding: 10px;
+.identity-popup-expander:-moz-focusring > .button-box {
+  outline: 1px #008484 dotted;
 }

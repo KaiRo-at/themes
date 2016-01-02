@@ -4,6 +4,10 @@
 
 /* === BEGIN panelUIOverlay.inc.css === */
 
+:root {
+  --panel-ui-exit-subview-gutter-width: 38px;
+}
+
 #PanelUI-popup #PanelUI-contents:empty {
   height: 128px;
 }
@@ -89,7 +93,7 @@
 
 .panel-subviews {
   padding: 4px;
-  -moz-margin-start: 38px;
+  -moz-margin-start: var(--panel-ui-exit-subview-gutter-width);
 }
 
 .panel-viewstack[viewtype="main"] > .panel-subviews {
@@ -656,6 +660,10 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   display: none;
 }
 
+#PanelUI-fxa-status[disabled] {
+  pointer-events: none;
+}
+
 #PanelUI-fxa-avatar {
   width: 32px;
   height: 32px;
@@ -688,14 +696,12 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
-#PanelUI-fxa-status:not([disabled]):hover,
 #PanelUI-fxa-icon:not([disabled]):hover,
 #PanelUI-help:not([disabled]):hover,
 #PanelUI-customize:hover,
 #PanelUI-quit:not([disabled]):hover {
 }
 
-#PanelUI-fxa-status:not([disabled]):hover:active,
 #PanelUI-fxa-icon:not([disabled]):hover:active,
 #PanelUI-help:not([disabled]):hover:active,
 #PanelUI-customize:hover:active,
@@ -703,7 +709,9 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-fxa-status:not([disabled]):hover,
-#PanelUI-fxa-status:not([disabled]):hover:active {
+#PanelUI-fxa-status:not([disabled]):hover:active,
+#PanelUI-fxa-icon:not([disabled]):hover,
+#PanelUI-fxa-icon:not([disabled]):hover:active {
 }
 
 #PanelUI-footer-fxa[fxastatus="error"] {
@@ -1019,7 +1027,7 @@ toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button 
   position: absolute;
   top: 0;
   height: 100%;
-  width: 38px;
+  width: var(--panel-ui-exit-subview-gutter-width);
   background-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted.png");
   background-repeat: no-repeat;
   background-color: #008484;
@@ -1033,13 +1041,13 @@ toolbarbutton[panel-multiview-anchor="true"] > .toolbarbutton-menubutton-button 
 
 toolbarbutton[panel-multiview-anchor="true"] {
   background-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted.png");
-  background-position: right calc((22.35em / 3 - 0.1px) / 2 - 38px + 2px) center;
+  background-position: right calc((22.35em / 3 - 0.1px) / 2 - var(--panel-ui-exit-subview-gutter-width) + 2px) center;
   background-repeat: no-repeat;
 }
 
 toolbarbutton[panel-multiview-anchor="true"]:-moz-locale-dir(rtl) {
   background-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png");
-  background-position: left calc((22.35em / 3 - 0.1px) / 2 - 38px + 2px) center;
+  background-position: left calc((22.35em / 3 - 0.1px) / 2 - var(--panel-ui-exit-subview-gutter-width) + 2px) center;
 }
 
 toolbarpaletteitem[place="palette"] > .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,

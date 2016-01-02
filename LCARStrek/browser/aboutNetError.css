@@ -45,7 +45,7 @@ ul {
   padding-bottom: 0.4em;
 }
 
-#errorTitleText[sslv3] {
+#errorTitle[sslv3] {
   background-image: url("aboutNetError_alert.svg");
 }
 

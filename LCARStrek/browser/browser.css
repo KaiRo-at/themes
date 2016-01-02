@@ -2175,6 +2175,14 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   max-width: 50ch;
 }
 
+#urlbar[actiontype="searchengine"] > #identity-box > #page-proxy-favicon {
+  -moz-image-region: inherit;
+  list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg#search-icon);
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+}
+
 /* === END identity-block.inc.css === */
 
 #page-proxy-favicon {

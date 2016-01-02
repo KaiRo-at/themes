@@ -930,10 +930,6 @@
 
 /* Bar graph widget */
 
-.bar-graph-widget-canvas {
-  background: #000000;
-}
-
 .bar-graph-widget-legend {
   position: absolute;
   top: 4px;

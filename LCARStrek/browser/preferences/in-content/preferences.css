@@ -365,6 +365,7 @@ description > html|a {
 
 #dialogTitle {
   text-align: center;
+  -moz-user-select: none;
 }
 
 .close-icon {
@@ -434,6 +435,19 @@ description > html|a {
 @keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/**
+ * Sync
+ */
+
+#fxaDeviceName {
+  margin: 14px 0px;
+}
+
+#fxaSyncComputerName.plain {
+  background-color: transparent;
+  opacity: 1;
 }
 
 /* === END shared/in-content/preferences.css === */
