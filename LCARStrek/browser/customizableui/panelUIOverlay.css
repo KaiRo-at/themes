@@ -496,10 +496,11 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 #PanelUI-fxa-status {
   display: flex;
   flex: 1 1 0%;
+  width: 1px;
 }
 
 #PanelUI-footer-inner,
-#PanelUI-footer-fxa {
+#PanelUI-footer-fxa:not([hidden]) {
   display: flex;
   border-top: 1px solid #9C9CFF;
 }
@@ -616,8 +617,8 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   list-style-image: url("chrome://browser/skin/syncFxProgress-horizontalbar.png");
 }
 
-#PanelUI-fxa-icon[fxastatus="migrate-signup"],
-#PanelUI-fxa-icon[fxastatus="migrate-verify"] {
+#PanelUI-footer-fxa[fxastatus="migrate-signup"] > #PanelUI-fxa-status > #PanelUI-fxa-label,
+#PanelUI-footer-fxa[fxastatus="migrate-verify"] > #PanelUI-fxa-status > #PanelUI-fxa-label {
   list-style-image: url(chrome://global/skin/warning-16.png);
 }
 

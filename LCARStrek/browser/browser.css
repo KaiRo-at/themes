@@ -38,6 +38,11 @@ menubar {
 
 :root {
   --verified-identity-box-backgroundcolor: #000000;
+
+  --panel-separator-color: #A09090;
+
+  /*--urlbar-separator-color: rgba(0,0,0,.2);*/
+  --urlbar-separator-color: #9C9CFF;
 }
 
 #menubar-items {
@@ -1863,6 +1868,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   color: #FFBFFF;
 }
 
+/* overlap the urlbar's border */
+#PopupAutoCompleteRichResult {
+  margin-top: -1px;
+}
+
 #urlbar:-moz-lwtheme,
 .searchbar-textbox:-moz-lwtheme {
   /* background-color: rgba(255,255,255,.8);
@@ -2084,7 +2094,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 }
 
 #urlbar-container[combined="true"] > #urlbar > .urlbar-history-dropmarker,
-#urlbar-wrapper > #urlbar > .urlbar-history-dropmarker {
+#urlbar-wrapper > #urlbar > .urlbar-history-dropmarker,
+#urlbar-wrapper > #urlbar > .urlbar-textbox-container > .urlbar-history-dropmarker {
   border: none;
   border-radius: 0px;
 }
@@ -2181,6 +2192,99 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   width: 16px;
   height: 16px;
   opacity: 1;
+}
+
+/* MAIN IDENTITY ICON */
+
+#identity-icon {
+  width: 16px;
+  height: 16px;
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#normal);
+}
+
+#identity-box:hover > #identity-icon,
+#identity-box[open=true] > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#hover);
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon {
+  list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
+}
+
+#urlbar[pageproxystate="invalid"] > #identity-box > #identity-icon {
+  opacity: 0.3;
+}
+
+#urlbar[actiontype="searchengine"] > #identity-box > #identity-icon {
+  -moz-image-region: inherit;
+  list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg#search-icon);
+  width: 16px;
+  height: 16px;
+  opacity: 1;
+}
+
+/* TRACKING PROTECTION ICON */
+
+#tracking-protection-icon {
+  width: 16px;
+  height: 16px;
+  margin-inline-start: 2px;
+  margin-inline-end: 0;
+  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg);
+  opacity: 1;
+}
+
+#tracking-protection-icon[state="loaded-tracking-content"] {
+  list-style-image: url(chrome://browser/skin/tracking-protection-disabled-16.svg);
+}
+
+#tracking-protection-icon[animate] {
+  transition: margin-left 200ms ease-out, margin-right 200ms ease-out;
+}
+
+#tracking-protection-icon:not([state]) {
+  margin-inline-end: -18px;
+  pointer-events: none;
+  opacity: 0;
+  /* Only animate the shield in, when it disappears hide it immediately. */
+  transition: none;
+}
+
+#urlbar[pageproxystate="invalid"] > #identity-box > #tracking-protection-icon {
+  visibility: collapse;
+}
+
+/* CONNECTION ICON */
+
+#connection-icon {
+  width: 16px;
+  height: 16px;
+  margin-inline-start: 2px;
+  visibility: collapse;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-secure.svg);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-active-loaded.svg);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-active-blocked.svg);
+  visibility: visible;
 }
 
 /* === END identity-block.inc.css === */
@@ -2314,13 +2418,19 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 /* combined go/reload/stop button in location bar */
 
-#urlbar > toolbarbutton {
-  -moz-margin-start: 0;
-  padding: 0 2px;
-  background-origin: border-box;
-  border: none;
+#urlbar-go-button,
+#urlbar-reload-button,
+#urlbar-stop-button {
+  border-style: none;
   list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
-  -moz-border-start: 1px solid #9C9CFF;
+/*  padding: 0 9px;*/
+  margin-inline-start: 2px;
+  border-inline-start: 1px solid var(--urlbar-separator-color);
+  border-image: linear-gradient(transparent 15%,
+                                var(--urlbar-separator-color) 15%,
+                                var(--urlbar-separator-color) 85%,
+                                transparent 85%);
+  border-image-slice: 1;
 }
 
 #urlbar:-moz-locale-dir(ltr) > toolbarbutton {
@@ -2376,8 +2486,16 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 }
 
 @media (min-resolution: 1.1dppx) {
-  #urlbar > toolbarbutton {
+  #urlbar-go-button,
+  #urlbar-reload-button,
+  #urlbar-stop-button {
     list-style-image: url("chrome://browser/skin/reload-stop-go@2x.png");
+  }
+
+  #urlbar-go-button > .toolbarbutton-icon,
+  #urlbar-reload-button > .toolbarbutton-icon,
+  #urlbar-stop-button > .toolbarbutton-icon {
+    width: 14px;
   }
 
   #urlbar-go-button {
@@ -2414,10 +2532,6 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
   #urlbar-stop-button:hover:active {
     -moz-image-region: rect(56px, 56px, 84px, 28px);
-  }
-
-  #urlbar > toolbarbutton > .toolbarbutton-icon {
-    width: 14px;
   }
 }
 
@@ -3139,7 +3253,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="xpinstall-disabled"],
-.popup-notification-icon[popupid="addon-install-blocked"] {
+.popup-notification-icon[popupid="addon-install-blocked"],
+.popup-notification-icon[popupid="addon-install-origin-blocked"] {
   list-style-image: url(chrome://browser/skin/addons/addon-install-blocked.svg);
 }
 
@@ -3245,6 +3360,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 }
 
 .notification-anchor-icon {
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
+
   width: 16px;
   height: 16px;
   margin: 0 2px;
@@ -3252,11 +3369,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 
 .notification-anchor-icon:-moz-focusring {
   outline: 1px dotted #008484;
-}
-
-.default-notification-icon,
-#default-notification-icon {
-  list-style-image: url("chrome://global/skin/icons/information-16.png");
 }
 
 .identity-notification-icon,

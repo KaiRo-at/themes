@@ -19,13 +19,13 @@
 
 /*** Main indicator icon ***/
 
-@media not all and (min-resolution: 1.1dppx) {
-  #downloads-indicator-icon {
+/*@media not all and (min-resolution: 1.1dppx) {*/
+  #downloads-button {
     --downloads-indicator-icon: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"), 0, 198, 18, 180);
     --downloads-indicator-icon-hover: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"), 18, 198, 36, 180);
     --downloads-indicator-icon-attention: url("chrome://browser/skin/downloads/download-glow.png");
   }
-}
+/*}*/
 
 
 #downloads-indicator-icon {

@@ -611,11 +611,11 @@ window {
   }
 }
 
-#resume ~ toolbarbutton {
+#debugger-controls toolbarbutton {
 /*  transition: opacity 0.15s ease-in-out; */
 }
 
-#resume:not([checked]) ~ toolbarbutton {
+#debugger-controls toolbarbutton[disabled] {
 /*  opacity: 0.5; */
 }
 

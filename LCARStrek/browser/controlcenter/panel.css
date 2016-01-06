@@ -92,7 +92,7 @@
 }
 
 .identity-popup-section:not(:first-child) {
-  border-top: 1px solid #A09090; /*var(--panel-separator-color);*/
+  border-top: 1px solid var(--panel-separator-color);
 }
 
 #identity-popup-securityView,
@@ -222,13 +222,10 @@
 }
 
 #identity-popup-securityView.verifiedDomain,
-#identity-popup-security-content.verifiedDomain {
-  background-image: url(chrome://browser/skin/controlcenter/conn-secure-dv.svg);
-}
-
 #identity-popup-securityView.verifiedIdentity,
+#identity-popup-security-content.verifiedDomain,
 #identity-popup-security-content.verifiedIdentity {
-  background-image: url(chrome://browser/skin/controlcenter/conn-secure-ev.svg);
+  background-image: url(chrome://browser/skin/controlcenter/conn-secure.svg);
 }
 
 #identity-popup-securityView.mixedActiveContent,
@@ -237,7 +234,7 @@
 }
 
 #identity-popup-securityView-header {
-  border-bottom: 1px solid #A09090; /*var(--panel-separator-color);*/
+  border-bottom: 1px solid var(--panel-separator-color);
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
