@@ -58,7 +58,8 @@ panel[type="autocomplete"],
 panel[type="autocomplete-richlistbox"],
 .autocomplete-history-popup {
   border: 1px solid #9999CC;
-  background-color: white;
+  background-color: #FFFFFF;
+  color: #000000;
   padding: 0;
 }
 

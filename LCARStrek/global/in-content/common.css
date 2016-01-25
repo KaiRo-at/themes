@@ -48,7 +48,7 @@
   ---in-content-help-button-background-active: #eaba00;
   --in-content-disabled-text: #8050B0;
 }
-html|body,
+html|html,
 xul|page,
 xul|window {
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
@@ -148,6 +148,8 @@ xul|tab {
   color: var(--in-content-tab-color);
   background-color: var(--in-content-page-background);
   border-width: 0;
+  / !important overrides tabbox.css RTL and visuallyselected rules /
+  border-radius: 0 !important;
   transition: background-color 50ms ease 0s;
 }
 
@@ -183,7 +185,7 @@ html|button {
 xul|colorpicker[type="button"],
 xul|menulist {
   -moz-appearance: none;
-  height: 30px;
+  min-height: 30px;
   color: var(--in-content-text-color);
   border: 1px solid var(--in-content-box-border-color);
   -moz-border-top-colors: none !important;
@@ -301,6 +303,7 @@ xul|*.help-button > xul|*.button-box > xul|*.button-text {
 }
 /*
 xul|*.spinbuttons-button {
+  min-height: initial;
   -moz-margin-start: 10px !important;
   -moz-margin-end: 2px !important;
 }
@@ -411,7 +414,9 @@ xul|button[type="menu"] > xul|menupopup xul|menuseparator {
 */
 /* textboxes */
 /*
-*|textbox {
+html|input[type="text"],
+html|textarea,
+xul|textbox {
   -moz-appearance: none;
   height: 30px;
   color: var(--in-content-text-color);
@@ -427,12 +432,27 @@ xul|button[type="menu"] > xul|menupopup xul|menuseparator {
   background-color: var(--in-content-box-background);
 }
 
-html|textbox:focus,
+xul|textbox {
+  min-height: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+html|input[type="text"],
+html|textarea {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 5px 10px;
+}
+
+html|input[type="text"]:focus,
+html|textarea:focus,
 xul|textbox[focused] {
   border-color: var(--in-content-border-focus);
 }
 
-html|textbox:disabled,
+html|input[type="text"]:disabled,
+html|textarea:disabled,
 xul|textbox[disabled="true"] {
   opacity: 0.5;
 }
@@ -467,7 +487,7 @@ html|a:hover:active,
 /* Checkboxes and radio buttons */
 /* Hide the actual checkbox */
 html|input[type="checkbox"] {
-  opacity: 0;
+  visibility: hidden;
   position: absolute;
 }
 
@@ -576,7 +596,7 @@ xul|*.radio-label-box {
 */
 /* Category List */
 
-xul|*#categories {
+*|*#categories {
   background-color: var(--in-content-categorylist-background);
   padding-top: 4em;
   margin: 0;
@@ -584,7 +604,7 @@ xul|*#categories {
   border: none;
 }
 
-xul|*.category {
+*|*.category {
   background-color: var(--in-content-category-background);
   color: var(--in-content-category-text);
   -moz-border-end-width: 0;
@@ -594,17 +614,17 @@ xul|*.category {
   transition: background-color 150ms;
 }
 
-xul|*.category:hover {
+*|*.category:hover {
   background-color: var(--in-content-category-background-hover);
   color: var(--in-content-category-text-selected);
 }
 
-xul|*.category[selected] {
+*|*.category[selected] {
   background-color: var(--in-content-category-background-active);
   color: var(--in-content-category-text-selected);
 }
 
-xul|*#categories[keyboard-navigation="true"]:-moz-focusring > xul|*.category[current] {
+*|*#categories[keyboard-navigation="true"]:-moz-focusring > xul|*.category[current] {
   border-top: var(--in-content-category-border-focus);
   border-bottom: var(--in-content-category-border-focus);
 }

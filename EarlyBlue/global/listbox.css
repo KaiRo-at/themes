@@ -26,24 +26,31 @@ listbox[disabled="true"] {
 
 listitem {
   border: 1px solid transparent;
+
+  --listitem-selectedColor: #FFFFFF;
+  --listitem-selectedBackground: #808080;
+  --listitem-selectedFocusColor: var(--listitem-selectedColor);
+  --listitem-selectedFocusBackground: #336699;
+  --listitem-focusCurrentBorder: #6666CC;
+  --listitem-selectedFocusCurrentBorder: #666699;
 }
 
 listbox:-moz-focusring > listitem[current="true"] {
-  border: 1px dotted #9999CC;
+  border: 1px dotted var(--listitem-focusCurrentBorder);
 }
 
 listbox:-moz-focusring > listitem[current="true"][selected="true"] {
-  border: 1px dotted #666699;
+  border: 1px dotted var(--listitem-selectedFocusCurrentBorder);
 }
 
 listitem[selected="true"] {
-  background-color: #808080;
-  color: #FFFFFF;
+  background-color: var(--listitem-selectedBackground);
+  color: var(--listitem-selectedColor);
 }
 
 listbox:focus > listitem[selected="true"] {
-  background-color: #336699;
-  color: #FFFFFF;
+  background-color: var(--listitem-selectedFocusBackground);
+  color: var(--listitem-selectedFocusColor);
 }
 
 /* ::::: listheader ::::: */

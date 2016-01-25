@@ -6,77 +6,15 @@
   == Styles specific to the alerts dialog.
   ======================================================================= */
 
-@import url("chrome://global/skin/");
+@import url("chrome://global/skin/alerts/alert-common.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.alertBox {
+#alertBox {
   border: 1px solid #9C9CFF;
   border-radius: 3px;
   background-color: #000000;
-}
-
-.alertImageBox {
-  padding: 8px 0;
-  width: 64px;
-  -moz-border-end: 1px solid #9C9CFF;
-}
-
-.alertTextBox {
-  padding: 8px;
-  -moz-padding-start: 16px;
-  width: 255px;
-}
-
-.alertTextBox,
-.alertCloseBox {
-}
-
-.alertBox[orient="horizontal"] > .alertImageBox {
-  -moz-margin-end: 8px;
-}
-
-.alertBox[orient="vertical"] > .alertImageBox {
-  margin-bottom: 8px;
-}
-
-#alertNotification[clickable="true"]:hover .alertTextBox,
-#alertNotification[clickable="true"]:hover .alertCloseBox {
-/*  background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.3));*/
-}
-
-.alertTitle {
-  font-weight: bold;
-  font-size: 110%;
-}
-
-#alertImage {
-  max-width: 48px;
-  max-height: 48px;
-  list-style-image: url("chrome://global/skin/alerts/notification-48.png");
-}
-
-#alertNotification[clickable="true"] {
-  cursor: pointer;
-}
-
-label {
-  cursor: inherit;
-}
-
-@keyframes alert-animation {
-  from {
-    opacity: 0;
-  }
-  6.25% {
-    opacity: 1;
-  }
-  93.75% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  color: #FF9F00;
 }
 
 .alertCloseButton {

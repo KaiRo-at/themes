@@ -69,6 +69,7 @@ panel[type="autocomplete-richlistbox"],
 .autocomplete-history-popup {
   border: 1px solid #FF9F00;
   background-color: #000000;
+  color: #FF9F00;
   padding: 0;
 }
 
