@@ -310,16 +310,8 @@ description > html|a {
   margin-bottom: 8px;
 }
 
-#trackingProtectionImage {
-  width: 16px;
-  height: 16px;
-  list-style-image: url("chrome://browser/skin/bad-content-blocked-16.png");
-}
-
-@media (min-resolution: 2dppx) {
-  #trackingProtectionImage {
-    list-style-image: url("chrome://browser/skin/bad-content-blocked-16@2x.png");
-  }
+.text-link {
+  margin-bottom: 0;
 }
 
 #showUpdateHistory {
@@ -453,9 +445,11 @@ description > html|a {
 }
 
 #fxaProfileImage.actionable:hover {
+  box-shadow: 0px 0px 0px 1px #FFCF00;
 }
 
 #fxaProfileImage.actionable:hover:active {
+  box-shadow: 0px 0px 0px 1px #FF9F00;
 }
 
 #noFxaAccount {
