@@ -37,6 +37,7 @@ page {
   font-family: -moz-fixed;
 }
 
+listitem[default="true"],
 #identitiesList > listitem:first-child,
 treechildren::-moz-tree-cell-text(isDefaultServer-true) {
   font-weight: bold;
