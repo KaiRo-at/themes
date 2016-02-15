@@ -542,7 +542,12 @@ description > html|a {
 }
 
 #tosPP-small-ToS {
-  margin-bottom: 14px;
+  margin-bottom: 1em;
+}
+
+#fxaLoginRejectedWarning {
+  list-style-image: url("chrome://browser/skin/warning.svg");
+  margin: 4px 8px 0px 0px;
 }
 
 #noFxaCaption {
@@ -558,8 +563,8 @@ description > html|a {
   margin-bottom: 11px;
 }
 
-#fxaDeviceName {
-  margin-bottom: 27.5px;
+#fxaSyncComputerName {
+  margin-left: 0px;
 }
 
 #noFxaDescription {

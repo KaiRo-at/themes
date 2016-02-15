@@ -11,7 +11,7 @@ window {
 
 :root.theme-dark,
 :root.theme-light {
-  --table-splitter-color: #9C9CFF;
+  --table-splitter-color: #A09090;
   --table-zebra-background: rgba(255,159,0,0.1);
 }
 

@@ -10,8 +10,8 @@
   overflow: auto;
 }
 
-.theme-dark #storage-tree {
-  background: #000000; /* Toolbars */
+#storage-tree {
+  background: var(--theme-sidebar-background);
 }
 
 #storage-tree .tree-widget-item[type="store"]:after {

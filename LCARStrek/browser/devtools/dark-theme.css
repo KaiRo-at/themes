@@ -840,6 +840,13 @@ div.CodeMirror span.eval-text {
   -moz-border-end-width: 0;
 }
 
+.devtools-sidebar-tabs tabs > tab {
+}
+
+.devtools-sidebar-tabs tabs > tab[selected],
+.devtools-sidebar-tabs tabs > tab[selected] + tab {
+}
+
 .devtools-sidebar-tabs tabs > tab:first-child {
 }
 
@@ -847,9 +854,6 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-sidebar-tabs tabs > tab:hover:active {
-}
-
-.devtools-sidebar-tabs tabs > tab[selected] + tab {
 }
 
 .devtools-sidebar-tabs tabs > tab[selected] + tab:hover {
