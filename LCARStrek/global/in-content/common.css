@@ -48,6 +48,28 @@
   ---in-content-help-button-background-active: #eaba00;
   --in-content-disabled-text: #8050B0;
 }
+
+@-moz-document url("about:privatebrowsing") {
+  #bar {
+    background-color: #6000CF !important;
+    color: #FFCF00 !important;
+  }
+
+  #tpEnabled {
+    background-color: #008484 !important;
+    color: #000000 !important;
+  }
+
+  #tpDisabled {
+    background-color: #FF0000 !important;
+    color: #000000 !important;
+  }
+
+  #trackingProtectionSection {
+    border-color: #A09090 !important;
+  }
+}
+
 html|html,
 xul|page,
 xul|window {

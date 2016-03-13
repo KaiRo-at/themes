@@ -136,6 +136,7 @@
   transition: background-color 250ms ease-in;
   background-color: #008484;
   background-image: url("chrome://browser/skin/controlcenter/arrow-subview-back.svg");
+  color: #000000;
 }
 
 .identity-popup-expander > .button-box,
@@ -273,7 +274,8 @@
 
 #tracking-action-block,
 #tracking-action-unblock,
-#tracking-action-unblock-private {
+#tracking-action-unblock-private,
+#identity-popup-securityView-body > button {
   margin: 1em 0 0;
 }
 
