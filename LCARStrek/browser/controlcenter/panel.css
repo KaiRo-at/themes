@@ -174,7 +174,7 @@
 }
 
 .identity-popup-headline {
-  margin: 2px 0 4px;
+  margin: 3px 0 4px;
   font-size: 150%;
 }
 .identity-popup-warning-gray {
@@ -222,44 +222,87 @@
   background-image: url(chrome://browser/skin/controlcenter/conn-not-secure.svg);
 }
 
-#identity-popup-securityView.verifiedDomain,
-#identity-popup-securityView.verifiedIdentity,
-#identity-popup-security-content.verifiedDomain,
-#identity-popup-security-content.verifiedIdentity {
+#identity-popup[connection=chrome] #identity-popup-securityView,
+#identity-popup[connection=chrome] #identity-popup-security-content {
+  background-image: url(chrome://branding/content/icon48.png);
+}
+
+#identity-popup[connection^=secure] #identity-popup-securityView,
+#identity-popup[connection^=secure] #identity-popup-security-content {
   background-image: url(chrome://browser/skin/controlcenter/conn-secure.svg);
 }
 
-#identity-popup-securityView.weakCipher,
-#identity-popup-securityView.mixedDisplayContent,
-#identity-popup-securityView.mixedDisplayContentLoadedActiveBlocked,
-#identity-popup-security-content.weakCipher,
-#identity-popup-security-content.mixedDisplayContent,
-#identity-popup-security-content.mixedDisplayContentLoadedActiveBlocked {
+/* Use [isbroken] to make sure we don't show a lock on an http page. See Bug 1192162. */
+#identity-popup[ciphers=weak] #identity-popup-securityView,
+#identity-popup[ciphers=weak] #identity-popup-security-content,
+#identity-popup[mixedcontent~=passive-loaded][isbroken] #identity-popup-securityView,
+#identity-popup[mixedcontent~=passive-loaded][isbroken] #identity-popup-security-content {
   background-image: url(chrome://browser/skin/controlcenter/conn-degraded.svg);
 }
 
-#identity-popup-securityView.mixedActiveContent,
-#identity-popup-security-content.mixedActiveContent {
+#identity-popup[connection=secure-cert-user-overridden] #identity-popup-securityView,
+#identity-popup[connection=secure-cert-user-overridden] #identity-popup-security-content {
+  background-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
+}
+
+#identity-popup[loginforms=insecure] #identity-popup-securityView,
+#identity-popup[loginforms=insecure] #identity-popup-security-content,
+#identity-popup[mixedcontent~=active-loaded][isbroken] #identity-popup-securityView,
+#identity-popup[mixedcontent~=active-loaded][isbroken] #identity-popup-security-content {
   background-image: url(chrome://browser/skin/controlcenter/mcb-disabled.svg);
 }
 
-#identity-popup-securityView-header {
-  border-bottom: 1px solid var(--panel-separator-color);
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-}
-
-#identity-popup-content-owner {
-  font-weight: 700;
-}
-
-#identity-popup-content-verifier {
+#identity-popup-security-descriptions > description {
+  margin-top: 6px;
   color: #A09090;
 }
 
-#identity-popup-content-owner,
-#identity-popup-securityView > #identity-popup-securityView-connection.identity-popup-text {
+#identity-popup-securityView-header,
+#identity-popup-securityView-body {
+  -moz-margin-start: calc(2em + 24px);
+  -moz-margin-end: 1em;
+}
+
+#identity-popup-securityView-header {
+  margin-top: 0.5em;
+  border-bottom: 1px solid var(--panel-separator-color);
+  padding-bottom: 1em;
+}
+
+#identity-popup-securityView-body {
+  -moz-padding-end: 1em;
+}
+
+#identity-popup-securityView-footer {
   margin-top: 1em;
+  background-color: hsla(210,4%,10%,.07);
+}
+
+#identity-popup-securityView-footer > button {
+}
+
+#identity-popup-securityView-footer > button:hover,
+#identity-popup-securityView-footer > button:focus {
+}
+
+#identity-popup-securityView-footer > button:hover:active {
+}
+
+#identity-popup-content-verifier ~ description {
+  margin-top: 1em;
+  color: #A09090;
+}
+
+description#identity-popup-content-verified-by,
+description#identity-popup-content-owner,
+description#identity-popup-content-verifier,
+#identity-popup-securityView-body > button {
+  margin-top: 1em;
+}
+
+#identity-popup-securityView-body > button {
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 /* TRACKING PROTECTION */
@@ -297,31 +340,18 @@
   background-image: url(chrome://browser/skin/controlcenter/permissions.svg);
 }
 
+#identity-popup-permission-list menulist {
+  min-width: 60px;
+}
+
 #identity-popup-permission-list {
   margin-top: 5px;
 }
 
 .identity-popup-permission-label {
   -moz-margin-start: 0;
+  word-wrap: break-word;
 }
-
-/* FOOTER BUTTONS */
-
-#identity-popup-button-container {
-  background: #000000;
-  border-top: 1px solid #A09090;
-}
-
-#identity-popup-more-info-button {
-  margin-top: 5px;
-}
-/*
-#identity-popup-more-info-button:hover {
-}
-
-#identity-popup-more-info-button:hover:active {
-}
-*/
 
 /* === END panel.inc.css === */
 

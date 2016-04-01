@@ -43,7 +43,6 @@ menubar {
 
   --panel-separator-color: #A09090;
 
-  /*--urlbar-separator-color: rgba(0,0,0,.2);*/
   --urlbar-separator-color: #9C9CFF;
 }
 
@@ -1954,13 +1953,6 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   padding: 0;
 }
 
-.urlbar-icon:hover {
-}
-
-.urlbar-icon[open="true"],
-.urlbar-icon:hover:active {
-}
-
 #urlbar-search-footer {
   border-top: 1px solid #A09090;
 }
@@ -2095,18 +2087,19 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 /* === BEGIN identity-block.inc.css === */
 
 #identity-box {
-  --identity-box-border-color: #A09090;
   --identity-box-verified-color: #008484;
   /* Default theme does different color per channel, we can't as they do it build-time. */
   --identity-box-chrome-color: #9C9CFF;
 
-  border-inline-end: 1px solid --identity-box-border-color);
+  border-inline-end: 1px solid --urlbar-separator-color);
   font-size: .9em;
   border-radius: 2px;
-  -moz-margin-end: 3px;
-/*  padding: 2px 5px;
-  margin-inline-end: 4px;*/
+  padding: 3px 5px;
+  margin-inline-end: 4px;
   overflow: hidden;
+  /* The latter two properties have a transition to handle the delayed hiding of
+     the forward button when hovered. */
+  transition: background-color 150ms ease, padding-left, padding-right;
 }
 
 #identity-box:-moz-locale-dir(ltr) {
@@ -2141,10 +2134,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   -moz-margin-end: 1px;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not([switchingtabs]) > #urlbar > #identity-box {
-  transition: padding-left, padding-right;
-}
-
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled] + #urlbar >
     #notification-popup-box[hidden] + #identity-box {
   padding-inline-start: 2px;
@@ -2152,8 +2141,10 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper:hover:not([switchingtabs]) > #forward-button[disabled] + #urlbar >
     #notification-popup-box[hidden] + #identity-box {
-  /* forward button hiding is delayed when hovered */
-  transition-delay: 100s;
+  /* Forward button hiding is delayed when hovered, so we should use the same
+     delay for the identity box. We handle both horizontal paddings (for LTR and
+     RTL), the latter two delays here are for padding-left and padding-right. */
+  transition-delay: 0s, 100s, 100s;
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-button[disabled] + #urlbar >
@@ -2167,8 +2158,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 #tracking-protection-icon {
   width: 16px;
   height: 16px;
+  margin-inline-start: 0;
   list-style-image: url("chrome://browser/skin/tracking-protection-16.svg");
-  margin-left: 0;
   opacity: 1;
 }
 
@@ -2177,11 +2168,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 }
 
 #tracking-protection-icon[animate] {
-  transition: margin-left 200ms ease-out;
+  transition: margin-left 200ms ease-out, margin-right 200ms ease-out;
 }
 
 #tracking-protection-icon:not([state]) {
-  margin-left: -16px;
+  margin-inline-start: -18px;
   pointer-events: none;
   opacity: 0;
   /* Only animate the shield in, when it disappears hide it immediately. */
@@ -2493,7 +2484,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   border-style: none;
   list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
 /*  padding: 0 9px;*/
-  margin-inline-start: 2px;
+  margin-inline-start: 0px;
   border-inline-start: 1px solid var(--urlbar-separator-color);
   border-image: linear-gradient(transparent 15%,
                                 var(--urlbar-separator-color) 15%,
@@ -2880,9 +2871,11 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 :root {
   /* --tab-toolbar-navbar-overlap: 1px; */
+  /* --navbar-tab-toolbar-highlight-overlap: 1px; */
   /* --tab-min-height: 31px; */
-  /* --tab-curve-width: 30px; */
-  /* --tab-curve-half-width: 15px; */
+}
+#TabsToolbar {
+  /* --tab-stroke-background-size: auto 100%; */
 }
 
 .tabbrowser-tab,
@@ -2947,7 +2940,6 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   height: 16px;
  /* margin-top: -12px; */
   -moz-margin-start: -16px;
-  display: none;
   position: relative;
 }
 
@@ -2955,69 +2947,32 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   list-style-image: url("chrome://browser/skin/tabbrowser/crashed.svg");
 }
 
-.tab-icon-overlay[crashed],
-.tab-icon-overlay[soundplaying][pinned],
-.tab-icon-overlay[muted][pinned]:not([crashed]) {
-  display: -moz-box;
-}
-
-.tab-icon-overlay[soundplaying][pinned],
-.tab-icon-overlay[muted][pinned]:not([crashed]) {
+.tab-icon-overlay[soundplaying],
+.tab-icon-overlay[muted]:not([crashed]) {
   border-radius: 8px;
 }
 
-.tab-icon-overlay[soundplaying][pinned]:hover,
-.tab-icon-overlay[muted][pinned]:hover {
+.tab-icon-overlay[soundplaying]:hover,
+.tab-icon-overlay[muted]:hover {
   background-color: #FFCF00;
 }
 
-.tab-icon-overlay[soundplaying][pinned] {
+.tab-icon-overlay[soundplaying] {
   display: -moz-box;
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio");
 }
 
-.tab-icon-overlay[soundplaying][pinned]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-hover");
-}
-
-.tab-icon-overlay[soundplaying][pinned]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-pressed");
-}
-
-.tab-icon-overlay[muted][pinned]:not([crashed]) {
+.tab-icon-overlay[muted]:not([crashed]) {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted");
 }
 
-.tab-icon-overlay[muted][pinned]:not([crashed]):hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted-hover");
+#TabsToolbar[brighttext] .tab-icon-overlay[soundplaying]:not(:hover) {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white");
 }
 
-.tab-icon-overlay[muted][pinned]:not([crashed]):hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted-pressed");
-}
 
-#TabsToolbar[brighttext] .tab-icon-overlay[soundplaying][pinned] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-dark");
-}
-
-#TabsToolbar[brighttext] .tab-icon-overlay[soundplaying][pinned]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-hover");
-}
-
-#TabsToolbar[brighttext] .tab-icon-overlay[soundplaying][pinned]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-pressed");
-}
-
-#TabsToolbar[brighttext] .tab-icon-overlay[muted][pinned]:not([crashed]) {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted");
-}
-
-#TabsToolbar[brighttext] .tab-icon-overlay[muted][pinned]:not([crashed]):hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted-hover");
-}
-
-#TabsToolbar[brighttext] .tab-icon-overlay[muted][pinned]:not([crashed]):hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted-pressed");
+#TabsToolbar[brighttext] .tab-icon-overlay[muted]:not([crashed]):not(:hover) {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white-muted");
 }
 
 .tab-throbber[busy] {
@@ -3048,11 +3003,6 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   padding: 0;
 }
 
-.tab-icon-sound:not([soundplaying]):not([muted]),
-.tab-icon-sound[pinned] {
-  display: none;
-}
-
 .tab-icon-sound[muted] {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted");
 }
@@ -3066,39 +3016,75 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 }
 
 .tab-icon-sound[soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio");
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab");
 }
 
 .tab-icon-sound[soundplaying]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-hover");
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover");
 }
 
 .tab-icon-sound[soundplaying]:hover:active {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed");
+}
+
+.tab-icon-sound[muted] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted");
+}
+
+.tab-icon-sound[muted]:hover {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover");
+}
+
+.tab-icon-sound[muted]:hover:active {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed");
+}
+
+.tab-icon-sound[visuallyselected=true][soundplaying] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio");
+}
+
+.tab-icon-sound[visuallyselected=true][soundplaying]:hover {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-hover");
+}
+
+.tab-icon-sound[visuallyselected=true][soundplaying]:hover:active {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-pressed");
 }
 
+.tab-icon-sound[visuallyselected=true][muted] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted");
+}
+
+.tab-icon-sound[visuallyselected=true][muted]:hover {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-hover");
+}
+
+.tab-icon-sound[visuallyselected=true][muted]:hover:active {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-pressed");
+}
+
 #TabsToolbar[brighttext] .tab-icon-sound[soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-dark");
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white");
 }
 
 #TabsToolbar[brighttext] .tab-icon-sound[soundplaying]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-dark-hover");
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-hover");
 }
 
 #TabsToolbar[brighttext] .tab-icon-sound[soundplaying]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-dark-pressed");
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-pressed");
 }
 
 #TabsToolbar[brighttext] .tab-icon-sound[muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-dark");
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white");
 }
 
 #TabsToolbar[brighttext] .tab-icon-sound[muted]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-dark-hover");
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-hover");
 }
 
 #TabsToolbar[brighttext] .tab-icon-sound[muted]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-dark-pressed");
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-pressed");
 }
 
 .tab-close-button {
@@ -3187,6 +3173,33 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   color: #000000;
 }
 
+/* Tab separators */
+/*
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  width: 1px;
+  -moz-margin-start: -1px;
+  background-image: linear-gradient(transparent 5px,
+                                    currentColor 5px,
+                                    currentColor calc(100% - 4px),
+                                    transparent calc(100% - 4px));
+  opacity: 0.2;
+}
+
+#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab::before,
+#TabsToolbar[brighttext] > #tabbrowser-tabs > .tabbrowser-tab::after {
+  opacity: 0.4;
+}
+*/
+/* Also show separators beside the selected tab when dragging it. */
+/*
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]:not([last-visible-tab])::after,
+.tabbrowser-tab:not([visuallyselected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
+#tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([visuallyselected]):not([beforehovered]):not(:hover)::after {
+  content: "";
+  display: -moz-box;
+}
+*/
 /* New tab button */
 
 .tabs-newtab-button {
@@ -3464,15 +3477,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://global/skin/icons/webapps-64.png");
 }
 
-.popup-notification-icon[popupid="bad-content"] {
-  list-style-image: url("chrome://browser/skin/bad-content-blocked-64.png");
-}
-
-.popup-notification-icon[popupid="bad-content"][mixedblockdisabled],
-.popup-notification-icon[popupid="bad-content"][trackingblockdisabled] {
-  list-style-image: url(chrome://browser/skin/bad-content-unblocked-64.png);
-}
-
 .popup-notification-icon[popupid="webRTC-sharingDevices"],
 .popup-notification-icon[popupid="webRTC-shareDevices"] {
   list-style-image: url("chrome://browser/skin/webRTC-shareDevice-64.png");
@@ -3613,16 +3617,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
   to {
     opacity: 1;
   }
-}
-
-.bad-content-blocked-notification-icon,
-#bad-content-blocked-notification-icon {
-  list-style-image: url("chrome://browser/skin/bad-content-blocked-16.png");
-}
-
-.bad-content-unblocked-notification-icon,
-#bad-content-unblocked-notification-icon {
-  list-style-image: url(chrome://browser/skin/bad-content-unblocked-16.png);
 }
 
 .webRTC-shareDevices-notification-icon,
@@ -4021,22 +4015,61 @@ notification[value="loop-sharing-notification"] .messageImage {
   background-color: transparent !important;
 }
 
-#full-screen-warning-message {
-  background-color: #000000;
-  color: #FF9F00;
+/* === BEGIN fullscreen/warning.inc.css === */
+
+#fullscreen-warning {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #A09090;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.5);
   border-radius: 8px;
-  margin-top: 30px;
-  padding: 30px 50px;
-  box-shadow: 0 0 2px #9C9CFF;
+  padding: 24px 16px;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
-.full-screen-description {
-  font-size: 150%;
+#fullscreen-warning::before {
+  margin: 0;
+  width: 24px; height: 24px;
 }
 
-#full-screen-domain-text {
-  font-size: 300%;
+#fullscreen-warning.verifiedIdentity::before,
+#fullscreen-warning.verifiedDomain::before {
+  content: url("chrome://browser/skin/fullscreen/secure.svg");
 }
+
+#fullscreen-warning.unknownIdentity::before {
+  content: url("chrome://browser/skin/fullscreen/insecure.svg");
+}
+
+#fullscreen-domain-text,
+#fullscreen-generic-text {
+  font-size: 21px;
+  font-weight: lighter;
+  color: #A09090;
+  margin: 0 16px;
+}
+
+#fullscreen-domain {
+  font-weight: bold;
+  margin: 0;
+}
+
+#fullscreen-exit-button {
+  padding: 0 30px;
+  font: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: lighter;
+  margin: 0;
+  height: 28px;
+  box-sizing: content-box;
+
+  border-radius: 300px;
+  border: none;
+  background-color: #C09070;
+  color: #000000;
+}
+
+/* === END fullscreen/warning.inc.css === */
 
 /* === BEGIN commandline.inc.css === */
 
@@ -4547,12 +4580,14 @@ html|*#gcli-output-frame {
 }
 
 .devtools-responsiveui-home-button {
+  -moz-user-focus: ignore;
   width: 40px;
   height: 30px;
   list-style-image: url("chrome://browser/skin/devtools/responsiveui-home.png");
 }
 
 .devtools-responsiveui-sleep-button {
+  -moz-user-focus: ignore;
   -moz-appearance: none;
   /* compensate browserStack top padding */
   margin-top: -67px;
@@ -4580,6 +4615,7 @@ html|*#gcli-output-frame {
 
 .devtools-responsiveui-volume-up-button,
 .devtools-responsiveui-volume-down-button {
+  -moz-user-focus: ignore;
   -moz-appearance: none;
   border: 1px solid red;
   min-width: 8px;
@@ -5059,32 +5095,6 @@ notification.pluginVulnerable .messageImage {
 }
 
 /* === END plugin-doorhanger.inc.css === */
-
-/* === BEGIN badcontent-doorhanger.inc.css === */
-
-.popup-notification-item-title[popupid="bad-content"] {
-  font-weight: bold;
-}
-
-.popup-notification-item-message[popupid="bad-content"] {
-  width: 17em;
-}
-
-.popup-notification-item-message[popupid="bad-content"][mixedblockdisabled]:not(.popup-notification-item-message-critical),
-.popup-notification-item-message[popupid="bad-content"][trackingblockdisabled]:not(.popup-notification-item-message-critical) {
-  color: #8050B0;
-}
-
-.popup-notification-item-message-critical[popupid="bad-content"] {
-  color: #FF0000;
-  font-style: italic;
-}
-
-.popup-notification-footer[popupid="bad-content"] {
-  padding-top: 1em;
-}
-
-/* === END badcontent-doorhanger.inc.css === */
 
 /* === BEGIN login-doorhanger.inc.css === */
 
@@ -6196,10 +6206,6 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 
 #context-media-eme-learnmore {
   list-style-image: url("chrome://browser/skin/drm-icon.svg#chains");
-}
-
-#fill-login {
-  list-style-image: url("chrome://mozapps/skin/passwordmgr/key-16.png");
 }
 
 /* === END contextmenu.inc.css === */

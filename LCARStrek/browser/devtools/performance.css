@@ -269,10 +269,10 @@
   width: 4.5vw;
 }
 
-.call-tree-header[type="allocations"],
-.call-tree-cell[type="allocations"],
-.call-tree-header[type="self-allocations"],
-.call-tree-cell[type="self-allocations"] {
+.call-tree-header[type="count"],
+.call-tree-cell[type="count"],
+.call-tree-header[type="self-count"],
+.call-tree-cell[type="self-count"] {
   width: 9vw;
 }
 
@@ -722,7 +722,7 @@ call-tree-item:not([origin="content"]) .call-tree-line {
   background-image: url(magnifying-glass.png);
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   .call-tree-zoom {
     background-image: url(magnifying-glass@2x.png);
   }

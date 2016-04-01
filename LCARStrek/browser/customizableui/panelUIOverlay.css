@@ -94,18 +94,18 @@
 }
 
 #PanelUI-menu-button[badge-status="update-succeeded"] > .toolbarbutton-badge-stack > .toolbarbutton-badge {
-  background-image: url(chrome://browser/skin/update-badge.svg);
-  background-color: #008484;
+  background: #008484 url(chrome://browser/skin/update-badge.svg) no-repeat center;
+  height: 13px;
 }
 
 #PanelUI-menu-button[badge-status="update-failed"] > .toolbarbutton-badge-stack > .toolbarbutton-badge {
-  background-image: url(chrome://browser/skin/update-badge-failed.svg);
-  background-color: #FF0000;
+  background: #FF0000 url(chrome://browser/skin/update-badge-failed.svg) no-repeat center;
+  height: 13px;
 }
 
 #PanelUI-menu-button[badge-status="fxa-needs-authentication"] > .toolbarbutton-badge-stack > .toolbarbutton-badge {
-  background-color: transparent;
-  background-image: url(chrome://browser/skin/warning.svg);
+  background: transparent url(chrome://browser/skin/warning.svg) no-repeat center;
+  height: 13px;
   box-shadow: none;
 }
 

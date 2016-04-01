@@ -98,7 +98,7 @@ window:not([windowtype]) {
   height: 40px;
 }
 
-@media (min-resolution: 1.25dppx) {
+@media (min-resolution: 1.1dppx) {
   .stylesheet-enabled {
     background-image: url("itemToggle@2x.png");
   }
