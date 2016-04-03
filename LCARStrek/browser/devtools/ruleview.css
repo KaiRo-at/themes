@@ -6,6 +6,7 @@
 
 .theme-light {
   --rule-highlight-background-color: #402800;
+  --rule-filter-icon: url("magnifying-glass.png");
 }
 
 .ruleview {
@@ -95,7 +96,6 @@
   background: url("alerticon-warning.png");
   -moz-margin-start: 5px;
   display: inline-block;
-  vertical-align: top;
   width: 13px;
   height: 12px;
 }
@@ -104,6 +104,15 @@
   .ruleview-warning {
     background-image: url("alerticon-warning@2x.png");
   }
+}
+
+.ruleview-overridden-rule-filter {
+  background-image: var(--rule-filter-icon);
+  background-size: 11px 11px;
+  -moz-margin-start: 5px;
+  display: inline-block;
+  width: 11px;
+  height: 11px;
 }
 
 .ruleview-ruleopen {
@@ -291,13 +300,15 @@
  */
 /*
 #ruleview-add-rule-button,
-#pseudo-class-panel-toggle {
+#pseudo-class-panel-toggle,
+.ruleview-overridden-rule-filter {
   opacity: 0.8;
 }
 
 #ruleview-add-rule-button:not([disabled]):hover,
 #pseudo-class-panel-toggle:hover,
-#pseudo-class-panel-toggle[checked] {
+#pseudo-class-panel-toggle[checked],
+.ruleview-overridden-rule-filter:hover {
   opacity: 1;
 }
 

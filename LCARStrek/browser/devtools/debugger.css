@@ -620,7 +620,12 @@ window {
 }
 
 #debugger-controls toolbarbutton[disabled] {
-/*  opacity: 0.5; */
+/*  opacity: 0.5;
+  transition: none; */
+}
+
+#resume[break-on-next] {
+  background: var(--theme-highlight-lightorange);
 }
 
 #step-over {

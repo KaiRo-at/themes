@@ -55,6 +55,7 @@
   /* Colors used in Graphs, like performance tools. Mostly similar to some "highlight-*" colors. */
   --theme-graphs-green: #008484;
   --theme-graphs-blue: #9C9CFF;
+  --theme-graphs-bluegrey: #C09070;
   --theme-graphs-purple: #C09070;
   --theme-graphs-yellow: #FFCF00;
   --theme-graphs-red: #FF0000;

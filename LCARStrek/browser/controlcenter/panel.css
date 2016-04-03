@@ -177,6 +177,7 @@
   margin: 3px 0 4px;
   font-size: 150%;
 }
+
 .identity-popup-warning-gray {
   -moz-padding-start: 24px;
   background: url(chrome://browser/skin/controlcenter/warning-gray.svg) no-repeat 0 50%;

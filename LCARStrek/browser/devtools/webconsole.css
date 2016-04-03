@@ -354,16 +354,30 @@ a {
 }
 
 .message[category=console][severity=error] > .icon::before,
-.message[category=output][severity=error] > .icon::before {
+.message[category=output][severity=error] > .icon::before,
+.message[category=server][severity=error] > .icon::before {
   background-position: -12px -36px;
 }
 
-.message[category=console][severity=warn] > .icon::before {
+.message[category=console][severity=warn] > .icon::before,
+.message[category=server][severity=warn] > .icon::before {
   background-position: -24px -36px;
 }
 
-.message[category=console][severity=info] > .icon::before {
+.message[category=console][severity=info] > .icon::before,
+.message[category=server][severity=info] > .icon::before {
   background-position: -36px -36px;
+}
+
+/* Server Logging Styles */
+
+.webconsole-filter-button[category="server"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#006363, #004242);
+  border-color: #008484;
+}
+
+.message[category=server] > .indent {
+  -moz-border-end: solid #8050B0 6px;
 }
 
 /* Input and output styles */
