@@ -2071,6 +2071,11 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 #urlbar-wrapper > #urlbar > .urlbar-textbox-container > .urlbar-history-dropmarker {
   border: none;
   border-radius: 0px;
+  transition: opacity 0.15s ease;
+}
+
+#navigator-toolbox:not(:hover) .urlbar-history-dropmarker {
+  opacity: 0;
 }
 
 .urlbar-history-dropmarker:hover {
@@ -2932,8 +2937,8 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 .tab-icon-overlay {
   width: 16px;
   height: 16px;
- /* margin-top: -12px; */
-  -moz-margin-start: -16px;
+  margin-top: -8px;
+  -moz-margin-start: -15px;
   position: relative;
 }
 
@@ -2943,7 +2948,7 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 
 .tab-icon-overlay[soundplaying],
 .tab-icon-overlay[muted]:not([crashed]) {
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .tab-icon-overlay[soundplaying]:hover,
@@ -3140,6 +3145,31 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 }
 
 /* End selected tab */
+
+/* User Context UI - change tab decoration depending on userContextId.
+   Defaults to gray for unknown usercontextids. */
+.tabbrowser-tab[usercontextid] {
+  background-image: linear-gradient(to right, transparent 20%, #A09090 30%, #A09090 70%, transparent 80%);
+  background-size: auto 2px;
+  background-repeat: no-repeat;
+}
+
+/* Personal User Context */
+.tabbrowser-tab[usercontextid="1"] {
+  background-image: linear-gradient(to right, transparent 20%, #9C9CFF 30%, #9C9CFF 70%, transparent 80%);
+}
+/* Work User Context */
+.tabbrowser-tab[usercontextid="2"] {
+  background-image: linear-gradient(to right, transparent 20%, #FF9F00 30%, #FF9F00 70%, transparent 80%);
+}
+/* Banking User Context */
+.tabbrowser-tab[usercontextid="3"] {
+  background-image: linear-gradient(to right, transparent 20%, #008484 30%, #008484 70%, transparent 80%);
+}
+/* Shopping User Context */
+.tabbrowser-tab[usercontextid="4"] {
+  background-image: linear-gradient(to right, transparent 20%, #E7ADE7 30%, #E7ADE7 70%, transparent 80%);
+}
 
 /* Tab pointer-events */
 /*
@@ -3346,6 +3376,14 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   background-color: #402800;
 }
 
+.alltabs-endimage[muted] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted");
+}
+
+.alltabs-endimage[soundplaying] {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio");
+}
+
 toolbarbutton.chevron {
   list-style-image: url("chrome://global/skin/toolbar/chevron.gif") !important;
 }
@@ -3414,10 +3452,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://browser/skin/Geolocation-64.png");
 }
 
-.popup-notification-icon[popupid="push"] {
-  list-style-image: url(chrome://browser/skin/Push-64.png);
-}
-
 .popup-notification-icon[popupid="xpinstall-disabled"],
 .popup-notification-icon[popupid="addon-install-blocked"],
 .popup-notification-icon[popupid="addon-install-origin-blocked"] {
@@ -3453,7 +3487,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 .popup-notification-icon[popupid="web-notifications"] {
-  list-style-image: url("chrome://browser/skin/notification-64.png");
+  list-style-image: url("chrome://browser/skin/web-notifications-icon.svg");
 }
 
 .popup-notification-icon[popupid="indexedDB-permissions-prompt"],
@@ -3545,10 +3579,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 .geo-notification-icon,
 #geo-notification-icon {
   list-style-image: url("chrome://browser/skin/Geolocation-16.png");
-}
-
-#push-notification-icon {
-  list-style-image: url(chrome://browser/skin/Push-16.png);
 }
 
 #addons-notification-icon {
@@ -3654,7 +3684,18 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
 
 .web-notifications-notification-icon,
 #web-notifications-notification-icon {
-  list-style-image: url("chrome://browser/skin/notification-16.png");
+  list-style-image: url("chrome://browser/skin/web-notifications-tray.svg");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.web-notifications-notification-icon:hover,
+#web-notifications-notification-icon:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.web-notifications-notification-icon:hover:active,
+#web-notifications-notification-icon:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 #pointerLock-notification-icon {
@@ -3974,16 +4015,14 @@ notification[value="loop-sharing-notification"] .messageImage {
   margin-top: 1em;
 }
 
-#sync-error-panel-title,
 #sync-start-panel-title {
   font-size: 120%;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-#sync-start-panel-subtitle,
-#sync-error-panel-subtitle {
-  margin: 0;
+#sync-start-panel-subtitle {
+  margin-bottom: 0;
 }
 
 /* Status panel */
@@ -4020,7 +4059,7 @@ notification[value="loop-sharing-notification"] .messageImage {
 
 /* === BEGIN fullscreen/warning.inc.css === */
 
-#fullscreen-warning {
+html|*#fullscreen-warning {
   align-items: center;
   background: rgba(0, 0, 0, 0.9);
   border: 2px solid #A09090;
@@ -4030,40 +4069,39 @@ notification[value="loop-sharing-notification"] .messageImage {
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
-#fullscreen-warning::before {
+html|*#fullscreen-warning::before {
   margin: 0;
   width: 24px; height: 24px;
 }
 
-#fullscreen-warning.verifiedIdentity::before,
-#fullscreen-warning.verifiedDomain::before {
+html|*#fullscreen-warning.verifiedIdentity::before,
+html|*#fullscreen-warning.verifiedDomain::before {
   content: url("chrome://browser/skin/fullscreen/secure.svg");
 }
 
-#fullscreen-warning.unknownIdentity::before {
+html|*#fullscreen-warning.unknownIdentity::before {
   content: url("chrome://browser/skin/fullscreen/insecure.svg");
 }
 
-#fullscreen-domain-text,
-#fullscreen-generic-text {
+html|*#fullscreen-domain-text,
+html|*#fullscreen-generic-text {
   font-size: 21px;
   font-weight: lighter;
   color: #A09090;
   margin: 0 16px;
 }
 
-#fullscreen-domain {
+html|*#fullscreen-domain {
   font-weight: bold;
   margin: 0;
 }
 
-#fullscreen-exit-button {
-  padding: 0 30px;
+html|*#fullscreen-exit-button {
+  padding: 5px 30px;
   font: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   font-size: 14px;
   font-weight: lighter;
   margin: 0;
-  height: 28px;
   box-sizing: content-box;
 
   border-radius: 300px;
@@ -4812,14 +4850,6 @@ html|*#gcli-output-frame {
   background: none;
 }
 
-.chat-toolbarbutton:hover {
-/*  background-color: rgba(255,255,255,.35);*/
-}
-
-.chat-toolbarbutton:hover:active {
-/*  background-color: rgba(255,255,255,.5);*/
-}
-
 .chat-toolbarbutton > .toolbarbutton-text {
   display: none;
 }
@@ -4833,7 +4863,11 @@ html|*#gcli-output-frame {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close");
 }
 
-.chat-close-button:-moz-any(:hover,:hover:active) {
+.chat-close-button:hover {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close-hover");
+}
+
+.chat-close-button:hover:active {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close-active");
 }
 
@@ -4841,7 +4875,11 @@ html|*#gcli-output-frame {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize");
 }
 
-.chat-minimize-button:-moz-any(:hover,:hover:active) {
+.chat-minimize-button:hover {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize-hover");
+}
+
+.chat-minimize-button:hover:active {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize-active");
 }
 
@@ -4850,7 +4888,11 @@ html|*#gcli-output-frame {
   transform: rotate(180deg);
 }
 
-.chat-swap-button:-moz-any(:hover,:hover:active) {
+.chat-swap-button:hover {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand-hover");
+}
+
+.chat-swap-button:hover:active {
   list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand-active");
 }
 
@@ -4858,9 +4900,26 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button {
   transform: none;
 }
 
+.chat-loop-hangup {
+  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#exit-white");
+  background-color: #FF0000;
+  border: 1px solid #FFC000;
+  border-top-right-radius: 4px;
+  width: 32px;
+  height: 26px;
+  margin-top: -6px;
+  margin-bottom: -5px;
+  -moz-margin-start: 6px;
+  -moz-margin-end: -5px;
+}
+
+.chat-toolbarbutton.chat-loop-hangup:-moz-any(:hover,:hover:active) {
+  background-color: #FFCF00;
+  border-color: #FF0000;
+}
+
 .chat-title {
-  font-weight: bold;
-  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  color: #000000;
   text-shadow: none;
   cursor: inherit;
 }
@@ -4868,14 +4927,21 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button {
 .chat-titlebar {
   background-color: #9C9CFF;
   color: #000000;
-  height: 30px;
-  min-height: 30px;
+  height: 26px;
+  min-height: 26px;
   width: 100%;
   margin: 0;
-  padding: 7px 6px;
-  border: none;
-  border-bottom: 1px solid #008484;
+  padding: 5px 4px;
+  border: 1px solid #008484;
+  border-bottom: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   cursor: pointer;
+  background-color: #A09090;
+}
+
+.chat-titlebar[selected] {
+  background-color: #008484;
 }
 
 .chat-titlebar > .notification-anchor-icon {
@@ -4893,18 +4959,6 @@ chatbar > chatbox > .chat-titlebar > .chat-swap-button {
 
 .chat-titlebar[activity] {
   background-color: #E7ADE7;
-}
-
-chatbox[dark=true] > .chat-titlebar,
-chatbox[dark=true] > .chat-titlebar[selected] {
-/*  border-bottom: none;
-  background-color: #000;
-  background-image: none;*/
-}
-
-chatbox[dark=true] > .chat-titlebar > hbox > .chat-title {
-/*  font-weight: normal;
-  color: #c1c1c1;*/
 }
 
 .chat-frame {
@@ -4929,6 +4983,17 @@ chatbox[dark=true] > .chat-titlebar > hbox > .chat-title {
   .chatbar-button {
     list-style-image: url("chrome://browser/skin/social/services-16@2x.png");
   }
+}
+
+.chatbar-button:hover {
+  background-color: #FFCF00;
+}
+.chatbar-button[open="true"] {
+  background-color: #FF9F00;
+}
+
+.chatbar-button[activity]:not([open]) {
+  background-image: radial-gradient(circle farthest-corner at center 2px, rgb(160,144,144) 3%, rgba(160,144,144,0.9) 12%, rgba(156,156,255,0.6) 30%, rgba(156,156,255,0.2) 70%);
 }
 
 .chatbar-button > .toolbarbutton-icon {
@@ -4977,15 +5042,19 @@ chatbar {
   -moz-margin-end: 20px;
 }
 
-chatbar > chatbox {
-  height: 285px;
-  width: 260px;
+chatbox {
   -moz-margin-start: 4px;
-  background-color: #000000;
-  border: 1px solid #9C9CFF;
-  border-bottom: none;
-  border-top-left-radius: 2.5px;
-  border-top-right-radius: 2.5px;
+  background-color: transparent;
+}
+
+chatbar > chatbox {
+  /* Apply the same border-radius as the .chat-titlebar to make the box-shadow
+     go round nicely. */
+/*  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;*/
+  /* Offset the chatbox the same amount as the box-shadows' spread, to make it
+     visible. */
+/*  -moz-margin-end: 5px;*/
 }
 
 chatbox[minimized="true"] {
@@ -5001,36 +5070,6 @@ window > chatbox {
 }
 
 /* === END chat.inc.css === */
-
-.chat-titlebar {
-/*  background-color: #c4cfde; */
-}
-
-.chat-titlebar[selected] {
-/*  background-color: #dae3f0; */
-}
-
-.chatbar-button {
-  -moz-appearance: none;
-/*  background-color: #c4cfde; */
-}
-
-.chatbar-button > .toolbarbutton-icon {
-/*  -moz-margin-end: 0; */
-}
-
-.chatbar-button:hover,
-.chatbar-button[open="true"] {
-/*  background-color: #dae3f0; */
-}
-
-.chatbar-button[activity]:not([open="true"]) {
-}
-
-chatbox {
-/*  border-top-left-radius: 2.5px;
-  border-top-right-radius: 2.5px; */
-}
 
 /* === BEGIN plugin-doorhanger.inc.css === */
 
@@ -6223,3 +6262,77 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 .browser-action-panel > .panel-arrowcontainer > .panel-arrowcontent {
   padding: 0;
 }
+
+/* === BEGIN usercontext.inc.css === */
+
+/* User Context UI browser styles */
+
+#menu_newUserContextTabPersonal {
+  list-style-image: url("chrome://browser/skin/usercontext/personal.svg");
+}
+
+#menu_newUserContextTabWork {
+  list-style-image: url("chrome://browser/skin/usercontext/work.svg");
+}
+
+#menu_newUserContextTabBanking {
+  list-style-image: url("chrome://browser/skin/usercontext/banking.svg");
+}
+
+#menu_newUserContextTabShopping {
+  list-style-image: url("chrome://browser/skin/usercontext/shopping.svg");
+}
+
+/* URL Bar Decoration */
+
+#userContext-indicator {
+  height: 16px;
+  width: 16px;
+}
+
+#userContext-label {
+  margin-inline-end: 3px;
+  color: #A09090;
+}
+
+#userContext-icons:not([usercontextid]) {
+  display: none;
+}
+
+#userContext-icons {
+  -moz-box-align: center;
+}
+
+/* Personal User Context */
+#userContext-icons[usercontextid="1"] > #userContext-label {
+  color: #9C9CFF;
+}
+#userContext-icons[usercontextid="1"] > #userContext-indicator {
+  list-style-image: url("chrome://browser/skin/usercontext/personal.svg");
+}
+
+/* Work User Context */
+#userContext-icons[usercontextid="2"] > #userContext-label {
+  color: #FF9F00;
+}
+#userContext-icons[usercontextid="2"] > #userContext-indicator {
+  list-style-image: url("chrome://browser/skin/usercontext/work.svg");
+}
+
+/* Banking User Context */
+#userContext-icons[usercontextid="3"] > #userContext-label {
+  color: #008484;
+}
+#userContext-icons[usercontextid="3"] > #userContext-indicator {
+  list-style-image: url("chrome://browser/skin/usercontext/banking.svg");
+}
+
+/* Shopping User Context */
+#userContext-icons[usercontextid="4"] > #userContext-label {
+  color: #E7ADE7;
+}
+#userContext-icons[usercontextid="4"] > #userContext-indicator {
+  list-style-image: url("chrome://browser/skin/usercontext/shopping.svg");
+}
+
+/* === END usercontext.inc.css === */

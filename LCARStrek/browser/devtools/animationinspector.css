@@ -32,9 +32,12 @@ body {
   color: var(--theme-content-color3);
 }
 
-/* The top toolbar, containing the toggle-all button */
+/* The top toolbar, containing the toggle-all button. And the timeline toolbar,
+   containing playback control buttons, shown only when there are animations
+   displayed in the timeline */
 
-#toolbar {
+#global-toolbar,
+#timeline-toolbar {
   border-bottom: 1px solid var(--theme-splitter-color);
   display: flex;
   flex-direction: row;
@@ -43,13 +46,20 @@ body {
   height: var(--toolbar-height);
 }
 
-#toolbar .label {
-  padding: 1px 4px;
+#timeline-toolbar {
+ display: none;
 }
 
-#toggle-all {
-  border-width: 0 0 0 1px;
-  min-height: var(--toolbar-height);
+[timeline] #global-toolbar {
+  display: none;
+}
+
+[timeline] #timeline-toolbar {
+  display: flex;
+}
+
+#global-toolbar .label {
+  padding: 1px 4px;
 }
 
 /* The main animations container */
@@ -57,6 +67,10 @@ body {
 #players {
   height: calc(100% - var(--toolbar-height));
   overflow: auto;
+}
+
+[empty] #players {
+  display: none;
 }
 
 /* The error message, shown when an invalid/unanimated element is selected */
@@ -71,15 +85,23 @@ body {
   display: none;
 }
 
-/* Element picker and toggle-all buttons */
+[empty] #error-message {
+  display: block;
+}
 
-#element-picker,
-#toggle-all {
+/* Element picker, toggle-all buttons, timeline pause button, ... */
+
+#global-toolbar .devtools-button,
+#timeline-toolbar .devtools-button {
+  border-width: 0 0 0 1px;
+  min-height: var(--toolbar-height);
+}
+
+.devtools-button {
   position: relative;
 }
 
-#element-picker::before,
-#toggle-all::before {
+.devtools-button::before {
   content: "";
   display: block;
   width: 16px;
@@ -88,10 +110,13 @@ body {
   left: 50%;
   top: 50%;
   margin: -8px 0 0 -8px;
+}
+
+#element-picker::before {
   background-image: url("chrome://browser/skin/devtools/command-pick.png");
 }
 
-#toggle-all::before {
+.pause-button::before {
   background-image: url("debugger-pause.png");
 }
 
@@ -100,7 +125,7 @@ body {
   filter: none; /* Icon is blue when checked, don't invert for light theme */
 }
 
-#toggle-all.paused::before {
+.pause-button.paused::before {
   background-image: url("debugger-play.png");
 }
 
@@ -110,11 +135,11 @@ body {
     background-size: 64px;
   }
 
-  #toggle-all::before {
+  .pause-button::before {
     background-image: url("debugger-pause@2x.png");
   }
 
-  #toggle-all.paused::before {
+  .pause-button.paused::before {
     background-image: url("debugger-play@2x.png");
   }
 }
@@ -124,6 +149,7 @@ body {
 .animation-timeline {
   height: 100%;
   overflow: hidden;
+  position: relative;
   /* The timeline gets its background-image from a canvas element created in
      /browser/devtools/animationinspector/utils.js drawGraphElementBackground
      thanks to document.mozSetImageElement("time-graduations", canvas)

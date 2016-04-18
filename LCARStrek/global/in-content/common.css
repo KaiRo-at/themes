@@ -440,11 +440,7 @@ html|input[type="text"],
 html|textarea,
 xul|textbox {
   -moz-appearance: none;
-  height: 30px;
   color: var(--in-content-text-color);
-  line-height: 20px;
-  padding-right: 10px;
-  padding-left: 10px;
   border: 1px solid var(--in-content-box-border-color);
   -moz-border-top-colors: none !important;
   -moz-border-right-colors: none !important;
