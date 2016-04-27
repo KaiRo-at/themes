@@ -231,6 +231,10 @@ treecol {
   margin-right: 4px !important;
 }
 
+#notificationsPolicyLearnMore {
+  -moz-margin-start: 1.5em !important;
+}
+
 #defaultFontSizeLabel {
   /* !important needed to override common !important rule */
   -moz-margin-start: 4px !important;
@@ -340,6 +344,12 @@ description > html|a {
   margin-bottom: 8px;
 }
 
+.indent {
+  /* !important needed to override -moz-margin-start:0 !important; rule
+     define in common.css for labels - but not in LCARStrek*/
+  -moz-margin-start: 33px /*!important*/;
+}
+ 
 .text-link {
   margin-bottom: 0;
 }
