@@ -93,7 +93,7 @@
 }
 
 .ruleview-warning {
-  background: url("alerticon-warning.png");
+  background: url("images/alerticon-warning.png");
   -moz-margin-start: 5px;
   display: inline-block;
   width: 13px;
@@ -102,7 +102,7 @@
 
 @media (min-resolution: 1.1dppx) {
   .ruleview-warning {
-    background-image: url("alerticon-warning@2x.png");
+    background-image: url("images/alerticon-warning@2x.png");
   }
 }
 
@@ -187,13 +187,13 @@
 }
 
 .ruleview-bezierswatch {
-  background: url("chrome://browser/skin/devtools/cubic-bezier-swatch.png");
+  background: url("chrome://devtools/skin/images/cubic-bezier-swatch.png");
   background-size: 1em;
 }
 
 @media (min-resolution: 1.1dppx) {
   .ruleview-bezierswatch {
-    background: url("chrome://browser/skin/devtools/cubic-bezier-swatch@2x.png");
+    background: url("chrome://devtools/skin/images/cubic-bezier-swatch@2x.png");
     background-size: 1em;
   }
 }
@@ -257,7 +257,7 @@
 }
 
 .ruleview-selectorhighlighter {
-  background: url("chrome://browser/skin/devtools/vview-open-inspector.png") no-repeat 0 0;
+  background: url("chrome://devtools/skin/images/vview-open-inspector.png") no-repeat 0 0;
   padding-left: 16px;
   margin-left: 5px;
   cursor: pointer;
@@ -277,20 +277,20 @@
 }
 
 #ruleview-add-rule-button::before {
-  background-image: url("chrome://browser/skin/devtools/add.svg#add");
+  background-image: url("chrome://devtools/skin/images/add.svg#add");
   background-size: cover;
 }
 #ruleview-add-rule-button:hover::before {
-  background-image: url("chrome://browser/skin/devtools/add.svg#add-checked");
+  background-image: url("chrome://devtools/skin/images/add.svg#add-checked");
 }
 
 #pseudo-class-panel-toggle::before {
-  background-image: url("chrome://browser/skin/devtools/pseudo-class.svg#pseudo-class");
+  background-image: url("chrome://devtools/skin/pseudo-class.svg#pseudo-class");
   background-size: cover;
 }
 #pseudo-class-panel-toggle:hover::before,
 #pseudo-class-panel-toggle[checked]::before {
-  background-image: url("chrome://browser/skin/devtools/pseudo-class.svg#pseudo-class-checked");
+  background-image: url("chrome://devtools/skin/pseudo-class.svg#pseudo-class-checked");
   filter: none !important;
 }
 

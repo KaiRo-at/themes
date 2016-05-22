@@ -59,7 +59,7 @@ a {
 
 .message > .icon::before {
   content: "";
-  background-image: url("chrome://browser/skin/devtools/webconsole.svg");
+  background-image: url("chrome://devtools/skin/webconsole.svg");
   background-position: 12px 12px;
   background-repeat: no-repeat;
   background-size: 72px 60px;
@@ -404,14 +404,14 @@ a {
 }
 
 .jsterm-input-node {
-  background-image: -moz-image-rect(url("chrome://browser/skin/devtools/commandline-icon.png"), 0, 32, 16, 16);
+  background-image: -moz-image-rect(url("chrome://devtools/skin/commandline-icon.png"), 0, 32, 16, 16);
   background-repeat: no-repeat;
   background-size: 16px 16px;
 }
 
 @media (min-resolution: 1.1dppx) {
   .jsterm-input-node {
-    background-image: -moz-image-rect(url('chrome://browser/skin/devtools/commandline-icon@2x.png'), 0, 64, 32, 32);
+    background-image: -moz-image-rect(url('chrome://devtools/skin/commandline-icon@2x.png'), 0, 64, 32, 32);
   }
 }
 
@@ -530,7 +530,7 @@ a {
 
 /* Open DOMNode in inspector button */
 .open-inspector {
-  background: url("chrome://browser/skin/devtools/vview-open-inspector.png") no-repeat 0 0;
+  background: url("chrome://devtools/skin/images/vview-open-inspector.png") no-repeat 0 0;
   padding-left: 16px;
   margin-left: 5px;
   cursor: pointer;

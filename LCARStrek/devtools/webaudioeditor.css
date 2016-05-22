@@ -69,10 +69,10 @@ g.edgeLabel tspan {
  */
 
 .theme-light .nodes g.bypassed rect {
-  fill: url(chrome://browser/skin/devtools/filters.svg#bypass-light);
+  fill: url(chrome://devtools/skin/filters.svg#bypass-light);
 }
 .theme-dark .nodes g.bypassed rect {
-  fill: url(chrome://browser/skin/devtools/filters.svg#bypass-dark);
+  fill: url(chrome://devtools/skin/filters.svg#bypass-dark);
 }
 .nodes g.bypassed.selected rect {
   stroke: var(--theme-selection-background);
@@ -127,7 +127,7 @@ g.selected text {
 }
 
 .web-audio-inspector .error {
-  background-image: url("alerticon-warning.png");
+  background-image: url("images/alerticon-warning.png");
   background-size: 13px 12px;
   -moz-appearance: none;
   opacity: 0;
@@ -184,7 +184,7 @@ g.selected text {
   }
 
   .web-audio-inspector .error {
-    background-image: url("alerticon-warning@2x.png");
+    background-image: url("images/alerticon-warning@2x.png");
   }
 }
 

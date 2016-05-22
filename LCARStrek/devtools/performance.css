@@ -878,7 +878,7 @@ call-tree-item:not([origin="content"]) .call-tree-line {
 
 .opt-icon::before {
   content: "";
-  background-image: url(chrome://browser/skin/devtools/webconsole.svg);
+  background-image: url(chrome://devtools/skin/webconsole.svg);
   background-repeat: no-repeat;
   background-size: 72px 60px;
   /* show grey "i" bubble by default */
@@ -931,7 +931,7 @@ ul.frames-list li.selected {
  */
 menuitem.experimental-option::before {
   content: "";
-  background-image: url(chrome://browser/skin/devtools/webconsole.svg);
+  background-image: url(chrome://devtools/skin/webconsole.svg);
   background-repeat: no-repeat;
   background-size: 72px 60px;
   width: 12px;

@@ -113,7 +113,7 @@ body {
 }
 
 #element-picker::before {
-  background-image: url("chrome://browser/skin/devtools/command-pick.png");
+  background-image: url("chrome://devtools/skin/command-pick.png");
 }
 
 .pause-button::before {
@@ -131,7 +131,7 @@ body {
 
 @media (min-resolution: 1.1dppx) {
   #element-picker::before {
-    background-image: url("chrome://browser/skin/devtools/command-pick@2x.png");
+    background-image: url("chrome://devtools/skin/command-pick@2x.png");
     background-size: 64px;
   }
 
@@ -363,7 +363,7 @@ body {
 }
 
 .animation-target .node-selector {
-  background: url("chrome://browser/skin/devtools/vview-open-inspector.png") no-repeat 0 0;
+  background: url("chrome://devtools/skin/images/vview-open-inspector.png") no-repeat 0 0;
   padding-left: 16px;
   margin-right: 5px;
   cursor: pointer;

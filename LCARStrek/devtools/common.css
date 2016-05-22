@@ -16,11 +16,11 @@ notification {
 
 :root {
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  --proportional-font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   --monospace-font-family: "Liberation Mono", Consolas, "Courier New", monospace;
   --monospace-font-size: 12px;
 }
 
-/* Font for code */
 .devtools-monospace {
   font-family: var(--monospace-font-family);
   font-size: var(--monospace-font-size);

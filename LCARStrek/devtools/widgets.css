@@ -586,7 +586,7 @@
 }
 
 .variable-or-property-non-writable-icon {
-  background: url("chrome://browser/skin/devtools/vview-lock.png") no-repeat;
+  background: url("chrome://devtools/skin/images/vview-lock.png") no-repeat;
   background-size: cover;
   width: 16px;
   height: 16px;
@@ -595,7 +595,7 @@
 
 @media (min-resolution: 1.1dppx) {
   .variable-or-property-non-writable-icon > .title:after {
-    background-image: url("chrome://browser/skin/devtools/vview-lock@2x.png");
+    background-image: url("chrome://devtools/skin/images/vview-lock@2x.png");
   }
 }
 
@@ -687,7 +687,7 @@
 /* Variables and properties editing */
 
 .variables-view-delete {
-  background: url("chrome://browser/skin/devtools/vview-delete.png");
+  background: url("chrome://devtools/skin/images/vview-delete.png");
   background-size: cover;
   width: 16px;
   height: 16px;
@@ -695,7 +695,7 @@
 
 @media (min-resolution: 1.1dppx) {
   .variables-view-delete {
-    background-image: url("chrome://browser/skin/devtools/vview-delete@2x.png");
+    background-image: url("chrome://devtools/skin/images/vview-delete@2x.png");
   }
 }
 
@@ -712,7 +712,7 @@
 }
 
 .variables-view-edit {
-  background: url("chrome://browser/skin/devtools/vview-edit.png");
+  background: url("chrome://devtools/skin/images/vview-edit.png");
   background-size: cover;
   width: 16px;
   height: 16px;
@@ -721,7 +721,7 @@
 
 @media (min-resolution: 1.1dppx) {
   .variables-view-edit {
-    background-image: url("chrome://browser/skin/devtools/vview-edit@2x.png");
+    background-image: url("chrome://devtools/skin/images/vview-edit@2x.png");
   }
 }
 
@@ -738,7 +738,7 @@
 }
 
 .variables-view-open-inspector {
-  background: url("chrome://browser/skin/devtools/vview-open-inspector.png");
+  background: url("chrome://devtools/skin/images/vview-open-inspector.png");
   background-size: cover;
   width: 16px;
   height: 16px;
@@ -1253,7 +1253,7 @@ table-widget-body,
   float: left;
   margin: 3px 2px -3px;
   background-repeat: no-repeat;
-  background-image: url("chrome://browser/skin/devtools/controls.png");
+  background-image: url("chrome://devtools/skin/controls.png");
   background-size: 56px 28px;
   cursor: pointer;
   background-position: -28px -14px;
@@ -1303,7 +1303,7 @@ table-widget-body,
 
 @media (min-resolution: 1.1dppx) {
   .tree-widget-item:before {
-    background-image: url("chrome://browser/skin/devtools/controls@2x.png");
+    background-image: url("chrome://devtools/skin/controls@2x.png");
   }
 }
 
@@ -1373,18 +1373,18 @@ table-widget-body,
 }
 
 .tree-widget-item[type="dir"]::after {
-  background-image: url("chrome://browser/skin/devtools/filetype-dir-close.svg");
+  background-image: url("chrome://devtools/skin/filetype-dir-close.svg");
   background-position: 2px 0;
   background-size: auto 16px;
   width: 20px;
 }
 
 .tree-widget-item[type="dir"][expanded]:not([empty])::after {
-  background-image: url("chrome://browser/skin/devtools/filetype-dir-open.svg");
+  background-image: url("chrome://devtools/skin/filetype-dir-open.svg");
 }
 
 .tree-widget-item[type="url"]::after {
-  background-image: url("chrome://browser/skin/devtools/filetype-globe.svg");
+  background-image: url("chrome://devtools/skin/filetype-globe.svg");
   background-size: auto 18px;
   width: 18px;
 }

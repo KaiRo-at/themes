@@ -568,12 +568,12 @@ window {
 /* Toolbar controls */
 
 #toggle-panes {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-expand.png");
+  list-style-image: url("chrome://devtools/skin/debugger-expand.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
 #toggle-panes:not([panesHidden]) {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-collapse.png");
+  list-style-image: url("chrome://devtools/skin/debugger-collapse.png");
 }
 
 #toggle-panes:hover,
@@ -588,7 +588,7 @@ window {
 }
 
 #resume {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-pause.png");
+  list-style-image: url("chrome://devtools/skin/debugger-pause.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
@@ -597,7 +597,7 @@ window {
 }
 
 #resume[checked=true] {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-play.png");
+  list-style-image: url("chrome://devtools/skin/debugger-play.png");
 }
 
 @media (min-resolution: 1.1dppx) {
@@ -629,7 +629,7 @@ window {
 }
 
 #step-over {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-step-over.png");
+  list-style-image: url("chrome://devtools/skin/debugger-step-over.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 #step-over:hover {
@@ -637,7 +637,7 @@ window {
 }
 
 #step-in {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-step-in.png");
+  list-style-image: url("chrome://devtools/skin/debugger-step-in.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 #step-in:hover {
@@ -645,7 +645,7 @@ window {
 }
 
 #step-out {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-step-out.png");
+  list-style-image: url("chrome://devtools/skin/debugger-step-out.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 #step-out:hover {
@@ -685,12 +685,12 @@ window {
 /*  background: none;
   box-shadow: none;
   border: none; */
-  list-style-image: url("chrome://browser/skin/devtools/debugger-collapse.png");
+  list-style-image: url("chrome://devtools/skin/debugger-collapse.png");
   -moz-image-region: rect(0px,16px,16px,0px);
 }
 
 #instruments-pane-toggle[pane-collapsed] {
-  list-style-image: url("chrome://browser/skin/devtools/debugger-expand.png");
+  list-style-image: url("chrome://devtools/skin/debugger-expand.png");
 }
 
 #instruments-pane-toggle:hover {
