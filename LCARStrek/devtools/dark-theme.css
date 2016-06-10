@@ -1081,6 +1081,16 @@ div.CodeMirror span.eval-text {
   color: #FFCF00;
 }
 
+.toolbox-panel {
+  display: -moz-box;
+  -moz-box-flex: 1;
+  visibility: collapse;
+}
+
+.toolbox-panel[selected] {
+  visibility: visible;
+}
+
 .devtools-tab {
   min-width: 32px;
   max-width: 110px;

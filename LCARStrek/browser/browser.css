@@ -2884,6 +2884,16 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
   list-style-image: url("chrome://communicator/skin/brand/throbber16-anim.png");
 }
 
+@media (min-resolution: 1.1dppx) {
+  .tab-throbber[busy] {
+    list-style-image: url("chrome://communicator/skin/brand/throbber-anim-connect.png");
+  }
+
+  .tab-throbber[progress] {
+    list-style-image: url("chrome://communicator/skin/brand/throbber-anim.png");
+  }
+}
+
 .tab-throbber[pinned],
 .tab-icon-image[pinned] {
   -moz-margin-start: 2px;
