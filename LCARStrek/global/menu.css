@@ -136,10 +136,8 @@ menucaption > .menu-iconic-text {
 }
 
 .menu-iconic-icon {
-/*
   width: 16px;
   height: 16px;
-*/
 }
 
 .menu-iconic-left {
@@ -207,6 +205,11 @@ menuitem[checked="true"][_moz-menuactive="true"] {
 
 menuitem[checked="true"][disabled="true"] {
   list-style-image: url("chrome://global/skin/menu/menu-check-disabled.gif");
+}
+
+menuitem[checked="true"] .menu-iconic-icon {
+  width: auto;
+  height: auto;
 }
 
 /* ::::: radio menuitem ::::: */
