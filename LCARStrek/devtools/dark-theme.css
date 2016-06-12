@@ -1087,6 +1087,7 @@ div.CodeMirror span.eval-text {
   visibility: collapse;
 }
 
+#toolbox-deck[selectedIndex] > .toolbox-panel, /* workaround for Firefox 47 and older */
 .toolbox-panel[selected] {
   visibility: visible;
 }
