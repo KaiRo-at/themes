@@ -3,6 +3,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import url(common.css);
+
 /* Colors are taken from:
  * https://developer.mozilla.org/en-US/docs/Tools/DevToolsColors.
  * Changes should be kept in sync with commandline.css and commandline.inc.css.
@@ -255,7 +257,8 @@ body, html {
  * Best effort to match the existing theme, some of the colors
  * are duplicated here to prevent weirdness in the main theme. */
 
-.CodeMirror { /* Inherit platform specific font sizing and styles */
+.CodeMirror,
+.CodeMirror.cm-s-mozilla { /* Inherit platform specific font sizing and styles */
   font-family: inherit;
   font-size: inherit;
   background: transparent;
@@ -669,6 +672,18 @@ div.CodeMirror span.eval-text {
   .devtools-button::before {
     background-size: 32px;
   }
+}
+
+:root {
+  --clear-icon-url: url("chrome://devtools/skin/images/clear.svg");
+}
+
+.devtools-button.devtools-clear-icon::before {
+  background-image: var(--clear-icon-url);
+}
+
+.devtools-toolbarbutton.devtools-clear-icon {
+  list-style-image: var(--clear-icon-url);
 }
 
 /* Text input */
