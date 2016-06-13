@@ -2,6 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+:root {
+  --fonts-button-text: #000000;
+  --fonts-button-background: #C09070;
+}
+
 #sidebar-panel-fontinspector {
   margin: 0;
   display: flex;
@@ -32,8 +37,8 @@
 #font-showall {
   border-radius: 300px;
   border: none;
-  background-color: var(--in-content-button-background);
-  color: var(--in-content-selected-text);
+  background-color: var(--fonts-button-background);
+  color: var(--fonts-selected-text);
   margin: 3px;
   cursor: pointer;
   position: fixed;

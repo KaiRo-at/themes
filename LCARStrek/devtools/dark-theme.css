@@ -16,7 +16,7 @@
   --theme-contrast-border: #A09090;
   --theme-contrast-background2: #795900;
 
-/*  --theme-tab-toolbar-background: #.252c33; */
+  --theme-tab-toolbar-background: #402800;
   --theme-toolbar-background: #000000;
   --theme-hover-background: #FFCF00;
   --theme-hover-color: #000000;
@@ -621,9 +621,9 @@ div.CodeMirror span.eval-text {
   border: 0 solid var(--theme-splitter-color);
   background: var(--theme-toolbar-background);
   color: var(--theme-body-color);
-  margin: 0;
-  padding: 0;
-  min-width: 32px;
+  margin: 0 1px;
+  padding: 0 6px;
+  min-width: 16px;
   min-height: 18px;
   /* The icon is absolutely positioned in the button using ::before */
   position: relative;
@@ -815,6 +815,10 @@ div.CodeMirror span.eval-text {
   display: none;
 }
 
+#toolbox-close::before {
+  background-image: url("chrome://devtools/skin/close@2x.png");
+}
+
 /* In-tools sidebar */
 
 .devtools-sidebar-tabs {
@@ -917,14 +921,17 @@ div.CodeMirror span.eval-text {
   background-position: -16px center;
 }
  
+#toolbox-dock-bottom::before,
 #toolbox-dock-bottom > image {
   background-image: url("chrome://devtools/skin/dock-bottom@2x.png");
 }
  
+#toolbox-dock-side::before,
 #toolbox-dock-side > image {
   background-image: url("chrome://devtools/skin/dock-side@2x.png");
 }
 
+#toolbox-dock-window::before,
 #toolbox-dock-window > image {
   background-image: url("chrome://devtools/skin/undock@2x.png");
 }
@@ -965,6 +972,7 @@ div.CodeMirror span.eval-text {
 
 #toolbox-controls-separator {
   margin: 0;
+  width: 1px;
 }
 
 /* Command buttons */
@@ -979,6 +987,9 @@ div.CodeMirror span.eval-text {
 .command-button:hover:active {
 }
 
+#toolbox-close::before,
+.toolbox-dock-button::before,
+.command-button::before,
 .command-button > image {
   width: 16px;
   height: 16px;
@@ -987,6 +998,14 @@ div.CodeMirror span.eval-text {
   background-repeat: no-repeat;
 }
 
+#toolbox-close:hover::before,
+#toolbox-close:hover:active::before,
+.toolbox-dock-button:hover::before,
+.toolbox-dock-button:hover:active::before,
+.command-button:hover::before,
+.command-button:hover:active::before,
+.command-button[checked=true]::before,
+.command-button[open=true]::before,
 .command-button:hover > image,
 .command-button:hover:active > image,
 .command-button[checked=true] > image,
@@ -994,46 +1013,57 @@ div.CodeMirror span.eval-text {
   background-position: -16px center;
 }
 
+#command-button-paintflashing::before,
 #command-button-paintflashing > image {
   background-image: url("chrome://devtools/skin/command-paintflashing.png");
 }
 
+#command-button-screenshot::before,
 #command-button-screenshot > image {
   background-image: url("chrome://devtools/skin/command-screenshot.png");
 }
 
+#command-button-responsive::before,
 #command-button-responsive > image {
   background-image: url("chrome://devtools/skin/command-responsivemode.png");
 }
 
+#command-button-tilt::before,
 #command-button-tilt > image {
   background-image: url("chrome://devtools/skin/command-tilt.png");
 }
 
+#command-button-scratchpad::before,
 #command-button-scratchpad > image {
   background-image: url("chrome://devtools/skin/command-scratchpad.png");
 }
 
+#command-button-pick::before,
 #command-button-pick > image {
   background-image: url("chrome://devtools/skin/command-pick.png");
 }
 
+#command-button-frames::before,
 #command-button-frames > image {
   background-image: url("chrome://devtools/skin/command-frames.png");
 }
 
+#command-button-splitconsole::before,
 #command-button-splitconsole > image {
   background-image: url("chrome://devtools/skin/command-console.png");
 }
 
+#command-button-eyedropper::before,
 #command-button-eyedropper > image {
   background-image: url("chrome://devtools/skin/command-eyedropper.png");
 }
 
+#command-button-rulers::before,
 #command-button-rulers > image {
   background-image: url("chrome://devtools/skin/command-rulers.png");
 }
 
+#command-button-measure::before,
 #command-button-measure > image {
   background-image: url("chrome://devtools/skin/images/command-measure.png");
 }
@@ -1090,8 +1120,9 @@ div.CodeMirror span.eval-text {
 }
 
 #toolbox-tabs {
-  margin: 0 2px;
-  -moz-padding-start: 3px;
+  padding-inline-start: 3px;
+  margin-inline-start: 2px; /* this is only needed for the old button design */
+  margin-inline-end: 3px; /* this is for the new ::before-based button design */
   background-color: #000000;
   color: #FFCF00;
 }
@@ -1154,9 +1185,14 @@ div.CodeMirror span.eval-text {
   -moz-margin-start: 0;
 }
 
+#toolbox-picker-container {
+  margin-inline-start: 1px;
+}
+
 #toolbox-option-container {
   background-color: #000000;
-  -moz-padding-start: 3px;
+  padding-inline-start: 3px;
+  margin-inline-end: 1px;
 }
 
 #toolbox-tab-options {

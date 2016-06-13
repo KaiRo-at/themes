@@ -2013,7 +2013,7 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 /* identity box */
 
 #identity-box.verifiedIdentity:not(:-moz-lwtheme):not(:hover):not([open=true]) {
-  var(--identity-box-verified-background-color);
+  background-color: var(--identity-box-verified-background-color);
 }
 
 #identity-box:-moz-focusring {
@@ -2060,7 +2060,7 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   /* Default theme does different color per channel, we can't as they do it build-time. */
   --identity-box-chrome-color: #9C9CFF;
 
-  border-inline-end: 1px solid --urlbar-separator-color);
+  border-inline-end: 1px solid var(--urlbar-separator-color);
   font-size: .9em;
   border-radius: 2px;
   padding: 3px 5px;
@@ -3987,7 +3987,7 @@ html|*#fullscreen-domain {
 
 html|*#fullscreen-exit-button {
   padding: 5px 30px;
-  font: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
   font-size: 14px;
   font-weight: lighter;
   margin: 0;

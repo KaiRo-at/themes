@@ -555,7 +555,7 @@
 }
 
 .variable-or-property[overridden] {
-  background: rgba(160,144,144,0.0.5);
+  background: rgba(160,144,144,0.5);
 }
 
 .variable-or-property[overridden] .title > label {

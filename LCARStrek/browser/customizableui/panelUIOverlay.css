@@ -1527,7 +1527,7 @@ toolbarbutton.social-provider-menuitem > .toolbarbutton-icon {
 }
 
 menu.subviewbutton > .menu-right {
-  list-style-image: url("chrome://global/skin/menu/menu-arrow.svg#arrow);
+  list-style-image: url("chrome://global/skin/menu/menu-arrow.svg#arrow");
   /* Reset the rect we inherit from the button: */
   -moz-image-region: auto;
 }

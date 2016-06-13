@@ -60,8 +60,8 @@ listbox:focus > listitem[selected="true"] {
 listheader {
   -moz-box-align: center;
   border: 1px solid #FF9F00;
-  border-left-top-radius: 3px;
-  border-right-top-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   background-color: #9C9CFF;
   color: #000000;
   padding: 0;

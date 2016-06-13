@@ -102,7 +102,7 @@ checkbox[checked="true"]:hover:active > .checkbox-spacer-box > .checkbox-check {
 }
 
 checkbox[checked="true"][disabled="true"] .checkbox-check,
-checkbox[checked="true"][disabled="true"] > .checkbox-spacer-box > > .checkbox-check {
+checkbox[checked="true"][disabled="true"] > .checkbox-spacer-box > .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check-disabled.gif") !important;
 }
 

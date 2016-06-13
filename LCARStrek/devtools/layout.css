@@ -32,8 +32,8 @@ body.theme-sidebar,
   vertical-align: top;
 }
 
-#header:dir(rtl),
-#layout-header:dir(rtl) {
+#header:-moz-dir(rtl),
+#layout-header:-moz-dir(rtl) {
   -moz-box-direction: reverse;
 }
 
@@ -47,8 +47,8 @@ body.theme-sidebar,
   -moz-box-flex: 1;
 }
 
-#element-size:dir(rtl),
-#layout-element-size:dir(rtl) {
+#element-size:-moz-dir(rtl),
+#layout-element-size:-moz-dir(rtl) {
   -moz-box-pack: end;
 }
 
@@ -97,10 +97,10 @@ body.theme-sidebar,
 #layout-margins,
 #layout-borders,
 #layout-padding {
-  border-color: var(-theme-splitter-color);
+  border-color: var(--theme-splitter-color);
   border-width: 25px;
   border-style: solid;
-  outline: dotted 1px var(-theme-splitter-color);
+  outline: dotted 1px var(--theme-splitter-color);
 }
 
 #margins,
