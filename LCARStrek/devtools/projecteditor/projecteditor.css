@@ -16,13 +16,13 @@
 }
 
 .arrow {
-  list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd");
   width: 20px;
   height: 20px;
 }
 
 .arrow[open] {
-  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#open");
 }
 
 .arrow[invisible] {

@@ -149,7 +149,7 @@
 
 .sbtab-twisty {
   margin: 2px 3px 0px;
-  list-style-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd-hover");
 }
 
 .box-texttab:hover > hbox,
@@ -163,7 +163,7 @@
 }
 
 .sbtab-twisty[selected="true"] {
-  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#open");
 }
 
 /* ::::: sidebar navigation buttons ::::: */

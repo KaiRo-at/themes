@@ -39,7 +39,7 @@
   -moz-margin-end: 10px;
   max-width: 64px;
   max-height: 64px;
-  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.svg");
 }
 
 .addon-info[type="theme"] #icon {
@@ -76,9 +76,9 @@
 }
 
 #warning-icon {
-  list-style-image: url("chrome://global/skin/icons/alert-exclam.gif");
+  list-style-image: url("chrome://mozapps/skin/extensions/alerticon-warning.svg");
   width: 16px;
-  height: 15px;
+  height: 16px;
   margin-top: 5px;
   -moz-margin-end: 5px;
 }
@@ -88,23 +88,25 @@
   margin-bottom: 20px;
 }
 
-#continuePanel,
-#restartPanel {
+#buttonDeck {
   margin-top: 25px;
-  -moz-box-pack: end;
-  -moz-box-align: center;
+  -moz-box-pack: stretch;
+  -moz-box-align: stretch;
 }
 
 #continuePanel {
   -moz-box-pack: end;
+  -moz-box-align: end;
 }
 
-#restartMessage {
-  text-align: right;
+#restartPanel {
+  -moz-box-pack: end;
+  -moz-box-align: stretch;
 }
 
-#restartSpacer {
-  -moz-box-flex: 1;
+#restartPanelButtons {
+  margin-top: 25px;
+  -moz-box-pack: end;
 }
 
 #later {

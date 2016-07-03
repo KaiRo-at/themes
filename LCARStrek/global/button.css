@@ -153,13 +153,13 @@ button[type="disclosure"] {
   border: 0px !important;
   margin: 0px !important;
   padding: 0px !important;
-  list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd");
   min-width: 0px !important;
   background-color: transparent;
 }
 
 button[type="disclosure"][open="true"] {
-  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#open");
 }
 
 /* ::::: xhtml buttons ::::: */

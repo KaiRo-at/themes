@@ -65,14 +65,14 @@
 }
 
 .expander-up {
-  list-style-image: url("chrome://global/skin/tree/twisty-open-selected.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#open-hover");
 }
 
 .expander-up:hover {
 }
 
 .expander-down {
-  list-style-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd-hover");
 }
 
 .expander-down:hover {

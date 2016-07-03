@@ -53,12 +53,12 @@ body[dir="rtl"] #errorPageContainer {
   -moz-padding-start: 20px;
   position: relative;
   left: -20px;
-  background: url("chrome://global/skin/tree/twisty-open-selected.gif") left center no-repeat;
+  background: url("chrome://global/skin/tree/twisty.svg#open-hover") left center no-repeat;
 }
 
 #technicalContent[collapsed] > h2,
 #expertContent[collapsed] > h2 {
-  background-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
+  background-image: url("chrome://global/skin/tree/twisty.svg#clsd-hover");
 }
 
 #technicalContent[collapsed] > p,

@@ -342,12 +342,12 @@ treechildren::-moz-tree-twisty {
   -moz-padding-end: 1px;
   padding-top: 0px;
   width: 11px; /* The image's width is 11 pixels */
-  list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd");
 }
 
 treechildren::-moz-tree-twisty(open) {
   width: 11px; /* The image's width is 11 pixels */
-  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#open");
 }
 
 treechildren::-moz-tree-indentation {

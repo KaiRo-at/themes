@@ -127,11 +127,11 @@ mail-urlfield {
 
 .addresstwisty {
   margin: 1px;
-  list-style-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd-hover");
 }
 
 .addresstwisty[open] {
-  list-style-image: url("chrome://global/skin/tree/twisty-open-selected.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#open-hover");
 }
 
 /* ::::: view expand and collapse twisties  ::::: */
@@ -143,11 +143,11 @@ mail-urlfield {
 }
 
 .expandHeaderViewButton {
-  list-style-image: url("chrome://global/skin/tree/twisty-open-selected.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#open-hover");
 }
 
 .collapsedHeaderViewButton  {
-  list-style-image: url("chrome://global/skin/tree/twisty-closed-selected.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd-hover");
 }
 
 /* ::::: collapsed view styles ::::: */

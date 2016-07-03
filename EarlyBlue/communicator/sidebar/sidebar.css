@@ -101,7 +101,7 @@
 
 .sbtab-twisty {
   margin: 2px 3px 0px;
-  list-style-image: url("chrome://global/skin/tree/twisty-closed.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd");
 }
 
 /*
@@ -133,7 +133,7 @@
 }
 
 .sbtab-twisty[selected="true"] {
-  list-style-image: url("chrome://global/skin/tree/twisty-open.gif");
+  list-style-image: url("chrome://global/skin/tree/twisty.svg#open");
 }
 
 /* ::::: sidebar navigation buttons ::::: */
