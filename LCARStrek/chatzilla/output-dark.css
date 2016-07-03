@@ -9,7 +9,7 @@
 
 @import url("chrome://chatzilla/content/output-base.css");
 
-body.chatzilla-body {               /* The topmost container in the ChatZilla */
+.chatzilla-body {                   /* The topmost container in the ChatZilla */
   background: #000000;              /* output window. */
   color: #E7ADE7;
 }

@@ -9,7 +9,7 @@
 
 @import url(chrome://chatzilla/content/output-base.css);
 
-body.chatzilla-body {               /* The topmost container in the ChatZilla */
+.chatzilla-body {                   /* The topmost container in the ChatZilla */
     background: white;              /* output window.                         */
     color: #222222;    
 }
@@ -26,7 +26,6 @@ a.chatzilla-link {
 .header {
     color: darkslategrey;
     background-color: #EEEEEE;
-/*    opacity: 0.9;*/
     border: 1px #777499 solid;
     border-radius: 7px;
 }
@@ -133,7 +132,6 @@ a.chatzilla-link {
     background-color: #c3f7c3; 
     font-weight: bold;
     border-radius: 5px 5px 5px 5px;
-    /*border: thin darkblue solid;*/
 }
 
 .msg[msg-type="QUIT"] .msg-data {
