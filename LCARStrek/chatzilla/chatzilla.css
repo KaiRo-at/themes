@@ -78,9 +78,9 @@ window {
 .view-button {
   /* Box model is 5px 5px 5px 6px in aggregate. Extra pixel on the left is for the separator. */
   -moz-appearance: none;
-  margin: 5px 0;
-  border: none;
-/*  border-left: 1px solid ButtonShadow;*/
+  margin: 5px 0 0;
+/*  border: none;
+  border-left: 1px solid ButtonShadow;*/
   padding: 0 5px;
 /*
   background: Button;
@@ -120,10 +120,10 @@ window {
 
 .view-button:hover,
 .view-button[state="current"] {
-  margin: 0 0 0 1px;
-  border-left: none;
-  border-radius: 0 0 6px 6px;
-  padding: 5px;
+  margin: 0 0 0;
+/*  border-left: none;
+  border-radius: 0 0 6px 6px;*/
+  padding: 5px 5px 0;
 /*
   background: Window;
   color: WindowText;
@@ -132,14 +132,14 @@ window {
 
 .view-button[state="current"] + .view-button,
 .view-button:hover + .view-button:not([state="current"]) {
-  border-left-color: transparent;
+/*  border-left-color: transparent;*/
 }
 
 .view-button[state="current"] {
   position: relative; /* So it visually appears above the tabs either side. */
 /*  border: 2px solid ButtonShadow;*/
   border-top: none;
-  padding: 5px 3px 3px 3px;
+  padding: 5px 5px 3px 5px;
 }
 
 treecol { 
