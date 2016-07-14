@@ -50,6 +50,7 @@
   -moz-padding-start: 3px;
   -moz-padding-end: 8px;
   height: auto;
+  overflow-x: hidden;
 }
 
 .sidebar-header-text {

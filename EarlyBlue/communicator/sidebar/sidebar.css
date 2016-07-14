@@ -20,6 +20,7 @@
   background-color: #666699;
   -moz-padding-start: 4px;
   height: auto;
+  overflow-x: hidden;
 }
 
 #sidebar-panel-picker {
@@ -107,7 +108,7 @@
 /*
 .sbtab-texture {
   margin: 2px 0px;
-  background: url("chrome://global/skin/toolbar/tbgrip-texture.gif") repeat-y;
+  background: url("chrome://communicator/skin/toolbar/tbgrip-texture.gif") repeat-y;
   width: 12px;
   height: 12px;
 }
