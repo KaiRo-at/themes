@@ -2056,6 +2056,8 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 /* === BEGIN identity-block.inc.css === */
 
 #identity-box {
+/*  --identity-box-hover-background-color: #FFCF00;
+  --identity-box-selected-background-color: #FF9F00; */
   --identity-box-verified-color: #008484;
   /* Default theme does different color per channel, we can't as they do it build-time. */
   --identity-box-chrome-color: #9C9CFF;
@@ -2316,7 +2318,7 @@ richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-si
   color: #9C9CFF;
 }
 
-richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
+richlistitem[type~="action"][actiontype="tab"] > .ac-url-box > .ac-action-icon {
   list-style-image: url("chrome://browser/skin/actionicon-tab.png");
   -moz-image-region: rect(0, 16px, 16px, 0);
   padding: 0 3px;
@@ -2325,13 +2327,13 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 @media (min-resolution: 1.1dppx) {
-  richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
+  richlistitem[type~="action"][actiontype="tab"] > .ac-url-box > .ac-action-icon {
     list-style-image: url("chrome://browser/skin/actionicon-tab@2x.png");
     -moz-image-region: rect(0, 32px, 32px, 0);
   }
 }
 
-richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-box > .ac-action-icon {
+richlistitem[type~="action"][actiontype="tab"][selected="true"] > .ac-url-box > .ac-action-icon {
   -moz-image-region: rect(16px, 16px, 32px, 0);
 }
 
@@ -2769,13 +2771,17 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 }
 
 .tabs-newtab-button,
-#TabsToolbar > #new-tab-button {
+#TabsToolbar > #new-tab-button,
+#TabsToolbar > toolbarpaletteitem > #new-tab-button,
+#TabsToolbar > toolbarpaletteitem > #new-tab-button[cui-areatype="toolbar"] {
   border-radius: 8px 8px 0px 0px;
   -moz-margin-start: 0;
 }
 
 .tabs-newtab-button:not(:hover),
-#TabsToolbar > #new-tab-button:not(:hover) {
+#TabsToolbar > #new-tab-button:not(:hover),
+#TabsToolbar > toolbarpaletteitem > #new-tab-button,
+#TabsToolbar > toolbarpaletteitem > #new-tab-button[cui-areatype="toolbar"] {
   background-color: #C09070;
 }
 
@@ -3208,15 +3214,14 @@ richlistitem[type~="action"][actiontype="switchtab"][selected="true"] > .ac-url-
 #TabsToolbar > #new-tab-button,
 #TabsToolbar > toolbarpaletteitem > #new-tab-button,
 #TabsToolbar > toolbarpaletteitem > #new-tab-button[cui-areatype="toolbar"] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/newtabFx.png");
-  -moz-image-region: rect(0, 16px, 18px, 0);
+  list-style-image: url("chrome://browser/skin/tabbrowser/newtab.svg");
+  -moz-image-region: auto;
 }
 
 .tabs-newtab-button,
 .tabs-newtab-button:hover,
 #TabsToolbar > #new-tab-button,
 #TabsToolbar > #new-tab-button:hover {
-  -moz-image-region: rect(0, 32px, 18px, 16px);
 }
 
 #main-window[tabsintitlebar]:not([inFullscreen]) .tabs-newtab-button:-moz-system-metric(windows-classic):not(:-moz-lwtheme),
