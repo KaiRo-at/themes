@@ -39,6 +39,11 @@ menubar {
 :root {
   /*--backbutton-urlbar-overlap: 5px;*/
 
+  /* icon width + border + horizontal padding (includes the overlap from backbutton-urlbar-overlap) */
+  --forwardbutton-width: 27px;
+  /* icon width + border + horizontal padding (without the overlap from backbutton-urlbar-overlap) /
+  --forwardbutton-width: 25px;*/
+
   --identity-box-verified-background-color: #000000;
 
   --panel-separator-color: #A09090;
@@ -82,13 +87,6 @@ menubar {
 #main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen])[chromehidden~="menubar"] #toolbar-menubar ~ #TabsToolbar,
 #main-window[tabsintitlebar][sizemode="normal"]:not([inFullscreen]) #toolbar-menubar[autohide="true"][inactive] ~ #TabsToolbar {
 /*  margin-top: var(--space-above-tabbar);*/
-}
-
-@media (-moz-mac-graphite-theme: 0) and (-moz-mac-lion-theme: 0) {
-  /* This is a hackish workaround to exclude most of Mac OS until bug 1060941 gets fixed. */
-  #toolbar-menubar:not([autohide="true"]) {
-    -moz-binding: url("chrome://global/skin/globalBindings.xml#toolbar-drag-browsercustom");
-  }
 }
 
 @media (-moz-mac-graphite-theme), (-moz-mac-lion-theme) {
@@ -1010,12 +1008,12 @@ toolbarpaletteitem[place="palette"] > #save-page-button:hover {
 
 #sync-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #sync-button {
-  -moz-image-region: rect(0, 792px, 18px, 774px);
+  -moz-image-region: rect(0px, 1024px, 32px, 992px);
 }
 
 #sync-button[cui-areatype="menu-panel"]:hover,
 toolbarpaletteitem[place="palette"] > #sync-button:hover {
-  -moz-image-region: rect(32px, 792px, 64px, 774px);
+  -moz-image-region: rect(32px, 1024px, 64px, 992px);
 }
 
 #feed-button[cui-areatype="menu-panel"],
@@ -1530,6 +1528,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button:not([ope
   margin-top: 3px;
   margin-bottom: 3px;
   border-radius: 0 10000px 10000px 0;
+/*  max-width: calc(var(--forwardbutton-width) + var(--backbutton-urlbar-overlap)) !important; */
 }
 
 #forward-button:-moz-locale-dir(rtl) {
@@ -1541,7 +1540,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not([switchingtabs]) > #fo
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled] {
-  margin-left: -27px !important;
+  margin-left: calc(0px - var(--forwardbutton-width)/* - var(--backbutton-urlbar-overlap)*/);
 }
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper:hover:not([switchingtabs]) > #forward-button[disabled] {
@@ -1551,7 +1550,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:hover:not([switchingtabs])
 
 window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-button[disabled] {
   /* when not hovered anymore, trigger a new transition to hide the forward button immediately */
-  margin-left: -27.01px !important;
+  margin-left: calc(-0.01px - var(--forwardbutton-width)/* - var(--backbutton-urlbar-overlap)*/);
 }
 
 #back-button {
@@ -1948,7 +1947,11 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   transition: opacity 0.15s ease;
 }
 
-#navigator-toolbox:not(:hover) .urlbar-history-dropmarker {
+#urlbar-wrapper[switchingtabs] > #urlbar > .urlbar-textbox-container > .urlbar-history-dropmarker {
+  transition: none;
+}
+
+#navigator-toolbox:not(:hover) #urlbar:not([focused]) > .urlbar-textbox-container > .urlbar-history-dropmarker {
   opacity: 0;
 }
 
@@ -2122,6 +2125,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 
 #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
   list-style-image: url(chrome://browser/skin/identity-mixed-active-blocked.svg);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
+  list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
   visibility: visible;
 }
 
@@ -2730,6 +2738,7 @@ richlistitem[type~="action"][actiontype="tab"][selected="true"] > .ac-url-box > 
   height: 16px;
   margin-top: -8px;
   -moz-margin-start: -15px;
+  margin-inline-end: -1px;
   position: relative;
 }
 
@@ -3308,11 +3317,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url("chrome://mozapps/skin/passwordmgr/key-64.png");
 }
 
-.popup-notification-icon[popupid="webapps-install-progress"],
-.popup-notification-icon[popupid="webapps-install"] {
-  list-style-image: url("chrome://global/skin/icons/webapps-64.png");
-}
-
 .popup-notification-icon[popupid="webRTC-sharingDevices"],
 .popup-notification-icon[popupid="webRTC-shareDevices"] {
   list-style-image: url("chrome://browser/skin/webRTC-shareDevice-64.png");
@@ -3379,11 +3383,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
   outline: 1px dotted #008484;
 }
 
-.identity-notification-icon,
-#identity-notification-icon {
-  list-style-image: url("chrome://mozapps/skin/profile/profileicon.png");
-}
-
 .geo-notification-icon,
 #geo-notification-icon {
   list-style-image: url("chrome://browser/skin/Geolocation-16.png");
@@ -3414,10 +3413,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #forward-button[disabled
   /* Temporary icon until the capture and fill doorhangers are unified. */
   list-style-image: url(chrome://mozapps/skin/passwordmgr/key-16.png);
   transform: scaleX(-1);
-}
-
-#webapps-notification-icon {
-  list-style-image: url("chrome://gobal/skin/icons/webapps-16.png");
 }
 
 #plugins-notification-icon {
@@ -3709,9 +3704,7 @@ notification[value="translation"] {
 
 /* Bookmarks roots menu-items */
 #subscribeToPageMenuitem:not([disabled]),
-#subscribeToPageMenupopup,
-#BMB_subscribeToPageMenuitem:not([disabled]),
-#BMB_subscribeToPageMenupopup {
+#subscribeToPageMenupopup {
   list-style-image: url("chrome://browser/skin/feeds/feedIcon16.png");
 }
 

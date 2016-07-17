@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* === BEGIN downloads.inc.css === */
+
 /*** Panel and outer controls ***/
 
 #downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent {
@@ -27,48 +29,10 @@
   max-width: 40ch;
 }
 
-#downloadsHistory {
-  cursor: pointer;
-  margin: 4px !important;
-  color: #3333FF;
-}
-
-#downloadsPanel[keyfocus] > #downloadsFooter > #downloadsHistory:focus {
-  outline: 1px #008484 dotted;
-  outline-offset: -1px;
-}
-
-#downloadsHistory > .button-box {
-  border: none;
-}
-
-#downloadsFooter {
-}
-
-#downloadsFooter:hover {
-}
-
-#downloadsFooter:hover:active {
-}
-
-/*** Downloads Summary and List items ***/
-
-#downloadsSummary,
-richlistitem[type="download"] {
-  height: 7em;
-  -moz-padding-end: 0;
-  color: inherit;
-}
-
 #downloadsSummary {
   padding: 8px 38px 8px 12px;
   cursor: pointer;
   -moz-user-focus: normal;
-}
-
-#downloadsPanel[keyfocus] > #downloadsFooter > #downloadsSummary:focus {
-  outline: 1px #008484 dotted;
-  outline-offset: -5px;
 }
 
 #downloadsSummary > .downloadTypeIcon {
@@ -79,21 +43,34 @@ richlistitem[type="download"] {
   color: #3333FF;
 }
 
+#downloadsHistory {
+  cursor: pointer;
+  margin: 4px !important;
+  color: #3333FF;
+}
+
+#downloadsHistory > .button-box {
+}
+
+/*** List items and similar elements in the summary ***/
+
+#downloadsSummary,
+richlistitem[type="download"] {
+  height: var(--downloads-item-height);
+  -moz-padding-end: 0;
+  color: inherit;
+}
+
 richlistitem[type="download"] {
   margin: 0;
-  border-bottom: 1px dotted #9C9CFF;
+  /*border-top: 1px solid var(--downloads-item-border-top-color);*/
+  border-bottom: 1px solid var(--downloads-item-border-bottom-color);
   background: transparent;
   padding: 8px;
 }
 
 richlistitem[type="download"]:first-child {
 /*  border-top: 1px solid transparent;*/
-}
-
-#downloadsListBox:-moz-focusring > richlistitem[type="download"][selected] {
-  outline: 1px #008484 dotted;
-  outline-offset: -1px;
-  /*-moz-outline-radius: 3px;*/
 }
 
 .downloadTypeIcon {
@@ -109,7 +86,7 @@ richlistitem[type="download"]:first-child {
 
 /* We hold .downloadTarget, .downloadProgress and .downloadDetails inside of
    a vbox with class .downloadContainer. We set the font-size of the entire
-   container to 90% because:
+   container to --downloads-item-font-size-factor because:
 
    1) This is the size that we want .downloadDetails to be
    2) The container's width is set by localizers by &downloadDetails.width;,
@@ -123,22 +100,23 @@ richlistitem[type="download"]:first-child {
  */
 #downloadsSummaryDetails,
 .downloadContainer {
-  font-size: 90%;
+  font-size: calc(100% * var(--downloads-item-font-size-factor));
 }
 
 #downloadsSummaryDescription,
 .downloadTarget {
-  margin-bottom: 6px;
+  margin-bottom: var(--downloads-item-target-margin-bottom);
   cursor: inherit;
 }
 
 .downloadTarget {
-  font-size: calc(100%/0.9);
+  font-size: calc(100% / var(--downloads-item-font-size-factor));
 }
 
 #downloadsSummaryDetails,
 .downloadDetails {
-  opacity: 0.6;
+  margin-top: var(--downloads-item-details-margin-top);
+  opacity: var(--downloads-item-details-opacity);
   cursor: inherit;
 }
 
@@ -153,8 +131,52 @@ richlistitem[type="download"]:first-child {
 }
 
 .downloadButton > .button-box {
-  border: 1px solid transparent;
   padding: 0;
+}
+
+
+/* === END downloads.inc.css === */
+
+/*** Panel and outer controls ***/
+
+#downloadsFooter {
+}
+
+#downloadsFooter:hover {
+}
+
+#downloadsFooter:hover:active {
+}
+
+#downloadsPanel[keyfocus] #downloadsSummary:focus,
+#downloadsPanel[keyfocus] #downloadsHistory:focus {
+  outline: 1px #008484 dotted;
+  outline-offset: -1px;
+}
+
+#downloadsPanel[keyfocus] #downloadsSummary:focus {
+  outline-offset: -5px;
+}
+
+#downloadsHistory > .button-box {
+  /* Hide the border so we don't display an inner focus ring. */
+  border: none;
+}
+
+/*** List items and similar elements in the summary ***/
+
+:root {
+  --downloads-item-height: 7em;
+  /*--downloads-item-border-top-color: hsla(0,0%,100%,.3);*/
+  --downloads-item-border-bottom-color: #9C9CFF;
+  --downloads-item-font-size-factor: 0.9;
+  --downloads-item-target-margin-bottom: 6px;
+  --downloads-item-details-margin-top: 0;
+  --downloads-item-details-opacity: 0.6;
+}
+
+.downloadButton > .button-box {
+  border: 1px solid transparent;
 }
 
 #downloadsPanel[keyfocus] .downloadButton:focus > .button-box {
@@ -162,6 +184,12 @@ richlistitem[type="download"]:first-child {
 }
 
 /*** Highlighted list items ***/
+
+#downloadsListBox:-moz-focusring > richlistitem[type="download"][selected] {
+  outline: 1px #008484 dotted;
+  outline-offset: -1px;
+  /*-moz-outline-radius: 3px;*/
+}
 
 /* #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover { */
 #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"]:hover {

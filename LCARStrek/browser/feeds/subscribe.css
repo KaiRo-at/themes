@@ -3,6 +3,20 @@ html {
   font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
 }
 
+#subscribeUsingDescription,
+#subscribeButton {
+  display: block;
+}
+
+#subscribeUsingDescription {
+  margin-bottom: 0.5em;
+}
+
+#subscribeButton {
+  margin-top: 0.5em;
+  margin-inline-start: auto;
+}
+
 #feedBody {
   border: 1px solid #9C9CFF;
   padding: 2em;
@@ -16,6 +30,11 @@ html {
   border-radius: 10px;
   margin: -3em auto 0 auto;
   background-color: #FFCF00;
+  display: flex;
+}
+
+#feedHeaderContainerSpacer {
+  flex-grow: 1;
 }
 
 #feedHeader {
@@ -66,6 +85,7 @@ html {
 
 #feedSubscribeLine {
   padding-top: 0.2em;
+  padding-inline-start: 0.5em;
 }
 
 /* Don't print subscription UI */

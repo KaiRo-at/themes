@@ -2,6 +2,11 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* === BEGIN allDownloadsViewOverlay.inc.css === */
+
+/*** View and outer controls ***/
+
+
 #downloadsRichListBox {
   /** The default listbox appearance comes with an unwanted margin. **/
   -moz-appearance: none;
@@ -9,8 +14,10 @@
   border: none;
 }
 
+/*** List items ***/
+
 #downloadsRichListBox > richlistitem.download {
-  height: 6em;
+  height: var(--downloads-item-height);
   padding: 5px 8px;
 }
 
@@ -45,6 +52,14 @@
   border: none;
   padding: 5px;
   list-style-image: url("chrome://browser/skin/downloads/buttons.png");
+}
+
+/* === END allDownloadsViewOverlay.inc.css === */
+
+/*** List items ***/
+
+:root {
+  --downloads-item-height: 6em;
 }
 
 /*** Highlighted list items ***/
