@@ -42,15 +42,39 @@
   color: #000000;
 }
 
-toolbar[brighttext] #downloads-button:not([attention]) > #downloads-indicator-anchor > #downloads-indicator-icon {
+toolbar[brighttext] #downloads-button:not([attention="success"]) > #downloads-indicator-anchor > #downloads-indicator-icon {
 /*  background-image: var(--downloads-indicator-icon-inverted); */
 }
 
-#downloads-button[attention] > #downloads-indicator-anchor > #downloads-indicator-icon {
+#downloads-button[attention="warning"] > .toolbarbutton-badge-stack > .toolbarbutton-badge,
+#downloads-button[attention="severe"] > .toolbarbutton-badge-stack > .toolbarbutton-badge {
+  display: -moz-box;
+  height: 13px;
+  width: 13px;
+  background-size: contain;
+  border: none;
+  box-shadow: none;
+/*  filter: drop-shadow(0 1px 0 hsla(206, 50%, 10%, .15));*/
+}
+
+#downloads-button[attention="severe"] > .toolbarbutton-badge-stack > .toolbarbutton-badge {
+  background: #FF0000 url("chrome://browser/skin/update-badge-failed.svg") no-repeat center;
+}
+
+#downloads-button[attention="warning"] > .toolbarbutton-badge-stack > .toolbarbutton-badge {
+  background: #FFCF00 url("chrome://browser/skin/update-badge-failed.svg") no-repeat center;
+}
+
+#downloads-button[attention="severe"] > .toolbarbutton-badge-stack > .toolbarbutton-badge:-moz-window-inactive,
+#downloads-button[attention="warning"] > .toolbarbutton-badge-stack > .toolbarbutton-badge:-moz-window-inactive {
+  filter: none;
+}
+
+#downloads-button[attention="success"] > #downloads-indicator-anchor > #downloads-indicator-icon {
   background-image: var(--downloads-indicator-icon-attention);
 }
 
-#downloads-button[cui-areatype="menu-panel"][attention] {
+#downloads-button[cui-areatype="menu-panel"][attention="success"] {
   list-style-image: url("chrome://browser/skin/downloads/download-glow-menuPanel.png");
   -moz-image-region: auto;
 }
@@ -63,13 +87,13 @@ toolbar[brighttext] #downloads-button:not([attention]) > #downloads-indicator-an
   background-size: 12px;
 }
 
-#downloads-button:not([counter])[attention] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+#downloads-button:not([counter])[attention="success"] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
   background-image: var(--downloads-indicator-icon-attention);
 }
 
 #downloads-button:not([counter]):hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
 #downloads-button[open="true"]:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
-#downloads-button:not([counter])[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
+#downloads-button:not([counter])[attention="success"]:hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
   background-image: var(--downloads-indicator-icon-hover);
   background-size: 12px;
 }

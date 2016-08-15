@@ -126,5 +126,12 @@ findbar[position="top"][hidden] {
 }
 
 .find-status-icon[status="pending"] {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
+  list-style-image: url("chrome://global/skin/icons/loading.png");
+}
+
+@media (min-resolution: 2dppx) {
+  .find-status-icon[status="pending"] {
+    width: 16px;
+    list-style-image: url("chrome://global/skin/icons/loading@2x.png");
+  }
 }

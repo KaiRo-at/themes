@@ -1736,11 +1736,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   color: #FFBFFF;
 }
 
-/* overlap the urlbar's border */
-#PopupAutoCompleteRichResult {
-  margin-top: -1px;
-}
-
 #urlbar:-moz-lwtheme,
 .searchbar-textbox:-moz-lwtheme {
   /* background-color: rgba(255,255,255,.8);
@@ -1999,9 +1994,22 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
   -moz-border-end: 1px solid var(--identity-box-chrome-color);
 }
 
+#identity-box:hover > :not(#identity-icon),
+#identity-box[open=true] > :not(#identity-icon) {
+/*  filter: grayscale(100%);*/
+}
+
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
   color: var(--identity-box-verified-color);
   -moz-border-end: 1px solid var(--identity-box-verified-color);
+}
+
+#identity-icon-labels:-moz-locale-dir(ltr) {
+  padding-left: 2px;
+}
+
+#identity-icon-labels:-moz-locale-dir(rtl) {
+  padding-right: 2px;
 }
 
 #notification-popup-box:not([hidden]) + #identity-box {
@@ -2183,6 +2191,85 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   max-width: 36px;
 }
 
+/*
+.autocomplete-richlistbox {
+  padding: 4px;
+}
+
+.autocomplete-richlistitem {
+  height: 30px;
+  min-height: 30px;
+  font: message-box;
+  border-radius: 2px;
+  border: 1px solid transparent;
+}
+
+.autocomplete-richlistitem[selected=true] {
+  background-color: hsl(210, 80%, 52%);
+}
+*/
+.ac-title {
+  font-size: 14px;
+/*  color: hsl(0, 0%, 0%);*/
+}
+
+.ac-tags {
+  font-size: 12px;
+}
+/*
+html|span.ac-tag {
+  background-color: hsl(216, 0%, 88%);
+  color: hsl(0, 0%, 0%);
+  border-radius: 2px;
+  border: 1px solid transparent;
+  padding: 0 1px;
+}
+*/
+
+.ac-separator,
+.ac-url,
+.ac-action {
+  font-size: 12px;
+}
+
+.ac-separator {
+/*  color: hsl(0, 0%, 50%);*/
+}
+
+.ac-url {
+  color: #9C9CFF;
+}
+
+.ac-action {
+  color: #9C9CFF;
+}
+
+.ac-title[selected=true],
+.ac-separator[selected],
+.ac-url[selected=true],
+.ac-action[selected=true] {
+  color: #000000;
+}
+
+.ac-tags-text[selected] > html|span.ac-tag {
+  background-color: #A09090;
+  color: #000000;
+}
+
+html|span.ac-emphasize-text-title,
+html|span.ac-emphasize-text-tag,
+html|span.ac-emphasize-text-url {
+  font-weight: 600;
+}
+
+.ac-type-icon[type=bookmark] {
+  list-style-image: url("chrome://browser/skin/urlbar-star.svg#star");
+}
+
+.ac-type-icon[type=bookmark][selected][current] {
+/*  list-style-image: url("chrome://browser/skin/urlbar-star.svg#star-inverted");*/
+}
+
 .ac-result-type-bookmark,
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/places/bookmark.png");
@@ -2196,19 +2283,17 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 /*  -moz-image-region: rect(0px 48px 16px 32px);*/
 }
 
-.ac-result-type-keyword,
-.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage),
-richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-site-icon {
+.ac-type-icon[type=keyword],
+.ac-site-icon[type=searchengine],
+.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
   list-style-image: url("chrome://global/skin/icons/autocomplete-search.svg#search-icon");
-  width: 16px;
-  height: 16px;
 }
 
-  .ac-result-type-keyword[selected="true"],
-  .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
-  richlistitem[type~="action"][actiontype="searchengine"][selected="true"] > .ac-title-box > .ac-site-icon {
-    list-style-image: url("chrome://global/skin/icons/autocomplete-search.svg#search-icon-inverted");
-  }
+.ac-type-icon[type=keyword][selected],
+.ac-site-icon[type=searchengine][selected],
+.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected) {
+  list-style-image: url("chrome://global/skin/icons/autocomplete-search.svg#search-icon-inverted");
+}
 
 .ac-result-type-tag,
 .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
@@ -2217,50 +2302,14 @@ richlistitem[type~="action"][actiontype="searchengine"] > .ac-title-box > .ac-si
   height: 16px;
 }
 
-.ac-comment,
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > description,
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button {
-  font-size: 1.05em;
+.ac-type-icon[type=switchtab],
+.ac-type-icon[type=remotetab] {
+  list-style-image: url("chrome://browser/skin/urlbar-tab.svg#tab");
 }
 
-.ac-extra > .ac-comment,
-.ac-url-text,
-.ac-action-text {
-  font-size: 1em;
-}
-
-.ac-url-text,
-.ac-action-text {
-  color: #9C9CFF;
-}
-
-richlistitem[type~="action"][actiontype="tab"] > .ac-url-box > .ac-action-icon {
-  list-style-image: url("chrome://browser/skin/actionicon-tab.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-  padding: 0 3px;
-  width: 22px;
-  height: 16px;
-}
-
-@media (min-resolution: 1.1dppx) {
-  richlistitem[type~="action"][actiontype="tab"] > .ac-url-box > .ac-action-icon {
-    list-style-image: url("chrome://browser/skin/actionicon-tab@2x.png");
-    -moz-image-region: rect(0, 32px, 32px, 0);
-  }
-}
-
-richlistitem[type~="action"][actiontype="tab"][selected="true"] > .ac-url-box > .ac-action-icon {
-  -moz-image-region: rect(16px, 16px, 32px, 0);
-}
-
-.autocomplete-treebody::-moz-tree-cell-text(treecolAutoCompleteComment) {
-  color: #8050B0;
-}
-
-.ac-comment[selected="true"],
-.ac-url-text[selected="true"],
-.ac-action-text[selected="true"] {
-  color: inherit !important;
+.ac-type-icon[type=switchtab][selected],
+.ac-type-icon[type=remotetab][selected] {
+  list-style-image: url("chrome://browser/skin/urlbar-tab.svg#tab-inverted");
 }
 
 .autocomplete-treebody::-moz-tree-cell-text(suggesthint, treecolAutoCompleteComment),
@@ -3186,7 +3235,13 @@ richlistitem[type~="action"][actiontype="tab"][selected="true"] > .ac-url-box > 
 }
 
 .alltabs-item[busy] > .menu-iconic-left > .menu-iconic-icon {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
+  list-style-image: url("chrome://global/skin/icons/loading.png");
+}
+
+@media (min-resolution: 1.1dppx) {
+  .alltabs-item[busy] > .menu-iconic-left > .menu-iconic-icon {
+    list-style-image: url("chrome://global/skin/icons/loading@2x.png");
+  }
 }
 
 .alltabs-item[tabIsVisible]:not([_moz-menuactive="true"]) {
@@ -3228,8 +3283,15 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 }
 
 #sidebar-throbber[loading="true"] {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
+  list-style-image: url("chrome://global/skin/icons/loading.png");
   -moz-margin-end: 4px;
+}
+
+@media (min-resolution: 1.1dppx) {
+  #sidebar-throbber[loading="true"] {
+    list-style-image: url("chrome://global/skin/icons/loading@2x.png");
+    width: 16px;
+  }
 }
 
 /* Bookmarks toolbar */
@@ -4609,7 +4671,7 @@ html|*#gcli-output-frame {
 }
 
 #social-sidebar-button[loading="true"] {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
+  list-style-image: url("chrome://global/skin/icons/loading.png");
 }
 
 #social-sidebar-favico {
@@ -5278,6 +5340,14 @@ toolbarpaletteitem[place="toolbar"] {
   margin-bottom: 25px;
 }
 
+toolbarpaletteitem[place="palette"]:-moz-focusring,
+toolbarpaletteitem[place="panel"]:-moz-focusring,
+toolbarpaletteitem[place="toolbar"]:-moz-focusring {
+  outline: 1px dotted #A09090;
+  outline-offset: -5px;
+  -moz-outline-radius: 2.5px;
+}
+
 #wrapper-edit-controls[place="palette"] > #edit-controls > toolbarbutton,
 #wrapper-edit-controls[place="palette"] > #edit-controls > separator,
 #wrapper-zoom-controls[place="palette"] > #zoom-controls > toolbarbutton,
@@ -5621,21 +5691,16 @@ toolbarpaletteitem[place="toolbar"] {
 
 #UITourTooltipBody {
   -moz-margin-end: 14px;
-}
-
-#UITourTooltipBody > vbox {
-  padding-top: 4px;
-}
-
-#UITourTooltipIconContainer {
-  -moz-margin-start: -16px;
+  -moz-margin-start: 14px;
+  margin-top: -16px;
+  margin-bottom: 8px;
 }
 
 #UITourTooltipIcon {
   width: 48px;
   height: 48px;
-  -moz-margin-start: 28px;
-  -moz-margin-end: 28px;
+  -moz-margin-start: 14px;
+  -moz-margin-end: 14px;
 }
 
 #UITourTooltipTitle,
@@ -5647,8 +5712,10 @@ toolbarpaletteitem[place="toolbar"] {
   font-size: 1.45rem;
   font-weight: bold;
   -moz-margin-start: 0;
-  -moz-margin-end: 0;
-  margin: 0 0 9px 0;
+  /* Avoid the title overlapping the close button */
+  -moz-margin-end: 14px;
+  margin-top: 0;
+  margin-bottom: 9px;
 }
 
 #UITourTooltipDescription {
@@ -5660,6 +5727,7 @@ toolbarpaletteitem[place="toolbar"] {
 }
 
 #UITourTooltipClose {
+  position: relative;
   -moz-appearance: none;
   border: none;
   background-color: transparent;
@@ -5676,7 +5744,7 @@ toolbarpaletteitem[place="toolbar"] {
   -moz-box-pack: end;
   background-color: rgba(0,0,0,.2);
   border-top: 1px solid rgba(0,0,0,.4);
-  margin: 24px -16px -16px;
+  margin: 10px -16px -16px;
   padding: 2em 15px;
 }
 

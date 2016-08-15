@@ -90,7 +90,7 @@ html|a {
 
 .throbber {
   padding-left: 16px; /* width of the background image */
-  background: url("chrome://global/skin/icons/loading.gif") no-repeat;
+  background: url("chrome://global/skin/icons/loading.png") no-repeat;
   margin-left: 5px;
 }
 

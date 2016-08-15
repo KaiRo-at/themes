@@ -73,61 +73,53 @@ richlistitem.download:not([selected]):hover {
 
 /*** Button icons ***/
 
-.downloadButton.downloadConfirmBlock,
-.downloadButton.downloadCancel {
+.downloadButton.downloadIconCancel {
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
-richlistitem.download:hover > .downloadButton.downloadConfirmBlock,
-richlistitem.download:hover > .downloadButton.downloadConfirmBlock:hover,
-richlistitem.download:hover > .downloadButton.downloadConfirmBlock:active,
-richlistitem.download:hover > .downloadButton.downloadCancel,
-richlistitem.download:hover > .downloadButton.downloadCancel:hover,
-richlistitem.download:hover > .downloadButton.downloadCancel:active {
+richlistitem.download:hover > .downloadButton.downloadIconCancel,
+richlistitem.download:hover > .downloadButton.downloadIconCancel:hover,
+richlistitem.download:hover > .downloadButton.downloadIconCancel:active {
    -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-.downloadButton.downloadShow {
+.downloadButton.downloadIconShow {
   -moz-image-region: rect(16px, 16px, 32px, 0px);
 }
 
-richlistitem.download:hover > .downloadButton.downloadShow,
-richlistitem.download:hover > .downloadButton.downloadShow:hover,
-richlistitem.download:hover > .downloadButton.downloadShow:active {
+richlistitem.download:hover > .downloadButton.downloadIconShow,
+richlistitem.download:hover > .downloadButton.downloadIconShow:hover,
+richlistitem.download:hover > .downloadButton.downloadIconShow:active {
    -moz-image-region: rect(16px, 32px, 32px, 16px);
 }
 
-.downloadButton.downloadRetry {
+.downloadButton.downloadIconRetry {
   -moz-image-region: rect(32px, 16px, 48px, 0px);
 }
 
-richlistitem.download:hover > .downloadButton.downloadRetry,
-richlistitem.download:hover > .downloadButton.downloadRetry:hover,
-richlistitem.download:hover > .downloadButton.downloadRetry:active {
+richlistitem.download:hover > .downloadButton.downloadIconRetry,
+richlistitem.download:hover > .downloadButton.downloadIconRetry:hover,
+richlistitem.download:hover > .downloadButton.downloadIconRetry:active {
    -moz-image-region: rect(32px, 32px, 48px, 16px);
 }
 
-richlistitem.download[selected] > .downloadButton.downloadConfirmBlock,
-richlistitem.download[selected]:hover > .downloadButton.downloadConfirmBlock,
-richlistitem.download[selected]:hover > .downloadButton.downloadConfirmBlock:hover,
-richlistitem.download[selected]:hover > .downloadButton.downloadConfirmBlock:active,
-richlistitem.download[selected] > .downloadButton.downloadCancel,
-richlistitem.download[selected]:hover > .downloadButton.downloadCancel,
-richlistitem.download[selected]:hover > .downloadButton.downloadCancel:hover,
-richlistitem.download[selected]:hover > .downloadButton.downloadCancel:active {
+richlistitem.download[selected] > .downloadButton.downloadIconCancel,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconCancel,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconCancel:hover,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconCancel:active {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-richlistitem.download[selected] > .downloadButton.downloadShow,
-richlistitem.download[selected]:hover > .downloadButton.downloadShow,
-richlistitem.download[selected]:hover > .downloadButton.downloadShow:hover,
-richlistitem.download[selected]:hover > .downloadButton.downloadShow:active {
+richlistitem.download[selected] > .downloadButton.downloadIconShow,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconShow,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconShow:hover,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconShow:active {
   -moz-image-region: rect(16px, 32px, 32px, 16px);
 }
 
-richlistitem.download[selected] > .downloadButton.downloadRetry,
-richlistitem.download[selected]:hover > .downloadButton.downloadRetry,
-richlistitem.download[selected]:hover > .downloadButton.downloadRetry:hover,
-richlistitem.download[selected]:hover > .downloadButton.downloadRetry:active {
+richlistitem.download[selected] > .downloadButton.downloadIconRetry,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconRetry,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconRetry:hover,
+richlistitem.download[selected]:hover > .downloadButton.downloadIconRetry:active {
   -moz-image-region: rect(32px, 32px, 48px, 16px);
 }

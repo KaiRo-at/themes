@@ -104,9 +104,15 @@ wizardpage {
   width: 0.5em;
 }
 
+#pairDeviceThrobber,
+#login-throbber {
+  -moz-box-align: center;
+}
+
 #pairDeviceThrobber > image,
 #login-throbber > image {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
+  width: 16px;
+  list-style-image: url("chrome://global/skin/icons/loading.png");
 }
 
 #captchaFeedback {

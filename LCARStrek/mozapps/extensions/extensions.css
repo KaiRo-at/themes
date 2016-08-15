@@ -135,9 +135,16 @@
 }
 
 .loading {
-  list-style-image: url("chrome://global/skin/icons/loading.gif");
+  list-style-image: url("chrome://global/skin/icons/loading.png");
   padding-left: 20px;
   padding-right: 20px;
+}
+
+@media (min-resolution: 1.1dppx) {
+  .loading > image {
+    width: 16px;
+    list-style-image: url("chrome://global/skin/icons/loading@2x.png");
+  }
 }
 
 button.warning {
@@ -781,19 +788,26 @@ button.warning {
 
 #detail-screenshot-box {
   -moz-margin-end: 2em;
+/*  background-color: white;*/
 }
 
 
 #detail-screenshot {
   max-width: 300px;
   max-height: 300px;
-/*  background-color: white;*/
 }
 
 #detail-screenshot[loading] {
-  background-image: url("chrome://communicator/skin/brand/throbber-anim.png");
+  background-image: url("chrome://global/skin/icons/loading.png");
   background-position: 50% 50%;
   background-repeat: no-repeat;
+}
+
+@media (min-resolution: 1.1dppx) {
+  #detail-screenshot[loading] {
+    background-image: url("chrome://global/skin/icons/loading@2x.png");
+    background-size: 16px;
+  }
 }
 
 #detail-screenshot[loading="error"] {
