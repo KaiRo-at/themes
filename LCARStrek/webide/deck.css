@@ -1,0 +1,89 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+html {
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  font-weight: normal;
+  margin: 0;
+  height: 100%;
+  color: #FF9F00;
+  background-color: #000000;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+.text-input {
+  display: flex;
+}
+
+.text-input input {
+  flex: 0.5;
+  margin-left: 5px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: lighter;
+  line-height: 1.2;
+  margin: 0;
+  margin-bottom: .5em;
+}
+
+#controls {
+  float: right;
+  position: relative;
+  top: -10px;
+  right: -10px;
+}
+
+#controls > a {
+  color: #336699;
+  font-size: small;
+  cursor: pointer;
+  border-bottom: 1px dotted;
+  margin-left: 10px;
+}
+
+table {
+  font-family: monospace;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  border: 1px solid #9C9CFF;
+}
+
+th {
+  min-width: 100px;
+}
+
+th:first-of-type, td:first-of-type {
+  text-align: left;
+}
+
+li {
+  list-style: none;
+  padding: 2px;
+}
+
+li > label:hover {
+  background-color: rgba(255,204,0,0.02);
+}
+
+li > label > span {
+  display: inline-block;
+}
+
+input, select {
+  box-sizing: border-box;
+}
+
+select {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}

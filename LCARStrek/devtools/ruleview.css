@@ -247,11 +247,11 @@
   /* TODO: Bug 1178535 Awaiting UX feedback on highlight colors */
 }
 
-.ruleview-selector-matched > .ruleview-selector-pseudo-class {
+.ruleview-selector-matched > .ruleview-selector-images/psuedo-class {
   /* TODO: Bug 1178535 Awaiting UX feedback on highlight colors */
 }
 
-.ruleview-selector-matched > .ruleview-selector-pseudo-class-lock {
+.ruleview-selector-matched > .ruleview-selector-images/psuedo-class-lock {
   font-weight: bold;
   color: var(--theme-highlight-orange);
 }
@@ -264,15 +264,15 @@
 }
 
 .ruleview-selectorhighlighter:hover {
-  background-position: -32px 0;
+  filter: url(images/filters.svg#checked-icon-state);
 }
 
 .ruleview-selectorhighlighter:active,
 .ruleview-selectorhighlighter.highlighted {
-  background-position: -16px 0;
+  filter: url(images/filters.svg#checked-icon-state);
 }
 
-#pseudo-class-panel:not([hidden]) {
+#images/psuedo-class-panel:not([hidden]) {
   border-bottom: 1px solid var(--theme-splitter-color);
 }
 
@@ -284,38 +284,16 @@
   background-image: url("chrome://devtools/skin/images/add.svg#add-checked");
 }
 
-#pseudo-class-panel-toggle::before {
-  background-image: url("chrome://devtools/skin/pseudo-class.svg#pseudo-class");
-  background-size: cover;
-}
-#pseudo-class-panel-toggle:hover::before,
-#pseudo-class-panel-toggle[checked]::before {
-  background-image: url("chrome://devtools/skin/pseudo-class.svg#pseudo-class-checked");
-  filter: none !important;
+#images/psuedo-class-panel-toggle::before {
+  background-image: url("chrome://devtools/skin/images/psuedo-class.svg);
 }
 
-/**
- * These buttons are using opacity instead of background color to indicate
- * the state
- */
 /*
-#ruleview-add-rule-button,
-#pseudo-class-panel-toggle,
 .ruleview-overridden-rule-filter {
   opacity: 0.8;
 }
 
-#ruleview-add-rule-button:not([disabled]):hover,
-#pseudo-class-panel-toggle:hover,
-#pseudo-class-panel-toggle[checked],
 .ruleview-overridden-rule-filter:hover {
   opacity: 1;
-}
-
-#ruleview-add-rule-button,
-#pseudo-class-panel-toggle,
-#pseudo-class-panel-toggle:hover,
-#pseudo-class-panel-toggle[checked]::before {
-  background-color: transparent !important;
 }
 */

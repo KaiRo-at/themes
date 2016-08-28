@@ -35,6 +35,10 @@ window {
   min-width: 32px;
 }
 
+#sources-toolbar .devtools-toolbarbutton:not([label]) {
+  -moz-image-region: rect(0,16px,16px,0);
+}
+
 #black-box {
   list-style-image: url("debugger-blackbox.png");
 }
@@ -59,48 +63,31 @@ window {
   list-style-image: url("debugger-toggleBreakpoints.png");
 }
 
+#toggle-breakpoints[checked] {
+  -moz-image-region: rect(0,32px,16px,16px) !important;
+}
+
+#toggle-breakpoints[checked] > image {
+  /* This button has a special checked image, don't make it blue */
+  filter: none;
+}
+
 @media (min-resolution: 1.1dppx) {
+  #sources-toolbar .devtools-toolbarbutton:not([label]) {
+    -moz-image-region: rect(0,32px,32px,0);
+  }
+
   #toggle-breakpoints {
     list-style-image: url(debugger-toggleBreakpoints@2x.png);
+  }
+
+  #toggle-breakpoints[checked] {
+    -moz-image-region: rect(0,64px,32px,32px) !important;
   }
 }
 
 #toggle-promise-debugger {
   /* TODO Bug 1186119: Add a toggle promise debugger image */
-}
-
-#sources-toolbar .devtools-toolbarbutton:not([label]) {
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-#sources-toolbar .devtools-toolbarbutton:not([label]):hover {
-  -moz-image-region: rect(16px, 16px, 32px, 0px);
-}
-
-#sources-toolbar .devtools-toolbarbutton:not([label])[checked] {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-#sources-toolbar .devtools-toolbarbutton:not([label])[checked]:hover {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-
-@media (min-resolution: 1.1dppx) {
-  #sources-toolbar .devtools-toolbarbutton:not([label]) {
-    -moz-image-region: rect(0px,32px,32px,0px);
-  }
-
-  #sources-toolbar .devtools-toolbarbutton:not([label]):hover {
-    -moz-image-region: rect(32px,32px,64px,0px);
-  }
-
-  #sources-toolbar .devtools-toolbarbutton:not([label])[checked] {
-    -moz-image-region: rect(0px,64px,32px,32px);
-  }
-
-  #sources-toolbar .devtools-toolbarbutton:not([label])[checked]:hover {
-    -moz-image-region: rect(32px,64px,64px,32px);
-  }
 }
 
 #sources .black-boxed {
@@ -177,8 +164,7 @@ window {
   -moz-image-region: rect(0px,16px,16px,0px);
 }
 
-#trace:hover,
-#trace[checked] {
+#trace:hover {
   -moz-image-region: rect(0px,32px,16px,16px);
 }
 
@@ -581,12 +567,6 @@ window {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-#debugger-toolbar .devtools-toolbarbutton:not([label]) > .toolbarbutton-icon,
-#sources-toolbar .devtools-toolbarbutton:not([label]) > .toolbarbutton-icon {
-  width: 16px;
-  height: 16px;
-}
-
 #resume {
   list-style-image: url("chrome://devtools/skin/debugger-pause.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
@@ -613,15 +593,6 @@ window {
   #resume[checked=true] {
     list-style-image: url(debugger-play@2x.png);
   }
-}
-
-#debugger-controls toolbarbutton {
-/*  transition: opacity 0.15s ease-in-out; */
-}
-
-#debugger-controls toolbarbutton[disabled] {
-/*  opacity: 0.5;
-  transition: none; */
 }
 
 #resume[break-on-next] {
@@ -682,33 +653,20 @@ window {
 }
 
 #instruments-pane-toggle {
-/*  background: none;
-  box-shadow: none;
-  border: none; */
   list-style-image: url("chrome://devtools/skin/debugger-collapse.png");
-  -moz-image-region: rect(0px,16px,16px,0px);
 }
 
 #instruments-pane-toggle[pane-collapsed] {
   list-style-image: url("chrome://devtools/skin/debugger-expand.png");
 }
 
-#instruments-pane-toggle:hover {
-  -moz-image-region: rect(0px,32px,16px,16px);
-}
-
 @media (min-resolution: 1.1dppx) {
   #instruments-pane-toggle {
     list-style-image: url(debugger-collapse@2x.png);
-    -moz-image-region: rect(0px,32px,32px,0px);
   }
 
   #instruments-pane-toggle[pane-collapsed] {
     list-style-image: url(debugger-expand@2x.png);
-  }
-
-  #instruments-pane-toggle:hover {
-    -moz-image-region: rect(0px,64px,32px,32px);
   }
 }
 

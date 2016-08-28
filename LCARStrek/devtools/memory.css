@@ -108,6 +108,16 @@ html, body, #app, #memory-tool {
   background-image: url(chrome://devtools/skin/images/diff.svg);
 }
 
+#import-snapshot::before {
+  background-image: url(chrome://devtools/skin/images/import.svg);
+}
+
+#record-allocation-stacks-label,
+#pop-view-button-label {
+  border-inline-end: 1px solid var(--theme-splitter-color);
+  padding-inline-end: 5px;
+}
+
 /**
  * Due to toolbar styles of `.devtools-toolbarbutton:not([label])` which overrides
  * .devtools-toolbarbutton's min-width of 78px, reset the min-width.
@@ -191,9 +201,30 @@ html, body, #app, #memory-tool {
   font-size: 90%;
 }
 
+.snapshot-list-item .snapshot-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .snapshot-list-item .save {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.snapshot-list-item .delete {
+  cursor: pointer;
+  position: relative;
+  min-height: 1em;
+  min-width: 1.3em;
+}
+
+.theme-light .snapshot-list-item.selected .delete {
+/*  filter: invert(100%);*/
+}
+
+.snapshot-list-item .delete::before {
+  background-image: url("chrome://devtools/skin/images/close.svg");
+  background-position: 0.2em 0;
 }
 
 .snapshot-list-item > .snapshot-title {
@@ -401,6 +432,7 @@ html, body, #app, #memory-tool {
   color: var(--theme-selection-background);
 }
 
+.heap-tree-item-individuals,
 .heap-tree-item-bytes,
 .heap-tree-item-count,
 .heap-tree-item-total-bytes,
@@ -487,6 +519,33 @@ html, body, #app, #memory-tool {
   color: inherit;
 }
 
+.heap-tree-item-individuals {
+  width: 38px;
+  min-width: 20px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.heap-tree-item-individuals > button {
+  height: 10px;
+  width: 32px;
+
+  /* Override default styles for toolbar buttons to fix entire row height. */
+  margin: 0 auto !important;
+  padding: 0;
+}
+
+/**
+ * Tree map
+ */
+
+.tree-map-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 /**
  * Heap tree errors.
  */
@@ -520,6 +579,10 @@ html, body, #app, #memory-tool {
   opacity: .5;
   margin-left: .5em;
   margin-right: .5em;
+}
+
+.heap-tree-item-address {
+  font-family: monospace;
 }
 
 .no-allocation-stacks {

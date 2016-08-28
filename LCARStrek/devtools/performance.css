@@ -59,16 +59,7 @@
 }
 
 #filter-button {
-  list-style-image: url(timeline-filter.svg#filter);
-  min-width: 24px;
-}
-
-#filter-button[disabled] {
-  list-style-image: url(timeline-filter.svg#filter-disabled);
-}
-
-#filter-button[open] {
-  list-style-image: url(timeline-filter.svg#filter-open);
+  list-style-image: url(timeline-filter.svg);
 }
 
 #performance-filter-menupopup > menuitem:before {
@@ -121,23 +112,19 @@
 }
 
 #select-optimizations-view {
-  list-style-image: url(profiler-stopwatch.svg);
+  list-style-image: url(images/profiler-stopwatch.svg);
 }
 
 /* Recording buttons */
 
 #main-record-button {
-  list-style-image: url(profiler-stopwatch-tbutton.svg);
+  list-style-image: url(images/profiler-stopwatch-tbutton.svg);
 }
 
 #empty-notice > .record-button,
 #main-record-button:hover,
 #main-record-button:hover:active {
-  list-style-image: url(profiler-stopwatch.svg);
-}
-
-#main-record-button[checked] {
-  list-style-image: url(profiler-stopwatch-checked.svg);
+  list-style-image: url(images/profiler-stopwatch.svg);
 }
 
 #main-record-button .button-icon {

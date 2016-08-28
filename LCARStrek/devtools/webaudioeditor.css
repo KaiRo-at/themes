@@ -193,28 +193,8 @@ g.selected text {
  */
 
 #audio-node-toolbar .bypass {
-  list-style-image: url(power.svg#power);
+  list-style-image: url(images/power.svg);
 }
-
-#audio-node-toolbar .bypass[disabled] {
-  list-style-image: url(power.svg#power-disabled);
-}
-
-#audio-node-toolbar .bypass:not([disabled]):hover,
-#audio-node-toolbar .bypass:hover:active,
-#audio-node-toolbar .bypass[checked] {
-  list-style-image: url(power.svg#power-active);
-}
-
-#audio-node-toolbar toolbarbutton[checked] {
-  background-color: var(--theme-selection-background); /* Select Highlight Blue */
-}
-
-/* don't invert checked buttons so we can have white icons on light theme */
-#audio-node-toolbar toolbarbutton[checked] > .toolbarbutton-icon {
-  filter: none;
-}
-
 
 /**
  * Responsive Styles

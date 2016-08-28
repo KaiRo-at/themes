@@ -14,7 +14,7 @@
   min-width: 30px;
   min-height: 28px;
   margin: 0;
-  list-style-image: url("profiler-stopwatch.svg");
+  list-style-image: url("images/profiler-stopwatch.svg");
 }
 
 #empty-notice > button .button-text {
@@ -38,19 +38,7 @@
 }
 
 #record-snapshot {
-  list-style-image: url("chrome://devtools/skin/profiler-stopwatch-tbutton.svg");
-}
-
-#record-snapshot:hover {
-  list-style-image: url("chrome://devtools/skin/profiler-stopwatch.svg");
-}
-
-#record-snapshot[checked] {
-  list-style-image: url("chrome://devtools/skin/profiler-stopwatch-checked-tbutton.svg");
-}
-
-#record-snapshot[checked]:hover {
-  list-style-image: url("chrome://devtools/skin/profiler-stopwatch-checked.svg");
+  list-style-image: url("chrome://devtools/skin/images/profiler-stopwatch-tbutton.svg");
 }
 
 /* Snapshots items */
@@ -116,14 +104,8 @@
 
 /* Debugging pane controls */
 
-#debugging-controls .devtools-toolbarbutton > .toolbarbutton-icon {
-  width: 16px;
-  height: 16px;
-}
-
 #resume {
   list-style-image: url("debugger-play.png");
-  -moz-image-region: rect(0px,32px,16px,16px);
 }
 
 #step-over {
@@ -141,7 +123,6 @@
 @media (min-resolution: 1.1dppx) {
   #resume {
     list-style-image: url(debugger-play@2x.png);
-    -moz-image-region: rect(0px,64px,32px,32px);
   }
 
   #step-over {
@@ -155,14 +136,6 @@
   #step-out {
     list-style-image: url(debugger-step-out@2x.png);
   }
-}
-
-#debugging-controls > toolbarbutton {
-  transition: opacity 0.15s ease-in-out;
-}
-
-#debugging-controls > toolbarbutton[disabled=true] {
-  opacity: 0.5;
 }
 
 #calls-slider {
