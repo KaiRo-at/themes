@@ -138,7 +138,7 @@ g.selected text {
   background: none;
   box-shadow: none;
   border: none;
-  list-style-image: url("debugger-collapse.png");
+  list-style-image: url("images/debugger-collapse.png");
   -moz-image-region: rect(0px,16px,16px,0px);
 }
 
@@ -148,7 +148,7 @@ g.selected text {
 }
 
 #inspector-pane-toggle[pane-collapsed] {
-  list-style-image: url("debugger-expand.png");
+  list-style-image: url("images/debugger-expand.png");
 }
 
 #inspector-pane-toggle:active {
@@ -171,12 +171,12 @@ g.selected text {
 
 @media (min-resolution: 1.1dppx) {
   #inspector-pane-toggle {
-    list-style-image: url("debugger-collapse@2x.png");
+    list-style-image: url("images/debugger-collapse@2x.png");
     -moz-image-region: rect(0px,32px,32px,0px);
   }
 
   #inspector-pane-toggle[pane-collapsed] {
-    list-style-image: url("debugger-expand@2x.png");
+    list-style-image: url("images/debugger-expand@2x.png");
   }
 
   #inspector-pane-toggle:active {
@@ -220,12 +220,12 @@ g.selected text {
   background: none;
   box-shadow: none;
   border: none;
-  list-style-image: url("debugger-collapse.png");
+  list-style-image: url("images/debugger-collapse.png");
   -moz-image-region: rect(0px,16px,16px,0px);
 }
 
 #inspector-pane-toggle[pane-collapsed] {
-  list-style-image: url("debugger-expand.png");
+  list-style-image: url("images/debugger-expand.png");
 }
 
 #inspector-pane-toggle:active {

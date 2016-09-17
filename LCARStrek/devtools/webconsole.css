@@ -1,0 +1,585 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Webconsole specific theme variables */
+
+.theme-dark,
+.theme-light,
+.theme-firebug {
+  --command-line-image: -moz-image-rect(url("chrome://devtools/skin/images/commandline-icon.png"), 0, 32, 16, 16);
+  --command-line-image-2x: -moz-image-rect(url('chrome://devtools/skin/images/commandline-icon@2x.png'), 0, 64, 32, 32);
+}
+
+window {
+  padding: 0;
+}
+
+/*
+ * This hardcoded width likely due to a toolkit Windows specific bug.
+ * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
+ */
+
+.hud-filter-box {
+  width: 200px;
+}
+
+/* General output styles */
+
+a {
+  -moz-user-focus: normal;
+  -moz-user-input: enabled;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Workaround for Bug 575675 - FindChildWithRules aRelevantLinkVisited
+ * assertion when loading HTML page with links in XUL iframe */
+*:visited { }
+
+.message {
+  display: flex;
+  flex: none;
+  padding: 0 7px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.message > .prefix,
+.message > .timestamp {
+  flex: none;
+  color: var(--theme-comment);
+  margin: 3px 6px 0 0;
+}
+
+.message > .indent {
+  flex: none;
+}
+
+.message > .icon {
+  flex: none;
+  margin: 3px 6px 0 0;
+  padding: 0 4px;
+  height: 1em;
+  align-self: flex-start;
+}
+
+.message > .icon::before {
+  content: "";
+  background-image: url("chrome://devtools/skin/images/webconsole.svg");
+  background-position: 12px 12px;
+  background-repeat: no-repeat;
+  background-size: 72px 60px;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+}
+
+.message > .message-body-wrapper {
+  flex: 1 1 100%;
+  margin: 3px;
+}
+
+.message-body-wrapper .table-widget-body {
+  overflow: visible;
+}
+
+/* The red bubble that shows the number of times a message is repeated */
+.message-repeats {
+  -moz-user-select: none;
+  flex: none;
+  margin: 2px 6px;
+  padding: 0 6px;
+  height: 1.25em;
+  color: #000000;
+  background-color: #FF0000;
+  border-radius: 40px;
+  /* font: message-box; */
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.message-repeats[value="1"] {
+  display: none;
+}
+
+.message-location {
+  display: flex;
+  flex: none;
+  align-self: flex-start;
+  justify-content: flex-end;
+  width: 10em;
+  margin-top: 3px;
+  color: #3333FF;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.message-location:hover,
+.message-location:focus {
+  text-decoration: underline;
+}
+
+.message-location > .frame-link .frame-link-source {
+  width: 10em;
+}
+
+.message-flex-body {
+  display: flex;
+}
+
+.message-body > * {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.message-flex-body > .message-body {
+  display: block;
+  flex: 1 1 auto;
+  vertical-align: middle;
+}
+
+.message-flex-body > .message-location {
+  margin-top: 0;
+}
+
+#output-wrapper {
+  direction: ltr;
+  overflow: auto;
+  -moz-user-select: text;
+}
+
+/* The width on #output-container is set to a hardcoded px in webconsole.js
+   since it's way faster than using 100% with -moz-box-flex (see Bug 1237368) */
+
+#output-container.hideTimestamps > .message {
+  -moz-padding-start: 0;
+  -moz-margin-start: 7px;
+  width: calc(100% - 7px);
+}
+
+#output-container.hideTimestamps > .message > .timestamp {
+  display: none;
+}
+
+#output-container.hideTimestamps > .message > .indent {
+  background-color: var(--theme-body-background);
+}
+
+.filtered-by-type,
+.filtered-by-string {
+  display: none;
+}
+
+.hidden-message {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+/* WebConsole colored drops */
+
+.webconsole-filter-button {
+  -moz-user-focus: normal;
+}
+
+.webconsole-filter-button > .toolbarbutton-menubutton-button:before {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-left: 5px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* Network styles */
+.webconsole-filter-button[category="net"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#BF9B00, #7F6700);
+  border-color: #FFCF00;
+}
+
+.message:hover {
+  background-color: var(--theme-contrast-background);
+}
+
+.message[severity=error] {
+  background-color: #FF0000;
+}
+
+.console-string {
+  color: var(--theme-highlight-orange);
+}
+
+.message[severity=error] .console-string {
+  color: #000000;
+}
+
+.theme-selected .console-string,
+.theme-selected .cm-number,
+.theme-selected .cm-variable,
+.theme-selected .kind-ArrayLike {
+  color: #000000 !important; /* Selection Text Color */
+}
+
+.message[category=network] > .indent {
+  -moz-border-end: solid var(--theme-body-color-alt) 6px;
+}
+
+.message[category=network][severity=error] > .icon::before {
+  background-position: -12px 0;
+}
+
+.message[category=network] > .message-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message[category=network] .method {
+  flex: none;
+}
+
+.message[category=network]:not(.navigation-marker) .url {
+  flex: 1 1 auto;
+  /* Make sure the URL is very small initially, let flex change width as needed. */
+  width: 100px;
+  min-width: 5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message[category=network] .status {
+  flex: none;
+  -moz-margin-start: 6px;
+}
+
+.message[category=network].mixed-content .url {
+  color: var(--theme-highlight-red);
+}
+
+.message .learn-more-link {
+  color: var(--theme-highlight-blue);
+  margin: 0 6px;
+}
+
+.message[category=network] .xhr {
+  background-color: var(--theme-body-color-alt);
+  color: var(--theme-body-background);
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 10px;
+  padding: 2px;
+  line-height: 10px;
+  margin-inline-start: 3px;
+  margin-inline-end: 1ex;
+}
+
+/* CSS styles */
+.webconsole-filter-button[category="css"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#7575BF, #4E4E7F);
+  border-color: #9C9CFF;
+}
+
+.message[category=cssparser] > .indent {
+  -moz-border-end: solid #9C9CFF 6px;
+}
+
+.message[category=cssparser][severity=error] > .icon::before {
+  background-position: -12px -12px;
+}
+
+.message[category=cssparser][severity=warn] > .icon::before {
+  background-position: -24px -12px;
+}
+
+/* JS styles */
+.webconsole-filter-button[category="js"] > .toolbarbutton-menubutton-button:before {
+   background-image: linear-gradient(#BF7700, #7F4F00);
+   border-color: #FF9F00;
+}
+
+.message[category=exception] > .indent {
+  -moz-border-end: solid #FF9F00 6px;
+}
+
+.message[category=exception][severity=error] > .icon::before {
+  background-position: -12px -24px;
+}
+
+.message[category=exception][severity=warn] > .icon::before {
+  background-position: -24px -24px;
+}
+
+/* Web Developer styles */
+.webconsole-filter-button[category="logging"] > .toolbarbutton-menubutton-button:before {
+   background-image: linear-gradient(#5F3B83, #3F2756);
+   border-color: #8050B0;
+}
+
+.message[category=console] > .indent {
+  -moz-border-end: solid #8050B0 6px;
+}
+
+.message[category=console][severity=error] > .icon::before,
+.message[category=output][severity=error] > .icon::before,
+.message[category=server][severity=error] > .icon::before {
+  background-position: -12px -36px;
+}
+
+.message[category=console][severity=warn] > .icon::before,
+.message[category=server][severity=warn] > .icon::before {
+  background-position: -24px -36px;
+}
+
+.message[category=console][severity=info] > .icon::before,
+.message[category=server][severity=info] > .icon::before {
+  background-position: -36px -36px;
+}
+
+/* Server Logging Styles */
+
+.webconsole-filter-button[category="server"] > .toolbarbutton-menubutton-button:before {
+  background-image: linear-gradient(#006363, #004242);
+  border-color: #008484;
+}
+
+.message[category=server] > .indent {
+  -moz-border-end: solid #8050B0 6px;
+}
+
+/* Input and output styles */
+.message[category=input] > .indent,
+.message[category=output] > .indent {
+  -moz-border-end: solid #A09090 6px;
+}
+
+.message[category=input] > .icon::before {
+  background-position: -48px -36px;
+}
+
+.message[category=output] > .icon::before {
+  background-position: -60px -36px;
+}
+
+/* JSTerm Styles */
+.jsterm-input-container {
+  background-color: var(--theme-tab-toolbar-background);
+  border-top: 1px solid var(--theme-splitter-color);
+}
+
+.jsterm-input-node,
+.jsterm-complete-node {
+  border: none;
+  padding: 0 0 0 16px;
+  -moz-appearance: none;
+  background-color: transparent;
+}
+
+.jsterm-complete-node {
+  color: var(--theme-comment);
+}
+
+.jsterm-input-node {
+  /* Always allow scrolling on input - it auto expands in js by setting height,
+     but don't want it to get bigger than the window. 24px = toolbar height. */
+  max-height: calc(90vh - 24px);
+  background-image: var(--command-line-image);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  color: var(--theme-content-color1);
+}
+
+@media (min-resolution: 1.1dppx) {
+  .jsterm-input-node {
+    background-image: var(--command-line-image-2x);
+  }
+}
+
+:-moz-any(.jsterm-input-node,
+          .jsterm-complete-node) > .textbox-input-box > .textbox-textarea {
+  overflow-x: hidden;
+}
+
+.inlined-variables-view .message-body {
+  display: flex;
+  flex-direction: column;
+  resize: vertical;
+  overflow: auto;
+  min-height: 200px;
+}
+
+.inlined-variables-view iframe {
+  display: block;
+  flex: 1;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  -moz-margin-end: 15px;
+  border: 1px solid var(--theme-splitter-color);
+  border-radius: 3px;
+}
+
+#webconsole-sidebar > tabs {
+  height: 0;
+  border: none;
+}
+
+.devtools-side-splitter ~ #webconsole-sidebar[hidden] {
+  display: none;
+}
+
+/* Security styles */
+
+.message[category=security] > .indent {
+  -moz-border-end: solid #FF0000 6px;
+}
+
+.webconsole-filter-button[category="security"] > .toolbarbutton-menubutton-button:before {
+  background-color: #FF0000;
+  border-color: #FFCF00;
+}
+
+.message[category=security][severity=error] > .icon::before {
+  background-position: -12px -48px;
+}
+
+.message[category=security][severity=warn] > .icon::before {
+  background-position: -24px -48px;
+}
+
+.navigation-marker {
+  color: #000000;
+  background-color: #A09090;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+}
+
+.navigation-marker .url {
+  -moz-padding-end: 9px;
+  text-decoration: none;
+  background: var(--theme-body-background);
+}
+
+.stacktrace {
+  display: none;
+  list-style: none;
+  padding: 0 1em 0 1.5em;
+  margin: 5px 0 0 0;
+  max-height: 10em;
+  overflow-y: auto;
+  border: 1px solid var(--theme-splitter-color);
+  border-radius: 3px;
+}
+
+.consoletable {
+  margin: 5px 0 0 0;
+}
+
+.message[severity=error] .stacktrace {
+  background-color: #000000;
+}
+
+.message[open] .stacktrace {
+  display: block;
+}
+
+.message .theme-twisty {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 3px 0 0 0;
+  flex-shrink: 0;
+}
+
+.stacktrace li {
+  display: flex;
+  margin: 0;
+}
+
+.stacktrace .function {
+  display: block;
+  flex: 1 1 auto;
+}
+
+.cm-s-mozilla a[class] {
+  font-style: italic;
+  text-decoration: none;
+}
+
+.cm-s-mozilla a[class]:hover,
+.cm-s-mozilla a[class]:focus {
+  text-decoration: underline;
+}
+
+a.learn-more-link.webconsole-learn-more-link {
+  font-style: normal;
+}
+
+/* Open DOMNode in inspector button */
+.open-inspector {
+  background: url("chrome://devtools/skin/images/vview-open-inspector.png") no-repeat 0 0;
+  padding-left: 16px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.elementNode:hover .open-inspector,
+.open-inspector:hover {
+  filter: url(images/filters.svg#checked-icon-state);
+}
+
+.open-inspector:active {
+  filter: url(images/filters.svg#checked-icon-state);
+}
+
+@media (max-width: 500px) {
+  .message > .timestamp {
+    display: none;
+  }
+  .hud-console-filter-toolbar .webconsole-filter-button .toolbarbutton-text {
+    display: none;
+  }
+  .hud-console-filter-toolbar .webconsole-filter-button {
+    min-width: 40px;
+  }
+  .hud-console-filter-toolbar .webconsole-clear-console-button {
+    min-width: 25px;
+  }
+  .webconsole-filter-button > .toolbarbutton-menubutton-button:before {
+    width: 12px;
+    height: 12px;
+    margin-left: 1px;
+  }
+  .toolbarbutton-menubutton-dropmarker {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 300px) {
+  .hud-console-filter-toolbar {
+    -moz-box-orient: vertical;
+  }
+  .toolbarbutton-text {
+    display: -moz-box;
+  }
+  /*
+  .devtools-toolbarbutton {
+    margin-top: 3px;
+  }
+  .hud-console-filter-toolbar .hud-filter-box,
+  .hud-console-filter-toolbar .devtools-toolbarbutton {
+    margin-top: 5px;
+  }
+  */
+}
+
+/*
+ * This hardcoded width likely due to a toolkit Windows specific bug.
+ * See http://hg.mozilla.org/mozilla-central/annotate/f38d6df93cad/toolkit/themes/winstripe/global/textbox-aero.css#l7
+ */
+
+:root[platform="win"] .hud-filter-box {
+  width: 200px;
+}

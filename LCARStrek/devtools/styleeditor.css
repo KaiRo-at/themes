@@ -78,12 +78,18 @@ window:not([windowtype]) {
   cursor: pointer;
 }
 
+.media-responsive-mode-toggle {
+  color: var(--theme-highlight-blue);
+  text-decoration: underline;
+}
+
 .media-rule-line {
   -moz-padding-start: 4px;
 }
 
 .media-condition-unmatched {
   color: #8050B0;
+/*  opacity: 0.4;*/
 }
 
 .stylesheet-enabled {

@@ -195,6 +195,8 @@
 
 .devtools-button[checked]:empty::before,
 .devtools-button[open]:empty::before,
+.devtools-toolbarbutton:not([label]):hover > image,
+.devtools-toolbarbutton:not([label]):hover:active > image,
 .devtools-toolbarbutton:not([label])[checked=true] > image,
 .devtools-toolbarbutton:not([label])[open=true] > image {
   filter: url(images/filters.svg#checked-icon-state);
@@ -300,7 +302,7 @@
   background-repeat: no-repeat;
   font-size: inherit;
 
-  background-image: url("magnifying-glass.png");
+  background-image: url("images/magnifying-glass.png");
 }
 
 .devtools-searchinput:-moz-locale-dir(rtl),
@@ -381,7 +383,7 @@
 
 @media (min-resolution: 1.1dppx) {
   .devtools-searchinput {
-    background-image: url("magnifying-glass@2x.png");
+    background-image: url("images/magnifying-glass@2x.png");
   }
 }
 

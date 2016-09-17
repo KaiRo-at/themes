@@ -4121,7 +4121,7 @@ html|*#gcli-output-frame {
   width: 16px;
   height: 16px;
   margin: 0 2px;
-  background-image: url("chrome://devtools/skin/commandline-icon.png");
+  background-image: url("chrome://devtools/skin/images/commandline-icon.png");
   background-position: 0 center;
   background-size: 32px 16px;
 }
@@ -4132,7 +4132,7 @@ html|*#gcli-output-frame {
 
 @media (min-resolution: 2dppx) {
   .gclitoolbar-input-node::before {
-    background-image: url("chrome://devtools/skin/commandline-icon@2x.png");
+    background-image: url("chrome://devtools/skin/images/commandline-icon@2x.png");
   }
 }
 

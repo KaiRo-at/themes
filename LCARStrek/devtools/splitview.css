@@ -3,6 +3,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+.theme-dark,
+.theme-light {
+  --smw-margin: #9C9CFF;
+  --smw-item-top-border: #A09090;
+  --smw-item-bottom-border: #008484;
+}
+
 .splitview-nav-container {
   background-color: var(--theme-toolbar-background);
   color: var(--theme-body-color);
@@ -24,7 +31,12 @@
   padding: 0;
   margin: 0;
   margin: 0;
-  border-right: #9C9CFF;
+  border-inline-end: var(--smw-margin);
+/*  box-shadow: inset -1px 0 0 var(--smw-margin);*/
+}
+
+.splitview-nav:-moz-locale-dir(rtl) {
+/*  box-shadow: inset 1px 0 0 var(--smw-margin);*/
 }
 
 .splitview-nav > li {
@@ -38,7 +50,12 @@
 /*  color: white;
   background-clip: padding-box;*/
 
-  border-bottom: 1px solid #008484;
+  border-top: 1px solid var(--smw-item-top-border);
+  border-bottom: 1px solid var(--smw-item-bottom-border);
+}
+
+.splitview-nav > li:last-of-type {
+/*  box-shadow: inset 0 -1px 0 var(--smw-item-top-border);*/
 }
 
 .placeholder {
@@ -50,7 +67,7 @@
   background-repeat: no-repeat;
   background-position: center right;
   background-size: auto;
-  border-bottom: 1px solid #008484;
+  border-bottom: 1px solid var(--smw-item-bottom-border);
 
   background-image: url("itemArrow-ltr.svg");
 }
@@ -77,12 +94,9 @@
   -moz-padding-start: 3px;
 }
 
-.splitview-main > toolbar:-moz-locale-dir(ltr) {
-  border-right: 1px solid #008484;
-}
-
-.splitview-main > toolbar:-moz-locale-dir(rtl) {
-  border-left: 1px solid #008484;
+.splitview-main > toolbar,
+.loading .splitview-nav-container {
+  border-inline-end: 1px solid var(--smw-margin);
 }
 
 .splitview-main > .devtools-toolbarbutton {

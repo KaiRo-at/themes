@@ -1,0 +1,48 @@
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+xul|scrollbar {
+  position: relative;
+  background-color: transparent;
+  background-image: none;
+  z-index: 2147483647;
+  padding: 2px;
+}
+
+/* Scrollbar code will reset the margin to the correct side depending on
+   where layout actually puts the scrollbar */
+xul|scrollbar[orient="vertical"] {
+  margin-left: -10px;
+  min-width: 3px;
+  max-width: 3px;
+}
+
+xul|scrollbar[orient="horizontal"] {
+  margin-top: -10px;
+  min-height: 3px;
+  max-height: 3px;
+}
+
+xul|scrollbar xul|slider {
+/*  background-color: transparent; */
+  border-radius: 3px;
+}
+
+xul|scrollbar:not(:hover) xul|slider {
+  background-color: rgba(64, 64, 72, 0.3);
+}
+
+xul|scrollbar xul|thumb {
+  border-width: 0px !important;
+/*  background-color: rgba(0,0,0,0.2) !important; */
+  background-image: none;
+  border-radius: 3px !important;
+}
+
+xul|scrollbar:not(:hover) xul|thumb {
+  background-color: rgba(160, 144, 144, 0.3) !important;
+}
+
+xul|scrollbar xul|scrollbarbutton,
+xul|scrollbar xul|gripper {
+  display: none !important; /* need !important to override forced display in LCARStrek */
+}

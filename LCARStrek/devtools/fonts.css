@@ -33,7 +33,6 @@
   margin: 0;
 }
 
-#showall,
 #font-showall {
   border-radius: 300px;
   border: none;
@@ -77,7 +76,6 @@
   overflow-x: auto;
 }
 
-#preview-text-input,
 #font-preview-text-input {
   font: inherit;
   margin-top: 1px;

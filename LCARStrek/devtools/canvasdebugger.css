@@ -2,6 +2,13 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this file,
  * You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+:root {
+  --gutter-width: 3em;
+  --gutter-padding-start: 22px;
+  --checkerboard-pattern: linear-gradient(45deg, rgba(128,128,128,0.2) 25%, transparent 25%, transparent 75%, rgba(128,128,128,0.2) 75%, rgba(128,128,128,0.2)),
+                          linear-gradient(45deg, rgba(128,128,128,0.2) 25%, transparent 25%, transparent 75%, rgba(128,128,128,0.2) 75%, rgba(128,128,128,0.2));
+}
+
 /* Reload and waiting notices */
 
 .notice-container {
@@ -105,36 +112,36 @@
 /* Debugging pane controls */
 
 #resume {
-  list-style-image: url("debugger-play.png");
+  list-style-image: url("images/debugger-play.png");
 }
 
 #step-over {
-  list-style-image: url("debugger-step-over.png");
+  list-style-image: url("images/debugger-step-over.png");
 }
 
 #step-in {
-  list-style-image: url("debugger-step-in.png");
+  list-style-image: url("images/debugger-step-in.png");
 }
 
 #step-out {
-  list-style-image: url("debugger-step-out.png");
+  list-style-image: url("images/debugger-step-out.png");
 }
 
 @media (min-resolution: 1.1dppx) {
   #resume {
-    list-style-image: url(debugger-play@2x.png);
+    list-style-image: url(images/debugger-play@2x.png);
   }
 
   #step-over {
-    list-style-image: url(debugger-step-over@2x.png);
+    list-style-image: url(images/debugger-step-over@2x.png);
   }
 
   #step-in {
-    list-style-image: url(debugger-step-in@2x.png);
+    list-style-image: url(images/debugger-step-in@2x.png);
   }
 
   #step-out {
-    list-style-image: url(debugger-step-out@2x.png);
+    list-style-image: url(images/debugger-step-out@2x.png);
   }
 }
 
@@ -183,25 +190,25 @@
 }
 
 .call-item-gutter {
-  width: calc(3em + 22px);
-  -moz-padding-start: 22px;
-  -moz-padding-end: 4px;
+  width: calc(var(--gutter-width) + var(--gutter-padding-start));
+  padding-inline-start: var(--gutter-padding-start);
+  padding-inline-end: 4px;
   padding-top: 2px;
   padding-bottom: 2px;
-  -moz-border-end: 1px solid;
-  -moz-margin-end: 6px;
+  border-inline-end: 1px solid var(--theme-splitter-color);
+  margin-inline-end: 6px;
+  background-color: var(--theme-sidebar-background);
+  color: var(--theme-content-color3);
 }
 
 .selected .call-item-gutter {
-  background-image: url("editor-debug-location.png");
-  background-repeat: no-repeat;
-  background-position: 6px center;
-  background-size: 12px;
+  background-color: #008484;
+  color: #000000;
 }
 
 @media (min-resolution: 1.1dppx) {
   .selected .call-item-gutter {
-    background-image: url("editor-debug-location@2x.png");
+    background-image: url("images/editor-debug-location@2x.png");
   }
 }
 

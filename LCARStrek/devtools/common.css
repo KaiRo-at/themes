@@ -3,6 +3,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import url("splitters.css");
+
 /* LCARS-specific rules that should be limited to toolbox but there's no other place to put them */
 window {
   padding: 0;
@@ -30,36 +32,6 @@ notification {
 .devtools-toolbox-bottom-iframe {
   transition: margin-bottom .1s;
 }
-
-/* Splitters */
-
-.devtools-horizontal-splitter {
-  min-height: 3px;
-  height: 3px;
-  position: relative;
-}
-
-#devtools-side-splitter {
-  min-width: 0;
-  width: 3px;
-  border: none;
-  margin: 0 3px;
-  position: relative;
-  cursor: e-resize;
-}
-
-.devtools-horizontal-splitter.disabled,
-.devtools-side-splitter.disabled {
-  pointer-events: none;
-}
-
-/* In-tools sidebar */
-
-.devtools-toolbox-side-iframe {
-  min-width: 465px;
-}
-
-/* === BEGIN common.inc.css === */
 
 /* Autocomplete Popup */
 /* Dark and light theme */
@@ -282,26 +254,6 @@ notification {
   background: transparent;
 }
 
-/* Eyedropper Widget */
-
-.devtools-eyedropper-panel {
-  pointer-events: none;
-  -moz-appearance: none;
-  width: 156px;
-  height: 120px;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-}
-
-#color-value {
-  color: #FF9F00;
-}
-
-#color-value.highlight {
-  color: #FFCF00;
-}
-
 /* Links to source code, like displaying `myfile.js:45` */
 
 .devtools-source-link {
@@ -333,5 +285,3 @@ notification {
   margin: 2px 0px;
   cursor: pointer;
 }
-
-/* === END common.inc.css === */
