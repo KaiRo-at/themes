@@ -3,27 +3,27 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/* === BEGIN widgets.inc.css === */
-
 .theme-dark,
 .theme-light {
   --table-splitter-color: #A09090;
   --table-zebra-background: rgba(255,159,0,0.1);
-  --smw-margin: #9C9CFF;
-  --smw-item-top-border: #A09090;
-  --smw-item-bottom-border: #008484;
+  --sidemenu-separator-color: rgba(160,144,144,0.15);
+  --sidemenu-selected-arrow: url(images/itemArrow-dark-ltr.svg);
+  --sidemenu-selected-arrow-rtl: url(images/itemArrow-dark-rtl.svg);
+  --delete-icon: url(chrome://devtools/skin/images/vview-delete.png);
+  --delete-icon-2x: url(chrome://devtools/skin/images/vview-delete@2x.png);
 }
 
 /* Generic pane helpers */
 
-.generic-toggled-side-pane {
-  -moz-margin-start: 0px !important;
+.generic-toggled-pane {
+  -moz-margin-start: 0 !important;
   /* Unfortunately, transitions don't work properly with locale-aware properties,
      so both the left and right margins are set via js, while the start margin
      is always overridden here. */
 }
 
-.generic-toggled-side-pane[animated] {
+.generic-toggled-pane[animated] {
   transition: margin 0.25s ease-in-out;
 }
 
@@ -43,6 +43,16 @@
   position: relative;
 }
 
+@media (min-width: 701px) {
+  .devtools-responsive-container .generic-toggled-pane {
+    /* To hide generic-toggled-pane, negative margins are applied dynamically.
+     * In the default horizontal layout, the pane is on the side and should be
+     * hidden using negative -moz-margin-end only.
+     */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
 @media (max-width: 700px) {
   .devtools-responsive-container {
     -moz-box-orient: vertical;
@@ -51,30 +61,44 @@
   .devtools-responsive-container > .devtools-side-splitter {
     /* This is a normally vertical splitter, but we have turned it horizontal
        due to the smaller resolution */
-    border: 0;
-    margin: 0;
-    min-height: 3px;
-    height: 3px;
-    margin-top: -3px;
+    min-height: calc(var(--devtools-splitter-top-width) +
+    var(--devtools-splitter-bottom-width) + 1px);
+    border-top-width: var(--devtools-splitter-top-width);
+    border-bottom-width: var(--devtools-splitter-bottom-width);
+    margin-top: calc(-1 * var(--devtools-splitter-top-width) - 1px);
+    margin-bottom: calc(-1 * var(--devtools-splitter-bottom-width));
 
     /* Reset the vertical splitter styles */
     width: auto;
     min-width: 0;
+    border-inline-end-width: 0;
+    border-inline-start-width: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
 
     /* In some edge case the cursor is not changed to n-resize */
     cursor: n-resize;
   }
 
-  .devtools-responsive-container > .devtools-sidebar-tabs {
+  .devtools-responsive-container > .devtools-sidebar-tabs:not([pane-collapsed]) {
+    /* When the panel is collapsed min/max height should not be applied because
+       collapsing relies on negative margins, which implies constant height. */
     min-height: 35vh;
     max-height: 75vh;
+  }
+
+  .devtools-responsive-container .generic-toggled-pane {
+    /* To hide generic-toggled-pane, negative margins are applied dynamically.
+     * If a vertical layout, the pane is on the bottom and should be hidden
+     * using negative bottom margin only.
+     */
+    -moz-margin-end: 0 !important;
   }
 }
 
 /* BreacrumbsWidget */
 
 .breadcrumbs-widget-container {
-  -moz-margin-start: 2px;
   -moz-margin-start: 2px;
   max-height: 24px; /* Set max-height for proper sizing on linux */
   height: 24px; /* Set height to prevent starting small waiting for content */
@@ -99,7 +123,7 @@
 
 .scrollbutton-up > .toolbarbutton-icon,
 .scrollbutton-down > .toolbarbutton-icon {
-  /* margin: 0 5px; */
+  /* margin: 0 8px; */
 }
 
 .scrollbutton-up:not([disabled]):active:hover > .toolbarbutton-icon,
@@ -191,7 +215,7 @@
  * we can handle RTL support with a CSS transform).
  */
 #breadcrumb-separator-normal {
-  background: url("breadcrumbs-divider@2x.png") no-repeat center right;
+  background: url("images/breadcrumbs-divider@2x.png") no-repeat center right;
   background-size: 12px 24px;
 }
 
@@ -245,21 +269,15 @@
 }
 
 .breadcrumbs-widget-item:not([checked]) {
-  background-image: -moz-element(#breadcrumb-separator-normal);
-  background-repeat: no-repeat;
-  background-position: center left;
+  background: -moz-element(#breadcrumb-separator-normal) no-repeat center left;
 }
 
 .breadcrumbs-widget-item[checked] + .breadcrumbs-widget-item {
-  background-image: -moz-element(#breadcrumb-separator-after);
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  background: -moz-element(#breadcrumb-separator-after) no-repeat 0 0;
 }
 
 .breadcrumbs-widget-item[checked] {
-  background-image: -moz-element(#breadcrumb-separator-before);
-  background-repeat: no-repeat;
-  background-position: 0 0;
+  background: -moz-element(#breadcrumb-separator-before) no-repeat 0 0;
   background-color: #008484; /* Select Highlight Blue */
 }
 
@@ -297,15 +315,12 @@
   color: var(--theme-highlight-lightorange);
 }
 
-.breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-id,
-.breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-tag,
-.breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-pseudo-classes,
-.breadcrumbs-widget-item:not([checked]):hover .breadcrumbs-widget-item-classes {
-  color: var(--theme-hover-color) !important;
-}
-
 .breadcrumbs-widget-item {
   color: var(--theme-highlight-lightorange);
+}
+
+.breadcrumbs-widget-item:not([checked]):hover label {
+  color: var(--theme-hover-color) !important;
 }
 
 .breadcrumbs-widget-item-id {
@@ -339,8 +354,12 @@
 
 .simple-list-widget-perma-text,
 .simple-list-widget-empty-text {
-  color: var(--theme-body-color-alt);
   padding: 4px 8px;
+}
+
+.simple-list-widget-perma-text,
+.simple-list-widget-empty-text {
+  color: var(--theme-body-color-alt);
 }
 
 /* FastListWidget */
@@ -350,59 +369,44 @@
   transform: translateZ(1px);
 }
 
-/* dark/light theme */
 .fast-list-widget-empty-text {
-  padding: 12px;
-  font-weight: 600;
+  padding: 4px 8px;
+}
+
+.fast-list-widget-empty-text {
   color: var(--theme-body-color-alt);
 }
 
 /* SideMenuWidget */
 
+.side-menu-widget-container {
+  /* Hack: force hardware acceleration */
+  transform: translateZ(1px);
+}
+
 /* SideMenuWidget container */
-
-.side-menu-widget-container:-moz-locale-dir(ltr),
-.side-menu-widget-empty-text:-moz-locale-dir(ltr) {
-}
-
-.side-menu-widget-container:-moz-locale-dir(rtl),
-.side-menu-widget-empty-text:-moz-locale-dir(rtl)[with-arrows=true]:-moz-locale-dir(rtl) {
-}
-
-.side-menu-widget-group {
-  /* To allow visibility of the dark margin shadow. */
-/*  -moz-margin-end: 1px; */
-}
 
 .side-menu-widget-container[with-arrows=true] .side-menu-widget-item {
   /* To compensate for the arrow image's dark margin. */
-/*  -moz-margin-end: -1px; */
+/*  margin-inline-end: -1px;*/
 }
 
 /* SideMenuWidget groups */
 
 .side-menu-widget-group-title {
   padding: 4px;
-  background-color: var(--theme-contrastsidebar-background);
-  color: var(--theme-contrastsidebar-color);
+  font-weight: 600;
+  border-bottom: 1px solid var(--sidemenu-separator-color);
+}
+
+.side-menu-widget-group-title + .side-menu-widget-group-list .side-menu-widget-item-contents {
+  padding-inline-start: 20px;
 }
 
 /* SideMenuWidget items */
 
 .side-menu-widget-item {
-  border-top: 1px solid var(--smw-item-top-border);
-/*  border-bottom: 1px solid var(--smw-item-bottom-border);*/
-}
-
-.side-menu-widget-item:last-of-type {
-/*  box-shadow: inset 0 -1px 0 var(--smw-item-top-border);*/
-  border-bottom: 1px solid var(--smw-item-top-border);
-}
-
-.side-menu-widget-item {
-  /* To compensate for the top and bottom borders */
-  margin-top: -1px;
-  margin-bottom: -1px;
+  border-bottom: 1px solid var(--sidemenu-separator-color);
   background-clip: padding-box;
 }
 
@@ -414,30 +418,18 @@
 .side-menu-widget-item-arrow {
   -moz-margin-start: -7px;
   width: 7px; /* The image's width is 7 pixels */
-  /* Cover the border of the side-menu-widget-item */
-  margin-top: -1px;
-  margin-bottom: -1px;
 }
 
 .side-menu-widget-item.selected > .side-menu-widget-item-arrow {
-  background-size: auto, 1px 100%;
+  background-image: var(--sidemenu-selected-arrow);
+  background-size: auto;
   background-repeat: no-repeat;
-}
-
-.side-menu-widget-item.selected > .side-menu-widget-item-arrow:-moz-locale-dir(ltr) {
   background-position: center right;
 }
 
 .side-menu-widget-item.selected > .side-menu-widget-item-arrow:-moz-locale-dir(rtl) {
+  background-image: var(--sidemenu-selected-arrow-rtl);
   background-position: center left;
-}
-
-.side-menu-widget-item.selected > .side-menu-widget-item-arrow:-moz-locale-dir(ltr) {
-  background-image: url("itemArrow-ltr.svg");
-}
-
-.side-menu-widget-item.selected > .side-menu-widget-item-arrow:-moz-locale-dir(rtl) {
-  background-image: url("itemArrow-rtl.svg");
 }
 
 /* SideMenuWidget items contents */
@@ -445,19 +437,30 @@
 .side-menu-widget-item-contents {
   padding: 4px;
   /* To avoid having content overlapping the arrow image. */
-  -moz-padding-end: 8px;
+  padding-inline-end: 8px;
 }
 
 .side-menu-widget-item-other {
   /* To avoid having content overlapping the arrow image. */
-  -moz-padding-end: 8px;
+  padding-inline-end: 8px;
   /* To compensate for the .side-menu-widget-item-contents padding. */
-  -moz-margin-start: -4px;
-  -moz-margin-end: -8px;
+  margin-inline-start: -4px;
+  margin-inline-end: -8px;
   color: var(--theme-selection-color);
 }
 
-.side-menu-widget-item-other.selected {
+.side-menu-widget-group-title + .side-menu-widget-group-list .side-menu-widget-item-other {
+  /* To compensate for the .side-menu-widget-item-contents padding. */
+  margin-inline-start: -20px;
+}
+
+.side-menu-widget-item.selected .side-menu-widget-item-other:not(.selected) {
+  background-color: var(--theme-sidebar-background);
+  box-shadow: inset 2px 0 0 var(--theme-selection-background);
+  color: var(--theme-body-color);
+}
+
+.side-menu-widget-item.selected .side-menu-widget-item-other.selected {
   background-color: var(--theme-selection-background);
   color: var(--theme-selection-color);
 }
@@ -490,25 +493,24 @@
 
 /* SideMenuWidget misc */
 
-.theme-dark .side-menu-widget-container,
-.theme-dark .side-menu-widget-empty-text {
-  background-color: var(--theme-toolbar-background);
-}
-
 .side-menu-widget-empty-text {
-  padding: 12px;
+  padding: 4px 8px;
+  background-color: var(--theme-sidebar-background);
 }
 
 /* VariablesView */
 
-.variables-view-container:not([empty]) {
+.variables-view-container {
   /* Hack: force hardware acceleration */
   transform: translateZ(1px);
 }
 
 .variables-view-empty-notice {
-  color: var(--theme-body-color-alt);
   padding: 2px;
+}
+
+.variables-view-empty-notice {
+  color: var(--theme-body-color-alt);
 }
 
 .variables-view-scope:focus > .title,
@@ -597,11 +599,10 @@
   background-size: cover;
   width: 16px;
   height: 16px;
-  opacity: 0.5;
 }
 
 @media (min-resolution: 1.1dppx) {
-  .variable-or-property-non-writable-icon > .title:after {
+  .variable-or-property-non-writable-icon {
     background-image: url("chrome://devtools/skin/images/vview-lock@2x.png");
   }
 }
@@ -674,7 +675,7 @@
 
 .variable-or-property[non-enumerable] > tooltip > label.enumerable,
 .variable-or-property[non-configurable] > tooltip > label.configurable,
-.variable-or-property[non-writable] > tooltip > label.writable
+.variable-or-property[non-writable] > tooltip > label.writable,
 .variable-or-property[non-extensible] > tooltip > label.extensible {
   color: #A09090;
   text-decoration: line-through;
@@ -720,12 +721,12 @@
 }
 
 .variables-view-delete {
-  background-image: url("chrome://devtools/skin/images/vview-delete.png");
+  background-image: var(--delete-icon);
 }
 
 @media (min-resolution: 1.1dppx) {
   .variables-view-delete {
-    background-image: url("chrome://devtools/skin/images/vview-delete@2x.png");
+    background-image: var(--delete-icon-2x);
   }
 }
 
@@ -741,6 +742,12 @@
 
 .variables-view-open-inspector {
   background-image: url("chrome://devtools/skin/images/vview-open-inspector.png");
+}
+
+@media (min-resolution: 1.1dppx) {
+  .variables-view-open-inspector {
+    background-image: url("chrome://devtools/skin/images/vview-open-inspector@2x.png");
+  }
 }
 
 /* Variables and properties input boxes */
@@ -933,7 +940,7 @@
 
 .bar-graph-widget-legend-item {
   float: left;
- -moz-margin-end: 8px;
+  -moz-margin-end: 8px;
 }
 
 .bar-graph-widget-legend-item > [view="color"],
@@ -948,7 +955,8 @@
   border: 1px solid #9C9CFF;
   border-radius: 1px;
   -moz-margin-end: 4px;
-  pointer-events: none;
+  pointer-events: all;
+  cursor: pointer;
 }
 
 .bar-graph-widget-legend-item > [view="label"] {
@@ -1082,7 +1090,7 @@
   overflow: auto;
 }
 
-table-widget-body,
+.table-widget-body,
 .table-widget-empty-text {
   background-color: var(--theme-body-background);
 }
@@ -1106,12 +1114,16 @@ table-widget-body,
   color: inherit;
   text-align: center;
   font-weight: inherit !important;
-  border-bottom-width: 0 !important;
-  border-image: linear-gradient(transparent 15%, var(--theme-splitter-color) 15%, var(--theme-splitter-color) 85%, transparent 85%) 1 1;
+  border-image: linear-gradient(transparent 15%,
+                                var(--theme-splitter-color) 15%,
+                                var(--theme-splitter-color) 85%,
+                                transparent 85%,
+                                transparent calc(100% - 1px),
+                                var(--theme-splitter-color) calc(100% - 1px)) 1 1;
   background-repeat: no-repeat;
 }
 
-table-widget-column-header:not([sorted]):hover {
+.table-widget-column-header:not([sorted]):hover {
 /*  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1));*/
 }
 
@@ -1135,6 +1147,14 @@ table-widget-column-header:not([sorted]):hover {
   background-image: url("chrome://devtools/skin/images/sort-arrows.svg#descending");
 }
 
+.table-widget-column[readonly] {
+  background-color: #402800;
+}
+
+.table-widget-body .devtools-side-splitter:last-of-type {
+  display: none;
+}
+
 /* Cells */
 
 .table-widget-cell {
@@ -1145,6 +1165,10 @@ table-widget-column-header:not([sorted]):hover {
   color: var(--theme-body-color);
 }
 
+.table-widget-cell[hidden] {
+  display: none;
+}
+
 .table-widget-column-header + .table-widget-cell {
   border-top: 1px solid var(--theme-splitter-color);
 }
@@ -1153,9 +1177,8 @@ table-widget-column-header:not([sorted]):hover {
   border-bottom: 1px solid var(--table-splitter-color);
 }
 
-:root:not(.filtering) .table-widget-cell:nth-child(odd):not(.theme-selected),
-.table-widget-cell:not(.theme-selected)[odd] {
-  background: var(--table-zebra-background);
+.table-widget-cell.even:not(.theme-selected) {
+  background-color: var(--table-zebra-background);
 }
 
 :root:not(.no-animate) .table-widget-cell.flash-out {
@@ -1239,7 +1262,7 @@ table-widget-column-header:not([sorted]):hover {
   float: left;
   margin: 3px 2px -3px;
   background-repeat: no-repeat;
-  background-image: url("chrome://devtools/skin/controls.png");
+  background-image: url("chrome://devtools/skin/images/controls.png");
   background-size: 56px 28px;
   cursor: pointer;
   background-position: -28px -14px;
@@ -1289,7 +1312,7 @@ table-widget-column-header:not([sorted]):hover {
 
 @media (min-resolution: 1.1dppx) {
   .tree-widget-item:before {
-    background-image: url("chrome://devtools/skin/controls@2x.png");
+    background-image: url("chrome://devtools/skin/images/controls@2x.png");
   }
 }
 
@@ -1359,104 +1382,18 @@ table-widget-column-header:not([sorted]):hover {
 }
 
 .tree-widget-item[type="dir"]::after {
-  background-image: url("chrome://devtools/skin/filetype-dir-close.svg");
+  background-image: url("chrome://devtools/skin/images/filetypes/dir-close.svg");
   background-position: 2px 0;
   background-size: auto 16px;
   width: 20px;
 }
 
 .tree-widget-item[type="dir"][expanded]:not([empty])::after {
-  background-image: url("chrome://devtools/skin/filetype-dir-open.svg");
+  background-image: url("chrome://devtools/skin/images/filetypes/dir-open.svg");
 }
 
 .tree-widget-item[type="url"]::after {
-  background-image: url("chrome://devtools/skin/filetype-globe.svg");
+  background-image: url("chrome://devtools/skin/images/filetypes/globe.svg");
   background-size: auto 18px;
   width: 18px;
 }
-
-/* === BEGIN manifest-editor.inc.css === */
-
-/* Manifest Editor overrides */
-
-.variables-view-container.manifest-editor {
-  background-color: #000000;
-  padding: 20px 2px;
-}
-
-.manifest-editor .variable-or-property:focus > .title {
-/*  background-color: #EDEDED;
-  color: #000; */
-  border-radius: 4px;
-}
-
-.manifest-editor .variables-view-property > .title > .name {
-/*  color: #27406A; */
-}
-
-.manifest-editor .variable-or-property > .title > label,
-.manifest-editor textbox {
-  font-family: monospace;
-}
-
-.manifest-editor .variable-or-property > .title > .token-string {
-/*  color: #54BC6A; */
-  font-weight: bold;
-}
-
-.manifest-editor .variable-or-property > .title > .token-boolean,
-.manifest-editor .variable-or-property > .title > .token-number {
-/*  color: #009BD4; */
-  font-weight: bold;
-}
-
-.manifest-editor .variable-or-property > .title > .token-undefined {
-/*  color: #bbb; */
-}
-
-.manifest-editor .variable-or-property > .title > .token-null {
-/*  color: #999; */
-}
-
-.manifest-editor .variable-or-property > .title > .token-other {
-/*  color: #333; */
-}
-
-.manifest-editor .variables-view-variable {
-  border-bottom: none;
-}
-
-.manifest-editor .variables-view-delete,
-.manifest-editor .variables-view-delete:hover,
-.manifest-editor .variables-view-delete:active,
-.manifest-editor .variable-or-property:focus .variables-view-delete,
-.manifest-editor .variables-view-add-property,
-.manifest-editor .variables-view-add-property:hover,
-.manifest-editor .variables-view-add-property:active,
-.manifest-editor .variable-or-property:focus .variables-view-add-property {
-  list-style-image: none;
-  -moz-image-region: initial;
-}
-
-.manifest-editor .variables-view-delete::before,
-.manifest-editor .variables-view-add-property::before {
-  width: 11px;
-  height: 11px;
-  content: "";
-  display: inline-block;
-  background-size: 11px auto;
-}
-
-.manifest-editor .variables-view-delete::before {
-  background-image: url("app-manager/remove.svg");
-  background-size: 12px auto;
-}
-
-.manifest-editor .variables-view-add-property::before {
-  background-image: url("app-manager/add.svg");
-  -moz-margin-end: 2px;
-}
-
-/* === END manifest-editor.inc.css === */
-
-/* === END widgets.inc.css === */

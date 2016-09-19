@@ -4000,7 +4000,9 @@ html|*#fullscreen-exit-button {
 }
 
 #developer-toolbar > toolbarbutton {
-/*  margin: 0;
+/*  border: none;
+  background-color: transparent;
+  margin: 0;
   padding: 0 10px;
   width: 32px; */
 }
@@ -4013,8 +4015,7 @@ html|*#fullscreen-exit-button {
   display: none;
 }
 
-.developer-toolbar-button > .toolbarbutton-icon,
-#developer-toolbar-closebutton > .toolbarbutton-icon {
+.developer-toolbar-button > .toolbarbutton-icon {
   width: 16px;
   height: 16px;
 }
@@ -4043,37 +4044,6 @@ html|*#fullscreen-exit-button {
   #developer-toolbar-toolbox-button:hover,
   #developer-toolbar-toolbox-button:hover:active,
   #developer-toolbar-toolbox-button[checked=true] {
-    -moz-image-region: rect(0px, 64px, 32px, 32px);
-  }
-}
-
-#developer-toolbar-closebutton {
-  list-style-image: url("chrome://devtools/skin/close.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-  min-width: 16px;
-  width: 16px;
-}
-
-#developer-toolbar-closebutton > .toolbarbutton-icon {
-}
-
-#developer-toolbar-closebutton > .toolbarbutton-text {
-  display: none;
-}
-
-#developer-toolbar-closebutton:hover,
-#developer-toolbar-closebutton:hover:active {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-@media (min-resolution: 2dppx) {
-  #developer-toolbar-closebutton {
-    list-style-image: url("chrome://devtools/skin/close@2x.png");
-    -moz-image-region: rect(0px, 32px, 32px, 0px);
-  }
-
-  #developer-toolbar-closebutton:hover,
-  #developer-toolbar-closebutton:hover:active {
     -moz-image-region: rect(0px, 64px, 32px, 32px);
   }
 }
@@ -4211,6 +4181,22 @@ html|*#gcli-output-frame {
   border-bottom-width: 0;
 }
 
+.devtools-responsiveui-textinput {
+/*  -moz-appearance: none;
+  background: #333;
+  color: #fff;
+  border: 1px solid #111;
+  border-radius: 2px;
+  padding: 5px;*/
+  width: 200px;
+  margin: 0;
+}
+
+.devtools-responsiveui-textinput[attention] {
+/*  border-color: #38ace6;
+  background: rgba(56,172,230,0.4);*/
+}
+
 .devtools-responsiveui-menulist,
 .devtools-responsiveui-toolbarbutton {
   -moz-box-align: center;
@@ -4319,12 +4305,11 @@ html|*#gcli-output-frame {
 }
 
 .devtools-responsiveui-close {
-  list-style-image: url("chrome://devtools/skin/close.png");
-  -moz-image-region: rect(0px,16px,16px,0px);
+  list-style-image: url("chrome://devtools/skin/close.svg");
 }
 
 .devtools-responsiveui-close:hover {
-  -moz-image-region: rect(0px,32px,16px,16px);
+  filter: url(images/filters.svg#checked-icon-state);
 }
 
 .devtools-responsiveui-rotate {
@@ -4337,14 +4322,6 @@ html|*#gcli-output-frame {
 }
 
 @media (min-resolution: 2dppx) {
-  .devtools-responsiveui-close {
-    list-style-image: url("chrome://devtools/skin/close@2x.png");
-  }
-
-  .devtools-responsiveui-close:hover {
-    -moz-image-region: rect(0px,64px,32px,32px);
-  }
-
   .devtools-responsiveui-rotate {
     list-style-image: url("chrome://devtools/skin/responsiveui-rotate@2x.png");
   }

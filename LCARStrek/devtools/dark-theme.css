@@ -68,13 +68,13 @@ body, html {
 }
 
 .theme-gutter {
-  background-color: #000000;
+  background-color: var(--theme-tab-toolbar-background);
   color: var(--theme-content-color3);
-  border-color: #9C9CFF;
+  border-color: var(--theme-splitter-color);
 }
 
-.theme-separator { /* original: grey */
-  border-color: #8050B0;
+.theme-separator {
+  border-color: var(--theme-splitter-color);
 }
 
 .theme-fg-color1,

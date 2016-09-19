@@ -13,6 +13,16 @@ window {
 :root.theme-light {
   --table-splitter-color: #A09090;
   --table-zebra-background: rgba(255,159,0,0.1);
+
+  --timing-blocked-color: #FF0000;
+  --timing-dns-color: #E7ADE7; /* pink */
+  --timing-connect-color: #FF9F00; /* orange */
+  --timing-send-color: #FFCF00; /* light blue */
+  --timig-wait-color: #9C9CFF; /* blue grey */
+  --timing-receive-color: #A09090; /* green */
+
+  --sort-ascending-image: url(chrome://devtools/skin/images/sort-arrows.svg#ascending);
+  --sort-descending-image: url(chrome://devtools/skin/images/sort-arrows.svg#descending);
 }
 
 #requests-menu-empty-notice {
@@ -39,6 +49,7 @@ window {
 #requests-menu-reload-notice-button {
   min-height: 26px;
   margin: 0;
+  background-color: var(--theme-toolbar-background);
 }
 
 /* Network requests table */
@@ -52,17 +63,20 @@ window {
 }
 
 .requests-menu-subitem {
-  padding: 4px;
+  padding: 3px;
 }
 
 .requests-menu-header:not(:last-child):-moz-locale-dir(rtl),
 .requests-menu-subitem:not(:last-child):-moz-locale-dir(rtl) {
 }
 
-.requests-menu-header-button,
-#requests-menu-status-button {
+#requests-menu-status-button,
+.requests-menu-header-button {
   background-color: transparent;
-  border-image: linear-gradient(transparent 15%, var(--theme-splitter-color) 15%, var(--theme-splitter-color) 85%, transparent 85%) 1 1;
+  border-image: linear-gradient(transparent 15%,
+                                var(--theme-splitter-color) 15%,
+                                var(--theme-splitter-color) 85%,
+                                transparent 85%) 1 1;
   border-style: solid;
   border-width: 0;
   border-inline-start-width: 1px;
@@ -74,6 +88,7 @@ window {
   padding-inline-start: 13px;
   padding-top: 2px;
   text-align: center;
+/*  color: inherit;*/
   font-weight: inherit !important;
 }
 
@@ -100,19 +115,14 @@ window {
   width: 7px;
 }
 
-.requests-menu-header-button[sorted] > .button-box > .button-icon,
-.requests-menu-header-button[sorted] #requests-menu-waterfall-image {
-  list-style-image: url('chrome://devtools/skin/images/sort-arrows.svg');
-}
-
 .requests-menu-header-button[sorted=ascending] > .button-box > .button-icon,
 .requests-menu-header-button[sorted=ascending] #requests-menu-waterfall-image {
-  -moz-image-region: rect(4px, 19px, 7px, 14px);
+  list-style-image: var(--sort-ascending-image);
 }
 
 .requests-menu-header-button[sorted=descending] > .button-box > .button-icon,
 .requests-menu-header-button[sorted=descending] #requests-menu-waterfall-image {
-  -moz-image-region: rect(5px, 8px, 8px, 3px);
+  list-style-image: var(--sort-descending-image);
 }
 
 .requests-menu-header-button > .button-box > .button-text,
@@ -120,7 +130,8 @@ window {
   -moz-box-flex: 1;
 }
 
-.requests-menu-header-button[sorted]:not(:hover) {
+.requests-menu-header-button[sorted],
+.requests-menu-header-button[sorted]:hover {
   background-color: var(--theme-selection-background);
   color: var(--theme-selection-color);
 }
@@ -169,13 +180,8 @@ window {
   outline: 1px solid var(--table-splitter-color);
 }
 
-.requests-menu-file {
-  text-align: start;
-}
-
 .requests-menu-security-and-domain {
   width: 14vw;
-  min-width: 10em;
 }
 
 .requests-security-state-icon {
@@ -215,7 +221,7 @@ window {
 .requests-menu-transferred {
   max-width: 8em;
   text-align: center;
-  width: 4vw;
+  width: 8vw;
 }
 
 /* Network requests table: status codes */
@@ -243,7 +249,7 @@ window {
 
 .requests-menu-status-icon[code="cached"] {
   border: 2px solid var(--theme-content-color2);
-  background-color: transparent;  
+  background-color: transparent;
 }
 
 .requests-menu-status-icon[code^="1"] {
@@ -289,10 +295,9 @@ window {
 
 .requests-menu-timings-division {
   width: 100px;
-  padding-top: 1px;
+  padding-top: 2px;
   padding-inline-start: 4px;
-  border-inline-start: 1px dotted #000000;
-  font-size: 90%;
+  font-size: 75%;
   pointer-events: none;
   box-sizing: border-box;
   text-align: start;
@@ -303,7 +308,7 @@ window {
 }
 
 .requests-menu-timings-division:not(:first-child) {
-  border-inline-start: 1px dotted;
+  border-inline-start: 1px dashed;
   margin-inline-start: -100px !important; /* Don't affect layout. */
 }
 
@@ -330,7 +335,7 @@ window {
   -moz-padding-start: 0px;
   -moz-padding-end: 4px;
   /* Background created on a <canvas> in js. */
-  /* @see browser/devtools/netmonitor/netmonitor-view.js */
+  /* @see devtools/client/netmonitor/netmonitor-view.js */
   background-image: -moz-element(#waterfall-background);
   background-repeat: repeat-y;
   background-position: -1px center;
@@ -367,27 +372,27 @@ window {
 }
 
 .requests-menu-timings-box.blocked {
-  background-color: #FF0000; /* red */
+  background-color: var(--timing-blocked-color);
 }
 
 .requests-menu-timings-box.dns {
-  background-color: #E7ADE7; /* pink */
+  background-color: var(--timing-dns-color);
 }
 
 .requests-menu-timings-box.connect {
-  background-color: #FF9F00; /* orange */
+  background-color: var(--timing-connect-color);
 }
 
 .requests-menu-timings-box.send {
-  background-color: #FFCF00; /* light blue */
+  background-color: var(--timing-send-color);
 }
 
 .requests-menu-timings-box.wait {
-  background-color: #9C9CFF; /* blue grey */
+  background-color: var(--timing-wait-color);
 }
 
 .requests-menu-timings-box.receive {
-  background-color: #A09090; /* green */
+  background-color: var(--timing-receive-color);
 }
 
 /* SideMenuWidget */
@@ -421,21 +426,11 @@ window {
 /* Network request details */
 
 #details-pane-toggle {
-  list-style-image: url("chrome://devtools/skin/images/debugger-collapse.png");
+  list-style-image: var(--theme-pane-collapse-image);
 }
 
 #details-pane-toggle[pane-collapsed] {
-  list-style-image: url("chrome://devtools/skin/images/debugger-expand.png");
-}
-
-@media (min-resolution: 1.1dppx) {
-  #details-pane-toggle {
-    list-style-image: url("chrome://devtools/skin/images/debugger-collapse@2x.png");
-  }
-
-  #details-pane-toggle[pane-collapsed] {
-    list-style-image: url("chrome://devtools/skin/images/debugger-expand@2x.png");
-  }
+  list-style-image: var(--theme-pane-expand-image);
 }
 
 /* Network request details tabpanels */
@@ -481,8 +476,8 @@ window {
 }
 
 #headers-summary-resend {
-  margin: 0 6px;
-/*  min-height: 20px;*/
+  margin-top: -10px;
+  -moz-margin-end: 6px;
 }
 
 #toggle-raw-headers {
@@ -533,8 +528,8 @@ window {
 
 #timings-tabpanel .requests-menu-timings-box {
   transition: transform 0.2s ease-out;
-  min-width: 1px;
   border: none;
+  min-width: 1px;
 }
 
 #timings-tabpanel .requests-menu-timings-total {
@@ -584,82 +579,37 @@ window {
   width: 4.5em;
 }
 
-/* Footer */
-
-#requests-menu-footer {
-  padding-top: 3px;
-  background-color: var(--theme-toolbar-background);
-  border-top: 1px solid var(--table-splitter-color);
-}
-
-.requests-menu-footer-button,
-.requests-menu-footer-label {
-  min-width: 1em;
-  margin: 0;
-  -moz-margin-end: 3px;
+/* Main toolbar */
+.requests-menu-filter-button {
+/*  -moz-appearance: none;
+  background: rgba(128,128,128,0.1);
   border: none;
-  padding: 0px 1vw;
-/*  color: var(--theme-body-color);*/
+  border-radius: 2px;
+  min-width: 0;
+  padding: 0 5px;
+  margin: 2px;
+  color: var(--theme-body-color);*/
 }
 
-.requests-menu-footer-spacer {
-  min-width: 2px;
+.requests-menu-filter-button:hover {
+/*  background: rgba(128,128,128,0.2);*/
 }
 
-.requests-menu-footer-spacer,
-.requests-menu-footer-button {
-}
-
-.requests-menu-footer-button {
-}
-
-.requests-menu-footer-button:hover:active {
-}
-
-.requests-menu-footer-button:not(:active)[checked] {
-}
-
-.requests-menu-footer-label {
-  font-weight: 600;
-}
-
-#requests-menu-filter-freetext-text {
-  transition-property: max-width, -moz-padding-end, -moz-padding-start;
-  transition-duration: 250ms;
-  transition-timing-function: ease;
-}
-
-#requests-menu-filter-freetext-text:not([focused]):not([filled]) > .textbox-input-box {
-  overflow: hidden;
-}
-
-#requests-menu-filter-freetext-text:not([focused]):not([filled]) {
-  max-width: 20px !important;
-  -moz-padding-end: 5px;
-  -moz-padding-start: 22px;
-  background-position: 8px center, top left, top left;
-}
-
-#requests-menu-filter-freetext-text[focused],
-#requests-menu-filter-freetext-text[filled] {
-  max-width: 200px !important;
+.requests-menu-filter-button:hover:active {
+/*  background-color: var(--theme-selection-background-semitransparent);*/
 }
 
 /* Performance analysis buttons */
 
 #requests-menu-network-summary-button {
+  background: none;
+  box-shadow: none;
+  border-color: transparent;
   list-style-image: url("images/profiler-stopwatch.svg");
   -moz-padding-end: 0;
   cursor: pointer;
-}
-
-#requests-menu-network-summary-label {
-  -moz-padding-start: 0;
-  cursor: pointer;
-}
-
-#requests-menu-network-summary-label:hover {
-  text-decoration: underline;
+  margin-inline-end: 1em;
+  min-width: 0;
 }
 
 /* Performance analysis view */
@@ -668,20 +618,33 @@ window {
   /* Make the toolbar invisible, it only hold the back button */
   -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar");
   background-color: #000000;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 #network-statistics-back-button {
   min-width: 4em;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  border-top: none;
+  border-bottom: none;
+  -moz-border-start: none;
 }
 
 #network-statistics-view-splitter {
+/*  border-color: rgba(0,0,0,0.2);*/
   cursor: default;
   pointer-events: none;
 }
 
 #network-statistics-charts {
   min-height: 1px;
+}
+
+#network-statistics-charts {
   background-color: var(--theme-sidebar-background);
 }
 
@@ -756,28 +719,10 @@ window {
   width: 7em;
 }
 
-/* Platform overrides (copied in from the old platform specific files) */
-:root[platform="win"] .requests-menu-header-button > .button-box {
-  padding: 0;
-}
-
-:root[platform="win"] .requests-menu-timings-division {
-  padding-top: 1px;
-  font-size: 90%;
-}
-
-:root[platform="linux"] #headers-summary-resend {
-  padding: 4px;
-}
-
-:root[platform="linux"] #toggle-raw-headers {
-  padding: 4px;
-}
-
 /* Responsive sidebar */
 @media (max-width: 700px) {
   #requests-menu-toolbar {
-    height: 24px;
+    height: 22px;
   }
 
   .requests-menu-header-button {
@@ -823,4 +768,27 @@ window {
   }
 }
 
-/* === END netmonitor.inc.css === */
+/* Platform overrides (copied in from the old platform specific files) */
+:root[platform="win"] .requests-menu-header-button > .button-box {
+  padding: 0;
+}
+
+:root[platform="win"] .requests-menu-timings-division {
+  padding-top: 1px;
+  font-size: 90%;
+}
+
+:root[platform="linux"] #headers-summary-resend {
+  padding: 4px;
+}
+
+:root[platform="linux"] #toggle-raw-headers {
+  padding: 4px;
+}
+
+/* Responsive sidebar */
+@media (max-width: 700px) {
+  :root[platform="linux"] .requests-menu-header-button {
+    font-size: 85%;
+  }
+}

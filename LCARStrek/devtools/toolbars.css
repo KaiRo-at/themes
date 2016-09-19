@@ -5,11 +5,23 @@
 
 /* CSS Variables specific to the devtools toolbar that aren't defined by the themes */
 .theme-light,
-.theme-dark {
+.theme-dark,
+.theme-firebug {
+  --toolbar-tab-hover: #FFCF00;
+  --toolbar-tab-hover-active: #FF9F00;
   --searchbox-background-color: #000000;
   --searchbox-border-color: #9C9CFF;
   --searcbox-no-match-background-color: #400000;
   --searcbox-no-match-border-color: #FF0000;
+  --magnifying-glass-image: url(images/magnifying-glass-light.png);
+  --magnifying-glass-image-2x: url(images/magnifying-glass-light@2x.png);
+  --tool-options-image: url(images/tool-options.svg);
+  --close-button-image: url(chrome://devtools/skin/images/close.svg);
+  --icon-filter: invert(1);
+  --dock-bottom-image: url(chrome://devtools/skin/images/dock-bottom.svg);
+  --dock-side-image: url(chrome://devtools/skin/images/dock-side.svg);
+  --dock-undock-image: url(chrome://devtools/skin/images/dock-undock.svg);
+  --toolbar-button-border-color: #A09090;
 
   /* Toolbox buttons */
   --command-paintflashing-image: url(images/command-paintflashing.svg);
@@ -51,7 +63,6 @@
 .devtools-menulist,
 .devtools-toolbarbutton,
 .devtools-button {
-/*  transition: background 0.05s ease-in-out; */
 }
 
 .devtools-menulist,
@@ -59,7 +70,8 @@
 }
 
 .devtools-menulist:-moz-focusring,
-.devtools-toolbarbutton:-moz-focusring {
+.devtools-toolbarbutton:-moz-focusring,
+.devtools-button:-moz-focusring {
   outline: 1px dotted var(--theme-selection-color);
 }
 
@@ -74,7 +86,7 @@
 .devtools-button {
   margin: 0;
   padding: 0;
-  min-width: 32px;
+  min-width: 16px;
   background: var(--theme-toolbar-background);
   color: var(--theme-body-color);
   /* The icon is absolutely positioned in the button using ::before */
@@ -119,15 +131,21 @@
   background-color: var(--theme-button-background);
 }
 
-.devtools-toolbarbutton[standalone] {
+.devtools-toolbarbutton[standalone], .devtools-toolbarbutton[data-standalone] {
 }
+
 .devtools-toolbarbutton[label][standalone] {
+}
+
+.devtools-menulist,
+.devtools-toolbarbutton,
+.devtools-button {
 }
 
 /* Icon button styles */
 .devtools-toolbarbutton:not([label]),
 .devtools-toolbarbutton[text-as-image] {
-  min-width: 20px;
+  min-width: 16px;
 }
 
 #toolbox-buttons .devtools-toolbarbutton[text-as-image] {
@@ -136,9 +154,6 @@
   min-width: inherit;
 }
 
-#toolbox-buttons .devtools-toolbarbutton:not([text-as-image]):not(:hover):not([open=true]) {
-/*  background: transparent; */
-}
 #toolbox-buttons .devtools-toolbarbutton[type=menu] > .toolbarbutton-menu-dropmarker {
   padding: 0 2px;
 }
@@ -202,8 +217,15 @@
   filter: url(images/filters.svg#checked-icon-state);
 }
 
+/* Icon-and-text buttons */
+.devtools-toolbarbutton.icon-and-text .toolbarbutton-text {
+  margin-inline-start: .5em !important;
+  font-weight: 600;
+}
+
 /* Text-only buttons */
 .devtools-toolbarbutton[label]:not([text-as-image]):not([type=menu-button]),
+.devtools-toolbarbutton[data-text-only],
 #toolbox-buttons .devtools-toolbarbutton[text-as-image] {
 /*  background-color: rgba(0, 0, 0, .2); / Splitter */
 }
@@ -240,26 +262,6 @@
   color: var(--theme-selection-color); */
 }
 
-.devtools-toolbarbutton[checked=true]:hover {
-}
-
-.devtools-option-toolbarbutton {
-  list-style-image: url("chrome://devtools/skin/images/tool-options-tbutton.svg");
-}
-
-/* Toolbar button groups */
-.devtools-toolbarbutton-group > .devtools-toolbarbutton {
-}
-
-.devtools-toolbarbutton-group > .devtools-toolbarbutton:last-child {
-}
-
-.devtools-toolbarbutton-group + .devtools-toolbarbutton {
-}
-
-.devtools-separator + .devtools-toolbarbutton {
-}
-
 :root {
   --clear-icon-url: url("chrome://devtools/skin/images/clear.svg");
 }
@@ -272,17 +274,29 @@
   list-style-image: var(--clear-icon-url);
 }
 
+.devtools-option-toolbarbutton {
+  list-style-image: var(--tool-options-image);
+}
+
+.devtools-toolbarbutton-group > .devtools-toolbarbutton:last-child {
+}
+
+.devtools-toolbarbutton-group + .devtools-toolbarbutton {
+}
+
+.devtools-separator + .devtools-toolbarbutton {
+}
+
 /* Text input */
 
 .devtools-textinput,
 .devtools-searchinput {
 /*  -moz-appearance: none;
-  margin: 0 3px;
-  border: 1px solid rgb(88, 94, 101);
+  margin: 1 3px;
+  border: 1px solid;
   border-radius: 2px;
-  background-color: rgba(24, 29, 32, 1);
   padding: 4px 6px;
-  color: rgba(184, 200, 217, 1);*/
+  border-color: var(--theme-splitter-color);*/
 }
 
 :root[platform="mac"] .devtools-textinput,
@@ -290,19 +304,17 @@
 /*  border-radius: 20px;*/
 }
 
-
 .devtools-searchinput {
 /*  margin-top: 1px;
   margin-bottom: 1px;
   padding: 0;*/
   -moz-padding-start: 22px;
   -moz-padding-end: 4px;
+  background-image: var(--magnifying-glass-image);
   background-position: 8px center;
   background-size: 11px 11px;
   background-repeat: no-repeat;
   font-size: inherit;
-
-  background-image: url("images/magnifying-glass.png");
 }
 
 .devtools-searchinput:-moz-locale-dir(rtl),
@@ -319,6 +331,24 @@
   display: flex;
   flex: 1;
   position: relative;
+}
+
+/* The spacing is accomplished with a padding on the searchbox */
+.devtools-searchbox > .devtools-textinput,
+.devtools-searchbox > .devtools-searchinput {
+}
+
+/* Don't add 'double spacing' for inputs that are at beginning / end
+   of a toolbar (since the toolbar has it's own spacing). */
+.devtools-toolbar > .devtools-textinput:first-child,
+.devtools-toolbar > .devtools-searchinput:first-child {
+}
+.devtools-toolbar > .devtools-textinput:last-child,
+.devtools-toolbar > .devtools-searchinput:last-child {
+}
+.devtools-toolbar > .devtools-searchbox:first-child {
+}
+.devtools-toolbar > .devtools-searchbox:last-child {
 }
 
 .devtools-rule-searchbox {
@@ -361,11 +391,11 @@
 }
 
 .devtools-searchinput-clear {
-  background-image: url("chrome://devtools/skin/search-clear.svg");
+  background-image: url("chrome://devtools/skin/images/search-clear.svg");
 }
 
 .devtools-style-searchbox-no-match + .devtools-searchinput-clear {
-  background-image: url("chrome://devtools/skin/search-clear-failed.svg") !important;
+  background-image: url("chrome://devtools/skin/images/search-clear-failed.svg") !important;
 }
 
 .devtools-searchinput-clear:hover {
@@ -373,8 +403,11 @@
 }
 
 .devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-clear {
-  list-style-image: url("chrome://devtools/skin/search-clear.svg");
+  list-style-image: url("chrome://devtools/skin/images/search-clear.svg");
   -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-clear {
 }
 
 .devtools-searchinput > .textbox-input-box > .textbox-search-icons > .textbox-search-clear:hover {
@@ -383,7 +416,7 @@
 
 @media (min-resolution: 1.1dppx) {
   .devtools-searchinput {
-    background-image: url("images/magnifying-glass@2x.png");
+    background-image: var(--magnifying-glass-image-2x);
   }
 }
 
@@ -394,27 +427,24 @@
   width: 16px;
 }
 
+#toolbox-close::before,
 .devtools-closebutton > image {
   width: 16px;
   height: 16px;
   -moz-appearance: none;
-  background-size: 32px 16px;
-  background-image: url("chrome://devtools/skin/close@2x.png");
-  background-position: 0 center;
+  background-size: cover;
+  background-image: var(--close-button-image);
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
-.devtools-closebutton:hover > image,
-.devtools-closebutton:hover:active > image {
-  background-position: -16px center;
+.devtools-closebutton > .toolbarbutton-icon {
+  /* XXX Buttons have padding in widget/ that we don't want here but can't override with good CSS, so we must
+     use evil CSS to give the impression of smaller content */
 }
 
 .devtools-closebutton > .toolbarbutton-text {
   display: none;
-}
-
-#toolbox-close::before {
-  background-image: url("chrome://devtools/skin/close@2x.png");
 }
 
 /* In-tools sidebar */
@@ -433,7 +463,8 @@
 }
 
 .devtools-sidebar-alltabs {
-/*  height: 24px;
+/*  -moz-appearance: none;
+  height: 24px;
   line-height: 24px;
   padding: 0 4px;
   margin: 0;
@@ -487,12 +518,6 @@
 .devtools-sidebar-tabs tabs > tab:hover:active {
 }
 
-.devtools-sidebar-tabs tabs > tab[selected] + tab:hover {
-}
-
-.devtools-sidebar-tabs tabs > tab[selected] + tab:hover:active {
-}
-
 .devtools-sidebar-tabs tabs > tab[selected],
 .devtools-sidebar-tabs tabs > tab[selected]:hover:active {
 }
@@ -503,35 +528,32 @@
 
 #toolbox-controls > toolbarbutton,
 #toolbox-dock-buttons > toolbarbutton {
+ -moz-user-focus: normal;
   min-width: 16px;
-/*  padding: 1px 3px; */
+  width: 16px;
 }
 
 #toolbox-dock-buttons > toolbarbutton > image {
   width: 16px;
   height: 16px;
-  background-size: 32px 16px;
+  background-size: 16px 16px;
   background-position: 0 center;
   background-repeat: no-repeat;
 }
  
-#toolbox-dock-buttons > toolbarbutton:hover > image {
-  background-position: -16px center;
-}
- 
 #toolbox-dock-bottom::before,
 #toolbox-dock-bottom > image {
-  background-image: url("chrome://devtools/skin/dock-bottom@2x.png");
+  background-image: var(--dock-bottom-image);
 }
  
 #toolbox-dock-side::before,
 #toolbox-dock-side > image {
-  background-image: url("chrome://devtools/skin/dock-side@2x.png");
+  background-image: var(--dock-side-image);
 }
 
 #toolbox-dock-window::before,
 #toolbox-dock-window > image {
-  background-image: url("chrome://devtools/skin/undock@2x.png");
+  background-image: var(--dock-undock-image);
 }
 
 #toolbox-dock-bottom-minimize {
@@ -541,11 +563,11 @@
 }
 
 #toolbox-dock-bottom-minimize > image {
-  background-image: url("chrome://devtools/skin/dock-bottom-minimize@2x.png");
+  background-image: url("chrome://devtools/skin/images/dock-bottom-minimize@2x.png");
 }
 
 #toolbox-dock-bottom-minimize.minimized > image {
-  background-image: url("chrome://devtools/skin/dock-bottom-maximize@2x.png");
+  background-image: url("chrome://devtools/skin/images/dock-bottom-maximize@2x.png");
 }
 
 #toolbox-dock-window,
@@ -575,6 +597,7 @@
 
 /* Command buttons */
 
+.toolbox-dock-button,
 .command-button {
   -moz-appearance: none;
   border: none;
@@ -622,6 +645,8 @@
   filter: url(images/filters.svg#checked-icon-state);
 }
 
+/* Toolbox buttons images */
+
 #command-button-paintflashing > image,
 #command-button-paintflashing::before {
   background-image: var(--command-paintflashing-image);
@@ -645,6 +670,11 @@
 #command-button-pick > image,
 #command-button-pick::before {
   background-image: var(--command-pick-image);
+}
+
+#command-button-frames > image,
+#command-button-frames::before {
+  background-image: var(--command-frames-image);
 }
 
 #command-button-splitconsole > image,
@@ -672,11 +702,6 @@
   background-image: var(--command-measure-image);
 }
 
-#command-button-frames > image,
-#command-button-frames::before {
-  background-image: var(--command-frames-image);
-}
-
 /* Tabs */
 
 .devtools-tabbar {
@@ -696,14 +721,13 @@
   visibility: collapse;
 }
 
-#toolbox-deck[selectedIndex] > .toolbox-panel, /* workaround for Firefox 47 and older */
 .toolbox-panel[selected] {
   visibility: visible;
 }
 
 .devtools-tab {
   min-width: 32px;
-  max-width: 110px;
+  max-width: 100px;
   color: #000000;
   margin: 0;
   -moz-margin-end: 3px;
@@ -714,10 +738,15 @@
 }
 
 .devtools-tab > image {
-  -moz-margin-end: 0px;
-/*  -moz-margin-start: 4px; */
+  margin: 0;
+/*  margin-inline-start: 4px; */
   max-height: 16px;
   width: 16px; /* Prevents collapse during theme switching */
+}
+
+.devtools-tab > label {
+  white-space: nowrap;
+/*  margin: 0 4px;*/
 }
 
 .devtools-tab:hover > image {
@@ -812,6 +841,12 @@
 /*  -moz-border-end: 1px solid var(--theme-splitter-color);
   border-color: var(--theme-splitter-color); / Needed for responsive container at low width. */
 }
+
+.devtools-invisible-splitter {
+  border-color: transparent;
+  background-color: transparent;
+}
+
 /* Throbbers */
 
 .devtools-throbber::before {

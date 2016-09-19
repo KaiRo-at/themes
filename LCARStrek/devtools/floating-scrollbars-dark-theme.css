@@ -8,32 +8,28 @@ xul|scrollbar {
   padding: 2px;
 }
 
+:root[platform="mac"] xul|scrollbar {
+  border: none;
+}
+
 /* Scrollbar code will reset the margin to the correct side depending on
    where layout actually puts the scrollbar */
 xul|scrollbar[orient="vertical"] {
   margin-left: -10px;
-  min-width: 3px;
-  max-width: 3px;
+  min-width: 10px;
+  max-width: 10px;
 }
 
 xul|scrollbar[orient="horizontal"] {
   margin-top: -10px;
-  min-height: 3px;
-  max-height: 3px;
-}
-
-xul|scrollbar xul|slider {
-/*  background-color: transparent; */
-  border-radius: 3px;
-}
-
-xul|scrollbar:not(:hover) xul|slider {
-  background-color: rgba(64, 64, 72, 0.3);
+  min-height: 10px;
+  max-height: 10px;
 }
 
 xul|scrollbar xul|thumb {
+/*  background-color: rgba(170, 170, 170, .2) !important; / --toolbar-tab-hover, in LCARStrek only in non-hover rule */
+/*  -moz-appearance: none !important;*/
   border-width: 0px !important;
-/*  background-color: rgba(0,0,0,0.2) !important; */
   background-image: none;
   border-radius: 3px !important;
 }

@@ -1,3 +1,4 @@
+/* vim:set ts=2 sw=2 sts=2 et: */
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
@@ -6,8 +7,6 @@ window {
   padding: 0;
 }
 
-/* === BEGIN debugger.inc.css === */
-
 /* Sources and breakpoints pane */
 
 #sources-pane[selectedIndex="0"] + #sources-and-editor-splitter {
@@ -15,7 +14,53 @@ window {
 }
 
 #sources-pane > tabs {
+/*  -moz-border-end: 1px solid;*/
+}
+
+#sources-pane .devtools-toolbar {
+  border: none; /* Remove the devtools-toolbar bottom border. */
+/*  -moz-border-end: 1px solid;*/
+}
+
+#sources-pane > tabs,
+#sources-pane .devtools-toolbar {
   -moz-border-end-color: var(--theme-splitter-color);
+}
+
+/* Sources and breakpoints list */
+
+.dbg-source-item {
+  padding: 2px 0px;
+}
+
+.dbg-wasm-item .icon {
+  display: block;
+  background-image: url(chrome://devtools/skin/images/webconsole.svg);
+  background-repeat: no-repeat;
+  background-size: 72px 60px;
+  /* show warning icon */
+  background-position: -24px -24px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  margin-inline-start: -15px;
+  margin-top: 3px;
+}
+
+.dbg-breakpoint-line {
+  font-weight: 600;
+}
+
+.dbg-breakpoint-text {
+  -moz-padding-start: 6px;
+  font-style: italic;
+  font-size: 90%;
+}
+
+.dbg-breakpoint-checkbox {
+  width: 16px;
+  height: 16px;
+  margin: 2px;
 }
 
 .dbg-breakpoint-condition-thrown-message {
@@ -32,7 +77,7 @@ window {
 
 #sources-toolbar > .devtools-toolbarbutton,
 #sources-controls > .devtools-toolbarbutton {
-  min-width: 32px;
+  min-width: 16px;
 }
 
 #sources-toolbar .devtools-toolbarbutton:not([label]) {
@@ -74,6 +119,11 @@ window {
   -moz-image-region: rect(0,16px,16px,0) !important;
 }
 
+#toggle-breakpoints[checked] > image {
+  /* This button has a special checked image, don't make it blue */
+  filter: none;
+}
+
 #toggle-promise-debugger {
   /* TODO Bug 1186119: Add a toggle promise debugger image */
 }
@@ -90,24 +140,14 @@ window {
   display: none;
 }
 
-#sources .black-boxed + .side-menu-widget-item-arrow:-moz-locale-dir(ltr) {
-  background-image: none;
-/*  box-shadow: inset -1px 0 0 #222426; */
-}
-
-#sources .black-boxed + .side-menu-widget-item-arrow:-moz-locale-dir(rtl) {
-  background-image: none;
-/*  box-shadow: inset 1px 0 0 #222426; */
-}
-
 /* Debugger unblackbox button */
 
 #black-boxed-message-button > .button-box > .button-icon {
   width: 16px;
   height: 16px;
   background-image: url("images/debugger-blackbox.png");
-  background-position: -16px -16px;
-  background-size: 32px 32px;
+  background-position: 0 0;
+  background-size: 32px 16px;
   background-repeat: no-repeat;
   -moz-margin-end: 5px;
 }
@@ -145,26 +185,61 @@ window {
   padding: .25em;
 }
 
+/* Breadcrumbs stack frames view */
+
+.dbg-stackframe-details {
+  -moz-padding-start: 4px;
+}
+
+/* Classic stack frames view */
+
+.dbg-classic-stackframe {
+  display: block;
+}
+
+.dbg-classic-stackframe-title {
+  font-weight: 600;
+}
+
+.dbg-classic-stackframe-details:-moz-locale-dir(ltr) {
+  float: right;
+}
+
+.dbg-classic-stackframe-details:-moz-locale-dir(rtl) {
+  float: left;
+}
+
+.dbg-classic-stackframe-details-url {
+  max-width: 90%;
+  text-align: end;
+}
+
+.dbg-classic-stackframe-details-url {
+  color: var(--theme-content-color1);
+}
+
+.dbg-classic-stackframe-details-sep {
+  color: var(--theme-body-color-alt)
+}
+
+.dbg-classic-stackframe-details-line {
+  color: var(--theme-highlight-bluegrey);
+}
+
+#callstack-list .selected label {
+  /* Text inside a selected item should not be custom colored. */
+  color: inherit !important;
+}
+
 /* Tracer */
 
 #trace {
-  list-style-image: url("tracer-icon.png");
-  -moz-image-region: rect(0px,16px,16px,0px);
-}
-
-#trace:hover {
-  -moz-image-region: rect(0px,32px,16px,16px);
+  list-style-image: url("images/tracer-icon.png");
 }
 
 @media (min-resolution: 1.1dppx) {
   #trace {
-    list-style-image: url(tracer-icon@2x.png);
-    -moz-image-region: rect(0px,32px,32px,0px);
-  }
-
-  #trace:hover,
-  #trace[checked] {
-    -moz-image-region: rect(0px,64px,32px,32px);
+    list-style-image: url("images/tracer-icon@2x.png");
   }
 }
 
@@ -174,7 +249,7 @@ window {
 }
 
 .trace-name {
-  -moz-padding-start: 4px !important;
+  -moz-padding-start: 4px;
 }
 
 /* Tracer dark+light theme */
@@ -214,115 +289,6 @@ window {
 
 .trace-syntax {
   color: var(--theme-content-color2);
-}
-
-/* Breadcrumbs stack frames view */
-
-.breadcrumbs-widget-item {
-  max-width: none;
-}
-
-#stackframes {
-  min-height: 25px;
-}
-
-.dbg-stackframe-details {
-  -moz-padding-start: 4px;
-}
-
-/* Classic stack frames view */
-
-.dbg-classic-stackframe {
-  display: block;
-  padding: 0 4px;
-}
-
-.dbg-classic-stackframe-title {
-  font-weight: 600;
-  color: #9C9CFF;
-}
-
-.dbg-classic-stackframe-details:-moz-locale-dir(ltr) {
-  float: right;
-}
-
-.dbg-classic-stackframe-details:-moz-locale-dir(rtl) {
-  float: left;
-}
-
-.dbg-classic-stackframe-details-url {
-  max-width: 90%;
-  text-align: end;
-  color: var(--theme-text-blue);
-}
-
-.dbg-classic-stackframe-details-sep {
-  color: var(--theme-body-color-alt)
-}
-
-.dbg-classic-stackframe-details-line {
-  color: var(--theme-highlight-blue);
-}
-
-#callstack-list .side-menu-widget-item.selected label {
-  color: #FFCF00;
-}
-
-/* Sources and breakpoints view */
-
-.dbg-breakpoint {
-  -moz-margin-start: 4px;
-}
-
-.dbg-breakpoint-line {
-  font-weight: 600;
-}
-
-.dbg-breakpoint-text {
-  -moz-margin-start: 10px !important;
-  font-style: italic;
-  font-size: 90%;
-}
-
-.dbg-breakpoint-checkbox {
-  width: 16px;
-  height: 16px;
-  margin: 2px;
-}
-
-/* Variable bubble view */
-
-.devtools-tooltip-simple-text.token-undefined,
-.devtools-tooltip-simple-text.token-null {
-  text-align: center;
-  color: #A09090 !important; /* Override the theme's color. */
-}
-
-.devtools-tooltip-simple-text.token-boolean {
-  text-align: center;
-  color: #9C9CFF !important;
-}
-
-.devtools-tooltip-simple-text.token-number {
-  text-align: center;
-  color: #E7ADE7 !important;
-}
-
-.devtools-tooltip-simple-text.token-string {
-  text-align: start;
-  color: #008484 !important;
-}
-
-.devtools-tooltip-simple-text.token-other {
-  text-align: center;
-  color: #FF9F00 !important;
-}
-
-/* Instruments pane (watch expressions, variables, event listeners...) */
-
-#instruments-pane .side-menu-widget-container,
-#instruments-pane .side-menu-widget-empty-text {
-/*  box-shadow: none !important; */
 }
 
 /* Watch expressions view */
@@ -366,12 +332,12 @@ window {
 
 /* Event listeners view */
 
-.dbg-event-listener {
-  padding: 0 8px;
-}
-
 .dbg-event-listener-type {
   font-weight: 600;
+}
+
+.dbg-event-listener-location {
+  color: var(--theme-highlight-pink);
 }
 
 .dbg-event-listener-separator {
@@ -382,12 +348,10 @@ window {
   color: var(--theme-highlight-blue);
 }
 
-.dbg-event-listener-location {
-  color: var(--theme-highlight-pink);
-}
-
-#event-listeners .side-menu-widget-item.selected {
-  background: none !important;
+#event-listeners .selected {
+  /* Selected items shouldn't be displayed differently. */
+  background: none;
+  color: var(--theme-content-color1);
 }
 
 /* Searchbox and the search operations help panel */
@@ -422,19 +386,17 @@ window {
 
 /* Searchbox results panel */
 
-.results-panel {
-  padding: 4px;
+#results-panel {
+  border: none;
 }
 
 .results-panel-item {
-  border: 1px solid #A09090;
-  border-top-color: #8050B0;
-  padding: 5px;
-  cursor: pointer;
+  padding: 6px 8px;
+  border-top: 1px solid #A09090;
 }
 
 .results-panel-item:first-of-type {
-  border-top-color: #9C9CFF;
+  border-top: none;
   border-radius: 4px 4px 0 0;
 }
 
@@ -446,36 +408,40 @@ window {
   border-radius: 4px;
 }
 
-.results-panel-item:not(.selected):not(:hover) {
-/*  text-shadow: 0 1px #fff;*/
+.results-panel-item-label {
+  font-weight: 600;
 }
 
 .results-panel-item-label-before {
-  -moz-margin-end: 5px !important;
-  color: var(--theme-content-color2);
-  cursor: inherit;
+  -moz-padding-end: 6px;
 }
 
 .results-panel-item-label {
   color: var(--theme-highlight-blue);
-  font-weight: 600;
-  cursor: inherit;
+}
+
+.results-panel-item-label-before {
+  color: var(--theme-content-color2);
 }
 
 .results-panel-item-label-below {
   color: var(--theme-content-color3);
-  cursor: inherit;
+}
+
+#results-panel .selected label {
+  /* Text inside a selected item should not be custom colored. */
+  color: inherit !important;
 }
 
 /* Sources search view */
 
 #globalsearch {
   min-height: 10px;
-  max-height: 125px;
+  max-height: 50vh;
 }
 
 #globalsearch + .devtools-horizontal-splitter {
-  -moz-border-top-colors: #9C9CFF;
+  -moz-border-top-colors: var(--theme-splitter-color);
 }
 
 .dbg-source-results {
@@ -484,7 +450,7 @@ window {
 }
 
 .dbg-source-results:not(.selected):hover {
-  background-color: #000000; /* Sidebar background */
+  background-color: var(--theme-sidebar-background);
 }
 
 .dbg-results-header {
@@ -497,36 +463,27 @@ window {
 
 .dbg-results-header-match-count {
   -moz-padding-start: 6px;
-  color: var(--theme-content-disabled);
+  color: var(--theme-body-color-inactive);
 }
 
 .dbg-results-line-number {
-  background-color: var(--theme-toolbar-background);
-  min-width: 40px;
+  min-width: 3em;
   -moz-border-end: 1px solid #9C9CFF;
   -moz-padding-end: 4px;
-  padding-top: 2px;
   text-align: end;
-  color: var(--theme-body-color);
 }
 
 .dbg-results-line-contents {
   -moz-padding-start: 4px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-}
-
-.dbg-results-line-contents-string {
-  padding: 1px;
-/*  color: var(--theme-body-color-alt);*/
 }
 
 .dbg-results-line-contents-string[match=true] {
   background: #E7ADE7;
   color: var(--theme-selection-color);
-  padding: 0;
   border: 1px solid #9C9CFF;
   border-radius: 4px;
+  margin-top: -1px !important;
+  margin-bottom: -1px !important;
   cursor: pointer;
 }
 
@@ -539,46 +496,59 @@ window {
   transform: scale(1.75, 1.75);
 }
 
+.dbg-source-results:not(.selected):hover {
+  background-color: var(--theme-sidebar-background);
+}
+
+.dbg-results-header {
+  background-color: var(--theme-tab-toolbar-background);
+}
+
+.dbg-results-header {
+  color: var(--theme-content-color1);
+}
+
+.dbg-search-result:hover {
+  background-color: #004242; /* Select highlight blue at 40% alpha */
+}
+
+.dbg-results-header-match-count {
+  color: var(--theme-content-color3);
+}
+
+.dbg-results-line-number {
+  background-color: var(--theme-tab-toolbar-background);
+  color: var(--theme-body-color-alt);
+}
+
+.dbg-results-line-contents-string {
+  color: var(--theme-body-color-alt);
+}
+
+.theme-dark .dbg-results-line-contents-string[match=true] {
+  color: var(--theme-selection-color);
+}
+
+.theme-light .dbg-results-line-contents-string[match=true] {
+  color: var(--theme-body-color);
+}
+
 /* Toolbar controls */
 
-#toggle-panes {
-  list-style-image: url("chrome://devtools/skin/images/debugger-expand.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-#toggle-panes:not([panesHidden]) {
-  list-style-image: url("chrome://devtools/skin/images/debugger-collapse.png");
-}
-
-#toggle-panes:hover,
-#toggle-panes:hover:active {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
 #resume {
-  list-style-image: url("chrome://devtools/skin/images/debugger-pause.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
+  list-style-image: url(images/debugger-pause.png);
 }
 
-#resume:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-#resume[checked=true] {
-  list-style-image: url("chrome://devtools/skin/images/debugger-play.png");
+#resume[checked] {
+  list-style-image: url(images/debugger-play.png);
 }
 
 @media (min-resolution: 1.1dppx) {
   #resume {
     list-style-image: url(images/debugger-pause@2x.png);
-    -moz-image-region: rect(0px, 32px, 32px, 0px);
   }
 
-  #resume:hover {
-    -moz-image-region: rect(0px, 64px, 32px, 32px);
-  }
-
-  #resume[checked=true] {
+  #resume[checked] {
     list-style-image: url(images/debugger-play@2x.png);
   }
 }
@@ -588,74 +558,37 @@ window {
 }
 
 #step-over {
-  list-style-image: url("chrome://devtools/skin/images/debugger-step-over.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-#step-over:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+  list-style-image: url(images/debugger-step-over.png);
 }
 
 #step-in {
-  list-style-image: url("chrome://devtools/skin/images/debugger-step-in.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-#step-in:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+  list-style-image: url(images/debugger-step-in.png);
 }
 
 #step-out {
-  list-style-image: url("chrome://devtools/skin/images/debugger-step-out.png");
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-#step-out:hover {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
+  list-style-image: url(images/debugger-step-out.png);
 }
 
 @media (min-resolution: 1.1dppx) {
   #step-over {
     list-style-image: url(images/debugger-step-over@2x.png);
-    -moz-image-region: rect(0px, 32px, 32px, 0);
-  }
-
-  #step-over:hover {
-    -moz-image-region: rect(0px, 64px, 32px, 32px);
   }
 
   #step-in {
     list-style-image: url(images/debugger-step-in@2x.png);
-    -moz-image-region: rect(0px, 32px, 32px, 0);
-  }
-
-  #step-in:hover {
-    -moz-image-region: rect(0px, 64px, 32px, 32px);
   }
 
   #step-out {
     list-style-image: url(images/debugger-step-out@2x.png);
-    -moz-image-region: rect(0px, 32px, 32px, 0);
-  }
-
-  #step-out:hover {
-    -moz-image-region: rect(0px, 64px, 32px, 32px);
   }
 }
 
 #instruments-pane-toggle {
-  list-style-image: url("chrome://devtools/skin/images/debugger-collapse.png");
+  list-style-image: var(--theme-pane-collapse-image);
 }
 
 #instruments-pane-toggle[pane-collapsed] {
-  list-style-image: url("chrome://devtools/skin/images/debugger-expand.png");
-}
-
-@media (min-resolution: 1.1dppx) {
-  #instruments-pane-toggle {
-    list-style-image: url(images/debugger-collapse@2x.png);
-  }
-
-  #instruments-pane-toggle[pane-collapsed] {
-    list-style-image: url(images/debugger-expand@2x.png);
-  }
+  list-style-image: var(--theme-pane-expand-image);
 }
 
 /* Horizontal vs. vertical layout */
@@ -665,13 +598,13 @@ window {
   max-height: 80vh;
 }
 
+#body[layout=vertical] #sources-pane > tabs {
+  -moz-border-end: none;
+}
+
 #body[layout=vertical] #instruments-pane {
   margin: 0 !important;
   /* To prevent all the margin hacks to hide the sidebar. */
-}
-
-#body[layout=vertical] #sources-pane > tabs {
-  -moz-border-end: none;
 }
 
 #body[layout=vertical] .side-menu-widget-container,
@@ -683,4 +616,7 @@ window {
   background-image: none !important;
 }
 
-/* === END debugger.inc.css === */
+#body[layout=vertical] .side-menu-widget-group,
+#body[layout=vertical] .side-menu-widget-item {
+  -moz-margin-end: 0;
+}
