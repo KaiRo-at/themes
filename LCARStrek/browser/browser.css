@@ -4021,7 +4021,7 @@ html|*#fullscreen-exit-button {
 }
 
 #developer-toolbar-toolbox-button {
-  list-style-image: url("chrome://devtools/skin/toggle-tools.png");
+  list-style-image: url("chrome://devtools/skin/images/toggle-tools.png");
   -moz-image-region: rect(0px, 16px, 16px, 0px);
 }
 
@@ -4037,7 +4037,7 @@ html|*#fullscreen-exit-button {
 
 @media (min-resolution: 2dppx) {
   #developer-toolbar-toolbox-button {
-    list-style-image: url("chrome://devtools/skin/toggle-tools@2x.png");
+    list-style-image: url("chrome://devtools/skin/images/toggle-tools@2x.png");
     -moz-image-region: rect(0px, 32px, 32px, 0px);
   }
 
@@ -4313,7 +4313,7 @@ html|*#gcli-output-frame {
 }
 
 .devtools-responsiveui-rotate {
-  list-style-image: url("chrome://devtools/skin/responsiveui-rotate.png");
+  list-style-image: url("chrome://devtools/skin/images/responsiveui-rotate.png");
   -moz-image-region: rect(0px,16px,16px,0px);
 }
 
@@ -4323,7 +4323,7 @@ html|*#gcli-output-frame {
 
 @media (min-resolution: 2dppx) {
   .devtools-responsiveui-rotate {
-    list-style-image: url("chrome://devtools/skin/responsiveui-rotate@2x.png");
+    list-style-image: url("chrome://devtools/skin/images/responsiveui-rotate@2x.png");
   }
 
   .devtools-responsiveui-rotate:hover {
@@ -4332,7 +4332,7 @@ html|*#gcli-output-frame {
 }
 
 .devtools-responsiveui-touch {
-  list-style-image: url("chrome://devtools/skin/responsiveui-touch.png");
+  list-style-image: url("chrome://devtools/skin/images/responsiveui-touch.png");
   -moz-image-region: rect(0px,16px,16px,0px);
 }
 
@@ -4344,7 +4344,7 @@ html|*#gcli-output-frame {
 
 @media (min-resolution: 2dppx) {
   .devtools-responsiveui-touch {
-    list-style-image: url("chrome://devtools/skin/responsiveui-touch@2x.png");
+    list-style-image: url("chrome://devtools/skin/images/responsiveui-touch@2x.png");
     -moz-image-region: rect(0px,32px,32px,0px);
   }
 
@@ -4356,7 +4356,7 @@ html|*#gcli-output-frame {
 }
 
 .devtools-responsiveui-screenshot {
-  list-style-image: url("chrome://devtools/skin/responsiveui-screenshot.png");
+  list-style-image: url("chrome://devtools/skin/images/responsiveui-screenshot.png");
   -moz-image-region: rect(0px,16px,16px,0px);
 }
 
@@ -4366,7 +4366,7 @@ html|*#gcli-output-frame {
 
 @media (min-resolution: 2dppx) {
   .devtools-responsiveui-screenshot {
-    list-style-image: url("chrome://devtools/skin/responsiveui-screenshot@2x.png");
+    list-style-image: url("chrome://devtools/skin/images/responsiveui-screenshot@2x.png");
   }
 
   .devtools-responsiveui-screenshot:hover {
@@ -4380,7 +4380,7 @@ html|*#gcli-output-frame {
   cursor: ew-resize;
   transform: translate(12px, -12px);
   background-size: cover;
-  background-image: url("chrome://devtools/skin/responsive-vertical-resizer.png");
+  background-image: url("chrome://devtools/skin/images/responsive-vertical-resizer.png");
 }
 
 .devtools-responsiveui-resizebarH {
@@ -4389,7 +4389,7 @@ html|*#gcli-output-frame {
   cursor: ns-resize;
   transform: translate(-12px, 12px);
   background-size: cover;
-  background-image: url("chrome://devtools/skin/responsive-horizontal-resizer.png");
+  background-image: url("chrome://devtools/skin/images/responsive-horizontal-resizer.png");
 }
 
 .devtools-responsiveui-resizehandle {
@@ -4398,7 +4398,7 @@ html|*#gcli-output-frame {
   cursor: se-resize;
   transform: translate(12px, 12px);
   background-size: cover;
-  background-image: url("chrome://devtools/skin/responsive-se-resizer.png");
+  background-image: url("chrome://devtools/skin/images/responsive-se-resizer.png");
 }
 
 /* FxOS custom mode with additional buttons and phone look'n feel */
@@ -4446,7 +4446,7 @@ html|*#gcli-output-frame {
   -moz-user-focus: ignore;
   width: 40px;
   height: 30px;
-  list-style-image: url("chrome://devtools/skin/responsiveui-home.png");
+  list-style-image: url("chrome://devtools/skin/images/responsiveui-home.png");
 }
 
 .devtools-responsiveui-sleep-button {
@@ -4505,15 +4505,15 @@ html|*#gcli-output-frame {
 
 @media (min-resolution: 2dppx) {
   .devtools-responsiveui-resizebarV {
-    background-image: url("chrome://devtools/skin/responsive-vertical-resizer@2x.png");
+    background-image: url("chrome://devtools/skin/images/responsive-vertical-resizer@2x.png");
   }
 
   .devtools-responsiveui-resizebarH {
-    background-image: url("chrome://devtools/skin/responsive-horizontal-resizer@2x.png");
+    background-image: url("chrome://devtools/skin/images/responsive-horizontal-resizer@2x.png");
   }
 
   .devtools-responsiveui-resizehandle {
-    background-image: url("chrome://devtools/skin/responsive-se-resizer@2x.png");
+    background-image: url("chrome://devtools/skin/images/responsive-se-resizer@2x.png");
   }
 }
 
