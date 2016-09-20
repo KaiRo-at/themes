@@ -117,8 +117,7 @@ body, html {
 .cm-s-mozilla .cm-tag,
 .cm-s-mozilla .cm-header,
 .cm-s-mozilla .cm-bracket,
-.variables-view-property > .title > .name,
-.variable-or-property[safe-getter] > .title > .name {
+.variables-view-property > .title > .name {
   color: var(--theme-highlight-pink);
 }
 
@@ -175,14 +174,12 @@ body, html {
   background-color: var(--theme-toolbar-background);*/
 }
 
-
 .theme-fg-contrast { /* To be used for text on theme-bg-contrast */
   color: #FFCF00;
 }
 
-.ruleview-colorswatch,
-.computedview-colorswatch,
-.ruleview-bezierswatch {
+.ruleview-swatch,
+.computedview-colorswatch {
 /*  box-shadow: 0 0 0 1px #818181; */
 }
 
@@ -238,11 +235,6 @@ div.CodeMirror div.error-line {
   background: rgba(255, 0, 0, 0.2);
 }
 
-/* Highlight for a line that represents a stack frame's location. */
-div.CodeMirror div.debug-line {
-  background: rgba(156, 156, 255, 0.2);
-}
-
 /* Generic highlighted text */
 div.CodeMirror span.marked-text {
   background: rgba(255,207,0,0.2);
@@ -275,7 +267,7 @@ div.CodeMirror span.eval-text {
   width: 14px;
   height: 14px;
   background-repeat: no-repeat;
-  background-image: url("chrome://devtools/skin/controls.png");
+  background-image: url("chrome://devtools/skin/images/controls.png");
   background-size: 28px 28px;
 }
 
@@ -310,11 +302,11 @@ div.CodeMirror span.eval-text {
 
 @media (min-resolution: 1.1dppx) {
   .theme-twisty, .theme-checkbox {
-    background-image: url("chrome://devtools/skin/controls@2x.png");
+    background-image: url("chrome://devtools/skin/images/controls@2x.png");
   }
 }
 
-/* XUL panel styling (see browser/devtools/shared/widgets/Tooltip.js) */
+/* XUL panel styling (see devtools/client/shared/widgets/Tooltip.js) */
 
 .theme-tooltip-panel .panel-arrowcontent {
 /*  padding: 5px; */
@@ -384,7 +376,7 @@ div.CodeMirror span.eval-text {
 }
 
 .theme-tooltip-panel .devtools-tooltip-simple-text:last-child {
- border-bottom: 0;
+  border-bottom: 0;
 }
 
 .devtools-textinput,

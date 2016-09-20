@@ -28,13 +28,8 @@ notification {
   font-size: var(--monospace-font-size);
 }
 
-/* Bottom-docked toolbox minimize transition */
-.devtools-toolbox-bottom-iframe {
-  transition: margin-bottom .1s;
-}
 
 /* Autocomplete Popup */
-/* Dark and light theme */
 
 .devtools-autocomplete-popup {
   border-radius: 3px;
@@ -94,47 +89,26 @@ notification {
 .devtools-autocomplete-popup.light-theme {
 }
 
+.devtools-autocomplete-listbox.firebug-theme > richlistitem[selected],
+.devtools-autocomplete-listbox.firebug-theme > richlistitem:hover,
 .devtools-autocomplete-listbox.light-theme > richlistitem[selected],
 .devtools-autocomplete-listbox.light-theme > richlistitem:hover {
 /*  background-color: rgba(128,128,128,0.3); */
 }
 
+.devtools-autocomplete-listbox.firebug-theme > richlistitem[selected] > .autocomplete-value,
+.devtools-autocomplete-listbox:focus.firebug-theme > richlistitem[selected] > .initial-value,
 .devtools-autocomplete-listbox.light-theme > richlistitem[selected] > .autocomplete-value,
 .devtools-autocomplete-listbox:focus.light-theme > richlistitem[selected] > .initial-value {
 /*  color: #222;*/
 }
 
+.devtools-autocomplete-listbox.firebug-theme > richlistitem > label,
 .devtools-autocomplete-listbox.light-theme > richlistitem > label {
 /*  color: #666;*/
 }
 
-/* Responsive container */
-
-.devtools-responsive-container {
-  -moz-box-orient: horizontal;
-}
-
-@media (max-width: 700px) {
-  .devtools-responsive-container {
-    -moz-box-orient: vertical;
-  }
-
-  .devtools-responsive-container > .devtools-side-splitter {
-    border: 0;
-    margin: 3px 0;
-    min-height: 3px;
-    height: 3px;
-    /* In some edge case the cursor is not changed to n-resize */
-    cursor: n-resize;
-  }
-
-  .devtools-responsive-container > .devtools-sidebar-tabs {
-    min-height: 35vh;
-    max-height: 75vh;
-  }
-}
-
-/* Tooltip widget (see browser/devtools/shared/widgets/Tooltip.js) */
+/* Tooltip widget (see devtools/client/shared/widgets/Tooltip.js) */
 
 .devtools-tooltip.devtools-tooltip-tooltip {
   /* If the tooltip uses a <tooltip> XUL element */
@@ -144,7 +118,6 @@ notification {
 }
 
 .devtools-tooltip .panel-arrowcontent {
-  /* If the tooltip uses a <panel> XUL element instead */
   padding: 4px;
 }
 
@@ -185,23 +158,6 @@ notification {
 /* Tooltip: Simple Text */
 
 .devtools-tooltip-simple-text {
-  background: #000000;
-  max-width: 400px;
-  margin: 0 -4px; /* Compensate for the .panel-arrowcontent padding. */
-  padding: 8px 12px;
-  white-space: pre-wrap;
-}
-
-.devtools-tooltip-simple-text:first-child {
-  margin-top: -4px;
-}
-
-.devtools-tooltip-simple-text:last-child {
-  margin-bottom: -4px;
-}
-
-.devtools-tooltip-simple-text {
-  background-color: #000000;
   max-width: 400px;
   margin: 0 -4px; /* Compensate for the .panel-arrowcontent padding. */
   padding: 8px 12px;
@@ -254,7 +210,7 @@ notification {
   background: transparent;
 }
 
-/* Links to source code, like displaying `myfile.js:45` */
+/* links to source code, like displaying `myfile.js:45` */
 
 .devtools-source-link {
   font-family: var(--monospace-font-family);
@@ -262,7 +218,6 @@ notification {
   cursor: pointer;
   white-space: nowrap;
   display: flex;
-  align-self: flex-start;
   text-decoration: none;
   font-size: 11px;
   width: 12em; /* probably should be changed for each tool */
