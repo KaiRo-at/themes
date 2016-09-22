@@ -37,8 +37,9 @@
   border-radius: 300px;
   border: none;
   background-color: var(--fonts-button-background);
-  color: var(--fonts-selected-text);
+  color: var(--fonts-button-text);
   margin: 3px;
+  padding: 0 6px;
   cursor: pointer;
   position: fixed;
   bottom: 0;

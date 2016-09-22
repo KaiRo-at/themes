@@ -39,6 +39,8 @@ xul|scrollbar:not(:hover) xul|thumb {
 }
 
 xul|scrollbar xul|scrollbarbutton,
+xul|scrollbar xul|scrollbarbutton[sbattr="scrollbar-up-top"],
+xul|scrollbar xul|scrollbarbutton[sbattr="scrollbar-down-bottom"],
 xul|scrollbar xul|gripper {
   display: none !important; /* need !important to override forced display in LCARStrek */
 }

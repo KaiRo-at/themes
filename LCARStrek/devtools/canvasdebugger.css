@@ -48,6 +48,10 @@
   list-style-image: url("chrome://devtools/skin/images/profiler-stopwatch-tbutton.svg");
 }
 
+#import-snapshot {
+  list-style-image: url("images/import.svg");
+}
+
 /* Snapshots items */
 
 .snapshot-item-thumbnail {

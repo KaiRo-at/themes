@@ -49,7 +49,7 @@
 .frame-link .frame-link-line,
 .frame-link .frame-link-colon {
   color: var(--theme-highlight-orange);
-  display: block;
+/*  display: block;*/
 }
 
 .focused .frame-link .frame-link-filename,

@@ -510,7 +510,7 @@ html|input[type="checkbox"] {
 }
 
 /* Create a box to style as the checkbox */
-html|input[type="checkbox"] + html|label:before {
+html|input[type="checkbox"] + html|label::before {
   display: inline-block;
   content: "";
   vertical-align: middle;
@@ -525,7 +525,7 @@ xul|checkbox {
 }
 */
 /* xul|*.checkbox-check, */
-html|input[type="checkbox"] + html|label:before {
+html|input[type="checkbox"] + html|label::before {
   -moz-appearance: none;
   width: 23px;
   height: 23px;
@@ -538,7 +538,7 @@ html|input[type="checkbox"] + html|label:before {
 }
 
 /* xul|checkbox:not([disabled="true"]):hover > xul|*.checkbox-check, */
-html|input[type="checkbox"]:not(:disabled) + html|label:hover:before {
+html|input[type="checkbox"]:not(:disabled) + html|label:hover::before {
   border-color: var(--in-content-border-focus);
 }
 html|input[type="checkbox"]:not(:disabled) + html|label:hover {
@@ -551,18 +551,18 @@ xul|*.checkbox-check[checked] {
                     linear-gradient(#fff, rgba(255,255,255,0.8)) !important;
 }
 */
-html|input[type="checkbox"]:checked + html|label:before {
+html|input[type="checkbox"]:checked + html|label::before {
   background-image: url("chrome://global/skin/in-content/check.svg#check");
 }
 
 /*xul|checkbox[checked][disabled="true"] > xul|*.checkbox-check,*/
-html|input[type="checkbox"]:checked:disabled + html|label:before {
+html|input[type="checkbox"]:checked:disabled + html|label::before {
   background-image: url("chrome://global/skin/in-content/check.svg#check-disabled");
 }
-html|input[type="checkbox"]:not(:disabled) + html|label:hover:before {
+html|input[type="checkbox"]:checked:not(:disabled) + html|label:hover::before {
   background-image: url("chrome://global/skin/in-content/check.svg#check-hover");
 }
-html|input[type="checkbox"]:disabled + html|label:before {
+html|input[type="checkbox"]:disabled + html|label::before {
   border-color: var(--in-content-border-disabled);
 }
 html|input[type="checkbox"]:disabled + html|label {

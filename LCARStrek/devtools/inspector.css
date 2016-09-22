@@ -2,9 +2,55 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+:root {
+  --eyedropper-image: url(images/command-eyedropper.svg);
+}
+
 window {
   padding: 0;
 }
+
+/* Use flex layout for the Inspector toolbar. For now, it's done
+   specifically for the Inspector toolbar since general rule applied
+   on .devtools-toolbar breaks breadcrubs and also toolbars in other
+   panels (e.g. webconsole, debugger), these are not ready for HTML
+   layout yet. */
+div#inspector-toolbar.devtools-toolbar {
+  display: flex;
+  background-size: calc(100% - 30px);
+  background-image: linear-gradient(90deg,#9C9CFF,#9C9CFF);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+div#inspector-toolbar.devtools-toolbar .devtools-toolbar-spacer {
+  flex-grow: 1;
+  display: inline-block;
+}
+
+div#inspector-toolbar.devtools-toolbar::before,
+div#inspector-toolbar.devtools-toolbar::after {
+  display: flex;
+  content: "";
+  width: 12px;
+  min-height: 16px;
+  background-color: #FF9F00;
+}
+
+div#inspector-toolbar.devtools-toolbar::before {
+  border-radius: 8px 0px 0px 8px;
+  border: none;
+  border-inline-end: 3px solid black;
+  margin-inline-end: 2px;
+}
+
+div#inspector-toolbar.devtools-toolbar::after {
+  border-radius: 0px 8px 8px 0px;
+  border: none;
+  border-inline-start: 3px solid black;
+  margin-inline-start: 2px;
+}
+
 
 #inspector-toolbar {
   border-top: none;
@@ -40,6 +86,93 @@ window {
 
 #inspector-element-add-button {
   list-style-image: url("chrome://devtools/skin/images/add.svg");
+}
+
+button#inspector-element-add-button::before {
+  background-image: url("chrome://devtools/skin/images/add.svg");
+  list-style-image: url("chrome://devtools/skin/images/add.svg");
+  -moz-user-focus: normal;
+}
+
+#inspector-search {
+  flex: unset;
+}
+
+/* TODO: bug 1265759: should apply to .devtools-searchinput once all searchbox
+   is converted to html*/
+#inspector-searchbox {
+  width: 100%;
+}
+
+/* Eyedropper toolbar button */
+
+#inspector-eyedropper-toggle {
+  /* hidden by default, until we can check that the required highlighter exists */
+  display: none;
+}
+
+#inspector-eyedropper-toggle::before {
+  background-image: var(--eyedropper-image);
+}
+
+#inspector-sidebar-toggle-box {
+  line-height: initial;
+}
+
+button#sidebar-toggle {
+  height: 100%;
+}
+
+/* Set the minimum width for the side bar so, all tabs are
+  properly visible. The value can be decreased when bug 1281789
+  is fixed and the all-tabs-menu is available again. */
+#inspector-sidebar-container {
+  overflow: hidden;
+  min-width: 300px;
+  position: relative;
+}
+
+div#inspector-sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Sidebar tabs */
+
+.tabs .tabs-navigation {
+  height: auto !important;
+}
+
+.tabs .tabs-menu-item {
+  border-radius: 8px 8px 0px 0px;
+  margin-top: 2px;
+  border: 0 !important;
+  border-inline-end: 2px solid transparent !important;
+  border-bottom: none;
+  padding: 2px 4px 1px;
+  background-color: var(--theme-button-background);
+  color: var(--theme-button-color);
+  background-clip: padding-box;
+  height: auto !important;
+}
+
+.tabs .tabs-menu-item a {
+  color: inherit !important;
+  padding: 0 !important;
+  border: 0;
+}
+
+.tabs .tabs-menu-item:hover {
+  background-color: var(--theme-hover-background);
+  color: var(--theme-hover-color);
+}
+
+.tabs .tabs-menu-item:hover:active {
+  background-color: var(--theme-active-background);
+  color: var(--theme-active-color);
 }
 
 /* Tooltip: Events */

@@ -3,11 +3,18 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 
 <svg height="0" xmlns="http://www.w3.org/2000/svg">
-  <filter id="checked-icon-state">
+  <filter id="checked-icon-state"><!-- make every icon be fully black, but keep alpha channel -->
     <feColorMatrix in="SourceGraphic" type="matrix"
       values="0 0 0 0 0
               0 0 0 0 0
               0 0 0 0 0
+              0 0 0 1 0"/>
+ </filter>
+ <filter id="disabled-icon-state"><!-- move any icon to #8050B0 / rgb(128,80,176), keeping alpha channel -->
+    <feColorMatrix in="SourceGraphic" type="matrix" color-interpolation-filters="sRGB"
+      values="0 0 0 0 0.50
+              0 0 0 0 0.31
+              0 0 0 0 0.69
               0 0 0 1 0"/>
  </filter>
 

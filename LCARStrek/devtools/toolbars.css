@@ -13,9 +13,9 @@
   --searchbox-border-color: #9C9CFF;
   --searcbox-no-match-background-color: #400000;
   --searcbox-no-match-border-color: #FF0000;
-  --magnifying-glass-image: url(images/magnifying-glass-light.png);
-  --magnifying-glass-image-2x: url(images/magnifying-glass-light@2x.png);
-  --tool-options-image: url(images/tool-options.svg);
+  --magnifying-glass-image: url(images/search.svg);
+  --filter-image: url(images/filter.svg);
+  --tool-options-image: url(images/tool-options-tbutton.svg);
   --close-button-image: url(chrome://devtools/skin/images/close.svg);
   --icon-filter: invert(1);
   --dock-bottom-image: url(chrome://devtools/skin/images/dock-bottom.svg);
@@ -37,12 +37,17 @@
   --command-measure-image: url(images/command-measure.svg);
 }
 
+#toolbox-container {
+ padding-top: 3px;
+}
+
 /* Toolbars */
 .devtools-toolbar,
 .devtools-sidebar-tabs tabs {
 }
 
 .devtools-toolbar {
+  border-bottom: 3px solid var(--theme-body-background);
 }
 
 .devtools-toolbar checkbox {
@@ -86,7 +91,11 @@
 .devtools-button {
   margin: 0;
   padding: 0;
+  border: none;
+  border-radius: 3px;
   min-width: 16px;
+  height: 100%;
+  margin-inline-start: 2px;
   background: var(--theme-toolbar-background);
   color: var(--theme-body-color);
   /* The icon is absolutely positioned in the button using ::before */
@@ -129,6 +138,24 @@
   border: none;
 /*  min-height: 32px; */
   background-color: var(--theme-button-background);
+  color: var(--theme-button-color);
+  border-radius: 300px;
+}
+
+.devtools-button[standalone]:hover,
+.devtools-button[data-standalone]:hover,
+.devtools-toolbarbutton[standalone]:hover,
+.devtools-toolbarbutton[data-standalone]:hover {
+  background-color: var(--theme-hover-background);
+  color: var(--theme-hover-color);
+}
+
+.devtools-button[standalone]:hover:active,
+.devtools-button[data-standalone]:hover:active,
+.devtools-toolbarbutton[standalone]:hover:active,
+.devtools-toolbarbutton[data-standalone]:hover:active {
+  background-color: var(--theme-active-background);
+  color: var(--theme-active-color);
 }
 
 .devtools-toolbarbutton[standalone], .devtools-toolbarbutton[data-standalone] {
@@ -208,13 +235,47 @@
 /*  opacity: 0.5 !important;*/
 }
 
+.devtools-button[standalone]::before,
+.devtools-button[data-standalone]::before,
+.devtools-toolbarbutton[standalone]::before,
+.devtools-toolbarbutton[data-standalone]::before,
+.devtools-button:not([disabled]):hover::before,
+.devtools-button:not([disabled]):hover:active::before,
 .devtools-button[checked]:empty::before,
 .devtools-button[open]:empty::before,
-.devtools-toolbarbutton:not([label]):hover > image,
-.devtools-toolbarbutton:not([label]):hover:active > image,
-.devtools-toolbarbutton:not([label])[checked=true] > image,
-.devtools-toolbarbutton:not([label])[open=true] > image {
+.devtools-button[standalone] > image,
+.devtools-button[data-standalone] > image,
+.devtools-toolbarbutton[standalone] > image,
+.devtools-toolbarbutton[data-standalone] > image,
+.devtools-toolbarbutton:not([disabled]):hover > image,
+.devtools-toolbarbutton:not([disabled]):hover:active > image,
+.devtools-toolbarbutton[checked=true] > image,
+.devtools-toolbarbutton[open=true] > image {
   filter: url(images/filters.svg#checked-icon-state);
+}
+
+#toolbox-close:hover::before,
+#toolbox-close:hover:active::before,
+.toolbox-dock-button:hover::before,
+.toolbox-dock-button:hover:active::before,
+.command-button:hover::before,
+.command-button:hover:active::before,
+.command-button[checked=true]::before,
+.command-button[open=true]::before,
+#toolbox-close:hover > image,
+#toolbox-close:hover:active > image,
+.toolbox-dock-button:hover > image,
+.toolbox-dock-button:hover:active > image,
+.command-button:hover > image,
+.command-button:hover:active > image,
+.command-button[checked=true] > image,
+.command-button[open=true] > image {
+  filter: url(images/filters.svg#checked-icon-state);
+}
+
+.devtools-button[disabled]::before,
+.devtools-toolbarbutton[disabled] > image {
+  filter: url(images/filters.svg#disabled-icon-state);
 }
 
 /* Icon-and-text buttons */
@@ -290,6 +351,7 @@
 /* Text input */
 
 .devtools-textinput,
+.devtools-filterinput,
 .devtools-searchinput {
 /*  -moz-appearance: none;
   margin: 1 3px;
@@ -297,6 +359,8 @@
   border-radius: 2px;
   padding: 4px 6px;
   border-color: var(--theme-splitter-color);*/
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 :root[platform="mac"] .devtools-textinput,
@@ -414,12 +478,6 @@
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
-@media (min-resolution: 1.1dppx) {
-  .devtools-searchinput {
-    background-image: var(--magnifying-glass-image-2x);
-  }
-}
-
 /* Close button */
 
 .devtools-closebutton {
@@ -438,6 +496,11 @@
   background-repeat: no-repeat;
 }
 
+button#toolbox-close {
+  margin-inline-start: 2px;
+  margin-inline-end: 10px;
+}
+
 .devtools-closebutton > .toolbarbutton-icon {
   /* XXX Buttons have padding in widget/ that we don't want here but can't override with good CSS, so we must
      use evil CSS to give the impression of smaller content */
@@ -449,7 +512,8 @@
 
 /* In-tools sidebar */
 
-.devtools-sidebar-tabs {
+div.devtools-sidebar-tabs {
+  height: 100%;
 }
 
 .devtools-sidebar-tabs > tabpanels {
@@ -601,11 +665,16 @@
 .command-button {
   -moz-appearance: none;
   border: none;
-/*  padding: 0 8px; */
-/*  margin: 0; */
-  width: 16px;
+  margin-inline-start: 2px;
+  width: 20px;
+  height: 100%;
   position: relative;
   -moz-user-focus: normal;
+}
+
+button.toolbox-dock-button,
+button.command-button {
+  padding: 8px;
 }
 
 .command-button:hover {
@@ -628,21 +697,6 @@
   background-size: cover;
   background-position: 0 center;
   background-repeat: no-repeat;
-}
-
-#toolbox-close:hover::before,
-#toolbox-close:hover:active::before,
-.toolbox-dock-button:hover::before,
-.toolbox-dock-button:hover:active::before,
-.command-button:hover::before,
-.command-button:hover:active::before,
-.command-button[checked=true]::before,
-.command-button[open=true]::before,
-.command-button:hover > image,
-.command-button:hover:active > image,
-.command-button[checked=true] > image,
-.command-button[open=true] > image {
-  filter: url(images/filters.svg#checked-icon-state);
 }
 
 /* Toolbox buttons images */

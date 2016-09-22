@@ -70,8 +70,28 @@
 
 /* Recording buttons */
 
-#main-record-button {
-  list-style-image: url(images/profiler-stopwatch.svg);
+#recordings-controls {
+  background-color: #9C9CFF;
+}
+
+#clear-button::before {
+  background-image: var(--clear-icon-url);
+}
+
+#main-record-button::before {
+  background-image: url(images/profiler-stopwatch-tbutton.svg);
+}
+
+#import-button::before {
+  background-image: url(images/import.svg);
+}
+
+#main-record-button .button-icon, #import-button .button-icon {
+  margin: 0;
+}
+
+#main-record-button .button-text, #import-button .button-text {
+  display: none;
 }
 
 #main-record-button .button-icon {

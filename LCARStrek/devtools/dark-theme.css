@@ -6,6 +6,7 @@
 @import url(variables.css);
 @import url(common.css);
 @import url(toolbars.css);
+@import url(tooltips.css);
 
 body, html {
   padding: 0;
@@ -380,6 +381,7 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-textinput,
+.devtools-filterinput,
 .devtools-searchinput {
   background-color: #000000;
   color: #E7ADE7;
@@ -387,6 +389,7 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-textinput:focus,
+.devtools-filterinput:focus,
 .devtools-searchinput:focus {
   border-color: #008484;
 }

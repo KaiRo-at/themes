@@ -31,4 +31,6 @@
   <use id="check" xlink:href="#check-shape"/>
   <use id="check-inverted" xlink:href="#check-shape"/>
   <use id="check-native" xlink:href="#check-shape"/>
+  <use id="check-hover" xlink:href="#check-shape"/>
+  <use id="check-disabled" xlink:href="#check-shape"/>
 </svg>

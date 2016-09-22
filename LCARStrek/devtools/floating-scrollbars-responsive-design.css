@@ -42,6 +42,8 @@ scrollbar:not(:hover) thumb {
 }
 
 scrollbar scrollbarbutton,
+scrollbar scrollbarbutton[sbattr="scrollbar-up-top"],
+scrollbar scrollbarbutton[sbattr="scrollbar-down-bottom"],
 scrollbar gripper {
   display: none !important; /* need !important to override forced display in LCARStrek */
 }

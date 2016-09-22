@@ -13,7 +13,7 @@
   --panel-arrowcontent-padding: 6px;
   --panel-arrowcontent-background: #000000;
   --panel-arrowcontent-color: #FF9F00;
-  --panel-arrowcontent-border: 1px solid #FF9F00;
+  --panel-arrowcontent-border-color: #FF9F00;
 }
 
 /* ::::: menupopup ::::: */
@@ -57,7 +57,7 @@ panel[type="arrow"][side="right"] {
   color: var(--panel-arrowcontent-color);
   background: var(--panel-arrowcontent-background);
   background-clip: padding-box;
-  border: var(--panel-arrowcontent-border);
+  border: 1px solid var(--panel-arrowcontent-border-color);
   margin: 0px;
 }
 

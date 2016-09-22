@@ -44,15 +44,44 @@ html, body, #app, #memory-tool {
    */
   display: flex;
   align-items: center;
+  background-size: calc(100% - 30px);
+  background-image: linear-gradient(90deg,#9C9CFF,#9C9CFF);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.devtools-toolbar::before,
+.devtools-toolbar::after {
+  display: flex;
+  content: "";
+  width: 12px;
+  min-height: 16px;
+  height: 100%;
+  background-color: #FF9F00;
+}
+
+.devtools-toolbar::before {
+  border-radius: 8px 0px 0px 8px;
+  border: none;
+  border-inline-end: 3px solid black;
+  margin-inline-end: 2px;
+}
+
+.devtools-toolbar::after {
+  border-radius: 0px 8px 8px 0px;
+  border: none;
+  border-inline-start: 3px solid black;
+  margin-inline-start: 2px;
 }
 
 .devtools-toolbar > .toolbar-group:nth-of-type(1) {
   /**
    * We want this to be exactly at a `--sidebar-width` distance from the
-   * toolbar's start boundary. A `.devtools-toolbar` has a 3px start padding.
+   * toolbar's start boundary. We want the end border to be after the sidebar,
+   * and the startcap has to be subtracted.
    */
-  flex: 0 0 calc(var(--sidebar-width) - 4px);
-  border-inline-end: 1px solid var(--theme-splitter-color);
+  flex: 0 0 calc(var(--sidebar-width) - 2px - 15px);
+  border-inline-end: 3px solid var(--theme-toolbar-background);
   margin-inline-end: 5px;
   padding-right: 1px;
 }
@@ -68,6 +97,7 @@ html, body, #app, #memory-tool {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 100%;
 }
 
 .devtools-toolbar > .toolbar-group > label {
@@ -78,6 +108,7 @@ html, body, #app, #memory-tool {
   display: flex;
   align-items: center;
   margin-inline-end: 5px;
+  color: var(--theme-button-color);
 }
 
 .devtools-toolbar > .toolbar-group > label.display-by > span {
@@ -90,6 +121,8 @@ html, body, #app, #memory-tool {
 
 .devtools-toolbar > label {
   margin-inline-end: 5px;
+  flex: 1;
+  color: var(--theme-button-color);
 }
 
 #select-view {
@@ -116,6 +149,7 @@ html, body, #app, #memory-tool {
 #pop-view-button-label {
   border-inline-end: 1px solid var(--theme-splitter-color);
   padding-inline-end: 5px;
+  flex: none;
 }
 
 /**
@@ -125,10 +159,10 @@ html, body, #app, #memory-tool {
 #import-snapshot,
 #clear-snapshots {
   -moz-box-align: center;
-  flex-grow: 1;
+/*  flex-grow: 1;
   padding: 1px;
   margin: 2px 1px;
-  min-width: unset;
+  min-width: unset;*/
 }
 
 .spacer {
@@ -137,7 +171,8 @@ html, body, #app, #memory-tool {
 
 #filter {
   align-self: stretch;
-  margin: 2px;
+/*  margin: 2px; */
+  font: inherit;
 }
 
 /**
@@ -638,4 +673,82 @@ text {
 
 text {
   fill: var(--theme-body-color-alt);
+}
+
+
+
+/* Hide the actual checkbox */
+input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* Create a box to style as the checkbox */
+input[type="checkbox"] + span::before {
+  display: inline-block;
+  content: "";
+  vertical-align: -3px;
+}
+
+input[type="checkbox"] + span {
+  line-height: 0px;
+}
+
+input[type="checkbox"] + span::before {
+  -moz-appearance: none;
+  width: 1em;
+  height: 1em;
+  border-radius: 0;
+  border: 1px solid var(--theme-body-color);
+  -moz-margin-end: 10px;
+  background-color: var(--theme-toolbar-background);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:not(:disabled) + span:hover::before {
+  border-color: var(--theme-hover-background);
+}
+input[type="checkbox"]:not(:disabled) + span:hover {
+  color: var(--theme-hover-background);
+}
+input[type="checkbox"]:checked + span::before {
+  background-image: url("chrome://global/skin/in-content/check.svg#check");
+}
+
+input[type="checkbox"]:checked:disabled + span::before {
+  background-image: url("chrome://global/skin/in-content/check.svg#check-disabled");
+}
+input[type="checkbox"]:checked:not(:disabled) + span:hover::before {
+  background-image: url("chrome://global/skin/in-content/check.svg#check-hover");
+}
+input[type="checkbox"]:disabled + span::before {
+  border-color: var(--theme-body-color-inactive);
+}
+input[type="checkbox"]:disabled + span {
+  color: var(--theme-body-color-inactive);
+}
+
+select {
+  border: 1px solid var(--theme-body-color);
+  background-color: var(--theme-toolbar-background);
+  color: var(--theme-body-color);
+  background-image: url("chrome://global/skin/arrow/arrow-down.gif");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 2px) center;
+  border-radius: 3px;
+  padding: 1px;
+  margin: 1px;
+  font: inherit;
+}
+select:hover {
+  background-color: var(--theme-hover-background);
+  color: var(--theme-hover-color);
+  background-image: url("chrome://global/skin/arrow/arrow-down-hover.gif");
+}
+select:hover:active {
+  background-color: var(--theme-active-background);
+  color: var(--theme-active-color);
 }
