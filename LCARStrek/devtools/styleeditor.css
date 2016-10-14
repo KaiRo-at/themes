@@ -217,7 +217,7 @@ li.linked-file-error .stylesheet-rule-count {
 
 .stylesheet-more > h3 {
   font-size: 11px;
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .devtools-searchinput,

@@ -17,8 +17,8 @@ a:link, a:visited, a:active {
   color: #FFCF00;
   background-color: #000000;
   text-decoration: none;
-  -moz-padding-start: 1px;
-  -moz-padding-end: 1px;
+  padding-inline-start: 1px;
+  padding-inline-end: 1px;
 }
 
 a:hover {
@@ -33,8 +33,8 @@ hr {
 div#outside {
   text-align: justify;
   width: 90%;
-  -moz-margin-start: 5%;
-  -moz-margin-end: 5%;
+  margin-inline-start: 5%;
+  margin-inline-end: 5%;
 }
 
 div#plugs {
@@ -62,7 +62,7 @@ div.plugname {
   background-color: #E7ADE7;
   color: #000000;
   padding: 2px;
-  -moz-padding-start: 12px;
+  padding-inline-start: 12px;
   margin-top: 2em;
   margin-bottom: 1em;
   font-size: 16px;

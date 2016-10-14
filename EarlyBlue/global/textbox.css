@@ -16,7 +16,7 @@ textbox {
   margin: 2px 3px;
   border: 1px inset #CCD0DD;
   padding: 1px 0px;
-  -moz-padding-start: 2px;
+  padding-inline-start: 2px;
   background-color: #FFFFFF;
   color: #000000;
   min-height: 19px;

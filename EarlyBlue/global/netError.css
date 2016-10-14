@@ -28,7 +28,7 @@ h1 {
 
 ul, ol {
   margin: 0;
-  -moz-margin-start: 1.5em;
+  margin-inline-start: 1.5em;
   padding: 0;
 }
 
@@ -47,7 +47,7 @@ ul {
   margin: 4em auto;
   border: 1px solid #666699;
   padding: 3em;
-  -moz-padding-start: 30px;
+  padding-inline-start: 30px;
   background: url("chrome://global/skin/icons/alert-exclam.gif") left 0 no-repeat #9999CC;
   background-origin: content-box;
 }
@@ -56,16 +56,16 @@ ul {
   background-image: url("chrome://global/skin/icons/sslWarning.png");
 }
 
-#errorPageContainer:-moz-dir(rtl) {
+#errorPageContainer:dir(rtl) {
   background-position: right 0;
 }
 
 #errorTitle {
-  -moz-margin-start: 64px;
+  margin-inline-start: 64px;
 }
 
 #errorLongContent {
-  -moz-margin-start: 64px;
+  margin-inline-start: 64px;
 }
 
 #errorShortDesc > p {
@@ -77,7 +77,7 @@ ul {
 }
 
 #errorLongDesc {
-  -moz-padding-end: 3em;
+  padding-inline-end: 3em;
   font-size: 110%;
 }
 
@@ -86,18 +86,18 @@ ul {
 
 #errorTryAgain {
   margin-top: 2em;
-  -moz-margin-start: 64px;
+  margin-inline-start: 64px;
 }
 
 #brand {
   position: absolute;
   right: 0;
   bottom: -1.5em;
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
   opacity: .4;
 }
 
-#brand:-moz-dir(rtl) {
+#brand:dir(rtl) {
   right: auto;
   left: 0;
 }

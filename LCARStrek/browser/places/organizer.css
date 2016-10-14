@@ -64,7 +64,7 @@
 
 #placesMenu > .toolbar-box > .toolbar-holder {
   background-color: transparent;
-  -moz-padding-end: 0;
+  padding-inline-end: 0;
 }
 
 /* organize, view and maintenance buttons icons */
@@ -115,7 +115,7 @@
 }
 
 #infoBoxExpanderLabel {
-  -moz-padding-start: 2px;
+  padding-inline-start: 2px;
 }
 
 /**
@@ -131,6 +131,6 @@
   border: none;
   height: 24px; /* match back/forward buttons */
   border-radius: 0;
-  -moz-padding-start: 5px;
-  -moz-padding-end: 5px;
+  padding-inline-start: 5px;
+  padding-inline-end: 5px;
 }

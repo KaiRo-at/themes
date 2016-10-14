@@ -225,7 +225,7 @@ toolbar[iconsize="small"] > #button-abdelete:not([disabled="true"]):hover:active
 
 .CardViewHeading {
   padding: 1px;
-  -moz-padding-start: 5px;
+  padding-inline-start: 5px;
   margin: 0 0 1px;
   background-color: #008484;
   color: #000000;
@@ -234,14 +234,14 @@ toolbar[iconsize="small"] > #button-abdelete:not([disabled="true"]):hover:active
 }
 
 #cvBuddyIcon {
-  -moz-padding-start: 20px;
+  padding-inline-start: 20px;
   padding-top: 2px;
 }
 
 .CardViewText,
 .CardViewLink {
-  -moz-padding-start: 20px;
-  -moz-padding-end: 2px;
+  padding-inline-start: 20px;
+  padding-inline-end: 2px;
   min-width: 30px;
   margin: 0px;
 }
@@ -257,8 +257,8 @@ toolbar[iconsize="small"] > #button-abdelete:not([disabled="true"]):hover:active
 }
 
 html|a {
-  -moz-padding-start: 0px;
-  -moz-padding-end: 2px;
+  padding-inline-start: 0px;
+  padding-inline-end: 2px;
   border: none !important;
 }
 

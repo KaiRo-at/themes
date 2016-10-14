@@ -25,7 +25,7 @@ tabpanels {
 
 .tab-icon {
   margin-top: 1px;
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
   width: 16px;
   height: 16px;
 }
@@ -41,7 +41,7 @@ tabpanels {
 }
 
 .tabbrowser-tab:first-of-type {
-  -moz-margin-start: 2px;
+  margin-inline-start: 2px;
 }
 
 tabbrowser > tabbox > tabpanels {
@@ -131,7 +131,7 @@ tabbrowser > tabbox > tabpanels {
 .tab-drop-indicator-bar {
   height: 11px;
   margin-top: -11px;
-  -moz-margin-start: -6px;
+  margin-inline-start: -6px;
   position: relative;
 }
 

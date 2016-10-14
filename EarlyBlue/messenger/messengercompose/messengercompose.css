@@ -134,28 +134,28 @@ toolbar[iconsize="small"] > #button-save[disabled="true"] {
 treechildren::-moz-tree-cell-text(default-match) {
   margin-top: 2px;
   margin-bottom: 2px;
-  -moz-margin-start: 15px;
-  -moz-margin-end: -3px;
+  margin-inline-start: 15px;
+  margin-inline-end: -3px;
   border: none;
 }
 
 treechildren::-moz-tree-image(local-abook) {
   margin-top: 2px;
   margin-bottom: 2px;
-  -moz-margin-start: 4px;
-  -moz-margin-end: -1px;
+  margin-inline-start: 4px;
+  margin-inline-end: -1px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/addrbook.gif");
 }
 
 treechildren::-moz-tree-image(remote-abook) {
   margin: 2px;
-  -moz-margin-end: -3px;
+  margin-inline-end: -3px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook.gif");
 }
 
 treechildren::-moz-tree-image(remote-err) {
   margin: 2px;
-  -moz-margin-end: -3px;
+  margin-inline-end: -3px;
   list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook-error.gif");
 }
 
@@ -168,15 +168,15 @@ treechildren::-moz-tree-image(remote-err) {
 
 #addresses-box > hbox > label,
 #attachments-box > label {
-  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
 }
 
 #msgIdentity{
-  -moz-margin-end: 0px;
+  margin-inline-end: 0px;
 }
 
 #msgSubject {
-  -moz-margin-end: 0px;
+  margin-inline-end: 0px;
 }
 
 #attachmentBucket {
@@ -188,8 +188,8 @@ treechildren::-moz-tree-image(remote-err) {
 }
 
 treechildren::-moz-tree-image(subscribed-news) {
-  -moz-margin-start: 2px;
-  -moz-margin-end: -3px;
+  margin-inline-start: 2px;
+  margin-inline-end: -3px;
   list-style-image: url("chrome://messenger/skin/icons/folder-newsgroup.png");
 }
 
@@ -214,7 +214,7 @@ treechildren::-moz-tree-image(subscribed-news) {
 }
 
 .menulist-compact > .menulist-label-box > .menulist-icon {
-  -moz-margin-start: 2px;
+  margin-inline-start: 2px;
 }
 
 .menulist-compact[open="true"] {

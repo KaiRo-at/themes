@@ -15,8 +15,8 @@ groupbox {
   border: 2px groove #CCD0DD;
   padding-top: 3px;
   padding-bottom: 5px;
-  -moz-padding-start: 5px;
-  -moz-padding-end: 3px;
+  padding-inline-start: 5px;
+  padding-inline-end: 3px;
 }
 
 .groupbox-body {
@@ -32,6 +32,6 @@ caption {
 .caption-text {
   margin-top: 0;
   margin-bottom: 0;
-  -moz-margin-start: 1px;
-  -moz-margin-end: 2px;
+  margin-inline-start: 1px;
+  margin-inline-end: 2px;
 }

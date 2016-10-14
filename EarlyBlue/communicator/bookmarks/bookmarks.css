@@ -10,7 +10,7 @@
 
 treechildren::-moz-tree-image(Name),
 treechildren::-moz-tree-image(title) {
-  -moz-padding-end: 2px;
+  padding-inline-end: 2px;
 }
 
 .bookmark-item,

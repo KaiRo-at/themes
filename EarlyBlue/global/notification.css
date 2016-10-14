@@ -26,8 +26,8 @@ notification[type="critical"] {
   height: 16px;
   margin-top: 0px;
   margin-bottom: 0px;
-  -moz-margin-start: 6px;
-  -moz-margin-end: 1px;
+  margin-inline-start: 6px;
+  margin-inline-end: 1px;
 }
 
 /* Default icons for notifications */
@@ -51,7 +51,7 @@ notification[type="critical"] {
 }
 
 .messageCloseButton > .toolbarbutton-icon {
-  -moz-margin-start: 5px;
+  margin-inline-start: 5px;
 }
 
 /* Popup notification */
@@ -78,7 +78,7 @@ notification[type="critical"] {
 }
 
 .popup-notification-closebutton {
-  -moz-margin-end: -5px;
+  margin-inline-end: -5px;
   margin-top: -5px;
 }
 

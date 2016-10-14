@@ -51,7 +51,7 @@
 
 #component-bar {
   -moz-box-align: stretch;
-  -moz-padding-start: 0px;
+  padding-inline-start: 0px;
 }
 
 #component-bar + statusbarpanel {

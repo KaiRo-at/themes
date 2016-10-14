@@ -61,60 +61,47 @@ findbar[position="top"][hidden] {
 
 /* Buttons */
 
-.findbar-find-previous,
-.findbar-find-next {
-  list-style-image: url("chrome://global/skin/icons/find-arrows.png");
-}
-
 .findbar-find-previous:not([disabled]):active,
 .findbar-find-next:not([disabled]):active {
 }
 
 .findbar-find-previous {
-  -moz-image-region: rect(0, 12px, 9px, 0);
+  list-style-image: url(chrome://global/skin/icons/find-arrows.svg#glyph-find-previous);
 }
 
 .findbar-find-next {
-  -moz-image-region: rect(0, 24px, 9px, 12px);
+  list-style-image: url(chrome://global/skin/icons/find-arrows.svg#glyph-find-next);
 }
 
 .findbar-find-previous,
 .findbar-find-previous:not([disabled]):active {
 }
 
-.findbar-find-previous[disabled="true"] {
-  -moz-image-region: rect(9px, 12px, 18px, 0);
+.findbar-find-previous[disabled="true"] > .toolbarbutton-icon,
+.findbar-find-next[disabled="true"] > .toolbarbutton-icon {
+  filter: url(icons/filters.svg#disabled-icon-state);
 }
 
-.findbar-find-next[disabled="true"] {
-  -moz-image-region: rect(9px, 24px, 18px, 12px);
-}
-
-.findbar-find-previous:not([disabled]):hover,
-.findbar-find-previous:not([disabled]):active {
-  -moz-image-region: rect(18px, 12px, 27px, 0);
-}
-
-.findbar-find-next:not([disabled]):hover,
-.findbar-find-next:not([disabled]):active {
-  -moz-image-region: rect(18px, 24px, 27px, 12px);
+.findbar-find-previous:not([disabled]):hover > .toolbarbutton-icon,
+.findbar-find-previous:not([disabled]):active > .toolbarbutton-icon,
+.findbar-find-next:not([disabled]):hover > .toolbarbutton-icon,
+.findbar-find-next:not([disabled]):active > .toolbarbutton-icon {
+  filter: url(icons/filters.svg#active-icon-state);
 }
 
 .findbar-find-previous > .toolbarbutton-icon,
 .findbar-find-next > .toolbarbutton-icon {
 }
 
-.findbar-find-previous[disabled="true"] > .toolbarbutton-icon,
-.findbar-find-next[disabled="true"] > .toolbarbutton-icon {
-}
-
 .findbar-highlight,
-.findbar-case-sensitive {
-  -moz-margin-start: 5px;
+.findbar-case-sensitive,
+.findbar-entire-word {
+  margin-inline-start: 5px;
 }
 
 .findbar-highlight > .toolbarbutton-icon,
-.findbar-case-sensitive > .toolbarbutton-icon {
+.findbar-case-sensitive > .toolbarbutton-icon,
+.findbar-entire-word > .toolbarbutton-icon {
   display: none;
 }
 
@@ -122,7 +109,7 @@ findbar[position="top"][hidden] {
 .found-matches {
   color: #A09090;
   margin: 0 !important;
-  -moz-margin-start: 12px !important;
+  margin-inline-start: 12px !important;
 }
 
 .find-status-icon[status="pending"] {

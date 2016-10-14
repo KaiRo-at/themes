@@ -12,7 +12,7 @@
 }
 
 .tabbrowser-tabs[overflow="true"] {
-  -moz-padding-start: 0px;
+  padding-inline-start: 0px;
 }
 
 /**
@@ -33,7 +33,7 @@
 
 .tab-icon-image {
   margin-top: 1px;
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
   width: 16px;
   height: 16px;
 }
@@ -86,7 +86,7 @@ tabpanels {
  * In-tab close button
  */
 .tab-close-button > .toolbarbutton-icon {
-  -moz-margin-end: 0px !important;
+  margin-inline-end: 0px !important;
   margin-top: 1px;
 }
 

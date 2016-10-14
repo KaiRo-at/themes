@@ -11,7 +11,7 @@
 
 #tabs {
   background: #000000;
-  -moz-padding-end: 3px;
+  padding-inline-end: 3px;
 }
 
 #toolbox-tabs {

@@ -26,7 +26,7 @@ button {
   }
   #errorTitle {
     background: none;
-    -moz-padding-start: 0 !important;
+    padding-inline-start: 0 !important;
   }
   button {
     width: auto !important;

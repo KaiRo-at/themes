@@ -31,7 +31,7 @@ checkbox {
 }
 
 .checkbox-icon[src] {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .checkbox-label {
@@ -67,7 +67,7 @@ checkbox[disabled="true"] {
 }
 
 checkbox > .checkbox-check {
-  -moz-margin-end: 4px;
+  margin-inline-end: 4px;
 }
 
 checkbox:hover:active > .checkbox-check,

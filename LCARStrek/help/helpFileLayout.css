@@ -88,8 +88,8 @@ li {
 .menuPath {
   background: #c4d0f4; /* bluish color */
   color: inherit;
-  -moz-padding-start:  1px; /* else bgcolor ends at last char - no space */
-  -moz-padding-end: 1px;
+  padding-inline-start:  1px; /* else bgcolor ends at last char - no space */
+  padding-inline-end: 1px;
 }
 
 table {

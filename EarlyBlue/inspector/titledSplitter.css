@@ -49,8 +49,8 @@ box[orient="vertical"] > .titled-splitter {
   border-style: inset;
   padding-top: 3px;
   padding-bottom: 1px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 1px;
+  padding-inline-start: 3px;
+  padding-inline-end: 1px;
 }
 
 

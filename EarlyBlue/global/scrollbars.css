@@ -83,8 +83,8 @@ scrollbarbutton[active="true"] {
   border-style: inset;
   padding-top: 2px;
   padding-bottom: 0px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 2px;
+  padding-inline-end: 0px;
 }
 
 /* XXX - scrollbar.xml always grabs the OS settings and we don't want that */

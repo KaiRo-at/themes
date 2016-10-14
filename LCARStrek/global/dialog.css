@@ -46,8 +46,8 @@ dialogheader {
   border-bottom: 1px solid #9C9CFF;
   padding-top: 12px;
   padding-bottom: 12px;
-  -moz-padding-start: 25px;
-  -moz-padding-end: 5px;
+  padding-inline-start: 25px;
+  padding-inline-end: 5px;
   background-color: #000000;
   color: #FF9F00;
 }
@@ -58,5 +58,5 @@ dialogheader {
 }
 
 .header-large > .dialogheader-description {
-  -moz-margin-start: 12px !important;
+  margin-inline-start: 12px !important;
 }

@@ -23,12 +23,12 @@ button {
   border: 1px solid transparent;
   padding-top: 1px;
   padding-bottom: 2px;
-  -moz-padding-start: .5em;
-  -moz-padding-end: calc(.5em + 1px);
+  padding-inline-start: .5em;
+  padding-inline-end: calc(.5em + 1px);
 }
 
 .button-icon {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .button-text {
@@ -79,8 +79,8 @@ button[open="true"] > .button-box,
 button[checked="true"] > .button-box {
   padding-top: 2px;
   padding-bottom: 1px;
-  -moz-padding-start: calc(.5em + 1px);
-  -moz-padding-end: .5em;
+  padding-inline-start: calc(.5em + 1px);
+  padding-inline-end: .5em;
 }
 
 /* .......... disabled state .......... */
@@ -95,8 +95,8 @@ button[disabled="true"]:hover:active {
 button[disabled="true"] > .button-box {
   padding-top: 1px !important;
   padding-bottom: 2px !important;
-  -moz-padding-start: .5em !important;
-  -moz-padding-end: calc(.5em + 1px) !important;
+  padding-inline-start: .5em !important;
+  padding-inline-end: calc(.5em + 1px) !important;
 }
 
 /* ::::: menu/menu-button buttons ::::: */
@@ -114,8 +114,8 @@ button[type="menu-button"]:hover:active > .button-menubutton-button > .button-bo
 button[type="menu-button"][open="true"] > .button-menubutton-button > .button-box {
   padding-top: 2px;
   padding-bottom: 1px;
-  -moz-padding-start: calc(.5em + 1px);
-  -moz-padding-end: .5em;
+  padding-inline-start: calc(.5em + 1px);
+  padding-inline-end: .5em;
 }
 
 button[type="menu-button"]:hover > .button-menubutton-button,
@@ -127,7 +127,7 @@ button[type="menu-button"][open="true"] > .button-menubutton-button {
 .button-menu-dropmarker,
 .button-menubutton-dropmarker {
   margin: 2px;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
   width: 11px;
   height: 11px;
   background-color: transparent;
@@ -183,8 +183,8 @@ toolbaritem > button,
 toolbaritem > button > .button-box,
 #throbber-box > button > .button-box {
   border-radius: 3px;
-  -moz-padding-start: 0;
-  -moz-padding-end: 1px;
+  padding-inline-start: 0;
+  padding-inline-end: 1px;
 }
 
 toolbaritem > button > button:hover:active > .button-box,
@@ -193,12 +193,12 @@ toolbaritem > button > button[checked="true"] > .button-box,
 #throbber-box > button:hover:active > .button-box,
 #throbber-box > button > button[open="true"] > .button-box,
 #throbber-box > button > button[checked="true"] > .button-box {
-  -moz-padding-start: 1px;
-  -moz-padding-end: 0;
+  padding-inline-start: 1px;
+  padding-inline-end: 0;
 }
 
 toolbaritem > button > button[disabled="true"] > .button-box,
 #throbber-box > button[disabled="true"] > .button-box {
-  -moz-padding-start: 0 !important;
-  -moz-padding-end: 1px !important;
+  padding-inline-start: 0 !important;
+  padding-inline-end: 1px !important;
 }

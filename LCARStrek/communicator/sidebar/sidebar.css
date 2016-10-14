@@ -17,7 +17,7 @@
 }
 
 #sidebar-splitter {
-  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
 }
 
 #sidebar-splitter:not([state="collapsed"]) {
@@ -32,7 +32,7 @@
 #sidebar-panels {
   background-color: #000000;
   border-radius: 0 5px 0 0;
-  -moz-padding-end: 3px;
+  padding-inline-end: 3px;
 }
 
 #sidebar-splitter:not([state="collapsed"]):-moz-locale-dir(rtl),
@@ -47,8 +47,8 @@
   color: #000000;
   background-color: #9C9CFF;
   padding: 0px 2px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 8px;
+  padding-inline-start: 3px;
+  padding-inline-end: 8px;
   height: auto;
   overflow-x: hidden;
 }
@@ -96,7 +96,7 @@
 }
 
 .text-panel-loading[loading="false"] {
-  -moz-margin-start: 11px;
+  margin-inline-start: 11px;
 }
 
 .image-panel-loading {

@@ -13,8 +13,8 @@ dropmarker:hover:active {
   border: 1px inset #CCD0DD;
   padding-top: 2px;
   padding-bottom: 0;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0;
+  padding-inline-start: 2px;
+  padding-inline-end: 0;
 }
 
 dropmarker[disabled="true"] {

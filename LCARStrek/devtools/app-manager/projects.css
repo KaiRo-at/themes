@@ -368,8 +368,8 @@ strong {
   border-left-width: 0;
   padding-top: 1px;
   padding-bottom: 2px;
-  -moz-padding-start: .5em;
-  -moz-padding-end: calc(.5em + 1px);
+  padding-inline-start: .5em;
+  padding-inline-end: calc(.5em + 1px);
   border: none;
   border-radius: 300px;
   cursor: pointer;
@@ -380,8 +380,8 @@ strong {
 .project-buttons > button:hover:active {
   padding-top: 2px;
   padding-bottom: 1px;
-  -moz-padding-start: calc(.5em + 1px);
-  -moz-padding-end: .5em;
+  padding-inline-start: calc(.5em + 1px);
+  padding-inline-end: .5em;
 }
 
 .project-buttons > button:not([disabled]):hover {
@@ -516,8 +516,8 @@ strong {
   border-right-width: 0;
   padding-top: 1px;
   padding-bottom: 2px;
-  -moz-padding-start: .5em;
-  -moz-padding-end: calc(.5em + 1px);
+  padding-inline-start: .5em;
+  padding-inline-end: calc(.5em + 1px);
   border: none;
   border-radius: 300px;
   cursor: pointer;
@@ -529,8 +529,8 @@ strong {
 .manifest-header > button:hover:active {
   padding-top: 2px;
   padding-bottom: 1px;
-  -moz-padding-start: calc(.5em + 1px);
-  -moz-padding-end: .5em;
+  padding-inline-start: calc(.5em + 1px);
+  padding-inline-end: .5em;
 }
 
 .manifest-header > button:not([disabled]):hover {

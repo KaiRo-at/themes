@@ -33,7 +33,7 @@ radio {
 }
 
 .radio-icon[src] {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .radio-label {

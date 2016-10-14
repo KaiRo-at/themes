@@ -33,7 +33,7 @@ menulist {
 .menulist-description {
   font-style: italic;
   color: #808080;
-  -moz-margin-start: 1ex !important;
+  margin-inline-start: 1ex !important;
 }
 
 menulist:focus > .menulist-label-box {
@@ -65,8 +65,8 @@ menulist[open="true"] > .menulist-dropmarker {
   border: 1px inset #CCD0DD;
   padding-top: 2px;
   padding-bottom: 0px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 2px;
+  padding-inline-end: 0px;
 }
 
 /* ::::: editable menulists ::::: */

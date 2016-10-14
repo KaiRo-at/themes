@@ -12,11 +12,11 @@
 #tabsListHeading {
   font-size: 140%;
   font-weight: bold;
-  -moz-margin-start: 40px;
+  margin-inline-start: 40px;
 }
 
 richlistitem {
-  -moz-margin-end: 2em;
+  margin-inline-end: 2em;
 }
 
 richlistitem[selected="true"],
@@ -29,7 +29,7 @@ richlistitem[type="tab"] {
   border: #9C9CFF 1px solid !important;
   padding: 2px 5px;
   margin-bottom: 4px;
-  -moz-margin-start: 4em;
+  margin-inline-start: 4em;
   border-radius: 6px;
   background-color: #402800;
   width: 44em;
@@ -43,7 +43,7 @@ richlistitem[type="tab"][selected="true"] {
 richlistitem[type="client"] {
   min-height: 2em;
   color: #FF9F00;
-  -moz-margin-start: 2em;
+  margin-inline-start: 2em;
   margin-top: 2px;
   margin-bottom: 3px;
   width: 42em;
@@ -75,6 +75,6 @@ richlistitem[type="client"] {
 }
 
 .tabIcon {
-  -moz-padding-start: 2px;
+  padding-inline-start: 2px;
   padding-top: 2px;
 }

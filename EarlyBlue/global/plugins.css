@@ -24,8 +24,8 @@ hr {
 div#outside {
  text-align: justify;
  width: 90%;
- -moz-margin-start: 5%;
- -moz-margin-end: 5%;
+ margin-inline-start: 5%;
+ margin-inline-end: 5%;
 }
 
 div#plugs {

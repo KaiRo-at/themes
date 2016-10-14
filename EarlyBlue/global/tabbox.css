@@ -60,8 +60,8 @@ tab:-moz-focusring > .tab-middle {
 
 /*
 tab:first-of-type[visuallyselected="true"] {
-  -moz-padding-end: 5px;
-  -moz-padding-start: 5px;
+  padding-inline-end: 5px;
+  padding-inline-start: 5px;
 }
 */
 

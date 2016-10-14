@@ -67,8 +67,8 @@ tree[seltype="text"] > treechildren::-moz-tree-row {
 treechildren::-moz-tree-cell {
   padding-top: 0px;
   padding-bottom: 0px;
-  -moz-padding-start: 1px;
-  -moz-padding-end: 1px;
+  padding-inline-start: 1px;
+  padding-inline-end: 1px;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell-text,
@@ -86,8 +86,8 @@ tree[seltype="text"] > treechildren::-moz-tree-cell-text {
   border: 1px solid transparent;
   padding-top: 0px;
   padding-bottom: 0px;
-  -moz-padding-start: 1px;
-  -moz-padding-end: 1px;
+  padding-inline-start: 1px;
+  padding-inline-end: 1px;
 }
 
 treechildren::-moz-tree-cell-text(selected) {
@@ -181,7 +181,7 @@ treechildren::-moz-tree-drop-feedback {
   background-color: #008484;
   width: 50px;
   height: 2px;
-  -moz-margin-start: 5px;
+  margin-inline-start: 5px;
 }
 
 treechildren::-moz-tree-drop-feedback(selected) {
@@ -264,8 +264,8 @@ treecol:hover:active {
   border: 1px solid #FFCF00;
   padding-top: 2px;
   padding-bottom: 0px;
-  -moz-padding-start: 5px;
-  -moz-padding-end: 3px;
+  padding-inline-start: 5px;
+  padding-inline-end: 3px;
 }
 
 treecolpicker:hover {
@@ -280,8 +280,8 @@ treecolpicker:hover:active {
 .treecol-image:hover:active {
   padding-top: 2px;
   padding-bottom: 0px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 2px;
+  padding-inline-end: 0px;
 }
 
 /* ::::: column drag and drop styles ::::: */
@@ -303,11 +303,11 @@ treecol[insertbefore="true"]:-moz-locale-dir(ltr) {
 }
 
 treechildren::-moz-tree-column(insertbefore) {
-  -moz-border-start: 1px solid #FFCF00;
+  border-inline-start: 1px solid #FFCF00;
 }
 
 treechildren::-moz-tree-column(insertafter) {
-  -moz-border-end: 1px solid #FFCF00;
+  border-inline-end: 1px solid #FFCF00;
 }
 
 /* ::::: sort direction indicator :::::  */
@@ -339,7 +339,7 @@ treecolpicker:hover:active > .tree-columnpicker-icon {
 /* ::::: twisty :::::  */
 
 treechildren::-moz-tree-twisty {
-  -moz-padding-end: 1px;
+  padding-inline-end: 1px;
   padding-top: 0px;
   width: 11px; /* The image's width is 11 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty.svg#clsd");
@@ -395,6 +395,6 @@ treechildren::-moz-tree-cell-text(selected, editing) {
 .tree-input {
   border: 1px solid #9C9CFF;
   margin: 0;
-  -moz-margin-start: -4px;
+  margin-inline-start: -4px;
   padding: 1px;
 }

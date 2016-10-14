@@ -176,8 +176,8 @@
 }
 
 #toolbox-buttons .devtools-toolbarbutton[text-as-image] {
-  -moz-padding-start: 5px;
-  -moz-padding-end: 5px;
+  padding-inline-start: 5px;
+  padding-inline-end: 5px;
   min-width: inherit;
 }
 
@@ -190,7 +190,7 @@
 }
 
 .devtools-toolbar .devtools-toolbarbutton {
-  -moz-margin-start: 2px;
+  margin-inline-start: 2px;
 }
 
 .devtools-toolbarbutton > .toolbarbutton-icon {
@@ -372,8 +372,8 @@
 /*  margin-top: 1px;
   margin-bottom: 1px;
   padding: 0;*/
-  -moz-padding-start: 22px;
-  -moz-padding-end: 4px;
+  padding-inline-start: 22px;
+  padding-inline-end: 4px;
   background-image: var(--magnifying-glass-image);
   background-position: 8px center;
   background-size: 11px 11px;
@@ -382,7 +382,7 @@
 }
 
 .devtools-searchinput:-moz-locale-dir(rtl),
-.devtools-searchinput:-moz-dir(rtl) {
+.devtools-searchinput:dir(rtl) {
   background-position: calc(100% - 8px) center;
 }
 
@@ -424,7 +424,7 @@
 .devtools-rule-searchbox[filled] {
   background-color: var(--searchbox-background-color);
   border-color: var(--searchbox-border-color);
-  -moz-padding-end: 23px;
+  padding-inline-end: 23px;
 }
 
 .devtools-style-searchbox-no-match {
@@ -449,7 +449,7 @@
   background-color: transparent;
 }
 
-.devtools-searchinput-clear:-moz-dir(rtl) {
+.devtools-searchinput-clear:dir(rtl) {
   right: unset;
   left: 7px;
 }
@@ -533,7 +533,7 @@ div.devtools-sidebar-tabs {
   padding: 0 4px;
   margin: 0;
   border-width: 0 0 1px 0;
-  -moz-border-start-width: 1px;
+  border-inline-start-width: 1px;
   border-style: solid;*/
 }
 
@@ -559,11 +559,11 @@ div.devtools-sidebar-tabs {
 }
 
 .devtools-sidebar-tabs tabs > tab:first-of-type {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 .devtools-sidebar-tabs tabs > tab:last-of-type {
-  -moz-border-end-width: 0;
+  border-inline-end-width: 0;
 }
 
 .devtools-sidebar-tabs tabs > tab {
@@ -784,9 +784,9 @@ button.command-button {
   max-width: 100px;
   color: #000000;
   margin: 0;
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
   padding: 1px;
-  -moz-padding-start: 3px;
+  padding-inline-start: 3px;
   background-color: #C09070;
   border-radius: 8px 8px 0 0;
 }
@@ -827,8 +827,8 @@ button.command-button {
 }
 
 .devtools-tab > image {
-  -moz-margin-end: 0;
-  -moz-margin-start: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
 }
 
 #toolbox-picker-container {
@@ -846,7 +846,7 @@ button.command-button {
 }
 
 #toolbox-tab-options > image {
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
 }
 
 .devtools-tab:not([highlighted]) > .highlighted-icon,
@@ -876,7 +876,7 @@ button.command-button {
 #toolbox-option-container .devtools-tab {
 /*  border-color: transparent;
   border-width: 0;
-  -moz-padding-start: 1px;*/
+  padding-inline-start: 1px;*/
 }
 #toolbox-tab-options > image {
 /*  margin: 0 8px;*/
@@ -892,7 +892,7 @@ button.command-button {
 }
 
 .devtools-side-splitter {
-/*  -moz-border-end: 1px solid var(--theme-splitter-color);
+/*  border-inline-end: 1px solid var(--theme-splitter-color);
   border-color: var(--theme-splitter-color); / Needed for responsive container at low width. */
 }
 
@@ -907,7 +907,7 @@ button.command-button {
   content: "";
   display: inline-block;
   vertical-align: bottom;
-  -moz-margin-end: 0.5em;
+  margin-inline-end: 0.5em;
   width: 1em;
   height: 1em;
   border: 2px solid currentColor;

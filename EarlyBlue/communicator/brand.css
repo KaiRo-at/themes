@@ -11,7 +11,7 @@
   -moz-box-align: center;
   -moz-box-pack: center;
   margin: 1px;
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
   border: 1px solid transparent;
   padding: 0px;
   min-width: 0;
@@ -37,8 +37,8 @@ toolbar[mode="text"] #navigator-throbber,
 toolbar[mode="icons"] #navigator-throbber,
 toolbar[iconsize="small"] #navigator-throbber {
   margin: 0;
-  -moz-margin-start: 1px;
-  -moz-margin-end: 3px;
+  margin-inline-start: 1px;
+  margin-inline-end: 3px;
   list-style-image: url("chrome://communicator/skin/brand/throbber16-single.gif");
 }
 

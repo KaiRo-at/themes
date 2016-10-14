@@ -1064,7 +1064,7 @@ panelview .toolbarbutton-1,
 }
 
 .PanelUI-subView.cui-widget-panelview .subviewbutton[shortcut]::after {
-  -moz-margin-start: 10px;
+  margin-inline-start: 10px;
 }
 
 /* This is a <label> but it should fit in with the menu font- and colorwise. */

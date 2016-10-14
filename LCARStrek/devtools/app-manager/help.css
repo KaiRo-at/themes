@@ -22,8 +22,8 @@ button {
   border-radius: 300px;
   padding-top: 1px;
   padding-bottom: 2px;
-  -moz-padding-start: .5em;
-  -moz-padding-end: calc(.5em + 1px);
+  padding-inline-start: .5em;
+  padding-inline-end: calc(.5em + 1px);
   cursor: pointer;
   background-color: #C09070;
   text-transform: uppercase;
@@ -38,8 +38,8 @@ button:hover {
 button:hover:active {
   padding-top: 2px;
   padding-bottom: 1px;
-  -moz-padding-start: calc(.5em + 1px);
-  -moz-padding-end: .5em;
+  padding-inline-start: calc(.5em + 1px);
+  padding-inline-end: .5em;
 }
 
 a, a:visited {

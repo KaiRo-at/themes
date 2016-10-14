@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 #PopupSearchAutoComplete {
-  -moz-margin-start: -25px;
+  margin-inline-start: -25px;
 }
 
 .autocomplete-textbox-container {
@@ -20,7 +20,7 @@
   height: 16px;
   width: 16px;
   list-style-image: url("chrome://global/skin/filepicker/file.gif");
-  -moz-margin-start: -1px;
+  margin-inline-start: -1px;
 }
 
 /* ::::: search-go-button ::::: */
@@ -58,7 +58,7 @@
   -moz-image-region: rect(0, 20px, 20px, 0);
   margin-top: 1px;
   margin-bottom: 1px;
-  -moz-margin-start: 4px;
+  margin-inline-start: 4px;
   border-radius: 3px;
 }
 
@@ -199,7 +199,7 @@
 .addengine-item > .button-box > .button-text {
   -moz-box-flex: 1;
   text-align: start;
-  -moz-padding-start: 10px;
+  padding-inline-start: 10px;
 }
 
 .addengine-item:not([image]) {
@@ -207,16 +207,16 @@
 }
 
 .search-panel-tree > .autocomplete-treebody::-moz-tree-cell {
-  -moz-padding-start: 15px;
+  padding-inline-start: 15px;
   border-top: none !important;
 }
 
 .search-panel-tree > .autocomplete-treebody::-moz-tree-cell-text {
-  -moz-padding-start: 4px;
+  padding-inline-start: 4px;
 }
 
 .search-panel-tree > .autocomplete-treebody::-moz-tree-image {
-  -moz-padding-start: 5px;
+  padding-inline-start: 5px;
   width: 14px;
   height: 14px;
 }

@@ -10,7 +10,7 @@
 
 .buttonBox {
   margin: 0 !important;
-  -moz-margin-end: 3px !important;
+  margin-inline-end: 3px !important;
 }
 
 .buttonBoxButton {
@@ -61,7 +61,7 @@ expander {
 }
 
 .themesLink {
-  -moz-margin-start: 0px;
+  margin-inline-start: 0px;
   text-decoration: underline;
   color: blue;
   cursor: pointer;

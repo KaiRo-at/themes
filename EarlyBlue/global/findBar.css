@@ -57,33 +57,20 @@ findbar[position="top"][hidden] {
 
 /* Buttons */
 
-.findbar-find-previous,
-.findbar-find-next {
-  list-style-image: url("chrome://global/skin/icons/find-arrows.png");
-}
-
 .findbar-find-previous:not([disabled]):active,
 .findbar-find-next:not([disabled]):active {
 }
 
 .findbar-find-previous {
-  -moz-image-region: rect(0, 12px, 9px, 0);
+  list-style-image: url(chrome://global/skin/icons/find-arrows.svg#glyph-find-previous);
 }
 
 .findbar-find-next {
-  -moz-image-region: rect(0, 24px, 9px, 12px);
+  list-style-image: url(chrome://global/skin/icons/find-arrows.svg#glyph-find-next);
 }
 
 .findbar-find-previous,
 .findbar-find-previous:not([disabled]):active {
-}
-
-.findbar-find-previous[disabled="true"] {
-  -moz-image-region: rect(9px, 12px, 18px, 0);
-}
-
-.findbar-find-next[disabled="true"] {
-  -moz-image-region: rect(9px, 24px, 18px, 12px);
 }
 
 .findbar-find-previous > .toolbarbutton-icon,
@@ -92,15 +79,18 @@ findbar[position="top"][hidden] {
 
 .findbar-find-previous[disabled="true"] > .toolbarbutton-icon,
 .findbar-find-next[disabled="true"] > .toolbarbutton-icon {
+  filter: url(icons/filters.svg#disabled-icon-state);
 }
 
 .findbar-highlight,
-.findbar-case-sensitive {
-  -moz-margin-start: 5px;
+.findbar-case-sensitive,
+.findbar-entire-word {
+  margin-inline-start: 5px;
 }
 
 .findbar-highlight > .toolbarbutton-icon,
-.findbar-case-sensitive > .toolbarbutton-icon {
+.findbar-case-sensitive > .toolbarbutton-icon,
+.findbar-entire-word > .toolbarbutton-icon {
   display: none;
 }
 
@@ -108,7 +98,7 @@ findbar[position="top"][hidden] {
 .found-matches {
   color: #808080;
   margin: 0 !important;
-  -moz-margin-start: 12px !important;
+  margin-inline-start: 12px !important;
 }
 
 .find-status-icon[status="pending"] {

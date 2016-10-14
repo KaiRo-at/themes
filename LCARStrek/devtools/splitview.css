@@ -60,11 +60,11 @@
 }
 
 .splitview-main > toolbar {
-  -moz-padding-end: 3px;
+  padding-inline-end: 3px;
 }
 
 .splitview-details > toolbar {
-  -moz-padding-start: 3px;
+  padding-inline-start: 3px;
 }
 
 .splitview-main > toolbar,

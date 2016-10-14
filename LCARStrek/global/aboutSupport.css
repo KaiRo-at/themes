@@ -16,8 +16,8 @@ a:link, a:visited {
   color: var(--in-content-link-color);
   background-color: var(--in-content-page-background);
   text-decoration: none;
-  -moz-padding-start: 1px;
-  -moz-padding-end: 1px;
+  padding-inline-start: 1px;
+  padding-inline-end: 1px;
 }
 
 /* on hover and active, behave like buttons */
@@ -44,8 +44,8 @@ a:active {
 }
 
 button {
-  -moz-margin-start: 0;
-  -moz-margin-end: 8px;
+  margin-inline-start: 0;
+  margin-inline-end: 8px;
 }
 
 table {
@@ -158,8 +158,8 @@ td {
   float: right;
   margin-top: 2em;
   margin-bottom: 20px;
-  -moz-margin-start: 20px;
-  -moz-margin-end: 0;
+  margin-inline-start: 20px;
+  margin-inline-end: 0;
   padding: 16px;
   width: 30%;
 }
@@ -170,7 +170,7 @@ td {
   display: none;
 }
 
-#action-box:-moz-dir(rtl) {
+#action-box:dir(rtl) {
   float: left;
 }
 
@@ -180,6 +180,11 @@ td {
 
 #action-box > button {
   display: block;
+}
+
+#verify-place-result {
+  max-height: 200px;
+  overflow: auto;
 }
 
 .block {

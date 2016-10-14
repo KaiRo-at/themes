@@ -66,7 +66,7 @@
   width: 25px;
   height: 20px;
   margin: 0;
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
 }
 
 #ColorPickerSwatch[default="true"] {
@@ -80,15 +80,15 @@
   border: 1px inset #9C9CFF;
   margin-top: 1px;
   margin-bottom: 2px;
-  -moz-margin-start: 4px;
-  -moz-margin-end: 2px;
+  margin-inline-start: 4px;
+  margin-inline-end: 2px;
 }
 
 #ColorPreview {
   border: 1px inset #9C9CFF;
-  -moz-margin-start:    10px;
-  -moz-padding-start:    5px;
-  -moz-padding-end:   5px;
+  margin-inline-start:    10px;
+  padding-inline-start:    5px;
+  padding-inline-end:   5px;
   min-width:     100px;
   min-height:     50px;
 }
@@ -138,7 +138,7 @@
 .colorpicker {
   border: 1px outset #9C9CFF;
   /* This should be the same as for textbox */
-  -moz-margin-start: 4px;
+  margin-inline-start: 4px;
   /* For a little extra space between buttons */
   margin-bottom: 2px;
 }

@@ -15,12 +15,12 @@
 }
 
 .indent {
-  -moz-margin-start: 23px;
-  -moz-margin-end: 23px;
+  margin-inline-start: 23px;
+  margin-inline-end: 23px;
 }
 
 .small-indent {
-  -moz-margin-start: 15px;
+  margin-inline-start: 15px;
 }
 
 .uniWidthButton {
@@ -45,23 +45,23 @@
 .extensionChildren::-moz-tree-image(fileExtension),
 .pluginTypesChildren::-moz-tree-image(fileExtension) {
   margin: 0;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
 }
 
 .pluginTypesChildren::-moz-tree-image(pluginEnabled) {
   margin: 0;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
   list-style-image: url("chrome://mozapps/skin/pref/dot.gif");
 }
 
 .pluginTypesChildren::-moz-tree-image(pluginEnabled, enabled) {
   margin: 0;
-  -moz-margin-end: 5px;
+  margin-inline-end: 5px;
   list-style-image: url("chrome://mozapps/skin/pref/check.gif");
 }
 
 .biggerIndent {
-  -moz-margin-start: 28px;
+  margin-inline-start: 28px;
 }
 
 #typeField {
@@ -69,5 +69,5 @@
 }
 
 #defaultAppName {
-  -moz-margin-start: 6px !important;
+  margin-inline-start: 6px !important;
 }

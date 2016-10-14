@@ -12,7 +12,7 @@ body {
   margin: 4em auto;
   border: 1px solid #666699;
   padding: 3em;
-  -moz-padding-start: 30px;
+  padding-inline-start: 30px;
   background: #FFFFFF;
 }
 
@@ -35,13 +35,13 @@ img {
   color: #666699;
   margin-top: -24px;
   margin-bottom: 9px;
-  -moz-margin-start: 17px;
-  -moz-margin-end: 0;
+  margin-inline-start: 17px;
+  margin-inline-end: 0;
 }
 
 ul {
   margin: 0;
-  -moz-margin-start: 1.5em;
+  margin-inline-start: 1.5em;
   padding: 0;
   list-style: square;
 }

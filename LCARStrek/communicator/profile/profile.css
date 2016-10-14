@@ -24,15 +24,15 @@ window.dialog {
   background-color: #9C9CFF;
   color: #000000;
   border: none;
-  -moz-border-start: 3px solid #000000;
+  border-inline-start: 3px solid #000000;
   border-radius: 0;
-  -moz-margin-start: 37px;
+  margin-inline-start: 37px;
 }
 
 .wizard-box {
   background-color: #000000;
   border-radius: 5px 0 0 0;
-  -moz-margin-start: 5px;
+  margin-inline-start: 5px;
 }
 
 .wizard-box:-moz-locale-dir(rtl) {
@@ -40,19 +40,19 @@ window.dialog {
 }
 
 .dialog-button-box {
-  -moz-border-start: 5px solid #8050B0; /* match wizard-box margin */
-  -moz-padding-start: 2px;
+  border-inline-start: 5px solid #8050B0; /* match wizard-box margin */
+  padding-inline-start: 2px;
   margin-top: 3px;
 }
 
 treechildren::-moz-tree-image {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
   list-style-image: url("chrome://communicator/skin/profile/profile.png");
   -moz-image-region: rect(0, 10px, 12px, 0);
 }
 
 treechildren::-moz-tree-image(selected) {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
   list-style-image: url("chrome://communicator/skin/profile/profile.png");
   -moz-image-region: rect(0, 20px, 12px, 10px);
 }

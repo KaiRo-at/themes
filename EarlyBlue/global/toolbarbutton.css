@@ -22,7 +22,7 @@ toolbarbutton {
 
 .toolbarbutton-icon[label]:not([label=""]),
 .toolbarbutton-icon[type="menu"] {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .toolbarbutton-text {
@@ -54,8 +54,8 @@ toolbarbutton:hover:active,
 toolbarbutton[open="true"] {
   padding-top: 2px;
   padding-bottom: 0px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 2px;
+  padding-inline-end: 0px;
   border: 1px inset #CCD0DD;
 }
 
@@ -77,8 +77,8 @@ toolbarbutton:-moz-lwtheme {
 toolbarbutton[checked="true"] {
   padding-top: 2px !important;
   padding-bottom: 0px !important;
-  -moz-padding-start: 2px !important;
-  -moz-padding-end: 0px !important;
+  padding-inline-start: 2px !important;
+  padding-inline-end: 0px !important;
   border: 1px inset #CCD0DD !important;
   background-color: #DDDDDD !important;
 }
@@ -140,8 +140,8 @@ toolbarbutton[type="menu-button"]:hover:active > toolbarbutton.toolbarbutton-men
 toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-menubutton-button {
   padding-top: 2px !important;
   padding-bottom: 0px !important;
-  -moz-padding-start: 2px !important;
-  -moz-padding-end: 0px !important;
+  padding-inline-start: 2px !important;
+  padding-inline-end: 0px !important;
 }
 
 toolbarbutton[disabled="true"] > toolbarbutton.toolbarbutton-menubutton-button,
@@ -152,7 +152,7 @@ toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubu
 /* ::::: toolbarbutton badged ::::: */
 
 .toolbarbutton-badge-stack > .toolbarbutton-icon[label]:not([label=""]) {
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
 }
 
 .toolbarbutton-badge {
@@ -166,7 +166,7 @@ toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubu
               0 -1px 0 #9999CC inset,
               0 1px 0 #9999CC;
   margin: -6px 0 0 !important;
-  -moz-margin-end: -8px !important;
+  margin-inline-end: -8px !important;
   min-width: 14px;
   max-width: 28px;
   line-height: 10px;
@@ -186,8 +186,8 @@ toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropm
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding-top: 4px;
   padding-bottom: 0px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 2px;
+  padding-inline-end: 0px;
 }
 
 .toolbarbutton-menubutton-dropmarker[disabled="true"] {

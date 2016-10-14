@@ -13,12 +13,12 @@
   -moz-binding: url("chrome://global/skin/globalBindings.xml#tabbrowser-tabs") !important;
   padding-top: 0px;
   background: -moz-dialog url("chrome://global/skin/icons/tabbrowser-tabs-bkgnd.png") !important;
-  -moz-padding-start: 0px;
+  padding-inline-start: 0px;
   */
 }
 
 .tabbrowser-tabs[overflow="true"] {
-  -moz-padding-start: 0px;
+  padding-inline-start: 0px;
 }
 
 /**
@@ -46,7 +46,7 @@
 
 .tab-icon-image {
   margin-top: 1px;
-  -moz-margin-end: 3px;
+  margin-inline-end: 3px;
   width: 16px;
   height: 16px;
   /* XXX: Firefox rules - look into those when we support FF
@@ -103,7 +103,7 @@ tabpanels {
  * In-tab close button
  */
 .tab-close-button > .toolbarbutton-icon {
-  -moz-margin-end: 0px !important;
+  margin-inline-end: 0px !important;
   margin-top: 1px;
 }
 

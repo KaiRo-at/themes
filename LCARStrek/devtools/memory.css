@@ -702,7 +702,7 @@ input[type="checkbox"] + span::before {
   height: 1em;
   border-radius: 0;
   border: 1px solid var(--theme-body-color);
-  -moz-margin-end: 10px;
+  margin-inline-end: 10px;
   background-color: var(--theme-toolbar-background);
   background-position: center center;
   background-repeat: no-repeat;

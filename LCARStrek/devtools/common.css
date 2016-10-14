@@ -178,7 +178,7 @@ notification {
   width: 32px;
   height: 32px;
   margin: 6px;
-  -moz-margin-end: 20px;
+  margin-inline-end: 20px;
 }
 
 .devtools-tooltip-alert-icon {
@@ -192,7 +192,7 @@ notification {
 }
 
 .devtools-tooltip-variables-view-box .variable-or-property > .title {
-  -moz-padding-end: 6px;
+  padding-inline-end: 6px;
 }
 
 /* Tooltip: Tiles */

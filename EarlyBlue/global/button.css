@@ -21,12 +21,12 @@ button {
   border: 1px solid transparent;
   padding-top: 0;
   padding-bottom: 1px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 3px;
+  padding-inline-start: 2px;
+  padding-inline-end: 3px;
 }
 
 .button-icon {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .button-text {
@@ -49,8 +49,8 @@ button[default="true"] > .button-box {
 }
 
 button[default="true"] > .button-box > .button-icon {
-  -moz-margin-end: 0px;
-  -moz-margin-start: 2px;
+  margin-inline-end: 0px;
+  margin-inline-start: 2px;
 }
 
 button[default="true"][disabled="true"] > .button-box {
@@ -71,8 +71,8 @@ button[open="true"] > .button-box,
 button[checked="true"] > .button-box {
   padding-top: 1px;
   padding-bottom: 0px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 2px;
+  padding-inline-start: 3px;
+  padding-inline-end: 2px;
 }
 
 /* .......... disabled state .......... */
@@ -86,8 +86,8 @@ button[disabled="true"]:hover:active {
 button[disabled="true"] > .button-box {
   padding-top: 0 !important;
   padding-bottom: 1px !important;
-  -moz-padding-start: 2px !important;
-  -moz-padding-end: 3px !important;
+  padding-inline-start: 2px !important;
+  padding-inline-end: 3px !important;
 }
 
 /* ::::: menu/menu-button buttons ::::: */
@@ -105,8 +105,8 @@ button[type="menu-button"]:hover:active > .button-menubutton-button > .button-bo
 button[type="menu-button"][open="true"] > .button-menubutton-button > .button-box {
   padding-top: 1px;
   padding-bottom: 0px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 2px;
+  padding-inline-start: 3px;
+  padding-inline-end: 2px;
 }
 
 .button-menu-dropmarker,
@@ -121,8 +121,8 @@ button[type="menu-button"][open="true"] > .button-menubutton-button > .button-bo
 .button-menubutton-dropmarker[open="true"] {
   margin-top: 2px;
   margin-bottom: 0;
-  -moz-margin-start: 2px;
-  -moz-margin-end: 0;
+  margin-inline-start: 2px;
+  margin-inline-end: 0;
 }
 
 /* ::::: plain buttons ::::: */

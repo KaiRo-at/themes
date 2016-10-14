@@ -20,12 +20,12 @@ page {
 }
 
 treechildren::-moz-tree-image(FilenameColumn) {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
   list-style-image: url("chrome://communicator/skin/directory/file.gif");
 }
 
 treechildren::-moz-tree-image(FilenameColumn, selected) {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
   list-style-image: url("chrome://communicator/skin/directory/file-sel.gif");
 }
 

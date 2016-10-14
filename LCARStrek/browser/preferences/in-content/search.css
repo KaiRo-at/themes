@@ -19,8 +19,8 @@
 }
 
 #engineList treechildren::-moz-tree-image(engineName) {
-  -moz-margin-end: 10px;
-  -moz-margin-start: 1px;
+  margin-inline-end: 10px;
+  margin-inline-start: 1px;
   width: 16px;
   height: 16px;
 }
@@ -30,7 +30,7 @@
   width: 10000px; /* 100% doesn't work; 10k is hopefully larger than any window
                      we may have, overflow isn't visible. */
   height: 2px;
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #engineShown {

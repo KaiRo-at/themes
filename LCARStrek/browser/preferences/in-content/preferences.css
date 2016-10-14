@@ -213,7 +213,7 @@ treecol {
 
 #useFirefoxSync  {
   font-size: 90%;
-  -moz-margin-end: 8px !important;
+  margin-inline-end: 8px !important;
 }
 
 #getStarted {
@@ -232,12 +232,12 @@ treecol {
 }
 
 #notificationsPolicyLearnMore {
-  -moz-margin-start: 1.5em !important;
+  margin-inline-start: 1.5em !important;
 }
 
 #defaultFontSizeLabel {
   /* !important needed to override common !important rule */
-  -moz-margin-start: 4px !important;
+  margin-inline-start: 4px !important;
 }
 
 /* Applications Pane Styles */
@@ -247,7 +247,7 @@ treecol {
 }
 
 #filter {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #handlersView {
@@ -259,13 +259,13 @@ treecol {
 }
 
 .typeIcon {
-  -moz-margin-start: 10px !important;
-  -moz-margin-end: 9px !important;
+  margin-inline-start: 10px !important;
+  margin-inline-end: 9px !important;
 }
 
 .actionIcon {
-  -moz-margin-start: 11px !important;
-  -moz-margin-end: 8px !important;
+  margin-inline-start: 11px !important;
+  margin-inline-end: 8px !important;
 }
 
 .actionsMenu {
@@ -273,11 +273,11 @@ treecol {
 }
 
 .actionsMenu > menupopup > menuitem {
-  -moz-padding-start: 10px !important;
+  padding-inline-start: 10px !important;
 }
 
 .actionsMenu > menupopup > menuitem > .menu-iconic-left {
-  -moz-margin-end: 8px !important;
+  margin-inline-end: 8px !important;
 }
 
 /* Privacy pane */
@@ -285,7 +285,7 @@ treecol {
 .doNotTrackLearnMore,
 #trackingProtectionPBMLearnMore,
 #trackingProtectionLearnMore {
-  -moz-margin-start: 1.5em !important;
+  margin-inline-start: 1.5em !important;
   margin-top: 0;
   font-weight: normal;
 }
@@ -323,7 +323,7 @@ description > html|a {
 #weavePrefsDeck > #hasFxaAccount > vbox > label,
 #weavePrefsDeck > #hasFxaAccount > hbox:not(#tosPP-normal) > label {
   /* no margin-start for elements at the begin of a line */
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #advancedPrefs {
@@ -331,7 +331,7 @@ description > html|a {
 }
 
 #tabsElement {
-/*  -moz-margin-end: 4px; / add the 4px end-margin of other elements */
+/*  margin-inline-end: 4px; / add the 4px end-margin of other elements */
 }
 
 #telemetryLearnMore,
@@ -339,16 +339,16 @@ description > html|a {
 #crashReporterLearnMore {
   /* provide some margin between the links and the label text */
   /* !important is needed to override the rules defined in common.css */
-  -moz-margin-start: 20px !important;
+  margin-inline-start: 20px !important;
   /* center the links */
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
 .indent {
-  /* !important needed to override -moz-margin-start:0 !important; rule
+  /* !important needed to override margin-inline-start:0 !important; rule
      define in common.css for labels - but not in LCARStrek*/
-  -moz-margin-start: 33px /*!important*/;
+  margin-inline-start: 33px /*!important*/;
 }
  
 .text-link {
@@ -356,7 +356,7 @@ description > html|a {
 }
 
 #showUpdateHistory {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 #fxaProfileImage {
@@ -393,8 +393,8 @@ description > html|a {
 }
 
 #dialogBox > .groupbox-title {
-  -moz-margin-start: 0;
-  -moz-margin-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 /*  padding: 3.5px 0;
   background-color: #F1F1F1; */
 }
@@ -769,7 +769,7 @@ caption {
 }
 
 .indent-small {
-  -moz-margin-start: 10px;
+  margin-inline-start: 10px;
 }
 
 @media (min-resolution: 2dppx) {

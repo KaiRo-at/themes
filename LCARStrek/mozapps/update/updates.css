@@ -49,8 +49,8 @@ wizardpage {
 }
 
 #licenseContent, #incompatibleListbox {
-  -moz-margin-start: 6px;
-  -moz-margin-end: 6px;
+  margin-inline-start: 6px;
+  margin-inline-end: 6px;
 }
 
 .inline-link {
@@ -64,8 +64,8 @@ wizardpage {
 
 /* Unsupported Page */
 #unsupportedLabel, #unsupportedLinkLabel {
-  -moz-margin-start: 0;
-  -moz-padding-start: 0;
+  margin-inline-start: 0;
+  padding-inline-start: 0;
 }
 
 /* Update Found Basic Page */
@@ -94,7 +94,7 @@ wizardpage {
 }
 
 #downloadStatusProgress {
-  -moz-padding-end: 5px;
+  padding-inline-end: 5px;
 }
 
 #pauseButton {
@@ -143,7 +143,7 @@ wizardpage {
 }
 
 #verificationFailedIcon {
-  -moz-margin-start: 5px;
+  margin-inline-start: 5px;
   list-style-image: url("chrome://global/skin/icons/notfound.png");
 }
 
@@ -151,8 +151,8 @@ wizardpage {
 #errorReason {
   margin-top: 1px;
   margin-bottom: 2px;
-  -moz-margin-start: 6px !important;
-  -moz-margin-end: 5px;
+  margin-inline-start: 6px !important;
+  margin-inline-end: 5px;
   font-weight: bold;
 }
 

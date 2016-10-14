@@ -8,8 +8,8 @@
 
 #addressingWidget {
 /*  height: 80px; */
-  -moz-margin-start: 0px;
-  -moz-margin-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
   -moz-user-focus: none;
   width: 0px;
 }

@@ -35,7 +35,7 @@ tabpanels {
 tab {
   border-radius: 8px 8px 0px 0px;
   margin-top: 2px;
-  -moz-border-end: 2px solid transparent;
+  border-inline-end: 2px solid transparent;
   border-bottom: none;
   padding: 2px 4px 1px;
   background-color: #C09070;
@@ -69,12 +69,12 @@ tab:-moz-focusring > .tab-middle {
 }
 
 tab:first-of-type {
-  -moz-margin-start: 5px;
+  margin-inline-start: 5px;
 }
 /*
 tab:first-of-type[visuallyselected="true"] {
-  -moz-padding-end: 5px;
-  -moz-padding-start: 5px;
+  padding-inline-end: 5px;
+  padding-inline-start: 5px;
 }
 */
 

@@ -17,15 +17,15 @@ prefwindow {
 prefpane {
   padding-top: 3px;
   padding-bottom: 0px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 3px;
+  padding-inline-end: 0px;
 }
 
 prefwindow[type="child"] {
   padding-top: 3px;
   padding-bottom: 0px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 3px;
+  padding-inline-end: 0px;
 }
 
 prefwindow[type="child"] > prefpane {
@@ -51,7 +51,7 @@ radio[pane] {
   border-bottom: 1px solid #9C9CFF;
   margin: 0px;
   margin-bottom: 3px;
-  -moz-padding-start: 10px;
+  padding-inline-start: 10px;
   background-color: #000000;
   color: #FF9F00;
 }

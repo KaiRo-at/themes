@@ -193,7 +193,7 @@ body {
 }
 
 .newtab-site[pinned] .newtab-title {
-  -moz-padding-start: 24px;
+  padding-inline-start: 24px;
 }
 
 .newtab-site[pinned] .newtab-title::before {
@@ -209,7 +209,7 @@ body {
   margin-top: 0;
 }
 
-.newtab-site[pinned] .newtab-title:-moz-dir(rtl)::before {
+.newtab-site[pinned] .newtab-title:dir(rtl)::before {
   left: auto;
   right: 0;
 }
@@ -295,7 +295,7 @@ body {
   box-shadow: none;
   border-radius: 0 300px 300px 0;
   border: none;
-  -moz-margin-start: 3px;
+  margin-inline-start: 3px;
 }
 #newtab-search-text:focus + #newtab-search-submit,
 #newtab-search-text[autofocus] + #newtab-search-submit {

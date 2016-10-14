@@ -15,7 +15,7 @@ toolbarbutton {
   -moz-box-align: center;
   -moz-box-pack: center;
   margin: 0px;
-  -moz-margin-start: 2px;
+  margin-inline-start: 2px;
   border: none;
   padding: 1px 2px;
   background-color: #000000;
@@ -24,8 +24,8 @@ toolbarbutton {
 
 .toolbarbutton-icon[label]:not([label=""]),
 .toolbarbutton-icon[type="menu"] {
-/*  -moz-margin-start: 1px;
-  -moz-margin-end: 2px;*/
+/*  margin-inline-start: 1px;
+  margin-inline-end: 2px;*/
 }
 
 .toolbarbutton-text {
@@ -60,8 +60,8 @@ toolbarbutton:hover:active,
 toolbarbutton[open="true"] {
   padding-top: 2px;
   padding-bottom: 0px;
-  -moz-padding-start: 3px;
-  -moz-padding-end: 1px;
+  padding-inline-start: 3px;
+  padding-inline-end: 1px;
 }
 
 toolbarbutton[disabled="true"],
@@ -84,8 +84,8 @@ toolbarbutton:-moz-lwtheme {
 toolbarbutton[checked="true"] {
   padding-top: 2px !important;
   padding-bottom: 0px !important;
-  -moz-padding-start: 3px !important;
-  -moz-padding-end: 1px !important;
+  padding-inline-start: 3px !important;
+  padding-inline-end: 1px !important;
   background-color: #008484;
   color: #FFCF00;
 }
@@ -166,8 +166,8 @@ toolbarbutton[type="menu-button"]:hover:active > toolbarbutton.toolbarbutton-men
 toolbarbutton[type="menu-button"][open="true"] > toolbarbutton.toolbarbutton-menubutton-button {
   padding-top: 2px !important;
   padding-bottom: 0px !important;
-  -moz-padding-start: 3px !important;
-  -moz-padding-end: 1px !important;
+  padding-inline-start: 3px !important;
+  padding-inline-end: 1px !important;
 }
 
 toolbarbutton[disabled="true"] > toolbarbutton.toolbarbutton-menubutton-button,
@@ -178,7 +178,7 @@ toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubu
 /* ::::: toolbarbutton badged ::::: */
 
 .toolbarbutton-badge-stack > .toolbarbutton-icon[label]:not([label=""]) {
-  -moz-margin-end: 0;
+  margin-inline-end: 0;
 }
 
 .toolbarbutton-badge {
@@ -192,7 +192,7 @@ toolbarbutton[disabled="true"]:hover:active > toolbarbutton.toolbarbutton-menubu
               0 -1px 0 #9C9CFF inset,
               0 1px 0 #9C9CFF;
   margin: -6px 0 0 !important;
-  -moz-margin-end: -8px !important;
+  margin-inline-end: -8px !important;
   min-width: 14px;
   max-width: 28px;
   line-height: 10px;
@@ -214,8 +214,8 @@ toolbarbutton[type="menu-button"]:hover:active > .toolbarbutton-menubutton-dropm
 toolbarbutton[type="menu-button"][open="true"] > .toolbarbutton-menubutton-dropmarker {
   padding-top: 4px;
   padding-bottom: 0px;
-  -moz-padding-start: 2px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 2px;
+  padding-inline-end: 0px;
 }
 
 toolbarbutton[type="menu-button"]:not([disabled="true"]):hover > .toolbarbutton-menubutton-dropmarker,

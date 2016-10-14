@@ -180,7 +180,7 @@ treechildren::-moz-tree-image(subjectCol) {
 }
 
 treechildren::-moz-tree-image(subjectCol) {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 treechildren::-moz-tree-image(subjectCol, new) {

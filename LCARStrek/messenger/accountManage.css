@@ -17,11 +17,11 @@ page {
 }
 
 .specialFolderPickerGrid {
-  -moz-margin-start: 20px;
+  margin-inline-start: 20px;
 }
 
 .fccReplyFollowsParent {
-  -moz-margin-start: 20px;
+  margin-inline-start: 20px;
 }
 
 .selectForOfflineUseButton {
@@ -29,8 +29,8 @@ page {
 }
 
 .selectForOfflineUseButton > .button-box > .button-icon {
-  -moz-margin-start: 4px;
-  -moz-margin-end: 4px;
+  margin-inline-start: 4px;
+  margin-inline-end: 4px;
 }
 
 .signatureBox {
@@ -44,13 +44,13 @@ treechildren::-moz-tree-cell-text(isDefaultServer-true) {
 }
 
 #contentFrame {
-  -moz-margin-start: 2px;
+  margin-inline-start: 2px;
 }
 
 /* ::::: SMTP Server Panel :::::: */
 
 .smtpServerListItem {
-  -moz-padding-start: 3px;
+  padding-inline-start: 3px;
 }
 
 #backgroundBox {

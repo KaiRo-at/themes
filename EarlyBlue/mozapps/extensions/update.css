@@ -8,8 +8,8 @@
   height: 16px;
   margin-top: 5px;
   margin-bottom: 5px;
-  -moz-margin-start: 5px;
-  -moz-margin-end: 2px;
+  margin-inline-start: 5px;
+  margin-inline-end: 2px;
 }
 
 .alertBox {
@@ -17,7 +17,7 @@
   color: #000000;
   border: 0px solid transparent;
   border-bottom: 1px solid #9999CC;
-  -moz-margin-start: 3px;
-  -moz-margin-end: 3px;
+  margin-inline-start: 3px;
+  margin-inline-end: 3px;
   padding: 5px;
 }
