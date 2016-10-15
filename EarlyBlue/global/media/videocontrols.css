@@ -354,7 +354,6 @@ html|table {
 }
 
 @media (min-resolution: 2dppx) {
-/*
   .playButton {
     background-image: url(chrome://global/skin/media/pauseButton@2x.png);
     background-size: 28px 28px;
@@ -383,13 +382,11 @@ html|table {
     background-image: url(chrome://global/skin/media/noAudio@2x.png);
     background-size: 33px 28px;
   }
-*/
   .closedCaptionButton {
     background-image: url(chrome://global/skin/media/closeCaptionButton@2x.png);
     background-position: 4px;
     background-size: 28px 28px;
   }
-/*
   .fullscreenButton {
     background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton@2x.png"), 0, 32, 32, 0);
     background-size: 16px 16px;
@@ -406,5 +403,4 @@ html|table {
     background-image: url(chrome://global/skin/media/scrubberThumbWide@2x.png);
     background-size: 45px 28px;
   }
-*/
 }

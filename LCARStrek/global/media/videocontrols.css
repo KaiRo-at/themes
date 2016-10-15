@@ -25,14 +25,14 @@
 }
 
 .playButton:hover,
-.muteButton:hover,
-.closedCaptionButton:hover,                                                                                                                                                                                                    
+.muteButton:not([noAudio]):hover,
+.closedCaptionButton:hover,
 .fullscreenButton:hover {
   background-color: rgba(255,207,0,0.75);
 }
 
 .playButton:hover:active,
-.muteButton:hover:active,
+.muteButton:not([noAudio]):hover:active,
 .closedCaptionButton:hover:active,
 .fullscreenButton:hover:active {
   background-color: rgba(255,159,0,0.75);
@@ -86,6 +86,10 @@
   background-position: 4px;
 }
 
+.closedCaptionButton:hover {
+  background-image: url("chrome://global/skin/media/closeCaptionButton-hover.png");
+}
+
 .closedCaptionButton[enabled] {
   opacity: 1;
 }
@@ -99,7 +103,7 @@
 }
 
 .fullscreenButton:hover {
-  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton.png"), 16, 16, 32, 0);
+  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover.png"), 0, 16, 16, 0);
 }
 
 .fullscreenButton[fullscreened] {
@@ -107,7 +111,7 @@
 }
 
 .fullscreenButton[fullscreened]:hover {
-  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton.png"), 16, 32, 32, 16);
+  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover.png"), 0, 32, 16, 16);
 }
 
 .volumeControl {
@@ -395,48 +399,74 @@ html|table {
 }
 
 @media (min-resolution: 2dppx) {
-/*
   .playButton {
     background-image: url(chrome://global/skin/media/pauseButton@2x.png);
+    background-size: 28px 28px;
+  }
+  .playButton:hover {
+    background-image: url(chrome://global/skin/media/pauseButton-hover@2x.png);
     background-size: 28px 28px;
   }
   .playButton[paused] {
     background-image: url(chrome://global/skin/media/playButton@2x.png);
     background-size: 28px 28px;
   }
+  .playButton[paused]:hover {
+    background-image: url(chrome://global/skin/media/playButton-hover@2x.png);
+    background-size: 28px 28px;
+  }
   .volumeBackground {
     background-image: url(chrome://global/skin/media/volume-empty@2x.png);
     background-size: 32px 16px;
   }
-  .volumeForeground {
-    background-image: url(chrome://global/skin/media/volume-full@2x.png);
+  .volumeForeground:hover {
+    background-image: url(chrome://global/skin/media/volume-full-hover@2x.png);
     background-size: 32px 16px;
   }
   .muteButton {
     background-image: url(chrome://global/skin/media/muteButton@2x.png);
     background-size: 33px 28px;
   }
+  .muteButton:hover {
+    background-image: url(chrome://global/skin/media/muteButton-hover@2x.png);
+    background-size: 33px 28px;
+  }
   .muteButton[muted] {
     background-image: url(chrome://global/skin/media/unmuteButton@2x.png);
+    background-size: 33px 28px;
+  }
+  .muteButton[muted]:hover {
+    background-image: url(chrome://global/skin/media/unmuteButton-hover@2x.png);
     background-size: 33px 28px;
   }
   .muteButton[noAudio] {
     background-image: url(chrome://global/skin/media/noAudio@2x.png);
     background-size: 33px 28px;
   }
-*/
   .closedCaptionButton {
     background-image: url(chrome://global/skin/media/closeCaptionButton@2x.png);
     background-position: 4px;
     background-size: 28px 28px;
   }
-/*
+  .closedCaptionButton:hover {
+    background-image: url(chrome://global/skin/media/closeCaptionButton-hover@2x.png);
+    background-position: 4px;
+    background-size: 28px 28px;
+  }
   .fullscreenButton {
     background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton@2x.png"), 0, 32, 32, 0);
     background-size: 16px 16px;
   }
+  .fullscreenButton:hover {
+    background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover@2x.png"), 0, 32, 32, 0);
+    background-size: 16px 16px;
+  }
   .fullscreenButton[fullscreened] {
     background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton@2x.png"), 0, 64, 32, 32);
+    background-size: 16px 16px;
+  }
+  .fullscreenButton[fullscreened]:hover {
+    background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover@2x.png"), 0, 64, 32, 32);
     background-size: 16px 16px;
   }
   .timeThumb {
@@ -447,5 +477,4 @@ html|table {
     background-image: url(chrome://global/skin/media/scrubberThumbWide@2x.png);
     background-size: 45px 28px;
   }
-*/
 }
