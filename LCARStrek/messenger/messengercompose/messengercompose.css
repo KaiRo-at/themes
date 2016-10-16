@@ -310,6 +310,10 @@ treechildren::-moz-tree-image(subscribed-news) {
   list-style-image: url("chrome://global/skin/arrow/arrow-down-disabled.gif");
 }
 
+#FontFaceSelect {
+  max-width: 35ch;
+}
+
 /* ::::: lightweight themes ::::: */
 
 #MsgHeadersToolbar:-moz-lwtheme,
