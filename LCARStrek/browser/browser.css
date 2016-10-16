@@ -510,7 +510,7 @@ menuitem.bookmark-item {
           #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button),
+          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu),
 #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
 }
@@ -649,6 +649,14 @@ menuitem.bookmark-item {
 
 #sync-button[cui-areatype="toolbar"]:hover {
   -moz-image-region: rect(18px, 792px, 36px, 774px);
+}
+
+#containers-panelmenu[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0, 810px, 18px, 792px);
+}
+
+#containers-panelmenu[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(18px, 810px, 36px, 792px);
 }
 
 #feed-button[cui-areatype="toolbar"] {
@@ -917,14 +925,14 @@ toolbaritem[sdkstylewidget="true"] > toolbarbutton,
           #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button)[cui-areatype="menu-panel"],
+          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
           #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
           #social-share-button, #open-file-button, #find-button, #developer-button,
           #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
-          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button) {
+          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
   list-style-image: var(--menupanel-list-style-image);
 }
 
@@ -1014,6 +1022,17 @@ toolbarpaletteitem[place="palette"] > #sync-button {
 #sync-button[cui-areatype="menu-panel"]:hover,
 toolbarpaletteitem[place="palette"] > #sync-button:hover {
   -moz-image-region: rect(32px, 1024px, 64px, 992px);
+}
+
+#containers-panelmenu[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #containers-panelmenu {
+  -moz-image-region: rect(0px, 1056px, 32px, 1024px);
+}
+
+#containers-panelmenu[cui-areatype="menu-panel"]:hover,
+toolbarpaletteitem[place="palette"] > #containers-panelmenu:hover,
+#containers-panelmenu[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
+  -moz-image-region: rect(32px, 1056px, 64px, 1024px);
 }
 
 #feed-button[cui-areatype="menu-panel"],
@@ -3004,31 +3023,6 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 /* End selected tab */
-
-/* User Context UI - change tab decoration depending on userContextId.
-   Defaults to gray for unknown usercontextids. */
-.tabbrowser-tab[usercontextid] {
-  background-image: linear-gradient(to right, transparent 20%, #A09090 30%, #A09090 70%, transparent 80%);
-  background-size: auto 2px;
-  background-repeat: no-repeat;
-}
-
-/* Personal User Context */
-.tabbrowser-tab[usercontextid="1"] {
-  background-image: linear-gradient(to right, transparent 20%, #9C9CFF 30%, #9C9CFF 70%, transparent 80%);
-}
-/* Work User Context */
-.tabbrowser-tab[usercontextid="2"] {
-  background-image: linear-gradient(to right, transparent 20%, #FF9F00 30%, #FF9F00 70%, transparent 80%);
-}
-/* Banking User Context */
-.tabbrowser-tab[usercontextid="3"] {
-  background-image: linear-gradient(to right, transparent 20%, #008484 30%, #008484 70%, transparent 80%);
-}
-/* Shopping User Context */
-.tabbrowser-tab[usercontextid="4"] {
-  background-image: linear-gradient(to right, transparent 20%, #E7ADE7 30%, #E7ADE7 70%, transparent 80%);
-}
 
 /* Tab pointer-events */
 /*
@@ -6073,77 +6067,3 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
   padding: 0;
   overflow: hidden;
 }
-
-/* === BEGIN usercontext.inc.css === */
-
-/* User Context UI browser styles */
-
-#menu_newUserContextTabPersonal {
-  list-style-image: url("chrome://browser/skin/usercontext/personal.svg");
-}
-
-#menu_newUserContextTabWork {
-  list-style-image: url("chrome://browser/skin/usercontext/work.svg");
-}
-
-#menu_newUserContextTabBanking {
-  list-style-image: url("chrome://browser/skin/usercontext/banking.svg");
-}
-
-#menu_newUserContextTabShopping {
-  list-style-image: url("chrome://browser/skin/usercontext/shopping.svg");
-}
-
-/* URL Bar Decoration */
-
-#userContext-indicator {
-  height: 16px;
-  width: 16px;
-}
-
-#userContext-label {
-  margin-inline-end: 3px;
-  color: #A09090;
-}
-
-#userContext-icons:not([usercontextid]) {
-  display: none;
-}
-
-#userContext-icons {
-  -moz-box-align: center;
-}
-
-/* Personal User Context */
-#userContext-icons[usercontextid="1"] > #userContext-label {
-  color: #9C9CFF;
-}
-#userContext-icons[usercontextid="1"] > #userContext-indicator {
-  list-style-image: url("chrome://browser/skin/usercontext/personal.svg");
-}
-
-/* Work User Context */
-#userContext-icons[usercontextid="2"] > #userContext-label {
-  color: #FF9F00;
-}
-#userContext-icons[usercontextid="2"] > #userContext-indicator {
-  list-style-image: url("chrome://browser/skin/usercontext/work.svg");
-}
-
-/* Banking User Context */
-#userContext-icons[usercontextid="3"] > #userContext-label {
-  color: #008484;
-}
-#userContext-icons[usercontextid="3"] > #userContext-indicator {
-  list-style-image: url("chrome://browser/skin/usercontext/banking.svg");
-}
-
-/* Shopping User Context */
-#userContext-icons[usercontextid="4"] > #userContext-label {
-  color: #E7ADE7;
-}
-#userContext-icons[usercontextid="4"] > #userContext-indicator {
-  list-style-image: url("chrome://browser/skin/usercontext/shopping.svg");
-}
-
-/* === END usercontext.inc.css === */

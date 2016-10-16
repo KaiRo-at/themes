@@ -91,6 +91,24 @@ body {
   padding-inline-start: 20px;
 }
 
+.item.client.device-image-desktop.selected > .item-title-container > .item-icon-container {
+  background-image: url("chrome://browser/skin/sync-desktopIcon.svg#icon-inverted");
+}
+
+.item.client.device-image-desktop:not(.selected) > .item-title-container > .item-icon-container,
+.item.client.device-image-desktop.selected > .item-title-container > .item-icon-container:-moz-window-inactive {
+  background-image: url("chrome://browser/skin/sync-desktopIcon.svg#icon");
+}
+
+.item.client.device-image-mobile.selected > .item-title-container > .item-icon-container {
+  background-image: url("chrome://browser/skin/sync-mobileIcon.svg#icon-inverted");
+}
+
+.item.client.device-image-mobile:not(.selected) > .item-title-container > .item-icon-container,
+.item.client.device-image-mobile.selected > .item-title-container > .item-icon-container:-moz-window-inactive {
+  background-image: url("chrome://browser/skin/sync-mobileIcon.svg#icon");
+}
+
 .item.tab > .item-title-container > .item-icon-container {
   background-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
 }
@@ -128,6 +146,7 @@ body {
   text-overflow: ellipsis;
   margin: 0px;
   line-height: 1.3;
+  cursor: default;
 }
 
 .item[hidden] {
@@ -313,7 +332,7 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 5px;
-  width: 9px; /* The image's width is 9 pixels */
+  max-width: 9px; /* The image's width is 9 pixels */
   height: 9px;
 }
 
