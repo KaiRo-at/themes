@@ -6,7 +6,6 @@
 
 /*** View and outer controls ***/
 
-
 #downloadsRichListBox {
   /** The default listbox appearance comes with an unwanted margin. **/
   -moz-appearance: none;
@@ -22,15 +21,29 @@
 }
 
 .downloadTypeIcon {
-  margin-inline-end: 8px;
-  margin-inline-start: 8px;
-  /* explicitly size the icon, so size doesn't vary on hidpi systems */
-  height: 32px;
+  margin-top: 8px;
+  margin-inline-end: 12px;
+  margin-bottom: 8px;
+  margin-inline-start: 0;
   width: 32px;
+  height: 32px;
 }
 
-.blockedIcon {
-  list-style-image: url("chrome://global/skin/icons/alert-error.gif");
+.downloadBlockedBadge {
+  margin: 0 4px;
+  background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
+}
+
+.downloadBlockedBadge:-moz-locale-dir(rtl) {
+  background-position-x: left;
+}
+
+richlistitem.download[verdict="PotentiallyUnwanted"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/warning.svg");
+}
+
+richlistitem.download[verdict="Uncommon"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/info.svg");
 }
 
 .downloadTarget {

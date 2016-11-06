@@ -64,3 +64,9 @@ groupbox description {
   margin-right: 0;
   margin-left: 0;
 }
+
+/* Create a separate rule to unset these styles on .tree-input instead of
+   using :not(.tree-input) so the selector specifity doesn't change. */
+textbox.tree-input {
+  font-size: unset;
+}

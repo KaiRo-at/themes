@@ -29,7 +29,7 @@ window {
 }
 
 #screenShareButton {
-  background-image: url("webRTC-screen-white-16.png");
+  background-image: url("webRTC-screen-16.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 16px;

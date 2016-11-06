@@ -7,6 +7,12 @@
 /*** Panel and outer controls ***/
 
 #downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent {
+  overflow: hidden;
+  display: block;
+}
+
+#downloadsPanel > .panel-arrowcontainer > .panel-arrowcontent,
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack > .panel-subviews {
   padding: 0;
 }
 
@@ -16,21 +22,49 @@
   color: inherit;
 }
 
-#downloadsPanel:not([hasdownloads]) > #downloadsListBox {
-  display: none;
-}
-
-#downloadsPanel[hasdownloads] > #emptyDownloads {
-  display: none;
-}
-
 #emptyDownloads {
   padding: 10px 20px;
-  max-width: 40ch;
+  /* The panel can be wider than this description after the blocked subview is
+     shown, so center the text. */
+  text-align: center;
+}
+
+.downloadsPanelFooter {
+  background-color: #000000;
+  border-top: 1px solid #A09090;
+}
+
+.downloadsPanelFooter > toolbarseparator {
+  margin: 0;
+  border: 0;
+  min-width: 0;
+/*  border-left: 1px solid hsla(210,4%,10%,.14);
+  -moz-appearance: none !important;*/
+}
+
+.downloadsPanelFooterButton {
+  margin: 0;
+  padding: 0;
+/*  min-height: 40px;*/
+}
+
+.downloadsPanelFooterButton:hover {
+}
+
+.downloadsPanelFooterButton:hover:active {
+}
+
+.downloadsPanelFooterButton[default] {
+}
+
+.downloadsPanelFooterButton[default]:hover {
+}
+
+.downloadsPanelFooterButton[default]:hover:active {
 }
 
 #downloadsSummary {
-  padding: 8px 38px 8px 12px;
+  padding: 0 12px;
   cursor: pointer;
   -moz-user-focus: normal;
 }
@@ -41,15 +75,6 @@
 
 #downloadsSummaryDescription {
   color: #3333FF;
-}
-
-#downloadsHistory {
-  cursor: pointer;
-  margin: 4px !important;
-  color: #3333FF;
-}
-
-#downloadsHistory > .button-box {
 }
 
 /*** List items and similar elements in the summary ***/
@@ -74,14 +99,29 @@ richlistitem[type="download"]:first-child {
 }
 
 .downloadTypeIcon {
-  margin-inline-end: 8px;
-  /* Prevent flickering when changing states. */
-  height: 32px;
+  margin-top: 8px;
+  margin-inline-end: 12px;
+  margin-bottom: 8px;
+  margin-inline-start: 0;
   width: 32px;
+  height: 32px;
 }
 
-.blockedIcon {
-  list-style-image: url("chrome://global/skin/icons/alert-error.gif");
+.downloadBlockedBadge {
+  margin: 0 4px;
+  background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
+}
+
+downloadBlockedBadge:-moz-locale-dir(rtl) {
+  background-position-x: left;
+}
+
+richlistitem[type="download"][verdict="PotentiallyUnwanted"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/warning.svg");
+}
+
+richlistitem[type="download"][verdict="Uncommon"] .downloadBlockedBadge {
+  background-image: url("chrome://browser/skin/info.svg");
 }
 
 /* We hold .downloadTarget, .downloadProgress and .downloadDetails inside of
@@ -134,22 +174,74 @@ richlistitem[type="download"]:first-child {
   padding: 0;
 }
 
+/*** Blocked subview ***/
+
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype=main] > .panel-subviews {
+  /* When the main view is showing, the shadow on the left edge of the subview is
+     barely visible on the right edge of the main view, so set it to none. */
+  box-shadow: none;
+}
+
+/* When the subview is showing, turn the download button into an arrow pointing
+   back to the main view. */
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton {
+  list-style-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted.png");
+}
+
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png");
+}
+
+#downloadsPanel-blockedSubview {
+  background-image: url("chrome://browser/skin/warning.svg");
+  background-size: 32px 32px;
+  background-position: 16px 16px;
+  background-repeat: no-repeat;
+}
+
+#downloadsPanel-blockedSubview:-moz-locale-dir(rtl) {
+  background-position: calc(100% - 16px) 16px;
+}
+
+#downloadsPanel-blockedSubview[verdict=Malware] {
+  background-image: url("chrome://browser/skin/downloads/download-blocked.svg");
+}
+
+#downloadsPanel-blockedSubview-title {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: calc(100% / var(--downloads-item-font-size-factor));
+}
+
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+  font-size: calc(100% * var(--downloads-item-font-size-factor));
+  margin-bottom: 16px;
+  opacity: var(--downloads-item-details-opacity);
+}
+
+#downloadsPanel-blockedSubview-title,
+#downloadsPanel-blockedSubview-details1,
+#downloadsPanel-blockedSubview-details2 {
+  -moz-margin-start: 64px;
+  -moz-margin-end: 16px;
+}
 
 /* === END downloads.inc.css === */
 
 /*** Panel and outer controls ***/
 
-#downloadsFooter {
+#downloadsSummary {
 }
 
-#downloadsFooter:hover {
+#downloadsSummary:hover {
 }
 
-#downloadsFooter:hover:active {
+#downloadsSummary:hover:active {
 }
 
 #downloadsPanel[keyfocus] #downloadsSummary:focus,
-#downloadsPanel[keyfocus] #downloadsHistory:focus {
+#downloadsPanel[keyfocus] .downloadsPanelFooterButton:focus {
   outline: 1px #008484 dotted;
   outline-offset: -1px;
 }
@@ -158,10 +250,25 @@ richlistitem[type="download"]:first-child {
   outline-offset: -5px;
 }
 
-#downloadsHistory > .button-box {
+.downloadsPanelFooterButton > .button-box {
   /* Hide the border so we don't display an inner focus ring. */
   border: none;
 }
+
+richlistitem[type="download"][showingsubview] {
+  background-color: Highlight;
+  color: HighlightText;
+  transition: background-color var(--panelui-subview-transition-duration),
+              color var(--panelui-subview-transition-duration);
+}
+
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists][verdict="Malware"]:hover,
+#downloadsPanel:not([keyfocus]) richlistitem[type="download"][state="1"][exists][verdict="Malware"]:hover:active,
+richlistitem[type="download"][showingsubview][verdict="Malware"] {
+  background-color: hsl(4, 82%, 47%);
+  color: white;
+}
+
 
 /*** List items and similar elements in the summary ***/
 
@@ -237,4 +344,22 @@ richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconRetry,
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconRetry:hover,
 richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconRetry:active {
   -moz-image-region: rect(32px, 32px, 48px, 16px);
+}
+
+.downloadButton.downloadShowBlockedInfo {
+  -moz-image-region: rect(48px, 16px, 64px, 0px);
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo,
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:hover,
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:active {
+/*  -moz-image-region: rect(48px, 32px, 64px, 16px);*/
+}
+
+.downloadButton.downloadShowBlockedInfo:-moz-locale-dir(rtl) {
+  -moz-image-region: rect(64px, 16px, 80px, 0px);
+}
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:-moz-locale-dir(rtl),
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:hover:-moz-locale-dir(rtl),
+richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:active:-moz-locale-dir(rtl) {
+/*  -moz-image-region: rect(64px, 32px, 80px, 16px);*/
 }

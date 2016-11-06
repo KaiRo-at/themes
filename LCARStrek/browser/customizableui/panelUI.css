@@ -290,7 +290,6 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
 
 panelview[id^=PanelUI-webext-] {
   overflow: hidden;
-  border-radius: 3.5px;
 }
 
 panelview:not([mainview]) .toolbarbutton-text,
@@ -546,7 +545,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   border-bottom-left-radius: 4px;
 }
 
-#main-window[customizing] #PanelUI-footer-fxa > toolbarseparator {
+#main-window[customizing] #PanelUI-footer-fxa {
   display: none;
 }
 
@@ -1447,6 +1446,11 @@ toolbarbutton[overflowedItem=true] {
  
 menuitem[checked="true"].subviewbutton > .menu-iconic-left {
   visibility: hidden;
+}
+
+#PanelUI-containersItems > .subviewbutton > .toolbarbutton-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .panel-mainview[panelid=customizationui-widget-panel],
