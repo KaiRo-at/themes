@@ -7,8 +7,6 @@ window {
   padding: 0;
 }
 
-/* === BEGIN netmonitor.inc.css === */
-
 :root.theme-dark,
 :root.theme-light {
   --table-splitter-color: #A09090;
@@ -18,7 +16,7 @@ window {
   --timing-dns-color: #E7ADE7; /* pink */
   --timing-connect-color: #FF9F00; /* orange */
   --timing-send-color: #FFCF00; /* light blue */
-  --timig-wait-color: #9C9CFF; /* blue grey */
+  --timing-wait-color: #9C9CFF; /* blue grey */
   --timing-receive-color: #A09090; /* green */
 
   --sort-ascending-image: url(chrome://devtools/skin/images/sort-arrows.svg#ascending);
@@ -40,6 +38,13 @@ window {
   min-height: 26px;
   margin: 0;
   list-style-image: url("images/profiler-stopwatch.svg");
+}
+
+/* Make sure the icon is visible on Linux (to overwrite a rule
+  in xul.css that hides the icon if there is no label.
+  See also bug 1278050. */
+#requests-menu-perf-notice-button .button-icon {
+  display: block;
 }
 
 #requests-menu-perf-notice-button .button-text {
@@ -446,7 +451,7 @@ window {
   list-style-image: var(--theme-pane-collapse-image);
 }
 
-#details-pane-toggle[pane-collapsed] {
+#details-pane-toggle.pane-collapsed {
   list-style-image: var(--theme-pane-expand-image);
 }
 

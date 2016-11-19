@@ -60,6 +60,11 @@
   --theme-highlight-orange: #FF9F00;
   --theme-highlight-red: #FF0000;
   --theme-highlight-pink: #E7ADE7;
+  --theme-highlight-gray: #A09090;
+
+  /* For accessibility purposes we want to enhance the focus styling. This
+   * should improve keyboard navigation usability. */
+  --theme-focus-outline-color: #008484;
 
   /* Colors used in Graphs, like performance tools. Mostly similar to some "highlight-*" colors. */
   --theme-graphs-green: #008484;
@@ -75,4 +80,23 @@
   /* Images */
   --theme-pane-collapse-image: url(chrome://devtools/skin/images/pane-collapse.svg);
   --theme-pane-expand-image: url(chrome://devtools/skin/images/pane-expand.svg);
+
+  /* Tooltips */
+  --theme-tooltip-border: #FFCF00;
+  --theme-tooltip-background: #9C9CFF;
+  /*--theme-tooltip-shadow: rgba(25, 25, 25, 0.76);*/
+
+  /* Command line */
+  --theme-command-line-image: url(chrome://devtools/skin/images/commandline-icon.svg#light-theme);
+  --theme-command-line-image-focus: url(chrome://devtools/skin/images/commandline-icon.svg#light-theme-focus);
+}
+
+:root {
+  --theme-focus-border-color-textbox: #008484;
+  /*--theme-textbox-box-shadow: rgba(97,181,255,.75);*/
+
+  /* For accessibility purposes we want to enhance the focus styling. This
+   * should improve keyboard navigation usability. */
+  --theme-focus-outline: 1px dotted var(--theme-focus-outline-color);
+/*  --theme-focus-box-shadow-textbox: 0 0 0 1px var(--theme-textbox-box-shadow);*/
 }

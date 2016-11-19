@@ -44,8 +44,9 @@ body, html {
 }
 
 .theme-link,
-.cm-s-mozilla .cm-link { /* original: blue */
-  color: var(--theme-text-blue);
+.cm-s-mozilla .cm-link,
+.cm-s-mozilla .cm-keyword {
+  color: var(--theme-text-green);
 }
 
 /*
@@ -83,7 +84,7 @@ body, html {
 .variable-or-property .token-number,
 .variable-or-property[return] > .title > .name,
 .variable-or-property[scope] > .title > .name {
-  color: var(--theme-highlight-green);
+  color: var(--theme-highlight-red);
 }
 
 .CodeMirror-Tern-completion-number:before {
@@ -92,12 +93,11 @@ body, html {
 
 .theme-fg-color2,
 .cm-s-mozilla .cm-attribute,
-.cm-s-mozilla .cm-variable,
 .cm-s-mozilla .cm-def,
 .cm-s-mozilla .cm-property,
 .cm-s-mozilla .cm-qualifier,
 .variables-view-variable > .title > .name {
-  color: var(--theme-highlight-blue);
+  color: var(--theme-highlight-purple);
 }
 
 .CodeMirror-Tern-completion-object:before {
@@ -119,7 +119,7 @@ body, html {
 .cm-s-mozilla .cm-header,
 .cm-s-mozilla .cm-bracket,
 .variables-view-property > .title > .name {
-  color: var(--theme-highlight-pink);
+  color: var(--theme-highlight-green);
 }
 
 .CodeMirror-Tern-completion-array:before {
@@ -130,17 +130,17 @@ body, html {
   color: var(--theme-highlight-purple);
 }
 
-.theme-fg-color5,
-.cm-s-mozilla .cm-keyword {
-  color: var(--theme-highlight-lightorange);
+.theme-fg-color5 {
+  color: var(--theme-highlight-purple);
 }
 
 .theme-fg-color6,
 .cm-s-mozilla .cm-string,
 .cm-s-mozilla .cm-string-2,
 .variable-or-property .token-string,
+.cm-s-mozilla .cm-variable,
 .CodeMirror-Tern-farg {
-  color: var(--theme-highlight-pink); /* -orange? */
+  color: var(--theme-highlight-gray);
 }
 
 .CodeMirror-Tern-completion-string:before,
@@ -172,7 +172,8 @@ body, html {
 .devtools-sidebar-alltabs,
 .cm-s-mozilla .CodeMirror-dialog { /* General toolbar styling */
 /*  color: var(--theme-body-color-alt);
-  background-color: var(--theme-toolbar-background);*/
+  background-color: var(--theme-toolbar-background);
+  border-color: var(--theme-splitter-color);*/
 }
 
 .theme-fg-contrast { /* To be used for text on theme-bg-contrast */
@@ -381,16 +382,16 @@ div.CodeMirror span.eval-text {
 }
 
 .devtools-textinput,
-.devtools-filterinput,
-.devtools-searchinput {
+.devtools-searchinput,
+.devtools-filterinput {
   background-color: #000000;
   color: #E7ADE7;
   border: 1px solid #9C9CFF;
 }
 
 .devtools-textinput:focus,
-.devtools-filterinput:focus,
-.devtools-searchinput:focus {
+.devtools-searchinput:focus,
+.devtools-filterinput:focus {
   border-color: #008484;
 }
 

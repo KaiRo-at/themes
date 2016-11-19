@@ -34,12 +34,23 @@ notification {
 .devtools-autocomplete-popup {
   border-radius: 3px;
   overflow-x: hidden;
-  max-height: 40rem;
+  max-height: 20rem;
 }
 
 .devtools-autocomplete-listbox {
   background-color: transparent;
   border-width: 0px !important;
+  margin: 0;
+}
+
+.devtools-autocomplete-listbox > scrollbox {
+  padding: 2px;
+}
+
+.inplace-editor-autocomplete-popup .devtools-autocomplete-listbox {
+  /* Inplace editor closes the autocomplete popup on blur, the autocomplete
+  popup should not steal the focus here.*/
+  -moz-user-focus: ignore;
 }
 
 .devtools-autocomplete-listbox > richlistitem,
@@ -108,108 +119,6 @@ notification {
 /*  color: #666;*/
 }
 
-/* Tooltip widget (see devtools/client/shared/widgets/Tooltip.js) */
-
-.devtools-tooltip.devtools-tooltip-tooltip {
-  /* If the tooltip uses a <tooltip> XUL element */
-  padding: 4px;
-  background: #A09090;
-  border-radius: 3px;
-}
-
-.devtools-tooltip .panel-arrowcontent {
-  padding: 4px;
-}
-
-.devtools-tooltip .panel-arrowcontainer {
-  /* Reseting the transition used when panels are shown */
-  transition: none;
-  /* Panels slide up/down/left/right when they appear using a transform.
-  Since we want to remove the transition, we don't need to transform anymore
-  plus it can interfeer by causing mouseleave events on the underlying nodes */
-  transform: none;
-}
-
-.devtools-tooltip[clamped-dimensions] {
-  min-height: 100px;
-  max-height: 400px;
-  min-width: 100px;
-  max-width: 400px;
-}
-.devtools-tooltip[clamped-dimensions-no-min-height] {
-  min-height: 0;
-  max-height: 400px;
-  min-width: 100px;
-  max-width: 400px;
-}
-.devtools-tooltip[clamped-dimensions-no-max-or-min-height] {
-  min-width: 400px;
-  max-width: 400px;
-}
-.devtools-tooltip[clamped-dimensions] .panel-arrowcontent,
-.devtools-tooltip[clamped-dimensions-no-min-height] .panel-arrowcontent,
-.devtools-tooltip[clamped-dimensions-no-max-or-min-height] .panel-arrowcontent {
-  overflow: hidden;
-}
-.devtools-tooltip[wide] {
-  max-width: 600px;
-}
-
-/* Tooltip: Simple Text */
-
-.devtools-tooltip-simple-text {
-  max-width: 400px;
-  margin: 0 -4px; /* Compensate for the .panel-arrowcontent padding. */
-  padding: 8px 12px;
-  white-space: pre-wrap;
-}
-
-.devtools-tooltip-simple-text:first-child {
-  margin-top: -4px;
-}
-
-.devtools-tooltip-simple-text:last-child {
-  margin-bottom: -4px;
-}
-
-/* Tooltip: Alert Icon */
-
-.devtools-tooltip-alert-icon {
-  width: 32px;
-  height: 32px;
-  margin: 6px;
-  margin-inline-end: 20px;
-}
-
-.devtools-tooltip-alert-icon {
-  list-style-image: url("chrome://global/skin/icons/alert-exclam.gif");
-}
-
-/* Tooltip: Variables View */
-
-.devtools-tooltip-variables-view-box {
-  margin: -4px; /* Compensate for the .panel-arrowcontent padding. */
-}
-
-.devtools-tooltip-variables-view-box .variable-or-property > .title {
-  padding-inline-end: 6px;
-}
-
-/* Tooltip: Tiles */
-
-.devtools-tooltip-tiles {
-  background-color: #A09090;
-  background-image: linear-gradient(45deg, #9C9CFF 25%, transparent 25%, transparent 75%, #9C9CFF 75%, #9C9CFF),
-    linear-gradient(45deg, #9C9CFF 25%, transparent 25%, transparent 75%, #9C9CFF 75%, #9C9CFF);
-  background-size: 20px 20px;
-  background-position: 0 0, 10px 10px;
-}
-
-.devtools-tooltip-iframe {
-  border: none;
-  background: transparent;
-}
-
 /* links to source code, like displaying `myfile.js:45` */
 
 .devtools-source-link {
@@ -239,4 +148,31 @@ notification {
   flex: none;
   margin: 2px 0px;
   cursor: pointer;
+}
+
+/* Keyboard focus highlight styles */
+
+:-moz-focusring {
+  outline: var(--theme-focus-outline);
+  outline-offset: -1px;
+}
+
+textbox[focused="true"] {
+  border-color: var(--theme-focus-border-color-textbox);
+
+/*  box-shadow: var(--theme-focus-box-shadow-textbox);*/
+  transition: all 0.2s ease-in-out
+}
+
+textbox :-moz-focusring {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Form fields should already have box-shadow hightlight */
+select:-moz-focusring,
+input[type="radio"]:-moz-focusring,
+input[type="checkbox"]:-moz-focusring,
+checkbox:-moz-focusring {
+  outline: none;
 }

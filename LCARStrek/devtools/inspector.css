@@ -10,272 +10,105 @@ window {
   padding: 0;
 }
 
+:root.theme-dark {
+  --breadcrumbs-border-color: #9C9CFF;
+}
+
 /* Use flex layout for the Inspector toolbar. For now, it's done
    specifically for the Inspector toolbar since general rule applied
    on .devtools-toolbar breaks breadcrubs and also toolbars in other
    panels (e.g. webconsole, debugger), these are not ready for HTML
    layout yet. */
-div#inspector-toolbar.devtools-toolbar {
+#inspector-toolbar.devtools-toolbar {
   display: flex;
-  background-size: calc(100% - 30px);
-  background-image: linear-gradient(90deg,#9C9CFF,#9C9CFF);
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
-div#inspector-toolbar.devtools-toolbar .devtools-toolbar-spacer {
+#inspector-toolbar.devtools-toolbar .devtools-toolbar-spacer {
   flex-grow: 1;
   display: inline-block;
-}
-
-div#inspector-toolbar.devtools-toolbar::before,
-div#inspector-toolbar.devtools-toolbar::after {
-  display: flex;
-  content: "";
-  width: 12px;
-  min-height: 16px;
-  background-color: #FF9F00;
-}
-
-div#inspector-toolbar.devtools-toolbar::before {
-  border-radius: 8px 0px 0px 8px;
-  border: none;
-  border-inline-end: 3px solid black;
-  margin-inline-end: 2px;
-}
-
-div#inspector-toolbar.devtools-toolbar::after {
-  border-radius: 0px 8px 8px 0px;
-  border: none;
-  border-inline-start: 3px solid black;
-  margin-inline-start: 2px;
-}
-
-
-#inspector-toolbar {
-  border-top: none;
 }
 
 #inspector-searchlabel {
   overflow: hidden;
 }
 
+/* Make sure the text is vertically centered in Inspector's
+   search box. This can be removed when the search box is
+   switched to HTML.
+   See also: https://bugzilla.mozilla.org/show_bug.cgi?id=1265759 */
+#inspector-searchbox {
+  line-height: 19px;
+}
+
 #inspector-breadcrumbs-toolbar {
   padding: 0px;
   border-bottom-width: 0px;
   border-top-width: 1px;
+  border-top-color: var(--breadcrumbs-border-color);
+  /* Bug 1262668 - Use the same background as the body so the breadcrumbs toolbar doesn't
+     get mistaken as a splitter */
+  background-color: var(--theme-body-background);
+  display: block;
+  position: relative;
 }
 
-/* Expand/collapse panel toolbar button */
-
-#inspector-pane-toggle {
-  list-style-image: var(--theme-pane-collapse-image);
+#inspector-breadcrumbs-toolbar,
+#inspector-breadcrumbs-toolbar * {
+  box-sizing: border-box;
 }
 
-#inspector-pane-toggle[pane-collapsed] {
-  list-style-image: var(--theme-pane-expand-image);
+#inspector-breadcrumbs {
+  display: flex;
+  /* Break out of the XUL flexbox, so the splitter can still shrink the
+     markup view even if the contents of the breadcrumbs are wider than
+     the new width. */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-@media (max-width: 700px) {
-  #inspector-pane-toggle > .toolbarbutton-icon {
-    transform: rotate(90deg);
-  }
+#inspector-breadcrumbs .scrollbutton-up,
+#inspector-breadcrumbs .scrollbutton-down {
+  flex: 0;
+  display: flex;
+  align-items: center;
 }
 
-/* Add element toolbar button */
-
-#inspector-element-add-button {
-  list-style-image: url("chrome://devtools/skin/images/add.svg");
+#inspector-breadcrumbs .html-arrowscrollbox-inner {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
 }
 
-button#inspector-element-add-button::before {
-  background-image: url("chrome://devtools/skin/images/add.svg");
-  list-style-image: url("chrome://devtools/skin/images/add.svg");
-  -moz-user-focus: normal;
+#inspector-breadcrumbs .breadcrumbs-widget-item {
+  white-space: nowrap;
+  flex-shrink: 0;
+  font: message-box;
 }
-
-#inspector-search {
-  flex: unset;
-}
-
-/* TODO: bug 1265759: should apply to .devtools-searchinput once all searchbox
-   is converted to html*/
-#inspector-searchbox {
-  width: 100%;
-}
-
-/* Eyedropper toolbar button */
 
 #inspector-eyedropper-toggle {
   /* hidden by default, until we can check that the required highlighter exists */
-  display: none;
+   display: none;
 }
 
 #inspector-eyedropper-toggle::before {
   background-image: var(--eyedropper-image);
 }
 
-#inspector-sidebar-toggle-box {
-  line-height: initial;
+/* Add element toolbar button */
+#inspector-element-add-button::before {
+  background-image: url("chrome://devtools/skin/images/add.svg");
+  list-style-image: url("chrome://devtools/skin/images/add.svg");
+  -moz-user-focus: normal;
 }
 
-button#sidebar-toggle {
-  height: 100%;
-}
+/* "no results" warning message displayed in the ruleview and in the computed view */
 
-/* Set the minimum width for the side bar so, all tabs are
-  properly visible. The value can be decreased when bug 1281789
-  is fixed and the all-tabs-menu is available again. */
-#inspector-sidebar-container {
-  overflow: hidden;
-  min-width: 300px;
-  position: relative;
-}
-
-div#inspector-sidebar {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-/* Sidebar tabs */
-
-.tabs .tabs-navigation {
-  height: auto !important;
-}
-
-.tabs .tabs-menu-item {
-  border-radius: 8px 8px 0px 0px;
-  margin-top: 2px;
-  border: 0 !important;
-  border-inline-end: 2px solid transparent !important;
-  border-bottom: none;
-  padding: 2px 4px 1px;
-  background-color: var(--theme-button-background);
-  color: var(--theme-button-color);
-  background-clip: padding-box;
-  height: auto !important;
-}
-
-.tabs .tabs-menu-item a {
-  color: inherit !important;
-  padding: 0 !important;
-  border: 0;
-}
-
-.tabs .tabs-menu-item:hover {
-  background-color: var(--theme-hover-background);
-  color: var(--theme-hover-color);
-}
-
-.tabs .tabs-menu-item:hover:active {
-  background-color: var(--theme-active-background);
-  color: var(--theme-active-color);
-}
-
-/* Tooltip: Events */
-
-#devtools-tooltip-events-container {
-  margin: -4px; /* Compensate for the .panel-arrowcontent padding. */
-  max-width: 590px;
-  overflow-y: auto;
-}
-
-.event-header {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.event-header:first-child {
-  border-width: 0;
-}
-
-.event-header:not(:first-child) {
-  border-width: 1px 0 0 0;
-}
-
-.event-tooltip-event-type,
-.event-tooltip-filename,
-.event-tooltip-attributes {
-  margin-inline-start: 0;
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-.event-tooltip-event-type {
-  font-weight: bold;
-  font-size: 13px;
-}
-
-.event-tooltip-filename {
-  margin-inline-end: 0;
-  font-size: 100%;
-  flex-shrink: 1;
-}
-
-.event-tooltip-debugger-icon {
-  width: 16px;
-  height: 16px;
-  margin-inline-end: 4px;
-  opacity: 0.6;
-  flex-shrink: 0;
-}
-
-.event-tooltip-debugger-icon:hover {
-  opacity: 1;
-}
-
-.event-tooltip-content-box {
-  display: none;
-  height: 100px;
-  overflow: hidden;
-  margin-inline-end: 0;
-  border: 1px solid var(--theme-splitter-color);
-  border-width: 1px 0 0 0;
-}
-
-.event-toolbox-content-box iframe {
-  height: 100%;
-}
-
-.event-tooltip-content-box[open] {
-  display: block;
-}
-
-.event-tooltip-source-container {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin-inline-start: 5px;
-  margin-inline-end: 0;
-}
-
-.event-tooltip-source {
-  margin-bottom: 0;
-}
-
-.event-tooltip-attributes-container {
-  display: flex;
-  flex-shrink: 0;
-  flex-grow: 1;
-  justify-content: flex-end;
-}
-
-.event-tooltip-attributes-box {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  border-radius: 3px;
-  padding: 2px;
-  margin-inline-start: 5px;
-  background-color: var(--theme-body-color-alt);
-  color: var(--theme-toolbar-background);
-}
-
-.event-tooltip-attributes {
-  margin: 0;
-  font-size: 9px;
-  padding-top: 2px;
+#ruleview-no-results,
+#computedview-no-results {
+  color: var(--theme-body-color-inactive);
+  text-align: center;
+  margin: 5px;
 }

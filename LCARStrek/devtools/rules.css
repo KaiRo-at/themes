@@ -198,8 +198,7 @@
   border-left: solid 10px;
 }
 
-.ruleview-rule,
-#noResults {
+.ruleview-rule {
   padding: 2px 4px;
 }
 
@@ -210,6 +209,10 @@
 .ruleview-rule[unmatched=true],
 .ruleview-rule[uneditable=true] {
   background: var(--theme-tab-toolbar-background);
+}
+
+.ruleview-rule[unmatched=true] {
+  opacity: 0.5;
 }
 
 .ruleview-rule[uneditable=true] :focus {
@@ -260,11 +263,6 @@
 }
 
 .theme-firebug .ruleview-enableproperty:not([checked]) ~ .ruleview-computedlist * {
-  color: #A09090;
-}
-
-#noResults {
-/*  font: message-box;*/
   color: #A09090;
 }
 
@@ -448,8 +446,9 @@
   cursor: text;
 }
 
-.ruleview-selector-separator, .ruleview-selector-unmatched {
-  color: #888;
+.ruleview-selector-separator,
+.ruleview-selector-unmatched {
+  color: var(--theme-comment);
 }
 
 .ruleview-selector-matched > .ruleview-selector-attribute {

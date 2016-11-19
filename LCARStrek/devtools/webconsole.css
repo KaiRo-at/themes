@@ -7,8 +7,6 @@
 .theme-dark,
 .theme-light,
 .theme-firebug {
-  --command-line-image: -moz-image-rect(url("chrome://devtools/skin/images/commandline-icon.png"), 0, 32, 16, 16);
-  --command-line-image-2x: -moz-image-rect(url('chrome://devtools/skin/images/commandline-icon@2x.png'), 0, 64, 32, 32);
 }
 
 window {
@@ -39,7 +37,6 @@ a {
 
 .message {
   display: flex;
-  flex: none;
   padding: 0 7px;
   width: 100%;
   box-sizing: border-box;
@@ -76,7 +73,8 @@ a {
 }
 
 .message > .message-body-wrapper {
-  flex: 1 1 100%;
+  flex: auto;
+  min-width: 0px;
   margin: 3px;
 }
 
@@ -104,24 +102,22 @@ a {
 }
 
 .message-location {
-  display: flex;
-  flex: none;
-  align-self: flex-start;
-  justify-content: flex-end;
-  width: 10em;
-  margin-top: 3px;
-  color: #3333FF;
-  text-decoration: none;
+  max-width: 40%;
+}
+
+.stack-trace .frame-link-source,
+.message-location .frame-link-source {
+  direction: rtl;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.message-location:hover,
-.message-location:focus {
-  text-decoration: underline;
-}
-
-.message-location > .frame-link .frame-link-source {
-  width: 10em;
+.stack-trace .frame-link-function-display-name {
+  max-width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .message-flex-body {
@@ -134,13 +130,7 @@ a {
 }
 
 .message-flex-body > .message-body {
-  display: block;
-  flex: 1 1 auto;
-  vertical-align: middle;
-}
-
-.message-flex-body > .message-location {
-  margin-top: 0;
+  flex: auto;
 }
 
 #output-wrapper {
@@ -190,7 +180,7 @@ a {
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  margin-left: 5px;
+  margin-inline-start: 5px;
   border-width: 1px;
   border-style: solid;
 }
@@ -373,9 +363,16 @@ a {
 .jsterm-input-node,
 .jsterm-complete-node {
   border: none;
-  padding: 0 0 0 16px;
+  padding: 0;
+  padding-inline-start: 20px;
+  margin: 0;
   -moz-appearance: none;
   background-color: transparent;
+}
+
+.jsterm-input-node[focused="true"] {
+  background-image: var(--theme-command-line-image-focus);
+  box-shadow: none;
 }
 
 .jsterm-complete-node {
@@ -386,21 +383,20 @@ a {
   /* Always allow scrolling on input - it auto expands in js by setting height,
      but don't want it to get bigger than the window. 24px = toolbar height. */
   max-height: calc(90vh - 24px);
-  background-image: var(--command-line-image);
+  background-image: var(--theme-command-line-image);
   background-repeat: no-repeat;
   background-size: 16px 16px;
+  background-position: 4px 50%;
   color: var(--theme-content-color1);
-}
-
-@media (min-resolution: 1.1dppx) {
-  .jsterm-input-node {
-    background-image: var(--command-line-image-2x);
-  }
 }
 
 :-moz-any(.jsterm-input-node,
           .jsterm-complete-node) > .textbox-input-box > .textbox-textarea {
   overflow-x: hidden;
+  /* Set padding for console input on textbox to make sure it is inlcuded in
+     scrollHeight that is used when resizing JSTerminal's input. Note: textbox
+     default style has important already */
+  padding: 4px 0 !important;
 }
 
 .inlined-variables-view .message-body {
@@ -465,10 +461,8 @@ a {
 
 .stacktrace {
   display: none;
-  list-style: none;
-  padding: 0 1em 0 1.5em;
+  padding: 5px 10px;
   margin: 5px 0 0 0;
-  max-height: 10em;
   overflow-y: auto;
   border: 1px solid var(--theme-splitter-color);
   border-radius: 3px;
@@ -493,16 +487,6 @@ a {
   flex-shrink: 0;
 }
 
-.stacktrace li {
-  display: flex;
-  margin: 0;
-}
-
-.stacktrace .function {
-  display: block;
-  flex: 1 1 auto;
-}
-
 .cm-s-mozilla a[class] {
   font-style: italic;
   text-decoration: none;
@@ -521,7 +505,7 @@ a.learn-more-link.webconsole-learn-more-link {
 .open-inspector {
   background: url("chrome://devtools/skin/images/vview-open-inspector.png") no-repeat 0 0;
   padding-left: 16px;
-  margin-left: 5px;
+  margin-inline-start: 5px;
   cursor: pointer;
 }
 
@@ -550,7 +534,7 @@ a.learn-more-link.webconsole-learn-more-link {
   .webconsole-filter-button > .toolbarbutton-menubutton-button:before {
     width: 12px;
     height: 12px;
-    margin-left: 1px;
+    margin-inline-start: 1px;
   }
   .toolbarbutton-menubutton-dropmarker {
     margin: 0px;

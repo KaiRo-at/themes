@@ -80,7 +80,7 @@
     cursor: n-resize;
   }
 
-  .devtools-responsive-container > .devtools-sidebar-tabs:not([pane-collapsed]) {
+  .devtools-responsive-container > .devtools-sidebar-tabs:not(.pane-collapsed) {
     /* When the panel is collapsed min/max height should not be applied because
        collapsing relies on negative margins, which implies constant height. */
     min-height: 35vh;
@@ -256,6 +256,15 @@
 .breadcrumbs-widget-item:active {
   background-color: #FF9F00;
   color: #000000;
+}
+
+.breadcrumbs-widget-item:-moz-focusring {
+  outline: none;
+}
+
+.breadcrumbs-widget-item[checked]:-moz-focusring > .button-box {
+  outline: var(--theme-focus-outline);
+  outline-offset: -1px;
 }
 
 .breadcrumbs-widget-item > .button-box {
@@ -522,6 +531,12 @@
 .variables-view-scope > .title {
   background-color: #A09090;
   color: #000000;
+}
+
+/* Custom scope stylings */
+
+.variables-view-watch-expressions .title > .name  {
+  max-width: 14em;
 }
 
 /* Generic variables traits */

@@ -41,9 +41,9 @@
   margin: 3px;
   padding: 0 6px;
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  right: 0;
+  offset-inline-end: 0;
 }
 
 .dim > #font-container,
@@ -78,7 +78,6 @@
 }
 
 #font-preview-text-input {
-  font: inherit;
   margin-top: 1px;
   margin-bottom: 1px;
   padding-top: 0;
