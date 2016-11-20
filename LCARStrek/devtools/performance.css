@@ -11,7 +11,6 @@
   --focus-cell-border-color: #9C9CFF;
   --row-alt-background-color: #403400;
   --row-hover-background-color: #544400;
-  --filter-image: url(chrome://devtools/skin/images/timeline-filter.svg);
 }
 
 /**
@@ -36,7 +35,7 @@
 }
 
 #filter-button {
-  list-style-image: var(--filter-image);
+  list-style-image: url(images/filter.svg);
 }
 
 #performance-filter-menupopup > menuitem .menu-iconic-left::after {

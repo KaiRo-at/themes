@@ -290,6 +290,7 @@ h3 {
   }
 }
 
+/* CSS coverage */
 .csscoverage-report {
   background-color: var(--theme-contrastsidebar-background);
   -moz-box-orient: horizontal;
@@ -396,7 +397,7 @@ h3 {
 
 .chart-colored-blob[name="Used Preload"] {
   fill: var(--theme-highlight-pink);
-  background: var(--theme-highlight-pink);;
+  background: var(--theme-highlight-pink);
 }
 
 .chart-colored-blob[name=Used] {

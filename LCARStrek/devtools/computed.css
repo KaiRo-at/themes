@@ -8,10 +8,7 @@
   display : flex;
   flex-direction: column;
   width: 100%;
-  /* Bug 1243598 - Reduce the container height by the tab height to make room
-     for the tabs above. */
-  height: calc(100% - 24px);
-  position: absolute;
+  height: 100%;
 }
 
 #computedview-container {
@@ -29,8 +26,7 @@
   outline: none;
 }
 
-#computedview-toolbar,
-#sidebar-panel-computedview > .devtools-toolbar {
+#computedview-toolbar {
   display: flex;
 }
 
@@ -68,7 +64,7 @@
 }
 
 .property-view {
-  padding: 2px 17px;
+  padding: 2px 0 2px 17px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -96,14 +92,14 @@
   outline: 0 !important;
 }
 
-.property-value, .other-property-value {
+.other-property-value {
   background-image: url(images/arrow-e.png);
   background-repeat: no-repeat;
   background-size: 5px 8px;
 }
 
 @media (min-resolution: 1.1dppx) {
-  .property-value, .other-property-value {
+  .other-property-value {
     background-image: url(images/arrow-e@2x.png);
   }
 }
@@ -172,12 +168,6 @@
 
 #computedview-no-results {
   height: 100%;
-}
-
-#noResults {
-  font-size: 110%;
-  margin: 5px;
-  text-align: center;
 }
 
 .onlyuserstyles {

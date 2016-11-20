@@ -192,7 +192,6 @@ window {
   width: 16px;
   height: 16px;
   margin-inline-end: 4px;
-  cursor: pointer;
 }
 
 .security-state-insecure {
