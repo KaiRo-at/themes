@@ -24,6 +24,17 @@
 /* Toolbars */
 .devtools-toolbar,
 .devtools-sidebar-tabs tabs {
+  padding: 0;
+  border-width: 0;
+/*  border-bottom-width: 1px;*/
+  border-style: solid;
+/*  height: 24px;
+  line-height: 24px;*/
+  box-sizing: border-box;
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+}
+.devtools-toolbar {
+  height: 24px;
 }
 
 .devtools-toolbar {
@@ -43,6 +54,65 @@
 .devtools-toolbar checkbox .checkbox-label-box .checkbox-label {
 }
 
+/* HTML Checkboxes - a lot copied from global/in-content/common.css */
+/* Hide the actual checkbox */
+input[type="checkbox"]:not(#browser-style-checkbox) { /* not() is workaround for old placement of checkbox in label */
+  opacity: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* Create a box to style as the checkbox */
+input[type="checkbox"] + label::before {
+  display: inline-block;
+  content: "";
+  vertical-align: middle;
+}
+
+.devtools-searchbox + #browser-style-checkbox-label, /* workaround for old placement of checkbox in label */
+input[type="checkbox"] + label {
+  line-height: 0px;
+  color: var(--theme-capped-toolbar-text);
+}
+
+input[type="checkbox"] + label::before {
+  -moz-appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 0;
+  border: 1px solid var(--theme-body-color);
+  margin-inline-end: 3px;
+  margin-inline-start: 2px;
+  background-color: var(--theme-toolbar-background);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:not(:disabled) + label:hover::before {
+  border-color: var(--theme-hover-background);
+}
+.devtools-searchbox + #browser-style-checkbox-label:hover, /* workaround for old placement of checkbox in label */
+input[type="checkbox"]:not(:disabled) + label:hover {
+  color: var(--theme-hover-background);
+}
+input[type="checkbox"]:checked + label::before {
+  background-image: url("chrome://global/skin/in-content/check.svg#check");
+}
+
+input[type="checkbox"]:checked:disabled + label::before {
+  background-image: url("chrome://global/skin/in-content/check.svg#check-disabled");
+}
+input[type="checkbox"]:checked:not(:disabled) + label:hover::before {
+  background-image: url("chrome://global/skin/in-content/check.svg#check-hover");
+}
+input[type="checkbox"]:disabled + label::before {
+  border-color: var(--theme-body-color-inactive);
+}
+input[type="checkbox"]:disabled + label {
+  color: var(--theme-body-color-inactive);
+}
+
 .devtools-separator {
   margin: 0 2px;
   width: 2px;
@@ -50,6 +120,39 @@
   background-size: 1px 100%;
   background-repeat: no-repeat;
   background-position: 0, 1px, 2px;
+}
+
+/* HTML toolbars - style them LCARStrek-like */
+
+div.devtools-toolbar {
+  background-size: calc(100% - 30px);
+  background-image: linear-gradient(90deg, var(--theme-capped-toolbar-background), var(--theme-capped-toolbar-background));
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+}
+
+div.devtools-toolbar::before,
+div.devtools-toolbar::after {
+  display: flex;
+  content: "";
+  width: 12px;
+  min-height: 16px;
+  background-color: var(--theme-toolbar-caps);
+}
+
+div.devtools-toolbar::before {
+  border-radius: 8px 0px 0px 8px;
+  border: none;
+  border-inline-end: 3px solid black;
+  margin-inline-end: 2px;
+}
+
+div.devtools-toolbar::after {
+  border-radius: 0px 8px 8px 0px;
+  border: none;
+  border-inline-start: 3px solid black;
+  margin-inline-start: auto; /* originally 2px, but auto makes us able to get flexible free space */
 }
 
 /* Toolbar buttons */
@@ -121,7 +224,8 @@
 .devtools-button[standalone],
 .devtools-button[data-standalone],
 .devtools-toolbarbutton[standalone],
-.devtools-toolbarbutton[data-standalone] {
+.devtools-toolbarbutton[data-standalone],
+.menu-filter-button {
   border: none;
 /*  min-height: 32px; */
   background-color: var(--theme-button-background);
@@ -132,7 +236,8 @@
 .devtools-button[standalone]:hover,
 .devtools-button[data-standalone]:hover,
 .devtools-toolbarbutton[standalone]:hover,
-.devtools-toolbarbutton[data-standalone]:hover {
+.devtools-toolbarbutton[data-standalone]:hover,
+.menu-filter-button:hover {
   background-color: var(--theme-hover-background);
   color: var(--theme-hover-color);
 }
@@ -140,9 +245,19 @@
 .devtools-button[standalone]:hover:active,
 .devtools-button[data-standalone]:hover:active,
 .devtools-toolbarbutton[standalone]:hover:active,
-.devtools-toolbarbutton[data-standalone]:hover:active {
+.devtools-toolbarbutton[data-standalone]:hover:active,
+.menu-filter-button:hover:active {
   background-color: var(--theme-active-background);
   color: var(--theme-active-color);
+}
+
+.menu-filter-button.checked {
+  background: var(--theme-selection-background);
+  color: var(--theme-selection-color);
+}
+
+.menu-filter-button + .menu-filter-button {
+  margin-inline-start: 2px;
 }
 
 .devtools-toolbarbutton[standalone], .devtools-toolbarbutton[data-standalone] {
@@ -353,7 +468,7 @@
 }
 
 .devtools-filterinput {
-  background-image: url(--filter-image);
+  background-image: var(--filter-image);
 }
 
 .devtools-searchinput:-moz-locale-dir(rtl),
@@ -412,7 +527,7 @@
 .devtools-rule-searchbox {
   -moz-box-flex: 1;
   width: 100%;
-  font: inherit;
+/*  font: inherit;*/
 }
 
 .devtools-rule-searchbox[filled] {
@@ -422,8 +537,8 @@
 }
 
 .devtools-style-searchbox-no-match {
-  background-color: var(--searcbox-no-match-background-color) !important;
-  border-color: var(--searcbox-no-match-border-color) !important;
+  background-color: var(--searchbox-no-match-background-color) !important;
+  border-color: var(--searchbox-no-match-border-color) !important;
 }
 
 .devtools-searchinput-clear {
@@ -556,6 +671,30 @@
 .devtools-horizontal-splitter,
 .devtools-side-splitter {
 /*  background-color: var(--theme-splitter-color);*/
+}
+
+/* HACK around hardcoded stylings for the HTML-based sidebar tabs */
+.tabs .tabs-menu-item,
+.theme-dark .tabs .tabs-menu-item,
+.theme-light .tabs .tabs-menu-item {
+  margin: 0;
+  margin-inline-end: 3px !important;
+  padding: 0 !important;
+  border-radius: 8px 8px 0 0;
+  border: 0 !important;
+  background-color: var(--theme-button-background);
+}
+.tabs .tabs-menu-item a {
+  color: var(--theme-button-color) !important;
+  padding: 0px 3px !important;
+}
+.tabs .tabs-menu-item.is-active {
+  height: auto !important;
+}
+.tabs .tabs-navigation {
+  height: auto !important;
+  border: 0 !important;
+  border-bottom: 3px solid  var(--theme-body-background) !important;
 }
 
 /* Throbbers */

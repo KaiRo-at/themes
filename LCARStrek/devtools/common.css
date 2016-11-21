@@ -159,3 +159,24 @@ input[type="checkbox"]:-moz-focusring,
 checkbox:-moz-focusring {
   outline: none;
 }
+
+
+:root {
+  --clear-icon-url: url("chrome://devtools/skin/images/clear.svg");
+}
+
+.devtools-button.devtools-clear-icon::before {
+  background-image: var(--clear-icon-url);
+}
+
+.devtools-button.devtools-filter-icon::before {
+  background-image: var(--filter-image);
+}
+
+.devtools-toolbarbutton.devtools-clear-icon {
+  list-style-image: var(--clear-icon-url);
+}
+
+.devtools-option-toolbarbutton {
+  list-style-image: var(--tool-options-image);
+}

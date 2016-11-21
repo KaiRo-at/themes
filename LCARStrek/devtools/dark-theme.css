@@ -383,16 +383,27 @@ div.CodeMirror span.eval-text {
 
 .devtools-textinput,
 .devtools-searchinput,
-.devtools-filterinput {
+.devtools-filterinput,
+.devtools-plaininput {
   background-color: #000000;
   color: #E7ADE7;
   border: 1px solid #9C9CFF;
+  border-radius: 3px;
 }
 
 .devtools-textinput:focus,
 .devtools-searchinput:focus,
-.devtools-filterinput:focus {
+.devtools-filterinput:focus,
+.devtools-plaininput:focus {
   border-color: #008484;
+}
+
+.devtools-textinput::-moz-placeholder,
+.devtools-searchinput::-moz-placeholder,
+.devtools-filterinput::-moz-placeholder,
+.devtools-plaininput::-moz-placeholder {
+  color: #8050B0;
+  opacity: 1.0;
 }
 
 .CodeMirror-Tern-fname {

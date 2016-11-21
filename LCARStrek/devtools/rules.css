@@ -32,6 +32,13 @@
   height: auto;
 }
 
+/* Remove LCARS startcap and endcap */
+/* XXX: We actually should add them via the #ruleview-toolbar again */
+div#ruleview-toolbar-container::before,
+div#ruleview-toolbar-container::after {
+  display: none;
+}
+
 #ruleview-toolbar {
   display: flex;
 }

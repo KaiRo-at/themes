@@ -45,6 +45,16 @@
   color: #FFCF00;
 }
 
+/* Set flex attribute to Toolbox buttons and Picker container so,
+   they don't overlapp with the tab bar */
+#toolbox-buttons {
+  display: flex;
+}
+
+#toolbox-picker-container {
+  display: flex;
+}
+
 /* Toolbox tabs */
 
 .devtools-tab {
@@ -65,12 +75,8 @@
   -moz-user-focus: normal;
   -moz-box-flex: 1;
 
-  color: #000000;
-  background-color: #C09070;
-}
-
-.theme-dark .devtools-tab:hover {
-  color: #ced3d9;
+  color: var(--theme-button-color);
+  background-color: var(--theme-button-background);
 }
 
 .devtools-tab:hover,
@@ -112,8 +118,8 @@
 }
 
 .devtools-tabbar .devtools-tab[selected] {
-  background-color: var(--theme-selection-background);
   color: var(--theme-selection-color);
+  background-color: var(--theme-selection-background);
 }
 
 #toolbox-tabs .devtools-tab[selected],

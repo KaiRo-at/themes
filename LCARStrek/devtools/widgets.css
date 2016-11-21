@@ -231,7 +231,7 @@
 }
 
 .breadcrumbs-widget-item {
-  background-color: var(--theme-toolbar-background);
+  background-color: var(--theme-capped-toolbar-background);
   min-height: 24px;
   min-width: 65px;
   margin: 0;
@@ -254,8 +254,8 @@
 
 .breadcrumbs-widget-item[siblings-menu-open],
 .breadcrumbs-widget-item:active {
-  background-color: #FF9F00;
-  color: #000000;
+  background-color: var(--theme-active-background);
+  color: var(--theme-active-color);
 }
 
 .breadcrumbs-widget-item:-moz-focusring {
@@ -278,16 +278,22 @@
 }
 
 .breadcrumbs-widget-item:not([checked]) {
-  background: -moz-element(#breadcrumb-separator-normal) no-repeat center left;
+  background-image: -moz-element(#breadcrumb-separator-normal);
+  background-repeat: no-repeat;
+  background-position: center left;
 }
 
 .breadcrumbs-widget-item[checked] + .breadcrumbs-widget-item {
-  background: -moz-element(#breadcrumb-separator-after) no-repeat 0 0;
+  background-image: -moz-element(#breadcrumb-separator-after);
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .breadcrumbs-widget-item[checked] {
-  background: -moz-element(#breadcrumb-separator-before) no-repeat 0 0;
-  background-color: #008484; /* Select Highlight Blue */
+  background-image: -moz-element(#breadcrumb-separator-before);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: var(--theme-selection-background); /* Select Highlight Blue */
 }
 
 .breadcrumbs-widget-item:first-child {
@@ -321,27 +327,28 @@
 .breadcrumbs-widget-item[checked] .breadcrumbs-widget-item-tag,
 .breadcrumbs-widget-item[checked] .breadcrumbs-widget-item-pseudo-classes,
 .breadcrumbs-widget-item[checked] .breadcrumbs-widget-item-classes {
-  color: var(--theme-highlight-lightorange);
+  color: var(--theme-button-color); /* --theme-highlight-lightorange */
 }
 
 .breadcrumbs-widget-item {
-  color: var(--theme-highlight-lightorange);
+  color: var(--theme-button-color); /* tag name, --theme-highlight-lightorange */
 }
 
+.breadcrumbs-widget-item:not([checked]):hover span,
 .breadcrumbs-widget-item:not([checked]):hover label {
   color: var(--theme-hover-color) !important;
 }
 
 .breadcrumbs-widget-item-id {
-  color: var(--theme-body-color-alt);
+  color: var(--theme-highlight-red); /* --theme-body-color-alt */
 }
 
 .breadcrumbs-widget-item-classes {
-  color: var(--theme-content-color1);
+  color: var(#402800); /* --theme-content-color1 */
 }
 
 .breadcrumbs-widget-item-pseudo-classes {
-  color: var(--theme-highlight-lightorange);
+  color: var(--theme-button-color); /* --theme-highlight-lightorange */
 }
 
 /* SimpleListWidget */

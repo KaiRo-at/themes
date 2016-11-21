@@ -7,6 +7,11 @@
 .theme-dark,
 .theme-light,
 .theme-firebug {
+  --error-color: #FF0000;
+  --error-background-color: #FF0000;
+  --error-background-text: #000000;
+  --warning-background-color: #FFCF00;
+  --warning-background-text: #000000;
 }
 
 window {
@@ -105,6 +110,12 @@ a {
   max-width: 40%;
 }
 
+.stack-trace {
+  /* The markup contains extra whitespace to improve formatting of clipboard text.
+     Make sure this whitespace doesn't affect the HTML rendering */
+  white-space: normal;
+}
+
 .stack-trace .frame-link-source,
 .message-location .frame-link-source {
   /* Makes the file name truncated (and ellipsis shown) on the left side */
@@ -138,6 +149,7 @@ a {
 }
 
 .message-flex-body > .message-body {
+  display: block;
   flex: auto;
 }
 
@@ -145,6 +157,7 @@ a {
   direction: ltr;
   overflow: auto;
   -moz-user-select: text;
+  position: relative;
 }
 
 /* The width on #output-container is set to a hardcoded px in webconsole.js
@@ -182,13 +195,18 @@ a {
   -moz-user-focus: normal;
 }
 
+.webconsole-filter-button > .toolbarbutton-menubutton-button {
+  -moz-box-orient: horizontal; /* saving vertical space in toolbar */
+}
+
 .webconsole-filter-button > .toolbarbutton-menubutton-button:before {
   content: "";
   display: inline-block;
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  margin-inline-start: 5px;
+  margin-inline-start: 1px;
+  margin-inline-end: 3px;
   border-width: 1px;
   border-style: solid;
 }
@@ -203,8 +221,9 @@ a {
   background-color: var(--theme-contrast-background);
 }
 
-.message[severity=error] {
-  background-color: #FF0000;
+.message[severity=error],
+.message.error {
+  background-color: var(--error-background-color);
 }
 
 .console-string {
@@ -212,7 +231,7 @@ a {
 }
 
 .message[severity=error] .console-string {
-  color: #000000;
+  background-color: var(--error-background-text);
 }
 
 .theme-selected .console-string,
@@ -226,20 +245,24 @@ a {
   border-inline-end: solid var(--theme-body-color-alt) 6px;
 }
 
-.message[category=network][severity=error] > .icon::before {
+.message[category=network][severity=error] > .icon::before,
+.message.network.error > .icon::before {
   background-position: -12px 0;
 }
 
-.message[category=network] > .message-body {
+.message[category=network] > .message-body,
+.message.network > .message-body {
   display: flex;
   flex-wrap: wrap;
 }
 
-.message[category=network] .method {
+.message[category=network] .method,
+.message.network .method {
   flex: none;
 }
 
-.message[category=network]:not(.navigation-marker) .url {
+.message[category=network]:not(.navigation-marker) .url,
+.message.network:not(.navigation-marker) .url {
   flex: 1 1 auto;
   /* Make sure the URL is very small initially, let flex change width as needed. */
   width: 100px;
@@ -249,12 +272,14 @@ a {
   text-overflow: ellipsis;
 }
 
-.message[category=network] .status {
+.message[category=network] .status,
+.message.network .status {
   flex: none;
   margin-inline-start: 6px;
 }
 
-.message[category=network].mixed-content .url {
+.message[category=network].mixed-content .url,
+.message.network.mixed-content .url {
   color: var(--theme-highlight-red);
 }
 
@@ -263,7 +288,8 @@ a {
   margin: 0 6px;
 }
 
-.message[category=network] .xhr {
+.message[category=network] .xhr,
+.message.network .xhr {
   background-color: var(--theme-body-color-alt);
   color: var(--theme-body-background);
   border-radius: 3px;
@@ -281,15 +307,18 @@ a {
   border-color: #9C9CFF;
 }
 
-.message[category=cssparser] > .indent {
+.message[category=cssparser] > .indent,
+.message.cssparser > .indent {
   border-inline-end: solid #9C9CFF 6px;
 }
 
-.message[category=cssparser][severity=error] > .icon::before {
+.message[category=cssparser][severity=error] > .icon::before,
+.message.cssparser.error > .icon::before {
   background-position: -12px -12px;
 }
 
-.message[category=cssparser][severity=warn] > .icon::before {
+.message[category=cssparser][severity=warn] > .icon::before,
+.message.cssparser.warn > .icon::before {
   background-position: -24px -12px;
 }
 
@@ -299,15 +328,18 @@ a {
    border-color: #FF9F00;
 }
 
-.message[category=exception] > .indent {
+.message[category=exception] > .indent,
+.message.exception > .indent {
   border-inline-end: solid #FF9F00 6px;
 }
 
-.message[category=exception][severity=error] > .icon::before {
+.message[category=exception][severity=error] > .icon::before,
+.message.exception.error > .icon::before {
   background-position: -12px -24px;
 }
 
-.message[category=exception][severity=warn] > .icon::before {
+.message[category=exception][severity=warn] > .icon::before,
+.message.exception.warn > .icon::before {
   background-position: -24px -24px;
 }
 
@@ -317,7 +349,8 @@ a {
    border-color: #8050B0;
 }
 
-.message[category=console] > .indent {
+.message[category=console] > .indent,
+.message.console-api > .indent {
   border-inline-end: solid #8050B0 6px;
 }
 
@@ -344,21 +377,26 @@ a {
   border-color: #008484;
 }
 
-.message[category=server] > .indent {
+.message[category=server] > .indent,
+.message.server > .indent {
   border-inline-end: solid #8050B0 6px;
 }
 
 /* Input and output styles */
 .message[category=input] > .indent,
-.message[category=output] > .indent {
+.message[category=output] > .indent,
+.message.command > .indent,
+.message.result > .indent {
   border-inline-end: solid #A09090 6px;
 }
 
-.message[category=input] > .icon::before {
+.message[category=input] > .icon::before,
+.message.command > .icon::before {
   background-position: -48px -36px;
 }
 
-.message[category=output] > .icon::before {
+.message[category=output] > .icon::before,
+.message.result > .icon::before {
   background-position: -60px -36px;
 }
 
@@ -436,7 +474,8 @@ a {
 
 /* Security styles */
 
-.message[category=security] > .indent {
+.message[category=security] > .indent,
+.message.security > .indent {
   border-inline-end: solid #FF0000 6px;
 }
 
@@ -445,11 +484,13 @@ a {
   border-color: #FFCF00;
 }
 
-.message[category=security][severity=error] > .icon::before {
+.message[category=security][severity=error] > .icon::before,
+.message.security.error > .icon::before {
   background-position: -12px -48px;
 }
 
-.message[category=security][severity=warn] > .icon::before {
+.message[category=security][severity=warn] > .icon::before,
+.message.security.warn > .icon::before {
   background-position: -24px -48px;
 }
 
@@ -532,6 +573,7 @@ a.learn-more-link.webconsole-learn-more-link {
   filter: url(images/filters.svg#checked-icon-state);
 }
 
+.elementNode:hover .open-inspector:active,
 .open-inspector:active {
   filter: url(images/filters.svg#checked-icon-state);
 }
@@ -584,4 +626,129 @@ a.learn-more-link.webconsole-learn-more-link {
 
 :root[platform="win"] .hud-filter-box {
   width: 200px;
+}
+
+/* NEW CONSOLE STYLES */
+
+#output-wrapper > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#output-container {
+  height: 100%;
+}
+
+.webconsole-output-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  -moz-user-focus: normal;
+}
+
+.webconsole-filterbar-wrapper {
+  flex-grow: 0;
+}
+
+.webconsole-output {
+  flex: 1;
+  overflow: auto;
+}
+
+.webconsole-filterbar-primary {
+  display: flex;
+}
+
+.devtools-toolbar.webconsole-filterbar-secondary {
+  height: initial;
+}
+
+.webconsole-filterbar-primary .devtools-plaininput {
+  flex: 1 1 100%;
+}
+
+.webconsole-output.hideTimestamps > .message > .timestamp {
+  display: none;
+}
+
+.message.startGroup .message-body,
+.message.startGroupCollapsed .message-body {
+  color: var(--theme-body-color);
+  font-weight: bold;
+}
+
+.webconsole-output-wrapper .message > .icon {
+  margin: 3px 0 0 0;
+  padding: 0 0 0 6px;
+}
+
+.message.error > .icon::before {
+  background-position: -12px -36px;
+}
+
+.message.warn > .icon::before {
+  background-position: -24px -36px;
+}
+
+.message.info > .icon::before {
+  background-position: -36px -36px;
+}
+
+.message.network .method {
+  margin-inline-end: 5px;
+}
+
+.webconsole-output-wrapper .message .indent {
+  display: inline-block;
+  border-inline-end: solid 1px var(--theme-splitter-color);
+}
+
+.message.startGroup .indent,
+.message.startGroupCollapsed .indent {
+  border-inline-end-color: transparent;
+  margin-inline-end: 5px;
+}
+
+.message.startGroup .icon,
+.message.startGroupCollapsed .icon {
+  display: none;
+}
+
+/* console.table() */
+.new-consoletable {
+  width: 100%;
+  border-collapse: collapse;
+  --consoletable-border: 1px solid var(--table-splitter-color);
+}
+
+.new-consoletable thead,
+.new-consoletable tbody {
+  background-color: var(--theme-body-background);
+}
+
+.new-consoletable th {
+  background-color: var(--theme-selection-background);
+  color: var(--theme-selection-color);
+  margin: 0;
+  padding: 5px 0 0;
+  font-weight: inherit;
+  border-inline-end: var(--consoletable-border);
+  border-bottom: var(--consoletable-border);
+}
+
+.new-consoletable tr:nth-of-type(even) {
+  background-color: var(--table-zebra-background);
+}
+
+.new-consoletable td {
+  padding: 3px 4px;
+  min-width: 100px;
+  -moz-user-focus: normal;
+  color: var(--theme-body-color);
+  border-inline-end: var(--consoletable-border);
+  height: 1.25em;
+  line-height: 1.25em;
 }

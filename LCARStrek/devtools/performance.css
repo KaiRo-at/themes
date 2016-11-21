@@ -70,17 +70,27 @@
 /* Recording buttons */
 
 #recordings-controls {
-  background-color: #9C9CFF;
+/*  background-color: #9C9CFF;*/
+  display: flex;
+}
+
+#recording-controls-mount,
+#recording-controls-mount > div,
+#recording-controls-mount > div > .devtools-toolbar {
+  display: flex;
+  flex: 1 1 auto;
 }
 
 #clear-button::before {
   background-image: var(--clear-icon-url);
 }
 
+#main-record-button > image,
 #main-record-button::before {
   background-image: url(images/profiler-stopwatch-tbutton.svg);
 }
 
+#import-button > image,
 #import-button::before {
   background-image: url(images/import.svg);
 }

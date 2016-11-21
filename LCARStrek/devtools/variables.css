@@ -23,11 +23,15 @@
 
   --theme-tab-toolbar-background: #402800;
   --theme-toolbar-background: #000000;
+  --theme-capped-toolbar-background: #9C9CFF;
+  --theme-capped-toolbar-text: #000000;
+  --theme-alternate-toolbar-background: #A09090;
+  --theme-toolbar-caps: #FF9F00;
   --theme-button-background: #C09070;
   --theme-button-color: #000000;
   --theme-hover-background: #FFCF00;
   --theme-hover-color: #000000;
-  --theme-active-background: #FFCF00;
+  --theme-active-background: #FF9F00;
   --theme-active-color: #000000;
   --theme-selection-background: #008484;
   --theme-selection-color: #000000;
