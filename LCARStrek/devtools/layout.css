@@ -58,10 +58,18 @@
   }
 }
 
+#layout-geometry-editor {
+  visibility: hidden;
+}
+
+#layout-geometry-editor::before {
+  background: url(images/geometry-editor.svg) no-repeat center center / 16px 16px;
+}
+
 /* Main: contains the box-model regions */
 
 #layout-main {
-  position: absolute;
+  position: relative;
   box-sizing: border-box;
   /* The regions are semi-transparent, so the white background is partly
      visible */
@@ -252,23 +260,13 @@
   cursor: default;
 }
 
-/* Hide all values when the view is inactive */
+/* Layout info: contains the position and size of the element */
 
-#layout-container.inactive > #layout-header > #layout-element-position,
-#layout-container.inactive > #layout-header > #layout-element-size,
-#layout-container.inactive > #layout-main > p {
-   visibility: hidden;
+#layout-element-size {
+  flex: 1;
 }
 
 #layout-position-group {
   display: flex;
   align-items: center;
-}
-
-#layout-geometry-editor {
-  visibility: hidden;
-}
-
-#layout-geometry-editor::before {
-  background: url(images/geometry-editor.svg) no-repeat center center / 16px 16px;
 }
