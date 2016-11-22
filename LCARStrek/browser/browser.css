@@ -1839,13 +1839,12 @@ html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
 }
 
 .urlbar-input-box,
-
 #urlbar-display-box {
   padding-inline-start: 4px;
-  border-inline-start: 1px solid var(--urlbar-separator-color);
+/*  border-inline-start: 1px solid var(--urlbar-separator-color);
   border-inline-end: 1px solid var(--urlbar-separator-color);
   border-image: linear-gradient(transparent 15%, var(--urlbar-separator-color) 15%, var(--urlbar-separator-color) 85%, transparent 85%);
-  border-image-slice: 1;
+  border-image-slice: 1; */
 }
 
 #urlbar-icons {
@@ -2199,7 +2198,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 
 #identity-box:hover:active,
 #identity-box[open=true] {
-  background-color: #FF9F00;
+  background-color: #A09090;
   color: #000000;
 }
 
@@ -2215,6 +2214,12 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity[open=true] {
   background-color: #008484;
   color: #000000;
+}
+
+#identity-box:hover > image,
+#identity-box:hover:active > image,
+#identity-box[open=true] > image {
+  filter: url(chrome://global/skin/icons/filters.svg#active-icon-state);
 }
 
 /* autocomplete */
@@ -2849,7 +2854,6 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 .tab-icon-overlay[soundplaying] {
-  display: -moz-box;
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio");
 }
 
@@ -4251,7 +4255,7 @@ html|*#gcli-output-frame {
 }
 
 .devtools-responsiveui-close:hover {
-  filter: url(images/filters.svg#checked-icon-state);
+  filter: url(chrome://devtools/skin/images/filters.svg#checked-icon-state);
 }
 
 .devtools-responsiveui-rotate {

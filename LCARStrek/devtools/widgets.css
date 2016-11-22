@@ -344,7 +344,7 @@
 }
 
 .breadcrumbs-widget-item-classes {
-  color: var(#402800); /* --theme-content-color1 */
+  color: #402800; /* --theme-content-color1 */
 }
 
 .breadcrumbs-widget-item-pseudo-classes {

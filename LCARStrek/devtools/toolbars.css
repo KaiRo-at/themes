@@ -56,7 +56,8 @@
 
 /* HTML Checkboxes - a lot copied from global/in-content/common.css */
 /* Hide the actual checkbox */
-input[type="checkbox"]:not(#browser-style-checkbox) { /* not() is workaround for old placement of checkbox in label */
+input[type="checkbox"]:not(#browser-style-checkbox),
+#browser-style-checkbox:not([label]) { /* not()s are workaround for old placement of checkbox in label */
   opacity: 0;
   width: 0;
   pointer-events: none;
