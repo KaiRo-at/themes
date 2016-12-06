@@ -280,7 +280,7 @@ body {
   background-color: #000000;
   color: #E7ADE7;
 }
-#newtab-search-text::-moz-placeholder {
+#newtab-search-text::placeholder {
   color: #8050B0;
 }
 #newtab-search-text:focus {

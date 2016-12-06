@@ -1820,8 +1820,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:-moz-locale-dir(rtl) {
   -moz-box-direction: reverse;
 }
 
-html|*.urlbar-input:-moz-lwtheme::-moz-placeholder,
-.searchbar-textbox:-moz-lwtheme > .autocomplete-textbox-container > .textbox-input-box > html|*.textbox-input::-moz-placeholder {
+html|*.urlbar-input:-moz-lwtheme::placeholder,
+.searchbar-textbox:-moz-lwtheme > .autocomplete-textbox-container > .textbox-input-box > html|*.textbox-input::placeholder {
   color: #E7ADE7;
 }
 

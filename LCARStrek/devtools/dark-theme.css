@@ -398,10 +398,10 @@ div.CodeMirror span.eval-text {
   border-color: #008484;
 }
 
-.devtools-textinput::-moz-placeholder,
-.devtools-searchinput::-moz-placeholder,
-.devtools-filterinput::-moz-placeholder,
-.devtools-plaininput::-moz-placeholder {
+.devtools-textinput::placeholder,
+.devtools-searchinput::placeholder,
+.devtools-filterinput::placeholder,
+.devtools-plaininput::placeholder {
   color: #8050B0;
   opacity: 1.0;
 }

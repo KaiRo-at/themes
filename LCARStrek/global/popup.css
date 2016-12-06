@@ -8,14 +8,6 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* ::::: Variables ::::: */
-.panel-arrowcontent {
-  --panel-arrowcontent-padding: 6px;
-  --panel-arrowcontent-background: #000000;
-  --panel-arrowcontent-color: #FF9F00;
-  --panel-arrowcontent-border-color: #FF9F00;
-}
-
 /* ::::: menupopup ::::: */
 
 menupopup,
@@ -63,7 +55,8 @@ panel[type="arrow"][side="right"] {
 
 .panel-arrow[side="top"],
 .panel-arrow[side="bottom"] {
-  list-style-image: url("chrome://global/skin/arrow/panelarrow-vertical.svg");
+  list-style-image: var(--panel-arrow-image-vertical,
+                        url("chrome://global/skin/arrow/panelarrow-vertical.svg"));
   position: relative;
   margin-left: 10px;
   margin-right: 10px;

@@ -36,32 +36,12 @@
 
 /* ::::: print preview toolbar ::::: */
 
-/* ..... page navigation ..... */
-
-.home-arrow, .end-arrow:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp-end.gif");
+.navigate-button {
+  min-width: 1.9em;
 }
 
-.end-arrow, .home-arrow:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp-end.gif");
-}
-
-.previous-arrow, .next-arrow:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-left-sharp.gif");
-}
-
-.next-arrow, .previous-arrow:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://global/skin/arrow/arrow-right-sharp.gif");
-}
-
-/* ...... scale in/decrement ..... */
-
-.up-arrow {
-  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp.gif");
-}
-
-.down-arrow {
-  list-style-image: url("chrome://global/skin/arrow/arrow-dn-sharp.gif");
+.navigate-button > .toolbarbutton-icon {
+  display: none;
 }
 
 /* ..... orientation ..... */

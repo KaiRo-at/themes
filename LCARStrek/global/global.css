@@ -51,6 +51,14 @@ toolbaritem > menubar {
   }
 }
 
+/* ::::: Variables ::::: */
+:root {
+  --panel-arrowcontent-padding: 6px;
+  --panel-arrowcontent-background: #000000;
+  --panel-arrowcontent-color: #FF9F00;
+  --panel-arrowcontent-border-color: #FF9F00;
+}
+
 /* ::::: root elements ::::: */
 
 window,
