@@ -229,6 +229,7 @@ div.devtools-toolbar::after {
 .menu-filter-button {
   border: none;
 /*  min-height: 32px; */
+  font: inherit;
   background-color: var(--theme-button-background);
   color: var(--theme-button-color);
   border-radius: 300px;
@@ -494,6 +495,10 @@ div.devtools-toolbar::after {
   display: flex;
   flex: 1;
   position: relative;
+}
+
+button + .devtools-searchbox {
+  margin-inline-start: 2px;
 }
 
 /* The spacing is accomplished with a padding on the searchbox */
