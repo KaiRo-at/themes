@@ -2219,7 +2219,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 #identity-box:hover > image,
 #identity-box:hover:active > image,
 #identity-box[open=true] > image {
-  filter: url(chrome://global/skin/icons/filters.svg#active-icon-state);
+  filter: url(chrome://global/skin/filters.svg#active-icon-state);
 }
 
 /* autocomplete */
@@ -2826,7 +2826,7 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 .tab-sharing-icon-overlay[sharing] {
-  filter: url("chrome://browser/skin/filters.svg#fill");
+  filter: url("chrome://global/skin/filters.svg#fill");
   fill: #FFCF00;
 }
 
@@ -3423,7 +3423,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 .popup-notification-icon[popupid="webRTC-sharingMicrophone"],
 .popup-notification-icon[popupid="webRTC-sharingScreen"],
 .popup-notification-icon[popupid="web-notifications"] {
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: url(chrome://global/skin/filters.svg#fill);
   fill: #A09090;
 }
 
@@ -4837,7 +4837,7 @@ window > chatbox {
 
 .messageImage[value="plugin-hidden"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin);
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: url(chrome://global/skin/filters.svg#fill);
   fill: #A09090;
 }
 
@@ -4847,7 +4847,7 @@ notification.pluginVulnerable {
 
 notification.pluginVulnerable .messageImage {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin-blocked);
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: url(chrome://global/skin/filters.svg#fill);
   fill: #FF0000;
 }
 
@@ -5581,7 +5581,8 @@ toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
   -moz-appearance: none;
   border: none;
   background-color: transparent;
-  /* This is a buffer to compensate for the movement in the "wobble" effect */
+  /* This is a buffer to compensate for the movement in the "wobble" effect,
+     and for the box-shadow of #UITourHighlight. */
   padding: 4px;
 }
 

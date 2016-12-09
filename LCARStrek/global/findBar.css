@@ -79,14 +79,14 @@ findbar[position="top"][hidden] {
 
 .findbar-find-previous[disabled="true"] > .toolbarbutton-icon,
 .findbar-find-next[disabled="true"] > .toolbarbutton-icon {
-  filter: url(icons/filters.svg#disabled-icon-state);
+  filter: url(filters.svg#disabled-icon-state);
 }
 
 .findbar-find-previous:not([disabled]):hover > .toolbarbutton-icon,
 .findbar-find-previous:not([disabled]):active > .toolbarbutton-icon,
 .findbar-find-next:not([disabled]):hover > .toolbarbutton-icon,
 .findbar-find-next:not([disabled]):active > .toolbarbutton-icon {
-  filter: url(icons/filters.svg#active-icon-state);
+  filter: url(filters.svg#active-icon-state);
 }
 
 .findbar-find-previous > .toolbarbutton-icon,
