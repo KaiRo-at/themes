@@ -80,7 +80,7 @@ notification {
 
 /* Rest of the dark and light theme */
 
-.devtools-autocomplete-popup,
+.tooltip-panel.devtools-autocomplete-popup,
 .CodeMirror-hints,
 .CodeMirror-Tern-tooltip {
   border: 1px solid #FF9F00;

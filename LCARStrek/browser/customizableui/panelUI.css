@@ -1610,7 +1610,7 @@ menuitem[checked="true"].subviewbutton > .menu-iconic-left {
 /* === END panelUI.inc.css === */
 
 .panel-subviews {
-  background-color: #000000;
+  background-color: var(--panel-arrowcontent-background);
 }
 
 #PanelUI-contents #zoom-out-btn {
