@@ -5887,11 +5887,11 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
   list-style-image: url("chrome://browser/skin/content-contextmenu.svg#forward");
 }
 
-#context-reload > .menu-iconic-left {
+#context-reload {
   list-style-image: url("chrome://browser/skin/content-contextmenu.svg#reload");
 }
 
-#context-stop > .menu-iconic-left {
+#context-stop {
   list-style-image: url("chrome://browser/skin/content-contextmenu.svg#stop");
 }
 
