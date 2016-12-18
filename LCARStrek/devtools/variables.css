@@ -86,8 +86,8 @@
   --theme-pane-expand-image: url(chrome://devtools/skin/images/pane-expand.svg);
 
   /* Tooltips */
-  --theme-tooltip-border: #FFCF00;
-  --theme-tooltip-background: #9C9CFF;
+  --theme-tooltip-border: #9C9CFF;
+  --theme-tooltip-background: #000000;
   /*--theme-tooltip-shadow: rgba(25, 25, 25, 0.76);*/
 
   /* Command line */
