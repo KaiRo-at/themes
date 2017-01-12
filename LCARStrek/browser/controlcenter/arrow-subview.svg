@@ -6,27 +6,38 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      width="16" height="16" viewBox="0 0 16 16">
 <style>
-use:not(:target) {
-  display: none;
+.fieldtext {
+  fill: #FF9F00;
 }
 
-use {
+.highlighttext {
   fill: #FFCF00;
 }
 
+.black {
+  fill: #FFCF00;
+}
+
+.white {
+  fill: #FFCF00;
+}
+</style>
+<style>
+use:not(:target) {
+  display: none;
+}
 use[id$="-disabled"] {
   fill: #8050B0;
 }
-
 use[id$="-active"] {
   fill: #000000;
 }
 </style>
 <defs>
   <polygon id="arrow-shape"
-           points="5,3.5 6.5,2 12.375,8 6.5,14 5,12.5 9.375,8" />
+           points="5,3.5 6.5,2 12.375,8 6.5,14 5,12.5 9.375,8"/>
 </defs>
-<use id="arrow"              xlink:href="#arrow-shape"/>
+<use id="arrow" class="highlighttext" xlink:href="#arrow-shape"/>
 <use id="arrow-disabled"     xlink:href="#arrow-shape"/>
 <use id="arrow-active"       xlink:href="#arrow-shape"/>
 </svg>

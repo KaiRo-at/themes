@@ -47,6 +47,11 @@ menubar {
   --identity-box-verified-background-color: #000000;
 
   --panel-separator-color: #A09090;
+  --arrowpanel-hover: #FFCF00;
+  --arrowpanel-active: #FF9F00;
+  --arrowpanel-dimmed: #402000;
+/*  --arrowpanel-dimmed-further: hsla(0,0%,80%,.45);
+  --arrowpanel-dimmed-even-further: hsla(0,0%,80%,.8); */
 
   --urlbar-separator-color: #9C9CFF;
 }
@@ -115,7 +120,7 @@ menubar {
   content: "";
   display: -moz-box;
   -moz-box-ordinal-group: 101; /* tabs toolbar is 100 */
-  height: 1px;
+  /*border-bottom: 1px solid ThreeDShadow;*/
 }
 
 #navigator-toolbox > toolbar {
@@ -917,12 +922,6 @@ menuitem.bookmark-item {
 
 /* Menu panel and palette styles */
 
-:root {
-   /* avoid aero overrides with changed filenames */
-  --menupanel-list-style-image: url(chrome://browser/skin/menuPanelFx.png);
-  --menupanel-small-list-style-image: url(chrome://browser/skin/menuPanelFx-small.png);
-}
-
 toolbaritem[sdkstylewidget="true"] > toolbarbutton,
 :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
           #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
@@ -938,7 +937,39 @@ toolbarpaletteitem[place="palette"] > :-moz-any(#back-button, #forward-button, #
           #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
           #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
           #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu) {
-  list-style-image: var(--menupanel-list-style-image);
+  list-style-image: url(chrome://browser/skin/menuPanel.svg);
+}
+
+:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
+          #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
+          #social-share-button, #open-file-button, #find-button, #developer-button,
+          #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
+          #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
+          #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
+          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"] > .toolbarbutton-icon,
+:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
+          #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
+          #social-share-button, #open-file-button, #find-button, #developer-button,
+          #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
+          #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
+          #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
+          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"][panel-multiview-anchor=true] > .toolbarbutton-icon,
+:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
+          #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
+          #social-share-button, #open-file-button, #find-button, #developer-button,
+          #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
+          #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
+          #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
+          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"][panel-multiview-anchor=true] > .toolbarbutton-badge-stack > .toolbarbutton-icon,
+:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button,
+          #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #tabview-button,
+          #social-share-button, #open-file-button, #find-button, #developer-button,
+          #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button,
+          #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button,
+          #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button,
+          #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu)[cui-areatype="menu-panel"][panel-multiview-anchor=true] > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
 }
 
 #home-button[cui-areatype="menu-panel"],
@@ -946,23 +977,9 @@ toolbarpaletteitem[place="palette"] > #home-button {
   -moz-image-region: rect(0px, 128px, 32px, 96px);
 }
 
-#home-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #home-button:hover {
-  -moz-image-region: rect(32px, 128px, 64px, 96px);
-}
-
 #bookmarks-menu-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #bookmarks-menu-button {
   -moz-image-region: rect(0px, 192px, 32px, 160px);
-}
-
-#bookmarks-menu-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #bookmarks-menu-button:hover {
-  -moz-image-region: rect(32px, 192px, 64px, 160px);
-}
-
-#bookmarks-menu-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
-  -moz-image-region: rect(32px, 192px, 64px, 160px);
 }
 
 #history-panelmenu[cui-areatype="menu-panel"],
@@ -970,23 +987,9 @@ toolbarpaletteitem[place="palette"] > #history-panelmenu {
   -moz-image-region: rect(0px, 224px, 32px, 192px);
 }
 
-#history-panelmenu[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #history-panelmenu:hover {
-  -moz-image-region: rect(32px, 224px, 64px, 192px);
-}
-
-#history-panelmenu[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
-  -moz-image-region: rect(32px, 224px, 64px, 192px);
-}
-
 #downloads-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #downloads-button {
   -moz-image-region: rect(0px, 256px, 32px, 224px);
-}
-
-#downloads-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #downloads-button:hover {
-  -moz-image-region: rect(32px, 256px, 64px, 224px);
 }
 
 #add-ons-button[cui-areatype="menu-panel"],
@@ -994,19 +997,9 @@ toolbarpaletteitem[place="palette"] > #add-ons-button {
   -moz-image-region: rect(0px, 288px, 32px, 256px);
 }
 
-#add-ons-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #add-ons-button:hover {
-  -moz-image-region: rect(32px, 288px, 64px, 256px);
-}
-
 #open-file-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #open-file-button {
   -moz-image-region: rect(0px, 320px, 32px, 288px);
-}
-
-#open-file-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #open-file-button:hover {
-  -moz-image-region: rect(32px, 320px, 64px, 288px);
 }
 
 #save-page-button[cui-areatype="menu-panel"],
@@ -1014,19 +1007,9 @@ toolbarpaletteitem[place="palette"] > #save-page-button {
   -moz-image-region: rect(0px, 352px, 32px, 320px);
 }
 
-#save-page-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #save-page-button:hover {
-  -moz-image-region: rect(32px, 352px, 64px, 320px);
-}
-
 #sync-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #sync-button {
   -moz-image-region: rect(0px, 1024px, 32px, 992px);
-}
-
-#sync-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #sync-button:hover {
-  -moz-image-region: rect(32px, 1024px, 64px, 992px);
 }
 
 #containers-panelmenu[cui-areatype="menu-panel"],
@@ -1034,25 +1017,9 @@ toolbarpaletteitem[place="palette"] > #containers-panelmenu {
   -moz-image-region: rect(0px, 1056px, 32px, 1024px);
 }
 
-#containers-panelmenu[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #containers-panelmenu:hover,
-#containers-panelmenu[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
-  -moz-image-region: rect(32px, 1056px, 64px, 1024px);
-}
-
 #feed-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #feed-button {
   -moz-image-region: rect(0px, 416px, 32px, 384px);
-}
-
-#feed-button[cui-areatype="menu-panel"]:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #feed-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(32px, 416px, 64px, 384px);
-}
-
-#feed-button[cui-areatype="menu-panel"][disabled="true"],
-toolbarpaletteitem[place="palette"] > #feed-button[disabled="true"] {
-  -moz-image-region: rect(64px, 416px, 96px, 384px);
 }
 
 #social-share-button[cui-areatype="menu-panel"],
@@ -1060,33 +1027,9 @@ toolbarpaletteitem[place="palette"] > #social-share-button {
   -moz-image-region: rect(0px, 448px, 32px, 416px);
 }
 
-#social-share-button[cui-areatype="menu-panel"]:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #social-share-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(32px, 448px, 64px, 416px);
-}
-
-#social-share-button[cui-areatype="menu-panel"][disabled="true"],
-toolbarpaletteitem[place="palette"] > #social-share-button[disabled="true"] {
-  -moz-image-region: rect(64px, 448px, 96px, 416px);
-}
-
 #characterencoding-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #characterencoding-button {
   -moz-image-region: rect(0px, 480px, 32px, 448px);
-}
-
-#characterencoding-button[cui-areatype="menu-panel"]:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #characterencoding-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(32px, 480px, 64px, 448px);
-}
-
-#characterencoding-button[cui-areatype="menu-panel"][disabled="true"],
-toolbarpaletteitem[place="palette"] > #characterencoding-button[disabled="true"] {
-  -moz-image-region: rect(64px, 480px, 96px, 448px);
-}
-
-#characterencoding-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
-  -moz-image-region: rect(32px, 480px, 64px, 448px);
 }
 
 #new-window-button[cui-areatype="menu-panel"],
@@ -1094,19 +1037,9 @@ toolbarpaletteitem[place="palette"] > #new-window-button {
   -moz-image-region: rect(0px, 512px, 32px, 480px);
 }
 
-#new-window-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #new-window-button:hover {
-  -moz-image-region: rect(32px, 512px, 64px, 480px);
-}
-
 #e10s-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #e10s-button {
   -moz-image-region: rect(0px, 512px, 32px, 480px);
-}
-
-#e10s-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #e10s-button:hover {
-  -moz-image-region: rect(32px, 512px, 64px, 480px);
 }
 
 #new-tab-button[cui-areatype="menu-panel"],
@@ -1114,19 +1047,9 @@ toolbarpaletteitem[place="palette"] > #new-tab-button {
   -moz-image-region: rect(0px, 544px, 32px, 512px);
 }
 
-#new-tab-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #new-tab-button:hover {
-  -moz-image-region: rect(32px, 544px, 64px, 512px);
-}
-
 #privatebrowsing-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #privatebrowsing-button {
   -moz-image-region: rect(0px, 576px, 32px, 544px);
-}
-
-#privatebrowsing-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #privatebrowsing-button:hover {
-  -moz-image-region: rect(32px, 576px, 64px, 544px);
 }
 
 #tabview-button[cui-areatype="menu-panel"],
@@ -1134,19 +1057,9 @@ toolbarpaletteitem[place="palette"] > #tabview-button {
   -moz-image-region: rect(0px, 608px, 32px, 576px);
 }
 
-#tabview-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #tabview-button:hover {
-  -moz-image-region: rect(32px, 608px, 64px, 576px);
-}
-
 #find-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #find-button {
   -moz-image-region: rect(0px, 640px, 32px, 608px);
-}
-
-#find-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #find-button:hover {
-  -moz-image-region: rect(32px, 640px, 64px, 608px);
 }
 
 #print-button[cui-areatype="menu-panel"],
@@ -1154,19 +1067,9 @@ toolbarpaletteitem[place="palette"] > #print-button {
   -moz-image-region: rect(0px, 672px, 32px, 640px);
 }
 
-#print-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #print-button:hover {
-  -moz-image-region: rect(32px, 672px, 64px, 640px);
-}
-
 #fullscreen-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #fullscreen-button {
   -moz-image-region: rect(0px, 704px, 32px, 672px);
-}
-
-#fullscreen-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #fullscreen-button:hover {
-  -moz-image-region: rect(32px, 704px, 64px, 672px);
 }
 
 #developer-button[cui-areatype="menu-panel"],
@@ -1174,33 +1077,14 @@ toolbarpaletteitem[place="palette"] > #developer-button {
   -moz-image-region: rect(0px, 736px, 32px, 704px);
 }
 
-#developer-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #developer-button:hover {
-  -moz-image-region: rect(32px, 736px, 64px, 704px);
-}
-
-#developer-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
-  -moz-image-region: rect(32px, 736px, 64px, 704px);
-}
-
 #preferences-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #preferences-button {
   -moz-image-region: rect(0px, 768px, 32px, 736px);
 }
 
-#preferences-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #preferences-button:hover {
-  -moz-image-region: rect(32px, 768px, 64px, 736px);
-}
-
 #email-link-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #email-link-button {
   -moz-image-region: rect(0, 800px, 32px, 768px);
-}
-
-#email-link-button[cui-areatype="menu-panel"]:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #email-link-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(32px, 800px, 64px, 768px);
 }
 
 #email-link-button[cui-areatype="menu-panel"][disabled="true"],
@@ -1213,31 +1097,14 @@ toolbarpaletteitem[place="palette"] > #sidebar-button {
   -moz-image-region: rect(0, 864px, 32px, 832px);
 }
 
-#sidebar-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #sidebar-button:hover,
-#sidebar-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
-  -moz-image-region: rect(32px, 864px, 64px, 832px);
-}
-
 #panic-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #panic-button {
   -moz-image-region: rect(0, 896px, 32px, 864px);
 }
 
-#panic-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #panic-button:hover,
-#panic-button[cui-areatype="menu-panel"][panel-multiview-anchor=true] {
-  -moz-image-region: rect(32px, 896px, 64px, 864px);
-}
-
 #webide-button[cui-areatype="menu-panel"],
 toolbarpaletteitem[place="palette"] > #webide-button {
   -moz-image-region: rect(0px, 960px, 32px, 928px);
-}
-
-#webide-button[cui-areatype="menu-panel"]:hover,
-toolbarpaletteitem[place="palette"] > #webide-button:hover {
-  -moz-image-region: rect(32px, 960px, 64px, 928px);
 }
 
 toolbaritem[sdkstylewidget="true"] > toolbarbutton {
@@ -1250,7 +1117,15 @@ toolbaritem[sdkstylewidget="true"] > toolbarbutton {
 #zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton,
 toolbarpaletteitem[place="palette"] > #edit-controls > toolbarbutton,
 toolbarpaletteitem[place="palette"] > #zoom-controls > toolbarbutton {
-  list-style-image: var(--menupanel-small-list-style-image);
+  list-style-image: url(chrome://browser/skin/menuPanel-small.svg);
+}
+
+#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton > .toolbarbutton-icon,
+#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > toolbarbutton > .toolbarbutton-icon,
+toolbarpaletteitem[place="palette"] > #edit-controls > toolbarbutton > .toolbarbutton-icon,
+toolbarpaletteitem[place="palette"] > #zoom-controls > toolbarbutton > .toolbarbutton-icon {
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
 }
 
 #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #cut-button,
@@ -1258,29 +1133,9 @@ toolbarpaletteitem[place="palette"] > #edit-controls > #cut-button {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #cut-button:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #edit-controls > #cut-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #cut-button[disabled="true"],
-toolbarpaletteitem[place="palette"] > #edit-controls > #cut-button[disabled="true"] {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
-}
-
 #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #copy-button,
 toolbarpaletteitem[place="palette"] > #edit-controls > #copy-button {
   -moz-image-region: rect(0px, 48px, 16px, 32px);
-}
-
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #copy-button:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #edit-controls > #copy-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(16px, 48px, 32px, 32px);
-}
-
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #copy-button[disabled="true"],
-toolbarpaletteitem[place="palette"] > #edit-controls > #copy-button[disabled="true"] {
-  -moz-image-region: rect(32px, 48px, 48px, 32px);
 }
 
 #edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #paste-button,
@@ -1288,29 +1143,9 @@ toolbarpaletteitem[place="palette"] > #edit-controls > #paste-button {
   -moz-image-region: rect(0px, 64px, 16px, 48px);
 }
 
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #paste-button:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #edit-controls > #paste-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(16px, 64px, 32px, 48px);
-}
-
-#edit-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #paste-button[disabled="true"],
-toolbarpaletteitem[place="palette"] > #edit-controls > #paste-button[disabled="true"] {
-  -moz-image-region: rect(32px, 64px, 48px, 48px);
-}
-
 #zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-out-button,
 toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-out-button {
   -moz-image-region: rect(0px, 80px, 16px, 64px);
-}
-
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-out-button:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-out-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(16px, 80px, 32px, 64px);
-}
-
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-out-button[disabled="true"],
-toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-out-button[disabled="true"] {
-  -moz-image-region: rect(32px, 80px, 48px, 64px);
 }
 
 #zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-in-button,
@@ -1318,18 +1153,8 @@ toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button {
   -moz-image-region: rect(0px, 96px, 16px, 80px);
 }
 
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-in-button:hover:not([disabled="true"]),
-toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button:hover:not([disabled="true"]) {
-  -moz-image-region: rect(16px, 96px, 32px, 80px);
-}
-
-#zoom-controls:-moz-any(:not([cui-areatype="toolbar"]), [overflowedItem=true]) > #zoom-in-button[disabled="true"],
-toolbarpaletteitem[place="palette"] > #zoom-controls > #zoom-in-button[disabled="true"] {
-  -moz-image-region: rect(32px, 96px, 48px, 80px);
-}
-
 #add-share-provider {
-  list-style-image: var(--menupanel-small-list-style-image);
+  list-style-image: url(chrome://browser/skin/menuPanel-small.svg);
   -moz-image-region: rect(0px, 96px, 16px, 80px);
 }
 
@@ -1858,6 +1683,52 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   height: 16px;
 }
 
+/* ::::: URL Bar Zoom Reset Button ::::: */
+
+@keyframes urlbar-zoom-reset-pulse {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+#urlbar-zoom-button {
+/*  -moz-appearance: none;*/
+  margin: 0 3px;
+  font-size: .8em;
+  padding: 0 8px;
+  border-radius: 1em;
+/*  background-color: hsla(0,0%,0%,.05);
+  color: inherit;
+  border: 1px solid ThreeDLightShadow;*/
+}
+
+#urlbar-zoom-button[animate="true"] {
+  animation-name: urlbar-zoom-reset-pulse;
+  animation-duration: 250ms;
+}
+
+#urlbar-zoom-button:hover {
+/*  background-color: hsla(0,0%,0%,.1);*/
+}
+
+#urlbar-zoom-button:hover:active {
+/*  background-color: hsla(0,0%,0%,.15);*/
+}
+
+#urlbar-zoom-button > .toolbarbutton-text {
+  display: -moz-box;
+}
+
+#urlbar-zoom-button > .toolbarbutton-icon {
+  display: none;
+}
+
 .search-go-container {
   padding: 2px;
 }
@@ -1867,7 +1738,7 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 }
 
 #urlbar-search-footer {
-  border-top: 1px solid #A09090;
+  border-top: 1px solid var(--panel-separator-color);
 }
 
 #urlbar-search-settings {
@@ -1903,7 +1774,7 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 /* === BEGIN urlbarSearchSuggestionsNotification.inc.css === */
 
 #PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] {
-  border-bottom: 1px solid #A09090;
+  border-bottom: 1px solid var(--panel-separator-color);
   background-color: #000000;
   padding: 6px 0;
   padding-inline-start: 44px;
@@ -1962,7 +1833,7 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 }
 
 #identity-box:-moz-focusring {
-  outline: 1px dotted #008484;
+  outline: 1px dotted;
   outline-offset: -1px;
 }
 
@@ -2001,19 +1872,74 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 }
 
 /* page proxy icon */
-
 /* === BEGIN identity-block.inc.css === */
 
-#identity-box {
-  --identity-box-verified-color: #008484;
-  /* Default theme does different color per channel, we can't as they do it build-time. */
-  --identity-box-chrome-color: #9C9CFF;
+/* === BEGIN identity-block/icons.inc.css === */
 
+#identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#normal);
+}
+
+#identity-box:hover > #identity-icon:not(.no-hover),
+#identity-box[open=true] > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#hover);
+}
+
+#identity-box.grantedPermissions > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice);
+}
+
+#identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover),
+#identity-box.grantedPermissions[open=true] > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-hover);
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon {
+  list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
+}
+
+#tracking-protection-icon {
+  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled);
+}
+
+#tracking-protection-icon[state="loaded-tracking-content"] {
+  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#disabled);
+}
+
+
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
+  list-style-image: url(chrome://browser/skin/connection-secure.svg);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
+  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
+  list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon {
+  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
+  visibility: visible;
+}
+
+/* === END identity-block/icons.inc.css === */
+
+#identity-box {
   font-size: .9em;
   border-radius: 2px;
   padding: 3px 5px;
   overflow: hidden;
-  /* The latter two properties have a transition to handle the delayed hiding of
+  /* The padding-left and padding-right transitions handle the delayed hiding of
      the forward button when hovered. */
   transition: background-color 150ms ease, padding-left, padding-right;
 }
@@ -2028,15 +1954,22 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   border-bottom-left-radius: 0;
 }
 
-#urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
-  color: var(--identity-box-chrome-color);
-  border-inline-end: 1px solid var(--identity-box-chrome-color);
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
+  border-inline-end: 1px solid #008484;
 }
 
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity {
-  color: var(--identity-box-verified-color);
-  border-inline-end: 1px solid var(--identity-box-verified-color);
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #identity-icon-labels {
+  color: #008484;
 }
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
+  border-inline-end: 1px solid #9C9CFF;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon-labels {
+  color: #9C9CFF;
+}
+
 
 #identity-icon-labels:-moz-locale-dir(ltr) {
   padding-left: 2px;
@@ -2074,29 +2007,10 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 #identity-icon {
   width: 16px;
   height: 16px;
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#normal);
-}
-
-#identity-box:hover > #identity-icon:not(.no-hover),
-#identity-box[open=true] > #identity-icon {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#hover);
-}
-
-#identity-box.grantedPermissions > #identity-icon {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice);
-}
-
-#identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover),
-#identity-box.grantedPermissions[open=true] > #identity-icon {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-hover);
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon {
-  list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
 }
 
 #urlbar[pageproxystate="invalid"] > #identity-box > #identity-icon {
-  opacity: 0.3;
+  opacity: .3;
 }
 
 #urlbar[actiontype="searchengine"] > #identity-box > #identity-icon {
@@ -2104,7 +2018,50 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg#search-icon);
   width: 16px;
   height: 16px;
-  opacity: 1;
+}
+
+/* SHARING ICON */
+
+#sharing-icon {
+  width: 16px;
+  height: 16px;
+  margin-inline-start: -16px;
+  position: relative;
+  display: none;
+}
+
+#identity-box[sharing="camera"] > #sharing-icon {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#camera");
+}
+
+#identity-box[sharing="microphone"] > #sharing-icon {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#microphone");
+}
+
+#identity-box[sharing="screen"] > #sharing-icon {
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#screen");
+
+}
+
+#identity-box[sharing] > #sharing-icon {
+  display: -moz-box;
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: #FF0000;
+  animation-delay: -1.5s;
+}
+
+#identity-box[sharing] > #identity-icon,
+#sharing-icon {
+  animation: 3s linear pulse infinite;
+}
+
+@keyframes pulse {
+  0%, 16.66%, 83.33%, 100% {
+    opacity: 0;
+  }
+  33.33%, 66.66% {
+    opacity: 1;
+  }
 }
 
 /* TRACKING PROTECTION ICON */
@@ -2114,12 +2071,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   height: 16px;
   margin-inline-start: 2px;
   margin-inline-end: 0;
-  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg);
-  opacity: 1;
-}
-
-#tracking-protection-icon[state="loaded-tracking-content"] {
-  list-style-image: url(chrome://browser/skin/tracking-protection-disabled-16.svg);
 }
 
 #tracking-protection-icon[animate] {
@@ -2145,31 +2096,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   height: 16px;
   margin-inline-start: 2px;
   visibility: collapse;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
-  list-style-image: url(chrome://browser/skin/identity-secure.svg);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
-  list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
-  list-style-image: url(chrome://browser/skin/identity-mixed-active-loaded.svg);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon {
-  list-style-image: url(chrome://browser/skin/identity-mixed-passive-loaded.svg);
-  visibility: visible;
 }
 
 /* === END identity-block.inc.css === */
@@ -2198,14 +2124,20 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 
 #identity-box:hover:active,
 #identity-box[open=true] {
-  background-color: #A09090;
+  background-color: #FF9F00;
   color: #000000;
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:hover,
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI:hover:active,
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI[open=true] {
-  background-color: #9C9CFF;
+  background-color: #A09090;
+  color: #000000;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI:hover > #identity-icon-labels,
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI:hover:active > #identity-icon-labels,
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI[open=true] > #identity-icon-labels {
   color: #000000;
 }
 
@@ -2213,6 +2145,12 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:hover:active,
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity[open=true] {
   background-color: #008484;
+  color: #000000;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:hover > #identity-icon-labels,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity:hover:active > #identity-icon-labels,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity[open=true] > #identity-icon-labels {
   color: #000000;
 }
 
@@ -2511,6 +2449,32 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 
 /* social share panel */
 
+/* === BEGIN social.inc.css === */
+
+#manage-share-providers {
+  list-style-image: url("chrome://browser/skin/ToolbarFx.png");
+  -moz-image-region: rect(0, 468px, 18px, 450px);
+}
+
+#manage-share-providers > .toolbarbutton-icon {
+  min-height: 18px;
+  min-width: 18px;
+}
+
+.social-panel > .panel-arrowcontainer > .panel-arrowcontent {
+  padding: 0;
+}
+/* fixup corners for share panel */
+.social-panel > .social-panel-frame {
+  border-radius: inherit;
+}
+
+/* === END social.inc.css === */
+
+.social-panel-frame {
+  border-radius: inherit;
+}
+
 .social-share-frame {
   min-width: 756px;
   height: 150px;
@@ -2557,11 +2521,6 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   max-height: 16px;
 }
 
-/* fixup corners for share panel */
-.social-panel > .social-panel-frame {
-  border-radius: inherit;
-}
-
 #social-share-panel {
   min-height: 100px;
   min-width: 766px;
@@ -2583,12 +2542,6 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 #social-share-provider-buttons {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
-}
-
-/* social recommending panel */
-
-#social-mark-button {
-  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
 /* bookmarks menu-button */
@@ -2814,20 +2767,15 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 .tab-sharing-icon-overlay[sharing="camera"] {
-  list-style-image: url("chrome://browser/skin/notification-icons.svg#camera");
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#camera-sharing");
 }
 
 .tab-sharing-icon-overlay[sharing="microphone"] {
-  list-style-image: url("chrome://browser/skin/notification-icons.svg#microphone");
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#microphone-sharing");
 }
 
 .tab-sharing-icon-overlay[sharing="screen"] {
-  list-style-image: url("chrome://browser/skin/notification-icons.svg#screen");
-}
-
-.tab-sharing-icon-overlay[sharing] {
-  filter: url("chrome://global/skin/filters.svg#fill");
-  fill: #FFCF00;
+  list-style-image: url("chrome://browser/skin/notification-icons.svg#screen-sharing");
 }
 
 .tab-icon-overlay {
@@ -2908,88 +2856,15 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   padding: 0;
 }
 
+.tab-icon-sound[soundplaying],
 .tab-icon-sound[muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted");
-}
-
-.tab-icon-sound[muted]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-hover");
-}
-
-.tab-icon-sound[muted]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-pressed");
-}
-
-.tab-icon-sound[soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab");
-}
-
-.tab-icon-sound[soundplaying]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-hover");
-}
-
-.tab-icon-sound[soundplaying]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-pressed");
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio);
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
 }
 
 .tab-icon-sound[muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted");
-}
-
-.tab-icon-sound[muted]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-hover");
-}
-
-.tab-icon-sound[muted]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-backgroundTab-muted-pressed");
-}
-
-.tab-icon-sound[visuallyselected=true][soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio");
-}
-
-.tab-icon-sound[visuallyselected=true][soundplaying]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-hover");
-}
-
-.tab-icon-sound[visuallyselected=true][soundplaying]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-pressed");
-}
-
-.tab-icon-sound[visuallyselected=true][muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted");
-}
-
-.tab-icon-sound[visuallyselected=true][muted]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-hover");
-}
-
-.tab-icon-sound[visuallyselected=true][muted]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-pressed");
-}
-
-#TabsToolbar[brighttext] .tab-icon-sound[soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white");
-}
-
-#TabsToolbar[brighttext] .tab-icon-sound[soundplaying]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-hover");
-}
-
-#TabsToolbar[brighttext] .tab-icon-sound[soundplaying]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-white-pressed");
-}
-
-#TabsToolbar[brighttext] .tab-icon-sound[muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white");
-}
-
-#TabsToolbar[brighttext] .tab-icon-sound[muted]:hover {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-hover");
-}
-
-#TabsToolbar[brighttext] .tab-icon-sound[muted]:hover:active {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted-white-pressed");
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted);
 }
 
 .tab-close-button {
@@ -3028,12 +2903,12 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
 }
 
-.tab-background-start[visuallyselected=true]::after,
-.tab-background-start[visuallyselected=true]::before,
+.tab-background-start[selected=true]::after,
+.tab-background-start[selected=true]::before,
 .tab-background-start,
 .tab-background-end,
-.tab-background-end[visuallyselected=true]::after,
-.tab-background-end[visuallyselected=true]::before {
+.tab-background-end[selected=true]::after,
+.tab-background-end[selected=true]::before {
 }
 
 .tabbrowser-tab:not([visuallyselected=true]),
@@ -3070,14 +2945,14 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 /* Pinned tabs */
 
 /*
-.tabbrowser-tab:-moz-any([image], [pinned]) > .tab-stack > .tab-content[attention]:not([visuallyselected="true"]),
-.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([visuallyselected="true"]) {
+.tabbrowser-tab:-moz-any([image], [pinned]) > .tab-stack > .tab-content[attention]:not([selected="true"]),
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
 */
 .tabbrowser-tab:-moz-any([image], [pinned]):-moz-any([attention], [titlechanged]):not([visuallyselected="true"]) {
   background-color: #E7ADE7;
 }
 
-.tab-label[attention]:not([visuallyselected="true"]) {
+.tab-label[attention]:not([selected="true"]) {
   font-weight: bold;
 }
 
@@ -3107,8 +2982,8 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 /* Also show separators beside the selected tab when dragging it. */
 /*
 #tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]:not([last-visible-tab])::after,
-.tabbrowser-tab:not([visuallyselected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
-#tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([visuallyselected]):not([beforehovered]):not(:hover)::after {
+.tabbrowser-tab:not([selected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
+#tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
   content: "";
   display: -moz-box;
 }
@@ -3124,24 +2999,41 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   #tabbrowser-tabs::before {
   }
 
-  .tabbrowser-tab:hover > .tab-stack > .tab-background:not([visuallyselected=true]),
+  .tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected=true]),
   .tabs-newtab-button:hover {
   }
 
-  .tab-background-middle[visuallyselected=true] {
+  .tab-background-middle[selected=true] {
   }
 
-  .tab-background-start[visuallyselected=true]:-moz-locale-dir(ltr)::after,
-  .tab-background-end[visuallyselected=true]:-moz-locale-dir(rtl)::after {
+  .tab-background-start[selected=true]:-moz-locale-dir(ltr)::after,
+  .tab-background-end[selected=true]:-moz-locale-dir(rtl)::after {
   }
 
-  .tab-background-end[visuallyselected=true]:-moz-locale-dir(ltr)::after,
-  .tab-background-start[visuallyselected=true]:-moz-locale-dir(rtl)::after {
+  .tab-background-end[selected=true]:-moz-locale-dir(ltr)::after,
+  .tab-background-start[selected=true]:-moz-locale-dir(rtl)::after {
   }
 
   .tab-icon-image {
     list-style-image: url("chrome://mozapps/skin/places/defaultFavicon@2x.png");
   }
+}
+
+/* All tabs menupopup */
+
+.alltabs-item[tabIsVisible]:not([_moz-menuactive="true"]) {
+  background-color: #402800;
+}
+
+.alltabs-endimage[soundplaying],
+.alltabs-endimage[muted] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio);
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+}
+
+.alltabs-endimage[muted] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted);
 }
 
 /* === END tabs.inc.css === */
@@ -3280,18 +3172,6 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   }
 }
 
-.alltabs-item[tabIsVisible]:not([_moz-menuactive="true"]) {
-  background-color: #402800;
-}
-
-.alltabs-endimage[muted] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted");
-}
-
-.alltabs-endimage[soundplaying] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio");
-}
-
 toolbarbutton.chevron {
   list-style-image: url("chrome://global/skin/toolbar/chevron.gif") !important;
 }
@@ -3365,13 +3245,17 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   padding-inline-end: 5px;
 }
 
+.notification-anchor-icon,
+#blocked-permissions-container > .blocked-permission-icon {
+  width: 16px;
+  height: 16px;
+  margin-inline-start: 2px;
+}
+
 /* This class can be used alone or in combination with the class defining the
    type of icon displayed. This rule must be defined before the others in order
    for its list-style-image to be overridden. */
 .notification-anchor-icon {
-  width: 16px;
-  height: 16px;
-  margin-inline-start: 2px;
   list-style-image: url("chrome://global/skin/icons/information-16.png");
 }
 
@@ -3391,56 +3275,23 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   margin-inline-end: 10px;
 }
 
-#notification-popup-box > .notification-anchor-icon:not(.in-use):hover {
-  fill: #000000;
+.notification-anchor-icon:not(.plugin-blocked),
+#blocked-permissions-container > .blocked-permission-icon {
+  filter: url(chrome://global/skin/filters.svg#fill);
+  fill: currentColor;
+}
+
+.notification-anchor-icon:not(.plugin-blocked):not(:hover) {
 }
 
 /* INDIVIDUAL NOTIFICATIONS */
-
-/* For the moment we apply the color filter only on the icons listed here.
-   The first two selectors are used by socialchat.xml (bug 1275558). */
-.webRTC-sharingDevices-notification-icon,
-.webRTC-sharingMicrophone-notification-icon,
-.camera-icon,
-.geo-icon,
-.indexedDB-icon,
-.install-icon,
-.login-icon,
-.microphone-icon,
-.plugin-icon,
-.pointerLock-icon,
-.popup-icon,
-.screen-icon,
-.desktop-notification-icon,
-.popup-notification-icon[popupid="geolocation"],
-.popup-notification-icon[popupid="indexedDB-permissions-prompt"],
-.popup-notification-icon[popupid="password"],
-.popup-notification-icon[popupid="pointerLock"],
-.popup-notification-icon[popupid="webRTC-shareDevices"],
-.popup-notification-icon[popupid="webRTC-shareMicrophone"],
-.popup-notification-icon[popupid="webRTC-shareScreen"],
-.popup-notification-icon[popupid="webRTC-sharingDevices"],
-.popup-notification-icon[popupid="webRTC-sharingMicrophone"],
-.popup-notification-icon[popupid="webRTC-sharingScreen"],
-.popup-notification-icon[popupid="web-notifications"] {
-  filter: url(chrome://global/skin/filters.svg#fill);
-  fill: #A09090;
-}
-
-/* The first two selectors are used by socialchat.xml (bug 1275558). The
-   notifications in the chat window are only shown when they are in use. */
-.webRTC-sharingDevices-notification-icon,
-.webRTC-sharingMicrophone-notification-icon,
-.in-use {
-  fill: #008484;
-}
 
 .popup-notification-icon[popupid="web-notifications"],
 .desktop-notification-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#desktop-notification);
 }
 
-.desktop-notification-icon.blocked {
+.desktop-notification-icon.blocked-permission-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#desktop-notification-blocked);
 }
 
@@ -3448,7 +3299,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#geo-windows);
 }
 
-.geo-icon.blocked {
+.geo-icon.blocked-permission-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#geo-windows-blocked);
 }
 
@@ -3461,7 +3312,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#indexedDB);
 }
 
-.indexedDB-icon.blocked {
+.indexedDB-icon.blocked-permission-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#indexedDB-blocked);
 }
 
@@ -3473,55 +3324,46 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#login-detailed);
 }
 
-#login-fill-notification-icon {
-  /* Temporary solution until the capture and fill doorhangers are unified. */
-  transform: scaleX(-1);
-}
-
-/* The first selector is used by socialchat.xml (bug 1275558). */
-.webRTC-sharingDevices-notification-icon,
 .camera-icon,
-.popup-notification-icon[popupid="webRTC-shareDevices"],
-.popup-notification-icon[popupid="webRTC-sharingDevices"] {
+.popup-notification-icon[popupid="webRTC-shareDevices"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#camera);
 }
 
-.camera-icon.blocked {
+.camera-icon.in-use {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#camera-sharing);
+}
+
+.camera-icon.blocked-permission-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#camera-blocked);
 }
 
-/* The first selector is used by socialchat.xml (bug 1275558). */
-.webRTC-sharingMicrophone-notification-icon,
 .microphone-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone);
 }
 
-.microphone-icon.blocked {
+.microphone-icon.in-use {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone-sharing);
+}
+
+.microphone-icon.blocked-permission-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone-blocked);
 }
 
-.popup-notification-icon[popupid="webRTC-shareMicrophone"],
-.popup-notification-icon[popupid="webRTC-sharingMicrophone"] {
+.popup-notification-icon[popupid="webRTC-shareMicrophone"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone-detailed);
 }
 
 .popup-notification-icon[popupid="webRTC-shareScreen"],
-.popup-notification-icon[popupid="webRTC-sharingScreen"],
 .screen-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#screen);
 }
 
-.screen-icon.blocked {
+.screen-icon.in-use {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#screen-sharing);
+}
+
+.screen-icon.blocked-permission-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#screen-blocked);
-}
-
-.popup-notification-icon[popupid="pointerLock"],
-.pointerLock-icon {
-  list-style-image: url(chrome://browser/skin/notification-icons.svg#pointerLock);
-}
-
-.pointerLock-icon.blocked {
-  list-style-image: url(chrome://browser/skin/notification-icons.svg#pointerLock-blocked);
 }
 
 /* This icon has a block sign in it, so we don't need a blocked version. */
@@ -3606,7 +3448,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 .plugin-icon.plugin-blocked {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin-blocked);
-  fill: #FF0000 !important; /* important! to override the default hover color */
 }
 
 #notification-popup-box[hidden] {
@@ -3769,59 +3610,6 @@ notification[value="translation"] {
   -moz-image-region: auto;
 }
 
-/* Ctrl-Tab */
-
-#ctrlTab-panel {
-  -moz-appearance: none;
-  background: rgba(0%,0%,0%,.7);
-  color: #FF9F00;
-  border-style: none;
-  padding: 20px 10px 10px;
-  font-weight: bold;
-}
-
-.ctrlTab-favicon[src] {
-  background-color: #000000;
-  width: 20px;
-  height: 20px;
-  padding: 2px;
-}
-
-.ctrlTab-preview-inner > .tabPreview-canvas {
-/*  box-shadow: 1px 1px 2px hsl(0,0%,12%);*/
-}
-
-.ctrlTab-preview:not(#ctrlTab-showAll) > * > .ctrlTab-preview-inner > .tabPreview-canvas {
-  margin-bottom: 2px;
-}
-
-.ctrlTab-preview-inner {
-  padding-bottom: 10px;
-}
-
-#ctrlTab-showAll:not(:focus) > * > .ctrlTab-preview-inner {
-  padding: 10px;
-  background-color: #000000;
-  border-radius: .5em;
-}
-
-.ctrlTab-preview:focus > * > .ctrlTab-preview-inner {
-  color: white;
-  background-color: #000000;
-  text-shadow: none;
-  padding: 8px;
-  border: 2px solid #9C9CFF;
-  border-radius: .5em;
-}
-
-.ctrlTab-preview:not(#ctrlTab-showAll):focus > * > .ctrlTab-preview-inner {
-  margin: -10px -10px 0;
-}
-
-#ctrlTab-showAll {
-  margin-top: .5em;
-}
-
 /* Status panel */
 
 .statuspanel-label {
@@ -3908,6 +3696,61 @@ html|*.pointerlockfswarning-exit-button {
 }
 
 /* === END fullscreen/warning.inc.css === */
+
+/* === BEGIN ctrlTab.inc.css === */
+
+/* Ctrl-Tab */
+
+#ctrlTab-panel {
+  -moz-appearance: none;
+  background: rgba(0%,0%,0%,.7);
+  color: #FF9F00;
+  border-style: none;
+  padding: 20px 10px 10px;
+  font-weight: bold;
+}
+
+.ctrlTab-favicon[src] {
+  background-color: #000000;
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+}
+
+.ctrlTab-preview-inner > .tabPreview-canvas {
+/*  box-shadow: 1px 1px 2px hsl(0,0%,12%);*/
+}
+
+.ctrlTab-preview:not(#ctrlTab-showAll) > * > .ctrlTab-preview-inner > .tabPreview-canvas {
+  margin-bottom: 2px;
+}
+
+.ctrlTab-preview-inner {
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: .5em;
+}
+
+.ctrlTab-preview:not(#ctrlTab-showAll) > * > .ctrlTab-preview-inner {
+  margin: -10px -10px 0;
+}
+
+#ctrlTab-showAll:not(:focus) > * > .ctrlTab-preview-inner {
+  background-color: #000000;
+}
+
+.ctrlTab-preview:focus > * > .ctrlTab-preview-inner {
+  color: #A09090;
+  background-color: #000000;
+  text-shadow: none;
+  border-color: #9C9CFF;
+}
+
+#ctrlTab-showAll {
+  margin-top: .5em;
+}
+
+/* === END ctrlTab.inc.css === */
 
 /* === BEGIN commandline.inc.css === */
 
@@ -4478,310 +4321,6 @@ html|*#gcli-output-frame {
   margin-inline-end: 5px;
 }
 
-/* social toolbar provider menu */
-.social-statusarea-popup {
-  margin-top: 0;
-  margin-left: -12px;
-  margin-right: -12px;
-}
-
-.social-statusarea-user {
-  border-bottom: 1px solid #9C9CFF;
-  background-color: #000000;
-  color: #FF9F00;
-  position: relative;
-  cursor: pointer;
-}
-
-.social-statusarea-user-portrait {
-  width: 32px;
-  height: 32px;
-  border-radius: 2px;
-  margin: 10px;
-}
-
-.social-statusarea-loggedInStatus {
-  background: transparent;
-  border: none;
-  color: #3333FF;
-  min-width: 0;
-  margin: 0 6px;
-  list-style-image: none;
-}
-
-#social-statusarea-user[_moz-menuactive] > vbox > .social-statusarea-loggedInStatus {
-  text-decoration: underline;
-}
-
-.social-panel > .panel-arrowcontainer > .panel-arrowcontent {
-  padding: 0;
-}
-
-.social-panel-frame {
-  border-radius: inherit;
-}
-
-/* === BEGIN chat.inc.css === */
-
-#social-sidebar-header {
-  padding: 3px;
-}
-
-#manage-share-providers,
-#social-sidebar-button {
-  list-style-image: url("chrome://browser/skin/ToolbarFx.png");
-  -moz-image-region: rect(0, 468px, 18px, 450px);
-}
-
-#social-sidebar-button {
-  -moz-appearance: none;
-  border: none;
-  padding: 0;
-  margin: 2px;
-}
-#manage-share-providers > .toolbarbutton-icon,
-#social-sidebar-button > .toolbarbutton-icon {
-  min-height: 18px;
-  min-width: 18px;
-}
-#manage-share-providers:hover,
-#manage-share-providers:hover:active,
-#social-sidebar-button:hover,
-#social-sidebar-button:hover:active {
-  -moz-image-region: rect(18px, 468px, 36px, 450px);
-}
-#social-sidebar-button > .toolbarbutton-menu-dropmarker {
-  display: none;
-}
-
-#social-sidebar-button[loading="true"] {
-  list-style-image: url("chrome://global/skin/icons/loading.png");
-}
-
-#social-sidebar-favico {
-  max-height: 16px;
-  max-width: 16px;
-  padding: 0;
-  margin: 2px;
-}
-
-.chat-status-icon {
-  max-height: 16px;
-  max-width: 16px;
-  padding: 0;
-}
-
-.chat-toolbarbutton {
-  -moz-appearance: none;
-  border: none;
-  padding: 0 3px;
-  margin: 0;
-  background: none;
-}
-
-.chat-toolbarbutton > .toolbarbutton-text {
-  display: none;
-}
-
-.chat-toolbarbutton > .toolbarbutton-icon {
-  width: 16px;
-  height: 16px;
-}
-
-.chat-close-button {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close");
-}
-
-.chat-close-button:hover {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close-hover");
-}
-
-.chat-close-button:hover:active {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#close-active");
-}
-
-.chat-minimize-button {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize");
-}
-
-.chat-minimize-button:hover {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize-hover");
-}
-
-.chat-minimize-button:hover:active {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#minimize-active");
-}
-
-.chat-swap-button {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand");
-  transform: rotate(180deg);
-}
-
-.chat-swap-button:hover {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand-hover");
-}
-
-.chat-swap-button:hover:active {
-  list-style-image: url("chrome://browser/skin/social/chat-icons.svg#expand-active");
-}
-
-chatbar > chatbox > .chat-titlebar > .chat-swap-button {
-  transform: none;
-}
-
-.chat-title {
-  color: #000000;
-  text-shadow: none;
-  cursor: inherit;
-}
-
-.chat-titlebar {
-  background-color: #9C9CFF;
-  color: #000000;
-  height: 26px;
-  min-height: 26px;
-  width: 100%;
-  margin: 0;
-  padding: 5px 4px;
-  border: 1px solid #008484;
-  border-bottom: 0;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  cursor: pointer;
-  background-color: #A09090;
-}
-
-.chat-titlebar[selected] {
-  background-color: #008484;
-}
-
-.chat-titlebar > .notification-anchor-icon {
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
-.chat-titlebar[minimized="true"] {
-  border-bottom: none;
-}
-
-.chat-titlebar[selected] {
-  background-color: #008484;
-}
-
-.chat-titlebar[activity] {
-  background-color: #E7ADE7;
-}
-
-.chat-frame {
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
-
-.chatbar-button {
-  list-style-image: url("chrome://browser/skin/social/services-16.png");
-  background-color: #000000;
-  border: none;
-  margin: 0;
-  padding: 2px;
-  height: 21px;
-  width: 21px;
-  border-top: 1px solid #008484;
-  border-inline-end: 1px solid #008484;
-}
-
-@media (min-resolution: 2dppx) {
-  .chatbar-button {
-    list-style-image: url("chrome://browser/skin/social/services-16@2x.png");
-  }
-}
-
-.chatbar-button:hover {
-  background-color: #FFCF00;
-}
-.chatbar-button[open="true"] {
-  background-color: #FF9F00;
-}
-
-.chatbar-button[activity]:not([open]) {
-  background-image: radial-gradient(circle farthest-corner at center 2px, rgb(160,144,144) 3%, rgba(160,144,144,0.9) 12%, rgba(156,156,255,0.6) 30%, rgba(156,156,255,0.2) 70%);
-}
-
-.chatbar-button > .toolbarbutton-icon {
-  width: 16px;
-}
-
-.chatbar-button > menupopup > .menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
-  width: auto;
-  height: auto;
-  max-height: 16px;
-  max-width: 16px;
-}
-
-.chatbar-button > .toolbarbutton-icon {
-  opacity: .6;
-  margin-inline-end: 0;
-}
-.chatbar-button:hover > .toolbarbutton-icon,
-.chatbar-button[open="true"] > .toolbarbutton-icon {
-  opacity: 1;
-}
-
-.chatbar-button:hover,
-.chatbar-button[open="true"] {
-}
-
-.chatbar-button > .toolbarbutton-text,
-.chatbar-button > .toolbarbutton-menu-dropmarker {
-  display: none;
-}
-
-.chatbar-button[activity]:not([open="true"]) {
-  background-color: #E7ADE7;
-}
-
-.chatbar-button > menupopup > menuitem[activity] {
-  font-weight: bold;
-}
-
-.chatbar-innerbox {
-  background: transparent;
-  overflow: hidden;
-}
-
-chatbar {
-  margin-inline-end: 20px;
-}
-
-chatbox {
-  margin-inline-start: 4px;
-  background-color: transparent;
-}
-
-chatbar > chatbox {
-  /* Apply the same border-radius as the .chat-titlebar to make the box-shadow
-     go round nicely. */
-/*  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;*/
-  /* Offset the chatbox the same amount as the box-shadows' spread, to make it
-     visible. */
-/*  margin-inline-end: 5px;*/
-}
-
-chatbox[minimized="true"] {
-  width: 160px;
-  height: 20px;
-}
-
-window > chatbox {
-  margin-inline-start: 0px;
-  margin: 0px;
-  border: none;
-  padding: 0px;
-}
-
-/* === END chat.inc.css === */
-
 /* === BEGIN plugin-doorhanger.inc.css === */
 
 /**
@@ -4805,7 +4344,7 @@ window > chatbox {
 }
 
 .center-item-warning-icon {
-  background-image: url("chrome://mozapps/skin/extensions/alerticon-info-negative.png");
+  background-image: url("chrome://mozapps/skin/extensions/alerticon-info-negative.svg");
   background-repeat: no-repeat;
   width: 16px;
   height: 15px;
@@ -4837,8 +4376,6 @@ window > chatbox {
 
 .messageImage[value="plugin-hidden"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin);
-  filter: url(chrome://global/skin/filters.svg#fill);
-  fill: #A09090;
 }
 
 /* Keep any changes to this style in sync with pluginProblem.css */
@@ -4847,93 +4384,9 @@ notification.pluginVulnerable {
 
 notification.pluginVulnerable .messageImage {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin-blocked);
-  filter: url(chrome://global/skin/filters.svg#fill);
-  fill: #FF0000;
 }
 
 /* === END plugin-doorhanger.inc.css === */
-
-/* === BEGIN login-doorhanger.inc.css === */
-
-#notification-popup[popupid="login-fill"] > .panel-arrowcontainer > .panel-arrowcontent {
-  /* Since we display a sliding subview that extends to the border, we cannot
-   * keep the default padding of arrow panels. We use the same padding in the
-   * individual content views instead. Since we removed the padding, we also
-   * have to ensure the contents are clipped to the border box. */
-  padding: 0;
-  overflow: hidden;
-}
-
-#login-fill-mainview,
-#login-fill-details {
-  padding: var(--panel-arrowcontent-padding);
-}
-
-#login-fill-doorhanger[inDetailView] > #login-fill-mainview {
-  transform: translateX(-14px);
-}
-
-#login-fill-mainview,
-#login-fill-details {
-  transition: transform 150ms;
-}
-
-#login-fill-doorhanger:not([inDetailView]) > #login-fill-details {
-  transform: translateX(105%);
-}
-
-#login-fill-doorhanger:not([inDetailView]) > #login-fill-details:-moz-locale-dir(rtl) {
-  transform: translateX(-105%);
-}
-
-#login-fill-doorhanger[inDetailView] > #login-fill-clickcapturer {
-  background-color: hsla(240,39%,100%,.1);
-}
-
-#login-fill-testing {
-  color: #FF0000;
-  font-weight: bold;
-}
-
-#login-fill-list {
-  border: 1px solid #9C9CFF;
-  max-height: 20em;
-}
-
-.login-fill-item[disabled] {
-  color: #8050B0;
-  background-color: #000000;
-}
-
-.login-fill-item[disabled][selected] {
-  background-color: #008484;
-}
-
-.login-hostname {
-  margin: 4px;
-  font-weight: bold;
-}
-
-.login-fill-item.different-hostname > .login-hostname {
-  color: #A09090;
-  font-style: italic;
-}
-
-.login-username {
-  margin: 4px;
-  color: #A09090;
-}
-
-#login-fill-details {
-  padding: 4px;
-  background: var(--panel-arrowcontent-background);
-  color: var(--panel-arrowcontent-color);
-  background-clip: padding-box;
-  border-left: 1px solid #9C9CFF;
-  margin-inline-start: 38px;
-}
-
-/* === END login-doorhanger.inc.css === */
 
 /* === BEGIN customizeMode.inc.css === */
 
@@ -4998,7 +4451,7 @@ notification.pluginVulnerable .messageImage {
 #main-window[customize-entered] .customization-target[customizing-dragovertarget]:not(:-moz-any(#PanelUI-contents, #TabsToolbar, #toolbar-menubar))::before,
 /* nav-bar and panel outlines are always shown */
 #nav-bar[showoutline=true] > #nav-bar-customization-target.customization-target::before {
-  outline-color: #A09090;
+  outline-color: currentColor;
 }
 
 #nav-bar[showoutline=true] > #nav-bar-customization-target.customization-target::before {
@@ -5007,7 +4460,7 @@ notification.pluginVulnerable .messageImage {
 
 #PanelUI-contents[showoutline=true] > .panel-customization-placeholder {
   transition: outline-color 250ms linear;
-  outline-color: #9C9CFF;
+  outline-color: var(--panel-separator-color);
 }
 
 #PanelUI-contents > .panel-customization-placeholder {
@@ -5066,18 +4519,32 @@ notification.pluginVulnerable .messageImage {
 .customizationmode-button:hover {
 }
 
-#customization-titlebar-visibility-button[checked],
-#customization-devedition-theme-button[checked] {
+.customizationmode-button > .box-inherit {
+}
+
+.customizationmode-button > .button-icon {
+}
+
+.customizationmode-button:not([type=menu]) > .button-text {
+}
+
+.customizationmode-button > .button-menu-dropmarker {
+}
+
+
+
+.customizationmode-button[checked] {
   background-color: #008484;
 }
 
-#customization-titlebar-visibility-button[checked]:hover,
-#customization-devedition-theme-button[checked]:hover {
+.customizationmode-button[checked]:hover:not([disabled]),
+.customizationmode-button:hover:not([disabled]) {
   background-color: #FFCF00;
 }
 
-#customization-titlebar-visibility-button[checked]:hover:active,
-#customization-devedition-theme-button[checked]:hover:active {
+.customizationmode-button[checked]:hover:active:not([disabled]),
+.customizationmode-button:hover:active:not([disabled]),
+.customizationmode-button[open] {
   background-color: #FF9F00;
 }
 
@@ -5096,11 +4563,6 @@ notification.pluginVulnerable .messageImage {
 
 #customization-titlebar-visibility-button:hover {
   -moz-image-region: rect(16px, 16px, 32px, 0);
-}
-
-#customization-lwtheme-button,
-#customization-titlebar-visibility-button  {
-  padding: 0px 5px;
 }
 
 #customization-titlebar-visibility-button > .button-box {
@@ -5247,7 +4709,7 @@ toolbarpaletteitem[place="panel"]:not([mousedown="true"]):-moz-focusring,
 toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
   /* Delay adding the focusring back until after the transform transition completes. */
   transition: outline-width .01s linear var(--drag-drop-transition-duration);
-  outline: 1px dotted #A09090;
+  outline: 1px dotted;
   -moz-outline-radius: 2.5px;
 }
 
@@ -5936,4 +5398,8 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 .browser-extension-panel > .panel-arrowcontainer > .panel-arrowcontent {
   padding: 0;
   overflow: hidden;
+}
+
+.webextension-popup-browser {
+  border-radius: inherit;
 }

@@ -6,7 +6,7 @@
     use:not(:target) { display: none; }
 
     path { fill: #000000; }
-    circle { fill: none; stroke: #000000; stroke-width: 2; }
+    circle { fill: #A09090; stroke: #A09090; stroke-width: 2; }
 
     #help-hover path { fill: #000000; }
     #help-hover circle { fill: #FFCF00; stroke: #FFCF00; }

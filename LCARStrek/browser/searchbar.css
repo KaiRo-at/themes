@@ -101,7 +101,7 @@
 }
 
 .search-panel-tree {
-  border-top: 1px solid #A09090 !important;
+  border-top: 1px solid var(--panel-separator-color) !important;
 }
 
 .search-panel-header {
@@ -118,11 +118,11 @@
 }
 
 .search-panel-input-value {
-  color: black;
+  color: #E7ADE7;
 }
 
 .search-panel-one-offs {
-  margin: 0 0 !important;
+  margin: 0 !important;
   border-top: 1px solid #000000;
   line-height: 0;
 }
@@ -133,12 +133,13 @@
   border-radius: 0;
   min-width: 48px;
   height: 32px;
-  margin: 0 0;
-  padding: 0 0;
-  background: none;
-  background-image: url('chrome://browser/skin/search-oneoff-bg-border.png');
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(transparent 15%, var(--panel-separator-color) 15%, var(--panel-separator-color) 85%, transparent 85%);
+  background-size: 1px auto;
   background-repeat: no-repeat;
   background-position: right center;
+  color: #A09090;
 }
 
 .searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
@@ -147,7 +148,7 @@
 
 .searchbar-engine-one-off-item:not(.last-row) {
   box-sizing: content-box;
-  border-bottom: 1px solid #9C9CFF;
+  border-bottom: 1px solid var(--panel-separator-color);
 }
 
 .search-setting-button-compact {
@@ -165,11 +166,12 @@
 .searchbar-engine-one-off-item[selected] {
   background-color: #008484;
   background-image: none;
+  color: #000000;
 }
 
 .searchbar-engine-one-off-item > .button-box {
   border: none;
-  padding: 0 0;
+  padding: 0;
 }
 
 .searchbar-engine-one-off-item > .button-box > .button-text {
@@ -184,7 +186,7 @@
 .addengine-item {
   border: none;
 /*  height: 32px;*/
-  margin: 0 0;
+  margin: 0;
   padding: 0 10px;
   border-radius: 0;
 }
@@ -248,12 +250,8 @@
 }
 
 .search-setting-button {
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
   border-radius: 0;
   background-color: #C09070;
-  -moz-border-top-colors: none;
 /*  min-height: 32px;*/
 }
 
@@ -262,17 +260,13 @@
   border-top-color: #000000;
 }
 
-.search-setting-button-compact {
-  color: #A09090;
+.search-setting-button-compact > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/gear.svg");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
 }
 
 .search-setting-button-compact:hover {
   background-color: #FFCF00;
   color: #000000;
-}
-
-.search-setting-button-compact > .button-box > .button-icon {
-  list-style-image: url("chrome://browser/skin/gear.svg");
-  filter: url(chrome://global/skin/filters.svg#fill);
-  fill: currentColor;
 }

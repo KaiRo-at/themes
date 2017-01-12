@@ -154,7 +154,7 @@
 .panel-subviews {
   padding: 4px;
   background-clip: padding-box;
-  border-left: 1px solid var(--panel-arrowcontent-border-color);
+  border-left: 1px solid var(--panel-separator-color);
   margin-inline-start: var(--panel-ui-exit-subview-gutter-width);
 }
 
@@ -194,14 +194,14 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
 
 .panel-subview-header {
   margin: 0 0 4px;
-  background-color: #A09090;
+  background-color: var(--panel-separator-color);
   color: #000000;
   font-variant: small-caps;
   border-radius: 4px;
 }
 
 .panel-subview-footer {
-  border-top: 1px solid #A09090;
+  border-top: 1px solid var(--panel-separator-color);
 }
 
 .cui-widget-panelview .panel-subview-header {

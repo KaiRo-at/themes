@@ -2,10 +2,32 @@
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="24" height="24" viewBox="0 0 24 24">
+<style>
+.fieldtext {
+  fill: #A09090;
+}
+
+.highlighttext {
+  fill: #FFCF00;
+}
+
+.black {
+  fill: #FFCF00;
+}
+
+.white {
+  fill: #FFCF00;
+}
+</style>
   <style>
-    .icon-default {
-      fill: #FFCF00;
+    svg > rect:not(:target) {
+      display: none;
+    }
+
+    #connection-secure {
+      fill: #008484;
     }
   </style>
 
@@ -19,8 +41,13 @@
       <use xlink:href="#shape-lock-clasp-outer" fill="#fff" />
       <use xlink:href="#shape-lock-clasp-inner" fill="#000" />
     </mask>
+
+    <mask id="mask-lock">
+      <use xlink:href="#shape-lock-clasp-outer" mask="url(#mask-clasp-cutout)" fill="#fff"/>
+      <use xlink:href="#shape-lock-base" fill="#fff"/>
+    </mask>
   </defs>
 
-  <use xlink:href="#shape-lock-clasp-outer" mask="url(#mask-clasp-cutout)" class="icon-default" />
-  <use xlink:href="#shape-lock-base" class="icon-default" />
+  <rect id="connection-degraded" class="fieldtext" width="24" height="24" mask="url(#mask-lock)"/>
+  <rect id="connection-secure" width="24" height="24" mask="url(#mask-lock)"/>
 </svg>

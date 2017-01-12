@@ -20,38 +20,44 @@
   background-color: transparent;
   padding: 4px;
   color: inherit;
+  margin: 0;
+  border: none;
 }
 
 #emptyDownloads {
-  padding: 10px 20px;
+  padding: 16px 25px;
+  margin: 0;
   /* The panel can be wider than this description after the blocked subview is
      shown, so center the text. */
   text-align: center;
 }
 
 .downloadsPanelFooter {
-  background-color: #000000;
-  border-top: 1px solid #A09090;
+/*  background-color: var(--arrowpanel-dimmed);
+  border-top: 1px solid var(--panel-separator-color);*/
 }
 
-.downloadsPanelFooter > toolbarseparator {
+.downloadsPanelFooter toolbarseparator {
   margin: 0;
   border: 0;
   min-width: 0;
-/*  border-left: 1px solid hsla(210,4%,10%,.14);
-  -moz-appearance: none !important;*/
+/*  border-left: 1px solid var(--panel-separator-color);
+  -moz-appearance: none;*/
 }
 
 .downloadsPanelFooterButton {
   margin: 0;
   padding: 0;
+  min-width: 0;
 /*  min-height: 40px;*/
+  border: none;
 }
 
 .downloadsPanelFooterButton:hover {
 }
 
-.downloadsPanelFooterButton:hover:active {
+.downloadsPanelFooterButton:hover:active,
+.downloadsPanelFooterButton[open="true"] {
 }
 
 .downloadsPanelFooterButton[default] {
@@ -63,6 +69,58 @@
 .downloadsPanelFooterButton[default]:hover:active {
 }
 
+.downloadsPanelFooterButton > .button-box {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+#downloadsHistory {
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+#downloadsPanel[hasdownloads] #downloadsFooterButtons:not(.downloadsHideDropmarker) > #downloadsHistory {
+  padding-inline-start: 68px;
+}
+
+toolbarseparator.downloadsDropmarkerSplitter {
+  margin: 7px 0;
+}
+
+#downloadsFooter:hover toolbarseparator.downloadsDropmarkerSplitter,
+#downloadsFooter[showingdropdown] toolbarseparator {
+  margin: 0;
+}
+
+.downloadsDropmarker {
+  padding: 0 21px;
+}
+
+.downloadsDropmarker > .button-box > hbox {
+  display: none;
+}
+
+.downloadsDropmarker > .button-box > .button-menu-dropmarker {
+  display: -moz-box;
+  padding: 0;
+  margin: 0;
+}
+
+.downloadsDropmarker > .button-box > .button-menu-dropmarker > .dropmarker-icon {
+  width: 16px;
+  height: 16px;
+/*  list-style-image: url("chrome://browser/skin/downloads/menubutton-dropmarker.svg");
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;*/
+}
+
+/* Override default icon size which is too small for this dropdown */
+.downloadsDropmarker > .button-box > .button-menu-dropmarker {
+  width: 16px;
+  height: 16px;
+}
+
 #downloadsSummary {
   padding: 0 12px;
   cursor: pointer;
@@ -70,7 +128,7 @@
 }
 
 #downloadsSummary > .downloadTypeIcon {
-  list-style-image: url("chrome://browser/skin/downloads/download-summary.png");
+  list-style-image: url("chrome://browser/skin/downloads/download-summary.svg");
 }
 
 #downloadsSummaryDescription {
@@ -248,11 +306,6 @@ richlistitem[type="download"][verdict="Uncommon"] .downloadBlockedBadge {
 
 #downloadsPanel[keyfocus] #downloadsSummary:focus {
   outline-offset: -5px;
-}
-
-.downloadsPanelFooterButton > .button-box {
-  /* Hide the border so we don't display an inner focus ring. */
-  border: none;
 }
 
 richlistitem[type="download"][showingsubview] {
