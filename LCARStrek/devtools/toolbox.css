@@ -33,16 +33,29 @@
   border: 0px solid;
   border-bottom-width: 1px;
   padding: 0;
-  background: var(--theme-tab-toolbar-background);
+  background: var(--theme-capped-toolbar-background);
   border-bottom-color: var(--theme-splitter-color);*/
 }
+div.devtools-tabbar {
+  border-bottom: 3px solid #000000;
+  display: flex;
+}
 
-#toolbox-tabs {
+.toolbox-tabs-wrapper {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+
+#toolbox-tabs,
+.toolbox-tabs {
   margin: 0;
   padding-inline-start: 3px;
   margin-inline-start: 2px;
   background-color: #000000;
   color: #FFCF00;
+  display: flex;
+  flex: 1;
 }
 
 /* Set flex attribute to Toolbox buttons and Picker container so,
@@ -50,8 +63,26 @@
 #toolbox-buttons {
   display: flex;
 }
+hbox#toolbox-buttons {
+  margin-inline-end: 2px;
+}
 
 #toolbox-picker-container {
+  display: flex;
+}
+
+#toolbox-buttons-end {
+  display: flex;
+  margin-inline-end: 2px;
+}
+
+#toolbox-picker-container {
+  display: flex;
+}
+
+#toolbox-buttons-start {
+  border: solid 0 var(--theme-splitter-color);
+/*  border-inline-end-width: 1px;*/
   display: flex;
 }
 
@@ -68,15 +99,25 @@
   margin-inline-end: 3px;
   padding: 1px;
   padding-inline-start: 3px;
+  padding-inline-end: 3px;
   border-radius: 8px 8px 0 0;
-/*  border-width: 0;
-  border-inline-start-width: 1px;*/
+  border-width: 0;
+/*  border-inline-start-width: 1px;*/
   -moz-box-align: center;
   -moz-user-focus: normal;
   -moz-box-flex: 1;
 
   color: var(--theme-button-color);
   background-color: var(--theme-button-background);
+
+  font: 11px "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  align-content: flex-start;
+  display: flex;
+  align-items: center;
 }
 
 .devtools-tab:hover,
@@ -85,7 +126,8 @@
   color: var(--theme-hover-color);
 }
 
-.devtools-tab:not([selected])[highlighted] {
+.devtools-tab:not([selected])[highlighted],
+.devtools-tab:not(.selected).highlighted {
   background-color: var(--theme-highlight-pink);
 }
 
@@ -97,6 +139,18 @@
   max-height: 16px;
   width: 16px; /* Prevents collapse during theme switching */
 }
+
+.devtools-tab > img {
+  border: none;
+  margin: 0;
+/*  margin-inline-start: 10px;
+  opacity: 0.6;*/
+  max-height: 16px;
+  width: 16px; /* Prevents collapse during theme switching */
+  vertical-align: middle;
+  margin-inline-end: 3px;
+}
+
 
 .devtools-tab > label {
   white-space: nowrap;
@@ -117,7 +171,8 @@
   -moz-box-flex: 0;
 }
 
-.devtools-tabbar .devtools-tab[selected] {
+.devtools-tabbar .devtools-tab[selected],
+.devtools-tabbar .devtools-tab.selected {
   color: var(--theme-selection-color);
   background-color: var(--theme-selection-background);
 }
@@ -145,6 +200,12 @@
 .devtools-tab:not([selected])[highlighted] > .default-icon {
   visibility: collapse;
 }
+.devtools-tab:not(.highlighted) > .highlighted-icon,
+.devtools-tab.selected > .highlighted-icon,
+.devtools-tab:not(.selected).highlighted > .default-icon {
+  display: none;
+}
+
 
 /* The options tab is special - it doesn't have the same parent
    as the other tabs (toolbox-option-container vs toolbox-tabs) */
@@ -163,6 +224,9 @@
 #toolbox-tab-options {
   min-width: 20px;
 }
+#toolbox-tab-options > img {
+  margin-inline-end: 0;
+}
 #toolbox-option-container {
   background-color: #000000;
   padding-inline-start: 3px;
@@ -170,6 +234,14 @@
 }
 
 /* Toolbox controls */
+
+#toolbox-controls, #toolbox-dock-buttons {
+  display: flex;
+}
+
+#toolbox-controls {
+  margin-inline-end: 2px;
+}
 
 #toolbox-controls > button,
 #toolbox-dock-buttons > button {
@@ -223,6 +295,7 @@
 
 #toolbox-controls-separator {
   margin: 0;
+  width: 0;
 }
 
 /* Command buttons */
@@ -264,7 +337,9 @@
 .command-button:hover::before,
 .command-button:hover:active::before,
 .command-button[checked=true]::before,
-.command-button[open=true]::before {
+.command-button[open=true]::before,
+.command-button.checked::before,
+.command-button.open::before {
   filter: var(--checked-icon-filter);
 }
 
