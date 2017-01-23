@@ -2,18 +2,19 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/*@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");*/
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
 
-.controlBar {
+hbox.controlBar {
   height: 28px;
   background-color: rgba(156,156,255,0.75);
 }
 
-.playButton,
-.muteButton,
-.closedCaptionButton,
-.fullscreenButton {
+xul|button.playButton,
+xul|button.muteButton,
+xul|button.closedCaptionButton,
+xul|button.fullscreenButton {
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -24,118 +25,118 @@
   border: none;
 }
 
-.playButton:hover,
-.muteButton:not([noAudio]):hover,
-.closedCaptionButton:hover,
-.fullscreenButton:hover {
+xul|button.playButton:hover,
+xul|button.muteButton:not([noAudio]):hover,
+xul|button.closedCaptionButton:hover,
+xul|button.fullscreenButton:hover {
   background-color: rgba(255,207,0,0.75);
 }
 
-.playButton:hover:active,
-.muteButton:not([noAudio]):hover:active,
-.closedCaptionButton:hover:active,
-.fullscreenButton:hover:active {
+xul|button.playButton:hover:active,
+xul|button.muteButton:not([noAudio]):hover:active,
+xul|button.closedCaptionButton:hover:active,
+xul|button.fullscreenButton:hover:active {
   background-color: rgba(255,159,0,0.75);
 }
 
-.playButton {
+xul|button.playButton {
   background-image: url("chrome://global/skin/media/pauseButton.png");
   margin-right: -22px; /* 1/2 of scrubber thumb width, for overhang. */
   position: relative; /* Trick to work around negative margin interfering with clicking on the button. */
 }
 
-.playButton:hover {
+xul|button.playButton:hover {
   background-image: url("chrome://global/skin/media/pauseButton-hover.png");
 }
 
-.playButton[paused] {
+xul|button.playButton[paused] {
   background-image: url("chrome://global/skin/media/playButton.png");
 }
 
-.playButton[paused]:hover {
+xul|button.playButton[paused]:hover {
   background-image: url("chrome://global/skin/media/playButton-hover.png");
 }
 
-.muteButton {
+xul|button.muteButton {
   background-image: url("chrome://global/skin/media/muteButton.png");
   min-width: 33px;
 }
 
-.muteButton:hover {
+xul|button.muteButton:hover {
   background-image: url("chrome://global/skin/media/muteButton-hover.png");
 }
 
-.muteButton[muted] {
+xul|button.muteButton[muted] {
   background-image: url("chrome://global/skin/media/unmuteButton.png");
 }
 
-.muteButton[muted]:hover {
+xul|button.muteButton[muted]:hover {
   background-image: url("chrome://global/skin/media/unmuteButton-hover.png");
 }
 
-.muteButton[noAudio] {
+xul|button.muteButton[noAudio] {
   background-image: url("chrome://global/skin/media/noAudio.png");
 }
 
-.muteButton[noAudio] + .volumeStack {
+xul|button.muteButton[noAudio] + .volumeStack {
   display: none;
 }
 
-.closedCaptionButton {
+xul|button.closedCaptionButton {
   background-image: url("chrome://global/skin/media/closeCaptionButton.png");
   background-position: 4px;
 }
 
-.closedCaptionButton:hover {
+xul|button.closedCaptionButton:hover {
   background-image: url("chrome://global/skin/media/closeCaptionButton-hover.png");
 }
 
-.closedCaptionButton[enabled] {
+xul|button.closedCaptionButton[enabled] {
   opacity: 1;
 }
 
-.closedCaptionButton[hidden] {
+xul|button.closedCaptionButton[hidden] {
   display: none;
 }
 
-.fullscreenButton {
+xul|button.fullscreenButton {
   background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton.png"), 0, 16, 16, 0);
 }
 
-.fullscreenButton:hover {
+xul|button.fullscreenButton:hover {
   background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover.png"), 0, 16, 16, 0);
 }
 
-.fullscreenButton[fullscreened] {
+xul|button.fullscreenButton[fullscreened] {
   background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton.png"), 0, 32, 16, 16);
 }
 
-.fullscreenButton[fullscreened]:hover {
+xul|button.fullscreenButton[fullscreened]:hover {
   background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover.png"), 0, 32, 16, 16);
 }
 
-.volumeControl {
+xul|*.volumeControl {
   width: 32px;
   opacity: 0;
 }
 
-.volumeBackground,
-.volumeForeground {
+xul|*.volumeBackground,
+xul|*.volumeForeground {
   background-repeat: no-repeat;
   background-position: center;
   width: 32px;
 }
 
-.volumeBackground {
+xul|*.volumeBackground {
   background-image: url("chrome://global/skin/media/volume-empty.png");
 }
 
-.volumeForeground {
+xul|*.volumeForeground {
   background-image: url("chrome://global/skin/media/volume-full.png");
   background-clip: content-box;
 }
 
-.textTrackList {
+xul|*.textTrackList {
   display: -moz-box;
   -moz-appearance: none;
   -moz-box-pack: end;
@@ -143,11 +144,11 @@
   padding: 0;
 }
 
-.textTrackList[hidden] {
+xul|*.textTrackList[hidden] {
   display: none;
 }
 
-.textTrackList > html|*.textTrackItem {
+xul|*.textTrackList > html|*.textTrackItem {
   -moz-appearance: none;
   -moz-box-align: start;
   text-align: start;
@@ -161,30 +162,30 @@
   white-space: nowrap;
 }
 
-.textTrackList > html|*.textTrackItem[on] {
+xul|*.textTrackList > html|*.textTrackItem[on] {
   color: white;
   background-color: black;
 }
 
-.textTrackList > html|*.textTrackItem:hover {
+xul|*.textTrackList > html|*.textTrackItem:hover {
   background-color: rgba(0,0,0,.55);
 }
 
-.controlBar[fullscreen-unavailable] {
+xul|*.controlBar[fullscreen-unavailable] {
   /* This value is duplicated in the videocontrols.xml adjustControlSize function. */
   padding-inline-end: 8px;
 }
 
-.volumeControl .scale-thumb {
+xul|*.volumeControl .scale-thumb {
   min-width: 0;
   opacity: 0;
 }
 
-.durationBox {
+xul|*.durationBox {
   -moz-box-pack: center;
 }
 
-.durationLabel {
+xul|*.durationLabel {
   margin-left: -22px; /* 1/2 of scrubber thumb width, for overhang. */
   padding-left: 8px; /* don't bump into the scrubber bar */
   padding-top: 0px; /* center vertically with scrubber bar */
@@ -193,11 +194,11 @@
   font-size: 11px;
 }
 
-.positionLabel {
+xul|*.positionLabel {
   display: none;
 }
 
-.backgroundBar {
+xul|*.backgroundBar {
   /* margin top/bottom: make bar 8px tall (control height = 28, minus 2 * 10 margin) */
   /* margin left/right: 1/2 of scrubber thumb width, for overhang. */
   margin: 10px 22px;
@@ -205,8 +206,8 @@
   border-radius: 2.5px;
 }
 
-.bufferBar,
-.progressBar {
+xul|*.bufferBar,
+xul|*.progressBar {
   /* margin top/bottom: make bar 8px tall (control height = 28, minus 2 * 10 margin) */
   /* margin left/right: 1/2 of scrubber thumb width, for overhang. */
   margin: 10px 22px;
@@ -217,7 +218,7 @@
 }
 
 /* .progress-bar is an element inside the <progressmeter> implementation. */
-.bufferBar .progress-bar {
+xul|*.bufferBar .progress-bar {
   /*
    * Note that this is drawn on top of the .backgroundBar. So although this
    * has the same background-color specified, the semitransparent
@@ -228,42 +229,42 @@
   -moz-appearance: none;
 }
 
-.progressBar .progress-bar {
+xul|*.progressBar .progress-bar {
   background-color: #008484;
   border-radius: 2.5px;
   -moz-appearance: none;
 }
 
 /* .scale-slider is an element inside the <scale> implementation. */
-.scrubber .scale-slider,
-.volumeControl .scale-slider {
+xul|*.scrubber .scale-slider,
+xul|*.volumeControl .scale-slider {
   /* Hide the default horizontal bar. */
   background: none;
   margin: 0;
 }
 
-.scrubber .scale-slider {
+xul|*.scrubber .scale-slider {
   /* abs(margin-top) + margin-bottom + bar height == timeThumb height */
   margin-top: -10px;
   margin-bottom: 10px;
 }
 
 /* .scale-thumb is an element inside the <scale> implementation. */
-.scrubber .scale-thumb,
-.volumeControl .scale-thumb {
+xul|*.scrubber .scale-thumb,
+xul|*.volumeControl .scale-thumb {
   /* Override the default thumb appearance with a custom image. */
   background: transparent;
   border: none !important;
 }
 
-.timeThumb {
+xul|*.timeThumb {
   background: url("chrome://global/skin/media/scrubberThumb.png") no-repeat center;
   min-width: 45px;
   min-height: 28px;
   -moz-box-pack: center;
 }
 
-.timeThumb[showhours="true"] {
+xul|*.timeThumb[showhours="true"] {
   background-image: url("chrome://global/skin/media/scrubberThumbWide.png");
 }
 
@@ -273,7 +274,7 @@
 }
 */
 
-.timeLabel {
+xul|*.timeLabel {
   color: rgba(0,0,0,0.75);
   font-size: 10px;
   font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
@@ -281,19 +282,19 @@
   padding-top: 5px;
 }
 
-.statusOverlay {
+xul|*.statusOverlay {
   -moz-box-align: center;
   -moz-box-pack: center;
   background-color: rgba(0,0,0,0.55);
 }
 
-.statusIcon {
+xul|*.statusIcon {
   margin-bottom: 28px; /* same height as .controlBar, to keep icon centered above it */
   width: 36px;
   height: 36px;
 }
 
-.statusIcon[type="throbber"] {
+xul|*.statusIcon[type="throbber"] {
   background: url("chrome://communicator/skin/brand/throbber-anim.png") no-repeat center;
 }
 /*
@@ -301,7 +302,7 @@
   background: url("chrome://global/skin/media/stalled.png") no-repeat center;
 }
 */
-.statusIcon[type="error"] {
+xul|*.statusIcon[type="error"] {
   background: url("chrome://global/skin/icons/alert-error.gif") no-repeat center;
 }
 
@@ -477,4 +478,491 @@ html|table {
     background-image: url(chrome://global/skin/media/scrubberThumbWide@2x.png);
     background-size: 45px 28px;
   }
+}
+
+
+/***** New HTML-based controls *****/
+
+/*@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace url("http://www.w3.org/1999/xhtml");*/
+
+video > xul|videocontrols,
+audio > xul|videocontrols {
+  writing-mode: horizontal-tb;
+  width: 100%;
+  height: 100%;
+/*  display: inline-block;  --->CRASHES XUL-based versions! */
+  -moz-box-pack: end;
+}
+
+div.controlsContainer [hidden="true"],
+div.controlBar[hidden] {
+  display: none;
+}
+
+div.controlBar[size="hidden"] {
+  display: none;
+}
+
+div.controlsContainer,
+div.progressContainer {
+  position: relative;
+  height: 100%;
+}
+
+div.stackItem {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+div.statusOverlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(160,144,144);
+}
+
+div.controlsOverlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+div.controlsSpacerStack {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+div.controlsSpacer {
+  background-color: rgba(0,0,0,.4);
+}
+
+div.controlBar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
+  padding: 0 3px;
+  background-color: rgba(156,156,255,0.75);
+}
+
+
+html|button.playButton,
+html|button.muteButton,
+html|button.closedCaptionButton,
+html|button.fullscreenButton {
+  height: 100%;
+  min-height: 30px;
+  min-width: 30px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+
+html|button.playButton:hover,
+html|button.muteButton:not([noAudio]):hover,
+html|button.closedCaptionButton:hover,
+html|button.fullscreenButton:hover {
+  background-color: rgba(255,207,0,0.75);
+}
+
+html|button.playButton:hover:active,
+html|button.muteButton:not([noAudio]):hover:active,
+html|button.closedCaptionButton:hover:active,
+html|button.fullscreenButton:hover:active {
+  background-color: rgba(255,159,0,0.75);
+}
+
+html|button.playButton {
+  background-image: url(chrome://global/skin/media/pauseButton.svg#pause);
+}
+.playButton:hover {
+html|butto  background-image: url(chrome://global/skin/media/pauseButton.svg#pause-hover);
+}
+html|button.playButton:hover:active {
+  background-image: url(chrome://global/skin/media/pauseButton.svg#pause-active);
+}
+html|button.playButton[paused] {
+  background-image: url(chrome://global/skin/media/playButton.svg#play);
+}
+html|button.playButton[paused]:hover {
+  background-image: url(chrome://global/skin/media/playButton.svg#play-hover);
+}
+html|button.playButton[paused]:hover:active {
+  background-image: url(chrome://global/skin/media/playButton.svg#play-active);
+}
+
+html|button.muteButton {
+  background-image: url(chrome://global/skin/media/muteButton.svg#unmute);
+}
+html|button.muteButton:hover {
+  background-image: url(chrome://global/skin/media/muteButton.svg#unmute-hover);
+}
+html|button.muteButton:hover:active {
+  background-image: url(chrome://global/skin/media/muteButton.svg#unmute-active);
+}
+html|button.muteButton[muted] {
+  background-image: url(chrome://global/skin/media/muteButton.svg#mute);
+}
+html|button.muteButton[muted]:hover {
+  background-image: url(chrome://global/skin/media/muteButton.svg#mute-hover);
+}
+html|button.muteButton[muted]:hover:active {
+  background-image: url(chrome://global/skin/media/muteButton.svg#mute-active);
+}
+html|button.muteButton[noAudio],
+html|button.muteButton[noAudio]:hover,
+html|button.muteButton[noAudio]:hover:active {
+  background-image: url(chrome://global/skin/media/muteButton.svg#noaudio);
+}
+html|button.muteButton[noAudio] + .volumeStack {
+  display: none;
+}
+
+html|button.closedCaptionButton {
+  background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-off);
+}
+html|button.closedCaptionButton:hover {
+  background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-off-hover);
+}
+html|button.closedCaptionButton:hover:active {
+  background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-off-active);
+}
+html|button.closedCaptionButton[enabled] {
+  background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc);
+}
+html|button.closedCaptionButton[enabled]:hover {
+  background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-hover);
+}
+html|button.closedCaptionButton[enabled]:hover:active {
+  background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-active);
+}
+
+html|button.fullscreenButton {
+  background-image: url(chrome://global/skin/media/fullscreenButton.svg#fullscreen);
+}
+html|button.fullscreenButton:hover {
+  background-image: url(chrome://global/skin/media/fullscreenButton.svg#fullscreen-hover);
+}
+html|button.fullscreenButton:hover:active {
+  background-image: url(chrome://global/skin/media/fullscreenButton.svg#fullscreen-active);
+}
+html|button.fullscreenButton[fullscreened] {
+  background-image: url(chrome://global/skin/media/fullscreenButton.svg#unfullscreen);
+}
+html|button.fullscreenButton[fullscreened]:hover {
+  background-image: url(chrome://global/skin/media/fullscreenButton.svg#unfullscreen-hover);
+}
+html|button.fullscreenButton[fullscreened]:hover:active {
+  background-image: url(chrome://global/skin/media/fullscreenButton.svg#unfullscreen-active);
+}
+
+div.controlBarSpacer {
+  flex-grow: 1;
+}
+
+input.volumeControl::-moz-range-thumb,
+input.scrubber::-moz-range-thumb {
+  height: 13px;
+  width: 13px;
+  border: none;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+input.volumeControl::-moz-focus-outer,
+input.scrubber::-moz-focus-outer {
+  border: 0;
+}
+
+div.progressBackgroundBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.progressStack {
+  position: relative;
+  width: 100%;
+  height: 5px;
+}
+
+div.scrubberStack {
+  min-width: 48px;
+  flex-basis: 48px;
+  flex-grow: 2;
+  flex-shrink: 0;
+  margin: 0 9px;
+}
+
+div.volumeStack {
+  max-width: 60px;
+  min-width: 48px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  margin-right: 6px;
+  margin-left: 4px;
+}
+
+progress.bufferBar,
+progress.progressBar,
+input.scrubber,
+.volumeBackground,
+input.volumeControl {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 2.5px;
+  margin: 0;
+  background: none;
+  background-color: transparent;
+}
+
+progress.bufferBar,
+.volumeBackground {
+  background-color: rgba(160,144,144,0.7);
+}
+
+progress.bufferBar::-moz-progress-bar,
+progress.progressBar::-moz-progress-bar,
+.volumeBackground::-moz-meter-bar {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 2.5px;
+  background: none;
+}
+
+input.scrubber:hover::-moz-range-thumb,
+input.volumeControl:hover::-moz-range-thumb {
+  background-color: #FFCF00;
+}
+
+input.scrubber:active::-moz-range-thumb,
+input.volumeControl:active::-moz-range-thumb {
+  background-color: #FF9F00;
+}
+
+input.scrubber::-moz-range-track,
+input.scrubber::-moz-range-progress {
+  background-color: transparent;
+}
+
+input.volumeControl::-moz-range-progress,
+input.volumeControl::-moz-range-track {
+  height: 5px;
+  border-radius: 2.5px;
+}
+
+input.volumeControl::-moz-range-progress {
+  background-color: #008484;
+}
+
+input.volumeControl::-moz-range-track {
+  background-color: rgba(0,0,0,0.7);
+}
+
+
+progress.bufferBar::-moz-progress-bar {
+  background-color: rgba(160,144,144,0.3);
+  border-radius: 2.5px;
+}
+
+progress.progressBar::-moz-progress-bar {
+  background-color: #008484;
+}
+
+.textTrackList {
+  position: absolute;
+  right: 5px;
+  bottom: 45px;
+  max-width: 80%;
+  border: 1px solid #000000;
+  border-radius: 2.5px;
+  padding: 5px 0;
+  vertical-align: middle;
+  font-size: 12px;
+  background-color: #000000;
+  opacity: 0.7;
+}
+
+.textTrackList > .textTrackItem {
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding: 2px 10px;
+  border: none;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  color: #FFCF00;
+  background-color: transparent;
+}
+
+.textTrackList > .textTrackItem:hover {
+  background-color: #FFCF00;
+}
+
+.textTrackList > .textTrackItem[on] {
+  color: #008484;
+}
+
+span.positionLabel,
+span.durationLabel {
+  display: none;
+}
+
+span.positionDurationBox {
+  min-width: 9ch;
+  text-align: center;
+  padding-inline-start: 1px;
+  padding-inline-end: 9px;
+  white-space: nowrap;
+  font: message-box;
+  font-size: 13px;
+  font-size-adjust: 0.6;
+  color: #000000;
+}
+
+span.positionDurationBox[positionOnly] {
+  min-width: 4ch;
+}
+
+span.duration {
+  display: inline-block;
+  white-space: pre;
+  color: #8050B0;
+}
+
+.statusIcon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 20px;
+}
+
+.statusIcon[type="throbber"] {
+  background: url("chrome://communicator/skin/brand/throbber-anim.png") no-repeat center;
+}
+/*
+.statusIcon[type="throbber"][stalled] {
+  background: url("chrome://global/skin/media/stalled.png") no-repeat center;
+}
+*/
+.statusIcon[type="error"] {
+  min-width: 70px;
+  min-height: 60px;
+  background: url("chrome://global/skin/icons/alert-error.gif") no-repeat center;
+  background-size: contain;
+}
+
+/* Overlay Play button */
+.clickToPlay {
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  background-image: url(chrome://global/skin/media/playButton.svg#play);
+  background-repeat: no-repeat;
+  background-position: 54% 50%;
+  background-size: 40% 40%;
+  background-color: #000000;
+  opacity: 0.8;
+  position: relative;
+  top: 20px;
+}
+
+.controlsSpacerStack:hover > .clickToPlay,
+.clickToPlay:hover {
+  opacity: 0.55;
+}
+
+.controlsSpacerStack:hover > .clickToPlay[fadeout] {
+  opacity: 0;
+}
+
+.controlBar[fullscreen-unavailable] .fullscreenButton {
+  display: none;
+}
+
+/* CSS Transitions */
+.clickToPlay {
+  transition-property: transform, opacity;
+  transition-duration: 400ms, 400ms;
+}
+
+.controlsSpacer[fadeout] {
+  opacity: 0;
+}
+
+.clickToPlay[fadeout] {
+  transform: scale(3);
+  opacity: 0;
+}
+
+.clickToPlay[fadeout][immediate] {
+  transition-property: opacity, background-size;
+  transition-duration: 0s, 0s;
+}
+.controlBar:not([immediate]) {
+  transition-property: opacity;
+  transition-duration: 200ms;
+}
+.controlBar[fadeout] {
+  opacity: 0;
+}
+.volumeStack:not([immediate]) {
+  transition-property: opacity, margin-top;
+  transition-duration: 200ms, 200ms;
+}
+.statusOverlay:not([immediate]) {
+  transition-property: opacity;
+  transition-duration: 300ms;
+  transition-delay: 750ms;
+}
+.statusOverlay[fadeout] {
+  opacity: 0;
+}
+
+/* Error description formatting */
+.errorLabel {
+  padding: 0 10px;
+  text-align: center;
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  font-size: 14px;
+  color: #E7ADE7;
+}
+
+.errorLabel {
+  display: none;
+}
+
+[error="errorAborted"]         > [anonid="errorAborted"],
+[error="errorNetwork"]         > [anonid="errorNetwork"],
+[error="errorDecode"]          > [anonid="errorDecode"],
+[error="errorSrcNotSupported"] > [anonid="errorSrcNotSupported"],
+[error="errorNoSource"]        > [anonid="errorNoSource"],
+[error="errorGeneric"]         > [anonid="errorGeneric"] {
+  display: inline;
 }
