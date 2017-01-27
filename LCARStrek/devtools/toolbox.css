@@ -104,7 +104,6 @@ hbox#toolbox-buttons {
   border-width: 0;
 /*  border-inline-start-width: 1px;*/
   -moz-box-align: center;
-  -moz-user-focus: normal;
   -moz-box-flex: 1;
 
   color: var(--theme-button-color);
@@ -246,7 +245,6 @@ hbox#toolbox-buttons {
 #toolbox-controls > button,
 #toolbox-dock-buttons > button {
   -moz-appearance: none;
-  -moz-user-focus: normal;
   border: none;
 /*  margin: 0 4px;*/
   min-width: 18px;
@@ -267,12 +265,6 @@ hbox#toolbox-buttons {
 
 #toolbox-dock-window::before {
   background-image: var(--dock-undock-image);
-}
-
-#toolbox-dock-bottom-minimize {
-  /* Bug 1177463 - The minimize button is currently hidden until we agree on
-     the UI for it, and until bug 1173849 is fixed too. */
-  display: none;
 }
 
 #toolbox-dock-bottom-minimize::before {
@@ -304,7 +296,6 @@ hbox#toolbox-buttons {
   padding: 0;
   margin: 0;
   position: relative;
-  -moz-user-focus: normal;
 }
 
 .command-button::before {
@@ -392,7 +383,6 @@ hbox#toolbox-buttons {
 #command-button-frames {
   background-image: url("chrome://devtools/skin/images/dropmarker.svg");
   background-repeat: no-repeat;
-  background-position: right;
 
   /* Override background-size from the command-button.
    The drop down arrow is smaller */
@@ -400,7 +390,11 @@ hbox#toolbox-buttons {
   min-width: 32px;
 }
 
-#command-button-frames:-moz-dir(rtl) {
+#command-button-frames:-moz-locale-dir(ltr) {
+  background-position: right;
+}
+
+#command-button-frames:-moz-locale-dir(rtl) {
   background-position: left;
 }
 

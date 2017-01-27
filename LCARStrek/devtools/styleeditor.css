@@ -54,7 +54,6 @@ li.error > .stylesheet-info > .stylesheet-more  > .stylesheet-error-message {
 .stylesheet-title,
 .stylesheet-name {
   text-decoration: none;
-  color: var(--theme-highlight-blue);
 }
 
 .stylesheet-name {
@@ -79,6 +78,11 @@ li.error > .stylesheet-info > .stylesheet-more  > .stylesheet-error-message {
   -moz-box-flex: 1;
 }
 
+.stylesheet-title,
+.stylesheet-name {
+  color: var(--theme-highlight-blue);
+}
+
 .stylesheet-rule-count,
 .stylesheet-linked-file,
 .stylesheet-saveButton {
@@ -86,6 +90,9 @@ li.error > .stylesheet-info > .stylesheet-more  > .stylesheet-error-message {
 }
 
 .stylesheet-saveButton {
+  display: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -132,7 +139,7 @@ li.error > .stylesheet-info > .stylesheet-more  > .stylesheet-error-message {
   max-width: 400px;
   min-width: 100px;
 
-  border-color: #9C9CFF; /* Splitters */
+  border-color: var(--theme-splitter-color);
 }
 
 .media-rule-label {

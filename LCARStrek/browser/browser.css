@@ -4101,6 +4101,10 @@ html|*#gcli-output-frame {
   filter: url(chrome://devtools/skin/images/filters.svg#checked-icon-state);
 }
 
+.devtools-responsiveui-close > image {
+  filter: invert(1);
+}
+
 .devtools-responsiveui-rotate {
   list-style-image: url("chrome://devtools/skin/images/responsiveui-rotate.png");
   -moz-image-region: rect(0px,16px,16px,0px);

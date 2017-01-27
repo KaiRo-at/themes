@@ -64,7 +64,7 @@
 }
 
 .property-view {
-  padding: 2px 0 2px 17px;
+  padding: 2px 17px;
   display: flex;
   flex-wrap: wrap;
 }

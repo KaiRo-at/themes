@@ -348,6 +348,10 @@ window {
   margin-inline-end: 4px;
 }
 
+.side-menu-widget-item.selected .requests-security-state-icon {
+/*  filter: brightness(1.3);*/
+}
+
 .security-state-insecure {
   list-style-image: url("chrome://devtools/skin/images/security-state-insecure.svg");
 }
@@ -410,6 +414,10 @@ window {
   width: 8vw;
 }
 
+.side-menu-widget-item.selected .requests-menu-transferred.theme-comment {
+  color: var(--theme-selection-color);
+}
+
 /* Network requests table: status codes */
 
 .requests-menu-status-code {
@@ -429,7 +437,9 @@ window {
   transition: background-color 0.5s ease-in-out;
 }
 
+.side-menu-widget-item.selected .requests-menu-status-icon,
 .request-list-item.selected .requests-menu-status-icon {
+/*  filter: brightness(1.3);*/
 }
 
 .requests-menu-status-icon:not([code]),
@@ -652,17 +662,20 @@ window {
 
 /* Method Column */
 
+.side-menu-widget-item.selected .requests-menu-method,
 .request-list-item.selected .requests-menu-method {
   color: var(--theme-selection-color);
 }
 
 /* Network request details */
 
-#details-pane-toggle {
+#details-pane-toggle:-moz-locale-dir(ltr),
+#details-pane-toggle.pane-collapsed:-moz-locale-dir(rtl) {
   list-style-image: var(--theme-pane-collapse-image);
 }
 
-#details-pane-toggle.pane-collapsed {
+#details-pane-toggle.pane-collapsed:-moz-locale-dir(ltr),
+#details-pane-toggle:-moz-locale-dir(rtl) {
   list-style-image: var(--theme-pane-expand-image);
 }
 

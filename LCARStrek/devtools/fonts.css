@@ -35,12 +35,12 @@
   border: none;
   background-color: var(--fonts-button-background);
   color: var(--fonts-button-text);
-  margin: 3px;
   padding: 0 6px;
   cursor: pointer;
-  position: absolute;
-  bottom: 0;
-  offset-inline-end: 0;
+}
+
+#font-showall:hover {
+/*  text-decoration: underline;*/
 }
 
 .dim > #font-container,

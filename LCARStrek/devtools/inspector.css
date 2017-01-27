@@ -95,6 +95,17 @@ window {
 
 #inspector-searchlabel {
   overflow: hidden;
+  margin-inline-end: 2px;
+}
+
+#inspector-search {
+  flex: unset;
+}
+
+/* TODO: bug 1265759: should apply to .devtools-searchinput once all searchbox
+   is converted to html*/
+#inspector-searchbox {
+  width: 100%;
 }
 
 /* Make sure the text is vertically centered in Inspector's
@@ -103,10 +114,6 @@ window {
    See also: https://bugzilla.mozilla.org/show_bug.cgi?id=1265759 */
 #inspector-searchbox {
   line-height: 19px;
-}
-
-#inspector-search {
-  flex: unset;
 }
 
 /* Eyedropper toolbar button */
