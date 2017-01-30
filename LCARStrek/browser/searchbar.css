@@ -119,6 +119,8 @@
 
 .search-panel-input-value {
   color: #E7ADE7;
+  background-color: #000000;
+  padding: 1px 2px;
 }
 
 .search-panel-one-offs {
