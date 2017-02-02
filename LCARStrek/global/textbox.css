@@ -47,7 +47,7 @@ html|*.textbox-input::placeholder {
 }
 
 html|*.textbox-input {
-  max-height: 1em; /* work around the above rule that does not work */
+  /* max-height: 1em; work around the above rule that does not work */
 }
 
 .textbox-input-box menupopup {
