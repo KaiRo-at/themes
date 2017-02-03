@@ -108,14 +108,16 @@ textbox {
   -moz-appearance: none;
 }
 
+/* This would be ideal but doesn't work */
+/*
 html|*.textbox-input > .anonymous-div,
-html|*.textbox-input > html|*.anonymous-div,
-html|div.anonymous-div,
-.anonymous-div,
-div,
-html|*.textbox-input,
 html|*.textbox-input::placeholder {
   line-height: 1em !important;
+}
+*/
+
+textbox[readonly="true"] html|*.textbox-input {
+  max-height: 1em; /* work around the above rule that does not work */
 }
 
 textbox.header {

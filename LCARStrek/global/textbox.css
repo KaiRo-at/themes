@@ -41,15 +41,6 @@ html|*.textbox-textarea::placeholder {
   opacity: 1.0;
 }
 
-html|*.textbox-input > .anonymous-div,
-html|*.textbox-input::placeholder {
-  line-height: 1em; /* This would be ideal but doesn't work */
-}
-
-html|*.textbox-input {
-  /* max-height: 1em; work around the above rule that does not work */
-}
-
 .textbox-input-box menupopup {
   cursor: default;
 }
