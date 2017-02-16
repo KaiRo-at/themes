@@ -3046,18 +3046,28 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 
 /* Tab close button */
 .tab-close-button {
-  list-style-image: url("chrome://global/skin/icons/close-button.gif");
+  list-style-image: url("chrome://global/skin/icons/close-button.gif") !important;
+  -moz-image-region: auto !important;
 }
 
 .tab-close-button:hover,
 .tab-close-button:hover[selected="true"] {
-  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif") !important;
+  -moz-image-region: auto !important;
 }
 
 .tab-close-button:hover:active,
 .tab-close-button:hover:active[selected="true"] {
-  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif");
+  list-style-image: url("chrome://global/skin/icons/close-button-hover.gif") !important;
+  -moz-image-region: auto !important;
 }
+
+.tab-close-button > .button-icon,
+.tab-close-button > .button-box > .button-icon,
+.tab-close-button > .toolbarbutton-icon {
+  width: auto !important;
+}
+
 
 /* Tab scrollbox arrow, tabstrip new tab and all-tabs buttons */
 

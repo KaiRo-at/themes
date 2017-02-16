@@ -390,3 +390,9 @@ popupnotificationcontent {
 .close-icon:hover:active {
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
+
+.close-icon > .button-icon,
+.close-icon > .button-box > .button-icon,
+.close-icon > .toolbarbutton-icon {
+  width: 16px;
+}
