@@ -211,8 +211,8 @@ window {
   margin: 0;
   padding-top: 2px;
   padding-bottom: 2px;
-  padding-inline-start: 16px;
-  padding-inline-end: 0;
+/*  padding-inline-start: 16px;
+  padding-inline-end: 0;*/
   text-align: center;
 /*  color: inherit;*/
   font-weight: inherit !important;
@@ -257,6 +257,7 @@ window {
   margin-inline-start: 3px;
   margin-inline-end: 6px;
   width: 7px;
+  display: none;
 }
 
 .requests-menu-header-button[sorted=ascending] > .button-box > .button-icon,
