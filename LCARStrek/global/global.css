@@ -378,3 +378,15 @@ popupnotificationcontent {
 .autoscroller[translucent="true"][scrolldir="EW"] {
   background-position: right bottom;
 }
+
+/* :::::: Close button icons ::::: */
+
+.close-icon {
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.close-icon:hover,
+.close-icon:hover:active {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
