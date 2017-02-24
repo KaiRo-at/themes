@@ -11,6 +11,17 @@
   -mozpadding-end: 2px;
 }
 
+/* ::::: search bar ::::: */
+
+.autocomplete-treebody::-moz-tree-cell-text(datalist-first, treecolAutoCompleteComment) {
+  color: #E7ADE7;
+  font-size: smaller;
+}
+
+.autocomplete-treebody::-moz-tree-cell(datalist-first) {
+  border-top: 1px solid #E7ADE7;
+}
+
 /* ::::: searchbar-engine-button ::::: */
 
 .searchbar-engine-button {

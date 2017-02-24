@@ -12,6 +12,6 @@
   padding: 0;
 }
 
-.autocomplete-treebody::-moz-tree-cell(suggesthint) {
+.autocomplete-treebody::-moz-tree-cell(datalist-first) {
   border-top: 1px solid #8050B0;
 }
