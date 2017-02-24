@@ -121,11 +121,8 @@
   margin: 0;
   min-width: auto;
   width: var(--identity-popup-expander-width);
-  background-image: url("chrome://browser/skin/controlcenter/arrow-subview.svg#arrow");
-  background-size: 16px, auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
+  background: url("chrome://browser/skin/controlcenter/arrow-subview.svg") center no-repeat;
+  background-size: 16px;
   border-radius: 0 5px 5px 0;
 }
 
@@ -382,7 +379,6 @@ description#identity-popup-content-verifier,
 }
 
 .identity-popup-permission-icon.in-use {
-  fill: #FF0000;
   animation: 1.5s ease in-use-blink infinite;
 }
 

@@ -45,7 +45,7 @@
     #camera-sharing,
     #microphone-sharing,
     #screen-sharing {
-      fill: rgb(224, 41, 29);
+      fill: #FF0000;
       fill-opacity: 1;
     }
   </style>
