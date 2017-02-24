@@ -27,10 +27,10 @@ menulist > menupopup {
 
 /* ::::: Variables ::::: */
 :root {
-  --panel-arrowcontent-padding: 6px;
-  --panel-arrowcontent-background: #CCD0DD;
-  --panel-arrowcontent-color: #000000;
-  --panel-arrowcontent-border-color: #CCD0DD;
+  --arrowpanel-padding: 6px;
+  --arrowpanel-background: #CCD0DD;
+  --arrowpanel-color: #000000;
+  --arrowpanel-border-color: #CCD0DD;
 }
 
 /* ::::: root elements ::::: */

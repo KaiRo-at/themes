@@ -106,7 +106,7 @@ wizardpage {
 
 #verificationFailedIcon {
   margin-inline-start: 5px;
-  list-style-image: url("chrome://global/skin/icons/notfound.png");
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
 }
 
 /* Error Page */
