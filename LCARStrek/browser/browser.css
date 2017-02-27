@@ -50,8 +50,8 @@ menubar {
   --arrowpanel-hover: #FFCF00;
   --arrowpanel-active: #FF9F00;
   --arrowpanel-dimmed: #402000;
-/*  --arrowpanel-dimmed-further: hsla(0,0%,80%,.45);
-  --arrowpanel-dimmed-even-further: hsla(0,0%,80%,.8); */
+  --arrowpanel-dimmed-further: #794900;
+  --arrowpanel-dimmed-even-further: 603000;
 
   --urlbar-separator-color: #9C9CFF;
 }
@@ -2160,6 +2160,31 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 
 /* autocomplete */
 
+/* === BEGIN autocomplete.inc.css === */
+
+#PopupAutoComplete > richlistbox > richlistitem {
+  height: 20px;
+  min-height: 20px;
+  border: 0;
+  border-radius: 0;
+  padding: 0px 1px 0px 1px;
+}
+
+#PopupAutoComplete > richlistbox > richlistitem > .ac-title {
+  font: icon;
+  margin-inline-start: 6px;
+}
+
+#PopupAutoComplete > richlistbox {
+  padding: 0;
+}
+
+/* === END autocomplete.inc.css === */
+
+#PopupAutoComplete > richlistbox > richlistitem[originaltype~="datalist-first"] {
+  border-top: 1px solid #A09090;
+}
+
 #treecolAutoCompleteImage {
   max-width: 36px;
 }
@@ -2790,12 +2815,14 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 .tab-icon-overlay[soundplaying],
-.tab-icon-overlay[muted]:not([crashed]) {
+.tab-icon-overlay[muted]:not([crashed]),
+.tab-icon-overlay[blocked]:not([crashed]) {
   border-radius: 10px;
 }
 
 .tab-icon-overlay[soundplaying]:hover,
-.tab-icon-overlay[muted]:hover {
+.tab-icon-overlay[muted]:hover,
+.tab-icon-overlay[blocked]:not([crashed]):hover {
   background-color: #FFCF00;
 }
 
@@ -2807,13 +2834,23 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-muted");
 }
 
-#TabsToolbar[brighttext] .tab-icon-overlay[soundplaying]:not(:hover) {
+.tab-icon-overlay[blocked]:not([crashed]) {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-blocked");
+}
+
+#TabsToolbar[brighttext] .tab-icon-overlay[soundplaying]:not([selected]):not(:hover),
+.tab-icon-overlay[soundplaying][selected]:-moz-lwtheme-brighttext:not(:hover) {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white");
 }
 
-
-#TabsToolbar[brighttext] .tab-icon-overlay[muted]:not([crashed]):not(:hover) {
+#TabsToolbar[brighttext] .tab-icon-overlay[muted]:not([crashed]):not([selected]):not(:hover),
+.tab-icon-overlay[mouted][selected]:-moz-lwtheme-brighttext:not(:hover) {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white-muted");
+}
+
+#TabsToolbar[brighttext] .tab-icon-overlay[blocked]:not([crashed]):not([selected]):not(:hover),
+.tab-icon-overlay[blocked][selected]:-moz-lwtheme-brighttext:not(:hover) {
+  list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-small.svg#tab-audio-white-blocked");
 }
 
 .tab-throbber[busy] {
@@ -2855,7 +2892,8 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 .tab-icon-sound[soundplaying],
-.tab-icon-sound[muted] {
+.tab-icon-sound[muted],
+.tab-icon-sound[blocked] {
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio);
   filter: url(chrome://browser/skin/filters.svg#fill);
   fill: currentColor;
@@ -2865,9 +2903,19 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted);
 }
 
+.tab-icon-sound[blocked] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-blocked);
+}
+
 .tab-close-button {
   margin-top: 1px;
   padding: 0;
+}
+
+.tab-icon-sound[soundplaying-scheduledremoval]:not(:hover),
+.tab-icon-overlay[soundplaying-scheduledremoval]:not(:hover) {
+  transition: opacity .3s linear var(--soundplaying-removal-delay);
+  opacity: 0;
 }
 
 .tab-background,
@@ -2935,6 +2983,7 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 .tabs-newtab-button,
 .tab-icon-overlay[soundplaying],
 .tab-icon-overlay[muted]:not([crashed]),
+.tab-icon-overlay[blocked]:not([crashed]),
 .tab-icon-sound,
 .tab-close-button {
   pointer-events: auto;
@@ -3024,7 +3073,8 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 .alltabs-endimage[soundplaying],
-.alltabs-endimage[muted] {
+.alltabs-endimage[muted],
+.alltabs-endimage[blocked] {
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio);
   filter: url(chrome://browser/skin/filters.svg#fill);
   fill: currentColor;
@@ -3032,6 +3082,10 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 
 .alltabs-endimage[muted] {
   list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted);
+}
+
+.alltabs-endimage[blocked] {
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-blocked);
 }
 
 /* === END tabs.inc.css === */
@@ -3332,8 +3386,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#login-detailed);
 }
 
-.camera-icon,
-.popup-notification-icon[popupid="webRTC-shareDevices"] {
+.camera-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#camera);
 }
 
@@ -3357,11 +3410,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone-blocked);
 }
 
-.popup-notification-icon[popupid="webRTC-shareMicrophone"] {
+.popup-notification-icon.microphone-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#microphone-detailed);
 }
 
-.popup-notification-icon[popupid="webRTC-shareScreen"],
 .screen-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#screen);
 }
@@ -3372,6 +3424,34 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 .screen-icon.blocked-permission-icon {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#screen-blocked);
+}
+
+#webRTC-preview:not([hidden]) {
+  display: -moz-stack;
+  border-radius: 4px;
+  border: 1px solid #A09090;
+  overflow: hidden;
+  min-width: 300px;
+  min-height: 10em;
+}
+
+html|*#webRTC-previewVideo {
+  width: 300px;
+  /* If we don't set the min-width, width is ignored. */
+  min-width: 300px;
+  max-height: 200px;
+}
+
+#webRTC-previewWarning {
+  background: #FF0000 url("chrome://browser/skin/warning-white.svg") no-repeat .75em .75em;
+  margin: 0;
+  padding: .5em;
+  padding-inline-start: calc(1.5em + 16px);
+  border-top: 1px solid #A09090;
+}
+
+#webRTC-previewWarning > .text-link {
+  margin-inline-start: 0;
 }
 
 /* This icon has a block sign in it, so we don't need a blocked version. */
@@ -4597,6 +4677,7 @@ notification.pluginVulnerable .messageImage {
   width: 20px;
   height: 20px;
   border-radius: 2px;
+  background-image: url("chrome://browser/skin/theme-switcher-icon.png");
   background-size: contain;
 }
 
@@ -5414,4 +5495,56 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 
 .webextension-popup-browser {
   border-radius: inherit;
+}
+
+.contentSelectDropdown-ingroup > .menu-iconic-text {
+  padding-inline-start: 20px;
+}
+
+#ContentSelectDropdown > menupopup {
+  background-color: #000000;
+  -moz-border-top-colors: #A09090;
+  -moz-border-right-colors: #A09090;
+  -moz-border-bottom-colors: #A09090;
+  -moz-border-left-colors: #A09090;
+}
+
+#ContentSelectDropdown > menupopup > menucaption,
+#ContentSelectDropdown > menupopup > menuitem {
+  padding: 4px 6px;
+}
+
+#ContentSelectDropdown > menupopup > menucaption > .menu-iconic-text,
+#ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text {
+  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  font-size: 11px;
+  /**
+   * Remove the extra vertical padding set by menu.css since
+   * the menuitem itself will include enough padding.
+   */
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#ContentSelectDropdown > menupopup > menucaption > .menu-iconic-text {
+  font-weight: bold;
+}
+
+#ContentSelectDropdown > menupopup > menuitem[_moz-menuactive="true"][disabled="true"] {
+  color: #A09090;
+  background-color: unset;
+}
+
+#ContentSelectDropdown > menupopup > menucaption {
+  background-color: buttonface;
+}
+
+#ContentSelectDropdown > menupopup > menucaption[disabled="true"] {
+  color: #A09090;
+}
+
+#ContentSelectDropdown > .isOpenedViaTouch > menucaption,
+#ContentSelectDropdown > .isOpenedViaTouch > menuitem {
+  padding-top: 11px;
+  padding-bottom: 11px;
 }

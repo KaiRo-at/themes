@@ -46,6 +46,10 @@ richlistitem.download[verdict="Uncommon"] .downloadBlockedBadge {
   background-image: url("chrome://browser/skin/info.svg");
 }
 
+richlistitem.download > toolbarseparator {
+  display: none;
+}
+
 .downloadTarget {
   margin-bottom: 3px;
   cursor: inherit;
@@ -58,13 +62,70 @@ richlistitem.download[verdict="Uncommon"] .downloadBlockedBadge {
 }
 
 .downloadButton {
+  -moz-box-align: center;
   background: transparent;
   min-width: 0;
   min-height: 0;
   margin: 3px;
   border: none;
   padding: 5px;
-  list-style-image: url("chrome://browser/skin/downloads/buttons.png");
+  color: inherit;
+}
+
+.downloadButton > .button-box {
+  -moz-appearance: none;
+  padding: 2px !important;
+  border-radius: 50%;
+  color: graytext;
+}
+
+.downloadButton > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+}
+
+.downloadButton > .button-box > .button-text {
+  display: none;
+}
+
+.downloadButton:hover > .button-box {
+  background-color: #A09090;
+  color: #000000;
+}
+
+.downloadButton:hover:active > .button-box {
+  background-color: #FF9F00;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton > .button-box {
+  color: inherit;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover > .button-box {
+  background-color: #FFCF00;
+  color: #000000;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover:active > .button-box {
+  background-color: #FF9F00;
+  color: #000000;
+}
+
+/*** Button icons ***/
+
+.downloadIconCancel > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#cancel");
+}
+
+.downloadIconShow > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#folder");
+}
+
+.downloadIconRetry > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#retry");
 }
 
 /* === END allDownloadsViewOverlay.inc.css === */

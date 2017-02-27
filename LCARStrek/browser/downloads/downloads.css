@@ -18,7 +18,7 @@
 
 #downloadsListBox {
   background-color: transparent;
-  padding: 4px;
+  padding: 0;
   color: inherit;
   margin: 0;
   border: none;
@@ -37,7 +37,8 @@
   border-top: 1px solid var(--panel-separator-color);*/
 }
 
-.downloadsPanelFooter toolbarseparator {
+.downloadsPanelFooter toolbarseparator,
+richlistitem[type="download"] > toolbarseparator {
   margin: 0;
   border: 0;
   min-width: 0;
@@ -88,6 +89,11 @@ toolbarseparator.downloadsDropmarkerSplitter {
   margin: 7px 0;
 }
 
+richlistitem[type="download"] > toolbarseparator {
+  margin: 10px 0;
+}
+
+richlistitem[type="download"]:hover > toolbarseparator,
 #downloadsFooter:hover toolbarseparator.downloadsDropmarkerSplitter,
 #downloadsFooter[showingdropdown] toolbarseparator {
   margin: 0;
@@ -146,14 +152,17 @@ richlistitem[type="download"] {
 
 richlistitem[type="download"] {
   margin: 0;
-  /*border-top: 1px solid var(--downloads-item-border-top-color);*/
-  border-bottom: 1px solid var(--downloads-item-border-bottom-color);
+  border-bottom: 1px solid var(--panel-separator-color);
   background: transparent;
-  padding: 8px;
+  padding: 0;
 }
 
-richlistitem[type="download"]:first-child {
-/*  border-top: 1px solid transparent;*/
+richlistitem[type="download"]:last-child {
+  border-bottom: none;
+}
+
+richlistitem[type="download"] > .downloadMainArea {
+  padding: 8px;
 }
 
 .downloadTypeIcon {
@@ -218,18 +227,87 @@ richlistitem[type="download"][verdict="Uncommon"] .downloadBlockedBadge {
   cursor: inherit;
 }
 
-.downloadButton {
-  min-width: 0;
-  min-height: 0;
-  margin: 3px;
-/*  border: none; */
-  background: transparent;
-  padding: 5px;
-  list-style-image: url("chrome://browser/skin/downloads/buttons.png");
+richlistitem[type="download"][verdict] > toolbarseparator {
+  visibility: hidden;
 }
 
-.downloadButton > .button-box {
+.downloadButton {
+  min-width: 58px;
+  margin: 0;
+/*  border: none; */
+  background: transparent;
+  padding: 8px;
+  color: #A09090;
+}
+
+.downloadButton > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  margin: 1px;
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+}
+
+.downloadButton > .button-box > .button-text {
+  margin: 0 !important;
   padding: 0;
+}
+
+richlistitem[type="download"][state="1"][exists]:hover > .downloadMainArea,
+richlistitem[type="download"]:not([verdict]):hover > .downloadButtonArea {
+  background-color: var(--arrowpanel-dimmed);
+}
+
+richlistitem[type="download"][state="1"][exists] .downloadMainArea:hover,
+richlistitem[type="download"]:not([verdict]) > .downloadButtonArea:hover,
+richlistitem[type="download"][verdict]:hover {
+  background-color: var(--arrowpanel-dimmed-further);
+}
+
+richlistitem[type="download"][state="1"][exists] > .downloadMainArea:hover:active,
+richlistitem[type="download"]:not([verdict]) > .downloadButtonArea:hover:active,
+richlistitem[type="download"][verdict]:hover:active {
+  background-color: var(--arrowpanel-dimmed-even-further);
+}
+
+richlistitem[type="download"][showingsubview] {
+  background-color: #794900;
+  color: #FFCF00;
+  transition: background-color var(--panelui-subview-transition-duration),
+              color var(--panelui-subview-transition-duration);
+}
+
+richlistitem[type="download"][verdict="Malware"]:hover,
+richlistitem[type="download"][verdict="Malware"]:hover:active,
+richlistitem[type="download"][verdict="Malware"][showingsubview] {
+  background-color: #FF0000;
+  color: #000000;
+}
+
+richlistitem[type="download"][verdict="Malware"]:hover > .downloadButtonArea > .downloadButton {
+  color: inherit;
+}
+
+/*** Button icons ***/
+
+.downloadIconCancel > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#cancel");
+}
+
+.downloadIconShow > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#folder");
+}
+
+.downloadIconRetry > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#retry");
+}
+
+.downloadShowBlockedInfo > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#arrow-right");
+}
+
+.downloadShowBlockedInfo > .button-box > .button-icon:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#arrow-left");
 }
 
 /*** Blocked subview ***/
@@ -243,11 +321,15 @@ richlistitem[type="download"][verdict="Uncommon"] .downloadBlockedBadge {
 /* When the subview is showing, turn the download button into an arrow pointing
    back to the main view. */
 #downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton {
-  list-style-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted.png");
+  color: #FFCF00;
 }
 
-#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton:-moz-locale-dir(rtl) {
-  list-style-image: url("chrome://browser/skin/customizableui/subView-arrow-back-inverted-rtl.png");
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#arrow-left");
+}
+
+#downloadsPanel-multiView > .panel-viewcontainer > .panel-viewstack[viewtype="subview"] .download-state[showingsubview] .downloadButton > .button-box > .button-icon:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://browser/skin/panel-icons.svg#arrow-right");
 }
 
 #downloadsPanel-blockedSubview {
@@ -327,8 +409,6 @@ richlistitem[type="download"][showingsubview][verdict="Malware"] {
 
 :root {
   --downloads-item-height: 7em;
-  /*--downloads-item-border-top-color: hsla(0,0%,100%,.3);*/
-  --downloads-item-border-bottom-color: #9C9CFF;
   --downloads-item-font-size-factor: 0.9;
   --downloads-item-target-margin-bottom: 6px;
   --downloads-item-details-margin-top: 0;
@@ -351,68 +431,16 @@ richlistitem[type="download"][verdict="Uncommon"] .blockedIcon {
   list-style-image: url("chrome://global/skin/icons/information-32.png");
 }
 
+@media (-moz-windows-default-theme) {
+  richlistitem[type="download"][verdict="Malware"] {
+    color: #FF0000;
+  }
+}
+
 /*** Highlighted list items ***/
 
 #downloadsListBox:-moz-focusring > richlistitem[type="download"][selected] {
   outline: 1px #008484 dotted;
   outline-offset: -1px;
   /*-moz-outline-radius: 3px;*/
-}
-
-/* #downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover { */
-#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"]:hover {
-  border-radius: 3px;
-  background-color: #794900;
-  color: #FFCF00;
-  cursor: pointer;
-}
-
-#downloadsPanel:not([keyfocus]) > #downloadsListBox > richlistitem[type="download"][state="1"][exists]:hover:active {
-}
-
-/*** Button icons ***/
-
-.downloadButton.downloadIconCancel {
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconCancel,
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconCancel:hover,
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconCancel:active {
-  -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-.downloadButton.downloadIconShow {
-  -moz-image-region: rect(16px, 16px, 32px, 0px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconShow,
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconShow:hover,
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconShow:active {
-  -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-
-.downloadButton.downloadIconRetry {
-  -moz-image-region: rect(32px, 16px, 48px, 0px);
-}
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconRetry,
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconRetry:hover,
-richlistitem[type="download"]:hover > stack > .downloadButton.downloadIconRetry:active {
-  -moz-image-region: rect(32px, 32px, 48px, 16px);
-}
-
-.downloadButton.downloadShowBlockedInfo {
-  -moz-image-region: rect(48px, 16px, 64px, 0px);
-}
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo,
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:hover,
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:active {
-/*  -moz-image-region: rect(48px, 32px, 64px, 16px);*/
-}
-
-.downloadButton.downloadShowBlockedInfo:-moz-locale-dir(rtl) {
-  -moz-image-region: rect(64px, 16px, 80px, 0px);
-}
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:-moz-locale-dir(rtl),
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:hover:-moz-locale-dir(rtl),
-richlistitem[type="download"]:hover .downloadButton.downloadShowBlockedInfo:active:-moz-locale-dir(rtl) {
-/*  -moz-image-region: rect(64px, 32px, 80px, 16px);*/
 }
