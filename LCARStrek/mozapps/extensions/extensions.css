@@ -106,6 +106,7 @@
   -moz-box-align: center;
   margin-right: 48px;
   margin-left: 48px;
+  padding-top: .5em;
 }
 
 .alert-spacer-before {
@@ -242,8 +243,11 @@ button.warning {
 }
 
 #view-port {
-  background-color: #000000;
+}
+
+#headered-views-content {
   border-radius: 1em 0 0 0;
+  background-color: #000000;
 }
 
 /*** header ***/
@@ -378,6 +382,10 @@ button.warning {
 
 
 /*** discover view ***/
+
+#discover-view {
+  background-image: linear-gradient(#A09090 28px, #000000 28px, #000000 100%);
+}
 
 .discover-spacer-before,
 .discover-spacer-after {
