@@ -91,6 +91,11 @@ thumb[orient="horizontal"][disabled="true"] {
   background-image: url("chrome://global/skin/scrollbar/thumb-horiz-grip-disabled.gif");
 }
 
+/* keep clickthrough scrollbars in e.g. devtoools with a simpler thumb */
+scrollbar[clickthrough="always"] > slider > thumb {
+  background-image: none;
+}
+
 /* ::::: scrollbar button ::::: */
 
 scrollbarbutton {
@@ -114,13 +119,13 @@ scrollbarbutton[disabled="true"] {
   background-color: #402858 !important;
 }
 
-/* XXX - scrollbar.xml always grabs the OS settings and we don't want that */
+/* XXX - scrollbar.xml always grabs the OS settings and we don't want that (but keep clickthrough scrollbars in e.g. devtoools working) */
 scrollbarbutton[sbattr="scrollbar-up-bottom"],
 scrollbarbutton[sbattr="scrollbar-down-top"] {
   display: none;
 }
-scrollbarbutton[sbattr="scrollbar-up-top"],
-scrollbarbutton[sbattr="scrollbar-down-bottom"] {
+scrollbar:not([clickthrough="always"]) > scrollbarbutton[sbattr="scrollbar-up-top"],
+scrollbar:not([clickthrough="always"]) > scrollbarbutton[sbattr="scrollbar-down-bottom"] {
   display: -moz-box !important;
 }
 
