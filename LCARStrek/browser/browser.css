@@ -51,7 +51,7 @@ menubar {
   --arrowpanel-active: #FF9F00;
   --arrowpanel-dimmed: #402000;
   --arrowpanel-dimmed-further: #794900;
-  --arrowpanel-dimmed-even-further: 603000;
+  --arrowpanel-dimmed-even-further: #603000;
 
   --urlbar-separator-color: #9C9CFF;
 }
@@ -1277,14 +1277,14 @@ toolbarbutton[constrain-size="true"][cui-areatype="toolbar"] > .toolbarbutton-ba
 
 #nav-bar .toolbarbutton-1[type=panel] > .toolbarbutton-icon,
 #nav-bar .toolbarbutton-1[type=panel] > .toolbarbutton-badge-stack,
-#nav-bar .toolbarbutton-1[type=menu]:not(#PanelUI-menu-button):not(#back-button):not(#forward-button) > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1[type=menu]:not(#PanelUI-menu-button):not(#back-button):not(#forward-button):not(#new-tab-button) > .toolbarbutton-icon,
 #nav-bar .toolbarbutton-1[type=menu]:not(#PanelUI-menu-button) > .toolbarbutton-badge-stack,
 #nav-bar .toolbarbutton-1[type=menu] > .toolbarbutton-text /* hack for add-ons that forcefully display the label */ {
 /*  padding-inline-end: 17px;*/
 }
 
 #nav-bar .toolbarbutton-1[type=panel] > .toolbarbutton-icon,
-#nav-bar .toolbarbutton-1[type=menu]:not(#PanelUI-menu-button):not(#back-button):not(#forward-button) > .toolbarbutton-icon {
+#nav-bar .toolbarbutton-1[type=menu]:not(#PanelUI-menu-button):not(#back-button):not(#forward-button):not(#new-tab-button) > .toolbarbutton-icon {
   /* horizontal padding + border + icon width */
 /*  max-width: 43px;*/
 }
@@ -2020,6 +2020,13 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   height: 16px;
 }
 
+#urlbar[actiontype="extension"] > #identity-box > #identity-icon {
+  -moz-image-region: inherit;
+  list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg);
+  width: 16px;
+  height: 16px;
+}
+
 /* SHARING ICON */
 
 #sharing-icon {
@@ -2170,13 +2177,54 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
   padding: 0px 1px 0px 1px;
 }
 
+#PopupAutoComplete > richlistbox > richlistitem > .ac-site-icon {
+  margin-inline-start: 4px;
+  margin-inline-end: 0;
+}
+
 #PopupAutoComplete > richlistbox > richlistitem > .ac-title {
   font: icon;
-  margin-inline-start: 6px;
+  margin-inline-start: 4px;
 }
 
 #PopupAutoComplete > richlistbox {
   padding: 0;
+}
+
+/* Login form autocompletion */
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
+  display: initial;
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#login);
+}
+
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon[selected] {
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#login-highlighted);
+}
+
+/* Insecure field warning */
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] {
+  background-color: var(--arrowpanel-dimmed);
+  border-bottom: 1px solid var(--panel-separator-color);
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"][selected] {
+  background-color: var(--arrowpanel-dimmed-further);
+  color: #FFCF00;
+}
+
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-title {
+  color: #A09090;
+  font-size: 1em;
+}
+
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"][selected] > .ac-title {
+  color: inherit;
+}
+
+#PopupAutoComplete > richlistbox > richlistitem[originaltype="insecureWarning"] > .ac-site-icon {
+  list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon);
 }
 
 /* === END autocomplete.inc.css === */
@@ -2912,8 +2960,8 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   padding: 0;
 }
 
-.tab-icon-sound[soundplaying-scheduledremoval]:not(:hover),
-.tab-icon-overlay[soundplaying-scheduledremoval]:not(:hover) {
+.tab-icon-sound[soundplaying-scheduledremoval]:not([muted]):not(:hover),
+.tab-icon-overlay[soundplaying-scheduledremoval]:not([muted]):not(:hover) {
   transition: opacity .3s linear var(--soundplaying-removal-delay);
   opacity: 0;
 }
@@ -3484,7 +3532,7 @@ html|*#webRTC-previewVideo {
 /* INSTALL ADDONS */
 
 .install-icon {
-  list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg#default);
+  list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg);
 }
 
 .popup-notification-icon[popupid="xpinstall-disabled"],
@@ -5511,19 +5559,17 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
 
 #ContentSelectDropdown > menupopup > menucaption,
 #ContentSelectDropdown > menupopup > menuitem {
-  padding: 4px 6px;
+  padding: 0 6px;
+  border-width: 0;
+/*  font: -moz-list;*/
 }
 
 #ContentSelectDropdown > menupopup > menucaption > .menu-iconic-text,
 #ContentSelectDropdown > menupopup > menuitem > .menu-iconic-text {
-  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
-  font-size: 11px;
-  /**
-   * Remove the extra vertical padding set by menu.css since
-   * the menuitem itself will include enough padding.
-   */
-  padding-top: 0px;
-  padding-bottom: 0px;
+  /* Padding should follow the 4/12 ratio, where 12px is the default font-size
+     with 4px being the preferred padding size. */
+  padding-top: .3333em;
+  padding-bottom: .3333em;
 }
 
 #ContentSelectDropdown > menupopup > menucaption > .menu-iconic-text {
@@ -5543,8 +5589,10 @@ menugroup > .menuitem-iconic[disabled="true"] > .menu-iconic-left {
   color: #A09090;
 }
 
-#ContentSelectDropdown > .isOpenedViaTouch > menucaption,
-#ContentSelectDropdown > .isOpenedViaTouch > menuitem {
-  padding-top: 11px;
-  padding-bottom: 11px;
+#ContentSelectDropdown > .isOpenedViaTouch > menucaption > .menu-iconic-text,
+#ContentSelectDropdown > .isOpenedViaTouch > menuitem > .menu-iconic-text {
+  /* Touch padding should follow the 11/12 ratio, where 12px is the default
+     font-size with 11px being the preferred padding size. */
+  padding-top: .9167em;
+  padding-bottom: .9167em;
 }

@@ -4,6 +4,9 @@
 
 /* === BEGIN allDownloadsViewOverlay.inc.css === */
 
+/* In the original, this is at the end of the file as a preprocessor-include */
+@import url("progressmeter.inc.css");
+
 /*** View and outer controls ***/
 
 #downloadsRichListBox {
@@ -21,16 +24,13 @@
 }
 
 .downloadTypeIcon {
-  margin-top: 8px;
-  margin-inline-end: 12px;
-  margin-bottom: 8px;
-  margin-inline-start: 0;
+  margin: 8px 13px;
   width: 32px;
   height: 32px;
 }
 
 .downloadBlockedBadge {
-  margin: 0 4px;
+  margin: 0 5px;
   background: url("chrome://browser/skin/downloads/download-blocked.svg") top right / 16px no-repeat;
 }
 
@@ -51,14 +51,15 @@ richlistitem.download > toolbarseparator {
 }
 
 .downloadTarget {
-  margin-bottom: 3px;
-  cursor: inherit;
+  margin: 0;
 }
 
 .downloadDetails {
   opacity: 0.7;
   font-size: 95%;
-  cursor: inherit;
+  /* Use calc() to keep the height consistent with .downloadTarget, so that the
+     progress bar can be vertically centered. */
+  margin: 4px 0 calc(1em / 0.95 - 1em);
 }
 
 .downloadButton {
@@ -66,9 +67,9 @@ richlistitem.download > toolbarseparator {
   background: transparent;
   min-width: 0;
   min-height: 0;
-  margin: 3px;
+  margin: 0;
   border: none;
-  padding: 5px;
+  padding: 0 18px;
   color: inherit;
 }
 
@@ -76,7 +77,6 @@ richlistitem.download > toolbarseparator {
   -moz-appearance: none;
   padding: 2px !important;
   border-radius: 50%;
-  color: graytext;
 }
 
 .downloadButton > .button-box > .button-icon {
@@ -98,10 +98,6 @@ richlistitem.download > toolbarseparator {
 
 .downloadButton:hover:active > .button-box {
   background-color: #FF9F00;
-}
-
-richlistitem.download[selected] > .downloadButtonArea > .downloadButton > .button-box {
-  color: inherit;
 }
 
 richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover > .button-box {
@@ -127,6 +123,9 @@ richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover:ac
 .downloadIconRetry > .button-box > .button-icon {
   list-style-image: url("chrome://browser/skin/panel-icons.svg#retry");
 }
+
+/*** Progressmeter ***/
+/* %include progressmeter.inc.css - this happens as @import at the start of the file */
 
 /* === END allDownloadsViewOverlay.inc.css === */
 
