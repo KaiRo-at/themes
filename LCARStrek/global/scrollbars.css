@@ -91,11 +91,6 @@ thumb[orient="horizontal"][disabled="true"] {
   background-image: url("chrome://global/skin/scrollbar/thumb-horiz-grip-disabled.gif");
 }
 
-/* keep clickthrough scrollbars in e.g. devtoools with a simpler thumb */
-scrollbar[clickthrough="always"] > slider > thumb {
-  background-image: none;
-}
-
 /* ::::: scrollbar button ::::: */
 
 scrollbarbutton {
@@ -119,14 +114,17 @@ scrollbarbutton[disabled="true"] {
   background-color: #402858 !important;
 }
 
-/* XXX - scrollbar.xml always grabs the OS settings and we don't want that (but keep clickthrough scrollbars in e.g. devtoools working) */
+/* XXX - override minimal-xul.css/scrollbar.xml which always grabs the OS settings and we don't want that */
 scrollbarbutton[sbattr="scrollbar-up-bottom"],
 scrollbarbutton[sbattr="scrollbar-down-top"] {
   display: none;
 }
-scrollbar:not([clickthrough="always"]) > scrollbarbutton[sbattr="scrollbar-up-top"],
-scrollbar:not([clickthrough="always"]) > scrollbarbutton[sbattr="scrollbar-down-bottom"] {
-  display: -moz-box !important;
+/* override minimal-xul.css */
+scrollbarbutton[sbattr="scrollbar-up-top"],
+scrollbarbutton[sbattr="scrollbar-down-bottom"],
+scrollbarbutton[sbattr="scrollbar-up-top"]:not(:-moz-system-metric(scrollbar-start-backward)),
+scrollbarbutton[sbattr="scrollbar-down-bottom"]:not(:-moz-system-metric(scrollbar-end-forward)) {
+  display: -moz-box;
 }
 
 /* ::::: square at the corner of two scrollbars ::::: */
