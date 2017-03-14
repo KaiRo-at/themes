@@ -6,15 +6,15 @@ SCRIPT_DIR=$(pwd)
 
 # ============ vars specific to the versions ==============
 
-NAME_PRE=51
-NAME_POST=52
+NAME_PRE=52
+NAME_POST=53
 
-TAG_PRE_COMM=BETA_51_END
-TAG_POST_COMM=tip #BETA_52_END
-TAG_PRE_MOZ=FIREFOX_BETA_51_END
-TAG_POST_MOZ=tip #FIREFOX_BETA_52_END
-TAG_PRE_EXT=SEAMONKEY_2_46_RELEASE #SEAMONKEY_2_48_RELEASE
-TAG_POST_EXT=tip #SEAMONKEY_2_49_RELEASE
+TAG_PRE_COMM=BETA_52_END
+TAG_POST_COMM=tip #BETA_53_END
+TAG_PRE_MOZ=FIREFOX_BETA_52_END
+TAG_POST_MOZ=tip #FIREFOX_BETA_53_END
+TAG_PRE_EXT=SEAMONKEY_2_46_RELEASE #SEAMONKEY_2_49_RELEASE
+TAG_POST_EXT=tip #SEAMONKEY_2_50_RELEASE
 
 # ===================== process repos =====================
 
@@ -43,14 +43,6 @@ MOZB_TAG_PRE=$TAG_PRE_MOZ
 MOZB_TAG_POST=$TAG_POST_MOZ
 MOZB_NAME_EXTRA=" (browser)"
 MOZB_LOG=$RUN_DIR/theme-browserwin.$NAME_PRE-$NAME_POST.log
-
-HG_MOZD_DIR=/mnt/mozilla/hg/comm-beta/mozilla
-MOZD_HG_OPTIONS=
-MOZD_DIR="devtools/client/themes/ devtools/client/webide/themes/"
-MOZD_TAG_PRE=$TAG_PRE_MOZ
-MOZD_TAG_POST=$TAG_POST_MOZ
-MOZD_NAME_EXTRA=" (devtools)"
-MOZD_LOG=$RUN_DIR/theme-devtools.$NAME_PRE-$NAME_POST.log
 
 HG_DOMI_DIR=/mnt/mozilla/hg/comm-beta/mozilla/extensions/inspector
 DOMI_HG_OPTIONS=
