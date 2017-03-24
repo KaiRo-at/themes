@@ -18,7 +18,7 @@ TAG_POST_EXT=tip #SEAMONKEY_2_50_RELEASE
 
 # ===================== process repos =====================
 
-REPO_LIST="COMM MOZ MOZB MOZD DOMI CZ"
+REPO_LIST="COMM MOZ MOZB DOMI CZ"
 
 HG_COMM_DIR=/mnt/mozilla/hg/comm-beta
 COMM_HG_OPTIONS=
