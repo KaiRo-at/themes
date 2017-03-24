@@ -2,515 +2,33 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-/*@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");*/
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace html url("http://www.w3.org/1999/xhtml");
-
-hbox.controlBar {
-  height: 28px;
-  background-color: rgba(156,156,255,0.75);
-}
-
-xul|button.playButton,
-xul|button.muteButton,
-xul|button.closedCaptionButton,
-xul|button.fullscreenButton {
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0;
-  padding: 0;
-  min-height: 28px;
-  min-width: 28px;
-  border: none;
-}
-
-xul|button.playButton:hover,
-xul|button.muteButton:not([noAudio]):hover,
-xul|button.closedCaptionButton:hover,
-xul|button.fullscreenButton:hover {
-  background-color: rgba(255,207,0,0.75);
-}
-
-xul|button.playButton:hover:active,
-xul|button.muteButton:not([noAudio]):hover:active,
-xul|button.closedCaptionButton:hover:active,
-xul|button.fullscreenButton:hover:active {
-  background-color: rgba(255,159,0,0.75);
-}
-
-xul|button.playButton {
-  background-image: url("chrome://global/skin/media/pauseButton.png");
-  margin-right: -22px; /* 1/2 of scrubber thumb width, for overhang. */
-  position: relative; /* Trick to work around negative margin interfering with clicking on the button. */
-}
-
-xul|button.playButton:hover {
-  background-image: url("chrome://global/skin/media/pauseButton-hover.png");
-}
-
-xul|button.playButton[paused] {
-  background-image: url("chrome://global/skin/media/playButton.png");
-}
-
-xul|button.playButton[paused]:hover {
-  background-image: url("chrome://global/skin/media/playButton-hover.png");
-}
-
-xul|button.muteButton {
-  background-image: url("chrome://global/skin/media/muteButton.png");
-  min-width: 33px;
-}
-
-xul|button.muteButton:hover {
-  background-image: url("chrome://global/skin/media/muteButton-hover.png");
-}
-
-xul|button.muteButton[muted] {
-  background-image: url("chrome://global/skin/media/unmuteButton.png");
-}
-
-xul|button.muteButton[muted]:hover {
-  background-image: url("chrome://global/skin/media/unmuteButton-hover.png");
-}
-
-xul|button.muteButton[noAudio] {
-  background-image: url("chrome://global/skin/media/noAudio.png");
-}
-
-xul|button.muteButton[noAudio] + .volumeStack {
-  display: none;
-}
-
-xul|button.closedCaptionButton {
-  background-image: url("chrome://global/skin/media/closeCaptionButton.png");
-  background-position: 4px;
-}
-
-xul|button.closedCaptionButton:hover {
-  background-image: url("chrome://global/skin/media/closeCaptionButton-hover.png");
-}
-
-xul|button.closedCaptionButton[enabled] {
-  opacity: 1;
-}
-
-xul|button.closedCaptionButton[hidden] {
-  display: none;
-}
-
-xul|button.fullscreenButton {
-  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton.png"), 0, 16, 16, 0);
-}
-
-xul|button.fullscreenButton:hover {
-  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover.png"), 0, 16, 16, 0);
-}
-
-xul|button.fullscreenButton[fullscreened] {
-  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton.png"), 0, 32, 16, 16);
-}
-
-xul|button.fullscreenButton[fullscreened]:hover {
-  background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover.png"), 0, 32, 16, 16);
-}
-
-xul|*.volumeControl {
-  width: 32px;
-  opacity: 0;
-}
-
-xul|*.volumeBackground,
-xul|*.volumeForeground {
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 32px;
-}
-
-xul|*.volumeBackground {
-  background-image: url("chrome://global/skin/media/volume-empty.png");
-}
-
-xul|*.volumeForeground {
-  background-image: url("chrome://global/skin/media/volume-full.png");
-  background-clip: content-box;
-}
-
-xul|*.textTrackList {
-  display: -moz-box;
-  -moz-appearance: none;
-  -moz-box-pack: end;
-  -moz-box-align: end;
-  padding: 0;
-}
-
-xul|*.textTrackList[hidden] {
-  display: none;
-}
-
-xul|*.textTrackList > html|*.textTrackItem {
-  -moz-appearance: none;
-  -moz-box-align: start;
-  text-align: start;
-  overflow: hidden;
-  margin: 0;
-  padding: 2px 10px;
-  -moz-margin-end: 10px;
-  border: none;
-  color: rgba(255,255,255,.5);
-  background-color: rgba(35,31,32,.74);
-  white-space: nowrap;
-}
-
-xul|*.textTrackList > html|*.textTrackItem[on] {
-  color: white;
-  background-color: black;
-}
-
-xul|*.textTrackList > html|*.textTrackItem:hover {
-  background-color: rgba(0,0,0,.55);
-}
-
-xul|*.controlBar[fullscreen-unavailable] {
-  /* This value is duplicated in the videocontrols.xml adjustControlSize function. */
-  padding-inline-end: 8px;
-}
-
-xul|*.volumeControl .scale-thumb {
-  min-width: 0;
-  opacity: 0;
-}
-
-xul|*.durationBox {
-  -moz-box-pack: center;
-}
-
-xul|*.durationLabel {
-  margin-left: -22px; /* 1/2 of scrubber thumb width, for overhang. */
-  padding-left: 8px; /* don't bump into the scrubber bar */
-  padding-top: 0px; /* center vertically with scrubber bar */
-  color: rgba(0,0,0,0.75);
-  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
-  font-size: 11px;
-}
-
-xul|*.positionLabel {
-  display: none;
-}
-
-xul|*.backgroundBar {
-  /* margin top/bottom: make bar 8px tall (control height = 28, minus 2 * 10 margin) */
-  /* margin left/right: 1/2 of scrubber thumb width, for overhang. */
-  margin: 10px 22px;
-  background-color: rgba(0,0,0,0.75);
-  border-radius: 2.5px;
-}
-
-xul|*.bufferBar,
-xul|*.progressBar {
-  /* margin top/bottom: make bar 8px tall (control height = 28, minus 2 * 10 margin) */
-  /* margin left/right: 1/2 of scrubber thumb width, for overhang. */
-  margin: 10px 22px;
-  border: none;
-  background-color: transparent;
-  min-width: 0;
-  min-height: 0;
-}
-
-/* .progress-bar is an element inside the <progressmeter> implementation. */
-xul|*.bufferBar .progress-bar {
-  /*
-   * Note that this is drawn on top of the .backgroundBar. So although this
-   * has the same background-color specified, the semitransparent
-   * compositing gives it a different visual appearance.
-   */
-  background-color: rgba(255,159,0,0.75);
-  border-radius: 2.5px;
-  -moz-appearance: none;
-}
-
-xul|*.progressBar .progress-bar {
-  background-color: #008484;
-  border-radius: 2.5px;
-  -moz-appearance: none;
-}
-
-/* .scale-slider is an element inside the <scale> implementation. */
-xul|*.scrubber .scale-slider,
-xul|*.volumeControl .scale-slider {
-  /* Hide the default horizontal bar. */
-  background: none;
-  margin: 0;
-}
-
-xul|*.scrubber .scale-slider {
-  /* abs(margin-top) + margin-bottom + bar height == timeThumb height */
-  margin-top: -10px;
-  margin-bottom: 10px;
-}
-
-/* .scale-thumb is an element inside the <scale> implementation. */
-xul|*.scrubber .scale-thumb,
-xul|*.volumeControl .scale-thumb {
-  /* Override the default thumb appearance with a custom image. */
-  background: transparent;
-  border: none !important;
-}
-
-xul|*.timeThumb {
-  background: url("chrome://global/skin/media/scrubberThumb.png") no-repeat center;
-  min-width: 45px;
-  min-height: 28px;
-  -moz-box-pack: center;
-}
-
-xul|*.timeThumb[showhours="true"] {
-  background-image: url("chrome://global/skin/media/scrubberThumbWide.png");
-}
-
-/*
-.timeThumb:hover, .timeThumb:active {
-  background-image: url("chrome://global/skin/media/scrubberThumb-hover.png");
-}
-*/
-
-xul|*.timeLabel {
-  color: rgba(0,0,0,0.75);
-  font-size: 10px;
-  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
-  text-shadow: rgba(255,259,0, 0.3) 0 1px;
-  padding-top: 5px;
-}
-
-xul|*.statusOverlay {
-  -moz-box-align: center;
-  -moz-box-pack: center;
-  background-color: rgba(0,0,0,0.55);
-}
-
-xul|*.statusIcon {
-  margin-bottom: 28px; /* same height as .controlBar, to keep icon centered above it */
-  width: 36px;
-  height: 36px;
-}
-
-xul|*.statusIcon[type="throbber"] {
-  background: url("chrome://communicator/skin/brand/throbber-anim.png") no-repeat center;
-}
-/*
-.statusIcon[type="throbber"][stalled] {
-  background: url("chrome://global/skin/media/stalled.png") no-repeat center;
-}
-*/
-xul|*.statusIcon[type="error"] {
-  background: url("chrome://global/skin/icons/alert-error.gif") no-repeat center;
-}
-
-/* Overlay Play button */
-.clickToPlay {
-  width: 64px;
-  height: 64px;
-  -moz-box-pack: center;
-  -moz-box-align: center;
-  opacity: 0.7;
-  background-image: url("chrome://global/skin/media/videoClickToPlayButton.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 64px 64px;
-  background-color: hsla(0,0%,10%,.5);
-}
-.clickToPlay:hover {
-  opacity: 1;
-}
-
-/* Statistics formatting */
-html|*.statsDiv {
-  position: relative;
-}
-html|td {
-  height: 1em;
-  max-height: 1em;
-  padding: 0 2px;
-}
-html|table {
-  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
-  font-size: 11px;
-  color: white;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-  min-width: 100%;
-  background: rgba(68,68,111,.7);
-  table-layout: fixed;
-  border-collapse: collapse;
-  position: absolute;
-}
-
-/* CSS Transitions */
-.clickToPlay {
-  transition-property: opacity, background-size;
-  transition-duration: 400ms, 400ms;
-}
-.clickToPlay[fadeout] {
-  background-size: auto, 192px 192px;
-  opacity: 0;
-}
-.clickToPlay[fadeout][immediate] {
-  transition-property: opacity, background-size;
-  transition-duration: 0s, 0s;
-}
-.controlBar:not([immediate]) {
-  transition-property: opacity;
-  transition-duration: 200ms;
-}
-.controlBar[fadeout] {
-  opacity: 0;
-}
-.volumeStack:not([immediate]) {
-  transition-property: opacity, margin-top;
-  transition-duration: 200ms, 200ms;
-}
-.volumeStack[fadeout] {
-  opacity: 0;
-  margin-top: 0;
-}
-.statusOverlay:not([immediate]) {
-  transition-property: opacity;
-  transition-duration: 300ms;
-  transition-delay: 750ms;
-}
-.statusOverlay[fadeout] {
-  opacity: 0;
-}
-
-/* Error description formatting */
-.errorLabel {
-  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
-  font-size: 11px;
-  color: #E7ADE7;
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
-  padding: 0 10px;
-  text-align: center;
-}
-
-@media (min-resolution: 2dppx) {
-  .playButton {
-    background-image: url(chrome://global/skin/media/pauseButton@2x.png);
-    background-size: 28px 28px;
-  }
-  .playButton:hover {
-    background-image: url(chrome://global/skin/media/pauseButton-hover@2x.png);
-    background-size: 28px 28px;
-  }
-  .playButton[paused] {
-    background-image: url(chrome://global/skin/media/playButton@2x.png);
-    background-size: 28px 28px;
-  }
-  .playButton[paused]:hover {
-    background-image: url(chrome://global/skin/media/playButton-hover@2x.png);
-    background-size: 28px 28px;
-  }
-  .volumeBackground {
-    background-image: url(chrome://global/skin/media/volume-empty@2x.png);
-    background-size: 32px 16px;
-  }
-  .volumeForeground:hover {
-    background-image: url(chrome://global/skin/media/volume-full-hover@2x.png);
-    background-size: 32px 16px;
-  }
-  .muteButton {
-    background-image: url(chrome://global/skin/media/muteButton@2x.png);
-    background-size: 33px 28px;
-  }
-  .muteButton:hover {
-    background-image: url(chrome://global/skin/media/muteButton-hover@2x.png);
-    background-size: 33px 28px;
-  }
-  .muteButton[muted] {
-    background-image: url(chrome://global/skin/media/unmuteButton@2x.png);
-    background-size: 33px 28px;
-  }
-  .muteButton[muted]:hover {
-    background-image: url(chrome://global/skin/media/unmuteButton-hover@2x.png);
-    background-size: 33px 28px;
-  }
-  .muteButton[noAudio] {
-    background-image: url(chrome://global/skin/media/noAudio@2x.png);
-    background-size: 33px 28px;
-  }
-  .closedCaptionButton {
-    background-image: url(chrome://global/skin/media/closeCaptionButton@2x.png);
-    background-position: 4px;
-    background-size: 28px 28px;
-  }
-  .closedCaptionButton:hover {
-    background-image: url(chrome://global/skin/media/closeCaptionButton-hover@2x.png);
-    background-position: 4px;
-    background-size: 28px 28px;
-  }
-  .fullscreenButton {
-    background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton@2x.png"), 0, 32, 32, 0);
-    background-size: 16px 16px;
-  }
-  .fullscreenButton:hover {
-    background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover@2x.png"), 0, 32, 32, 0);
-    background-size: 16px 16px;
-  }
-  .fullscreenButton[fullscreened] {
-    background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton@2x.png"), 0, 64, 32, 32);
-    background-size: 16px 16px;
-  }
-  .fullscreenButton[fullscreened]:hover {
-    background-image: -moz-image-rect(url("chrome://global/skin/media/fullscreenButton-hover@2x.png"), 0, 64, 32, 32);
-    background-size: 16px 16px;
-  }
-  .timeThumb {
-    background-image: url(chrome://global/skin/media/scrubberThumb@2x.png);
-    background-size: 33px 28px;
-  }
-  .timeThumb[showhours="true"] {
-    background-image: url(chrome://global/skin/media/scrubberThumbWide@2x.png);
-    background-size: 45px 28px;
-  }
-}
-
-
-/***** New HTML-based controls *****/
-
-/*@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-@namespace url("http://www.w3.org/1999/xhtml");*/
+@namespace url("http://www.w3.org/1999/xhtml");
 
 video > xul|videocontrols,
 audio > xul|videocontrols {
   writing-mode: horizontal-tb;
   width: 100%;
   height: 100%;
-/*  display: inline-block;  --->CRASHES XUL-based versions! */
-  -moz-box-pack: end;
+  display: inline-block;
 }
 
-div.controlsContainer [hidden="true"],
-div.controlBar[hidden] {
+.controlsContainer [hidden="true"],
+.controlBar[hidden] {
   display: none;
 }
 
-div.controlBar[size="hidden"] {
+.controlBar[size="hidden"] {
   display: none;
 }
 
-div.controlsContainer,
-div.progressContainer {
+.controlsContainer,
+.progressContainer {
   position: relative;
   height: 100%;
 }
 
-div.stackItem {
+.stackItem {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -518,7 +36,7 @@ div.stackItem {
   height: 100%;
 }
 
-div.statusOverlay {
+.statusOverlay {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -526,14 +44,14 @@ div.statusOverlay {
   background-color: rgb(160,144,144);
 }
 
-div.controlsOverlay {
+.controlsOverlay {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
 }
 
-div.controlsSpacerStack {
+.controlsSpacerStack {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -541,30 +59,29 @@ div.controlsSpacerStack {
   align-items: center;
 }
 
-div.controlsSpacer {
+.controlsSpacer {
   background-color: rgba(0,0,0,.4);
 }
 
-div.controlBar {
+.controlBar {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   height: 40px;
-  padding: 0 3px;
+  padding: 0 9px;
   background-color: rgba(156,156,255,0.75);
 }
 
-
-html|button.playButton,
-html|button.muteButton,
-html|button.closedCaptionButton,
-html|button.fullscreenButton {
+.playButton,
+.muteButton,
+.closedCaptionButton,
+.fullscreenButton {
   height: 100%;
   min-height: 30px;
   min-width: 30px;
-  padding: 0;
+  padding: 6px;
   border: 0;
   margin: 0;
   background-color: transparent;
@@ -574,110 +91,110 @@ html|button.fullscreenButton {
   background-clip: content-box;
 }
 
-html|button.playButton:hover,
-html|button.muteButton:not([noAudio]):hover,
-html|button.closedCaptionButton:hover,
-html|button.fullscreenButton:hover {
+.playButton:hover,
+.muteButton:not([noAudio]):hover,
+.closedCaptionButton:hover,
+.fullscreenButton:hover {
   background-color: rgba(255,207,0,0.75);
 }
 
-html|button.playButton:hover:active,
-html|button.muteButton:not([noAudio]):hover:active,
-html|button.closedCaptionButton:hover:active,
-html|button.fullscreenButton:hover:active {
+.playButton:hover:active,
+.muteButton:not([noAudio]):hover:active,
+.closedCaptionButton:hover:active,
+.fullscreenButton:hover:active {
   background-color: rgba(255,159,0,0.75);
 }
 
-html|button.playButton {
+.playButton {
   background-image: url(chrome://global/skin/media/pauseButton.svg#pause);
 }
 .playButton:hover {
-html|butto  background-image: url(chrome://global/skin/media/pauseButton.svg#pause-hover);
+  background-image: url(chrome://global/skin/media/pauseButton.svg#pause-hover);
 }
-html|button.playButton:hover:active {
+.playButton:hover:active {
   background-image: url(chrome://global/skin/media/pauseButton.svg#pause-active);
 }
-html|button.playButton[paused] {
+.playButton[paused] {
   background-image: url(chrome://global/skin/media/playButton.svg#play);
 }
-html|button.playButton[paused]:hover {
+.playButton[paused]:hover {
   background-image: url(chrome://global/skin/media/playButton.svg#play-hover);
 }
-html|button.playButton[paused]:hover:active {
+.playButton[paused]:hover:active {
   background-image: url(chrome://global/skin/media/playButton.svg#play-active);
 }
 
-html|button.muteButton {
+.muteButton {
   background-image: url(chrome://global/skin/media/muteButton.svg#unmute);
 }
-html|button.muteButton:hover {
+.muteButton:hover {
   background-image: url(chrome://global/skin/media/muteButton.svg#unmute-hover);
 }
-html|button.muteButton:hover:active {
+.muteButton:hover:active {
   background-image: url(chrome://global/skin/media/muteButton.svg#unmute-active);
 }
-html|button.muteButton[muted] {
+.muteButton[muted] {
   background-image: url(chrome://global/skin/media/muteButton.svg#mute);
 }
-html|button.muteButton[muted]:hover {
+.muteButton[muted]:hover {
   background-image: url(chrome://global/skin/media/muteButton.svg#mute-hover);
 }
-html|button.muteButton[muted]:hover:active {
+.muteButton[muted]:hover:active {
   background-image: url(chrome://global/skin/media/muteButton.svg#mute-active);
 }
-html|button.muteButton[noAudio],
-html|button.muteButton[noAudio]:hover,
-html|button.muteButton[noAudio]:hover:active {
+.muteButton[noAudio],
+.muteButton[noAudio]:hover,
+.muteButton[noAudio]:hover:active {
   background-image: url(chrome://global/skin/media/muteButton.svg#noaudio);
 }
-html|button.muteButton[noAudio] + .volumeStack {
+.muteButton[noAudio] + .volumeStack {
   display: none;
 }
 
-html|button.closedCaptionButton {
+.closedCaptionButton {
   background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-off);
 }
-html|button.closedCaptionButton:hover {
+.closedCaptionButton:hover {
   background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-off-hover);
 }
-html|button.closedCaptionButton:hover:active {
+.closedCaptionButton:hover:active {
   background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-off-active);
 }
-html|button.closedCaptionButton[enabled] {
+.closedCaptionButton[enabled] {
   background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc);
 }
-html|button.closedCaptionButton[enabled]:hover {
+.closedCaptionButton[enabled]:hover {
   background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-hover);
 }
-html|button.closedCaptionButton[enabled]:hover:active {
+.closedCaptionButton[enabled]:hover:active {
   background-image: url(chrome://global/skin/media/closedCaptionButton.svg#cc-active);
 }
 
-html|button.fullscreenButton {
+.fullscreenButton {
   background-image: url(chrome://global/skin/media/fullscreenButton.svg#fullscreen);
 }
-html|button.fullscreenButton:hover {
+.fullscreenButton:hover {
   background-image: url(chrome://global/skin/media/fullscreenButton.svg#fullscreen-hover);
 }
-html|button.fullscreenButton:hover:active {
+.fullscreenButton:hover:active {
   background-image: url(chrome://global/skin/media/fullscreenButton.svg#fullscreen-active);
 }
-html|button.fullscreenButton[fullscreened] {
+.fullscreenButton[fullscreened] {
   background-image: url(chrome://global/skin/media/fullscreenButton.svg#unfullscreen);
 }
-html|button.fullscreenButton[fullscreened]:hover {
+.fullscreenButton[fullscreened]:hover {
   background-image: url(chrome://global/skin/media/fullscreenButton.svg#unfullscreen-hover);
 }
-html|button.fullscreenButton[fullscreened]:hover:active {
+.fullscreenButton[fullscreened]:hover:active {
   background-image: url(chrome://global/skin/media/fullscreenButton.svg#unfullscreen-active);
 }
 
-div.controlBarSpacer {
+.controlBarSpacer {
   flex-grow: 1;
 }
 
-input.volumeControl::-moz-range-thumb,
-input.scrubber::-moz-range-thumb {
+.volumeControl::-moz-range-thumb,
+.scrubber::-moz-range-thumb {
   height: 13px;
   width: 13px;
   border: none;
@@ -685,25 +202,25 @@ input.scrubber::-moz-range-thumb {
   background-color: #000000;
 }
 
-input.volumeControl::-moz-focus-outer,
-input.scrubber::-moz-focus-outer {
+.volumeControl::-moz-focus-outer,
+.scrubber::-moz-focus-outer {
   border: 0;
 }
 
-div.progressBackgroundBar {
+.progressBackgroundBar {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-div.progressStack {
+.progressStack {
   position: relative;
   width: 100%;
   height: 5px;
 }
 
-div.scrubberStack {
+.scrubberStack {
   min-width: 48px;
   flex-basis: 48px;
   flex-grow: 2;
@@ -711,7 +228,7 @@ div.scrubberStack {
   margin: 0 9px;
 }
 
-div.volumeStack {
+.volumeStack {
   max-width: 60px;
   min-width: 48px;
   flex-grow: 1;
@@ -720,11 +237,11 @@ div.volumeStack {
   margin-left: 4px;
 }
 
-progress.bufferBar,
-progress.progressBar,
-input.scrubber,
+.bufferBar,
+.progressBar,
+.scrubber,
 .volumeBackground,
-input.volumeControl {
+.volumeControl {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -738,13 +255,13 @@ input.volumeControl {
   background-color: transparent;
 }
 
-progress.bufferBar,
+.bufferBar,
 .volumeBackground {
   background-color: rgba(160,144,144,0.7);
 }
 
-progress.bufferBar::-moz-progress-bar,
-progress.progressBar::-moz-progress-bar,
+.bufferBar::-moz-progress-bar,
+.progressBar::-moz-progress-bar,
 .volumeBackground::-moz-meter-bar {
   height: 100%;
   padding: 0;
@@ -754,42 +271,42 @@ progress.progressBar::-moz-progress-bar,
   background: none;
 }
 
-input.scrubber:hover::-moz-range-thumb,
-input.volumeControl:hover::-moz-range-thumb {
+.scrubber:hover::-moz-range-thumb,
+.volumeControl:hover::-moz-range-thumb {
   background-color: #FFCF00;
 }
 
-input.scrubber:active::-moz-range-thumb,
-input.volumeControl:active::-moz-range-thumb {
+.scrubber:active::-moz-range-thumb,
+.volumeControl:active::-moz-range-thumb {
   background-color: #FF9F00;
 }
 
-input.scrubber::-moz-range-track,
-input.scrubber::-moz-range-progress {
+.scrubber::-moz-range-track,
+.scrubber::-moz-range-progress {
   background-color: transparent;
 }
 
-input.volumeControl::-moz-range-progress,
-input.volumeControl::-moz-range-track {
+.volumeControl::-moz-range-progress,
+.volumeControl::-moz-range-track {
   height: 5px;
   border-radius: 2.5px;
 }
 
-input.volumeControl::-moz-range-progress {
+.volumeControl::-moz-range-progress {
   background-color: #008484;
 }
 
-input.volumeControl::-moz-range-track {
+.volumeControl::-moz-range-track {
   background-color: rgba(0,0,0,0.7);
 }
 
 
-progress.bufferBar::-moz-progress-bar {
+.bufferBar::-moz-progress-bar {
   background-color: rgba(160,144,144,0.3);
   border-radius: 2.5px;
 }
 
-progress.progressBar::-moz-progress-bar {
+.progressBar::-moz-progress-bar {
   background-color: #008484;
 }
 
@@ -818,7 +335,7 @@ progress.progressBar::-moz-progress-bar {
   overflow: hidden;
   text-align: left;
   text-overflow: ellipsis;
-  color: #FFCF00;
+  color: #FF9F00;
   background-color: transparent;
 }
 
@@ -830,12 +347,12 @@ progress.progressBar::-moz-progress-bar {
   color: #008484;
 }
 
-span.positionLabel,
-span.durationLabel {
+.positionLabel,
+.durationLabel {
   display: none;
 }
 
-span.positionDurationBox {
+.positionDurationBox {
   min-width: 9ch;
   text-align: center;
   padding-inline-start: 1px;
@@ -843,15 +360,15 @@ span.positionDurationBox {
   white-space: nowrap;
   font: message-box;
   font-size: 13px;
-  font-size-adjust: 0.6;
+  font-size-adjust: 0.55;
   color: #000000;
 }
 
-span.positionDurationBox[positionOnly] {
+.positionDurationBox[positionOnly] {
   min-width: 4ch;
 }
 
-span.duration {
+.duration {
   display: inline-block;
   white-space: pre;
   color: #8050B0;
@@ -864,17 +381,17 @@ span.duration {
 }
 
 .statusIcon[type="throbber"] {
-  background: url("chrome://communicator/skin/brand/throbber-anim.png") no-repeat center;
+  background: url(chrome://global/skin/media/throbber.png) no-repeat center;
 }
-/*
+
 .statusIcon[type="throbber"][stalled] {
-  background: url("chrome://global/skin/media/stalled.png") no-repeat center;
+  background: url(chrome://global/skin/media/stalled.png) no-repeat center;
 }
-*/
+
 .statusIcon[type="error"] {
   min-width: 70px;
   min-height: 60px;
-  background: url("chrome://global/skin/icons/alert-error.gif") no-repeat center;
+  background: url(chrome://global/skin/media/error.png) no-repeat center;
   background-size: contain;
 }
 
@@ -949,7 +466,7 @@ span.duration {
 .errorLabel {
   padding: 0 10px;
   text-align: center;
-  font-family: "Liberation Sans",Arial,Tahoma,Helvetica,sans-serif;
+  font: message-box;
   font-size: 14px;
   color: #E7ADE7;
 }

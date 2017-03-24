@@ -92,6 +92,7 @@ button {
   align-items: center;
   top: 0;
   left: 3rem;
+  right: 3rem;
   width: 17.1rem;
   height: var(--date-picker-item-height);
   z-index: 10;
@@ -101,7 +102,10 @@ button.month-year {
   font-size: 1.3rem;
   border: var(--border);
   border-radius: 0.3rem;
-  padding: 0.2rem 2.6rem 0.2rem 1.2rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-inline-start: 1.2rem;
+  padding-inline-end: 2.6rem;
 }
 
 button.month-year:hover {
