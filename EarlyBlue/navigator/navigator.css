@@ -483,6 +483,11 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
   font-weight: bold;
 }
 
+#go-button {
+/*  padding-inline-start: 2px;
+  padding-inline-end: 2px;*/
+}
+
 #search-button > .button-box > .button-icon {
   display: -moz-box;
 }
