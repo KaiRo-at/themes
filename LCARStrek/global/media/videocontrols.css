@@ -353,7 +353,6 @@ audio > xul|videocontrols {
 }
 
 .positionDurationBox {
-  min-width: 9ch;
   text-align: center;
   padding-inline-start: 1px;
   padding-inline-end: 9px;
@@ -362,10 +361,6 @@ audio > xul|videocontrols {
   font-size: 13px;
   font-size-adjust: 0.55;
   color: #000000;
-}
-
-.positionDurationBox[positionOnly] {
-  min-width: 4ch;
 }
 
 .duration {
