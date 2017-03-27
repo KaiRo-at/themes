@@ -231,6 +231,11 @@
   color: #000000;
 }
 
+.addengine-item[type=menu][selected] {
+  color: inherit;
+  background-color: var(--arrowpanel-dimmed-further);
+}
+
 .addengine-icon {
   height: 16px;
   width: 16px;
@@ -243,7 +248,8 @@
   list-style-image: url("chrome://browser/skin/badge-add-engine.png");
 }
 
-.addengine-item > .button-box > .button-text {
+.addengine-item > .button-box > .button-text,
+.addengine-item[type=menu] > .button-box > .box-inherit > .button-text {
   -moz-box-flex: 1;
   text-align: start;
   padding-inline-start: 10px;
@@ -251,6 +257,12 @@
 
 .addengine-item:not([image]) {
   list-style-image: url("chrome://browser/skin/search-engine-placeholder.png");
+}
+
+.addengine-item[type=menu] > .button-box > .button-menu-dropmarker {
+  display: -moz-box;
+/*  -moz-appearance: menuarrow !important;*/
+  list-style-image: none;
 }
 
 .search-panel-tree > .autocomplete-treebody::-moz-tree-cell {
