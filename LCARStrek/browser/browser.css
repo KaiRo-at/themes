@@ -1751,15 +1751,13 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 }
 
 #urlbar-search-splitter {
-  min-width: 6px;
-  margin-inline-start: -3px;
+  /* The splitter width should equal the location and search bars' combined
+     neighboring margin and border width. */
+  min-width: 8px;
+  margin: 0 -4px;
+  position: relative;
   border: none;
   background: transparent;
-}
-
-#urlbar-search-splitter + #urlbar-container > #urlbar,
-#urlbar-search-splitter + #search-container > #searchbar > .searchbar-textbox {
-  margin-inline-start: 0;
 }
 
 .urlbar-display {
@@ -1914,6 +1912,9 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   visibility: visible;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon,
 #urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
   list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
   visibility: visible;
@@ -1922,13 +1923,6 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 #urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
 #urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
   list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon {
-  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
   visibility: visible;
 }
 
@@ -2057,10 +2051,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 
 #identity-box[sharing] > #identity-icon,
 #sharing-icon {
-  animation: 3s linear pulse infinite;
+  animation: 3s linear identity-box-sharing-icon-pulse infinite;
 }
 
-@keyframes pulse {
+@keyframes identity-box-sharing-icon-pulse {
+/* This should remain identical to tab-sharing-icon-pulse in tabs.inc.css */
   0%, 16.66%, 83.33%, 100% {
     opacity: 0;
   }
@@ -2316,33 +2311,28 @@ html|span.ac-emphasize-text-url {
 /*  list-style-image: url("chrome://browser/skin/urlbar-star.svg#star-inverted");*/
 }
 
-.ac-result-type-bookmark,
-.autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
+.ac-result-type-bookmark {
   list-style-image: url("chrome://browser/skin/places/bookmark.png");
   -moz-image-region: rect(0px 16px 16px 0px);
   width: 16px;
   height: 16px;
 }
 
-richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-bookmark,
-.autocomplete-treebody::-moz-tree-image(selected, current, bookmark, treecolAutoCompleteImage) {
+richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-bookmark {
 /*  -moz-image-region: rect(0px 48px 16px 32px);*/
 }
 
 .ac-type-icon[type=keyword],
-.ac-site-icon[type=searchengine],
-.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
+.ac-site-icon[type=searchengine] {
   list-style-image: url("chrome://global/skin/icons/autocomplete-search.svg#search-icon");
 }
 
 .ac-type-icon[type=keyword][selected],
-.ac-site-icon[type=searchengine][selected],
-.autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected) {
+.ac-site-icon[type=searchengine][selected] {
   list-style-image: url("chrome://global/skin/icons/autocomplete-search.svg#search-icon-inverted");
 }
 
-.ac-result-type-tag,
-.autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
+.ac-result-type-tag {
   list-style-image: url("chrome://mozapps/skin/places/tagContainerIcon.png");
   width: 16px;
   height: 16px;
@@ -2815,10 +2805,11 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 
 .tab-icon-image[sharing]:not([selected]),
 .tab-sharing-icon-overlay {
-  animation: 3s linear pulse infinite;
+  animation: 3s linear tab-sharing-icon-pulse infinite;
 }
 
-@keyframes pulse {
+@keyframes tab-sharing-icon-pulse {
+/* This should remain identical to identity-box-sharing-icon-pulse in identity-block.inc.css */
   0%, 16.66%, 83.33%, 100% {
     opacity: 0;
   }
@@ -3366,7 +3357,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
    type of icon displayed. This rule must be defined before the others in order
    for its list-style-image to be overridden. */
 .notification-anchor-icon {
-  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  list-style-image: url(chrome://browser/skin/notification-icons.svg#default-info);
 }
 
 .notification-anchor-icon:-moz-focusring {
@@ -3379,25 +3370,10 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   }
 }
 
-#notification-popup > .panel-arrowcontainer > .panel-arrowcontent {
-  /* In order to display the action buttons near the edge of the arrow panel we
-   * have to reset its default padding and specify the padding in the individual
-   * "popupnotification" elements instead. To keep the rounded borders of the
-   * panel, we also have to ensure the contents are clipped to the border box
-   * by hiding the overflow, and we have to override the "display" property so
-   * that the height of the contents is computed correctly in that case. */
-  padding: 0;
-  overflow: hidden;
-  display: block;
-}
-
 .notification-anchor-icon:not(.plugin-blocked),
 #blocked-permissions-container > .blocked-permission-icon {
   filter: url(chrome://global/skin/filters.svg#fill);
   fill: currentColor;
-}
-
-.notification-anchor-icon:not(.plugin-blocked):not(:hover) {
 }
 
 /* INDIVIDUAL NOTIFICATIONS */
@@ -3639,6 +3615,40 @@ html|*#webRTC-previewVideo {
 .popup-notification-body[popupid="addon-install-confirmation"] {
   width: 28em;
   max-width: 28em;
+}
+
+.addon-install-confirmation-name {
+  font-weight: bold;
+}
+
+.addon-webext-perm-header {
+  font-size: 1.3em;
+}
+
+.addon-webext-name {
+  display: inline;
+  font-weight: bold;
+  margin: 0;
+}
+
+.addon-addon-icon {
+  width: 14px;
+  height: 14px;
+  list-style-image: url("chrome://browser/skin/menuPanel.svg");
+  -moz-image-region: rect(0px, 288px, 32px, 256px);
+}
+
+.addon-toolbar-icon {
+  width: 14px;
+  height: 14px;
+  list-style-image: url("chrome://browser/skin/Toolbar.png");
+  -moz-image-region: rect(0, 486px, 18px, 468px);
+}
+
+/* Notification icon box */
+
+.notification-anchor-icon:-moz-focusring {
+/*  outline: 1px dotted -moz-DialogText;*/
 }
 
 /* Translation infobar */
@@ -4731,7 +4741,7 @@ notification.pluginVulnerable .messageImage {
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  background-image: url("chrome://browser/skin/theme-switcher-icon.png");
+  background-image: url("chrome://browser/content/default-theme-icon.svg");
   background-size: contain;
 }
 
@@ -4933,7 +4943,7 @@ toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
 }
 
 .customization-lwtheme-menu-theme[defaulttheme] {
-  list-style-image: url(chrome://browser/skin/Fxtheme-switcher-icon.png);
+  list-style-image: url(chrome://browser/content/default-theme-icon.svg);
 }
 
 .customization-lwtheme-menu-theme[active="true"] {
