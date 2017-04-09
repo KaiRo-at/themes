@@ -11,27 +11,20 @@
 /* ::::: checkbox ::::: */
 
 checkbox {
+  -moz-box-align: center;
   margin: 1px 2px;
-  border-left: 1px transparent;
-  border-right: 1px transparent;
-}
-
-.checkbox-spacer-box {
-  -moz-box-align: center;
-  border-right: 4px solid transparent;
-}
-
-.checkbox-label-center-box {
-  -moz-box-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-inline-start: 2px;
+  padding-inline-end: 0;
 }
 
 .checkbox-label-box {
   border: 1px solid transparent;
   color: #FF9F00;
-  -moz-box-align: center;
 }
 
-.checkbox-icon[src] {
+.checkbox-icon {
   margin-inline-end: 2px;
 }
 
@@ -41,19 +34,18 @@ checkbox {
 
 /* ..... focused state ..... */
 
-checkbox:-moz-focusring > .checkbox-label-center-box > .checkbox-label-box {
+checkbox:-moz-focusring > .checkbox-label-box {
   border: 1px dotted #008484;
 }
 
 /* ..... disabled state ..... */
 
-checkbox[disabled="true"] > .checkbox-check,
-checkbox[disabled="true"] > .checkbox-spacer-box > .checkbox-check {
+checkbox[disabled="true"] > .checkbox-check {
   border: 1px solid #8050B0;
   background-color: #000000;
 }
 
-checkbox[disabled="true"] > .checkbox-label-center-box > .checkbox-label-box {
+checkbox[disabled="true"] > .checkbox-label-box {
   color: #8050B0;
 }
 
@@ -66,43 +58,32 @@ checkbox[disabled="true"] > .checkbox-label-center-box > .checkbox-label-box {
   height: 1em;
   min-width: 12px;
   min-height: 12px;
-  background: transparent 50% 50% no-repeat;
-}
-
-checkbox > .checkbox-check {
-  margin-inline-end: 4px;
+  background: #000000 no-repeat 50% 50%;
+  margin-inline-end: 3px;
 }
 
 checkbox:not([disabled="true"]):hover > .checkbox-check,
-checkbox:not([disabled="true"]):hover:active > .checkbox-check,
-checkbox:not([disabled="true"]):hover > .checkbox-spacer-box > .checkbox-check,
-checkbox:not([disabled="true"]):hover:active > .checkbox-spacer-box > .checkbox-check {
+checkbox:not([disabled="true"]):hover:active > .checkbox-check {
   border: 1px solid #FFCF00;
 }
 
 checkbox:not([disabled="true"]):hover > .checkbox-label-box,
-checkbox:not([disabled="true"]):hover:active > .checkbox-label-box,
-checkbox:not([disabled="true"]):hover > .checkbox-label-center-box > .checkbox-label-box,
-checkbox:not([disabled="true"]):hover:active > .checkbox-label-center-box > .checkbox-label-box {
+checkbox:not([disabled="true"]):hover:active > .checkbox-label-box {
   color: #FFCF00;
 }
 
 /* ..... checked state ..... */
 
-checkbox[checked="true"] > .checkbox-check,
-checkbox[checked="true"] > .checkbox-spacer-box > .checkbox-check {
+checkbox[checked="true"] > .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
 }
 
 checkbox[checked="true"]:hover > .checkbox-check,
-checkbox[checked="true"]:hover:active > .checkbox-check,
-checkbox[checked="true"]:hover > .checkbox-spacer-box > .checkbox-check,
-checkbox[checked="true"]:hover:active > .checkbox-spacer-box > .checkbox-check {
+checkbox[checked="true"]:hover:active > .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check-hover.gif");
 }
 
-checkbox[checked="true"][disabled="true"] .checkbox-check,
-checkbox[checked="true"][disabled="true"] > .checkbox-spacer-box > .checkbox-check {
+checkbox[checked="true"][disabled="true"] .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check-disabled.gif") !important;
 }
 
@@ -123,26 +104,20 @@ caption > checkbox:hover:active {
   background-color: #FF9F00;
 }
 
-caption > checkbox:not([disabled="true"]) > .checkbox-label-center-box > .checkbox-label-box,
-caption > checkbox:not([disabled="true"]):hover > .checkbox-label-center-box > .checkbox-label-box,
-caption > checkbox:not([disabled="true"]):hover:active > .checkbox-label-center-box > .checkbox-label-box {
+caption > checkbox:not([disabled="true"]) > .checkbox-label-box,
+caption > checkbox:not([disabled="true"]):hover > .checkbox-label-box,
+caption > checkbox:not([disabled="true"]):hover:active > .checkbox-label-box {
   color: inherit;
 }
 
 caption > checkbox:not([disabled="true"]) > .checkbox-check,
 caption > checkbox:not([disabled="true"]):hover > .checkbox-check,
-caption > checkbox:not([disabled="true"]):hover:active > .checkbox-check,
-caption > checkbox:not([disabled="true"]) > .checkbox-spacer-box > .checkbox-check,
-caption > checkbox:not([disabled="true"]):hover > .checkbox-spacer-box > .checkbox-check,
-caption > checkbox:not([disabled="true"]):hover:active > .checkbox-spacer-box > .checkbox-check {
+caption > checkbox:not([disabled="true"]):hover:active > .checkbox-check {
   border-color: #000000;
 }
 
 caption > checkbox[checked="true"] > .checkbox-check,
 caption > checkbox[checked="true"]:hover > .checkbox-check,
-caption > checkbox[checked="true"]:hover:active > .checkbox-check,
-caption > checkbox[checked="true"] > .checkbox-spacer-box > .checkbox-check,
-caption > checkbox[checked="true"]:hover > .checkbox-spacer-box > .checkbox-check,
-caption > checkbox[checked="true"]:hover:active > .checkbox-spacer-box > .checkbox-check {
+caption > checkbox[checked="true"]:hover:active > .checkbox-check {
   background-image: url("chrome://global/skin/checkbox/cbox-check-inverted.gif");
 }
