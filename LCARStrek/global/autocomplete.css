@@ -123,6 +123,11 @@ panel[type="autocomplete-richlistbox"],
   overflow-x: hidden !important;
 }
 
+.autocomplete-richlistitem[selected] {
+  background-color: #008484;
+  color: #000000;
+}
+
 .ac-type-icon {
   width: 16px;
   height: 16px;
