@@ -63,7 +63,7 @@ treecol {
 }
 
 .learnMore {
-  margin-inline-start: 1.5em;
+  margin-inline-start: 10px;
   font-weight: normal;
   white-space: nowrap;
 }
@@ -240,6 +240,11 @@ treecol {
   font-weight: bold;
 }
 
+#browserHomePage:-moz-locale-dir(rtl) input {
+  unicode-bidi: plaintext;
+  direction: rtl;
+}
+
 /* Content pane */
 #defaultFontSizeLabel {
   /* !important needed to override common !important rule */
@@ -303,10 +308,7 @@ treecol {
    active vbox needs */
 #historyPane:not([selectedIndex="1"]) > #historyDontRememberPane,
 #historyPane:not([selectedIndex="2"]) > #historyCustomPane,
-#weavePrefsDeck:not([selectedIndex="1"]) > #hasAccount,
-#weavePrefsDeck:not([selectedIndex="2"]) > #needsUpdate,
-#weavePrefsDeck:not([selectedIndex="3"]) > #noFxaAccount,
-#weavePrefsDeck:not([selectedIndex="4"]) > #hasFxaAccount,
+#weavePrefsDeck:not([selectedIndex="1"]) > #hasFxaAccount,
 #fxaLoginStatus:not([selectedIndex="1"]) > #fxaLoginUnverified,
 #fxaLoginStatus:not([selectedIndex="2"]) > #fxaLoginRejected {
   visibility: collapse;
