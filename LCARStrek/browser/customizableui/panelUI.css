@@ -593,6 +593,8 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 
 #PanelUI-footer-addons > toolbarbutton {
   background-color: #A09090;
+  /* Force border to override `#PanelUI-footer-addons > toolbarbutton` selector below */
+  /*border-top: 1px solid hsl(45, 100%, 77%) !important;*/
   display: flex;
   flex: 1 1 0%;
   width: calc(22.35em + 30px);
@@ -809,8 +811,8 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 .fxaSyncIllustration {
+  width: 180px;
   height: var(--panel-ui-sync-illustration-height);
-  list-style-image: url(chrome://browser/skin/fxa/sync-illustration.svg);
 }
 
 .PanelUI-remotetabs-prefs-button > .toolbarbutton-text {
@@ -1237,19 +1239,19 @@ menuitem.panel-subview-footer:not([disabled]):-moz-any([open],:hover:active),
   color: #A09090;
 }
 
-#PanelUI-remotetabs-tabslist > toolbarbutton,
+#PanelUI-remotetabs-tabslist > toolbarbutton[itemtype="tab"],
 #PanelUI-historyItems > toolbarbutton {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
 }
 
 @media (min-resolution: 1.1dppx) {
-  #PanelUI-remotetabs-tabslist > toolbarbutton,
+  #PanelUI-remotetabs-tabslist > toolbarbutton[itemtype="tab"],
   #PanelUI-historyItems > toolbarbutton {
     list-style-image: url("chrome://mozapps/skin/places/defaultFavicon@2x.png");
   }
 }
 
-#PanelUI-remotetabs-tabslist > toolbarbutton > .toolbarbutton-icon,
+#PanelUI-remotetabs-tabslist > toolbarbutton[itemtype="tab"] > .toolbarbutton-icon,
 #PanelUI-recentlyClosedWindows > toolbarbutton > .toolbarbutton-icon,
 #PanelUI-recentlyClosedTabs > toolbarbutton > .toolbarbutton-icon,
 #PanelUI-historyItems > toolbarbutton > .toolbarbutton-icon {
