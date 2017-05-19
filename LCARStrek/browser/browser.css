@@ -38,6 +38,40 @@ menubar {
 
 /* === BEGIN browser.inc.css === */
 
+/* Go button */
+.urlbar-go-button {
+  padding: 0 3px;
+  list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
+}
+
+.urlbar-go-button {
+  -moz-image-region: rect(0, 42px, 14px, 28px);
+}
+
+.urlbar-go-button:hover {
+  -moz-image-region: rect(14px, 42px, 28px, 28px);
+}
+
+.urlbar-go-button:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
+}
+
+@media (min-resolution: 1.1dppx) {
+  .urlbar-go-button {
+    list-style-image: url("chrome://browser/skin/reload-stop-go@2x.png");
+    -moz-image-region: rect(0, 84px, 28px, 56px);
+    width: 14px;
+  }
+
+  .urlbar-go-button:hover {
+    -moz-image-region: rect(28px, 84px, 56px, 56px);
+  }
+
+  .urlbar-go-button:hover:active {
+    -moz-image-region: rect(56px, 84px, 84px, 56px);
+  }
+}
+
 /* Zoom button */
 #urlbar-zoom-button {
   margin: 0 3px;
@@ -67,6 +101,31 @@ menubar {
 
 #urlbar-zoom-button > .toolbarbutton-icon {
   display: none;
+}
+
+/* Page action button */
+#urlbar-page-action-button {
+  list-style-image: url("chrome://browser/skin/page-action.svg");
+  -moz-context-properties: fill;
+/*  margin: 0;
+  padding: 0 6px;*/
+  fill: currentColor;
+}
+
+#urlbar-page-action-button > .toolbarbutton-icon {
+  width: 16px;
+}
+
+#page-action-copy-url-button {
+  list-style-image: url("chrome://browser/skin/copy-url.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+#page-action-email-link-button {
+  list-style-image: url("chrome://browser/skin/email-link.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
 }
 
 /* === END browser.inc.css === */
@@ -2346,6 +2405,12 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   border-image-slice: 1;
 }
 
+/* XXX: temporary for Photon preview changes */
+#reload-button,
+#stop-button {
+  list-style-image: url("chrome://browser/skin/reload-stop-goFx.png");
+}
+
 #urlbar:-moz-locale-dir(ltr) > toolbarbutton {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -2362,18 +2427,22 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   padding-inline-start: 3px;
 }
 
+#reload-button,
 #urlbar-reload-button {
   -moz-image-region: rect(0px, 14px, 14px, 0px);
 }
 
+#reload-button[disabled=true],
 #urlbar-reload-button[disabled=true] {
   -moz-image-region: rect(28px, 14px, 42px, 0px);
 }
 
+#reload-button:not([disabled=true]):hover,
 #urlbar-reload-button:not([disabled=true]):hover {
   -moz-image-region: rect(14px, 14px, 28px, 0px);
 }
 
+#reload-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,
 #urlbar-reload-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
   transform: scaleX(-1);
 }
@@ -2390,21 +2459,27 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   transform: scaleX(-1);
 }
 
+#stop-button,
 #urlbar-stop-button {
   -moz-image-region: rect(0px, 28px, 14px, 14px);
 }
 
+#stop-button:hover,
 #urlbar-stop-button:hover {
   -moz-image-region: rect(14px, 28px, 28px, 14px);
 }
 
 @media (min-resolution: 1.1dppx) {
+  #reload-button,
+  #stop-button,
   #urlbar-go-button,
   #urlbar-reload-button,
   #urlbar-stop-button {
     list-style-image: url("chrome://browser/skin/reload-stop-go@2x.png");
   }
 
+  #reload-button > .toolbarbutton-icon,
+  #stop-button > .toolbarbutton-icon,
   #urlbar-go-button > .toolbarbutton-icon,
   #urlbar-reload-button > .toolbarbutton-icon,
   #urlbar-stop-button > .toolbarbutton-icon {
@@ -2423,26 +2498,32 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
     -moz-image-region: rect(56px, 84px, 84px, 56px);
   }
 
+  #reload-button,
   #urlbar-reload-button {
     -moz-image-region: rect(0, 28px, 28px, 0);
   }
 
+  #reload-button:not([disabled]):hover,
   #urlbar-reload-button:not([disabled]):hover {
     -moz-image-region: rect(28px, 28px, 56px, 0);
   }
 
+  #reload-button:not([disabled]):hover:active,
   #urlbar-reload-button:not([disabled]):hover:active {
     -moz-image-region: rect(56px, 28px, 84px, 0);
   }
 
+  #stop-button,
   #urlbar-stop-button {
     -moz-image-region: rect(0, 56px, 28px, 28px);
   }
 
+  #stop-button:not([disabled]):hover,
   #urlbar-stop-button:not([disabled]):hover {
     -moz-image-region: rect(28px, 56px, 56px, 28px);
   }
 
+  #stop-button:hover:active,
   #urlbar-stop-button:hover:active {
     -moz-image-region: rect(56px, 56px, 84px, 28px);
   }
@@ -3789,7 +3870,6 @@ html|*.pointerlockfswarning[data-identity="verifiedDomain"]::before {
 html|*.pointerlockfswarning[data-identity="unknownIdentity"]::before {
   content: url("chrome://browser/skin/fullscreen/insecure.svg");
 }
-
 html|*.pointerlockfswarning-domain-text,
 html|*.pointerlockfswarning-generic-text {
   font-size: 21px;
@@ -3803,8 +3883,7 @@ html|*.pointerlockfswarning-domain {
   margin: 0;
 }
 
-html|*#fullscreen-exit-button {
-
+html|*#fullscreen-exit-button,
 html|*.pointerlockfswarning-exit-button {
   margin: 0;
 

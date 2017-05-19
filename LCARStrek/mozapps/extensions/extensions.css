@@ -505,6 +505,25 @@ button.warning {
   -moz-box-flex: 1;
 }
 
+.legacy-warning {
+  background-color: #FFCF00;
+  color: #000000;
+  padding: 4px 5px 3px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  -moz-user-focus: ignore;
+}
+
+.legacy-warning:hover {
+  background-color: #FF9F00;
+  color: #000000;
+  text-decoration: none;
+}
+
+#detail-view .legacy-warning {
+  margin-top: 0.78rem;
+}
+
 .creator {
   font-weight: bold;
 }
