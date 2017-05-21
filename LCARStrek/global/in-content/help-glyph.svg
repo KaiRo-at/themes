@@ -13,6 +13,9 @@
 
     #help-pressed path { fill: #000000; }
     #help-pressed circle { fill: #FF9F00; stroke: #FF9F00; }
+
+    #help-inverted path { fill: #A09090; }
+    #help-inverted circle { fill: #000000; stroke: #000000; }
   </style>
 
   <defs>
@@ -25,4 +28,5 @@
   <use id="help"          xlink:href="#help-shape" />
   <use id="help-hover"    xlink:href="#help-shape" />
   <use id="help-pressed"  xlink:href="#help-shape" />
+  <use id="help-inverted"  xlink:href="#help-shape" />
 </svg>

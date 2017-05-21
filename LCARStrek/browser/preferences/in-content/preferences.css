@@ -164,7 +164,11 @@ treecol {
   .category-name {
     display: none;
   }
+  .help-button {
+    font-size: 0 !important;
+  }
 }
+
 
 /* header */
 
@@ -650,6 +654,61 @@ description > html|a {
   .fxaFirefoxLogo {
     list-style-image: url(chrome://browser/skin/fxa/logo@2x.png);
   }
+}
+
+#updateDeck > hbox > label {
+  margin-inline-end: 5px ! important;
+}
+
+.update-throbber {
+  width: 16px;
+  min-height: 16px;
+  margin-inline-end: 3px;
+  list-style-image: url("chrome://global/skin/icons/loading.png");
+}
+
+@media (min-resolution: 1.1dppx) {
+  .update-throbber {
+    list-style-image: url("chrome://global/skin/icons/loading@2x.png");
+  }
+}
+
+.help-button {
+  position: fixed;
+  left: 3px;
+  /* Needs to have enough gap from the bottom to not
+     get behind the status panel (bug 1357841). */
+  bottom: 2rem;
+  font-size: 13px;
+  line-height: 13px;
+  height: 14px;
+  background-position: 5px;
+  padding-inline-start: 25px;
+  white-space: nowrap;
+  background-color: var(--in-content-category-background);
+  width: auto;
+  padding-inline-end: 10px;
+  border: 3px solid black;
+  border-radius: 0 300px 300px 0;
+}
+
+.help-button:-moz-locale-dir(rtl) {
+  left: auto;
+  right: 0;
+  background-position: right 15px top 0;
+}
+
+.help-button:link,
+.help-button:visited {
+  color: var(--in-content-category-text);
+  text-decoration: none;
+}
+
+.help-button:hover {
+  background-image: url("chrome://global/skin/in-content/help-glyph.svg#help-inverted");
+  color: var(--in-content-category-text-selected);
+  background-color: var(--in-content-category-background-hover);
+  border-color: var(--in-content-category-background-hover);
 }
 
 /* === END shared/incontentprefs/preferences.inc.css === */
