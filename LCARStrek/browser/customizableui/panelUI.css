@@ -451,6 +451,9 @@ toolbaritem[cui-areatype="menu-panel"][sdkstylewidget="true"] > iframe {
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-status > #PanelUI-fxa-label,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-icon,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-fxa-container > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-fxa-container > #PanelUI-fxa-status > #PanelUI-fxa-label,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-fxa-container > #PanelUI-fxa-icon,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > toolbarseparator,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > #PanelUI-customize,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-inner > #PanelUI-help:not([panel-multiview-anchor="true"]) {
@@ -550,16 +553,22 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   border-bottom-left-radius: 4px;
 }
 
+#main-window[customizing] #PanelUI-fxa-container,
 #main-window[customizing] #PanelUI-footer-fxa {
   display: none;
 }
 
+#PanelUI-fxa-container:not([fxastatus="signedin"]) > toolbarseparator,
+#PanelUI-fxa-container:not([fxastatus="signedin"]) > #PanelUI-fxa-icon,
+#PanelUI-fxa-container:not([fxaprofileimage]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
 #PanelUI-footer-fxa:not([fxastatus="signedin"]) > toolbarseparator,
 #PanelUI-footer-fxa:not([fxastatus="signedin"]) > #PanelUI-fxa-icon,
 #PanelUI-footer-fxa:not([fxaprofileimage]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
   display: none;
 }
 
+#PanelUI-fxa-container[fxastatus="login-failed"] > #PanelUI-fxa-status::after,
+#PanelUI-fxa-container[fxastatus="unverified"] > #PanelUI-fxa-status::after,
 #PanelUI-footer-fxa[fxastatus="error"] > #PanelUI-fxa-status::after {
   content: url("chrome://browser/skin/warning.svg");
   width: 47px;
@@ -626,17 +635,20 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-footer-inner,
+#PanelUI-fxa-container:not([hidden]),
 #PanelUI-footer-fxa:not([hidden]) {
   display: flex;
   border-top: 1px solid var(--panel-separator-color);
 }
 
 #PanelUI-multiView[viewtype="subview"] #PanelUI-footer-inner,
+#PanelUI-multiView[viewtype="subview"] #PanelUI-fxa-container,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-footer-fxa {
   position: relative;
 }
 
 #PanelUI-footer-inner > toolbarseparator,
+#PanelUI-fxa-container > toolbarseparator,
 #PanelUI-footer-fxa > toolbarseparator {
   border: 0;
   border-left: 1px solid var(--panel-separator-color);
@@ -644,6 +656,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-footer-inner:hover > toolbarseparator,
+#PanelUI-fxa-container:hover > toolbarseparator,
 #PanelUI-footer-fxa:hover > toolbarseparator {
 /*  margin: 0;*/
 }
@@ -683,6 +696,102 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
+/* FxAccount indicator bits. */
+#appMenu-fxa-label,
+#appMenu-fxa-icon {
+  padding: 4px;
+  -moz-appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  border: 0 none;
+  -moz-box-orient: horizontal;
+  -moz-image-region: rect(0, 16px, 16px, 0);
+  list-style-image: url(chrome://browser/skin/syncFx-horizontalbar.png);
+}
+
+#appMenu-fxa-label {
+  -moz-box-flex: 1;
+  padding-inline-start: 12px;
+  margin: 0;
+}
+
+#appMenu-fxa-icon {
+  margin: 0 10px;
+}
+
+#appMenu-fxa-icon > .toolbarbutton-text {
+  display: none;
+}
+
+#appMenu-fxa-icon[syncstatus="active"] {
+  list-style-image: url(chrome://browser/skin/syncFxProgress-horizontalbar.png);
+}
+
+#appMenu-fxa-avatar {
+  pointer-events: none;
+  list-style-image: url(chrome://browser/skin/fxa/default-avatar.svg);
+}
+
+#appMenu-fxa-container {
+  -moz-box-orient: horizontal;
+}
+
+/* Handle different UI states. */
+#appMenu-fxa-container[fxastatus="signedin"] > #appMenu-fxa-status > #appMenu-fxa-label > .toolbarbutton-icon,
+#appMenu-fxa-container:not([fxastatus="signedin"]) > toolbarseparator,
+#appMenu-fxa-container:not([fxastatus="signedin"]) > #appMenu-fxa-icon,
+#appMenu-fxa-container:not([fxastatus="signedin"]) > #appMenu-fxa-status > #appMenu-fxa-avatar {
+  display: none;
+}
+
+#appMenu-fxa-container[fxastatus="signedin"] > #appMenu-fxa-status > #appMenu-fxa-label {
+  /* 12px space before the avatar, then 16px for the avatar */
+  padding-inline-start: 28px;
+  margin-inline-start: -28px;
+}
+#appMenu-fxa-container[fxastatus="signedin"] > #appMenu-fxa-status {
+  margin-inline-end: 10px;
+}
+
+#appMenu-fxa-container[fxastatus="signedin"] > #appMenu-fxa-status > #appMenu-fxa-avatar {
+  margin-inline-start: 12px;
+}
+
+#appMenu-fxa-container[fxastatus="signedin"] > toolbarseparator {
+  -moz-appearance: none;
+  height: 24px;
+  margin: 0;
+  border: 0 none;
+  width: 1px;
+  /* Use background: rather than background-color: to override background-image
+   * styles on OS X */
+  background: var(--arrowpanel-dimmed);
+}
+
+/* Error states */
+#appMenu-fxa-container[fxastatus="unverified"] > #appMenu-fxa-status > #appMenu-fxa-label,
+#appMenu-fxa-container[fxastatus="login-failed"] > #appMenu-fxa-status > #appMenu-fxa-label {
+  list-style-image: url(chrome://browser/skin/warning.svg);
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+/*
+#appMenu-fxa-container[fxastatus="login-failed"],
+#appMenu-fxa-container[fxastatus="unverified"] {
+  background-color: var(--appmenu-yellow-warning-color);
+  border-top: 1px solid var(--appmenu-yellow-warning-border-color);
+  border-bottom: 1px solid var(--appmenu-yellow-warning-border-color);
+}
+
+#appMenu-fxa-container[fxastatus="login-failed"] > #appMenu-fxa-status:hover,
+#appMenu-fxa-container[fxastatus="unverified"] > #appMenu-fxa-status:hover {
+  background-color: var(--appmenu-yellow-warning-hover-color);
+}
+
+#appMenu-fxa-container[fxastatus="login-failed"] > #appMenu-fxa-status:hover:active,
+#appMenu-fxa-container[fxastatus="unverified"] > #appMenu-fxa-status:hover:active {
+  background-color: var(--appmenu-yellow-warning-active-color);
+}
+*/
 #PanelUI-help,
 #PanelUI-quit {
   min-width: 44px;
@@ -725,6 +834,8 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   border-inline-start-style: none;
 }
 
+#PanelUI-fxa-container[fxaprofileimage="set"] > #PanelUI-fxa-status > #PanelUI-fxa-label,
+#PanelUI-fxa-container[fxaprofileimage="enabled"]:not([fxastatus="error"]) > #PanelUI-fxa-status > #PanelUI-fxa-label,
 #PanelUI-footer-fxa[fxaprofileimage="set"] > #PanelUI-fxa-status > #PanelUI-fxa-label,
 #PanelUI-footer-fxa[fxaprofileimage="enabled"]:not([fxastatus="error"]) > #PanelUI-fxa-status > #PanelUI-fxa-label {
   padding-inline-start: 0px;
@@ -743,6 +854,11 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 #PanelUI-fxa-label,
 #PanelUI-fxa-icon {
   list-style-image: url("chrome://browser/skin/syncFx-horizontalbar.png");
+}
+
+#PanelUI-fxa-label:hover,
+#PanelUI-fxa-icon:hover {
+  list-style-image: url("chrome://browser/skin/syncFx-horizontalbar-hover.png");
 }
 
 #PanelUI-remotetabs {
@@ -886,11 +1002,14 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
+#PanelUI-fxa-container[fxastatus="signedin"] > #PanelUI-fxa-status > #PanelUI-fxa-label > .toolbarbutton-icon,
+#PanelUI-fxa-container[fxastatus="error"][fxaprofileimage="set"] > #PanelUI-fxa-status > #PanelUI-fxa-label > .toolbarbutton-icon,
 #PanelUI-footer-fxa[fxastatus="signedin"] > #PanelUI-fxa-status > #PanelUI-fxa-label > .toolbarbutton-icon,
 #PanelUI-footer-fxa[fxastatus="error"][fxaprofileimage="set"] > #PanelUI-fxa-status > #PanelUI-fxa-label > .toolbarbutton-icon {
   display: none;
 }
 
+#PanelUI-fxa-container[fxastatus="error"]:not([fxaprofileimage="set"]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
 #PanelUI-footer-fxa[fxastatus="error"]:not([fxaprofileimage="set"]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
   display: none;
 }
@@ -914,7 +1033,8 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   margin-inline-end: 0;
 }
 
-#PanelUI-footer-fxa[fxaprofileimage="enabled"] > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
+#PanelUI-footer-fxa[fxaprofileimage="enabled"] > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
+#PanelUI-fxa-container[fxaprofileimage="enabled"] > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
   list-style-image: url(chrome://browser/skin/fxa/default-avatar.svg);
 }
 
@@ -957,15 +1077,18 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 #PanelUI-fxa-icon:not([disabled]):hover:active {
 }
 
+#PanelUI-fxa-container[fxastatus="error"],
 #PanelUI-footer-fxa[fxastatus="error"] {
   background-color: #FF0000;
   color: #000000;
 }
 
+#PanelUI-fxa-container[fxastatus="error"] > #PanelUI-fxa-status:hover,
 #PanelUI-footer-fxa[fxastatus="error"] > #PanelUI-fxa-status:hover {
   background-color: #FFCF00;
 }
 
+#PanelUI-fxa-container[fxastatus="error"] > #PanelUI-fxa-status:hover:active,
 #PanelUI-footer-fxa[fxastatus="error"] > #PanelUI-fxa-status:hover:active {
   background-color: #FF9F00;
 }

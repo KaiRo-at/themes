@@ -106,9 +106,9 @@ menubar {
 /* Page action button */
 #urlbar-page-action-button {
   list-style-image: url("chrome://browser/skin/page-action.svg");
-  -moz-context-properties: fill;
 /*  margin: 0;
   padding: 0 6px;*/
+  -moz-context-properties: fill;
   fill: currentColor;
 }
 
@@ -124,6 +124,30 @@ menubar {
 
 #page-action-email-link-button {
   list-style-image: url("chrome://browser/skin/email-link.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+#page-action-send-to-device-button {
+  list-style-image: url("chrome://browser/skin/device-mobile.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+.page-action-sendToDevice-device[clientType=mobile] {
+  list-style-image: url("chrome://browser/skin/device-mobile.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+.page-action-sendToDevice-device[clientType=desktop] {
+  list-style-image: url("chrome://browser/skin/device-desktop.svg");
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+#page-action-sendToDevice-fxa-button {
+  list-style-image: url("chrome://browser/skin/sync.svg");
   -moz-context-properties: fill;
   fill: currentColor;
 }
@@ -1003,6 +1027,10 @@ menuitem.bookmark-item {
   -moz-image-region: rect(18px, 738px, 36px, 720px);
 }
 
+#pocket-button {
+  fill: currentColor !important;
+}
+
 /* === END toolbarbuttons.inc.css === */
 
 /* === BEGIN menupanel.inc.css === */
@@ -1537,6 +1565,12 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 #back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
   transform: scaleX(-1);
 }
+
+#forward-button > .toolbarbutton-menu-dropmarker,
+#back-button > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
 /*
 .unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr),
 .unified-nav-forward[_moz-menuactive]:-moz-locale-dir(rtl) {
@@ -3692,7 +3726,7 @@ html|*#webRTC-previewVideo {
 .addon-toolbar-icon {
   width: 14px;
   height: 14px;
-  list-style-image: url("chrome://browser/skin/Toolbar.png");
+  list-style-image: url("chrome://browser/skin/ToolbarFx.png");
   -moz-image-region: rect(0, 486px, 18px, 468px);
 }
 
