@@ -5,22 +5,22 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>LCARStrek@kairo.at</em:id>
-    <em:version>2.51</em:version>
+    <em:version>2.52</em:version>
 
     <!-- SeaMonkey -->
     <em:targetApplication>
       <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
-        <em:minVersion>2.51</em:minVersion>
-        <em:maxVersion>2.52a1</em:maxVersion>
+        <em:minVersion>2.52</em:minVersion>
+        <em:maxVersion>2.53a1</em:maxVersion>
       </Description>
     </em:targetApplication>
     <!-- Firefox -->
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-        <em:minVersion>54.0</em:minVersion>
-        <em:maxVersion>55.0a1</em:maxVersion>
+        <em:minVersion>55.0</em:minVersion>
+        <em:maxVersion>56.0a1</em:maxVersion>
       </Description>
     </em:targetApplication>
 
