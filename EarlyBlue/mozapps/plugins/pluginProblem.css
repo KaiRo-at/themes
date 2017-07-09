@@ -32,11 +32,8 @@
   background-color: #CCCCCC;
 }
 
-:-moz-handler-clicktoplay .hoverBox:active .msgTapToPlay,
 :-moz-handler-clicktoplay .hoverBox:active .msgClickToPlay,
-:-moz-handler-vulnerable-updatable .hoverBox:active .msgTapToPlay,
 :-moz-handler-vulnerable-updatable .hoverBox:active .msgClickToPlay,
-:-moz-handler-vulnerable-no-update .hoverBox:active .msgTapToPlay,
 :-moz-handler-vulnerable-no-update .hoverBox:active .msgClickToPlay {
   color: red;
 }
@@ -84,23 +81,14 @@ html|a {
   margin-left: 5px;
 }
 
-.msgTapToPlay,
 .msgClickToPlay {
   text-decoration: underline;
 }
 
-@media not all and (-moz-touch-enabled) {
-  :-moz-handler-clicktoplay .msgTapToPlay,
-  a .msgTapToPlay {
-    display: none;
-  }
-}
-
-@media (-moz-touch-enabled) {
-  :-moz-handler-clicktoplay .msgClickToPlay,
-  a .msgTapToPlay {
-    display: none;
-  }
+/* on desktop, don't ever show the tap-to-play UI: that is for mobile only */
+:-moz-handler-clicktoplay .msgTapToPlay,
+a .msgTapToPlay  {
+  display: none;
 }
 
 .submitStatus div {

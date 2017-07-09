@@ -258,7 +258,7 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-icon {
 }
 
 #default-notification-icon {
-  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  list-style-image: url("chrome://global/skin/icons/info.svg");
   width: 16px;
   height: 16px;
 }

@@ -439,7 +439,7 @@ richlistitem[type="download"][verdict="PotentiallyUnwanted"] .blockedIcon {
 }
 
 richlistitem[type="download"][verdict="Uncommon"] .blockedIcon {
-  list-style-image: url("chrome://global/skin/icons/information-32.png");
+  list-style-image: url("chrome://global/skin/icons/info.svg");
 }
 
 @media (-moz-windows-default-theme) {

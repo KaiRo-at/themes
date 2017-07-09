@@ -222,6 +222,9 @@ button.warning {
 #category-experiment > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-experiments.png");
 }
+#category-legacy > .category-icon {
+  list-style-image: url("chrome://mozapps/skin/extensions/category-legacy.svg");
+}
 #category-availableUpdates > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-available.png");
 }
@@ -265,14 +268,16 @@ button.warning {
 }
 
 #header-utils-btn {
-  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities");
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg");
+  -moz-context-properties: fill;
+  fill: #FF9F00;
   margin-inline-end: 16px;
 }
 
 #header-utils-btn:hover,
 #header-utils-btn:hover:active,
 #header-utils-btn[open="true"] {
-  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities-hover");
+  fill: #000000;
 }
 
 #header-utils-btn > .button-box > .button-menu-dropmarker {
@@ -1111,6 +1116,11 @@ button.button-link {
 button.button-link:not([disabled="true"]):active:hover {
 }
 
+.addon-control.replacement {
+  background-color: #008484;
+  color: #000000;
+}
+
 /*** telemetry experiments ***/
 
 #detail-experiment-container {
@@ -1150,7 +1160,8 @@ button.button-link:not([disabled="true"]):active:hover {
   margin-left: 48px;
 }
 
-#disabled-unsigned-addons-heading {
+#disabled-unsigned-addons-heading,
+#legacy-extensions-heading {
   font-size: 1.4em;
   font-weight: bold;
   margin-bottom: .5em;
@@ -1158,4 +1169,9 @@ button.button-link:not([disabled="true"]):active:hover {
 
 #signing-dev-info {
   font-style: italic;
+}
+
+#detail-findUpdates-btn[hidden] {
+  display: -moz-box;
+  visibility: hidden;
 }

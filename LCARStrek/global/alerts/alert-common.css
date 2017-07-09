@@ -129,7 +129,9 @@
 #alertSettings {
   border-radius: 20px;
   min-width: 0;
-  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities-grayscale");
+  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg");
+  -moz-context-properties: fill;
+  fill: #A09090;
   margin-inline-end: 0;
   margin-bottom: 0;
 }
@@ -140,7 +142,7 @@
 
 #alertSettings:hover,
 #alertSettings[open] {
-  list-style-image: url("chrome://mozapps/skin/extensions/utilities.svg#utilities-inverted");
+  fill: #000000;
 }
 
 #alertSettings:hover {

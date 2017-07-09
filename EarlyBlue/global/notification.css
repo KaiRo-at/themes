@@ -33,7 +33,7 @@ notification[type="critical"] {
 /* Default icons for notifications */
 
 .messageImage[type="info"] {
-  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  list-style-image: url("chrome://global/skin/icons/info.svg");
 }
 
 .messageImage[type="warning"] {
@@ -181,7 +181,7 @@ notification[type="critical"] {
   width: 16px;
   height: 16px;
   list-style-image: url(chrome://global/skin/icons/menubutton-dropmarker.svg);
-  filter: url(chrome://global/skin/filters.svg#fill);
+  -moz-context-properties: fill;
   fill: currentColor;
 }
 

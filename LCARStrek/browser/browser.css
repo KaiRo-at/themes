@@ -557,7 +557,7 @@ menuitem.bookmark-item {
 /* ::::: bookmark items ::::: */
 
 .bookmark-item  {
-  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
   -moz-image-region: auto;
 }
 
@@ -976,6 +976,10 @@ menuitem.bookmark-item {
 
 #nav-bar-overflow-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
   transform: scaleX(-1);
+}
+
+#nav-bar-overflow-button > .toolbarbutton-animatable-box > .toolbarbutton-animatable-image {
+  display: none;
 }
 
 #tabview-button {
@@ -2885,7 +2889,7 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 }
 
 .tab-icon-image {
-  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
 }
 
 .tab-icon-image[sharing]:not([selected]),
@@ -3184,10 +3188,6 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   .tab-background-end[selected=true]:-moz-locale-dir(ltr)::after,
   .tab-background-start[selected=true]:-moz-locale-dir(rtl)::after {
   }
-
-  .tab-icon-image {
-    list-style-image: url("chrome://mozapps/skin/places/defaultFavicon@2x.png");
-  }
 }
 
 /* All tabs menupopup */
@@ -3314,6 +3314,7 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 
 #TabsToolbar > #new-tab-button {
   width: 26px;
+  -moz-box-orient: horizontal;
 }
 
 #alltabs-button {
@@ -3340,7 +3341,7 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 
 /* All tabs menupopup */
 .alltabs-item > .menu-iconic-left > .menu-iconic-icon {
-  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
   -moz-image-region: auto;
 }
 
@@ -3451,7 +3452,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 @media (min-resolution: 1.1dppx) {
   .notification-anchor-icon {
-    list-style-image: url(chrome://global/skin/icons/information-32.png);
+    list-style-image: url(chrome://global/skin/icons/info.svg);
   }
 }
 

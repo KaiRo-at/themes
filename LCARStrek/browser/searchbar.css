@@ -26,7 +26,7 @@
 .searchbar-engine-image {
   height: 16px;
   width: 16px;
-  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.png");
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
   margin-inline-start: -1px;
 }
 

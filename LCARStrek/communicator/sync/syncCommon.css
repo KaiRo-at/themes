@@ -18,7 +18,7 @@
 }
 
 .statusIcon[status="success"] {
-  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  list-style-image: url("chrome://global/skin/icons/info.svg");
 }
 
 /* .data is only used by syncGenericChange.xul, but it seems unnecessary to have

@@ -45,7 +45,7 @@ audio > xul|videocontrols {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(160,144,144);
+  background-color: rgb(160,144,144, .85);
 }
 
 .controlsOverlay {
@@ -110,22 +110,26 @@ audio > xul|videocontrols {
 }
 
 .playButton {
-  background-image: url(chrome://global/skin/media/pauseButton.svg#pause);
+  background-image: url(chrome://global/skin/media/pauseButton.svg);
+  -moz-context-properties: fill;
+  fill: #000000;
 }
 .playButton:hover {
-  background-image: url(chrome://global/skin/media/pauseButton.svg#pause-hover);
+  fill: #000000;
 }
 .playButton:hover:active {
-  background-image: url(chrome://global/skin/media/pauseButton.svg#pause-active);
+  fill: #000000;
 }
 .playButton[paused] {
-  background-image: url(chrome://global/skin/media/playButton.svg#play);
+  background-image: url(chrome://global/skin/media/playButton.svg);
+  -moz-context-properties: fill;
+  fill: #000000;
 }
 .playButton[paused]:hover {
-  background-image: url(chrome://global/skin/media/playButton.svg#play-hover);
+  fill: #000000;
 }
 .playButton[paused]:hover:active {
-  background-image: url(chrome://global/skin/media/playButton.svg#play-active);
+  fill: #000000;
 }
 
 .muteButton {
@@ -399,11 +403,13 @@ audio > xul|videocontrols {
   min-width: 48px;
   min-height: 48px;
   border-radius: 50%;
-  background-image: url(chrome://global/skin/media/playButton.svg#play);
+  background-image: url(chrome://global/skin/media/playButton.svg);
   background-repeat: no-repeat;
   background-position: 54% 50%;
   background-size: 40% 40%;
   background-color: #000000;
+  -moz-context-properties: fill;
+  fill: #FFCF00;
   opacity: 0.8;
   position: relative;
   top: 20px;
