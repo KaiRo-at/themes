@@ -224,7 +224,8 @@ menubar {
   display: none;
 }
 
-#navigator-toolbox {
+#navigator-toolbox,
+#navigator-toolbox > toolbar {
 }
 
 #navigator-toolbox::after {
@@ -232,9 +233,6 @@ menubar {
   display: -moz-box;
   -moz-box-ordinal-group: 101; /* tabs toolbar is 100 */
   /*border-bottom: 1px solid ThreeDShadow;*/
-}
-
-#navigator-toolbox > toolbar {
 }
 
 #navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar):not(:-moz-lwtheme) {
@@ -1633,20 +1631,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 
 #menu_tabview[groups="3"] {
   -moz-image-region: rect(1px, 71px, 17px, 55px);
-}
-
-/* undo close tab menu item */
-#alltabs_undoCloseTab {
-  list-style-image: url(chrome://browser/skin/undoCloseTab.png);
-}
-
-@media (min-resolution: 1.1dppx) {
-  #alltabs_undoCloseTab {
-    list-style-image: url(chrome://browser/skin/undoCloseTab@2x.png);
-  }
-  #alltabs_undoCloseTab > .toolbarbutton-icon {
-    width: 16px;
-  }
 }
 
 /* zoom control text (reset) button special case: */
@@ -3693,6 +3677,15 @@ html|*#webRTC-previewVideo {
 
 .translation-icon.in-use {
   -moz-image-region: rect(0px, 32px, 16px, 16px);
+}
+
+/* UPDATE */
+
+.popup-notification-icon[popupid="update-available"],
+.popup-notification-icon[popupid="update-manual"],
+.popup-notification-icon[popupid="update-restart"] {
+  background: #74BF43 url(chrome://browser/skin/notification-icons.svg#update) no-repeat center;
+  border-radius: 50%;
 }
 
 /* === END notification-icons.inc.css === */

@@ -89,56 +89,75 @@ treecol {
 }
 
 #category-general > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#general");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#general");
 }
 
 #category-general:hover > .category-icon,
 #category-general[selected] > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#general-active");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#general-active");
+}
+
+#category-search > .category-icon {
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#search");
+}
+
+#category-search:hover > .category-icon,
+#category-search[selected] > .category-icon {
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#search-active");
+}
+
+#category-content > .category-icon {
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#content");
+}
+
+#category-content:hover > .category-icon,
+#category-content[selected] > .category-icon {
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#content-active");
 }
 
 #category-application > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#content");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#applications");
 }
 
 #category-application:hover > .category-icon,
 #category-application[selected] > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#content-active");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#applications-active");
 }
 
 #category-privacy > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#security");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#privacy");
 }
 
 #category-privacy:hover > .category-icon,
 #category-privacy[selected] > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#security-active");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#privacy-active");
+}
+
+#category-security > .category-icon {
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#security");
+}
+
+#category-security:hover > .category-icon,
+#category-security[selected] > .category-icon {
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#security-active");
 }
 
 #category-sync > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#sync");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#sync");
 }
 
 #category-sync:hover > .category-icon,
 #category-sync[selected] > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#sync-active");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#sync-active");
 }
 
 #category-advanced > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#advanced");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#advanced");
 }
 
 #category-advanced:hover > .category-icon,
 #category-advanced[selected] > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#advanced-active");
-}
-
-#category-search-results > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#searchResults");
-}
-
-#category-search-results > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content/icons.svg#searchResults-active");
+  list-style-image: url("chrome://browser/skin/preferences/in-content-old/icons.svg#advanced-active");
 }
 
 @media (max-width: 800px) {
@@ -230,6 +249,7 @@ treecol {
   direction: rtl;
 }
 
+/* Content pane */
 #defaultFontSizeLabel {
   /* !important needed to override common !important rule */
   margin-inline-start: 4px !important;
