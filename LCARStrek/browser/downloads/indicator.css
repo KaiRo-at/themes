@@ -5,7 +5,9 @@
 /* === BEGIN indicator.inc.css === */
 
 #downloads-indicator-progress-icon {
-  background: var(--downloads-indicator-image-attention) bottom no-repeat;
+  background: var(--downloads-indicator-image) bottom no-repeat;
+  -moz-context-properties: fill;
+  fill: var(--toolbarbutton-icon-fill-attention);
   background-size: 18px;
   margin-top: 18px;
   /* From javascript side we use animation delay from 0s to -100s to show
@@ -20,7 +22,6 @@
 }
 /*
 toolbar[brighttext] #downloads-indicator-progress-icon {
-  background-image: var(--downloads-indicator-image-attention-inverted);
   animation-name: indicatorArrowProgressDark;
 }
 */
@@ -87,19 +88,14 @@ toolbar[brighttext] #downloads-indicator-progress-icon {
 
 /*** Main indicator icon ***/
 
-/*@media not all and (min-resolution: 1.1dppx) {*/
-  #downloads-button {
-    --downloads-indicator-image: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"), 0, 198, 18, 180);
-    --downloads-indicator-image-hover: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"), 18, 198, 36, 180);
-    --downloads-indicator-image-attention: -moz-image-rect(url("chrome://browser/skin/ToolbarFx.png"), 36, 198, 54, 180);
-/*    --downloads-indicator-image-inverted: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 0, 198, 18, 180);
-    --downloads-indicator-image-attention-inverted: -moz-image-rect(url("chrome://browser/skin/Toolbar-inverted.png"), 18, 198, 36, 180);*/
-  }
-/*}*/
-
+#downloads-button {
+  --downloads-indicator-image: url("chrome://browser/skin/download.svg");
+}
 
 #downloads-indicator-icon {
   background: var(--downloads-indicator-image) center no-repeat;
+  -moz-context-properties: fill;
+  fill: var(--toolbarbutton-icon-fill);
   width: 18px;
   height: 18px;
   background-size: 18px;
@@ -108,12 +104,12 @@ toolbar[brighttext] #downloads-indicator-progress-icon {
 #downloads-button:hover > #downloads-indicator-anchor > #downloads-indicator-icon,
 #downloads-button[open="true"] > #downloads-indicator-anchor > #downloads-indicator-icon,
 #downloads-button[attention]:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background-image: var(--downloads-indicator-image-hover);
+  fill: var(--toolbarbutton-icon-fill-inverted);
   color: #000000;
 }
 
 toolbar[brighttext] #downloads-button:not([attention="success"]) > #downloads-indicator-anchor > #downloads-indicator-icon {
-/*  background-image: var(--downloads-indicator-image-inverted); */
+/*  fill: var(--toolbarbutton-icon-fill-inverted);*/
 }
 
 #downloads-button[attention="warning"] > .toolbarbutton-badge-stack > .toolbarbutton-badge,
@@ -147,31 +143,12 @@ toolbar[brighttext] #downloads-button:not([attention="success"]) > #downloads-in
 }
 
 #downloads-button[attention="success"] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background-image: var(--downloads-indicator-image-attention);
+  fill: var(--toolbarbutton-icon-fill-attention);
 }
 
 #downloads-button[cui-areatype="menu-panel"][attention="success"] {
   list-style-image: url("chrome://browser/skin/downloads/download-glow-menuPanel.png");
   -moz-image-region: auto;
-}
-
-/* In the next few rules, we use :not([counter]) as a shortcut that is
-   equivalent to -moz-any([progress], [paused]). */
-
-#downloads-button:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background: var(--downloads-indicator-image) center no-repeat;
-  background-size: 12px;
-}
-
-#downloads-button:not([counter])[attention="success"] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background-image: var(--downloads-indicator-image-attention);
-}
-
-#downloads-button:not([counter]):hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
-#downloads-button[open="true"]:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
-#downloads-button:not([counter])[attention="success"]:hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  background-image: var(--downloads-indicator-image-hover);
-  background-size: 12px;
 }
 
 /*** Download notifications ***/
@@ -217,62 +194,6 @@ toolbar[brighttext] #downloads-button:not([attention="success"]) > #downloads-in
   background-image: url("chrome://browser/skin/downloads/download-notification-finish.png");
   animation-name: downloadsIndicatorNotificationFinish;
   animation-duration: 1s;
-}
-
-/*** Progress bar and text ***/
-
-#downloads-indicator-counter {
-  height: 9px;
-  margin: -3px 0 0;
-  color: #FFCF00;
-  font-size: 9px;
-  line-height: 9px;
-  text-align: center;
-}
-
-toolbar[brighttext] #downloads-indicator-counter {
-/*  color: white;
-  text-shadow: 0 0 1px rgba(0,0,0,.7),
-               0 1px 1.5px rgba(0,0,0,.5);*/
-}
-
-#downloads-button[counter]:hover > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter,
-#downloads-button[counter][open="true"] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
-  color: #000000;
-}
-
-#downloads-indicator-progress {
-  width: 16px;
-  height: 5px;
-  min-width: 0;
-  min-height: 0;
-  margin-top: 1px;
-  margin-bottom: 2px;
-  border-radius: 2px;
-  background-color: #795900;
-}
-
-#downloads-indicator-progress > .progress-bar {
-  -moz-appearance: none;
-  min-width: 0;
-  min-height: 0;
-  background-color: #008484;
-  border-radius: 2px 0 0 2px;
-}
-
-#downloads-indicator-progress > .progress-remainder {
-  min-width: 0;
-  min-height: 0;
-  background-color: #A09090;
-  border-radius: 0 2px 2px 0;
-}
-
-#downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-bar {
-  background-color: #8050B0;
-}
-
-#downloads-button[paused] > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-progress > .progress-remainder {
-  background-color: #404048;
 }
 
 toolbar[mode="full"] > #downloads-button > .toolbarbutton-text {

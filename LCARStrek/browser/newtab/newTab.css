@@ -196,10 +196,7 @@ body.compact .newtab-thumbnail.placeholder {
   opacity: 0;
 }
 
-.newtab-site[type=affiliate] .newtab-thumbnail,
-.newtab-site[type=enhanced] .newtab-thumbnail,
-.newtab-site[type=organic] .newtab-thumbnail,
-.newtab-site[type=sponsored] .newtab-thumbnail {
+.newtab-site[type=affiliate] .newtab-thumbnail {
   background-position: center center;
 }
 
@@ -207,10 +204,7 @@ body.compact .newtab-site[type=affiliate] .newtab-thumbnail {
   background-position: center 30%;
 }
 
-.newtab-site[type=affiliate] .newtab-thumbnail,
-body:not(.compact) .newtab-site[type=enhanced] .newtab-thumbnail,
-body:not(.compact) .newtab-site[type=organic] .newtab-thumbnail,
-body:not(.compact) .newtab-site[type=sponsored] .newtab-thumbnail {
+.newtab-site[type=affiliate] .newtab-thumbnail {
   background-size: auto;
 }
 
@@ -232,28 +226,12 @@ body.compact .newtab-title {
   background-clip: padding-box;
 }
 
-.newtab-title,
-.newtab-suggested {
+.newtab-title {
   color: #000000;
 }
 
-body.compact .newtab-title,
-body.compact .newtab-suggested {
+body.compact .newtab-title {
   color: #000000;
-}
-
-.newtab-suggested {
-  background-color: #9C9CFF;
-}
-
-.newtab-suggested:hover {
-  background-color: #FFCF00;
-  border: 1px solid #9C9CFF;
-}
-
-.newtab-suggested[active] {
-  background-color: #FF9F00;
-  border: 0;
 }
 
 body:not(.compact) .newtab-site:hover .newtab-title {

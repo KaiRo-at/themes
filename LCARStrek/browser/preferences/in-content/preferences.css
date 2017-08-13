@@ -68,6 +68,10 @@ treecol {
   white-space: nowrap;
 }
 
+.accessory-button {
+  min-width: 145px;
+}
+
 /* Category List */
 
 #categories {
@@ -163,11 +167,6 @@ treecol {
   display: none;
 }
 
-#header-advanced {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
 .indent {
   margin-top: 7px;
   margin-bottom: 7px;
@@ -237,10 +236,6 @@ treecol {
 
 /* Applications Pane Styles */
 
-#applicationsContent {
-  padding: 15px 0;
-}
-
 #filter {
   margin-inline-start: 0;
 }
@@ -286,6 +281,21 @@ treecol {
 .doNotTrackLearnMore > label {
   font-size: 1em !important;
   margin-left: 0;
+}
+
+/* This learn-more link is inserted at the end of a
+   xul:description element so it should behave like normal text. */
+#trackingProtectionLearnMore {
+  white-space: normal;
+  margin-inline-start: 0;
+}
+
+#trackingProtectionAdvancedSettings {
+  margin-inline-start: 15px;
+}
+
+#crashReporterGroup {
+  margin-top: 0;
 }
 
 /* Collapse the non-active vboxes in decks to use only the height the
@@ -515,6 +525,9 @@ description > html|a {
 
 .fxaSyncIllustration {
   margin-top: 35px;
+  width: 231px;
+  -moz-context-properties: fill;
+  fill: #9C9CFF;
 }
 
 #syncOptions caption {
@@ -564,10 +577,6 @@ description > html|a {
 
 .fxaAccountBoxButtons > button:first-child {
   margin-inline-end: 14px !important;
-}
-
-.fxaSyncIllustration {
-  width: 231px;
 }
 
 #fxaLoginStatus[hasName] #fxaEmailAddress1 {
@@ -689,6 +698,32 @@ description > html|a {
   color: var(--in-content-category-text-selected);
   background-color: var(--in-content-category-background-hover);
   border-color: var(--in-content-category-background-hover);
+}
+.help-button {
+  position: fixed;
+  left: 0;
+
+  /* Needs to have enough gap from the bottom to not
+     get behind the status panel (bug 1357841). */
+  bottom: 2rem;
+  font-size: 13px;
+  line-height: 13px;
+  height: 14px;
+  background-position: 15px;
+  padding-inline-start: 35px;
+  white-space: nowrap;
+}
+
+.help-button:-moz-locale-dir(rtl) {
+  left: auto;
+  right: 0;
+  background-position: right 15px top 0;
+}
+
+.help-button:link,
+.help-button:visited {
+  color: var(--in-content-category-text);
+  text-decoration: none;
 }
 
 /* === END shared/incontentprefs/preferences.inc.css === */

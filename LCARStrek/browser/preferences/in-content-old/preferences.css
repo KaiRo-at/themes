@@ -535,6 +535,9 @@ description > html|a {
 
 .fxaSyncIllustration {
   margin-top: 35px;
+  width: 231px;
+  -moz-context-properties: fill;
+  fill: #9C9CFF;
 }
 
 #syncOptions caption {
@@ -584,10 +587,6 @@ description > html|a {
 
 .fxaAccountBoxButtons > button:first-child {
   margin-inline-end: 14px !important;
-}
-
-.fxaSyncIllustration {
-  width: 231px;
 }
 
 #fxaLoginStatus[hasName] #fxaEmailAddress1 {
