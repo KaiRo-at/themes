@@ -172,11 +172,15 @@
 #identity-popup-securityView-header > description,
 #identity-popup-securityView-body > description,
 #identity-popup-permissions-content > description,
-#tracking-protection-content > label,
+#tracking-protection-content > description,
 .identity-popup-text {
-  white-space: pre-wrap;
   font-size: 110%;
   margin: 0;
+}
+
+/* This element needs the pre-wrap because we add newlines to it in the code. */
+#identity-popup-content-supplemental {
+  white-space: pre-wrap;
 }
 
 .identity-popup-headline {
@@ -360,6 +364,7 @@ description#identity-popup-content-verifier,
 
 #identity-popup-permissions-content {
   background-image: url(chrome://browser/skin/controlcenter/permissions.svg);
+  padding-bottom: 1.5em;
 }
 
 #identity-popup-permissions-headline {
@@ -389,6 +394,8 @@ description#identity-popup-content-verifier,
 }
 
 .identity-popup-permission-icon.in-use {
+  -moz-context-properties: fill;
+  fill: #FF0000;
   animation: 1.5s ease in-use-blink infinite;
 }
 
@@ -433,8 +440,8 @@ description#identity-popup-content-verifier,
   margin: 0;
   width: 16px;
   height: 16px;
-  list-style-image: url(chrome://browser/skin/panel-icons.svg#cancel);
-  filter: url(chrome://global/skin/filters.svg#fill);
+  list-style-image: url(chrome://browser/skin/panel-icon-cancel.svg);
+  -moz-context-properties: fill;
   fill: #A09090;
 }
 

@@ -188,13 +188,19 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
   display: none;
 }
 
-.panel-viewstack:not([viewtype="main"]) > .panel-mainview > #PanelUI-mainView {
+panelview {
+  -moz-box-orient: vertical;
   -moz-box-flex: 1;
 }
 
 .panel-subview-body {
   overflow-y: auto;
   overflow-x: hidden;
+  -moz-box-flex: 1;
+}
+
+.panel-view-body-unscrollable {
+  overflow: hidden;
   -moz-box-flex: 1;
 }
 
@@ -216,6 +222,8 @@ panelmultiview[nosubviews=true] > .panel-viewcontainer > .panel-viewstack > .pan
   color: #000000;
   font-variant: small-caps;
   border-radius: 4px;
+  /* Workaround for min-height not being accounted for in vertical layout. */
+  height: 41px;
 }
 
 .panel-subview-footer {
@@ -461,9 +469,6 @@ toolbaritem[cui-areatype="menu-panel"][sdkstylewidget="true"] > iframe {
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-contents-scroller > #PanelUI-contents > .panel-wide-item,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-contents-scroller > #PanelUI-contents > .toolbarbutton-1:not([panel-multiview-anchor="true"]),
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > .panel-banner-item,
-#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
-#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-status > #PanelUI-fxa-label,
-#PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-footer-fxa > #PanelUI-fxa-icon,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-fxa-container > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-fxa-container > #PanelUI-fxa-status > #PanelUI-fxa-label,
 #PanelUI-multiView[viewtype="subview"] #PanelUI-mainView > #PanelUI-footer > #PanelUI-fxa-container > #PanelUI-fxa-icon,
@@ -566,15 +571,12 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   border-bottom-left-radius: 4px;
 }
 
-#main-window[customizing] #PanelUI-fxa-container,
-#main-window[customizing] #PanelUI-footer-fxa {
+#main-window[customizing] #PanelUI-fxa-container {
   display: none;
 }
 
 #PanelUI-fxa-container:not([fxastatus="signedin"]) > toolbarseparator,
-#PanelUI-fxa-container:not([fxastatus="signedin"]) > #PanelUI-fxa-icon,
-#PanelUI-footer-fxa:not([fxastatus="signedin"]) > toolbarseparator,
-#PanelUI-footer-fxa:not([fxastatus="signedin"]) > #PanelUI-fxa-icon {
+#PanelUI-fxa-container:not([fxastatus="signedin"]) > #PanelUI-fxa-icon {
   display: none;
 }
 
@@ -633,29 +635,25 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-footer-inner,
-#PanelUI-fxa-container:not([hidden]),
-#PanelUI-footer-fxa:not([hidden]) {
+#PanelUI-fxa-container:not([hidden]) {
   display: flex;
   border-top: 1px solid var(--panel-separator-color);
 }
 
 #PanelUI-multiView[viewtype="subview"] #PanelUI-footer-inner,
-#PanelUI-multiView[viewtype="subview"] #PanelUI-fxa-container,
-#PanelUI-multiView[viewtype="subview"] #PanelUI-footer-fxa {
+#PanelUI-multiView[viewtype="subview"] #PanelUI-fxa-container {
   position: relative;
 }
 
 #PanelUI-footer-inner > toolbarseparator,
-#PanelUI-fxa-container > toolbarseparator,
-#PanelUI-footer-fxa > toolbarseparator {
+#PanelUI-fxa-container > toolbarseparator {
   border: 0;
   border-left: 1px solid var(--panel-separator-color);
   margin: 0;
 }
 
 #PanelUI-footer-inner:hover > toolbarseparator,
-#PanelUI-fxa-container:hover > toolbarseparator,
-#PanelUI-footer-fxa:hover > toolbarseparator {
+#PanelUI-fxa-container:hover > toolbarseparator {
 /*  margin: 0;*/
 }
 
@@ -829,8 +827,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   border-inline-start-style: none;
 }
 
-#PanelUI-fxa-container[fxastatus="signedin"] > #PanelUI-fxa-status > #PanelUI-fxa-label,
-#PanelUI-footer-fxa[fxastatus="signedin"] > #PanelUI-fxa-status > #PanelUI-fxa-label {
+#PanelUI-fxa-container[fxastatus="signedin"] > #PanelUI-fxa-status > #PanelUI-fxa-label {
   padding-inline-start: 0px;
 }
 
@@ -1000,9 +997,7 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-fxa-container[fxastatus="signedin"] > #PanelUI-fxa-status > #PanelUI-fxa-label > .toolbarbutton-icon,
-#PanelUI-fxa-container:not([fxastatus="signedin"]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
-#PanelUI-footer-fxa[fxastatus="signedin"] > #PanelUI-fxa-status > #PanelUI-fxa-label > .toolbarbutton-icon,
-#PanelUI-footer-fxa:not([fxastatus="signedin"]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
+#PanelUI-fxa-container:not([fxastatus="signedin"]) > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
   display: none;
 }
 
@@ -1020,7 +1015,6 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
   margin-inline-end: 0;
 }
 
-#PanelUI-footer-fxa > #PanelUI-fxa-status > #PanelUI-fxa-avatar,
 #PanelUI-fxa-container > #PanelUI-fxa-status > #PanelUI-fxa-avatar {
   list-style-image: url(chrome://browser/skin/fxa/default-avatar.svg);
 }
@@ -1061,24 +1055,18 @@ toolbarpaletteitem[place="palette"] > toolbaritem > toolbarbutton {
 }
 
 #PanelUI-fxa-container[fxastatus="login-failed"],
-#PanelUI-fxa-container[fxastatus="unverified"],
-#PanelUI-footer-fxa[fxastatus="login-failed"],
-#PanelUI-footer-fxa[fxastatus="unverified"] {
+#PanelUI-fxa-container[fxastatus="unverified"] {
   background-color: #FF0000;
   color: #000000;
 }
 
 #PanelUI-fxa-container[fxastatus="login-failed"] > #PanelUI-fxa-status:hover,
-#PanelUI-fxa-container[fxastatus="unverified"] > #PanelUI-fxa-status:hover,
-#PanelUI-footer-fxa[fxastatus="login-failed"] > #PanelUI-fxa-status:hover,
-#PanelUI-footer-fxa[fxastatus="unverified"] > #PanelUI-fxa-status:hover {
+#PanelUI-fxa-container[fxastatus="unverified"] > #PanelUI-fxa-status:hover {
   background-color: #FFCF00;
 }
 
 #PanelUI-fxa-container[fxastatus="login-failed"] > #PanelUI-fxa-status:hover:active,
-#PanelUI-fxa-container[fxastatus="unverified"] > #PanelUI-fxa-status:hover:active,
-#PanelUI-footer-fxa[fxastatus="login-failed"] > #PanelUI-fxa-status:hover:active,
-#PanelUI-footer-fxa[fxastatus="unverified"] > #PanelUI-fxa-status:hover:active {
+#PanelUI-fxa-container[fxastatus="unverified"] > #PanelUI-fxa-status:hover:active {
   background-color: #FF9F00;
 }
 

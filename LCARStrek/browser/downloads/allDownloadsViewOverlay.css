@@ -90,7 +90,7 @@ richlistitem.download > toolbarseparator {
   width: 16px;
   height: 16px;
   margin: 0;
-  filter: url("chrome://global/skin/filters.svg#fill");
+  -moz-context-properties: fill;
   fill: currentColor;
 }
 
@@ -120,15 +120,15 @@ richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover:ac
 /*** Button icons ***/
 
 .downloadIconCancel > .button-box > .button-icon {
-  list-style-image: url("chrome://browser/skin/panel-icons.svg#cancel");
+  list-style-image: url("chrome://browser/skin/panel-icon-cancel.svg");
 }
 
 .downloadIconShow > .button-box > .button-icon {
-  list-style-image: url("chrome://browser/skin/panel-icons.svg#folder");
+  list-style-image: url("chrome://browser/skin/panel-icon-folder.svg");
 }
 
 .downloadIconRetry > .button-box > .button-icon {
-  list-style-image: url("chrome://browser/skin/panel-icons.svg#retry");
+  list-style-image: url("chrome://browser/skin/panel-icon-retry.svg");
 }
 
 /*** Progressmeter ***/

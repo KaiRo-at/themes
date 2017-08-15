@@ -106,9 +106,9 @@ menubar {
 /* Page action button */
 #urlbar-page-action-button {
   list-style-image: url("chrome://browser/skin/page-action.svg");
+  -moz-context-properties: fill;
 /*  margin: 0;
   padding: 0 6px;*/
-  -moz-context-properties: fill;
   fill: currentColor;
 }
 
@@ -621,8 +621,8 @@ menuitem.bookmark-item {
 #main-window:not([customizing]) .toolbarbutton-1[disabled=true] > .toolbarbutton-icon,
 #main-window:not([customizing]) .toolbarbutton-1[disabled=true] > .toolbarbutton-menu-dropmarker,
 #main-window:not([customizing]) .toolbarbutton-1[disabled=true] > .toolbarbutton-menubutton-dropmarker,
-#main-window:not([customizing]) .toolbarbutton-1[disabled=true] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-#main-window:not([customizing]) .toolbarbutton-1 > .toolbarbutton-menubutton-button[disabled=true] > .toolbarbutton-icon {
+#main-window:not([customizing]) .toolbarbutton-1 > .toolbarbutton-menubutton-button[disabled=true] > .toolbarbutton-icon,
+#main-window:not([customizing]) .toolbarbutton-1[disabled=true] > :-moz-any(.toolbarbutton-menubutton-button, .toolbarbutton-badge-stack) > .toolbarbutton-icon {
 }
 
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
@@ -1880,6 +1880,13 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   min-height: 3em;
 }
 
+/* Limit the size of the hidden description, since a deck takes the size of the biggest child */
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][selectedIndex="0"] #search-suggestions-hint,
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][selectedIndex="1"] #search-suggestions-question {
+  max-height: 5em;
+}
+
 /* Opt-in notification */
 
 #PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] > hbox[anonid="search-suggestions-opt-in"] {
@@ -1930,7 +1937,15 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 /* Opt-out hint */
 
 #PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] > hbox[anonid="search-suggestions-opt-out"] {
-  font: message-box;
+/*  font: message-box;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] hbox[anonid="search-suggestions-hint-box"] {
+  flex-basis: 100%;
 }
 
 #PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] hbox[anonid="search-suggestions-hint-box"] > description {
@@ -1958,6 +1973,7 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  min-width: 16px;
 }
 
 @keyframes search-suggestions-hint-grow {
@@ -1974,7 +1990,7 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 
 #PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-typing"] {
   overflow: hidden;
-  max-width: 8ch;
+  max-width: 12ch;
   width: 0;
   animation-name: search-suggestions-hint-typing;
   animation-duration: 500ms;
@@ -1983,9 +1999,16 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   animation-fill-mode: forwards;
 }
 
+@media all and (max-width: 800px) {
+  /* Hide the typing animation block */
+  #PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] hbox[anonid="search-suggestions-hint-typing"] {
+    display: none;
+  }
+}
+
 @keyframes search-suggestions-hint-typing {
   from { width: 0; }
-  to   { width: 8ch; }
+  to   { width: 12ch; }
 }
 
 #PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-box"] {
@@ -2157,9 +2180,12 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 #identity-icon,
 #tracking-protection-icon,
 #connection-icon,
+.notification-anchor-icon,
+#blocked-permissions-container > .blocked-permission-icon,
 #extension-icon {
   width: 16px;
   height: 16px;
+  margin-inline-start: 2px;
   -moz-context-properties: fill;
   fill: #A09090;
 }
@@ -2167,6 +2193,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 #identity-icon:-moz-lwtheme,
 #tracking-protection-icon:-moz-lwtheme,
 #connection-icon:-moz-lwtheme,
+.notification-anchor-icon:-moz-lwtheme,
+#blocked-permissions-container > .blocked-permission-icon:-moz-lwtheme,
 #extension-icon:-moz-lwtheme {
 /*  fill: rgba(0,0,0,.6);*/
 }
@@ -2174,6 +2202,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 /* MAIN IDENTITY ICON */
 
 #identity-icon {
+  margin-inline-start: 0;
   width: 16px;
   height: 16px;
   list-style-image: url(chrome://browser/skin/identity-icon.svg#normal);
@@ -2216,6 +2245,8 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   height: 16px;
   margin-inline-start: -16px;
   position: relative;
+  -moz-context-properties: fill;
+  fill: #FF0000;
   display: none;
 }
 
@@ -2256,7 +2287,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 
 #tracking-protection-icon {
   list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled);
-  margin-inline-start: 2px;
   margin-inline-end: 0;
 }
 
@@ -2287,7 +2317,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 #extension-icon {
   width: 16px;
   height: 16px;
-  margin-inline-start: 2px;
   visibility: collapse;
 }
 
@@ -2320,7 +2349,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 /* REMOTE CONTROL ICON */
 
 #main-window[remotecontrol] #remote-control-icon {
-  list-style-image: url(chrome://browser/content/robot.ico);
+  list-style-image: url(chrome://browser/content/static-robot.png);
   visibility: visible;
   width: 16px;
   height: 16px;
@@ -2419,10 +2448,12 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper > #urlbar > #identity-box 
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
   display: initial;
   list-style-image: url(chrome://browser/skin/notification-icons.svg#login);
+  -moz-context-properties: fill;
+  fill: #A09090;
 }
 
 #PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon[selected] {
-  list-style-image: url(chrome://browser/skin/notification-icons.svg#login-highlighted);
+  fill: #FFCF00;
 }
 
 /* Insecure field warning */
@@ -3047,11 +3078,10 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 
 #sidebar-switcher-tabs > .toolbarbutton-icon,
 #sidebar-box[sidebarcommand="viewTabsSidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon {
-/*  list-style-image: url(chrome://browser/skin/synced-tabs.svg);
+  list-style-image: url(chrome://browser/skin/synced-tabs.svg);
   -moz-context-properties: fill;
   fill: currentColor;
-  opacity: 0.8;*/
-  list-style-image: url(chrome://browser/skin/urlbar-tab.svg#tab);
+/*  opacity: 0.8;*/
 }
 
 /* === END sidebar.inc.css === */
@@ -3181,6 +3211,8 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   /* 16px of the icon + 6px of margin-inline-end of .tab-icon-image */
   margin-inline-start: -22px;
   position: relative;
+  -moz-context-properties: fill;
+  fill: #FF0000;
 }
 
 .tab-sharing-icon-overlay[sharing="camera"] {
@@ -3288,17 +3320,17 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 .tab-icon-sound[soundplaying],
 .tab-icon-sound[muted],
 .tab-icon-sound[blocked] {
-  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio);
-  filter: url(chrome://global/skin/filters.svg#fill);
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio-playing.svg);
+  -moz-context-properties: fill;
   fill: currentColor;
 }
 
 .tab-icon-sound[muted] {
-  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted);
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio-muted.svg);
 }
 
 .tab-icon-sound[blocked] {
-  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-blocked);
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio-blocked.svg);
 }
 
 .tab-close-button {
@@ -3435,6 +3467,16 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
   width: 28px;
   /* width: calc(36px + var(--tab-curve-width)); */
 }
+
+.tabs-newtab-button > .toolbarbutton-menu-dropmarker {
+  display: none;
+}
+
+.tabs-newtab-button > .toolbarbutton-icon {
+  /* override drop marker image padding */
+  margin-inline-end: 0;
+}
+
 @media (min-resolution: 1.1dppx) {
   /* image preloading hack from like lowdpi styles */
   #tabbrowser-tabs::before {
@@ -3465,17 +3507,17 @@ richlistitem[selected="true"][current="true"] > .ac-title-box > .ac-result-type-
 .alltabs-endimage[soundplaying],
 .alltabs-endimage[muted],
 .alltabs-endimage[blocked] {
-  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio);
-  filter: url(chrome://global/skin/filters.svg#fill);
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio-playing.svg);
+  -moz-context-properties: fill;
   fill: currentColor;
 }
 
 .alltabs-endimage[muted] {
-  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-muted);
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio-muted.svg);
 }
 
 .alltabs-endimage[blocked] {
-  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio.svg#tab-audio-blocked);
+  list-style-image: url(chrome://browser/skin/tabbrowser/tab-audio-blocked.svg);
 }
 
 /* === END tabs.inc.css === */
@@ -3690,19 +3732,18 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 /* === BEGIN notification-icons.inc.css === */
 
+.popup-notification-icon,
+.identity-popup-permission-icon {
+  -moz-context-properties: fill;
+  fill: #A09090;
+}
+
 #notification-popup-box {
   border-radius: 3px 0 0 3px;
   padding: 5px 0px;
   margin: -5px 0px;
   margin-inline-end: -5px;
   padding-inline-end: 5px;
-}
-
-.notification-anchor-icon,
-#blocked-permissions-container > .blocked-permission-icon {
-  width: 16px;
-  height: 16px;
-  margin-inline-start: 2px;
 }
 
 /* This class can be used alone or in combination with the class defining the
@@ -3720,12 +3761,6 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   .notification-anchor-icon {
     list-style-image: url(chrome://global/skin/icons/info.svg);
   }
-}
-
-.notification-anchor-icon:not(.plugin-blocked),
-#blocked-permissions-container > .blocked-permission-icon {
-  filter: url(chrome://global/skin/filters.svg#fill);
-  fill: currentColor;
 }
 
 /* INDIVIDUAL NOTIFICATIONS */
@@ -3931,6 +3966,7 @@ html|*#webRTC-previewVideo {
 
 .plugin-icon.plugin-blocked {
   list-style-image: url(chrome://browser/skin/notification-icons.svg#plugin-blocked);
+  fill: #FF0000 !important;
 }
 
 #notification-popup-box[hidden] {
@@ -4004,9 +4040,25 @@ html|*.addon-webext-perm-list {
   margin-inline-start: 0;
 }
 
-.popup-notification-description[popupid="addon-webext-permissions"] {
-  margin: 0;
-  padding: 0;
+.popup-notification-description[popupid="addon-webext-permissions"],
+.popup-notification-description[popupid="addon-installed"] {
+  display: none;
+}
+
+.addon-webext-perm-notification-content,
+.addon-installed-notification-content {
+  margin-top: 0;
+}
+
+#addon-webext-perm-header {
+  /* Align the text more closely with the icon by clearing some top line height. */
+  margin-top: -1px;
+  margin-inline-start: 0;
+}
+
+#addon-installed-notification-header {
+  /* Align the text more closely with the icon by clearing some top line height. */
+  margin-top: -1px;
 }
 
 .addon-webext-name {
@@ -4015,16 +4067,20 @@ html|*.addon-webext-perm-list {
   margin: 0;
 }
 
-.addon-addon-icon {
+.addon-addon-icon,
+.addon-toolbar-icon {
   width: 14px;
   height: 14px;
+  vertical-align: bottom;
+  margin-bottom: 1px;
+}
+
+.addon-addon-icon {
   list-style-image: url("chrome://browser/skin/menuPanel.svg");
   -moz-image-region: rect(0px, 288px, 32px, 256px);
 }
 
 .addon-toolbar-icon {
-  width: 14px;
-  height: 14px;
   list-style-image: url("chrome://browser/skin/ToolbarFx.png");
   -moz-image-region: rect(0, 486px, 18px, 468px);
 }
@@ -4507,10 +4563,29 @@ notification.pluginVulnerable .messageImage {
   margin: 5px;
 }
 
-.customizationmode-button:hover {
+.customizationmode-checkbox {
+}
+
+#customization-reset-button,
+#customization-undo-reset-button,
+#customization-done-button {
+}
+
+#customization-done-button {
 }
 
 .customizationmode-button > .box-inherit {
+}
+
+/* We use a smaller padding to ensure images don't have padding.
+ * We can't detect whether a button has an image. This button doesn't
+ * so it needs more padding, so we unfortunately hardcode the extra
+ * padding in here:
+ */
+#customization-toolbar-visibility-button {
+}
+
+.customizationmode-button[type=menu] > .box-inherit > .box-inherit > .button-text {
 }
 
 .customizationmode-button > .button-icon {
@@ -4519,10 +4594,8 @@ notification.pluginVulnerable .messageImage {
 .customizationmode-button:not([type=menu]) > .button-text {
 }
 
-.customizationmode-button > .button-menu-dropmarker {
+.customizationmode-button > .box-inherit > .button-menu-dropmarker {
 }
-
-
 
 .customizationmode-button[checked] {
   background-color: #008484;
@@ -4544,7 +4617,7 @@ notification.pluginVulnerable .messageImage {
 
 .customizationmode-button > .box-inherit > .box-inherit > .button-icon,
 .customizationmode-button > .button-box > .button-icon {
-/*  height: 24px;*/
+/*  height: 16px;*/
 }
 
 #customization-titlebar-visibility-button {
@@ -4573,8 +4646,8 @@ notification.pluginVulnerable .messageImage {
 }
 
 #customization-lwtheme-button > .box-inherit > .box-inherit > .button-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 2px;
   background-image: url("chrome://browser/content/default-theme-icon.svg");
   background-size: contain;
@@ -5173,123 +5246,6 @@ toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
 #UITourTooltipButtons > button.button-primary:not(:active):hover {
   background-color: #FFCF00;
   color: #000000;
-}
-
-/* Notification overrides for Heartbeat UI */
-
-notification.heartbeat {
-  background-color: #A09090;
-/*  height: 40px;*/
-}
-
-@keyframes pulse-onshow {
- 0% {
-   opacity: 0;
-   transform: scale(1.0);
- }
- 25% {
-   opacity: 1;
-   transform: scale(1.1);
- }
- 50% {
-   transform: scale(1.0);
- }
- 75% {
-   transform: scale(1.1);
- }
- 100% {
-   transform: scale(1.0);
- }
-}
-
-@keyframes pulse-twice {
- 0% {
-   transform: scale(1.1);
- }
- 50% {
-   transform: scale(0.8);
- }
- 100% {
-   transform: scale(1);
- }
-}
-
-.messageText.heartbeat {
-  color: #000000;
-/*  text-shadow: none; */
-  margin-inline-start: 0px;
-}
-
-.messageImage.heartbeat {
-  width: 24px;
-  height: 24px;
-  margin-inline-start: 8px;
-  margin-inline-end: 8px;
-}
-
-.messageImage.heartbeat.pulse-onshow {
-  animation-name: pulse-onshow;
-  animation-duration: 1.5s;
-  animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(.7,1.8,.9,1.1);
-}
-
-.messageImage.heartbeat.pulse-twice {
-  animation-name: pulse-twice;
-  animation-duration: 1s;
-  animation-iteration-count: 2;
-  animation-timing-function: linear;
-}
-
-/* Learn More link styles */
-.heartbeat > .text-link {
-  color: #3333FF;
-  margin-inline-start: 0px;
-}
-
-.heartbeat > .text-link:hover {
-  color: #9C9CFF;
-  text-decoration: none;
-}
-
-.heartbeat > .text-link:hover:active {
-  color: #FF9F00;
-}
-
-/* Heartbeat UI Rating Star Classes */
-.heartbeat > #star-rating-container {
-  display: -moz-box;
-/*  margin-bottom: 4px;*/
-}
-
-.heartbeat > #star-rating-container > #star5 {
-  -moz-box-ordinal-group: 5;
-}
-
-.heartbeat > #star-rating-container > #star4 {
-  -moz-box-ordinal-group: 4;
-}
-
-.heartbeat > #star-rating-container > #star3 {
-  -moz-box-ordinal-group: 3;
-}
-
-.heartbeat > #star-rating-container > #star2 {
-  -moz-box-ordinal-group: 2;
-}
-
-.heartbeat > #star-rating-container > .star-x  {
-  background: url("chrome://browser/skin/heartbeat-star-off.svg");
-  cursor: pointer;
-  /* Overrides the margin-inline-end for all platforms defined in the .plain class */
-  margin-inline-end: 4px !important;
-  width: 16px;
-  height: 16px;
-}
-
-.heartbeat > #star-rating-container > .star-x:hover,
-.heartbeat > #star-rating-container > .star-x:hover ~ .star-x {
-  background: url("chrome://browser/skin/heartbeat-star-lit.svg");
 }
 
 /* === END UITour.inc.css === */
