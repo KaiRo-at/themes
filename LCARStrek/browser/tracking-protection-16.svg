@@ -4,23 +4,6 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
      width="16" height="16" viewBox="0 0 16 16">
-<style>
-.fieldtext {
-  fill: #A09090;
-}
-
-.highlighttext {
-  fill: #FFCF00;
-}
-
-.black {
-  fill: #FFCF00;
-}
-
-.white {
-  fill: #FFCF00;
-}
-</style>
   <style>
     g:not(:target) {
       display: none;
@@ -51,25 +34,10 @@
   </defs>
 
   <g id="enabled">
-    <use class="fieldtext" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout)"/>
-  </g>
-  <g id="enabled-black">
-    <use class="black" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout)"/>
-  </g>
-  <g id="enabled-white">
-    <use class="white" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout)"/>
+    <use fill="context-fill" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout)"/>
   </g>
 
   <g id="disabled">
-    <use class="fieldtext" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout-disabled)"/>
-    <use xlink:href="#strike-through-red"/>
-  </g>
-  <g id="disabled-black">
-    <use class="black" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout-disabled)"/>
-    <use xlink:href="#strike-through-red"/>
-  </g>
-  <g id="disabled-white">
-    <use class="white" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout-disabled)"/>
-    <use xlink:href="#strike-through-red"/>
+    <use fill="context-fill" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout-disabled)"/>
   </g>
 </svg>

@@ -1873,12 +1873,19 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 
 /* === BEGIN urlbarSearchSuggestionsNotification.inc.css === */
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] {
   border-bottom: 1px solid var(--panel-separator-color);
-  background-color: #000000;
+  padding-inline-start: 0;
+  padding-inline-end: 6px;
+  min-height: 3em;
+}
+
+/* Opt-in notification */
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] > hbox[anonid="search-suggestions-opt-in"] {
   padding: 6px 0;
   padding-inline-start: 44px;
-  padding-inline-end: 6px;
+  background-color: #000000;
   background-image: url("chrome://browser/skin/info.svg");
   background-clip: padding-box;
   background-position: 20px center;
@@ -1886,20 +1893,20 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   background-size: 16px 16px;
 }
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"]:-moz-locale-dir(rtl) {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] > hbox[anonid="search-suggestions-notification"]:-moz-locale-dir(rtl) {
   background-position: right 20px center;
 }
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > description {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] > hbox[anonid="search-suggestions-notification"] > description {
   margin: 0;
   padding: 0;
 }
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > description > label.text-link {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] > hbox[anonid="search-suggestions-notification"] > description > label.text-link {
   margin-inline-start: 0;
 }
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] button {
   -moz-appearance: none;
   min-width: 80px;
   border-radius: 3px;
@@ -1908,16 +1915,121 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
   margin-inline-start: 10px;
 }
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button[anonid="search-suggestions-notification-disable"] {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] button[anonid="search-suggestions-notification-disable"] {
 }
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button[anonid="search-suggestions-notification-disable"]:hover {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] button[anonid="search-suggestions-notification-disable"]:hover {
 }
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button[anonid="search-suggestions-notification-enable"] {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] button[anonid="search-suggestions-notification-enable"] {
 }
 
-#PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button[anonid="search-suggestions-notification-enable"]:hover {
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] button[anonid="search-suggestions-notification-enable"]:hover {
+}
+
+/* Opt-out hint */
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] > hbox[anonid="search-suggestions-opt-out"] {
+  font: message-box;
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] hbox[anonid="search-suggestions-hint-box"] > description {
+  margin: auto;
+  padding: 4px 8px;
+  background-color: #000000;
+  border: 1px solid #FFCF00;
+  border-radius: 4px;
+  color: #A09090;
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] hbox[anonid="search-suggestions-hint-box"] > description > html|span {
+  unicode-bidi: embed;
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"] hbox[anonid="search-suggestions-hint-box"] > description > html|span.prefix {
+  font-weight: bold;
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] > hbox[anonid="search-suggestions-opt-out"] > .ac-site-icon {
+  transform: scale(0);
+  animation-name: search-suggestions-hint-grow;
+  animation-duration: 500ms;
+  animation-delay: 500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes search-suggestions-hint-grow {
+  0%   { transform: scale(0); }
+  40%  { transform: scale(1.5); }
+  60%  { transform: scale(1); }
+  80%  { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-typing"] > .ac-title-text {
+  text-overflow: clip;
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-typing"] {
+  overflow: hidden;
+  max-width: 8ch;
+  width: 0;
+  animation-name: search-suggestions-hint-typing;
+  animation-duration: 500ms;
+  animation-delay: 750ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes search-suggestions-hint-typing {
+  from { width: 0; }
+  to   { width: 8ch; }
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-box"] {
+  opacity: 0;
+  animation-duration: 250ms;
+  animation-delay: 1500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* Margin-inline-start can't be animated yet */
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-box"]:-moz-locale-dir(ltr) {
+  margin-left: 160px;
+  animation-name: search-suggestions-hint-buildin-ltr;
+}
+
+@keyframes search-suggestions-hint-buildin-ltr {
+  from  { margin-left: 160px; opacity: 0; }
+  to    { margin-left: 0; opacity: 1; }
+}
+
+#PopupAutoCompleteRichResult > deck[anonid="search-suggestions-notification"][animate] hbox[anonid="search-suggestions-hint-box"]:-moz-locale-dir(rtl) {
+  /* Should be margin-inline-start but that can't be animated yet */
+  margin-right: 160px;
+  animation-name: search-suggestions-hint-buildin-rtl;
+}
+
+@keyframes search-suggestions-hint-buildin-rtl {
+  from  { margin-right: 160px; opacity: 0; }
+  to    { margin-right: 0; opacity: 1; }
+}
+
+#search-suggestions-change-settings {
+  opacity: 0;
+  animation-name: search-suggestions-hint-fadein;
+  animation-duration: 500ms;
+  animation-delay: 1800ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes search-suggestions-hint-fadein {
+  from  { opacity: 0 }
+  to    { opacity: 1 }
 }
 
 /* === END urlbarSearchSuggestionsNotification.inc.css === */
@@ -1973,62 +2085,6 @@ html|*.urlbar-input:-moz-lwtheme::placeholder,
 
 /* page proxy icon */
 /* === BEGIN identity-block.inc.css === */
-
-/* === BEGIN identity-block/icons.inc.css === */
-
-#identity-icon {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#normal);
-}
-
-#identity-box:hover > #identity-icon:not(.no-hover),
-#identity-box[open=true] > #identity-icon {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#hover);
-}
-
-#identity-box.grantedPermissions > #identity-icon {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice);
-}
-
-#identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover),
-#identity-box.grantedPermissions[open=true] > #identity-icon {
-  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-hover);
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon {
-  list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
-}
-
-#tracking-protection-icon {
-  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled);
-}
-
-#tracking-protection-icon[state="loaded-tracking-content"] {
-  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#disabled);
-}
-
-
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
-  list-style-image: url(chrome://browser/skin/connection-secure.svg);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
-  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
-  visibility: visible;
-}
-
-#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
-#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
-  list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon);
-  visibility: visible;
-}
-
-/* === END identity-block/icons.inc.css === */
 
 #identity-box {
   font-size: .9em;
@@ -2098,11 +2154,47 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   padding-inline-start: 2.01px;
 }
 
+#identity-icon,
+#tracking-protection-icon,
+#connection-icon,
+#extension-icon {
+  width: 16px;
+  height: 16px;
+  -moz-context-properties: fill;
+  fill: #A09090;
+}
+
+#identity-icon:-moz-lwtheme,
+#tracking-protection-icon:-moz-lwtheme,
+#connection-icon:-moz-lwtheme,
+#extension-icon:-moz-lwtheme {
+/*  fill: rgba(0,0,0,.6);*/
+}
+
 /* MAIN IDENTITY ICON */
 
 #identity-icon {
   width: 16px;
   height: 16px;
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#normal);
+}
+
+#identity-box:hover > #identity-icon:not(.no-hover),
+#identity-box[open=true] > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#hover);
+}
+
+#identity-box.grantedPermissions > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice);
+}
+
+#identity-box.grantedPermissions:hover > #identity-icon:not(.no-hover),
+#identity-box.grantedPermissions[open=true] > #identity-icon {
+  list-style-image: url(chrome://browser/skin/identity-icon.svg#notice-hover);
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.chromeUI > #identity-icon {
+  list-style-image: url(chrome://branding/content/identity-icons-brand.svg);
 }
 
 #urlbar[pageproxystate="invalid"] > #identity-box > #identity-icon {
@@ -2110,20 +2202,11 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 }
 
 #urlbar[actiontype="searchengine"] > #identity-box > #identity-icon {
-  -moz-image-region: inherit;
   list-style-image: url(chrome://global/skin/icons/autocomplete-search.svg);
-  context-properties: fill;
-  fill: #FFCF00;
-  width: 16px;
-  width: 16px;
-  height: 16px;
 }
 
 #urlbar[actiontype="extension"] > #identity-box > #identity-icon {
-  -moz-image-region: inherit;
   list-style-image: url(chrome://browser/skin/addons/addon-install-anchor.svg);
-  width: 16px;
-  height: 16px;
 }
 
 /* SHARING ICON */
@@ -2172,10 +2255,13 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
 /* TRACKING PROTECTION ICON */
 
 #tracking-protection-icon {
-  width: 16px;
-  height: 16px;
+  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#enabled);
   margin-inline-start: 2px;
   margin-inline-end: 0;
+}
+
+#tracking-protection-icon[state="loaded-tracking-content"] {
+  list-style-image: url(chrome://browser/skin/tracking-protection-16.svg#disabled);
 }
 
 #tracking-protection-icon[animate] {
@@ -2190,17 +2276,45 @@ window:not([chromehidden~="toolbar"]) #urlbar-wrapper:not(:hover) > #forward-but
   transition: none;
 }
 
+#urlbar[pageproxystate="invalid"] > #identity-box > #extension-icon,
 #urlbar[pageproxystate="invalid"] > #identity-box > #tracking-protection-icon {
   visibility: collapse;
 }
 
-/* CONNECTION ICON */
+/* CONNECTION ICON, EXTENSION ICON */
 
-#connection-icon {
+#connection-icon,
+#extension-icon {
   width: 16px;
   height: 16px;
   margin-inline-start: 2px;
   visibility: collapse;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveBlocked > #connection-icon {
+  list-style-image: url(chrome://browser/skin/connection-secure.svg);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.weakCipher > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContent > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedDisplayContentLoadedActiveBlocked > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.certUserOverridden > #connection-icon {
+  list-style-image: url(chrome://browser/skin/connection-mixed-passive-loaded.svg#icon);
+  visibility: visible;
+}
+
+#urlbar[pageproxystate="valid"] > #identity-box.insecureLoginForms > #connection-icon,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedActiveContent > #connection-icon {
+  list-style-image: url(chrome://browser/skin/connection-mixed-active-loaded.svg#icon);
+  visibility: visible;
+}
+
+#identity-box.extensionPage > #extension-icon {
+  list-style-image: url(chrome://browser/skin/controlcenter/extension.svg);
+  visibility: visible;
 }
 
 /* REMOTE CONTROL ICON */
