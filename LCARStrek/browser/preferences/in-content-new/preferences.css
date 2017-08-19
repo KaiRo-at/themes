@@ -20,6 +20,11 @@
   background-repeat: no-repeat;
 }
 
+.pane-container {
+  border-radius: 1em 0 0 0;
+  background-color: #000000;
+}
+
 #mainPrefPane {
   padding: 10px 20px 0px;
   border-radius: 1em 0 0 0;
@@ -101,13 +106,13 @@ treecol {
   list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#general-active");
 }
 
-#category-application > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#content");
+#category-search > .category-icon {
+  list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#search");
 }
 
-#category-application:hover > .category-icon,
-#category-application[selected] > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#content-active");
+#category-search:hover > .category-icon,
+#category-search[selected] > .category-icon {
+  list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#search-active");
 }
 
 #category-privacy > .category-icon {
@@ -126,23 +131,6 @@ treecol {
 #category-sync:hover > .category-icon,
 #category-sync[selected] > .category-icon {
   list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#sync-active");
-}
-
-#category-advanced > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#advanced");
-}
-
-#category-advanced:hover > .category-icon,
-#category-advanced[selected] > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#advanced-active");
-}
-
-#category-search-results > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#searchResults");
-}
-
-#category-search-results > .category-icon {
-  list-style-image: url("chrome://browser/skin/preferences/in-content-new/icons.svg#searchResults-active");
 }
 
 @media (max-width: 800px) {
@@ -702,31 +690,11 @@ description > html|a {
   background-color: var(--in-content-category-background-hover);
   border-color: var(--in-content-category-background-hover);
 }
-.help-button {
-  position: fixed;
-  left: 0;
-
-  /* Needs to have enough gap from the bottom to not
-     get behind the status panel (bug 1357841). */
-  bottom: 2rem;
-  font-size: 13px;
-  line-height: 13px;
-  height: 14px;
-  background-position: 15px;
-  padding-inline-start: 35px;
-  white-space: nowrap;
-}
 
 .help-button:-moz-locale-dir(rtl) {
   left: auto;
   right: 0;
   background-position: right 15px top 0;
-}
-
-.help-button:link,
-.help-button:visited {
-  color: var(--in-content-category-text);
-  text-decoration: none;
 }
 
 .search-tooltip {

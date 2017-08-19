@@ -39,5 +39,6 @@
 
   <g id="disabled">
     <use fill="context-fill" xlink:href="#shape-shield-outer" mask="url(#mask-shield-cutout-disabled)"/>
+    <use href="#strike-through-red"/>
   </g>
 </svg>
